@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "raydar-app",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "raydar-app", "run", "dev", "--", "--strictPort"],
+      "port": 5173
+    }
+  ]
+}
