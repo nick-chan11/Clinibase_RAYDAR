@@ -1,0 +1,1867 @@
+{
+  "title": "PRA-216-201 COPD Pre-screening questions",
+  "pages": [
+    {
+      "name": "page7",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel31",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question106",
+              "hideNumber": false,
+              "html": "<p><strong>Protocol:</strong> PRA-216-201 (COPD)</p><p><strong>Phase:</strong> 2a</p><p>&nbsp;</p><p><strong>Opening</strong></p><p>Thank you for your interest in our clinical trials for COPD. As you may know, COPD is a chronic airway disease, defined as progressive loss of lung function and airflow obstruction, becoming one of the most important causes of death worldwide. This study seeks to assess a new medication designed by Prana Therapeutics, for its safety and effectiveness in treating COPD.</p>"
+            },
+            {
+              "type": "html",
+              "name": "question107",
+              "hideNumber": false,
+              "html": "<p><strong>Study Drug and Design</strong></p><p>This study’s drug is named ‘PRA-216’ and has been designed in a way that blocks inflammation pathways that define conditions such as severe asthma or atopic dermatitis. This will be administered as a subcutaneous injection at your abdomen, deltoid/shoulder or thigh, and participants will receive up to 4 doses.</p><p>&nbsp;</p><p>This study drug will be compared against a placebo, and since this trial is double blinded, neither or nor the doctors will know which you have received until the end of the trial.</p>"
+            },
+            {
+              "type": "html",
+              "name": "question108",
+              "hideNumber": false,
+              "html": "<p><strong>Study Duration</strong></p><p>You can expect participation in this study to last up to about 9 months with a total of 16 in-clinic visits, segmented as follows:&nbsp;</p><p>&nbsp;</p><ul><li data-list-item-id=\"e52b1e91de097bfea60ee724a46807ef5\">Screening period: Day -28 to Day -1</li><li data-list-item-id=\"e7774234402058ce07957339b721256dd\">Dosing / Treatment Period: Day 1 to Day 85</li><li data-list-item-id=\"e7d3e88cad8bd9bcc9c55d2f8ff50bfdc\">Follow up: Day 86 to Day 281</li></ul><p>&nbsp;</p><p>You will have a total of 16 visits to our clinic, with your dosing days falling on:</p><p>&nbsp;</p><ul><li data-list-item-id=\"ef8d29093b3e767c78f50ad12186cee71\">Day 1 (Visit 2)</li><li data-list-item-id=\"e9667cec0f36ef5ce8058de2fdd0e0d0d\">Day 15 (Visit 4)</li><li data-list-item-id=\"e7ef7b2b9ab0a3dbc2c47e73e114ae8f9\">Day 29 (Visit 5)</li><li data-list-item-id=\"ea3a1ebd626c32b05b123969637c3c511\">Day 85 (Visit 7)</li></ul><p>&nbsp;</p><p>Your intial consult will be a ‘pre-screening visit’, which will consist of FeNO testing and ensuring your COPD eligibility. This will take about half an hour to an hour.</p><p>&nbsp;</p>"
+            },
+            {
+              "type": "image",
+              "name": "question109",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/1552/87b84373f021d9af84543a6b0f3fd1f2af71d2835b28f8e968957e6b19483b4f.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "30%"
+            },
+            {
+              "type": "html",
+              "name": "question110",
+              "hideNumber": false,
+              "html": "<p><strong>Reimbursement</strong></p><p>You will be reimbursed for any reasonable travel, parking, meals and other expenses associated with the study, broken down as $125 for your pre-screening visit, and $250 for each scheduled visit.</p><p>&nbsp;</p><p>You will also undergo 2 CT scans, for which you will be reimbursed $105 for each of these.</p><p>&nbsp;</p><p>You may be required to return to site for a repeated blood test, which you will be reimbursed at $105 for.</p><p>&nbsp;</p><p>In the event that you are required to return to site for any other reason, you will be reimbursed $250 for any unscheduled visits.</p><p>&nbsp;</p><p><span><u>If you attend each scheduled visit</u>, you can be reimbursed up to a total of</span> $4,085.</p><p>&nbsp;</p><p><strong>BREAKDOWN</strong></p><ul><li data-list-item-id=\"e227cffbe407db0cac59299f3e810ec34\">$125 per pre-screening visit<ul><li data-list-item-id=\"ead00bd8ced4cd7f83efe806c24a4392a\">1 visit</li></ul></li><li data-list-item-id=\"ea81e10e44dafa9b4130e906e3bb1a1b9\">$250 per clinic visit<ul><li data-list-item-id=\"e8ca44a6f9cd485676ac849efa5293e4c\">15 visits</li></ul></li><li data-list-item-id=\"e53c04bc7385a7f9575bfe8ece6617700\">$105 per CT scan&nbsp;<ul><li data-list-item-id=\"ee22b1e489b3daebbba7977d54214bbae\">2 visits</li></ul></li><li data-list-item-id=\"e578945e95467235f83aa1336bc17d9d5\">Total: Up to $4,085</li></ul><p>&nbsp;</p><p><strong>Additional</strong></p><ul><li data-list-item-id=\"e765a8474a7d09251860537ea183f5abf\">$105 for repeat bloods</li><li data-list-item-id=\"e90d0db38504251dc7ab308cbaebdaf6e\">$250 for unscheduled visits</li></ul><p>&nbsp;</p>"
+            },
+            {
+              "type": "html",
+              "name": "question111",
+              "hideNumber": false,
+              "html": "<div><p><strong>Disclosure</strong></p><p>&nbsp;</p><p>Before we go any further, I want to explain exactly how the reimbursement works, so there are no surprises for you later. The reimbursement I just went through is what you'd receive if everything goes ahead as planned. That can look a bit different depending on what happens on the day. For example, if the doctor looks over your information early on and finds you're not eligible before we even get to the consent form, if you decide not to sign the consent form yourself, or if something doesn't line up with what you've told me today, you'd likely only get a partial amount, or in some cases nothing, instead of the full reimbursement.</p><p>&nbsp;</p><p>That's actually a big part of why it matters that you're as accurate as possible with me right now. The doctor's early review is based on exactly what you tell me today, so the more accurate you are, the better your chances of making it all the way through screening and getting the full reimbursement.</p></div>"
+            }
+          ]
+        }
+      ],
+      "title": "Study Notes"
+    },
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question1",
+          "title": "As mentioned, this study will be conducted in Botany. Is this feasible for you to travel?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question2",
+          "title": "Can you please confirm your biological sex?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 2",
+              "text": "Male"
+            },
+            {
+              "value": "Item 3",
+              "text": "Female"
+            }
+          ]
+        },
+        {
+          "type": "dobandage",
+          "name": "question4",
+          "title": "Could you please confirm your date of birth?",
+          "description": "Participants must be 40 - 80 (inclusive) to be eligible.",
+          "showNumber": false
+        },
+        {
+          "type": "panel",
+          "name": "panel1",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question5",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Outside age criteria, please exclude!</strong></span></p>"
+            }
+          ],
+          "visibleIf": "{question4.age} < 40 or {question4.age} > 80"
+        },
+        {
+          "type": "radiogroup",
+          "name": "question3",
+          "title": "Do you have any holidays planned that might interfere with the visits we discussed?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes, does not interfere - double check before continuing ⚠️"
+            },
+            {
+              "value": "Item 3",
+              "text": "Yes, interferes - delay screening ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "bmi",
+          "name": "question11",
+          "title": "Could you please confirm your height and weight?\n",
+          "description": "Participants require a bodyweight of at least 40kg.",
+          "showNumber": false,
+          "bmiRangeMin": 1,
+          "bmiRangeMax": 1000
+        }
+      ],
+      "title": "Demopgrahics"
+    },
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel2",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question6",
+              "title": "How long ago were you diagnosed with COPD?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "At least 12 months ago - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Less than 12 months ago - exclude or delay ⚠️"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Not diagnosed with COPD - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question7",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Participants require a documented diagnosis of COPD for at least 12 months.</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel3",
+          "elements": [
+            {
+              "type": "paneldynamic",
+              "name": "question88",
+              "title": "What are you currently managing your COPD with?",
+              "description": "Please list all your medications",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question89",
+                  "title": "Medication",
+                  "description": "Name of medication",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question91",
+                  "startWithNewLine": false,
+                  "title": "Dose",
+                  "description": "How much do you take?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question92",
+                  "startWithNewLine": false,
+                  "title": "Frequency",
+                  "description": "How often do you take the medication?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question93",
+                  "startWithNewLine": false,
+                  "title": "Route",
+                  "description": "Tablet, Injection, inhaled, nasal, topical?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question94",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "When did you start taking this medication? If unsure, you just just provide an estimated year",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question95",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question8",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><a href=\"https://emeritus-syd.clinibase.com/fetch_file/public/3290\"><u>CLICK HERE FOR ASTHMA MEDICATIONS GUIDE</u></a></p><p>&nbsp;</p><p><span style=\"color:red;\"><strong>Participants are required to treat and manage their COPD with the following:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"e95c94f77d864be289da033307df9ac13\">Medium or high dose inhaled corticosteroid (ICS) preventer - <strong>must be stable for at least 2 months (as prescribed)</strong></li></ul><p>&nbsp;</p><p>AND</p><p>&nbsp;</p><ul><li data-list-item-id=\"e66f2645c8efb5c4fe4fa7329aa65df30\">LABA and/or LAMA - <strong>must be stable for at least 3 months (as prescribed)</strong></li></ul><p>&nbsp;</p><p>&nbsp;</p><p><span style=\"color:red;\"><strong>Participants need to be on a minimum dose of ICS - click</strong></span><strong> </strong><a href=\"https://emeritus-syd.clinibase.com/fetch_file/public/3340\"><strong>HERE</strong></a><strong> </strong><span style=\"color:red;\"><strong>for dosage requirements and their equivalents.</strong></span></p><p><strong>Please confirm the micrograms or “mcg” on participant's ICS' to confirm it is adequate.</strong></p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>“Stability” refers to prescribed dosage.&nbsp;</p><p>e.g. Participant's prescribed dosage has increased in the past x months - excluded 🚫</p><p>&nbsp;</p><p>Adherence of medication is lenient.&nbsp;</p><p>e.g. Participant has had the same prescribed dosage but misses doses here and there - fine to continue ✅</p><p><span style=\"color:red;\">(clear non-adherence to prescription i.e. not taking as prescribed for extended periods of time is still excluded)</span></p><p>&nbsp;</p><p>&nbsp;</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question21",
+              "title": "Your initial visit will involve FeNO testing, which involves a series of breathing tests. Participants would be required to withhold from their relievers for up to 6 hours before this test. You'd also be required to withhold your morning dose of any preventers that are taken once daily until AFTER the FeNO testing. Otherwise, for preventers taken twice daily, you can take your nightly dose but will have to withhold the morning dose. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question22",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>This study requires participants to withhold from the below prior to FeNO testing:</strong></span></p><p>&nbsp;</p><p><strong>SABA relievers:</strong> 6 hours&nbsp;</p><p><strong>LABA/LAMA/ICS preventers:</strong>&nbsp;</p><p>Taken once daily - withhold morning dose until after FeNO test</p><p>Taken twice daily - take nightly dose as prescribed, but withhold morning dose</p><p>&nbsp;</p><p><strong>⚠️ If participants become breathless or symptomatic, please instruct participant to take rescue medication as required.</strong></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question57",
+              "title": "If you are required to take your reliever within 6 hours of the FeNO test, please do not withhold for the purpose of the trial! Your test can be delayed. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question58",
+              "title": "Prior to the FeNO, participants should also avoid caffeine, carbonated drinks, highly processed foods, and nitrate-rich foods (i.e., pork products, leafy green vegetables, celery, leek, lettuce, spinach, and beetroot) for up to 1 hour before the FeNO test. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel4",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question9",
+              "title": "Are you a current smoker, or have you ever smoked in the past?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Former smoker - continue to next question ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Has never smoked - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question114",
+              "visibleIf": "{question9} = 'Item 4' or {question9} = 'Item 2'",
+              "title": "These next couple of questions will be regarding your smoking history, is this okay? [USE PACK YEAR CALCULATOR TO THE RIGHT]",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question10",
+              "visibleIf": "{question9} = 'Item 4' or {question9} = 'Item 2'",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Participants who have never smoked are excluded.</strong></span></p><p>&nbsp;</p><p><span style=\"color:red;\"><strong>E-cigarettes are not inclusive.</strong></span></p><p>&nbsp;</p><p><a href=\"https://www.mdcalc.com/calc/10187/pack-years-calculator\"><u>CLICK HERE FOR PACK YEAR CALCULATOR</u></a></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question113",
+              "visibleIf": "{question9} = 'Item 4' or {question9} = 'Item 2'",
+              "title": "[DO NOT READ] Does this participant have a smoking history of 10 or more pack years?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question84",
+              "title": "Please note that participants would be required to refrain from smoking on the day of your screening, before any assessments of lung function and 2 hours before a FeNO test. The use of e-cigarettes (i.e. JUUL) are prohibited during the study. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel6",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question16",
+              "title": "Have you been diagnosed with asthma?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question17",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Participants with a history of asthma are excluded, including:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"e630821ff7222f98a845109ec4a69bd76\">Asthma<ul><li data-list-item-id=\"e68631dbdeefc6090592ba4732ef65953\">Pediatric asthma</li><li data-list-item-id=\"e3936b433327b1478fe4975c4cb98b659\">asthma-COPD Ovelap Syndrome (ACO)</li></ul></li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel5",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question12",
+              "title": "Have you been diagnosed with any other pulmonary disease?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - gather detail and raise query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question13",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Examples include but aren't limited to:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ee4891d5d38d7c82df1011f0c789be22f\">Active lung infection</li><li data-list-item-id=\"e550e7a8d17a135e180f61f3db99e7207\">Pulmonary fibrosis</li><li data-list-item-id=\"e9b5b19762fabdc5e27ec32e098120460\">Cor pulmonale</li><li data-list-item-id=\"edfd76be182c423a431250edfd67a3e1c\">Cystic fibrosis</li><li data-list-item-id=\"e519ccff4cfa7ca64026ab0939ba7ed1c\">Hypoventilation syndrome associated with obesity</li><li data-list-item-id=\"eeb46b545d49ea2ce168904c78b781c1e\">Lung cancer</li><li data-list-item-id=\"ef0e8198a57ef6fa00b978122c906e62a\">Alpha 1 anti-trypsin deficiency&nbsp;</li><li data-list-item-id=\"e5d2abfd255a5e2055bd05d017fb001d4\">Primary ciliary dyskinesia</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question14",
+              "title": "To the best of your knowledge, have you been diagnosed with any other respiratory diseases known to affect your eosinophil counts such as ABPA or EGPA?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question15",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>ABPA / mycosis</strong> - allergic bronchopulmonary aspergillosis</p><p>&nbsp;</p><p><strong>EGPA</strong> - eosinophilic granulomatosis with polyangiitis</p><p>&nbsp;</p><p><strong>Eosiniphil&nbsp;</strong> - a type of white blood cell that helps fight parasites and manages allergic reactions</p><p>&nbsp;</p><p>&nbsp;</p><p>⚠️ <span style=\"color:red;\"><strong>If unsure, raise medical query</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel16",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question42",
+              "title": "Do you use at-home oxygen?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue to next question ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question115",
+              "visibleIf": "{question42} = 'Item 2'",
+              "title": "Is your oxygen flow rate 4 L/min or less?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question116",
+              "visibleIf": "{question115} = 'Item 1'",
+              "title": "Is your oxygen level usually 89% or higher while using oxygen?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No / Unsure - gather detail and raise medical query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question117",
+              "visibleIf": "{question116} = 'Item 1' or {question116} = 'Item 3'",
+              "title": "Have you ever been told that you have right-sided heart failure or cor pulmonale?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes / Unsure - gather detail and raise medical query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question43",
+              "title": "Do you currently use any non-invasive breathing device to help you breathe?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question44",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>This study excludes the use of any non-invasive positive pressure ventilation devices (NIPPV). Examples include but aren't limited to:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"e9a72a05bf00de48d8bd816041d5b1151\">BiPAP systems</li><li data-list-item-id=\"ee7fc1d4cfafaca6218e7093f3203b971\">Critical care / portable NIV ventilators</li></ul><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Participants using CPAP (continuous positive airway pressure) are allowed on the study.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel21",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question59",
+              "title": "To the best of your knowledge, have you undergone a lung volume reduction surgery within the past 12 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question60",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Participants with a history of partial or total lung resection (single lobe or segmentectomy) is accepted.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel22",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question61",
+              "title": "Have you been treated with bronchial thermoplasty in the past 12 months?",
+              "description": "Bronchial thermoplasty is a minimally invasive bronchoscopic procedure that uses controlled radiofrequency heat to reduce excess smooth muscle in the large and medium airways",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question62",
+              "title": "Have you received endobronchial valves in the past 12 months?",
+              "description": "An endobronchial valve (EBV) is a tiny, one-way device placed in the airways during a short scope procedure.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "title": "Pulmonary History"
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel20",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question55",
+              "title": "Do you have any history of epilepsy that is not controlled with medication?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question56",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Participants with epilepsy must be on a stable dose of medication for at least 30 days.</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel7",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question20",
+              "title": "Have you ever had an ECG test before?",
+              "description": "ECG = trace of the heart to assess any abnormalities",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question24",
+              "title": "Were there any abnormalities?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - gather detail and query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question18",
+              "title": "Have you been diagnosed with any unstable heart or cardiovascular diseases that isn't managed with treatment?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Stable without treatment - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question19",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Includes but not limited to:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"eecbfe03d935995e8669bcf662cef9474\">Unstable ischemic heart disease</li><li data-list-item-id=\"e1abca43c41834ca242ffa518a839ea4f\">Arrhythmia&nbsp;</li><li data-list-item-id=\"e609f07639276d25cf33689ebc60aed1a\">Cardiomyopathy</li><li data-list-item-id=\"eb5048db15b085a13253149b2ff4c2010\">Heart failure</li></ul><p>&nbsp;</p><ul><li data-list-item-id=\"e8adb274eb0c83f3f26f8299615ac4f7a\">Renal failure</li><li data-list-item-id=\"e45ccb4013131b81391892ed499e3587e\">Uncontrolled hypertension&nbsp;</li></ul><p>&nbsp;</p><p><strong>⚠️ If unsure, please raise medical query&nbsp;</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel8",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question23",
+              "title": "Have you had any COPD exacerbations and pneumonias that required hospitalisation or treatment with corticosteroids or antibiotics in the past 30 days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay screening ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question118",
+              "title": "Are you currently taking or receiving a macrolide or other antibiotics regularly to prevent COPD exacerbations?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue to next question ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Stopped within the past 6 weeks - delay screening ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question121",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>⚠️ If prophylactic antibiotics were stopped, please note date and ensure 6 weeks have passed before screening.</strong></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question119",
+              "visibleIf": "{question118} = 'Item 2'",
+              "title": "How long have you been taking this consistently for?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "At least 6 months - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Less than 6 months - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question120",
+              "visibleIf": "{question118} = 'Item 2'",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Participants who are taking macrolides or other antibiotics need to have been on a stable regiment for at least 6 months before screening.</strong></span></p><p>&nbsp;</p><p><strong>⚠️ If unsure, please raise medical query&nbsp;</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel9",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question25",
+              "title": "Do you have any history of significant infections that required antibiotics or antiviral medication within the past 2 weeks?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay screening ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question26",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Any history of clinically significant infection, &nbsp;acute upper or lower respiratory infection that required antibiotics or antiviral medication in the past 2 weeks is excluded.</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel32",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question122",
+              "title": "Have you used or received any oral, intravenous or intramuscular corticosteroid medication in the past 2 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question123",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>⚠️ Participants will have to wash out of any oral, IV or IM steroids taken in the past 2 months.&nbsp;</strong></p><p>&nbsp;</p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Systemic corticosteroids for the treatment of a COPD exacerbation</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel10",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question27",
+              "title": "Do you have any history of allergies or adverse reactions to any medications?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - gather detail and query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question28",
+              "title": "Do you have any history of anaphylaxis to any biologic therapies?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question29",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Examples of biologic therapies include but aren't limited to:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ee6f9df0c9329e5cbcd3c9ac167dda73c\">Adalimumab (Humira)</li><li data-list-item-id=\"eabf5e62dd26119da0fc6742edebfe237\">Infliximab (Remicade)</li><li data-list-item-id=\"ecf10b197d7b0d3e327d41c49beb1c501\">Etanercept (Enbrel)</li><li data-list-item-id=\"ee40f3b1138830d87a646d5513caa3e16\">Ustekinumab (Stelara)</li></ul><p>&nbsp;</p><p><strong>⚠️ If unsure, raise medical query!&nbsp;</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel11",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question30",
+              "title": "Do you have any tattoos or skin conditions that completely cover your *injection site*? ",
+              "description": "Abdomen (preference), deltoid or thigh ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question31",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Any tattoos or skin conditions that may interfere with the assessment of the injection site is excluded.</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel12",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question32",
+              "title": "Have you been diagnosed with any untreated helminth parasitic infections within the past 6 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes, treated - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes, untreated - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question34",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Helminth parasitic infections include:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"eda44af85ff12c1dfda1d01a7edfe318c\">Roundworms (Nematodes)</li><li data-list-item-id=\"e4728de256efe70002ff55d9832f5f433\">Flatworms (tapeworms (Cestodes))</li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel13",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question33",
+              "title": "How many standards of alcohol do you consume per week?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Below threshold - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Above threshold - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question35",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Alcohol abuse can be defined as;</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"e5b69736080339cd2717b534b3a33a52f\">Greater than 21 standards per week for males, or</li><li data-list-item-id=\"e82c0d83689a0b1827ee46b27c1bdeb7b\">Greater than 14 standards per week for females&nbsp;</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question85",
+              "title": "Do you have any history of drug abuse in the past 12 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel26",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question36",
+              "title": "Do you have any history of cancer within the past 2 years?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question37",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>Exceptions</strong></span></p><ul><li data-list-item-id=\"eaf1565fea3257deb0f7af8ff1a476821\"><p>BCC's or SCC's of the skin or in situ carcinoma of the cervix (resolved at least 12 months ago)</p><p>&nbsp;</p></li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question105",
+              "title": "Do you have any history of skin cancer in the past 12 months?",
+              "description": "BCC's or SCC's of the skin or in situ carcinoma of the cervix must have been resolved at least 12 months ago",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel14",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question38",
+              "title": "Have you been diagnosed with active tuberculosis that is either treated or untreated?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question39",
+              "title": "To the best of your knowledge, have you been diagnosed with latent tuberculosis that's been left untreated?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel15",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question40",
+              "title": "Have you undergone any major surgeries in the past 8 weeks?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay screening ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question41",
+              "title": "Do you have any planned surgeries that may require you to undergo general anesthesia or stay in-patient at a hospital during the study?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude or delay screening ⚠️"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel17",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question45",
+              "title": "Have you used or been treated with immunosuppressive medication in the past 3 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question46",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Systemic immunosuppressive medications include but aren't limited to:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ec6c94ab4c8fbb2a4952715c6da37d210\">Methotrexate</li><li data-list-item-id=\"ed8e9c74981b6d21ac923b4c55a1d8074\">Cyclosporine</li><li data-list-item-id=\"e1262d337500c1cffa85276fa564b1ece\">Maintenance systemic steroid treatment</li><li data-list-item-id=\"e8f9a9e887685b4c57696b18d3c45dd44\">Any experimental anti-inflammatory therapy</li></ul><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Use of systemic corticosteroids for treatment of exacerbations is allowed</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question47",
+              "title": "Do you anticipate requiring immunosuppressive medication for any reason throughout the study?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question48",
+          "title": "Have you received any immunoglobulins, blood or blood products in the past 30 days?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - delay screening ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question50",
+          "title": "To the best of your knowledge, have you previously used the medication 'PRA-216'?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel18",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question51",
+              "title": "Have you used or received any marketed or investigational monoclonal or polyclonal antibody medications in the past 4 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question52",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Marketed monoclonal or polyclonal antibody therapies include but aren't limited to:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ea15e20e3fc4f4645ac75efc3d9791771\">Dupilumab&nbsp;</li><li data-list-item-id=\"ebddff14411ac9a21c3af374c47fff304\">Tezepelumab</li><li data-list-item-id=\"e2d25bad383e7f1ea897b6781ce944a7b\">Mepolizumab</li><li data-list-item-id=\"e4f540887204956c61728e47355f4f9f5\">Omalizumab</li><li data-list-item-id=\"e151beed9f3f650135ee7bd7fb3b491b1\"><span>Denosumab (Prolia)</span></li></ul><p>&nbsp;</p><p><strong>Exclude use for any reason</strong></p><p>&nbsp;</p><p><strong>⚠️ If unsure, please raise medical query!</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel19",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question53",
+              "title": "Have you received any vaccines in the past 30 days, or do you plan to receive any vaccines within the next 30 days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel23",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question63",
+              "title": "Do you have any active liver diseases such as jaundice or higher levels of AST, ALT or ALP?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question64",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Any evidence of active liver disease, regardless of treatment, is excluded. Includes:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ec75a9a59f705acad788f9527d430d71f\">Jaundice</li><li data-list-item-id=\"eebb09b8e76fa6dae696177e1b4518cea\">Higher levels of aspartate transaminase (AST)</li><li data-list-item-id=\"edecbbca3e216679a83e6d44818bf570c\">Higher levels of alanine transminase (ALT)</li><li data-list-item-id=\"e92030ea65ed18150b665c084b78ea381\">Higher levels of alkaline phosphatase (ALP)</li></ul><p>&nbsp;</p><p><strong>⚠️ If unsure, please raise medical query!</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question65",
+          "title": "Do you have any history of any immunodeficient disorders such as HIV?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel24",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question66",
+              "title": "Do you have any history of hepatitis B or C?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question67",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>History of hepatitis B vaccination without history of hepatitis B are accepted.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel25",
+          "elements": [
+            {
+              "type": "paneldynamic",
+              "name": "question68",
+              "title": "Are you taking any other medication?",
+              "description": "Please list all your medications",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question69",
+                  "title": "Medication",
+                  "description": "Name of medication",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question70",
+                  "startWithNewLine": false,
+                  "title": "Indication",
+                  "description": "What is the medication used for?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question71",
+                  "startWithNewLine": false,
+                  "title": "Dose",
+                  "description": "How much do you take?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question72",
+                  "startWithNewLine": false,
+                  "title": "Frequency",
+                  "description": "How often do you take the medication?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question73",
+                  "startWithNewLine": false,
+                  "title": "Route",
+                  "description": "Tablet, Injection, inhaled, nasal, topical?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question74",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "When did you start taking this medication? If unsure, you just just provide an estimated year",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question75",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question76",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#f44336;\"><strong>PLEASE EXCLUDE THE FOLLOWING</strong></span></p><p>&nbsp;</p><p>⚠️<span style=\"color:red;\"><strong> &nbsp;<u>All medications should be stable for least 3 months</u></strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ebb97dd9f4e5c15c84433e8e2592e582b\">Long term oxygen therapy</li><li data-list-item-id=\"e227b9f7edde192c5bb1e3a4415a93d84\">Non-invasive positive pressure ventilation devices (NIPPV)<ul><li data-list-item-id=\"e3fa604cdd46e020311ff522aee310fc5\">BiPAP systems</li><li data-list-item-id=\"e39e68f4ae8602af2ea51b3e4bc7cfc16\">Critical care / portable NIV ventilators</li></ul></li><li data-list-item-id=\"e63e0bbf66195cdfc9cb90007780686d8\">Commencement of any antibiotics to prevent exacerbation of COPD in the <strong>past 6 months</strong></li><li data-list-item-id=\"e43e8476ff29adeaeaf5ea3ebefe10cbe\">Immunosuppressive medication in the <strong>past 3 months</strong>, including<ul><li data-list-item-id=\"e2899a3a9e29ee3898af2e9e0ea82317d\">Methotrexate</li><li data-list-item-id=\"e7cf2dcf43f726435d6ba0a18d5d7f44d\">Cyclosporine</li><li data-list-item-id=\"e51f3bf4023eeab82c61377e7b09795db\">Maintenance systemic steroid treatment</li><li data-list-item-id=\"e1e17da65c9ca9aca190085d55eedb0f7\">Any experimental anti-inflammatory therapy</li></ul></li><li data-list-item-id=\"e8d222849be5f6bda464dcc038dc77702\">Anticipation of immunosuppressive medication throughout the study</li><li data-list-item-id=\"e027db7ad6a2d25a56202d379256575ee\">Previous use of the study drug ‘PRA-216’</li><li data-list-item-id=\"e6f077290ce8b68642402ccd931ca9941\">Use or receipt of any marketed or investigational monoclonal or polyclonal antibody medications in the past 4 months<ul><li data-list-item-id=\"e3016fd908dcd97cbc7223885ef345aea\">Dupilumab</li><li data-list-item-id=\"eaf894385915fdfadf596ec2f20587dbc\">Tezepelumab</li><li data-list-item-id=\"e33fdd003eb402d1bbf0148e6a28aeda5\">Mepolizumab</li><li data-list-item-id=\"ea7fa21f3e01804e962336dc97883627e\">Omalizumab</li></ul></li><li data-list-item-id=\"e10673c7cb35d387f6eb58e665e2406fd\">Receipt of any live attenuated vaccines in the <strong>past 30 days</strong><ul><li data-list-item-id=\"edf6856f2521fa9ed43c3a91ae0b27c0e\">MMR (measles, mumps, rubella)</li><li data-list-item-id=\"eaa3c2a6b5ed401ba7e3affb08cc0f333\">Chickenpox (Varicella)</li><li data-list-item-id=\"eb7847c7bc97b4cca7fc90b4c4ff9ff65\">Rotavirus</li><li data-list-item-id=\"e9fd3194b89905083f2ea493ce8544b4f\">Yellow fever</li><li data-list-item-id=\"e6a8a67ccdaf53201814d7a599a10da7c\">Nasal spray flu vaccine</li><li data-list-item-id=\"e19dd87d678b13ff9949f3fec8bdda227\">Oral, IM or IV corticosteroids<strong> in the past 2 months</strong></li></ul></li></ul><p>&nbsp;</p><p><span style=\"color:#ef5350;\"><strong>IF UNSURE, PLEASE RAISE MEDICAL QUERY!</strong></span></p>"
+            },
+            {
+              "type": "paneldynamic",
+              "name": "question77",
+              "title": "Do you have any other significant medical history?",
+              "description": "Please list all your medical conditions or events",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question78",
+                  "title": "Medical Condition/Event",
+                  "description": "Name of condition or event",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question79",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "For the date, if you're not sure, you can just provide an estimated year.",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question80",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing or N/A",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question81",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#f44336;\"><strong>PLEASE EXCLUDE THE FOLLOWING</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ec81c045c0ef9ed7aca1d7f2e9285676b\">Primary diagnosis of asthma<ul><li data-list-item-id=\"ec05ddafd6a16ebd56f6f957ae2004d55\">Pediatric asthma</li><li data-list-item-id=\"e49c853c9d6140069ca02a1fd51ec70e1\">asthma-COPD Ovelap Syndrome (ACO)</li></ul></li><li data-list-item-id=\"ec14deef54a440d6e40d2e2eb80e042f4\">Diagnosis of any other pulmonary disease <strong>as determined by Investigator</strong><ul><li data-list-item-id=\"eb298d1e48e89fe595c56a54b70222c70\">Active lung infection</li><li data-list-item-id=\"e4e9b2d8e4689d5ab553fc3348b835e10\">Pulmonary fibrosis</li><li data-list-item-id=\"e0b5c7dc8e570435797d31aef62dffe57\">Cor pulmonale</li><li data-list-item-id=\"e16828da386439852abf59848f0345316\">Cystic fibrosis</li><li data-list-item-id=\"e0fbc02106004318cbdddb39c62795b0d\">Hypoventilation syndrome associated with obesity</li><li data-list-item-id=\"e5a6426684adf25231d092cc106c4aa7e\">Lung cancer</li><li data-list-item-id=\"e90fffd5604e4a95e903d0903266be426\">Alpha 1 anti-trypsin deficiency</li><li data-list-item-id=\"ead9b826e4f0566b2681fcb196bdb08b5\">Primary ciliary dyskinesia</li></ul></li><li data-list-item-id=\"ef1995d84beec24174ced377c0b781521\">Diagnosis of other respiratory disease known to affect eosinophil counts<ul><li data-list-item-id=\"ea33c97886c0841b38b9d267a508a092e\">ABPA/mycosis</li><li data-list-item-id=\"ef90d004c115c9c5755f4dc08d4428b54\">EGPA</li></ul></li><li data-list-item-id=\"ec8a1caefadc181d569be7ef9f2775c76\">Lung volume reduction surgery in the <strong>past 12 months</strong></li><li data-list-item-id=\"e7b6f77f73b9dda8b638af1eb670a42a6\">Bronchial thermoplasty in the <strong>past 12 months</strong></li><li data-list-item-id=\"e1b166c8999e377904c02df799f435334\">Receipt of endobronchial valves in the <strong>past 12 months</strong></li><li data-list-item-id=\"e822c7ef68d4780fce2011c314597852c\">Unstable neurological or psychiatric conditions that required hospitalisation or medical intervention in the <strong>past 2 years</strong>&nbsp;</li><li data-list-item-id=\"e9309b7541ce337fdb90ebaad33060f71\">Abnormal ECG reading, as determined by Investigator</li><li data-list-item-id=\"ef990a4f5c5e45816de6d2d083f5e4bfd\">Diagnosis of unstable heart or cardiovascular disease that isn't managed with treatment, e.g.<ul><li data-list-item-id=\"e07f29526cf03c6daee4235f60a2e6770\">Unstable ischemic heart disease</li><li data-list-item-id=\"e97fb3e00b20f2dd30132913aa06d5b57\">Arrhythmia</li><li data-list-item-id=\"ecd15cb43a763a365e2835c7a9ecf0ac9\">Cardiomyopathy</li><li data-list-item-id=\"ee89a62edc8fe4360e1e06b9dcc2dcebd\">Heart failure</li></ul></li><li data-list-item-id=\"ea6eb1c75030d7f1a91d451b19eb3b5b6\">Renal failure</li><li data-list-item-id=\"e958a87f95c650920476756410ea28947\">Uncontrolled hypertension</li><li data-list-item-id=\"e24326a683929adcb76d424fcbb661871\">COPD exacerbations requiring hospitalisation or treatment with corticosteroids or antibiotics in the <strong>past 30 days</strong></li><li data-list-item-id=\"ee5665da828671eb006ee74c2075952ce\">History of significant infections requiring antibiotics or antiviral medication in the <strong>past 2 weeks&nbsp;</strong></li><li data-list-item-id=\"eab55ea012c65817921b950a7a6a11dae\">History of allergies or adverse reactions to medications, as determined by Investigator</li><li data-list-item-id=\"e9c0ea321a027dc488c68c58723723af8\">History of anaphylaxis to biologic therapies, including but not limited to:<ul><li data-list-item-id=\"eb44af5dba4024b5dfa2e3d2b443f8091\">Adalimumab (Humira)</li><li data-list-item-id=\"e50519be7854c6f99d3ec5f4f0c1faabd\">Infliximab (Remicade)</li><li data-list-item-id=\"e9155bf01711fbcfa1fee5fa7363806fe\">Etanercept (Enbrel)</li><li data-list-item-id=\"e3df70279f7b5fb8db0c73ffbd6dbc924\">Ustekinumab (Stelara)</li></ul></li><li data-list-item-id=\"ec9fcc54097f3aa168adfa1c60fbd0b79\">Tattoos or skin conditions that cover the injection site</li><li data-list-item-id=\"e8d1695aa5ad6dcf48110833aec1e09ce\">Diagnosis of any untreated helminth parasitic infections in the <strong>past 6 months</strong>, including<ul><li data-list-item-id=\"eaf980821d901cfc714e73b2adc01db48\">Roundworms (nematodes)</li><li data-list-item-id=\"ebb191a9a5e2297aa7fd2b40951483ed2\">Flatworms (tapeworms (cestodes))</li></ul></li><li data-list-item-id=\"ef988df309f6a7946f51937f8a6b402f7\">Alcohol and drug abuse in the <strong>past 12 months</strong></li><li data-list-item-id=\"e502c6de46d012e61396d57d84a337856\">History of cancer in the <strong>past 2 years</strong></li><li data-list-item-id=\"e2e012262f9badb932fa183e5adb2dff7\">Active tuberculosis</li><li data-list-item-id=\"e5c454251b427c9e461ab2d690fce7543\">Latent tuberculosis left untreated</li><li data-list-item-id=\"e3d1c270567cd7010e1a8433a441d9830\">Major surgeries in the <strong>past 8 weeks</strong></li><li data-list-item-id=\"e6d45188dc8ee25900c63ea29810507a7\">Planned surgery that may require general anesthesia or an inpatient stay</li><li data-list-item-id=\"e456fe4e3f6d9aeb15eae222104d18062\">Receipt of immunoglobulins, blood or blood products in the <strong>past 30 days</strong></li><li data-list-item-id=\"e3f2d456682dbdf01c2eb0a04bb70277c\">Active liver disease<ul><li data-list-item-id=\"ed9bf952d2e50fe34bf950ec8ab72c8ff\">Jaundice</li><li data-list-item-id=\"e02a9395c444fcea9366d232985300a44\">Aspartate transaminase (AST)</li><li data-list-item-id=\"e11f0e060c1327a390e258cb9c4131b25\">Alanine transminase (ALT)</li><li data-list-item-id=\"e3b034e43dcb390ec4a2f764e15a22db2\">Alkaline phosphatase (ALP)</li></ul></li><li data-list-item-id=\"e1d0fd5baa091dc6894781842830c58de\">Immunodeficient disorder such as HIV</li><li data-list-item-id=\"ed7262a41f3b963704df048ba53fb0801\">History of hepatitis B or C&nbsp;</li><li data-list-item-id=\"ef928294a03a24355c0cfad8ba5eebab7\">Significant psychiatric disorders e.g. schizophrenia</li></ul><p>&nbsp;</p><p><span style=\"color:#ef5350;\"><strong>IF UNSURE, PLEASE RAISE MEDICAL QUERY!</strong></span></p>"
+            },
+            {
+              "type": "comment",
+              "name": "question82",
+              "title": "Additional Information",
+              "description": "Please use this to note down any useful additional information",
+              "hideNumber": false
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question83",
+          "title": "Please note that you'd be required to refrain from donating blood and plasma from the time of signing the consent form, and until at least 20 weeks after the last dose of the study drug. Is this okay?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - exclude 🚫"
+            }
+          ]
+        }
+      ],
+      "title": "Other Medical History"
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel27",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question87",
+              "hideNumber": false,
+              "html": "<p><strong>There is no contraceptive requirement for males.</strong></p>"
+            }
+          ],
+          "visibleIf": "{question2} = 'Item 2'"
+        },
+        {
+          "type": "panel",
+          "name": "panel28",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question86",
+              "title": "The next few questions will be regarding contraception. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question90",
+              "visibleIf": "{question86} = 'Item 1'",
+              "title": "Are you pregnant, breastfeeding or planning to become pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question96",
+              "visibleIf": "{question90} = 'Item 1'",
+              "title": "Are you able to fall pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No, postmenopausal for at least 12 months - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No, surgically sterile i.e. hysterectomy - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question99",
+              "visibleIf": "{question90} = 'Item 1'",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>Other forms of surgical sterilisation include:</strong></p><p>&nbsp;</p><ul><li data-list-item-id=\"ef0c4726143a68371d93d211f44d6b79f\">Bilateral oophorectomy</li><li data-list-item-id=\"e5565491c5ba2e80c6fb57b33141cc464\">Bilateral salpingectomy</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question97",
+              "visibleIf": "{question96} = 'Item 1'",
+              "title": "Do you engage in sexual activity with a partner of the opposite sex?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No, same sex relationship - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No, abstinent as a preferred lifestyle choice - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question98",
+              "visibleIf": "{question97} = 'Item 1'",
+              "title": "This study requires women of childbearing potential who are sexually active to use a highly effective method of contraception, from the time of enrolment until at least 90 days after the last dose of the study drug. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Vasectomised partner - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question100",
+              "visibleIf": "{question98} = 'Item 1'",
+              "title": "Can you please indicate which method of contraception you're currently using?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Oral contraceptive pill ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Implant contraceptive e.g. implanon ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Intrauterine device (IUD) e.g. Merina ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Injectable contraceptive e.g. Depo Provera shot ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Not on contraception - exclude 🚫"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{question2} = 'Item 3'"
+        }
+      ],
+      "title": "Contraception"
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question101",
+          "title": "Are you or any of your immediate family members an employee of Prana Therapeutics or Emeritus Research?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question49",
+          "title": "Have you received any investigational drugs from another clinical trial in the past 30 days?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - delay screening ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question102",
+          "title": "Please note that by booking in your appointment this does not guarantee your participation in the trial. Clinical trials can experience delays or cancellations due to various factors. We will aim to notify you 24 to 48 hours before your appointment if we need to cancel or reschedule, however there are chances of same day cancellations. Is this okay?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Details",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "PT Confirmation Questions",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Confirmation Info",
+              "hideNumber": false,
+              "html": "<p><span style=\"background-color:rgb(255,255,255);color:red;\"><strong>Thank you for your time today. Before I finalise your booking, I need to run you through some quick questions to confirm that I have explained the following to you. By answering yes to these questions, you acknowledge that I have explained these things to you in full and that if any information you have given is incomplete or inaccurate, this may affect both your eligibility and your reimbursement.</strong></span></p>"
+            },
+            {
+              "type": "checkbox",
+              "name": "Confirmation Checklist",
+              "title": "Can you please confirm the following?\n",
+              "description": "Participant must answer yes to all questions below prior to being booked in.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "I have explained the study medication/background to you"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "I have explained the study commitment and dates to you"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "You don't have any upcoming travel plans that will clash with the study dates"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "I have explained the reimbursement to you"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "You have answered the medical questions honestly and to the best of your ability"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "I have explained that by not disclosing medical information relevant to this study, that can have an impact on the reimbursement, which may include the site choosing not to reimburse you at all"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Please confirm you understand that you must read the consent form that will be sent to you prior to attending your visit. If you don’t your appointment may be delayed or rescheduled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel33",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question54",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:blue;font-size:20px;\"><u>Booking Instructions:</u></span></p><ul><li data-list-item-id=\"e6078306771a811be7117611a1f6cf455\"><span style=\"color:#000000;\"><strong>Calendar</strong></span> - 30 mins</li><li data-list-item-id=\"e40ccf55579a1c6aad93e749676e8d0d4\"><strong>Latest appointment time</strong> - 10:30AM<ul><li data-list-item-id=\"ecdfbb187ec6413beee1e27cd5d81ed75\"><strong>Exceed?</strong> - No 🛑</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(23,68%,46%);\" data-list-item-id=\"e45afd5e5f09b26ce9ad8f3df0c84675b\"><span style=\"color:hsl(23,68%,46%);\"><strong>No more overhang</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(290,68%,46%);\" data-list-item-id=\"e4a0bf0d1780ba504d3081f19f1f16401\"><p><span style=\"color:hsl(290,68%,46%);\"><strong>Special instructions</strong></span></p><p>- Book as pre-screening visit</p><p>- Max 1 at a time</p><p>- No overlap with PRA-216-101 bookings</p><p>- No overlap with 223977 visits</p></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"e2cf2377b0847df1b118bca74b433edc3\"><span style=\"color:#ffc107;\"><strong>Overall time for PT</strong></span><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e2bdca5d8e91a9ac7107be94ddd8a9639\"><span style=\"color:#000000;\">0.5-1h</span></li></ul></li></ul>"
+            }
+          ]
+        }
+      ],
+      "title": "Additional "
+    },
+    {
+      "name": "page6",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel29",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question104",
+              "title": "Before we wrap up, I’d like to share details about our referral program. If you refer someone to us you can receive up to $250 if they enrol and participate in the study. Would you like to hear more?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel30",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question103",
+              "visibleIf": "{question93} = 'Item 1'",
+              "hideNumber": false,
+              "html": "<p><strong>Great! Here's how it works:</strong></p><p>&nbsp;</p><p><strong>To refer someone, you will need to provide them with a unique referral ID. The person you refer will need to provide us this ID either when they sign up on our website, or when they speak to us over the phone. This ID is essential, as it ensures we can track and reimburse you for any referrals.</strong></p><p>&nbsp;</p><p><strong>For each person you refer who comes in for an in-person screening visit, you'll receive $50. If they go on to enrol and participate in the study, you'll earn an additional $200.</strong></p><p>&nbsp;</p><p><strong>There's no limit- you can refer as many people as you'd like, as long as you have an exisiting relationship with them. It's important to note that you cannot advertise for referrals. This program is based on personal connections, so please only refer people you know.</strong></p><p>&nbsp;</p><p><strong>If you're interested, we can set up your Unique Referral ID today if you would like</strong> <i>(the unique referral ID is REF[p number]. E.g., REFP14471)</i></p><p>&nbsp;</p><p><strong>Who do you know you might be interested in this trial?</strong> <i>(if they don't know anyone for this trial, they can also refer someone to any other trial)</i></p><p>&nbsp;</p><p><strong>Would you like us to send you an email that you can forward on to them?</strong></p>"
+            }
+          ],
+          "visibleIf": "{question104} = 'Item 1'"
+        }
+      ],
+      "title": "Referral Program"
+    }
+  ],
+  "version": "Version-1"
+}

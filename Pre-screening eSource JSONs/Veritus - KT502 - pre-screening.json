@@ -1,0 +1,1312 @@
+{
+  "title": "KT-502 Pre Screening Questionnaire",
+  "pages": [
+    {
+      "name": "page 1",
+      "elements": [
+        {
+          "type": "html",
+          "name": "question18",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:#ffc107;\"><strong>Opening:</strong></span></p><p>&nbsp;</p><p>The current study is testing a new potential medication for autoimmune diseases like rheumatoid arthritis (RA).</p><p>In RA, the immune system mistakenly attacks the body’s own joints, causing inflammation, pain, and joint damage. The study drug is designed to attach to specific immune cells that drive this inflammation. Once attached, it helps these cells interact with other parts of the immune system, which is intended to calm the overactive immune response.</p><p>This study is an early first-in-human trial, so the main goal is to assess the <strong>safety of the study drug and understand how it behaves in the body</strong>.</p>"
+        },
+        {
+          "type": "html",
+          "name": "question20",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:#FFC107;\"><strong>PART A – Single-Dose Group- Currently active</strong></span></p><p>&nbsp;</p><p><strong>Study Drug</strong></p><p>If you are eligible and decide to take part, you’ll receive <strong>one injection under the skin (subcutaneous) of the study drug on Day 1</strong>. There is no placebo in this study.</p><p><strong>Schedule</strong></p><p>&nbsp;</p><p>Overall, participation in this study lasts roughly <strong>3 to 4 months</strong>, though the exact schedule depends on your individual results and follow-up needs.</p><p>The study begins with a <strong>screening visit</strong>, during which various tests will be conducted to determine whether you can safely participate. These include blood tests, a chest x-ray, and a TB (tuberculosis) test.</p><p>If you meet the eligibility criteria, you will then come to the study site for your <strong>5 night stay</strong> where you will receive the dose of the study drug. Discharge happens quite late in the afternoon (~5PM).</p><p>The in-clinic stay would be within 28 days from your screening appointment. Can you please let us know your availability? The clinic can be flexible on the dates, it just needs to happen within a month from your initial appointment (the earlier the better).</p><p>&nbsp;</p><p>Following discharge, you will have <strong>regular follow-up visits (8 visits in total) over the next 12 weeks</strong>. These take place on Days 8, 11, 15, 22, 29, 43, 57 and 85, counting from your dose (Day 1).</p><p>&nbsp;</p><p>Some participants may be asked to attend <strong>additional follow-up visits for up to 48 weeks (around 11 months)</strong> after their dose if certain blood cell levels are still being monitored to ensure they return to the expected range.</p>"
+        },
+        {
+          "type": "html",
+          "name": "question21",
+          "visibleIf": "false",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:#4d4d4d;\"><strong>PART B – Two-Dose Group- Not active</strong></span></p><p><span style=\"color:#4d4d4d;\"><strong>Study Drug</strong></span></p><p><span style=\"color:#4d4d4d;\">If you are eligible and decide to take part, you’ll receive <strong>two injections under the skin (subcutaneous) of the study drug, given one week apart on Day 1 and Day 8</strong>. There is no placebo in this study.&nbsp;&nbsp;</span></p><p><span style=\"color:#4d4d4d;\">Following your second dose, you will have <strong>regular follow-up visits (7 visits in total) over the next 12 weeks</strong>. These take place on Days 11, 15, 22, 29, 43, 57 and 85, counting from your first dose (Day 1). (Day 8 is your second dosing visit.)</span></p><p><span style=\"color:#4d4d4d;\">Some participants may be asked to attend <strong>additional follow-up visits for up to 48 weeks (around 11 months)</strong> after their first dose if certain blood cell levels are still being monitored to ensure they return to the expected range.</span></p>"
+        },
+        {
+          "type": "html",
+          "name": "question22",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:#FFC107;\"><strong>Cohort Admission Dates</strong></span></p><p><span style=\"color:#FFC107;\"><strong>Part A:</strong></span> The 5-night stay will be <strong>flexible but within 28 days from screening</strong>. Please make sure participants have good availability for this as well as the following months. Any lengthy trip (2+ months) may need to be checked in the doctors chat first to make sure it doesn’t clash with the schedule!</p>"
+        },
+        {
+          "type": "html",
+          "name": "question31",
+          "visibleIf": "false",
+          "hideNumber": false,
+          "html": "<p><strong>Cohort Admission Dates</strong></p><p>&nbsp;</p><p><span style=\"color:#4d4d4d;\"><strong>Part B :</strong> Both in-clinic stays will be flexible but within 28 days from screening. Please make sure participants have good availability for this (including the second dose on Day 8) as well as the following months. Any lengthy trip (2+ months) may need to be checked in the doctors chat first to make sure it doesn’t clash with the schedule!</span></p>"
+        },
+        {
+          "type": "html",
+          "name": "question26",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:#ffc107;\"><strong>Reimbursement</strong></span></p><p>You will receive reimbursement for taking part in this study. <span>All medication, tests and medical care required as part of the study will be provided to you free of charge.</span></p><p>&nbsp;</p><p><span><strong>Reimbursement</strong></span></p><p><span>&nbsp;Reimbursement compensates for your time, travel expenses, parking and inconvenience.</span></p><p><span>•&nbsp;<strong>$300</strong> for the screening visit,</span></p><p><span>•&nbsp;<strong>$600 </strong>for each night you stay in the clinic,</span></p><p><span>•&nbsp;<strong>$300</strong> for each regular follow-up visit</span></p><p><span>• <strong>$300 </strong>for additional visit (for example, an X-ray), if required</span></p><p><br>You will also get a $500 retention bonus at the end of finishing the study.</p><p>&nbsp;</p><p><span>This would be a total of at least <strong>$6500</strong>, however this may increase depending on the study duration and your follow-up needs.</span></p><p>&nbsp;</p>"
+        },
+        {
+          "type": "html",
+          "name": "question32",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:#ffc107;\"><strong>Scheduling Information</strong></span></p><ul><li data-list-item-id=\"edd30532207993eb631160788bbfbc599\">Appointment length-90 minutes</li><li data-list-item-id=\"eb0c59f422114b4f844b19a7a1fe042a5\">Bed time : 2 hours</li><li data-list-item-id=\"e8ff46c2390c99d244aec15a4f8383420\">Latest appointment time-11:30am</li><li data-list-item-id=\"e88075fa59788b320710b854972386d32\"><p>Doctors to book with-Rebecca, Amir &amp; Ben ONLY</p><p><span style=\"color:red;\"><strong>DO NOT BOOK IN OVERFLOW</strong></span></p></li></ul>"
+        },
+        {
+          "type": "html",
+          "name": "question39",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:#ffc107;\"><strong>Additional Study Information</strong></span></p><ul><li data-list-item-id=\"ec917cd47b186ed0f49783108ef660f50\"><p><span>There are currently two RA studies recruiting at VR: <strong>KT501 and KT502</strong>.&nbsp;</span></p><p>&nbsp;</p></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e36ebd107cd0a01087e7228c0cf14927b\"><p><span><strong>Which study should you book the participant into?</strong></span></p><p>&nbsp;</p><p><span><strong>⚠️ Recruitment Update – KT501 / KT502</strong></span></p></li><li data-list-item-id=\"e2a711e95df9b8b96429356a3f272fb8f\"><p><span>KT501 is expected to dose its final participant on 18 November 2026. <strong>Please book all new eligible participants into KT502 moving forward (Regardless of sero-positivity status)</strong></span></p><p>&nbsp;</p></li></ul>"
+        },
+        {
+          "type": "text",
+          "name": "question38",
+          "hideNumber": false
+        }
+      ],
+      "title": "Study Notes"
+    },
+    {
+      "name": "page 2",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question3",
+          "title": "Are you located in Victoria?",
+          "description": "*potentially flag pts close to border/ case by case\n",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question19",
+          "title": "The clinic is Veritus Research, located in Bayswater, VIC. Would it feasible for you to travel there for your visits?",
+          "description": "Address is 885 Mountain Hwy, Bayswater. Secure on-site parking is available, with Bayswater station nearby (however 20min walk from station to clinic, please inform pt that driving is the best option).",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question48",
+          "title": "PART A:This study requires a 5 night in-clinic stay. Are you able to commit to this ?",
+          "description": "Part A = single 5-day stay (Day -1 to Day 5). \n",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please schedule a call back ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question55",
+          "title": "PART B :This study requires two separate in-clinic stays (around 3–4 days each, about a week apart). Are you able to commit to this?",
+          "description": " Part B = two stays (Day -1 to Day 3, and Day 7 to Day 10).\n",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude or schedule a call back based on availability ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question15",
+          "title": "After the in-clinic stay, there are 8 outpatient follow-up visits over approximately 12 weeks (around Day 11, 15, 22, 29, 43, 57 and 85). Are you able to commit to these visits?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question4",
+          "title": "What is your biological sex?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Male"
+            },
+            {
+              "value": "Item 2",
+              "text": "Female"
+            }
+          ]
+        },
+        {
+          "type": "dobandage",
+          "name": "What is your Date of Birth?",
+          "startWithNewLine": false,
+          "description": "Participants must be between 18 - 75 years old (inclusive).",
+          "showNumber": false
+        },
+        {
+          "type": "panel",
+          "name": "panel1",
+          "elements": [
+            {
+              "type": "bmi",
+              "name": "What is your height and weight?",
+              "description": "Participant BMI needs to be between 18 - 32 kg/m2.",
+              "showNumber": false,
+              "bmiRangeMin": 18,
+              "bmiRangeMax": 32
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question1",
+          "title": "A chest x-ray is part of the eligibility assessment. Are you comfortable proceeding if medically indicated? This will be at Lumus Imaging in Blackburn South and will only proceed once you have had blood results reviewed and confirmed suitable to continue to the chest x-ray.",
+          "description": "If a chest X-ray or CT scan of the chest has been obtained within the past 6 months and no clinically significant abnormality was observed and no new pulmonary signs or symptoms are exhibited, no chest X-ray is required.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question13",
+          "title": "Have you had a chest x-ray in the past 6 months?",
+          "description": "If they had a chest x-ray in the past 6 months, they most likely won't need one as part of the study.\n",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - continue to screen ✅"
+            }
+          ]
+        }
+      ],
+      "title": "Demographics/Availability"
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel2",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question24",
+              "title": "Do you have a diagnosis of Rheumatoid Arthritis?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question16",
+              "title": "Has your doctor ever confirmed that you are positive for either ACPA (anti-CCP / anti-cyclic citrullinated peptide antibody) or Rheumatoid Factor (RF)?",
+              "description": " If they are unsure, you can continue to screen. Tell participants they may have this on a recent rheumatology report. ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "",
+              "choices": [
+                {
+                  "value": "Item ",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2 ",
+                  "text": "Unsure-Please ask participants to check a recent rheumatology report prior to screening (ok to be assessed at screening)✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "panel18",
+              "elements": [
+                {
+                  "type": "comment",
+                  "name": "question2",
+                  "title": "When were you diagnosed with RA?",
+                  "description": "Participant must have received diagnosis more than 6 months ago",
+                  "hideNumber": false,
+                  "commentText": "Please note down when they were diagnosed"
+                },
+                {
+                  "type": "html",
+                  "name": "question35",
+                  "startWithNewLine": false,
+                  "hideNumber": false,
+                  "html": "<p><span style=\"color:green;\"><strong>Include</strong></span></p><p>&nbsp;</p><ul><li>diagnosis <strong>6+ months ago</strong></li><li>diagnosed <strong>after age 16</strong></li></ul><p>&nbsp;</p><p><span style=\"color:red;\"><strong>Exclude</strong></span></p><p>&nbsp;</p><ul><li><strong>anyone who was diagnosed with arthritis as a child</strong><span style=\"color:rgb(0,0,0);\">, before age 16, including juvenile idiopathic arthritis (JIA), juvenile rheumatoid arthritis (JRA), or rheumatoid arthritis that started in childhood.</span></li></ul>"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question33",
+              "title": "Do you have a rheumatologist or other doctor who manages your RA treatment outside of this study?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question34",
+          "title": "Do you currently have joint pain from your rheumatoid arthritis?",
+          "description": "If completely pain-free, please avoid booking/ raise medical query. Participants need multiple swollen/tender joints to be eligible. The clinic will check the exact number during their first visit to see if they meet the exact requirements.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude only if completely pain-free/ raise with doctor 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel14",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question23",
+              "startWithNewLine": false,
+              "title": "Have you tried at least ONE standard RA medications (conventional synthetic DMARDs/ csDMARDS), like methotrexate, sulfasalasine, or hydroxychloroquine) and found that they didn’t help enough or stopped working over time?",
+              "description": "If unsure, please post a doctor enquiry!",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes, tried at least One csDMARDs and both showed inadequate response over time - continue to screen ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Has never tried csDMARDs before - please exclude accordingly 🛑"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Has not tried at least one csDMARDs please exclude accordingly 🛑"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Has tried at least one csDMARDs but response to them were fine - please check with doctor ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question25",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>What counts as a conventional synthetic DMARD (csDMARD) for this criterion:</strong></span></p><p>&nbsp;</p><ul><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:green;\" data-list-item-id=\"e920ee30e2b2d393740334fc4a2d0f256\"><span style=\"color:green;\"><strong>Methotrexate</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:green;\" data-list-item-id=\"e1cbf90fe47b1177ddfd5e86c98134006\"><span style=\"color:green;\"><strong>Sulfasalazine (Salazopyrin)</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:green;\" data-list-item-id=\"e1e7d2d19a359c3029240c72d2e45ee91\"><span style=\"color:green;\"><strong>Hydroxychloroquine (Plaquenil)</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:green;\" data-list-item-id=\"e7848ed8c19eb2a0b655bb20a98a4cd85\"><span style=\"color:green;\"><strong>Leflunomide (Arava)</strong></span></li><li data-list-item-id=\"ed943b1ed7c2d996444027290dbd4155b\"><p><span style=\"color:green;\"><strong>Azathioprine (Imuran)</strong></span> (sometimes used in RA)</p><p>&nbsp;</p></li></ul><p><span style=\"color:red;\"><strong>What does NOT count for csDMARD:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"e5b82340563135ef922bea7ae1c9633ab\"><span style=\"color:red;\">Biologic DMARDs</span> (e.g., etanercept [Enbrel, Brenzys], adalimumab [Humira, Amgevita, Hadlima, Hyrimoz, Idacio], infliximab [Remicade, Inflectra, Renflexis], rituximab [Mabthera, Mabthera SC, Riximyo, Truxima], abatacept [Orencia, Orencia ClickJect])</li><li data-list-item-id=\"e5586c21e1fffbfc970b71bf4fc8c574a\"><p><span style=\"color:red;\">Targeted synthetic DMARDs</span> (e.g., tofacitinib [Xeljanz], baricitinib [Olumiant], upadacitinib [Rinvoq])</p><p>&nbsp;</p></li></ul><p><strong>Tip for recruiters:</strong> To meet this criterion, the participant <span style=\"color:green;\"><strong>must have had an inadequate response to at least ONE <u>conventional</u> synthetic DMARDs (csDMARDs)</strong>.</span><br>&nbsp;</p><p><span style=\"color:blue;\">Prior inadequate response to <strong>biologics and/or <u>targeted</u> synthetic therapies</strong> (e.g., Humira) is <strong>acceptable.</strong></span></p><p>&nbsp;</p><p><strong>Examples of prior inadequate response (pt did not tolerate/ had an inadequate response to all below):</strong><br>• Methotrexate &nbsp;→ <span style=\"color:green;\"><strong>Eligible</strong></span><br>• Methotrexate + Sulfasalsine→ <span style=\"color:green;\"><strong>Eligible</strong></span></p><p>• Methotrexate + luflunomide + Humira→ <span style=\"color:green;\"><strong>Eligible&nbsp;</strong></span><br>&nbsp;• &nbsp;Humira + another biologic (no csDMARDs)→ <span style=\"color:red;\"><strong>Not Eligible</strong></span><br>&nbsp;</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question30",
+              "title": "Have you had any dose changes to your RA medication in the past 8 weeks?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No-continue screening✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes-please delay screening until dose has been stable ⚠️"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel9",
+          "elements": [
+            {
+              "type": "panel",
+              "name": "panel20",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "question28",
+                  "startWithNewLine": false,
+                  "title": "Have you ever been diagnosed with any other rheumatic or autoimmune condition besides rheumatoid arthritis, such as lupus, scleroderma, mixed connective tissue disease, polymyositis, or serious complications from RA like vasculitis or lung problems?",
+                  "description": "Send through a doctor enquiry if unsure on specific condition.",
+                  "hideNumber": false,
+                  "showCommentArea": true,
+                  "commentText": "Comments",
+                  "choices": [
+                    {
+                      "value": "Item 1",
+                      "text": "No - continue screening ✅"
+                    },
+                    {
+                      "value": "Item 2",
+                      "text": "Yes - please exclude 🛑"
+                    }
+                  ]
+                },
+                {
+                  "type": "html",
+                  "name": "question29",
+                  "startWithNewLine": false,
+                  "hideNumber": false,
+                  "html": "<p><span style=\"color:#d32f2f;font-family:'Trebuchet MS', Helvetica, sans-serif;\"><strong>Please exclude</strong></span></p><p>&nbsp;</p><ul><li><strong>any rheumatic autoimmune disease other than RA</strong>, including:<ul><li>SLE, Mixed Connective Tissue Disease (MCTD), scleroderma, polymyositis, or significant systemic involvement secondary to RA (e.g., vasculitis, pulmonary fibrosis or Felty’s syndrome)</li></ul></li></ul><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Secondary Sjögren’s syndrome with RA is allowed!</strong></span></p>"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "panel19",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "question36",
+                  "title": "Have you been diagnosed by your doctor as having another INFLAMMATORY joint disease other than RA?",
+                  "hideNumber": false,
+                  "showCommentArea": true,
+                  "commentText": "Comments",
+                  "choices": [
+                    {
+                      "value": "Item 1",
+                      "text": "No - continue screening ✅"
+                    },
+                    {
+                      "value": "Item 2",
+                      "text": "Yes - please exclude another inflammatory joint disease 🛑"
+                    }
+                  ]
+                },
+                {
+                  "type": "html",
+                  "name": "question37",
+                  "startWithNewLine": false,
+                  "hideNumber": false,
+                  "html": "<p><span style=\"color:#d32f2f;font-family:'Trebuchet MS', Helvetica, sans-serif;\"><strong>Please exclude</strong></span></p><p>&nbsp;</p><ul><li><strong>INFLAMMATORY</strong> joint diseases such as<ul><li><p><span style=\"color:red;\">ankylosing spondylitis, psoriatic arthritis, gout</span></p><p>&nbsp;</p></li></ul></li><li><span style=\"color:red;\">DEGENERATIVE</span> joint diseases are <span style=\"color:red;\">ok</span> - this includes osteoarthritis</li></ul><p>&nbsp;</p><p>There is a difference between<span style=\"color:red;\"><strong> inflammatory joint disease and degenerative joint disease</strong></span></p><ul><li>inflammatory joint disease are often autoimmune or infectious in nature, while degenerative disease are due to mechanical stress and wear and tear on joints over time</li></ul>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel4",
+          "elements": [
+            {
+              "type": "comment",
+              "name": "question5",
+              "title": "What is your current treatment plan for your RA?",
+              "description": "\n",
+              "hideNumber": false
+            },
+            {
+              "type": "html",
+              "name": "question6",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong><u>Required</u> medication for their RA</strong></span></p><p><span style=\"color:green;\"><strong>(the below is <u>required</u> to be eligible)</strong></span></p><p>Participants<span style=\"color:#000000;\"> <strong>MUST be using at least one conventional synthetic DMARD</strong></span> at a stable dose for at least 8 weeks prior to baseline and throughout the study</p><p>&nbsp;</p><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:green;\" data-list-item-id=\"edd0a419f10619e79eff909ec484b0ca6\"><span style=\"color:green;\">azathioprine (Imuran)</span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:green;\" data-list-item-id=\"ea0cff30ac7a5deb9376653a61ede3976\"><span style=\"color:green;\">chloroquine (Chlorquin)</span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:green;\" data-list-item-id=\"e7a67905532ac3638a9fe3baccd027aca\"><span style=\"color:green;\">hydroxychloroquine (plaquenil)</span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:green;\" data-list-item-id=\"eefa7860af8d63afcad486441d5ad5324\"><span style=\"color:green;\">leflunomide (Arava)</span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:green;\" data-list-item-id=\"e00fb76770af638f388562311da22e4a6\"><span style=\"color:green;\">methotrexate</span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:green;\" data-list-item-id=\"ee19029ec5aeede4256aacd35f610dfd7\"><span style=\"color:green;\">sulfasalazine (Salazopyrin)</span></li></ul><p>&nbsp;</p><p>The above can be used <strong>alone or in combination</strong>.</p><p><span style=\"color:hsl(310,100%,50%);\"><strong>HOWEVER, please note that the combination of methotrexate and leflunomide is not allowed!</strong></span></p><p>&nbsp;</p><p><span style=\"color:green;\"><strong><u>Allowed</u> medication for their RA</strong></span></p><p><span style=\"color:green;\"><strong>(the below <u>can</u> be used by participant)</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ed7c5f3f183af317794858a8cdb44d534\"><p><strong>Oral corticosteroids</strong> (if less than 10 mg/day <span style=\"color:green;\">prednisone</span> or equivalent) prednisone/prednisolone brands in Australia include Panafcort, Predsolone, Predsone, Solone, Sone</p><p>&nbsp;</p></li><li data-list-item-id=\"e218264346bd42aa692cdc187fb7d12c3\"><strong>Nonsteroidal anti-inflammatory drugs</strong> (NSAIDs - such as <span style=\"color:green;\">ibuprofen [Nurofen, Brufen], meloxicam [Mobic, Moxicam]</span> etc; up to the maximum recommended dose) are permitted if on a stable dose regimen for <strong>≥4 weeks</strong> prior to baseline</li></ul><p>&nbsp;</p><p><span style=\"color:red;\"><strong>Medication for their RA that are NOT allowed during the study</strong></span></p><p><span style=\"color:red;\"><strong>(usage of the below <u>excludes</u> participant - some of them CAN however wash out of the medication according to the below time-frame and be considered for the study)</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ebf6af64ad500c941292829c5bfbf3cd9\"><p><strong>blinatumomab</strong> (Blincyto), <strong>obinutuzumab</strong> (Gazyva), <strong>ocrelizumab</strong> (Ocrevus), <strong>rituximab</strong> (Mabthera, Riximyo, Truxima), or <strong>ofatumumab</strong> (Arzerra for CLL indication; Kesimpta for the MS indication — same molecule, different registered brand and dose form) (any use in the past 12 months is also excluded)</p><p>&nbsp;</p></li><li data-list-item-id=\"e1b7d560f16cb4ff689a1f27f7c8255d7\"><p><strong>Treatment with anti-TNFs</strong> (e.g., <strong>infliximab</strong> [Remicade, Inflectra, Renflexis], <strong>certolizumab</strong> [Cimzia], <strong>golimumab</strong> [Simponi, Simponi IV], <strong>adalimumab</strong> [Humira, Amgevita, Hadlima, Hyrimoz, Idacio]), IL-6 inhibitors (e.g., <strong>tocilizumab</strong> [Actemra, Actemra SC], <strong>sarilumab</strong> [Kevzara]), <strong>etanercept</strong> (Enbrel, Brenzys), or <strong>abatacept</strong> (Orencia, Orencia ClickJect) &lt;8 weeks</p><p>&nbsp;</p></li><li data-list-item-id=\"eb9be09bc935d57883a0e45cd51db1dfe\"><p><strong>Inhibitors of JAK</strong>, Bruton tyrosine kinase, or tyrosine kinase 2, including <strong>baricitinib</strong> (Olumiant), <strong>tofacitinib</strong> (Xeljanz), <strong>upadacitinib</strong> (Rinvoq), <strong>filgotinib</strong> (Jyseleca), <strong>ibrutinib</strong> (Imbruvica), or <strong>fenebrutinib</strong> (investigational, no registered brand) or any investigational agent; current use or any use within 30 days</p><p>&nbsp;</p></li><li data-list-item-id=\"e22c834b76f31c993b6f6f9482f2b5909\"><p><strong>Tacrolimus</strong> (Prograf), <strong>cyclosporin/ciclosporin</strong> (Neoral, Sandimmun), or <strong>voclosporin</strong> (Lupkynis); current use or any use within 30 days</p><p>&nbsp;</p></li><li data-list-item-id=\"e58e2b3bd6d3ae814a7c0febb2442c9d6\"><p><strong>Cyclophosphamide</strong> (Cycloblastin, Endoxan) or a biologic therapy such as, but not limited to, <strong>belimumab</strong> (Benlysta), <strong>ustekinumab</strong> (Stelara), <strong>anifrolumab</strong> (Saphnelo), or <strong>secukinumab</strong> (Cosentyx), or <strong>atacicept</strong> (investigational, no registered brand); current use or any use within the past 2 months</p><p>&nbsp;</p></li><li data-list-item-id=\"ef5f1687cf82a4537967aa7ae133e5dc3\"><p>steroid injection into a joint, muscle, or vein in the past 4 weeks</p><p>&nbsp;</p></li><li data-list-item-id=\"e81e506cce587051652406e4473055051\">previous treatment with alkylating agents such as chlorambucil (Leukeran), or with total lymphoid irradiation</li></ul><p>&nbsp;</p><blockquote><p><span><strong>⚠️ IMPORTANT – MEDICATION REVIEW REQUIRED</strong></span></p><p><span><strong>Participants currently taking any of the exclusionary medications listed above may still be considered for the study if they wish to discuss their potential eligibility with the study doctor.</strong></span></p><p><span><strong>Before booking:</strong></span></p><p>&nbsp;</p><ol><li class=\"ck-list-marker-bold\" data-list-item-id=\"ef0b9e81a0cbc2ac78097282955e3acba\"><span><strong>Send the participant's details to TST (Laura).</strong></span></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e27661aa171b6aaa6bbd4283e2fcf084a\"><span><strong>The study doctor will contact the participant to discuss their current treatment plan and liaise with their rheumatologist.</strong></span></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"eb573de1c9a7abd9ec04c3c8c44cba15b\"><p><span><strong>Await confirmation from TST before proceeding with a booking.</strong></span></p><p>&nbsp;</p></li></ol><p><span><strong>DO NOT BOOK THE PARTICIPANT until this process has been completed and clearance to proceed has been provided.</strong></span></p><p>&nbsp;</p><p><strong>Please explain that if they are found to be eligible for the study, they will need to stop (wash out of) their current medication for approximately 8 weeks before starting the study medication.</strong></p><p><strong>✅ ONLY BOOK a screening visit if TST gives you go go ahead after speaking to the study doctor.</strong></p><p>&nbsp;</p><p>&nbsp;</p></blockquote>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel6",
+          "elements": [
+            {
+              "type": "comment",
+              "name": "question10",
+              "title": "Are you taking any other medication or over-the-counter drugs?",
+              "hideNumber": false
+            },
+            {
+              "type": "html",
+              "name": "question53",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Please exclude</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ee833159dba3d64b22e1738600fc18d20\">insulin</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question17",
+              "title": "If you are taking oral steroids (e.g. prednisone) or anti-inflammatories (e.g. ibuprofen, meloxicam) for your RA, have you been on the same dose for at least the past 4 weeks?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "not on steroids or NSAIDs – continue to screen✅"
+                },
+                {
+                  "value": "Item 2 ",
+                  "text": "stable dose for ≥ 4 weeks – continue to screen ✅"
+                },
+                {
+                  "value": "Item 3 ",
+                  "text": "Steroid dose > 10 mg/day prednisone equivalent – please exclude❌"
+                },
+                {
+                  "value": "Item 4 ",
+                  "text": "Recently changed dose – please schedule a call back when stable for 4 weeks⚠️"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question46",
+          "title": "Are you currently able to carry out most or all of your usual daily activities (looking after yourself, working, hobbies), or are you largely unable to look after yourself / mostly confined to a bed or wheelchair?",
+          "hideNumber": false,
+          "choices": [
+            {
+              "value": "Item 1 ",
+              "text": "Able to manage most/all daily activties- continue to screen✅"
+            },
+            {
+              "value": "Item 2 ",
+              "text": "Largely unable to perform self-care / mostly bed or wheelchair-bound  – please exclude❌"
+            }
+          ]
+        }
+      ],
+      "title": "Rheumatoid Arthritis Medical History"
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel10",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question57",
+              "title": "Do you now have, or have you ever had, any of the following serious health conditions?\n\nExclude if the participant reports any of the following (check with doctor if unsure):\n\n•\tAn organ transplant, or a bone-marrow / stem-cell (allogeneic haematopoietic) transplant\n•\tA serious brain or nervous-system problem - e.g. seizures, or episodes of confusion, disorientation, difficulty speaking, or loss of balance\n•\tProgressive multifocal leukoencephalopathy (PML), a rare brain infection - any history is exclusionary\n•\tA serious or poorly controlled heart, lung, kidney, liver, hormone (endocrine), or digestive condition \n•\tLong-term lung disease such as COPD (obstructive pulmonary disease)\n•\tPoorly controlled diabetes\n•\tA weakened immune system / immunodeficiency (e.g. a condition present from birth)\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question58",
+              "title": "Have you had any of the following infection-related problems?\r\nExclude if the participant reports any of the following(check with doctor if unsure):\n\r\n•\tAn ongoing (chronic active) Epstein-Barr virus (EBV) or cytomegalovirus (CMV) infection - exclude\r\n•\tAny current active infection - Delay screening appointment (write down details below)\r\n•\tTuberculosis (TB) - exclude, EXCEPT latent TB is OK if documented anti-TB treatment was completed\r\n•\tA history of repeated or long-lasting (recurrent / chronic) infections - exclude\r\n•\tHIV, hepatitis B, or hepatitis C - exclude\r\n\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "",
+              "choices": [
+                {
+                  "value": "Item ",
+                  "text": "No- continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question61",
+              "title": "In the last 8 weeks, have you had a serious infection that needed a hospital stay or antibiotics through a drip (IV)? \n",
+              "description": "Any hospitalisation or treatment with IV antibiotics in the past 8 weeks is exclusionary . ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please delay screening appointment ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question56",
+              "title": "Have you taken any antibiotic tablets in the last 2 weeks?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please delay screening appointment ⚠️"
+                },
+                "Item 3"
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question59",
+              "title": "Have you ever had a severe, widespread, or multi-area case of shingles, or a chickenpox-like rash as an adult?\n",
+              "description": "Severe / multi-dermatomal shingles or disseminated zoster are exclusionary. A typical single-area episode of shingles in the past is generally OK - please flag with doctor if unsure.",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes-single- area shingles episode, please flag with doctor ⚠️"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes-severe, multi-area, or disseminiated zoster-please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question12",
+              "title": "Do you have a history of cancer?",
+              "description": "Any cancer in the last 5 years is excluded. Breast cancer specifically is excluded in the past 10 years. Exceptions include BCC/SCC/carcinoma in situ of the cervix uteri that has been excised/cured.\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude according to criteria above ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question60",
+              "title": "Do you have any history of bowel inflammation - such as diverticulitis, diverticulosis that needed antibiotics, or ulcerative colitis?",
+              "description": "Please flag participants with Crohn's disease with study doctor prior to booking",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question62",
+              "title": "Have any of the following blood, clotting, or blood-treatment situations applied to you?\nPlease detail in box below (check with doctor if unsure)\n\r\n•\tA condition that puts you at high risk of bleeding, or ever needing plasma exchange, IV immunoglobulin (IVIG), or emergency blood transfusions for a bleeding or immune condition - exclude\r\n•IVIG or plasmapheresis (plasma exchange) in the past 6 months - exclude / schedule a call back\r\n•\tSevere immune-related clotting problem - exclude \n\r\n",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question63",
+              "title": "Have you donated blood or plasma within the past 1 month, or recieved a blood transfusion within the past year ?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question64",
+              "title": "Have you had any surgery recently, or do you have any surgery or dental work (including deep cleanings) planned or coming up?",
+              "description": "Delay if major surgery (including joint surgery) within 8 weeks before screening, or planned major surgery within 6 months after study Day 1 - if minor surgery, check with doctor. For upcoming dental work (including deep cleanings), delay screening until 4 weeks after the procedure ",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question65",
+              "title": "Do you have any tattoos, scars, recent sunburn, open sores, or skin conditions on your upper arms or lower abdomen (below the belly button)?",
+              "description": "Because the study drug is given as a subcutaneous injection in these areas, we need clear, healthy skin so injection-site reactions can be properly monitored. If the pt has tattoos or extensive skin changes specifically in these areas, please flag with doctor.",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes- minor (small tattoo, old scar)- continue to screen ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes-significant (extensive tattoos. active skin conditions, open sores, or recernt sunburn covering both arms or the abodomen)- please flag with study doctor ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question67",
+              "title": "Have you received any vaccines within the last month?",
+              "description": "Please exclude if they have received a LIVE or live-attenuated vaccine 1 month prior to screening.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - if LIVE vaccine please delay appointment/ schedule a call back ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question66",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Participants cannot have received a <span style=\"color:red;\"><strong>live vaccine</strong></span> within 28 days prior to screening and for the duration of the study (or at least 6 months after receiving the study drug!)</p><p>&nbsp;</p><p><span style=\"color:red;\"><strong>Examples of live vaccines in Australia:</strong></span></p><ul><li data-list-item-id=\"ef3c59859265b30f1a908582eb9c5af8c\">measles-mumps-rubella (MMR) vaccine</li><li data-list-item-id=\"e7488a833ad492d7f960a7f7dda914e80\">varicella (chickenpox) vaccine</li><li data-list-item-id=\"e0a8d75868425c6221fa5e8c2b85403a1\">herpes zoster (shingles) vaccine</li><li data-list-item-id=\"ed628d979ae96c4d4e5ac485364aed971\">yellow fever vaccine</li><li data-list-item-id=\"ed79b3d7c2461d9caca3e4ca9a9532b7d\">rotavirus vaccine</li><li data-list-item-id=\"ec54224ed292ab5fad58fb4058bc0fb0e\">BCG vaccine</li><li data-list-item-id=\"ea674a729cc830bfcf57d5db7080d8e0f\">Japanese encephalitis vaccine (Imojev only)</li><li data-list-item-id=\"ea51947476c1fa5f4c11e6ded3be8cb3b\">oral typhoid vaccine</li></ul><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Non-live vaccines are permitted! They can be received anytime.</strong></span></p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Examples of non-live vaccines:</strong></span></p><ul><li data-list-item-id=\"e5ec0966f425aef39c4738093e3789299\">HPV vaccine</li><li data-list-item-id=\"eccf853d4cbbc2eaada8b1bd70957bf34\">influenza (flu) vaccine</li><li data-list-item-id=\"ea4fd12d896024f9d9272ce06fd510dba\">COVID-19 vaccines</li><li data-list-item-id=\"efa7a014dec462008ad50842cec7390e5\">pneumoccal vaccine</li><li data-list-item-id=\"e9cc014fb3789a23003c8635f993fb19e\">etc.</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question68",
+              "title": "Have you ever had a severe allergy or anaphylactic (life-threatening) reaction to monoclonal antibody medicines?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "title": "General Medical History"
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "yes no female",
+          "title": "The next few questions will be surrounding the contraceptive requirement for this study. Is this something you're comfortable with?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel3",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Are you able to become pregnant?",
+              "title": "Are you able to become pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Do you engage in sexual relations with the opposite sex?",
+              "visibleIf": "{Are you able to become pregnant?} = 'Item 1'",
+              "title": "Do you engage in sexual relations with the opposite sex?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - same sex relationship, continue to screen ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No - true abstinence as a lifestyle choice, continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question 11Are you currently breastfeeding, pregnant or planning to become pregnant?",
+              "visibleIf": "{Do you engage in sexual relations with the opposite sex?} = 'Item 1'",
+              "title": "Are you currently breastfeeding, pregnant or planning to become pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "contra req female",
+              "visibleIf": "{Do you engage in sexual relations with the opposite sex?} = 'Item 1'",
+              "title": "For women who can become pregnant, this study has a contraceptive requirement. This involves female participants to use a highly effective form of contraception (i.e. pill, implant, IUD, vasectomised partner etc.) AS WELL AS any male partner to use a condom for the duration of the study and for at least 100 days after the last study dose. Are you currently using a highly effective form of contraception ?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "contra method female",
+              "visibleIf": "{contra req female} = 'Item 1'",
+              "title": "Can you please indicate what method of contraception you're currently using?",
+              "description": "Participants must be on a highly effective method of contraception from signing consent AND for 6 months after the last dose of the study drug.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Implant contraceptive (e.g. Jadelle) ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Intrauterine device/system (IUD/IUS) containing either copper or levonorgestrel (e.g. Mirena)"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Injectable contraceptive (e.g. Depo Provera shot) ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Oral contraceptive pill ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Vasectomised partner (at least 90 days ago) ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "None of the above - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "cannot become preg",
+              "visibleIf": "{Are you able to become pregnant?} = 'Item 2'",
+              "title": "For women who CANNOT become pregnant, they may be either surgically sterile, or post-menopausal for at least 12 months. Are either of these the case for you?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Surgically sterile (i.e. hysterectomy) - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Post-menopausal for at least 12 months - continue to screen ✅"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{question4} = 'Item 2'",
+          "title": "Female contraception"
+        },
+        {
+          "type": "panel",
+          "name": "panel5",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Are you still able to have children? male",
+              "title": "Are you still able to have children?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "nitem 2",
+                  "text": "No - surgically sterile (i.e. vasectomy), continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Do you currently engage in sexual relations with the opposite sex? male",
+              "visibleIf": "{Are you still able to have children? male} = 'Item 1'",
+              "title": "Do you currently engage in sexual relations with the opposite sex?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - same sex relationship, continue to screen ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No - true abstinence as a lifestyle choice, continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Do you currently have a female partner who can fall pregnant?",
+              "visibleIf": "{Do you currently engage in sexual relations with the opposite sex? male} = 'Item 1'",
+              "title": "Do you currently have a female partner who can fall pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "contra req male 2",
+              "visibleIf": "{Do you currently have a female partner who can fall pregnant?} = 'Item 2' or {Do you currently engage in sexual relations with the opposite sex? male} = 'Item 2'",
+              "title": "For males, this study has a contraception requirement. This involves male participants to use a condom throughout the duration of the trial when engaging in sexual relations with the opposite sex. This is to ensure the safety of the participant's sexual partner and avoid the potential transmission of the study drug. Is this OK with you?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "contra req male",
+              "visibleIf": "{Do you currently have a female partner who can fall pregnant?} = 'Item 1'",
+              "title": "For males, this study has a contraception requirement. This involves male participants to use a condom throughout the duration of the trial AS WELL AS any female partner to also be on a highly effective method of contraception (i.e. pill, IUD, implant etc.). This is to ensure the safety of the participant's sexual partner and avoid the potential transmission of the study drug. Is this the case for you?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "contra method male",
+              "visibleIf": "{contra req male} = 'Item 1'",
+              "title": "Can you please indicate what method of contraception your partner is currently using?",
+              "description": "Participant's partner must be on a highly effective method of contraception from signing consent AND for 9 months after the last dose of the study drug.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Implant contraceptive (e.g. Jadelle) ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Intrauterine device/system (IUD/IUS) containing either copper or levonorgestrel (e.g. Mirena) ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Injectable contraceptive (e.g. Depo Provera shot) ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Oral contraceptive pill ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Vasectomised partner (at least 90 days ago) ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "None of the above - please exclude 🛑"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{question4} = 'Item 1'",
+          "title": "Male Contraception"
+        }
+      ],
+      "title": "Contraception Criteria"
+    },
+    {
+      "name": "page",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel12",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question42",
+              "title": "Do you have any history of severe allergies or anaphylactic reaction(s) to monoclonal antibodies?",
+              "description": "Please refer to the right when determining eligibility for this question.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude accordingly ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question43",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#d32f2f;font-family:'Trebuchet MS', Helvetica, sans-serif;\"><strong>Please exclude the following:</strong></span></p><p>&nbsp;</p><ul><li>any allergy/ anaphylactic reaction to<ul><li>human/ humanised or murine monoclonal antibodies</li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><ul><li>please check with doctor regarding any other severe allergies/ anaphylactic reactions to anything</li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question49",
+          "title": "You would be asked to avoid strenuous exercise (e.g. heavy weight training, intense cardio, marathon training) from screening until the end of your study visits. Are you ok with this?\n",
+          "description": "Normal everyday activity, walking, light gym etc. is fine. Strenuous exercise can affect some of the safety blood tests.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude ❌ "
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question45",
+          "title": "Do you have any history of alcohol or drug abuse/addiction?",
+          "description": "Please check with doctor if within the last 12 months.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please check with doctor if within past 12 months ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel21",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question50",
+              "startWithNewLine": false,
+              "title": "Have you used any recreational drugs recently?",
+              "description": "Drug test needs to be negative at screening. Please flag with doctor.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude or delay appointment ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question11",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>Urine samples will be collected for drugs of abuse screening for the following drugs:</strong></p><p>&nbsp;</p><p><span>• </span>Amphetamines</p><p><span>• </span>Barbiturates</p><p><span>• </span>Benzodiazepines</p><p><span>• </span>Cocaine</p><p><span>• </span>Methadone</p><p><span>• </span>Methamphetamines</p><p><span>• </span>Methylenedioxymethamphetamine</p><p><span>• </span>Opiates</p><p><span>• </span>Phencyclidine</p><p><span>• </span>Tetrahydrocannabinol</p><p><span>• </span>Tricyclic antidepressants</p><p>&nbsp;</p><p><strong>An alcohol breath test will also be performed.</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question51",
+          "title": "There will be a urine drug test and alcohol breath test at the screening that must test negative. Is this OK with you?",
+          "description": "Poppy seeds may result in a false-positive drug test. Please advise participants that it is best to abstain from consuming products with poppy seeds (e.g., bagels/ cake) for approx 72 hrs prior to screening to avoid this.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question8",
+          "title": "You would have to abstain from caffeine/xanthene products (e.g., coffee, tea, chocolate, caffeine-containing sodas), as well as alcohol for 24 hrs prior to your in-clinic stay, as well as throughout the stay (about 5 days). Is that ok with you?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question7",
+          "title": "Are you currently taking part in another clinical trial or have taken part in another trial in the past 6 months",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please flag with study team ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question14",
+          "title": "Do you have any holidays that may interfere with the study?",
+          "description": "Please note down holidays and check with the team.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please note down dates and check with the team ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question9",
+          "title": "Thank you for answering the questions. It looks like you may be eligible to participate in this study. I can now look at booking you a screening appointment to meet with one of the doctors to determine your in-person eligibility. Please note that by booking in your screening appointment, this does not guarantee your participation in the trial, is this ok?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1 ",
+              "text": "Yes - continue to book ✅"
+            },
+            {
+              "value": "Item 2 ",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "question27",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:red;\"><strong>Recruiter note: You can now book any day with any doctor.&nbsp;</strong></span></p><p>&nbsp;</p><p><span style=\"color:red;\"><strong>Let TST know when a booking has been made.</strong></span></p>"
+        }
+      ],
+      "title": "Additional Questions"
+    }
+  ],
+  "version": "Version-1"
+}

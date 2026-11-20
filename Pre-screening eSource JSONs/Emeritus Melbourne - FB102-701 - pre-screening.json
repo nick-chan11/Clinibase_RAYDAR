@@ -1,0 +1,1247 @@
+{
+  "title": "FB102-701 Pre-Screening Questions",
+  "pages": [
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel8",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question66",
+              "hideNumber": false,
+              "html": "<p><strong>Protocol</strong>: FB102-701</p><p><strong>Phase</strong>: 1b</p>"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "question8",
+          "hideNumber": false,
+          "html": "<p><span><strong>Opening</strong></span></p><p><span>This study is testing a new treatment for Alopecia areata. Alopecia areata is an autoimmune condition that affects millions of people worldwide. Currently, there are limited treatment options available.</span></p><p><span>Alopecia areata is characterised by patchy hair loss on the scalp and happens when the immune system mistakenly attacks the hair follicles leading to hair loss. This usually happens when the hair follicles lose their natural immune protection, often triggered by stress, infection, or other factors.&nbsp;</span></p>"
+        },
+        {
+          "type": "html",
+          "name": "question9",
+          "hideNumber": false,
+          "html": "<p><span><strong>Study Drug</strong></span></p><p><span>This clinical trial is testing a new medicine, which is a type of antibody therapy. Normally, antibodies are made by the immune system to fight infections, but the study medication is made in a laboratory to target a specific part of the immune system response involved in alopecia areata.&nbsp;</span></p><p><span>The aim of the study medication is to block these proteins from activating the immune cells that attack hair, while still allowing the rest of your immune system to function normally.</span></p><p><span>The study drug will be given through an Intravenous infusion — similar to how fluids or medications are administered via a drip in a hospital setting.</span></p><p>&nbsp;</p><p><span>All participants in this study will receive either the study medication or placebo (a medication with no active ingredients). You will be assigned randomly (by chance) to receive either study medication or placebo. You will have a 3 in 4 chance of receiving the study medication and a 1 in 4 chance of receiving placebo. You cannot choose which study treatment you receive.</span></p>"
+        },
+        {
+          "type": "panel",
+          "name": "panel1",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question11",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#000000;\"><span><strong>Study Design and Schedule&nbsp;</strong></span></span></p><p><span style=\"color:#000000;\"><span>The study will last for approximately 8 months and involves 13 clinic visits in total.</span></span></p><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"ea03cdf19d144a0e993bd3b9348198791\"><span style=\"color:#000000;\"><span>Your first visit will be a screening appointment, where the study team will assess your condition, review your medical history, and carry out safety tests (like bloodwork) to confirm your eligibility. This will be approximately 2-2.5 hours.</span></span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e3b9de46546acd05c0ab16bc18c35854c\"><span style=\"color:#000000;\"><span>If eligible, you will return on Day 1 for your first dose of the study medication.</span></span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e61a3e4809763b2423c4badbb57f489cf\"><span style=\"color:#000000;\"><span>During the first 4 weeks, you will attend the clinic once a week for treatment ( Week 0, Week 1, Week 2, Week 3)</span></span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e9bea754153ad8ea83837055344509c74\"><span style=\"color:#000000;\"><span>After that, you will attend the clinic once, every 2 weeks (Week 5, Week 7, Week 9, Week 11, Week 13).</span></span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e5375db455b4aa00ae5e147182a97a0be\"><span style=\"color:#000000;\"><span>A final treatment visit will take place around week 13.</span></span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e41527860785706e45e533515ed101c94\"><span style=\"color:#000000;\"><span>After treatment ends, you will return for three follow-up visits to monitor your safety and progress (Week 16, Week 24 and Week 36) bringing you to the end of the study.</span></span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"eb453ca830e918adf1d3a4c1a76aa26ea\"><span style=\"color:#000000;\"><span>In total, you’ll receive 9 doses of the study medication, administered during visits 2 through to 10. &nbsp;</span></span></li></ul><p>&nbsp;</p>"
+            },
+            {
+              "type": "image",
+              "name": "question16",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/1855/4abda7291ec5c7dd95d9085d34b427cb205446924a2ea39f5374ea3956da6ecc.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "25%"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel7",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question64",
+              "hideNumber": false,
+              "html": "<p><strong>Reimbursement</strong></p><p>&nbsp;</p><p>You will be reimbursed $400 for any reasonable travel, parking, meals and other expenses associated with each visit.&nbsp;</p><p>&nbsp;</p><p>This means if you attend all scheduled visits, you can receive up to $5200.</p><p>&nbsp;</p><p>You may also receive up to $400 for any unscheduled visits the study team may deem necessary. These are not included in the total I just mentioned.</p><p>&nbsp;</p><p>The study team will let you know if you're eligible for extra reimbursement related to rural travel.<br>&nbsp;</p>"
+            },
+            {
+              "type": "html",
+              "name": "question65",
+              "hideNumber": false,
+              "html": "<p><strong>Disclosure</strong></p><p>&nbsp;</p><p>Before we go any further, I want to explain exactly how the reimbursement works, so there are no surprises for you later. The reimbursement I just went through is what you'd receive if everything goes ahead as planned. That can look a bit different depending on what happens on the day. For example, if the doctor looks over your information early on and finds you're not eligible before you even get to the consent form, if you decide not to sign the consent form yourself, or if something doesn't line up with what you've told me today, you'd likely only get a partial amount, or in some cases nothing, instead of the full reimbursement.</p><p>&nbsp;</p><p>That's actually a big part of why it matters that you're as accurate as possible with me right now. The doctor's early review is based on exactly what you tell me today, so the more accurate you are, the better your chances of making it all the way through screening and getting the full reimbursement.</p>"
+            }
+          ]
+        }
+      ],
+      "title": "Study Notes"
+    },
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "dobandage",
+          "name": "question3",
+          "title": "What is your date of birth?",
+          "description": "This study is looking for males ≥ 18 to 60 years and females aged ≥ 18 to 75. ",
+          "showNumber": false
+        },
+        {
+          "type": "radiogroup",
+          "name": "question6",
+          "title": "What is your biological sex?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": " Male"
+            },
+            {
+              "value": "Item 2",
+              "text": " Female"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "question39",
+          "title": "Can I grab your weight in kgs please ?",
+          "description": "Participants need to have a weight ≥ 45 kg and ≤ 130 kg to be eligible. Please exclude participants whos weight falls outside the range. ",
+          "hideNumber": false
+        },
+        {
+          "type": "radiogroup",
+          "name": "question17",
+          "title": "This study will be conducted at Emeritus Research in Camberwell. Would it be feasible for you to travel to us for your study visits? ",
+          "description": "Limited onsite parking.\n75 tram stop and Auburn train station nearby",
+          "hideNumber": false,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🚫"
+            }
+          ]
+        }
+      ],
+      "title": "Demographics/Availability"
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel3",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question13",
+              "title": "Do you have a diagnosis of Alopecia areata ?",
+              "description": "Must have a diagnosis of moderate to severe AA with 50-89% scalp hair loss at screening, according to the SALT tool . Please follow the questions below to calculate the SALT score . Please use image below to explain the key feature of AA ( circular patches of hair loss)",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🚫"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Not sure - continue to screen, can be assessed at site ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question49",
+              "hideNumber": false,
+              "html": "<p><strong>For recruiters only- do not read to participants</strong></p><p>The <span style=\"color:green;\"><strong>SALT score</strong></span> is used to estimate the severity of hair loss in people who have alopecia areata. For this study participants need a SALT score of 50% or greater which is defined as severe Alopecia areata.</p><p><span>The scalp is divided into four regions:</span></p><ul><li data-list-item-id=\"e05a90fd2db2da5e68cd1917400a74797\"><span><strong>Left side</strong>: 18% of total scalp area</span></li><li data-list-item-id=\"edaa6e2a4bd9b555a7bbe5d9c4bb65ccc\"><span><strong>Right side</strong>: 18%</span></li><li data-list-item-id=\"e60a6f61f8dd3c0c3a26c40068a20e9b8\"><span><strong>Top (vertex)</strong>: 40%</span></li><li data-list-item-id=\"e1c45bc6826109c41c14611fbd61f8c50\"><p><span><strong>Back</strong></span><span style=\"color:#000000;\"><span><strong> (</strong></span></span><span style=\"background-color:rgb(255,255,255);color:#000000;\"><strong>Occipital)</strong></span><span>: 24%</span></p><p>&nbsp;</p></li></ul><p><span>Please click </span><a href=\"https://www.bidermato.com/wp-content/uploads/2024/04/SALT-Score-Leaflet.pdf?utm_source=chatgpt.com\"><span>here</span></a><span> for a guide on the<strong> </strong></span><span style=\"color:green;\"><span><strong>visual representation of SALT scores and their corresponding hair loss percentages</strong></span></span></p><p>&nbsp;</p><p><span>To calculate the SALT score:</span></p><p>&nbsp;</p><ol><li data-list-item-id=\"ea960db3948fdcc1c8ad371acc93acadf\"><span>Estimate the percentage of hair loss in each region using the questions below</span></li><li data-list-item-id=\"ef3a65722a0e5d0df4d9b4e75abab3e25\">Put the SALT score calculator to determine their score</li></ol><p>&nbsp;</p><p><span>We will work through calculating the SALT score in the next few questions with the participant.&nbsp;</span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question29",
+              "title": "I am now going to ask you a few questions to measure the severity of your hair loss.We are going to break it up into 4 quadrants. The left hand side, the right hand side, the front and then the back of your head. \nOn the left side of your head, from your hairline to the back of your ear, how much hair do you think is missing?\n",
+              "description": "The left hand side is equal to 18%",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Almost none (0%)"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "About a quarter (25%)"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "About a half (50%)"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Most (75%)"
+                },
+                {
+                  "value": "Item 5",
+                  "text": " Almost all (100%)"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question53",
+              "title": "On the right side of your head, from your hairline to the back of your ear, how much hair do you think is missing? 0%, 25%, 50%, 75%, 100%\n",
+              "description": "The right hand side is equal to 18%",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Almost none (0%)"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "About a quarter (25%)"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "About a half (50%)"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Most (75%)"
+                },
+                {
+                  "value": "Item 5",
+                  "text": " Almost all (100%)"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question55",
+              "title": "On the top of your head, from the front hairline to the crown, how much hair is missing ? 0%, 25%, 50%, 75%, 100%",
+              "description": "Top/vortex of head is equal to 40%",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Almost none (0%)"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "About a quarter (25%)"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "About a half (50%)"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Most (75%)"
+                },
+                {
+                  "value": "Item 5",
+                  "text": " Almost all (100%)"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question56",
+              "title": "On the back of your head, from the crown to nape how much hair is missing ?0%, 25%, 50%, 75%, 100% ",
+              "description": "Top/vortex of head is equal to 40%",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Almost none (0%)"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "About a quarter (25%)"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "About a half (50%)"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Most (75%)"
+                },
+                {
+                  "value": "Item 5",
+                  "text": " Almost all (100%)"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question57",
+              "hideNumber": false,
+              "html": "<p><strong>To calculate the salt score, please use </strong><a href=\"https://calculatorshub.net/health/salt-score-alopecia-areata-calculator/?utm_source=chatgpt.com\"><strong>this</strong></a><strong> calculator and input your score in the box provided.</strong></p>"
+            },
+            {
+              "type": "text",
+              "name": "question51",
+              "startWithNewLine": false,
+              "title": "What was the SALT score ?",
+              "hideNumber": false
+            },
+            {
+              "type": "radiogroup",
+              "name": "question12",
+              "title": "Participants for this study require a SALT score of 50-89% to be eligible, what was the SALT score based on your previous calculation ?",
+              "description": " If they are just under, please continue to screen so they can be assessed at site. ",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "50-89% or greater- continue to screen ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "<50%- Please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question40",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>SALT SCORE CHANGE UPDATE</strong></span></p><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e87f66effb906ee1866ab25b3a7cee069\"><span style=\"color:#000000;\">The very severe cohort has now been filled so participants with SALT score &gt;90 are no longer required for this study</span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"ed631532190fc0d5b966ba87feb8207c4\"><span style=\"color:#000000;\">Please ensure Participants have a salt score of 50-89.&nbsp;</span></li></ul>"
+            }
+          ],
+          "visibleIf": "false",
+          "title": "SALT score questions (hidden)"
+        },
+        {
+          "type": "panel",
+          "name": "panel2",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question30",
+              "title": "Do you have a diagnosis of alopecia areata that can be confirmed by a GP letter?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question44",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Participants are required to have a letter from their GP or other, confirming the diagnosis of alopecia areata.</strong></span></p>"
+            },
+            {
+              "type": "image",
+              "name": "question50",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/1855/3e284700d685ee03bc902130614adb806a027bc7d6305261247dd37c0d699002.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "30%"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question59",
+              "title": "Is approximately half or more of your head affected by alopecia areata?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question60",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>A rough estimate is fine for participants to report.&nbsp;</strong></span></p><p>&nbsp;</p><p><span style=\"color:red;\"><strong><u>TOTAL HAIR LOSS is excluded.</u></strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question52",
+              "title": "Has your hair started to grow back in the past 6 months ?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question37",
+              "title": "Can you tell me how long you’ve had your current patch of hair loss that hasn’t grown back? Has it been less than 7 years, or more than 7 years?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "7 years or less - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "More than 7 years - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question42",
+              "title": "Do you have any other forms of Alopecia other than Alopecia Areata?",
+              "description": "Other types of alopecia include but are not limited to diffuse alopecia (hair loss occurs all over the scalp in a widespread, thinning pattern),scarring alopecia (hair follicles are destroyed and replaced with scar tissue), chemotherapy induced hair loss (hair loss after chemotherapy drugs) and androgenetic alopecia or also called male-pattern baldness or female-pattern thinning.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question31",
+              "title": "Do you have have any other inflammatory scalp condition such as scalp psoriasis, dermatitis, tinea capitis (fungal infection of the scalp) ?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - raise query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question33",
+              "title": "Right now, do you have a shaved head? If so, you would need to let your hair grow back before starting the study, so the doctor can properly assess your scalp.\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude or schedule call back ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question61",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>If participants currently have a fully shaved head, <u>please allow participants a minimum of 4 weeks </u>to let their hair grow before attending screening.</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question32",
+              "title": "Do you have any medical conditions that can cause hair loss, such as lupus, thyroid disease, scleroderma, lichen planus, or syphilis? ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question45",
+              "title": "In the past 4 weeks, have you used any treatments for your hair loss or skin, such as light therapy, special creams or medicated shampoos ?",
+              "description": "Use of the above therapy within 4 weeks prior to dosing is exclusionary",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - make a note and continue to screen, will be assessed at site ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question1",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>Please prompt participants using the following examples;</strong></span></p><p>&nbsp;</p><p><span style=\"color:#000000;\">This includes treatments like:</span><br>• Light therapy, such as UVB or PUVA therapy, or laser therapy.</p><p><br>• Creams or ointments that cause irritation to help hair regrow — like DPCP, SADBE, or DNCB.</p><p><br>• Topical irritants such as anthralin, or liquid nitrogen treatments (treatments used for AA to jumpstart hair growth)</p><p><br>• Creams, ointments, or shampoos applied to the scalp, eyebrows, eyelashes, or fingernails that could affect alopecia areata — for example steroid creams, medicated shampoos, minoxidil, or topical JAK inhibitors like ruxolitinib or tofacitinib</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question22",
+              "title": "For this study, you would need to avoid prolonged exposure to the sun and agree to not use tanning beds, sun lamps or other ultraviolet light sources during the study, is this ok with you ?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes- continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No-please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question62",
+              "title": "Participants would also have to maintain the same hairstyle throughout the study. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No- exclude 🚫"
+                }
+              ]
+            }
+          ],
+          "title": "Alopecia Areata - Specific Criteria"
+        },
+        {
+          "type": "panel",
+          "name": "panel13",
+          "elements": [
+            {
+              "type": "comment",
+              "name": "question54",
+              "title": "Are you currently taking any medications or supplements ?",
+              "description": "LIST ALL MEDICATIONS AND SUPPLEMENTS",
+              "hideNumber": false
+            },
+            {
+              "type": "html",
+              "name": "question15",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;font-size:20px;\"><strong>Please exclude the following medications</strong></span></p><p>&nbsp;</p><p><strong>Within the past 6 months</strong></p><ul><li><p>Anti-cancer &amp; autoimmune medications such as Rituximab (MabThera, Truxima, Rixathon)</p><p>&nbsp;</p></li></ul><p><strong>Within the past 8 weeks</strong></p><ul><li>JAK inhibitors used for AA, rheumatoid arthritis and other autoimmune conditions (Tofacitinib (Xeljanz), Baricitinib (Olumiant), Ruxolitinib (Jakavi)</li></ul><p>&nbsp;</p><ul><li><p>Biologics for autoimmune conditions &nbsp;(Adalimumab (Humira), Etanercept (Enbrel), Infliximab (Remicade)</p><p>&nbsp;</p></li></ul><p><strong>Within the past 8 weeks</strong></p><ul><li>Corticosteroids (oral or injectable) Prednisone (Deltasone), Prednisolone (Orapred, Predsol), Triamcinolone (Kenalog), Methylprednisolone (Depo-Medrol), <span style=\"background-color:rgb(255,255,255);color:rgb(10,10,10);\">azathioprine( Imuran)</span></li></ul><p>&nbsp;</p><ul><li>Treatment for male or female pattern baldness/ thinning or enlarged prostrate (Finasteride (Propecia, Proscar), Dutasteride (Avodart)</li></ul><p>&nbsp;</p><ul><li><p>Statins as a treatment for AA (Simvastatin (Zocor), Simvastatin + Ezetimibe (Inegy)</p><p>&nbsp;</p></li><li><p>Oral minoxidil (Regaine (oral formulation)</p><p>&nbsp;</p></li><li><p>Spironolactone if used specifically for AA (Aldactone)</p><p>&nbsp;</p></li><li><p>Platelet-rich plasma (PRP) injections (administered by a GP, nurse or dermatologist)</p><p>&nbsp;</p></li></ul><p><strong>Within the past 4 weeks</strong></p><ul><li><p>Narrowband or broadband UVB therapy or tanning beds</p><p>&nbsp;</p></li><li><p>Other laser or light based therapies&nbsp;</p><p>&nbsp;</p></li><li><p>Prescription chemical solutions or creams for treatment of AA (Diphenylcyclopropenone (<strong>DPCP</strong>),Squaric Acid Dibutylester (<strong>SADBE</strong>) or 1-chloro-2,4-dinitrobenzene (<strong>DNCB</strong>)</p><p>&nbsp;</p></li><li><p>Topical creams to stimulate hair growth such as Anthralin (Dritho-Scalp)</p><p>&nbsp;</p></li><li><p>Liquid nitrogen cryotherapy (applied by dermatologist)</p><p>&nbsp;</p></li><li>Topical treatments on affaected areas (Ruxolitinib, Tofacitinib), steroid creams (Betnovate, Dermovate), medicated shampoos, topical minoxidil (Regaine)</li></ul>"
+            },
+            {
+              "type": "comment",
+              "name": "question14",
+              "title": "Do you have any current medical conditions or medical history?",
+              "description": "LIST ALL MEDICAL HISTORY (all medications must be matched up with medical history",
+              "hideNumber": false
+            },
+            {
+              "type": "html",
+              "name": "question43",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#b71c1c;font-family:Arial, Helvetica, sans-serif;\"><strong>Please exclude the following:</strong></span></p><p>&nbsp;</p><ul><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:Arial, Helvetica, sans-serif;\" data-list-item-id=\"e6f61f336f7763dcbb877f25eca5b93fb\"><div><span style=\"font-family:Arial, Helvetica, sans-serif;\"><span><strong>Immunosuppressive conditions</strong> (e.g. HIV infection, Hepatitis B, Hepatitis C)</span></span></div><div>&nbsp;</div></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:Arial, Helvetica, sans-serif;\" data-list-item-id=\"ef689accd1c566087b67bc6a3250d72ec\"><p><span style=\"font-family:Arial, Helvetica, sans-serif;\"><span><strong>Severe infection</strong> within the 3 months prior to randomisation</span></span></p><p>&nbsp;</p></li><li data-list-item-id=\"ec7032c74951b440dc9fc128db71a9037\"><p><strong>Thyroid disease </strong>( Hyperthyroidism, Hypothyroidism, Graves's disease</p><p>&nbsp;</p></li><li data-list-item-id=\"eff60515517d4c7302ad65c42c54cdd2c\"><p><strong>History of active tuberculosis </strong>(TB) or untreated or inadequately treated latent TB</p><p>&nbsp;</p></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"efab94282ec4c7c49d6d204c2f31272eb\"><p><strong>Known or suspected acute systemic bacterial, viral, parasitic, or fungal infection; is currently, or has received systemic treatment for such within 30 days of Screening</strong></p><p>&nbsp;</p></li><li data-list-item-id=\"e05b1da7970df60d655ba28452770c6f0\"><div><span style=\"font-family:Arial, Helvetica, sans-serif;\"><span><strong>Cancer within the past 5 years</strong> </span></span>with the exception of excised basal cell or squamous cell carcinoma of the skin, or carcinoma in situ such as cervical or breast carcinoma that has been excised or resected completely andis without evidence of local recurrence or metastasis</div><div>&nbsp;</div></li><li data-list-item-id=\"e5481fc05479764918abf3735e613ae40\"><div><span style=\"font-family:Arial, Helvetica, sans-serif;\"><span><strong>Inflammatory scalp conditions</strong> (s</span></span>calp psoriasis, dermatitis, tinea capitis)</div><div>&nbsp;</div></li><li data-list-item-id=\"e5d0c70844226ab2fc6c713084fcbb9a7\"><p><strong>Active systemic diseases </strong>that may cause hair loss (e.g., lupus , thyroiditis, systemic sclerosis, lichen planus, secondary syphilis)</p><p>&nbsp;</p></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:Arial, Helvetica, sans-serif;\" data-list-item-id=\"ea8a1a0181a1939d616e9bfbab3e53055\"><div><span style=\"font-family:Arial, Helvetica, sans-serif;\"><span><strong>History of autoimmune diseases</strong> other than AA &nbsp;requiring systemic topical immunotherapy <strong>(</strong>e.g psoriasis)</span></span></div><div>&nbsp;</div></li><li data-list-item-id=\"e019800a25f4dbe6f7d1ebd737683b112\"><strong>Major surgery </strong>within 8 weeks prior to randomisation</li></ul><p>&nbsp;</p><ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"ebf75c454d9012138edefad997976bcd0\"><strong>Unstable Psychiatric Conditions (unstable bipolar, schizophrenia)</strong></li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question63",
+              "title": "Are you currently taking long term testosterone injections ? ",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No-continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes- Please exclude🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question2",
+          "title": "Have you received any live vaccines within the past 28 days or plan to receive live vaccines during the study?",
+          "description": "Examples of live vaccines available in Australia are measles-mumps-rubella (MMR) vaccine, varicella (chickenpox)vaccine, herpes zoster vaccine, yellow fever vaccine, rotavirus vaccine, BCG vaccine, Japanese encephalitis vaccine (Imojev only) and oral typhoid vaccine.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No- Continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes- Please exclude or delay screening appointment 🚫"
+            },
+            {
+              "value": "Item 3",
+              "text": "Unsure - check with site ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question19",
+          "title": "Do you have any issues with your thyroid such as underactive, overactive thyroid or Graves's disease?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No- Continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes- Please get as much information as possible about current treatment and history of condition and raise doctor enquiry prior to booking ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question58",
+          "title": "Do you have a history of cancer within the past 5 years ?",
+          "description": "exception include basal cellor squamous epithelial carcinomas of the skin that have been resected or cervical carcinoma in situ, with noevidence of recurrence within the 5 years prior to baseline.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No- Continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes- Please exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question34",
+          "title": "In the past 30 days, have you had a bacterial, viral, fungal or parasitic infection that caused you to be hospitalised or that needed prescription medication or treatment from a doctor ?",
+          "description": "\n",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No- Continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes- Please take details of illness and medication and delay screening appointment for 30 days ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question36",
+          "title": "Have you had any major surgery within the past 8 weeks or plan to have any major upcoming surgeries during the study ?",
+          "description": "Minor elective surgeries may be ok, please check with the study team prior to booking.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No- Continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes- Please exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question35",
+          "title": "Have you ever been diagnosed with HIV, Hepatitis B, or hepatitis C ?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No- Continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes- please exclude 🚫"
+            },
+            {
+              "value": "Item 3",
+              "text": "Unsure- please flag with study team prior to booking ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question38",
+          "title": "Have you ever had tuberculosis, either active or latent? If yes, did you complete the full course of treatment prescribed by your doctor?\n",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No- Continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes and completed treatment course- continue to screen ✅"
+            },
+            {
+              "value": "Item 3",
+              "text": "Yes but treatment not completed or unsure- please exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question46",
+          "title": "Do you have any serious or ongoing medical or psychiatric conditions that you are currently seeing a  doctor or specialist about ? This includes conditions affecting your kidneys, liver, blood, stomach or intestines, metabolism, hormones (like thyroid problems), lungs, heart, brain or nerves, immune system, or mental health\n",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No- Continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes -continue to next question ✅"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question47",
+          "title": "If you are currently seeing a doctor or specialist about an ongoing medical condition, have you had any lab test results that were abnormal ? ",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No- please raise doctor enquiry about medication condition before booking ⚠️"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes -please take detailed notes and raise doctor enquiry about medical condition and abnormal results ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel4",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Drug Abuse History",
+              "title": "Do you take any illicit substances?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Yes, decidedly infrequently - Continue ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "Yes, unsure if frequency is considered high or low - Dr enquiry ⚠️"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes, frequently - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Alcohol Standards",
+              "title": "How many standards do you drink per week?",
+              "description": "14 for females or 21 for males meets the threshold for alcohol abuse",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Less than threshold - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "More than threshold - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Alcohol Standards Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Beer &amp; Cider</p><p><strong>1 standard is:</strong></p><ul><li data-list-item-id=\"ef6e5c6635bb70bd6ba659d03fdb7e1f0\"><strong>1 pot/middy&nbsp;</strong><span>(285mL) of</span><strong> full-strength (4.8% ABV)</strong></li><li data-list-item-id=\"ef1121cad9c788e815270f1f0c6a745f5\"><strong>1 stubby&nbsp;</strong><span>(375mL) of&nbsp;</span><strong>mid-strength (3.5% ABV)</strong></li><li data-list-item-id=\"ecff700bdb2fe66ec1233edb987790d2e\"><strong>1 schooner&nbsp;</strong><span>(425mL) of</span><strong> Light (2.7% ABV)</strong></li></ul><p>&nbsp;</p><p>Wine</p><ul><li data-list-item-id=\"e73e99a4dfa3e70e64fdbae8b1d84e212\"><strong>Restaurant pour&nbsp;</strong><span>(150mL) -&nbsp;</span><strong>1.4-1.6 standards</strong></li><li data-list-item-id=\"e02001ed693d557284cc3e8b4539ecfb6\"><strong>Bottle &nbsp;</strong><span>(750mL) -&nbsp;</span><strong>7-8 standards</strong></li></ul><p>&nbsp;</p><p>Spirits &amp; Liqueurs</p><ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"eb12db560b4d2c06fb7a5dcffebce38cc\"><strong>Spirits (40% ABV) - 1 shot = 1 standard</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e911590dbf4fa3d290a20c752c72fc852\"><strong>Cocktails - 2-3 standards</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e360f0f3f05f9a00ce554c5b1857912ce\"><strong>Ready-to-drink 375mL cans - 1-1.7 standards (3.5% - 6% ABV)</strong></li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question10",
+          "title": "Have you participated in a clinical trial which involved an investigation drug or device within the past 30 days ? ",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No- Continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes- Please delay screening appointment ⚠️"
+            }
+          ]
+        }
+      ],
+      "title": "Medications & History"
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel5",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question4",
+              "hideNumber": false,
+              "html": "<p><strong>This study has a contraception criteria that requires Women Of Childbearing Potential to use 1 effective form of contraception from start of study until 100 days after last study dose.</strong></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question18",
+              "title": "Would you consider yourself able to have children?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question24",
+              "title": "Are you currently pregnant or planning to become pregnant",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question5",
+              "title": "Are you currently breastfeeding ?",
+              "description": "Participants must agree to stop breastfeeding prior to first dose through to 100 days after last dose to be eligible. ",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "question20",
+              "title": "Females are considered Women Not Of Childbearing Potential if they are:",
+              "description": "Please select all that apply",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Infertile due to surgery eg. hysterectomy or removal of ovaries/fallopian tubes ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "postmenopausal, with cessation of menses for at least 12 months ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "None of the above - ask next question"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "question21",
+              "title": "Can you please tell me if any of these apply to you?",
+              "description": "Please select all that apply",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Abstinent as your preferred and usual lifestyle choice - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "In a same sex relationship as your preferred and usual lifestyle choice - continue screening ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Currently using contraception - continue screening ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Infertile male partner ( bilateral orchiectomy or vasectomy) ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "None - please exclude"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "question23",
+              "title": "Please indicate which method of contraception you are using?",
+              "description": "Must be using at least 1 form of effective contraception",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Intrauterine device (IUD) containing either copper or levonorgestrel (e.g., Mirena®) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Oral contraceptive pill (combined hormonal contraceptive pill or progestogen-only “mini-pill”) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Vasectomy (if only sexual partner) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Contraceptive patch (like Evra® patch) ✅"
+                },
+                {
+                  "value": "Item 5 ",
+                  "text": "Injectable contraception (like Depo-Provera) ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "None - please exclude"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question7",
+              "title": "You will not be able to donate/free eggs throughout the study and until 100 days after the last study dose, is this ok ?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2No-please exclude",
+                  "text": "No - please exclude 🚫"
+                }
+              ]
+            }
+          ],
+          "title": "Contraception Criteria- Female only"
+        },
+        {
+          "type": "panel",
+          "name": "panel6",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question25",
+              "hideNumber": false,
+              "html": "<p><span><strong>This study has a contraception criteria. If male has a female partner of child-bearing potential, hormonal contraceptives can be used alone if used for at least 100 days after the last study dose.&nbsp;</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question26",
+              "title": "Are you able to have children?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "yes",
+                  "text": "YES – Continue to next question ✅"
+                },
+                {
+                  "value": "no",
+                  "text": "NO – Surgically sterile (i.e., vasectomy) (Continue to next question) ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question27",
+              "title": "Are you currently in a sexual relationship with a woman who is able to have children?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Additional Information",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "NO – Abstinent, continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "NO – Same sex partner, continue to screen ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "NO – Partner is a female of NON childbearing potential, continue to screen ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "YES – Has partner, continue to next question ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "No – No partner, continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "question28",
+              "title": "Please indicate which method of contraception you and your partner are using ?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Intrauterine device (IUD) containing either copper or levonorgestrel (e.g., Mirena®) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Oral contraceptive pill (combined hormonal contraceptive pill or progestogen-only “mini-pill”) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Vasectomy (if only sexual partner) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Contraceptive patch (like Evra® patch) ✅"
+                },
+                {
+                  "value": "Item 5 ",
+                  "text": "Injectable contraception (like Depo-Provera) ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "None - please exclude 🚫"
+                }
+              ],
+              "selectAllText": "Condom"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question41",
+              "title": "You will not be able donate/freeze sperm from signing consent to 100 days after last dose of IP, Is this okay?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            }
+          ],
+          "title": "Male only"
+        }
+      ],
+      "title": "Contraceptive criteria",
+      "description": "Contraceptive Requirement "
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "PT Confirmation Questions",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Booking Cancellation",
+              "title": "Please note that by booking in your appointment this does not guarantee your participation in the trial. Clinical trials can experience delays or cancellations due to various factors. We will aim to notify you 24 to 48 hours before your appointment if we need to cancel or reschedule, however there are chances of same day cancellations. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Confirmation Info",
+              "hideNumber": false,
+              "html": "<p><span style=\"background-color:rgb(255,255,255);color:red;\"><strong>Thank you for your time today. Before I finalise your booking, I need to run you through some quick questions to confirm that I have explained the following to you. By answering yes to these questions, you acknowledge that I have explained these things to you in full and that if any information you have given is incomplete or inaccurate, this may affect both your eligibility and your reimbursement.</strong></span></p>"
+            },
+            {
+              "type": "checkbox",
+              "name": "Confirmation Checklist",
+              "title": "Can you please confirm the following?\n",
+              "description": "Participant must answer yes to all questions below prior to being booked in.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "I have explained the study medication/background to you"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "I have explained the study commitment and dates to you"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "You don't have any upcoming travel plans that will clash with the study dates"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "I have explained the reimbursement to you"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "You have answered the medical questions honestly and to the best of your ability"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "I have explained that by not disclosing medical information relevant to this study, that can have an impact on the reimbursement, which may include the site choosing not to reimburse you at all"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Please confirm you understand that you must read the consent form that will be sent to you prior to attending your visit. If you don’t your appointment may be delayed or rescheduled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Booking Instruction Panel",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Booking Instructions",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:blue;font-size:20px;\"><u>Booking Instructions:</u></span></p><ul><li data-list-item-id=\"e6078306771a811be7117611a1f6cf455\"><span style=\"color:#000000;\"><strong>Calendar and chair time</strong></span> - 1.5h + 1h</li><li data-list-item-id=\"e40ccf55579a1c6aad93e749676e8d0d4\"><strong>Latest appointment time</strong> - 1:30 PM<ul><li data-list-item-id=\"ecdfbb187ec6413beee1e27cd5d81ed75\"><strong>Exceed?</strong> - <span style=\"color:green;\">Yes ✅</span></li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(290,68%,46%);\" data-list-item-id=\"e4a0bf0d1780ba504d3081f19f1f16401\"><span style=\"color:hsl(290,68%,46%);\"><strong>Special instructions</strong></span><ul><li data-list-item-id=\"e5a5be06f22afbe3b8bd6f718c76fae5b\">Max 1 per hour</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"e3c866bf13c8aa5c3c2c080dd348cfa7c\"><span style=\"color:#ffc107;\"><strong>Overall time for PT</strong></span><ul><li data-list-item-id=\"eb755148ea5f8ed60227bb5390056edb0\">2-2.5h</li></ul></li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel16",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "refer",
+              "title": "Before we wrap up, I’d like to share details about our referral program. If you refer someone to us you can receive up to $250 if they enrol and participate in the study. Would you like to hear more?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "question48",
+          "visibleIf": "{refer} = 'Item 1'",
+          "hideNumber": false,
+          "html": "<p><strong>Great! Here's how it works:</strong></p><p>&nbsp;</p><p><strong>To refer someone, you will need to provide them with a unique referral ID. The person you refer will need to provide us this ID either when they sign up on our website, or when they speak to us over the phone. This ID is essential, as it ensures we can track and reimburse you for any referrals.</strong></p><p>&nbsp;</p><p><strong>For each person you refer who comes in for an in-person screening visit, you'll receive $50. If they go on to enrol and participate in the study, you'll earn an additional $200.</strong></p><p>&nbsp;</p><p><strong>There's no limit- you can refer as many people as you'd like, as long as you have an exisiting relationship with them. It's important to note that you cannot advertise for referrals. This program is based on personal connections, so please only refer people you know.</strong></p><p>&nbsp;</p><p><strong>If you're interested, we can set up your Unique Referral ID today if you would like</strong> <i>(the unique referral ID is REF[p number]. E.g., REFP14471)</i></p><p>&nbsp;</p><p><strong>Who do you know you might be interested in this trial?</strong> <i>(if they don't know anyone for this trial, they can also refer someone to any other trial)</i></p><p>&nbsp;</p><p><strong>Would you like us to send you an email that you can forward on to them?</strong></p>"
+        }
+      ],
+      "title": "Misc"
+    }
+  ],
+  "version": "Version-2"
+}
