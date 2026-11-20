@@ -1,5 +1,6 @@
 import { useRef } from 'react';
-import { S, upd, ranked, nextOpen, fmt, COL, RAYDAR_VERSION } from '../engine/store.js';
+import { S, act, upd, ranked, nextOpen, fmt, COL, RAYDAR_VERSION } from '../engine/store.js';
+import { KEY_ACTIONS, isDefault, keyName } from '../engine/keys.js';
 import { ST } from '../engine/data.js';
 import { A, Ic, B } from './ui.jsx';
 import { Legend } from './Header.jsx';
@@ -16,7 +17,7 @@ function H({ title }) {
 const Card = ({ children }) => <div className="card" style={{ padding: '10px 12px', marginBottom: 10 }}>{children}</div>;
 
 function Menu() {
-  const items = [['plan', 'ti-calendar-stats', 'Compare dates'], ['dre:open', 'ti-stethoscope', 'Create Dr enquiry'], ['tool:snap', 'ti-list-search', 'Study snapshot'], ['tool:guide', 'ti-help-circle', 'How to use RAYDAR'], ['tool:help', 'ti-keyboard', 'Keyboard shortcuts'], ['import', 'ti-file-import', 'Import callback or PDF']];
+  const items = [['plan', 'ti-calendar-stats', 'Compare dates'], ['dre:open', 'ti-stethoscope', 'Create Dr enquiry'], ['tool:snap', 'ti-list-search', 'Study snapshot'], ['tool:guide', 'ti-help-circle', 'How to use RAYDAR'], ['tool:help', 'ti-keyboard', 'Keyboard shortcuts (change keys)'], ['import', 'ti-file-import', 'Import callback or PDF']];
   const row = (l, ctl) => <div className="row"><span>{l}</span>{ctl}</div>;
   return (
     <Card>
@@ -31,7 +32,7 @@ function Menu() {
       {row('Tips and guides', <button className="pill" {...A('tips')}>{S.tips ? 'Turn off' : 'Turn on'}</button>)}
       {row('Focus mode', <button className="pill" {...A('focus')}>{S.focusMode ? 'Exit' : 'Turn on'}</button>)}
       {row('Theme', <button className="pill" {...A('theme')}>{S.dark ? 'Light mode' : 'Dark mode'}</button>)}
-      <p style={{ fontSize: 11, margin: '8px 0 0' }} className="mut">{RAYDAR_VERSION.replace('RAYDAR 2.2', 'RAYDAR 2.3')}</p>
+      <p style={{ fontSize: 11, margin: '8px 0 0' }} className="mut">{RAYDAR_VERSION}</p>
       {S.toast ? <p className="mut" style={{ fontSize: 12 }} role="status">{S.toast}</p> : null}
     </Card>
   );
@@ -61,6 +62,7 @@ function Guide() {
       {W('ti-stethoscope', 'Dr enquiry', 'In the Meds and history panel, or Tools.')}
       {W('ti-search', 'Search questions', 'Press / and type, e.g. tyramine. Click a result to preview it.')}
       {W('ti-list', 'One at a time or Section list', 'Switch above the questions. Section list keeps the next question centred.')}
+      {W('ti-keyboard', 'Answer with the keyboard', 'Press 1 for the suggested answer, or the one that moves on. 2, 3 and 4 pick the others. Change any key in Tools.')}
       {W('ti-arrow-back-up', 'Undo and Clear answer', 'Undo appears after each answer (or press U). Clear answer sits next to any recorded answer.')}
       {W('ti-focus-2', 'Focus mode', 'Hides the side panels and extras so only the script shows.')}
       <div style={{ fontSize: 12, fontWeight: 500, margin: '8px 0 4px' }}>Answer colours</div>
@@ -73,12 +75,42 @@ function Guide() {
   );
 }
 
+/* Shortcuts you can rebind (RAYDAR 2.4). Click a key, press the new one; Esc cancels.
+   A key already in use swaps with the action that had it, so nothing is left without a key. */
+let boundAt = 0;
+export const markBound = () => { boundAt = performance.now(); };
+
 function Help() {
-  const K = [['1 2 3', 'Pick that answer'], ['U', 'Undo the last answer'], ['Left / Right', 'Previous or next question, without answering'], ['Backspace', 'Back to where you jumped from'], ['/', 'Search questions'], ['Esc', 'Close preview or clear search'], ['Enter', 'Add to list, in a log field']];
+  const fixed = [['Ctrl Z', 'Undo, as well as the key above'], ['Esc', 'Close preview or clear search'], ['Enter', 'Add to list, in a log field']];
   return (
     <Card>
       <H title="Keyboard shortcuts" />
-      {K.map((x) => <div key={x[0]} className="row" style={{ fontSize: 12 }}><span className="k" style={{ margin: 0 }}>{x[0]}</span><span className="mut">{x[1]}</span></div>)}
+      <p className="mut" style={{ fontSize: 12, margin: '0 0 6px' }}>Click a key to change it, then press the new key. <B>Esc</B> cancels. Saved in this browser.</p>
+      {KEY_ACTIONS.map(([id, label]) => {
+        const on = S.rebind === id;
+        return (
+          <div key={id} className="row" style={{ fontSize: 12, padding: '4px 0' }}>
+            <span>{label}</span>
+            <button
+              className={'pill keycap' + (on ? ' on' : '')}
+              aria-label={'Change the key for ' + label + '. Now ' + keyName(id)}
+              aria-pressed={on}
+              onClick={(e) => { e.preventDefault(); if (performance.now() - boundAt < 300) return; act('rebind:' + id); }}
+            >
+              {on ? <span className="mut">Press a key…</span> : keyName(id)}
+            </button>
+          </div>
+        );
+      })}
+      {fixed.map((x) => (
+        <div key={x[0]} className="row" style={{ fontSize: 12, padding: '4px 0' }}>
+          <span className="mut">{x[1]}</span><span className="k" style={{ margin: 0 }}>{x[0]}</span>
+        </div>
+      ))}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 6, marginTop: 8 }}>
+        <span className="mut" style={{ fontSize: 12 }} role="status" aria-live="polite">{S.keyMsg}</span>
+        <button className="pill" {...A('keyreset')} disabled={isDefault()} style={isDefault() ? { opacity: 0.5, cursor: 'default' } : null}>Reset to defaults</button>
+      </div>
     </Card>
   );
 }

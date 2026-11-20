@@ -20,6 +20,10 @@ export const DUR = {
   rowIn: 0.24,
   rowOut: 0.15,
   shake: 0.36,
+  qIn: 0.22, // next question slides in
+  qInDelay: 0.05, // ...just after the answered one starts leaving, so the two barely overlap
+  qOut: 0.1, // answered question slides out
+  promptIn: 0.24, // "next step" prompt rises in
 };
 
 /* ─────────────────────────────────────────────────────────────
@@ -57,6 +61,32 @@ export const PIECE = {
   show: () => ({ opacity: 1, y: 0, filter: 'blur(0px)', transition: tr(DUR.stageIn) }),
 };
 export const STAGE_EXIT = () => ({ opacity: 0, y: -8, transition: tr(DUR.stageOut, 'in') });
+
+/* ─────────────────────────────────────────────────────────────
+ * ANSWER STORYBOARD (RAYDAR 2.4), dozens of times per call
+ *   Answering is the most frequent action, so the next question is never held back:
+ *   the store has already moved on and the next key press acts on the new question.
+ *
+ *    0ms   answered question keeps its picked answer (colour + check) and slides
+ *          16px out the way the call is going, fading (100ms, ease-in)
+ *   50ms   next question slides 16px in from the other side, fading in (220ms, ease-out)
+ *          (it is already live: a key press during the slide answers it)
+ *    0ms   progress fill and section counts move (280ms, ease-in-out)
+ *    0ms   "Q4 recorded as No" undo bar rises 6px (220ms, ease-out)
+ *          going back (Previous, Left arrow, Back) runs the same slide the other way
+ *  Section list: the "ask next" highlight glides to the next row (280ms, ease-in-out)
+ *  Reduced motion: all of it is instant.
+ *
+ * NEXT-STEP PROMPT: when a stage is complete, a prompt rises 8px and fades in (240ms, ease-out);
+ *   its check pops on a spring 80ms later, and the next step in the step bar gets two soft pulses.
+ * ───────────────────────────────────────────────────────────── */
+export const SLIDE = 16;
+export const QSLIDE = {
+  enter: (d) => ({ opacity: 0, x: SLIDE * d }),
+  center: () => ({ opacity: 1, x: 0, pointerEvents: 'auto', transition: tr(DUR.qIn, 'out', { delay: DUR.qInDelay }) }),
+  // the leaving copy can't be clicked
+  exit: (d) => ({ opacity: 0, x: -SLIDE * d, pointerEvents: 'none', transition: tr(DUR.qOut, 'in') }),
+};
 
 /* Rows that arrive on their own (list grows, item added): 40ms apart, first 6 only */
 export const rowDelay = (i) => (Math.min(i, TIMING.maxStaggered - 1) * TIMING.rowGap) / 1000;

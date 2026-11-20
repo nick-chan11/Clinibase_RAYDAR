@@ -74,7 +74,8 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd .undob{background:var(--surface-2);color:var(--text-primary);font-weight:500;font-size:13px;padding:4px 12px;border:1px solid var(--border-stronger)}
 #rd .undob:hover{border-color:var(--border-accent)}
 #rd .asknext{font-size:11px;font-weight:500;color:var(--text-accent);display:inline-flex;align-items:center;gap:3px}
-#rd .qcur{background:var(--surface-1);border-radius:var(--radius);box-shadow:inset 3px 0 0 var(--fill-accent)}
+#rd .qrow{position:relative}
+#rd .qcur-bg{position:absolute;inset:0;background:var(--surface-1);border-radius:var(--radius);box-shadow:inset 3px 0 0 var(--fill-accent);pointer-events:none}
 #rd .clr{color:var(--text-secondary);font-size:12px}
 #rd .clr:hover{color:var(--text-danger)}
 #rd .flow{display:flex;align-items:stretch;gap:4px;margin:6px 0 10px}
@@ -143,3 +144,27 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 
 /* Reduced motion: CSS motion off. Motion components read the same preference (src/motion/tokens.js). The spinner keeps turning. */
 @media (prefers-reduced-motion:reduce){#rd *:not(.spin),#rd *::before,#rd *::after{transition:none!important;animation:none!important}}
+
+/* ===================== RAYDAR 2.4 ===================== */
+/* Answer key badges: the key-1 answer's badge is filled so it reads as the default */
+#rd .k.k1{background:var(--fill-accent);color:var(--on-accent);border-color:transparent}
+#rd .pri .k{color:var(--on-accent);border-color:rgba(255,255,255,.45)}
+/* A just-picked answer's check pops in */
+#rd .ti.pop{display:inline-block;animation:rd-pop 260ms var(--ease-out) both}
+@keyframes rd-pop{from{transform:scale(.3);opacity:0}to{transform:none;opacity:1}}
+#rd .ans{transition:transform var(--t-press) var(--ease-out),box-shadow var(--t-hover) ease,background-color 120ms var(--ease-out),border-color 120ms var(--ease-out)}
+/* Next-step prompt */
+#rd .nextstep{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 10px 10px 12px;border-radius:var(--radius);background:var(--bg-accent);border:1px solid var(--border-accent);color:var(--text-primary);font-size:13px}
+#rd .nextstep.sticky{position:sticky;bottom:12px;z-index:4;box-shadow:0 8px 24px rgba(0,0,0,.14)}
+#rd .nextstep .ns-sub{display:block;font-size:12px;color:var(--text-secondary)}
+#rd .nextstep .ns-ic{font-size:22px;line-height:1}
+#rd .ns-ic.ok{color:var(--text-success)}#rd .ns-ic.warn{color:var(--text-warning)}#rd .ns-ic.bad{color:var(--text-danger)}
+#rd .ns-btn{font-size:13px;padding:5px 12px;font-weight:500}
+/* The next step in the step bar pulses twice when this one is done */
+#rd .sn.ready{border-color:var(--border-accent);color:var(--text-accent);animation:rd-ready 1.2s var(--ease-out) 2}
+@keyframes rd-ready{0%{box-shadow:0 0 0 0 rgba(55,138,221,.5)}100%{box-shadow:0 0 0 7px rgba(55,138,221,0)}}
+/* Section list: full questions sit inline */
+#rd .qfull{margin-top:2px}
+/* Rebindable key caps */
+#rd .keycap{min-width:64px;text-align:center;font-family:var(--font-mono);font-size:12px;padding:2px 8px}
+#rd .keycap.on{border-color:var(--border-accent);box-shadow:0 0 0 2px var(--bg-accent)}

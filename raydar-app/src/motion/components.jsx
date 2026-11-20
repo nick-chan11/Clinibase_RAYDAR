@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, forwardRef } from 'react';
 import { AnimatePresence, motion, animate } from 'motion/react';
 import { quiet } from '../engine/store.js';
-import { DUR, EASE, PIECE, prefersReduced, rowDelay, spring, tr } from './tokens.js';
+import { DUR, EASE, PIECE, QSLIDE, prefersReduced, rowDelay, spring, tr } from './tokens.js';
 
 /**
  * Expander: opens with grid rows 0fr → 1fr (250ms) and closes in 190ms, both ease-in-out,
@@ -137,3 +137,36 @@ export const Row = forwardRef(function Row({ i = 0, children, className, style, 
     </C>
   );
 });
+
+/**
+ * QSlide (RAYDAR 2.4): the answered question slides out while the next one slides in, both at once,
+ * so nothing waits on the animation. `dir` is 1 going forward and -1 going back.
+ * Children should subscribe to the store themselves so the leaving copy shows the answer just picked.
+ */
+export function QSlide({ k, dir = 1, children }) {
+  return (
+    <div style={{ position: 'relative' }}>
+      <AnimatePresence mode="popLayout" initial={false} custom={dir}>
+        <motion.div
+          key={k}
+          custom={dir}
+          variants={QSLIDE}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          style={{ width: '100%' }}
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+}
+
+/** Remembers which way the call moved, from the index of the item now shown. */
+export function useDirection(i) {
+  const prev = useRef(i);
+  const dir = useRef(1);
+  if (i !== prev.current) { dir.current = i > prev.current ? 1 : -1; prev.current = i; }
+  return dir.current;
+}

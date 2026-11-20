@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { S, sug, reason, qset, matchP, selC, fname, fmtR, needsReview } from '../engine/store.js';
 import { A, Ic, B } from './ui.jsx';
+import { keyName } from '../engine/keys.js';
 import { Piece } from '../motion/components.jsx';
 import { spring, tr } from '../motion/tokens.js';
 
@@ -43,7 +44,7 @@ function Saved({ k }) {
       </Piece>
       <Piece as="p" className="mono" style={{ margin: '0 0 8px', wordBreak: 'break-all' }}>{fname(k)}</Piece>
       <Piece as="p" className="mut" style={{ fontSize: 12, margin: '0 0 12px' }}>Upload it to the participant profile in CTMS. Nothing else from this call is kept.</Piece>
-      <Piece><button className="pill pri" {...A('new')}>Start next call</button></Piece>
+      <Piece><button className="pill pri" {...A('new')}>Start next call <Ic n="ti-arrow-right" /> <span className="k">{keyName('cont')}</span></button></Piece>
     </div>
   );
 }

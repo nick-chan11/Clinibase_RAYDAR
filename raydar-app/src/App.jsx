@@ -1,6 +1,7 @@
 import { memo, useEffect, useLayoutEffect, useRef, useSyncExternalStore } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { S, act, commit, curQ, getVersion, subscribe, upd } from './engine/store.js';
+import { S, act, ansOrder, commit, curQ, getVersion, nextStep, subscribe, upd } from './engine/store.js';
+import { KEY_ACTIONS, UNBINDABLE, actionFor, bind, keyLabel, keyName } from './engine/keys.js';
 import { Expander, shake } from './motion/components.jsx';
 import { STAGE, STAGE_EXIT, prefersReduced } from './motion/tokens.js';
 import { Header, Steps, Guide } from './views/Header.jsx';
@@ -9,7 +10,7 @@ import { PreScreen } from './views/PreScreen.jsx';
 import { Finish } from './views/Finish.jsx';
 import { Planner } from './views/Planner.jsx';
 import { DrPanel } from './views/DrPanel.jsx';
-import { Drawer } from './views/Drawer.jsx';
+import { Drawer, markBound } from './views/Drawer.jsx';
 import { Studies, LogPanel, ProPanel } from './views/Rail.jsx';
 import { RoutesList } from './views/MedLog.jsx';
 import { Tooltip } from './views/Tooltip.jsx';
@@ -52,27 +53,59 @@ function Splitter({ gridRef }) {
   return <div className="split" role="separator" aria-orientation="vertical" title="Drag to resize. Double-click to reset" onPointerDown={onDown} onDoubleClick={() => upd(() => (S.lw = null))} />;
 }
 
+const ACT_LABEL = Object.fromEntries(KEY_ACTIONS.map((a) => [a[0], a[1]]));
+
+/** Capture the next key press for the shortcut being changed (Tools → Keyboard shortcuts). */
+function rebindKey(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  if (e.key === 'Escape') { upd(() => { S.rebind = null; S.keyMsg = 'No change'; }); return; }
+  if (UNBINDABLE.has(e.key) || e.ctrlKey || e.metaKey || e.altKey) return;
+  const id = S.rebind, other = bind(id, e.key);
+  markBound();
+  upd(() => {
+    S.rebind = null;
+    S.keyMsg = ACT_LABEL[id] + ': ' + keyLabel(e.key) + (other ? '. ' + ACT_LABEL[other] + ' moved to ' + keyName(other) : '');
+  });
+}
+
 function onKey(e) {
+  if (S.rebind) { rebindKey(e); return; }
   const f = e.target.dataset && e.target.dataset.f;
   if (f && /^r\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('logadd'); return; }
-  if (f && /^m\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('madd'); return; }
+  if (f && /^m\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('madd:med'); return; }
+  if (f && /^h\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('madd:hx'); return; }
   if (f === 'qs' && e.key === 'Escape') { upd(() => { S.qs = ''; S.mapOpen = false; }); return; }
   const tg = e.target.tagName || '';
-  const typing = tg === 'TEXTAREA' || (tg === 'INPUT' && e.target.type !== 'checkbox') || tg === 'SELECT';
   // Enter submits the identity form from its own fields, never from a focused button elsewhere
   if (S.stage === 'id' && e.key === 'Enter' && (e.target === document.body || f === 'pid' || f === 'dob' || f === 'match')) { e.preventDefault(); act('confirm'); return; }
+  // Enter in a number field (weight, height, drinks) can still continue to the next step
+  const numField = tg === 'INPUT' && (e.target.type === 'number' || e.target.type === 'date');
+  const typing = tg === 'TEXTAREA' || (tg === 'INPUT' && e.target.type !== 'checkbox' && !(numField && e.key === 'Enter')) || tg === 'SELECT';
   if (typing || e.altKey) return;
-  if ((e.key === 'u' || e.key === 'U' || (e.key === 'z' && (e.ctrlKey || e.metaKey))) && S.last) { e.preventDefault(); act('undo'); return; }
+  if (e.key === 'z' && (e.ctrlKey || e.metaKey) && S.last) { e.preventDefault(); act('undo'); return; }
   if (e.ctrlKey || e.metaKey) return;
-  if (S.stage === 'ps' && S.qon) {
-    if (e.key === '/') { e.preventDefault(); document.getElementById('qSearch')?.focus(); return; }
-    if (e.key === 'Escape') { if (S.peek) act('peek:'); else if (S.qs) upd(() => (S.qs = '')); return; }
-    const n = parseInt(e.key, 10);
-    if (n >= 1 && n <= 4) { const { q } = curQ(); if (q && q.a[n - 1]) act(S.mode === 'list' ? 'ansl:' + q.id + ':' + (n - 1) : 'ans:' + (n - 1)); }
-    else if (e.key === 'ArrowLeft') act('prev');
-    else if (e.key === 'ArrowRight') act('next');
-    else if (e.key === 'Backspace' && S.nav.length) { e.preventDefault(); act('navback'); }
+  // A focused button or link keeps its own Enter and Space
+  if ((e.key === 'Enter' || e.key === ' ') && (tg === 'BUTTON' || tg === 'A')) return;
+  const id = actionFor(e.key);
+  if (id === 'undo') { if (S.last) { e.preventDefault(); act('undo'); } return; }
+  if (id === 'cont') { const n = nextStep(); if (n) { e.preventDefault(); act(n.a); } return; }
+  if (!(S.stage === 'ps' && S.qon)) return;
+  if (e.key === 'Escape') { if (S.peek) act('peek:'); else if (S.qs) upd(() => (S.qs = '')); return; }
+  if (!id) return;
+  const { q } = curQ();
+  if (/^ans\d$/.test(id)) {
+    if (!q) return;
+    const j = ansOrder(q)[+id.slice(3) - 1];
+    if (j == null) return;
+    e.preventDefault();
+    act(S.mode === 'list' ? 'ansl:' + q.id + ':' + j : 'ans:' + j);
   }
+  else if (id === 'search') { e.preventDefault(); document.getElementById('qSearch')?.focus(); }
+  else if (id === 'prev') { e.preventDefault(); act('prev'); }
+  else if (id === 'next') { e.preventDefault(); act('next'); }
+  else if (id === 'back') { if (S.nav.length) { e.preventDefault(); act('navback'); } }
+  else if (id === 'park') { if (q && !S.out[q.id] && S.mode === 'one') { e.preventDefault(); act('park'); } }
 }
 
 /** Focus an element that may still be mounting inside an expander. */

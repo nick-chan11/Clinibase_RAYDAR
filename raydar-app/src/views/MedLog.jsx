@@ -118,13 +118,16 @@ const groupName = (t) => (t === 'med' ? 'Medications' : t === 'otc' ? 'Supplemen
 
 /** Medication / history log shown inside a question that carries it. */
 export function MedLog({ c }) {
-  const code = proS(), types = c === 'hx' ? ['hx'] : ['med', 'otc'], t = c === 'hx' ? 'hx' : S.mt;
+  const hx = c === 'hx', code = proS(), types = hx ? ['hx'] : ['med', 'otc'], t = hx ? 'hx' : S.mt;
+  // 2.4: history and medications keep separate forms, so both can be open in the section list
+  const pre = hx ? 'h' : 'm', rows = hx ? S.hf : S.mf, err = hx ? S.hErr : S.mErr, ed = hx ? S.hed : S.med;
+  const panel = hx ? 'hlog' : 'mlog', proOpen = hx ? S.hOpen : S.mOpen, pq = hx ? S.hq : S.mq;
   const n = S.log.filter((e) => types.includes(e.t)).length;
   return (
     <div style={{ marginTop: 10, background: 'var(--surface-1)', borderRadius: 'var(--radius)', padding: '8px 10px' }}>
-      <PanelHead id="mlog" title={(c === 'hx' ? 'Medical history' : 'Medications, supplements and OTC') + ' logged'} sub={n + ' · checked against ' + code} />
-      <Expander open={!S.col.mlog}>
-        <Resizable id="mlog">
+      <PanelHead id={panel} title={(c === 'hx' ? 'Medical history' : 'Medications, supplements and OTC') + ' logged'} sub={n + ' · checked against ' + code} />
+      <Expander open={!S.col[panel]}>
+        <Resizable id={panel}>
           {types.map((tt) => {
             const L = S.log.filter((e) => e.t === tt);
             return (
@@ -149,22 +152,22 @@ export function MedLog({ c }) {
                 </span>
               )}
             </div>
-            <Form pre="m" rows={S.mf} t={t} wide />
+            <Form pre={pre} rows={rows} t={t} wide />
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 6, marginTop: 6 }}>
               <span style={{ fontSize: 11, color: 'var(--text-secondary)', fontStyle: 'italic' }}>Only the {t === 'hx' ? 'condition' : 'name'} is required. Blank rows are ignored.</span>
-              <button className="pill" {...A('madd')}><Ic n="ti-plus" /> {S.med ? 'Save' : 'Add to list'}</button>
+              <button className="pill" {...A('madd:' + c)}><Ic n="ti-plus" /> {ed ? 'Save' : 'Add to list'}</button>
             </div>
-            <Err msg={S.mErr} />
+            <Err msg={err} />
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 6 }}>
-            <button className="pill ib" {...A('mpro')} aria-expanded={S.mOpen} style={{ paddingLeft: 0, color: 'var(--text-accent)' }}>
-              <Ic n="ti-list-search" /> {S.mOpen ? 'Hide' : 'Search'} prohibited {c === 'hx' ? 'conditions' : 'medications'}
+            <button className="pill ib" {...A('mpro:' + c)} aria-expanded={proOpen} style={{ paddingLeft: 0, color: 'var(--text-accent)' }}>
+              <Ic n="ti-list-search" /> {proOpen ? 'Hide' : 'Search'} prohibited {c === 'hx' ? 'conditions' : 'medications'}
             </button>
             <button className="pill ib" {...A('dre:open')} style={{ color: 'var(--text-warning)' }}><Ic n="ti-stethoscope" /> Create Dr enquiry</button>
           </div>
-          <Expander open={S.mOpen}>
-            <input type="text" data-f="mq" placeholder="Search, e.g. sertraline" value={S.mq} style={{ marginTop: 4 }} onChange={(e) => upd(() => (S.mq = e.target.value))} />
-            <div><ProRows Pl={proFor(code)} types={[c === 'hx' ? 'hx' : 'med']} q={S.mq} limit={5} /></div>
+          <Expander open={proOpen}>
+            <input type="text" data-f={hx ? 'hq' : 'mq'} placeholder={hx ? 'Search, e.g. epilepsy' : 'Search, e.g. sertraline'} value={pq} style={{ marginTop: 4 }} onChange={(e) => upd(() => { if (hx) S.hq = e.target.value; else S.mq = e.target.value; })} />
+            <div><ProRows Pl={proFor(code)} types={[hx ? 'hx' : 'med']} q={pq} limit={5} /></div>
           </Expander>
         </Resizable>
       </Expander>

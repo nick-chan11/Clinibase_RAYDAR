@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { S, age, bmi, RAYDAR_VERSION } from '../engine/store.js';
+import { S, age, bmi, nextStep, RAYDAR_VERSION } from '../engine/store.js';
+import { keyName } from '../engine/keys.js';
 import { A, Ic, B } from './ui.jsx';
 import { Expander, IconSwap } from '../motion/components.jsx';
 import { DUR, tr } from '../motion/tokens.js';
@@ -29,7 +30,7 @@ export function Header() {
   return (
     <div className="bar">
       <span style={{ fontWeight: 500, letterSpacing: '.06em' }} title={RAYDAR_VERSION}>
-        RAYDAR <span style={{ color: 'var(--text-accent)' }}>2.3</span>
+        RAYDAR <span style={{ color: 'var(--text-accent)' }}>2.4</span>
       </span>
       {S.idok ? (
         <span className="pill ok" style={{ cursor: 'default' }}>
@@ -67,7 +68,9 @@ const STEPS = [['id', 'Identity'], ['qc', 'Quick check'], ['ps', 'Pre-screen'], 
 
 /** Steps: the underline slides to the current step, finished steps swap their number for a check. */
 export function Steps() {
-  const ix = STEPS.findIndex((x) => x[0] === S.stage);
+  const ix = STEPS.findIndex((x) => x[0] === S.stage), n = nextStep();
+  // 2.4: once this stage is done, the next step's number pulses twice to point the way
+  const ready = n ? STEPS.findIndex((x) => x[1] === n.to) : -1;
   return (
     <div style={{ display: 'flex', gap: 4, marginTop: 8 }}>
       {STEPS.map((x, i) => (
@@ -81,7 +84,7 @@ export function Steps() {
             color: i === ix ? 'var(--text-primary)' : 'var(--text-secondary)', fontWeight: i === ix ? 500 : 400,
           }}
         >
-          <span className={'sn ' + (i < ix ? 'done' : i === ix ? 'cur' : '')}>
+          <span className={'sn ' + (i < ix ? 'done' : i === ix ? 'cur' : '') + (i === ready ? ' ready' : '')}>
             <IconSwap k={i < ix ? 'done' : 'n'}>{i < ix ? <Ic n="ti-check" /> : i + 1}</IconSwap>
           </span>
           {x[1]}
@@ -106,7 +109,7 @@ function guideText() {
     return (
       <>
         Read the <Ic n="ti-microphone" /> <B>Say</B> text aloud. <span style={{ color: 'var(--text-warning)' }}>Recruiter only</span> notes stay with you.{' '}
-        {S.mode === 'list' ? 'The list follows the next question to ask.' : 'Tap an answer and RAYDAR moves on.'}
+        {S.mode === 'list' ? 'The list follows the next question to ask.' : <>Tap an answer, or press <B>{keyName('ans1')}</B> for the suggested one, and RAYDAR moves on.</>}
       </>
     );
   return <>Pick how the call ended, then save the file and upload it to CTMS.</>;
