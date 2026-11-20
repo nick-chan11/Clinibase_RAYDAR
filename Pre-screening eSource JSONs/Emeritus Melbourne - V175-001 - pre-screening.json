@@ -1,0 +1,1449 @@
+{
+  "title": "V175-001 Pre-screening Questions",
+  "pages": [
+    {
+      "name": "page6",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel20",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question72",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>Protocol:</strong> V175-001</p><p><strong>Phase:</strong> 1</p><p>&nbsp;</p><p><strong>Opening</strong></p><p>Thank you for your interest in our vaccine clinical trials! As you may know, respiratory syncytial virus (RSV), human metapneumovirus (HMPV) and parainfluenza virus (PIV3) are major contributors to infections and diseases such as pneumonia or influenza-like illnesses. These three infections can often go hand in hand and significantly raise the mortality associated with lower respiratory tract diseases, and there currently is no approved vaccine to help protect against all three. As such, this trial is being conducted to assess the safety and efficiency of a potential vaccine that synthesises all three infections.</p>"
+            },
+            {
+              "type": "html",
+              "name": "question78",
+              "hideNumber": false,
+              "html": "<p><strong>Study Drug and Design</strong></p><p>As mentioned, the study drug is a combination vaccine against RSV, hMPV and PIV3 and will be compared against both a placebo and existing RSV vaccine, Arexvy. Depending on which group you’re placed in, you can receive either one of these. As the study is double blinded, neither you or the study team will know which you’ve received until the end of the trial.&nbsp;</p>"
+            },
+            {
+              "type": "html",
+              "name": "question80",
+              "hideNumber": false,
+              "html": "<p><strong>Study Schedule</strong></p><p>&nbsp;</p><p>Participants can expect this study to last for up to 12 months, with up to 9 visits to the clinic in Camberwell, and up to 2 telehealth calls.</p><p>&nbsp;</p><p>These 9 in-clinic visits consist of the following schedule:</p><p>&nbsp;</p><ul><li data-list-item-id=\"e439c93652e8878a5b2d4b4313568ef79\">Screening visit (screening period can take up to 28 days)</li><li data-list-item-id=\"ea34a7d4a9dfbb553a293e72f13cd270c\">3 visits and 2 phone calls on the following days in the first month:<ul><li data-list-item-id=\"e383025af425afe143d2505c9ab3c9d56\">Day 1</li><li data-list-item-id=\"e4a39a0f1928a2575741c354f55bed02e\">Day 2</li><li data-list-item-id=\"e045c7d420b1159b34b016fe6b7251b8d\">Day 3 - telehealth call</li><li data-list-item-id=\"eabc4f9c9eec495edce6dcce28bf34d27\">Day 8 (+/- 1 day)</li><li data-list-item-id=\"e2734f376294d8c64da43263661e87f7a\">Day 15 - telehealth call</li></ul></li><li data-list-item-id=\"e8d81cfa03394926d34458aab68e463e7\">1 visit in each quarterly month thereafter:<ul><li data-list-item-id=\"edea822bc8f019debe1072e021427c8b1\">Day 29 (+/- 2 days)</li><li data-list-item-id=\"e4606aabac6e93d01321c897688165b56\">Day 90 (+/- 1 week)</li><li data-list-item-id=\"ef8cdc3d4f40a1b93374ffb1970e30a04\">Day 180 (+/- 2 weeks)</li><li data-list-item-id=\"e4396183034ff1da72160b2ac7d9038b6\">Day 270 (+/- 2 weeks)</li><li data-list-item-id=\"e9310b76c14ab363ea40356f0805dc3b5\">Day 365 (+/- 2 weeks)</li></ul></li></ul><p>&nbsp;</p><p>Your initial screening visit is expected to last for up to 3 hours. Once found eligible, you will attend your dosing visit, which consists of pre and post-dose monitoring and assessments, totalling the visit to about 5 hours.</p>"
+            },
+            {
+              "type": "image",
+              "name": "question81",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/2877/4c4deb05d3ea9d03a45f361fd01e4d10a8eb02f9b0e44ce4238be606f38431a4.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "30%"
+            },
+            {
+              "type": "html",
+              "name": "question82",
+              "hideNumber": false,
+              "html": "<p><strong>Reimbursement</strong></p><p>You will be reimbursed the following for any reasonable travel, parking, meals, and other expenses associated with your study visits, broken down as follows:</p><p>&nbsp;</p><p>•<span> </span>$250<span> </span>for the Screening Visit</p><p>•<span> </span>$540<span> </span>for Day 1 (Vaccination Visit)</p><p>•<span> </span>$300 for In-Clinic Follow Up Visits on Day 2, Day 8, Day 29, Day 90, Day 180, Day 270 and Day 365</p><p>•<span> </span>$50<span> </span>for a Telephone Call on Day 15</p><p>&nbsp;</p><p>At the end of the study, you will be reimbursed $500.</p><p>&nbsp;</p><p>If you attend all scheduled visits, you can be reimbursed up to $3,440 upon completion of the study.</p><p>&nbsp;</p><p>If required by the trial protocol, you may have a Telephone Call on Day 3. If this is required, your</p><p>trial doctor will let you know. You will be reimbursed $50 for the Day 3 Telephone Call.</p><p>&nbsp;</p><p>During the study, you may have an unscheduled visit if the study team deems it necessary. You will</p><p>be reimbursed $300<span> </span>for unscheduled visits.</p>"
+            }
+          ]
+        }
+      ],
+      "title": "Study Notes"
+    },
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question1",
+          "title": "As mentioned, this study will be conducted at Emeritus Research in Camberwell. Is this feasible for you to travel to?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question88",
+          "title": "You will need to be able to come into the clinic on Monday the 30th of November. This appointment is about 5-6 hours. If you can't. we can book you in another day. Can I confirm that you can make it to the clinic on that day?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel1",
+          "elements": [
+            {
+              "type": "dobandage",
+              "name": "question3",
+              "title": "Can you please confirm your date of birth?",
+              "showNumber": false
+            },
+            {
+              "type": "html",
+              "name": "question4",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>There are two age cohorts for this study.</strong></p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Active</strong></span></p><p>18 - 49</p><p>&nbsp;</p><p><span style=\"color:red;\"><strong>Inactive</strong></span></p><p>60 - 84</p>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question2",
+          "title": "Can you please confirm your biological sex?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Male"
+            },
+            {
+              "value": "Item 2",
+              "text": "Female"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel24",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question31",
+              "title": "Do you currently work in healthcare or with young children?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 2",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question87",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>This study excludes any participants in professions with high exposure risk to RSV, hMPV or PIV3.</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "bmi",
+          "name": "question5",
+          "title": "To calculate your BMI, could you please confirm your height and weight?",
+          "description": "Participants must have a BMI between 18 and 35kg/m2 to be eligible.",
+          "showNumber": false,
+          "bmiRangeMin": 18,
+          "bmiRangeMax": 35
+        },
+        {
+          "type": "radiogroup",
+          "name": "question62",
+          "title": "Do you have any holidays planned that might interfere with the study visits we discussed?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 3",
+              "text": "Yes, does not interfere - check before continuing ⚠️"
+            },
+            {
+              "value": "Item 4",
+              "text": "Yes, interferes - delay ⚠️"
+            }
+          ]
+        }
+      ],
+      "title": "Demographics"
+    },
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question42",
+          "title": "Are you currently sick with any infections, viruses or a flu/cold?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - delay screening ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel14",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question36",
+              "title": "Have you ever received an RSV vaccine in the past?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question47",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Please double check participant profile to ensure they have not participated in another RSV clinical trial.</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel12",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question37",
+              "title": "Have you received any live vaccines in the past 30 days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - delay screening ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question41",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Live vaccines include but aren't limited to:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ef5497462718d8e24ff513fcc23645bd4\">MMR</li><li data-list-item-id=\"e6fb379b0806649db58a96a63dc35cf38\">Rotavirus</li><li data-list-item-id=\"e7d0c1aea8ff559f2ffbb1854aa24d8a2\">Yellow fever</li><li data-list-item-id=\"e98200b9861bd6c19b65b116a2d147282\">Chickenpox / Varicella</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question38",
+              "title": "Have you received any non-live vaccines in the past 14 days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - delay screening ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question39",
+              "title": "Do you have any plans to receive any vaccines whilst on the study?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - delay screening ⚠️"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Yes, other investigational vaccine - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question40",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>The receipt of investigational vaccines whilst on study are excluded.</strong></span></p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exceptions</strong></span></p><p>COVID-19 and flu vaccines may be administered after 30 days from the study vaccine.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel2",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question6",
+              "title": "In the past month, have you taken any steroid medications for more than 14 consecutive days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question7",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>This study excludes the receipt of any systemic corticosteroids for more than 14 consecutive days within the past 30 days.</strong></span></p><p>&nbsp;</p><p><strong>⚠️ If yes, please delay screening <u>until 30 days after</u></strong><u> </u><strong><u>treatment has concluded</u>.</strong></p><p>&nbsp;</p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exceptions</strong></span></p><ul><li data-list-item-id=\"e33535a793fa019cb36c8248919ff9657\">Topical, opthalmic, intra-articular or soft tissue and inhaled corticosteroids are accepted</li><li data-list-item-id=\"ed736e7028f533f535cdfc6e6bb7ef1a5\">Sex steroids for transitioning are not exclusionary</li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel3",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question8",
+              "title": "Have you had to change the dosage of any current medications in the past 30 days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay until stable ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question9",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>This study excludes any unstable chronic medical condition, including one that resulted in a change in therapy (medication or other) in the past 30 days.</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question84",
+              "title": "Do you anticipate any changes to the dosages of your medications in the next 30 days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay until stable ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question10",
+              "title": "Do you have any unstable conditions that required hospitalisation in the past year, or may require medical attention whilst on the study?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question11",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>This study excludes any unstable chronic medical condition, including one that has required hospitalisation in the past year.</strong></span></p><p>&nbsp;</p><p><strong>⚠️ If unsure, please raise medical query.</strong></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question85",
+              "title": "Do you anticipate having to be admitted to the hospital for any reason in the next 12 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel4",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question12",
+              "title": "Do you have any history of significant neurological or psychiatric disorders in the past 5 years that required hospitalisation or medical intervention?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question13",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Participants who have had situational depression is accepted.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel5",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question14",
+              "title": "Do you have any history of cancer?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Definitively treated with no recurrence - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Current cancers - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question15",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Participants who have had their cancer definitively treated with no recurrence may be enrolled on the trial.</p><p>&nbsp;</p><p><span style=\"color:#000000;\"><strong>If unsure, please raise medical query ⚠️</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel6",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question17",
+              "visibleIf": "false\n",
+              "title": "n/a",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "hideFromPrint": true
+            },
+            {
+              "type": "radiogroup",
+              "name": "question16",
+              "title": "Have you ever had any significant allergic reactions to any medication, food or latex?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question83",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>This study excludes any significant/severe allergies to food, drugs or latex.</strong></span></p><p>&nbsp;</p><p>Significant = requiring hospitalisation or significant medical intervention</p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Mild reactions are accepted i.e. rash, itchiness etc.</p><p>&nbsp;</p><p><strong>If unsure, please raise medical query ⚠️</strong></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question18",
+              "title": "Have you had any allergic reactions to any vaccines in the past? If so, what sort of reactions, and which vaccine/s if you can recall?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - gather details below and query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question19",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>⚠️ If yes, please gather the details below and raise a medical query.</strong></p><p>&nbsp;</p><ul><li data-list-item-id=\"ebc07d88fe31e9d05e697586b370c8e02\">What sort of reactions participant experienced</li><li data-list-item-id=\"e08fbd369f2e95886132f6d84b918e0eb\">Which vaccine/s participant reacted to</li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel21",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question20",
+              "title": "Do you have any history of HIV, hepatitis B or C?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Previous hepatitis C that is now resolved - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question21",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>Exception</strong></span><br>Participants with positive hepatitis C antibodies due to a resolved disease are accepted as long as the following are satisfied:</p><p>&nbsp;</p><ul><li data-list-item-id=\"eb5e2144ac04eac9b3781e10e3d35e92b\">A confirmatory negative hepatitis C RNA test is obtained, and&nbsp;</li><li data-list-item-id=\"e466831185a5915f03f87b95501abe54e\">There is no &nbsp;clinical evidence of active infection or possible recent exposure&nbsp;</li></ul><p>&nbsp;</p><p><strong>⚠️ Please ensure the above as necessary. If unsure, please raise medical query&nbsp;</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel7",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question22",
+              "title": "Have you had any major surgeries in the past 4 weeks?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1No - continue ✅",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question23",
+              "title": "Have you donated or lost any units of blood in the past 4 weeks?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay ⚠️"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel8",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question24",
+              "title": "Do you have any blood disorders such as thrombocytopenia that might interfere with a vaccination?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question25",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>If unsure, please raise medical query ⚠️</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel11",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question34",
+              "title": "Are you currently receiving any form of immunosuppressive therapy, such as chemotherapy?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question35",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Includes but is not limited to:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ebb557fea5ef045786f8d38252e4ee075\">Chemotherapeutic agents to treat cancer or other conditions</li><li data-list-item-id=\"e5df0db73383bf58dec6fb2b953f4daac\">Radiotherapy</li><li data-list-item-id=\"e617d866468a02be78377481f6ae1954c\">Interventions associated with organ or bone marrow transplantation, or autoimmune disease</li><li data-list-item-id=\"e7d4e9c7bba5e45889db1d09c49e4cd97\">Topical 5-fluorouracil (5FU) treatment (common in older participants)</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question26",
+              "title": "Have you been diagnosed with any autoimmune diseases or immunosuppressive conditions?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - raise medical query ⚠️"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question27",
+          "title": "To the best of your knowledge, do you have any history of Guillain-Barre syndrome?",
+          "description": "GBS is a rare autoimmune disorder in which the body's immune system mistakenly attacks the peripheral nervous system, which connects the brain and spinal cord to the rest of the body",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question28",
+          "title": "Do you have any significant cardiac or pulmonary diseases that isn't being managed by any medication?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - gather details and raise medical query ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel9",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question29",
+              "title": "In the past 12 months, have you been hospitalised for any respiratory diseases?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question30",
+              "title": "Have you had any infections that greatly affected your respiratory system (breathing) in the past 6 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel10",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question32",
+              "title": "In the past 3 months, have you received a blood transfusion, blood products or immunoglobulins?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question33",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Autologous blood transfusions are not considered an exclusion.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel15",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question48",
+              "title": "Do you have any history of drug abuse in the past year?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question49",
+              "title": "Have you used any illicit drugs recreationally in the past year?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question50",
+              "title": "There will be a urine drug test at screening which participants must test negative for. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel16",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question51",
+              "title": "Do you have any tattoos or skin conditions covering both of your shoulders where you would normally receive a vaccine?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question52",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Participants require at least one shoulder free of tattoos or skin conditions for assessing injection site reactions</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel19",
+          "elements": [
+            {
+              "type": "paneldynamic",
+              "name": "question63",
+              "title": "Are you taking any other medication?",
+              "description": "Please list all your medications",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question64",
+                  "title": "Medication",
+                  "description": "Name of medication",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question65",
+                  "startWithNewLine": false,
+                  "title": "Indication",
+                  "description": "What is the medication used for?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question66",
+                  "startWithNewLine": false,
+                  "title": "Dose",
+                  "description": "How much do you take?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question67",
+                  "startWithNewLine": false,
+                  "title": "Frequency",
+                  "description": "How often do you take the medication?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question68",
+                  "startWithNewLine": false,
+                  "title": "Route",
+                  "description": "Tablet, Injection, inhaled, nasal, topical?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question69",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "When did you start taking this medication? If unsure, you just just provide an estimated year",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question70",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question71",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#f44336;\"><strong>Please exclude the following</strong></span></p><ul><li data-list-item-id=\"eac2d6d0f22ba8c76cd088de53b6615bb\">Previous receipt of an RSV vaccine, either approved or investigational</li><li data-list-item-id=\"e99cd7eddbe13e33592f0a18f7d67a7c8\">Receipt of any live vaccines in the past 30 days</li><li data-list-item-id=\"e8a5ddd456b0824ee283f94b12f41f560\">Receipt of any other vaccines in the past 14 days</li><li data-list-item-id=\"e0d3d1b8cd32b56d89ee8c0d8ed14674f\">Plans to receive an investigational vaccine during the study</li></ul><p>&nbsp;</p><ul><li data-list-item-id=\"e4e0693ae1e53a6b1f86650dd735441fa\">Steroid medications taken for more than 14 consecutive days in the past month</li><li data-list-item-id=\"e289cd4b7a431e5f74650a3dbafd990d4\">Any changes to current dosages in the past 30 days</li><li data-list-item-id=\"eb1f74ee41652aefbdb253500cbc22fd6\">Anticipation of any dosage change in the next 30 days</li><li data-list-item-id=\"e7481892a57fec791327451515fd8ae8b\">Receipt of any blood transfusions, blood products or immunoglobulins in the past 3 months</li><li data-list-item-id=\"e55adb99e9fc0068b3fa9993a65f5cea2\">Use of any illicit drugs in the past year</li><li data-list-item-id=\"e3df3ce8b815b25adc3e1ae80176de3cb\">Currently recieving immunosuppressive therapy i.e. chemotherapy<ul><li data-list-item-id=\"e43387dc41ba44a7765a9425ec79e89c6\">Chemotherapeutic agents to treat cancer or other conditions</li><li data-list-item-id=\"eda56626a68125634ce771487d7db2ce2\">Radiotherapy</li><li data-list-item-id=\"ea7f9c98be13c0b37f539802b36376a94\">Interventions associated with organ or bone marrow transplantation, or autoimmune disease</li><li data-list-item-id=\"eb727f3e7d7d7d8a2d2b99e42d83a863c\">Topical 5-fluorouracil (5FU) treatment (common in older participants)</li></ul></li></ul><p>&nbsp;</p><p><strong>⚠️ Please raise medical query for:</strong></p><ul><li data-list-item-id=\"ed420da07b3da494772a9834dcb89861d\">Antipsychotic medications</li></ul><p>&nbsp;</p><p><span style=\"color:#ef5350;\"><strong>If unsure, please make medical query!</strong></span></p>"
+            },
+            {
+              "type": "paneldynamic",
+              "name": "question73",
+              "title": "Do you have any other significant medical history?",
+              "description": "Please list all your medical conditions or events",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question74",
+                  "title": "Medical Condition/Event",
+                  "description": "Name of condition or event",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question75",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "For the date, if you're not sure, you can just provide an estimated year.",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question76",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing or N/A",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question77",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#f44336;\"><strong>Please exclude the following</strong></span></p><ul><li data-list-item-id=\"ed6fa244e0b9e0e5c24d526feb7c836ed\">Current profession in healthcare or with young children</li><li data-list-item-id=\"e7dea3e8c9298a6b94febe43d96efb844\">Current illness with any infections, viruses or a flu/cold</li><li data-list-item-id=\"e96a344f38209952023a6c558a200c017\">Any unstable conditions that required hospitalisation in the past year, or may require medical attention whilst on the study</li><li data-list-item-id=\"e1bd554e962e8e9392df798211f55aa9e\">Anticipation of admission to hospital for any reason in the next 12 months</li><li data-list-item-id=\"e39da1cab77ef22af80ac7e2c168feb75\">History of significant neurological or psychiatric disorders in the past 5 years requiring hospitalization or medical intervention&nbsp;</li><li data-list-item-id=\"edf7e45e57e7ca45ad839fb268a75bc83\">History of cancer that is not definitively treated</li><li data-list-item-id=\"ef2b7346fc5494d772ced7d2a322248a4\">Significant allegic reactions to any medications, food or latex</li><li data-list-item-id=\"ee1f06fb32ee7cc4a1c17df563948f408\">Allergic reactions to vaccines, as determined by Investigator</li><li data-list-item-id=\"e36a4cb8a214402ea7ea320047302e446\">History of HIV, Hep B or C</li><li data-list-item-id=\"e2d63b764c766dad302b5ac842f932c5a\">Major surgeries in the past 4 weeks</li><li data-list-item-id=\"e7718a25c7a8471e5e37a5e61ac01589b\">Loss or donation of any units of blood in the past 4 weeks</li><li data-list-item-id=\"e46a2be2178462282853dd90ff6bd3c95\">Blood disorders such as thrombocytopenia that may interfere with vaccinations</li><li data-list-item-id=\"e09d899d49a6fe54a5270d46b1cd3f8b5\">Diagnosis of any autoimmune diseases or immunosuppressive conditions</li><li data-list-item-id=\"e8bce2cfb1ab7b9c3125d6e57eae9f122\">History of Guillain-Barre syndrome</li><li data-list-item-id=\"e11dcf767b9d8d2787c324130e0d577c7\">Significant cardiac or pulmonary diseases not managed by any medications, as determined by Investigator</li><li data-list-item-id=\"ebf0974b526e13b1821649a658be62e51\">Hospitalisation for any respiratory diseases in the past 12 months</li><li data-list-item-id=\"e14b8dc0e9c943b198a92d6c965c32316\">Infections greatly affecting respiratory system in the past 6 months</li><li data-list-item-id=\"edb1f7a16a7bc3bd66a6c06566fa8af1c\">History of drug abuse in the past year</li><li data-list-item-id=\"e0ab219724724849a82ca1f93a11d65b2\">Tattoos or skin conditions covering both shoulders&nbsp;</li></ul><p>&nbsp;</p><p><span style=\"color:#ef5350;\"><strong>If unsure, please make medical query!</strong></span></p>"
+            },
+            {
+              "type": "comment",
+              "name": "question79",
+              "title": "Additional Information",
+              "description": "Please use this to note down any useful additional information",
+              "hideNumber": false
+            }
+          ]
+        }
+      ],
+      "title": "Medical History"
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question54",
+          "title": "These next few questions will be regarding contraception, is this okay?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel17",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question55",
+              "title": "Are you pregnant, breastfeeding or planning to become pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question56",
+              "visibleIf": "{question55} = 'Item 1'",
+              "title": "Are you able to fall pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No, postmenopausal for at least 12 months - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No, surgically sterile i.e. hysterectomy - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question57",
+              "visibleIf": "{question56} = 'Item 2'",
+              "title": "Do you engage in sexual relations with the opposite sex?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No, same sex relationship - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No, abstinent as a preferred lifestyle choice - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question58",
+              "visibleIf": "false",
+              "title": "This study requires female participants of childbearing potential to be using a highly effective method of contraception from the time of screening, until at least 8 weeks after the vaccination. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question59",
+              "visibleIf": "{question57} = 'Item 2'",
+              "title": "This study requires female participants of childbearing potential to be using a highly effective method of contraception from the time of screening, until at least 8 weeks after the vaccination. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Vasectomised partner - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question86",
+              "visibleIf": "{question59} = 'Item 2'",
+              "title": "Can you please indicate which method of contraception you are currently using?",
+              "description": "Participants need to have been on indicated method of contraception from the time of screening.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Oral contraceptive pill ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Implant contraceptive e.g. implanon ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Intrauterine device (IUD) e.g. Merina ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Injectable contraceptive e.g. Depo Provera shot ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "None - exclude 🚫"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{question54} = 'Item 1' and {question2} = 'Item 2'"
+        },
+        {
+          "type": "panel",
+          "name": "panel18",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question60",
+              "title": "Are you able to father children?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No, surgically sterile i.e. vasectomy - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question61",
+              "visibleIf": "{question60} = 'Item 2'",
+              "title": "This study requires male participants to use a condom when engaging in sexual activity with a partner of the opposite sex, during the study and until 30 days after the vaccination. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{question54} = 'Item 1' and {question2} = 'Item 1'"
+        }
+      ],
+      "title": "Contraception"
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel13",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question43",
+              "title": "Have you participated in another clinical trial in the past 4 weeks?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question44",
+              "title": "Have you received an investigational vaccine from another clinical trial in the past 3 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question45",
+              "title": "Do you have any plans to undergo another clinical trial whilst on the study?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question46",
+              "title": "This trial requires participants to wait up to 12 months after the dose of the study vaccine before participating in another clinical trial. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question53",
+          "title": "Are you or any of your immediate family members an employee of Merck Sharp and Dohme LLC, or Emeritus Research?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question104",
+          "title": "Please note that by booking in your appointment this does not guarantee your participation in the trial. Clinical trials can experience delays or cancellations due to various factors. We will aim to notify you 24 to 48 hours before your appointment if we need to cancel or reschedule, however there are chances of same day cancellations. Is this okay?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Details",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "PT Confirmation Questions",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Confirmation Info",
+              "hideNumber": false,
+              "html": "<p><span style=\"background-color:rgb(255,255,255);color:red;\"><strong>Thank you for your time today. Before I finalise your booking, I need to run you through some quick questions to confirm that I have explained the following to you. By answering yes to these questions, you acknowledge that I have explained these things to you in full and that if any information you have given is incomplete or inaccurate, this may affect both your eligibility and your reimbursement.</strong></span></p>"
+            },
+            {
+              "type": "checkbox",
+              "name": "Confirmation Checklist",
+              "title": "Can you please confirm the following?\n",
+              "description": "Participant must answer yes to all questions below prior to being booked in.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "I have explained the study medication/background to you"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "I have explained the study commitment and dates to you"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "You don't have any upcoming travel plans that will clash with the study dates"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "I have explained the reimbursement to you"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "You have answered the medical questions honestly and to the best of your ability"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "I have explained that by not disclosing medical information relevant to this study, that can have an impact on the reimbursement, which may include the site choosing not to reimburse you at all"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Please confirm you understand that you must read the consent form that will be sent to you prior to attending your visit. If you don’t your appointment may be delayed or rescheduled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Booking Instruction Panel",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Booking Instructions",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:blue;font-size:20px;\"><u>Booking Instructions:</u></span></p><ul><li data-list-item-id=\"e6078306771a811be7117611a1f6cf455\"><span style=\"color:#000000;\"><strong>Calendar and chair time </strong></span>- 1hr *Chair 1hr</li><li data-list-item-id=\"e9032f0381774c5e48ff4e6e1908faa48\"><strong>Exceed target</strong> - No 🛑</li><li data-list-item-id=\"e40ccf55579a1c6aad93e749676e8d0d4\"><strong>Latest appointment time</strong> - 3PM<ul><li data-list-item-id=\"ecdfbb187ec6413beee1e27cd5d81ed75\"><strong>Exceed?</strong> - No 🛑</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(290,68%,46%);\" data-list-item-id=\"e4a0bf0d1780ba504d3081f19f1f16401\"><span style=\"color:hsl(290,68%,46%);\"><strong>Special instructions</strong></span><ul><li data-list-item-id=\"e15d084dc5eaac8427d763d4f370315d3\">New studies in Melb can only be booked Tuesdays onwards</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(34,100%,51%);\" data-list-item-id=\"e8038a9a95d0a31cd0675ee5be782bb2e\"><span style=\"color:hsl(34,100%,51%);\"><strong>Overall time for PT</strong></span><ul><li data-list-item-id=\"e29746b475931b80c3e26eb26e2a63d22\">3h</li></ul></li></ul>"
+            }
+          ]
+        }
+      ],
+      "title": "Misc"
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel22",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question109",
+              "title": "Before we wrap up, I’d like to share details about our referral program. If you refer someone to us you can receive up to $250 if they enrol and participate in the study. Would you like to hear more?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel23",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question108",
+              "hideNumber": false,
+              "html": "<p><strong>Great! Here's how it works:</strong></p><p>&nbsp;</p><p><strong>To refer someone, you will need to provide them with a unique referral ID. The person you refer will need to provide us this ID either when they sign up on our website, or when they speak to us over the phone. This ID is essential, as it ensures we can track and reimburse you for any referrals.</strong></p><p>&nbsp;</p><p><strong>For each person you refer who comes in for an in-person screening visit, you'll receive $50. If they go on to enrol and participate in the study, you'll earn an additional $200.</strong></p><p>&nbsp;</p><p><strong>There's no limit- you can refer as many people as you'd like, as long as you have an exisiting relationship with them. It's important to note that you cannot advertise for referrals. This program is based on personal connections, so please only refer people you know.</strong></p><p>&nbsp;</p><p><strong>If you're interested, we can set up your Unique Referral ID today if you would like</strong> <i>(the unique referral ID is REF[p number]. E.g., REFP14471)</i></p><p>&nbsp;</p><p><strong>Who do you know you might be interested in this trial?</strong> <i>(if they don't know anyone for this trial, they can also refer someone to any other trial)</i></p><p>&nbsp;</p><p><strong>Would you like us to send you an email that you can forward on to them?</strong></p>"
+            }
+          ]
+        }
+      ],
+      "title": "Referral Program"
+    }
+  ],
+  "version": "Version-1"
+}

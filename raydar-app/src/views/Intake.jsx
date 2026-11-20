@@ -1,4 +1,6 @@
-import { S, bmi, upd } from '../engine/store.js';
+import { S, bmi, upd, idReady, qcLeft } from '../engine/store.js';
+import { NextStep } from './NextStep.jsx';
+import { keyName } from '../engine/keys.js';
 import { CONDS as CONDS_LIST } from '../engine/data.js';
 import { A, Ic, Seg } from './ui.jsx';
 import { Err, Piece } from '../motion/components.jsx';
@@ -36,10 +38,12 @@ export function Identity() {
         <Err msg={e.match} />
         <Err msg={e.id} />
       </Piece>
-      <Piece style={{ marginTop: 12 }}>
-        <button className="pill pri" {...A('confirm')}>Confirm identity</button>
-        <span className="k">Enter</span>
-      </Piece>
+      {idReady() ? <NextStep style={{ marginTop: 12 }} /> : (
+        <Piece style={{ marginTop: 12 }}>
+          <button className="pill pri" {...A('confirm')}>Confirm identity</button>
+          <span className="k">Enter</span>
+        </Piece>
+      )}
     </div>
   );
 }
@@ -84,6 +88,11 @@ export function QuickCheck() {
           <Ic n="ti-calendar-stats" /> {S.away.length ? S.away.length + ' period' + (S.away.length > 1 ? 's' : '') + ' added' : 'Add away dates'}
         </button>
       </Row>
+      {/* 2.4: what's left, then a prompt to move on once everything is asked */}
+      {qcLeft().length ? (
+        <p className="mut" style={{ fontSize: 12, margin: '10px 0 0' }}>Still to ask: {qcLeft().join(', ')}</p>
+      ) : null}
+      <NextStep sticky style={{ marginTop: 12 }} />
     </div>
   );
 }

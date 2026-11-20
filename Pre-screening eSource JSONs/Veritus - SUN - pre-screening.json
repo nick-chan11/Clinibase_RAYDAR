@@ -1,0 +1,1377 @@
+{
+  "title": "SUN-0864 Pre Screening",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel7",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question12",
+              "hideNumber": false,
+              "html": "<p>Phase: 1</p><p>&nbsp;</p><p><strong>Purpose and Study Drug</strong></p><p>&nbsp;</p><p>This study is investigating a potential new treatment for <strong>acquired hypothalamic obesity</strong>, a condition that can develop due to genetic defects or injury to the hypothalamus, a region of the brain involved in regulating hunger and body weight. The condition is characterised by extreme hunger and rapid or progressive weight gain.</p><p>&nbsp;</p><p>The treatment is being studied in healthy volunteers first to help researchers understand its safety and how it behaves in the body before it is tested in people living with the condition.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel15",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question7",
+              "hideNumber": false,
+              "html": "<p><strong><u>Note for recruiters:</u> This study will run a bit differently to the usual SAD cohorts of a HV study.</strong></p><p>&nbsp;</p><p>There will be 2 main groups (S1 and S2), they will be alternately dose levels and in-clinic stays. Each group will receive 4 different doses.</p>"
+            },
+            {
+              "type": "image",
+              "name": "question39",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/4284/2af4d6416ae817811a5d53a06444dfd1259646e5558f5f7aea18a69cd7045037.png",
+              "imageHeight": "auto",
+              "imageWidth": "100%"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel10",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question13",
+              "hideNumber": false,
+              "html": "<p><strong>Study Design</strong></p><p>&nbsp;</p><p><span style=\"color:#000000;\">Participants will be randomly allocated to receive<strong> oral tablets or capsules </strong>containing either the <strong>study drug or a placebo</strong>. This study is double-blinded, meaning neither you nor the study staff will know which group you are allocated to until the study finishes.</span></p><p>&nbsp;</p><p><span style=\"color:#000000;\">If you are eligible following this phone pre-screen, you will attend the clinic for screening assessments. These include blood tests, vital signs, ECGs and a physical examination to confirm eligibility.</span></p><p>&nbsp;</p><p>Participants in this study will receive the study drug on <strong>four occasions</strong>. Each occasion will involve a <strong>3-night in-clinic stay</strong>, for a total of <strong>four separate stays</strong> (12 nights in total). The study drug will be administered following the first night of each stay.</p><p>&nbsp;</p><p>After the final in-clinic stay, participants will complete <strong>12 follow-up phone calls</strong>.</p><p>&nbsp;</p><p>There are two main groups we are recruiting for. <span style=\"color:red;\"><strong>Participants must be available for all possible dates within their chosen group, there is no leeway </strong></span><span style=\"color:hsl(40,100%,50%);\"><strong>from Period 2 onwards. We will be booking PTs into Sentinel or ROC in Period 1 as we would normally do for a HV study.</strong></span></p><p>&nbsp;</p><p><strong>SAD </strong><span style=\"color:hsl(290,100%,50%);\"><strong>Cohort S1</strong></span><strong> </strong><span style=\"color:hsl(165,66%,40%);\"><strong>Period 1 </strong></span><span style=\"color:blue;\"><strong>[Sentinel is filled, pls book ROC only]</strong></span></p><p>Your in-clinic stay will fall on the <strong>30th of November - 3rd of December </strong>(ROC)</p><p>&nbsp;</p><p><strong>SAD </strong><span style=\"color:hsl(290,100%,50%);\"><strong>Cohort S1</strong></span><strong> </strong><span style=\"color:hsl(204,61%,51%);\"><strong>Period 2</strong></span></p><p><span style=\"color:#000000;\">Your in-clinic stay will fall on either the <strong>5th - 8th of January</strong> or the <strong>6th - 9th of January</strong>.</span></p><p>&nbsp;</p><p><strong>SAD </strong><span style=\"color:hsl(290,100%,50%);\"><strong>Cohort S1</strong></span><strong> </strong><span style=\"color:hsl(225,70%,47%);\"><strong>Period 3</strong></span></p><p><span style=\"color:#000000;\">Your in-clinic stay will fall on either the <strong>8th - 11th of February</strong> or the <strong>9th - 12th of February</strong>.</span></p><p>&nbsp;</p><p><strong>SAD </strong><span style=\"color:hsl(290,100%,50%);\"><strong>Cohort S1</strong></span><strong> </strong><span style=\"color:hsl(262,76%,48%);\"><strong>Period 4</strong></span></p><p><span style=\"color:#000000;\">Your in-clinic stay will fall on either the <strong>14th - 17th of March</strong> or the <strong>15th - 18th of March</strong>.</span></p><p>&nbsp;</p><p><span style=\"color:#000000;\"><i>or</i></span></p><p>&nbsp;</p><p><strong>SAD </strong><span style=\"color:hsl(104,83%,44%);\"><strong>Cohort S2</strong></span><strong> </strong><span style=\"color:hsl(165,66%,40%);\"><strong>Period 1</strong></span></p><p>Your in-clinic stay will fall on either the <strong>14th - 17th of December </strong>(Sentinel) or the <strong>15th - 18th of December </strong>(ROC). Pls get PT to chose which dates for Period 1 works best for them and book into Sent or ROC as applicable. <i>Note: it is only Period 1 that PT's will get this option</i></p><p>&nbsp;</p><p><strong>SAD </strong><span style=\"color:hsl(104,83%,44%);\"><strong>Cohort S2</strong></span><strong> </strong><span style=\"color:hsl(204,61%,51%);\"><strong>Period 2</strong></span></p><p><span style=\"color:#000000;\">Your in-clinic stay will fall on either the <strong>21st - 24th of January</strong> or the <strong>24th - 27th of January</strong>.</span></p><p>&nbsp;</p><p><strong>SAD </strong><span style=\"color:hsl(104,83%,44%);\"><strong>Cohort S2</strong></span><strong> </strong><span style=\"color:hsl(225,70%,47%);\"><strong>Period 3</strong></span></p><p><span style=\"color:#000000;\">Your in-clinic stay will fall on either the <strong>24th - 27th of February</strong> or the <strong>25th - 28th of February</strong>.</span></p><p>&nbsp;</p><p><strong>SAD </strong><span style=\"color:hsl(104,83%,44%);\"><strong>Cohort S2</strong></span><strong> </strong><span style=\"color:hsl(262,76%,48%);\"><strong>Period 4</strong></span></p><p><span style=\"color:#000000;\">Your in-clinic stay will fall on either the <strong>31st of March - 3rd of April</strong> or the <strong>1st - 4th of April</strong>.</span></p><p>&nbsp;</p><p>&nbsp;</p><p>Could you please confirm your availability for these dates? We would only be able to offer you a screening appointment if you would be able to make the above dates.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel11",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question14",
+              "hideNumber": false,
+              "html": "<p><strong>Reimbursement</strong></p><p>&nbsp;</p><p><span>You will receive a set reimbursement amount for your participation in this research study. This reimbursement is <strong>inclusive of travel, parking, meals, and any other expenses associated with study visits</strong>; these are not paid separately</span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ed7cb26b4df33a265e5f6bd1b4e32718e\">Screening visit:<strong> $300</strong></li><li data-list-item-id=\"ed33f0374797c9bf47c948d622b3d1476\">Admission and discharge days:<strong> $240</strong></li><li data-list-item-id=\"e012f95ed4465fbe1ee2da2189a005844\">Overnight stay: <strong>$480</strong> per night</li><li data-list-item-id=\"ebe2fad3fe0c7589946c8c009e4c3a5d3\">Follow-up phone call: <strong>$100</strong></li><li data-list-item-id=\"e39798d7cbf9697892865ef02cec970d2\">Unscheduled visits:<strong> $300</strong></li><li data-list-item-id=\"e47a8efde4845de9de664a4764bf27918\">Retention bonus (if all study visits are completed)<strong>: $500</strong></li><li data-list-item-id=\"ece2e51ae1e861e14a88e529e225d72fd\">Eligible alternate: <strong>$780</strong></li></ul><p>&nbsp;</p><p><span><strong>Thus, if you complete the entire study, you will receive a payment of approx. </strong></span><span style=\"color:red;\"><span><strong>$6,760</strong></span></span><span><strong>.</strong></span></p><p>&nbsp;</p><p><span>If you are an eligible alternate*, and do not get dosed, you will receive a partial reimbursement of $780.</span></p><p><i><span>*To make sure there are enough participants ready for dosing on Day 1, extra volunteers, called 'alternates', will also be recruited and admitted. On Day 1, before the study drug is given, your study participation status will be confirmed. If you are an alternate, you might be included in the study if a participant from the dosing group is unable to proceed.</span></i></p>"
+            },
+            {
+              "type": "image",
+              "name": "question15",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/4284/eaaf6b0e7e1e70f7725526ecb8def202bc13f9b8dc2e1026116634dadaf8a6ca.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "100%"
+            }
+          ]
+        }
+      ],
+      "title": "Study Notes"
+    },
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question3",
+          "visibleIf": "False",
+          "title": "For recruiter only: Which cohort are you recruiting for?",
+          "description": "Do not read this out to the participant. This is for you only. Different questions will appear depending on which answer you select",
+          "hideNumber": false,
+          "isRequired": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "hideFromPrint": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "SAD Cohort"
+            },
+            {
+              "value": "Item 2",
+              "text": "MAD Cohort"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question64",
+          "title": "We can go through some medical questions now to see if you are eligible. Please note that if you fail to disclose any medications, medical history, or are dishonest about alcohol use, drug use, or anything similar, you won't be reimbursed for your screening visit. Is that okay?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question55",
+          "title": "Are you located in Victoria?",
+          "description": "Please only put Victorian participants forward. If they live near the border, they may be considered; however no interstate participants. We want to make sure pts can commit to the study, and living far away may increase withdrawal from a study.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question31",
+          "title": "The clinic is Veritus Research located in Bayswater, VIC. Would it feasible for you to travel to Bayswater for your visits and overnight stay?",
+          "description": "Address is 885 Mountain Hwy, Bayswater. Secure on-site parking is available. Please let participants know that driving is the best option. Around a 20 min walk from Bayswater station.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question1",
+          "title": "As mentioned earlier, there will be multiple overnight-stays involved in this study. Would this be something you can commit to and are comfortable with?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question24",
+          "title": "As part of this study, you will undergo skin assessments. During each assessment, you will be asked to change into a medical gown so the doctors can examine your skin from head to toe, excluding the genital area. Is this something you would be comfortable with?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question41",
+          "title": "This study will be assessing both capsule and tablet forms of the study drug. The capsule form does contain gelatine which would means it is unsuitable for vegans, vegetarians and for those following a Kosher or Halal diet. Can I please confirm you're okay with the gelatine capsules?",
+          "description": "This is only a concern for SAD and food effect cohorts. MAD cohorts will be allocated the tablet only.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question4",
+          "title": "What is your biological sex?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Male"
+            },
+            {
+              "value": "Item 2",
+              "text": "Female"
+            }
+          ]
+        },
+        {
+          "type": "dobandage",
+          "name": "What is your Date of Birth?",
+          "startWithNewLine": false,
+          "description": "Participants must be between 18 - 64 years old (inclusive).",
+          "showNumber": false
+        },
+        {
+          "type": "html",
+          "name": "question10",
+          "visibleIf": "{What is your Date of Birth?.age} >= 65",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:red;font-size:20px;\"><strong>PT does not fit age requirements, they must be 18 - 64. DO NOT CONTINUE</strong></span></p>"
+        },
+        {
+          "type": "panel",
+          "name": "panel1",
+          "elements": [
+            {
+              "type": "bmi",
+              "name": "What is your height and weight?",
+              "description": "Participant's BMI needs to be between 18 - 30 kg/m2, and body weight ≥ 50 kg. Max weight 150kg",
+              "showNumber": false,
+              "bmiRangeMin": 18,
+              "bmiRangeMax": 30
+            }
+          ],
+          "visibleIf": "{question3} = 'Item 1'"
+        },
+        {
+          "type": "panel",
+          "name": "panel4",
+          "elements": [
+            {
+              "type": "bmi",
+              "name": "question47",
+              "description": "MAD Participant's BMI needs to be ≥ 27.0 kg/m2. Body weight must be ≥ 70 kg and less than 150 kg",
+              "showNumber": false,
+              "bmiRangeMin": 27,
+              "bmiRangeMax": 100
+            }
+          ],
+          "visibleIf": "false",
+          "hideFromPrint": true
+        },
+        {
+          "type": "html",
+          "name": "question5",
+          "visibleIf": "{question47.weight} < 50",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:red;font-size:20px;\"><strong>PT is outside of weight criteria. They must be equal to or over 50kg, and less than 150kg</strong></span></p>"
+        }
+      ],
+      "title": "Demographics/Availability"
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel9",
+          "elements": [
+            {
+              "type": "comment",
+              "name": "question28",
+              "title": "Are you taking any prescription or over-the-counter medication, supplements or vitamins?",
+              "hideNumber": false
+            },
+            {
+              "type": "html",
+              "name": "question29",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#000000;font-family:'Trebuchet MS', Helvetica, sans-serif;\">Participants need to be overall healthy. <strong>If they rely on daily medication, they will not be suitable.</strong> If they take occasional products, they just need to be stopped 7 days prior to receiving the study drug. Please see below for specifics:</span></p><p>&nbsp;</p><p><span style=\"color:#d32f2f;font-family:'Trebuchet MS', Helvetica, sans-serif;\"><strong>The use of any prescription or over-the-counter medication (including herbal products, diet aids, vitamins etc.) within 7 days prior to the first dose of study drug and throughout the study is <u>prohibited</u>.</strong></span></p><p>&nbsp;</p><p><span style=\"color:hsl(32, 100%, 50%);font-family:'Trebuchet MS', Helvetica, sans-serif;\">For prescription <strong>topical</strong> (creams/ointments) or <strong>intranasal</strong> products please raise a medical enquiry ⚠️</span></p><p>&nbsp;</p><p><span style=\"color:green;font-family:'Trebuchet MS', Helvetica, sans-serif;\">Panadol, ibuprofen and contraception is okay!</span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel8",
+          "elements": [
+            {
+              "type": "comment",
+              "name": "question26",
+              "title": "Do you have any medical conditions or significant medical history?",
+              "hideNumber": false
+            },
+            {
+              "type": "html",
+              "name": "question27",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#000000;font-family:'Trebuchet MS', Helvetica, sans-serif;\">As mentioned, we are looking for healthy participants.</span></p><p><span style=\"color:#d32f2f;font-family:'Trebuchet MS', Helvetica, sans-serif;\"><strong>If participants have a medical condition but it does not require treatment, you may want to pose a doctor enquiry.&nbsp;</strong></span></p><p><span style=\"color:#d32f2f;font-family:'Trebuchet MS', Helvetica, sans-serif;\"><strong>If medical condition requires treatment with daily medication, please exclude as the study DOES NOT ALLOW prescription medication within the past 7 days prior to dosing!</strong></span></p><p>&nbsp;</p><p><span style=\"color:#d32f2f;font-family:'Trebuchet MS', Helvetica, sans-serif;\"><strong>Please always exclude the following:</strong></span></p><ul><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e8703ebc5f2df7116ce84ac61ce9eaf70\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">clinically significant renal, hepatic, gastrointestinal, cardiovascular, respiratory, haematologic, dermatologic, autoimmune, endocrine (PCOS that doesn't require treatment is okay), inflammatory, neurological, psychiatric disease, or any uncontrolled medical condition</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e291939f921769c17c2982185a841d638\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">current or recent infection within 14 days</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e8d03328bb39c6ea5af305a11fee2ffba\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">infection requiring IV antibiotics within 28 days</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"eee1ee660f2e9bb667ce2185bf377298c\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">fever or illness within 14 days of dosing</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e18a79b31de4f3f1f6170cb036b8b76a8\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">major surgery within 12 weeks of screening or planned surgery</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e5957a35bcdb97deb046eceeec5f44c39\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">history of small intestine or bariatric surgery or other surgical treatments for obesity</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e637eba2e2e38a739781c5c1c2ca35939\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">known abnormal heart rhythm</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e3b031f6f671f1a9d7edc37623b3c5b59\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">history of diabetes (previous gestational is fine)</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e33bfbeba1644459eceea87d5fda92e5a\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">cancer within 5 years (BCC/SCC and CIN okay if &gt; 2 years ago)</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e37a07c416d0864a4e3e4a97ec92090db\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">any history of melanoma</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e7c8f76607e20fd18c980814dccb830a3\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">history of seizures</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"e2636588f91fd0f88486a968a728bef59\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">HIV, Hep B, Hep C</span></li><li class=\"ck-list-marker-font-family\" style=\"--ck-content-list-marker-font-family:'Trebuchet MS', Helvetica, sans-serif;\" data-list-item-id=\"ee663c2a59a68295aaea0960503836006\"><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">history of sensitivity to heparin or heparin-induced thrombocytopenia</span></li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question53",
+          "title": "In the past 2 weeks have you had a fever or been unwell with a viral or bacterial infection?",
+          "description": "Fever or symptomatic viral or bacterial infection at Screening or within 14 days prior to first dose is exclusionary (a minor viral upper respiratory tract infection just needs at least 7 days prior to dosing)",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please delay or exclude as required ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question49",
+          "title": "In the past month have you had an infections requiring treatment with antibiotics?",
+          "description": "Any infections within 2 weeks of screening and any infection requiring IV antibiotics within 28 days of screening is exclusionary",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please delay or exclude as required ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question54",
+          "title": "Have you ever been diagnosed with diabetes?",
+          "description": "Previous gestational diabetes is okay",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question59",
+          "title": "In the past month have you used the supplement, St John's wort, or medications such as rifampicin or phenytoin?",
+          "description": "Use of CYP3A4 inducers within 28 days of dosing is exclusionary",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please delay screening ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question30",
+          "title": "Have you had any surgery or been admitted to hospital within the past 3 months?",
+          "description": "Please exclude if they had major surgery or been admitted to hospital for an overnight stay within the past 3 months. Day procedures, minor surgeries, and day visits to the hospital are fine. If unsure, please check with the doctor.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please exclude according to the criteria above 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question2",
+          "title": "Do you have a surgery planned throughout the duration of the study?",
+          "description": "As above, day surgeries may be ok. Please check with doctor or Bridget if unsure.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel14",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question56",
+              "title": "Do you have any history of bariatric surgery or any other surgical treatment for obesity? ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question57",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Any history of these surgeries is exclusionary</strong> (even if it has been removed):</span></p><p>&nbsp;</p><ul><li data-list-item-id=\"e7c86388bd7ce65c3e462df3cac29261f\">sleeve gastrectomy</li><li data-list-item-id=\"e1dd759ce9d17df3fa66ea4e65767f241\">gastric bypass</li><li data-list-item-id=\"ec82ebf0584076e7d5d9cd6146f3d818f\">gastric band (lap band)</li></ul><p>&nbsp;</p>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question35",
+          "title": "Have you ever had your blood pressure tested or monitored before?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - continue to screen ✅"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question36",
+          "visibleIf": "{question35} = 'Item 2'",
+          "title": "Were there any abnormalities?",
+          "description": "If there was abnormalities, continue to screen but also check with doctors. We require a normal blood pressure. High or low blood pressure might not be suitable depending on the values.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please note, continue to screen and check with doctors ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question37",
+          "title": "Have you ever had a trace of your heart (ECG) done before?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - continue to screen ✅"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question38",
+          "visibleIf": "{question37} = 'Item 2'",
+          "title": "Were there any abnormalities?",
+          "description": "If there were abnormalities/issues, please collect all details and raise with doctors.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please note, continue to screen and check with doctors ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question40",
+          "title": "Have you donated or lost blood (500ml or more) or blood products within the past 2 months?",
+          "description": "Whole blood donation or significant blood loss within 60 days prior of first dose of IP or plasma donation within 30 days is exclusionary",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please exclude or delay appointment if possible ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question52",
+          "title": "Do you have any history of HIV, Hepatitis B or C?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question18",
+          "title": "Do you have any history of seizures?",
+          "description": "History of seizure or seizure disorder is exclusionary (simple febrile seizures during childhood are okay)",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question6",
+          "title": "Do you have any other history of cancer, including skin cancer?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - include/ exclude according to the above ⚠️"
+            }
+          ],
+          "longDescription": "<p>&nbsp;</p><p><strong>Any cancer within 5 years</strong> of screening is exclusionary. <span style=\"color:red;\">Any history of<strong> melanoma</strong> is exclusionary no matter how long ago it occured.</span></p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exceptions:</strong></span></p><ul><li data-list-item-id=\"efc193d3466c2980c16d73d19f7dd2894\"><strong>BCCs/SCCs</strong> that was removed at least <strong>2 years</strong> before screening</li><li data-list-item-id=\"e5544b09492caa09c4678eab79054708b\"><strong>Cervical intraepithelial neoplasia</strong> (localised cervical cancer) at least <strong>2 years</strong> prior to screening</li></ul><p>&nbsp;</p><p><span style=\"color:red;\"><i>Please raise a doctor enquiry if unsure</i></span></p>"
+        }
+      ],
+      "title": "Medications and Medical History"
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "yes no female",
+          "title": "The next few questions will be surrounding the contraceptive requirement for this study. Is this something you're comfortable with?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel3",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Are you able to become pregnant?",
+              "title": "Are you able to become pregnant?",
+              "description": "Only women of non child bearing potential are allowed to participate in this study.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - please exclude 🛑"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "cannot become preg",
+              "visibleIf": "{Are you able to become pregnant?} = 'Item 2'",
+              "title": "For women who CANNOT become pregnant, they may be either surgically sterile, or post-menopausal for at least 12 months. Are either of these the case for you?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Surgically sterile (i.e. hysterectomy) - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Post-menopausal for at least 12 months - continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Do you engage in sexual relations with the opposite sex?",
+              "visibleIf": "{Are you able to become pregnant?} = 'Item 2'",
+              "title": "Do you engage in sexual relations with the opposite sex?",
+              "description": "Ensure they are either surgically sterile or post-menopausal. Only women of non child bearing potential are allowed to participate in this study.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - currently sexually active with the opposite sex - Ensure they are either surgically sterile or post-menopausal"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - same sex relationship - Ensure they are either surgically sterile or post-menopausal"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Not currently - abstinent (has not been sexually active for 3+ month) - Ensure they are either surgically sterile or post-menopausal"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question34",
+              "visibleIf": "{Do you engage in sexual relations with the opposite sex?} = 'Item 3'",
+              "title": "Now, this study includes a requirement related to contraception. If you are currently abstinent, the study would ask that you remain so for the duration of the study due to the risks of an untested drug on a baby. Would that be okay with you?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - unwilling to continue abstinence - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question 11Are you currently breastfeeding, pregnant or planning to become pregnant?",
+              "visibleIf": "{Do you engage in sexual relations with the opposite sex?} = 'Item 1'",
+              "title": "Are you currently breastfeeding, pregnant, planning OR able to become pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{question4} = 'Item 2'",
+          "title": "Female contraception"
+        },
+        {
+          "type": "panel",
+          "name": "panel5",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Are you still able to have children? male",
+              "title": "Are you still able to have children?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "nitem 2",
+                  "text": "No - surgically sterile (i.e. vasectomy), continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Do you currently engage in sexual relations with the opposite sex? male",
+              "visibleIf": "{Are you still able to have children? male} = 'Item 1'",
+              "title": "Do you currently engage in sexual relations with the opposite sex? male",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - same sex relationship, continue to screen ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Not currently - abstinent (has not been sexually active for 3+ month) - continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Do you currently have a female partner who can fall pregnant?",
+              "visibleIf": "{Do you currently engage in sexual relations with the opposite sex? male} = 'Item 1'",
+              "title": "Do you currently have a female partner who can fall pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - continue to screen ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "contra req male 2",
+              "visibleIf": "{Do you currently have a female partner who can fall pregnant?} = 'Item 2' or {Do you currently engage in sexual relations with the opposite sex? male} = 'Item 2'",
+              "title": "For males, this study has a contraception requirement. This involves male participants to use a condom throughout the duration of the trial when engaging in sexual relations. This is to ensure the safety of the participant's sexual partner and avoid the potential transmission of the study drug. Is this OK with you?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "contra req male",
+              "visibleIf": "{Do you currently have a female partner who can fall pregnant?} = 'Item 1'",
+              "title": "For males, this study has a contraception requirement. This involves male participants to use a condom throughout the duration of the trial AS WELL AS any female partner to also be on a highly effective method of contraception (i.e. pill, IUD, implant etc.). This is to ensure the safety of the participant's sexual partner and avoid the potential transmission of the study drug. Is this the case for you?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question42",
+              "visibleIf": "{Do you currently engage in sexual relations with the opposite sex? male} = 'Item 3'",
+              "title": "If you are sexually active in the future, this study has a contraceptive requirement. This involves male participants to use a condom when engaging in sexual relations with the opposite sex. Would this be ok with you? ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "contra method male",
+              "visibleIf": "{contra req male} = 'Item 1'",
+              "title": "Can you please indicate what method of contraception your partner is currently using?",
+              "description": "Participant's partner must be on a highly effective method of contraception from signing consent until at least <90 days after the last dose of the study drug.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Implant contraceptive (e.g. Jadelle) ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Intrauterine device/system (IUD/IUS) containing either copper or levonorgestrel (e.g. Mirena) ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Injectable contraceptive (e.g. Depo Provera shot) ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Oral contraceptive pill ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Vasectomised partner (at least 90 days) ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "None of the above - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question25",
+              "title": "As part of the study requirements you would need to refrain from donating sperm for 90 days after your last dose. Is that okay?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{question4} = 'Item 1'",
+          "title": "Male Contraception"
+        }
+      ],
+      "title": "Contraception Criteria"
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question67",
+          "title": "Are you comfortable with blood tests?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel6",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question68",
+              "title": "Do you have any severe allergies or have a history of anaphylactic reaction(s)?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question17",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\">This study is particularly strict with allergies.<strong> Any history of severe allergic or anaphylactic reactions is exclusionary!</strong> So if the PT has had any of the following due to a reaction pls exclude:</span></p><p>&nbsp;</p><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e440468df3c21a5d550112491f8e4d3ce\"><span style=\"color:red;\">Required an EpiPen/adrenaline or hospitalisation</span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e3e89b745c5a7ec2d88ddcc62de3cc02a\"><span style=\"color:red;\">Swelling of throat, tongue, lips</span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"efa14195c901004b3e63efcbba502b52b\"><span style=\"color:red;\">Difficulty breathing/talking</span></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e0141b2632fa477d0fb61bf6f4affac47\"><span style=\"color:red;\">Full body hives</span></li></ul><p>&nbsp;</p><p><span style=\"color:hsl(30, 83%, 48%);\">For mild/moderate allergic reactions pls raise a doctor enquiry</span> ⚠️</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel13",
+          "elements": [
+            {
+              "type": "text",
+              "name": "question46",
+              "title": "If you do, how many units of alcohol do you usually consume per week?",
+              "description": "Please exclude more than **10 drinks/week**, or more than 4/day",
+              "hideNumber": false
+            },
+            {
+              "type": "html",
+              "name": "question45",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>1 drink equals:</strong></p><p>285mL beer</p><p>100mL wine</p><p>30mL spirit</p><p>&nbsp;</p><p><span style=\"color:#d32f2f;font-family:'Trebuchet MS', Helvetica, sans-serif;\"><strong>Please inform participants: You will need to abstain from alcohol from 24 hours prior to check-in to the clinic and throughout the in-clinic stay. For the rest of the study <u>PTs should not exceed 10 standard drinks per week</u>.</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question44",
+          "title": "Do you smoke, vape, or use any nicotine-containing products such as gum or patches?",
+          "description": "We are looking for non-smoker or very light social smokers!",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes, but ≤ 5 cigarettes (or equivalent) per week - continue to screen ✅"
+            },
+            {
+              "value": "Item 3",
+              "text": "Yes - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question50",
+          "title": "Do you have any history of substance abuse or recreational IV drug use?",
+          "description": "History of substance abuse or dependency or history of recreational IV drug use over the last 5 years is exclusionary",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question11",
+          "title": "In the past 3 months have you used any recreational drugs such as cocaine, MDMA, ketamine, meth or marijuana?",
+          "description": "There may be some leeway if PT is a very infrequent user (pls raise med enquiry). Marijuana use in the past 2 weeks is exclusionary (just make sure they've washout is long enough to pass the drug screen)",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question63",
+          "startWithNewLine": false,
+          "title": "Please note that some medications may show up on the drug test as well, such as Valium (benzodiazepine) or Dexamphetamine for ADHD, I am just making sure that you haven't taken anything recently that may show up positive?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - delay appointment ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question65",
+          "startWithNewLine": false,
+          "title": "In addition, certain foods may also affect drug test results. For example, consuming poppy seeds within 2–3 days prior to your screening visit may result in a false positive to opioids. Will you be able to avoid consuming poppy seeds for at least 3 days before your screening appointment?",
+          "description": "\n",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 2 ",
+              "text": "Yes - continue screening ✅"
+            },
+            {
+              "value": "Item 3",
+              "text": "No - continue screening, but tell them about the risks and they may not get paid ✅"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question66",
+          "title": "You won't be able to use recreational drugs throughout the duration of the study, is this ok with you?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question51",
+          "title": "There will be a urine drug test and alcohol breath test at the screening that must test negative. Is this OK with you?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question61",
+          "title": "Have you recently consumed any products containing grapefruit?",
+          "description": "Ingestion of any grapefruit products (or any other CYP3A4 inhibitor) within 14 days of dosing is exclusionary",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please delay screening ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question62",
+          "title": "Do you have any difficulty with swallowing capsules or tablets?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel2",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question23",
+              "title": "As part of the study, participants would be required to refrain from consuming food or beverages containing caffeine and/or xanthene from 24 hours prior to check-in to the clinic and throughout the in-clinic stay. Would you be comfortable with this?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question22",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<div><div><div><div><div><div><p>Here's a list of common foods and beverages that contain <strong>caffeine</strong> or <strong>xanthene</strong>:</p><h3><span style=\"font-size:14px;\"><strong>Beverages:</strong></span></h3><ol><li><strong>Coffee</strong> (brewed, espresso, iced)</li><li><strong>Tea</strong> (black, green, white, oolong, and some herbal teas)</li><li><strong>Energy drinks</strong> (e.g., Red Bull, Monster, etc.)</li><li><strong>Soft drinks</strong> (e.g., Coca-Cola, Pepsi)</li><li><strong>Iced tea</strong> (commercially prepared)</li><li><strong>Kombucha</strong> (depending on the brand and fermentation process)</li><li><strong>Pre-workout supplements</strong> (liquid form)</li></ol><h3><span style=\"font-size:14px;\"><strong>Foods:</strong></span></h3><ol><li><strong>Chocolate</strong> (dark chocolate, milk chocolate, cocoa, hot chocolate)</li><li><strong>Ice cream or frozen desserts</strong> (containing chocolate or coffee flavour)</li><li><strong>Caffeinated snacks</strong> (e.g., chocolate-covered coffee beans, energy bars)</li><li><strong>Coffee-flavoured foods</strong>&nbsp;</li></ol></div></div></div></div></div></div>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question19",
+          "title": "As part of the study, participants would be required to refrain from strenuous physical exercise such as weight training from 72 hours prior to your screening visit, as well as check-in to the clinic and throughout the in-clinic stay. Would that be ok with you?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel12",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question32",
+              "title": "Have you participated in a clinical trial or received an investigational drug/device in the past 6 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude/ schedule call back 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question33",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:hsl(204, 100%, 50%);font-size:20px;\"><strong>General Rule:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"e18ee9747d6f375a369752b08ae27d55a\"><strong>3 month</strong> wash out from last dose of <strong>oral</strong> IP</li><li data-list-item-id=\"e99979c2b7139792ae2b2767875c09442\"><strong>6 month</strong> wash out from last dose of <strong>injected</strong> IP</li></ul><p>&nbsp;</p><p>&nbsp;</p><p><span style=\"color:green;font-size:20px;\"><strong>Exceptions:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"e4aba19b014bf1eee3873bf647a87c7dd\"><strong>YF</strong> and <strong>LIFE </strong>shortened to a <strong>3 month</strong> wash out since last dose (due to established short half life)</li><li data-list-item-id=\"e9add5ccf5e03b7cd2465e3af5b06f8a2\"><strong>S-4321</strong> requires <strong>9-12 months</strong> due to extended half life</li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question43",
+          "title": "For recruiter only: please check participants profile before booking that they definitely have not been dosed in a study at Veritus in the past 6 months (9 months specifically if taken part in S-4321).",
+          "description": "If unsure, check with Bridget",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Checked ✅"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question8",
+          "title": "Are you or any of your immediate family members an employee of Veritus Research or the sponsor of the trial, Superluminal Medicines?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question9",
+          "title": "Please note that the first appointment requires you to fast for 10 hours prior. This includes no food/drink besides water. Would that be ok with you?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Comments",
+          "choices": [
+            {
+              "value": "Item 1 ",
+              "text": "Yes - continue to book ✅"
+            },
+            {
+              "value": "Item 2 ",
+              "text": "No - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question60",
+          "title": "Thank you for answering the pre-screening questions. It looks like you may be suitable for the trial and we can look at booking you a screening appointment to discuss the trial with a doctor. Please note that by booking in your appointment this does not guarantee your participation in the trial. Clinical trials can experience delays or cancellations due to various factors. We will notify you 24 to 48 hours before your appointment if we need to cancel or reschedule, is this okay?",
+          "description": "\n",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1 ",
+              "text": "Yes - continue to book ✅"
+            },
+            {
+              "value": "Item 2 ",
+              "text": "Not ok with cancellations/ reschedules - please exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel16",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question16",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:blue;font-size:20px;\"><u>Booking Instructions:</u></span></p><ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"eba337b99e2fee7358164e537b48dc5fb\"><strong>Calendar and chair time</strong><ul><li data-list-item-id=\"e13d9d8b8ba87cfb09139dc068a22d6e5\">Doc and CTC time - <span style=\"color:red;\"><strong>1hr</strong></span></li><li data-list-item-id=\"e27a2ba1062f01f823b627c6ed9f2c7c8\">Bed time - 2 hrs</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(22,69%,51%);\" data-list-item-id=\"e98ec04b5f09b723fa002fb24af4c6e5e\"><span style=\"color:hsl(22,69%,51%);\"><strong>Booking status</strong></span><ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e49df9b0ea358658cd89d2dfda4004651\"><strong>Screening Visit</strong></li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(268,80%,47%);\" data-list-item-id=\"e0c43748cb7b820ed0e58d49898503f7f\"><span style=\"color:hsl(268,80%,47%);\"><strong>No special instructions</strong></span></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e2bfa29c3b966c46109c14da2bfa6c5dd\"><strong>Book in overflow?</strong><ul><li data-list-item-id=\"e059865fbaa64a715baf001043263e37a\">Yes, up to 3 per day with no overlap</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"ee05da87261d35c97e11024ce99efaaa4\"><span style=\"color:#ffc107;\"><strong>Overall screening time for PT</strong></span><ul><li data-list-item-id=\"e836e020cd484d1fce8fb2fca0b17db83\">2-3 hrs</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"eed2d821eefd409df98501033fe5254e5\"><span style=\"color:red;\"><strong>Do not book under Grace Heo or Jessica Pineda</strong></span></li></ul>"
+            }
+          ]
+        }
+      ],
+      "title": "Additional Questions"
+    },
+    {
+      "name": "page6",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel20",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question20",
+              "title": "Before we wrap up, I’d like to share details about our referral program. If you refer someone to us you can receive up to $250 if they enrol and participate in the study. Would you like to hear more?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel21",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question21",
+              "hideNumber": false,
+              "html": "<p><strong>Great! Here's how it works:</strong></p><p>&nbsp;</p><p><strong>To refer someone, you will need to provide them with a unique referral ID. The person you refer will need to provide us this ID either when they sign up on our website, or when they speak to us over the phone. This ID is essential, as it ensures we can track and reimburse you for any referrals.</strong></p><p>&nbsp;</p><p><strong>For each person you refer who comes in for an in-person screening visit, you'll receive $50. If they go on to enrol and participate in the study, you'll earn an additional $200.</strong></p><p>&nbsp;</p><p><strong>There's no limit- you can refer as many people as you'd like, as long as you have an exisiting relationship with them. It's important to note that you cannot advertise for referrals. This program is based on personal connections, so please only refer people you know.</strong></p><p>&nbsp;</p><p><strong>If you're interested, we can set up your Unique Referral ID today if you would like</strong> <i>(the unique referral ID is REF[p number]. E.g., REFP14471)</i></p><p>&nbsp;</p><p><strong>Who do you know you might be interested in this trial?</strong> <i>(if they don't know anyone for this trial, they can also refer someone to any other trial)</i></p><p>&nbsp;</p><p><strong>Would you like us to send you an email that you can forward on to them?</strong></p>"
+            }
+          ]
+        }
+      ],
+      "title": "Referral"
+    }
+  ],
+  "version": "Version-1"
+}

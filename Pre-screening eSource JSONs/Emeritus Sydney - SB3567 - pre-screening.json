@@ -1,0 +1,2134 @@
+{
+  "title": "SB3567-CLIN-001 Sydney Pre-screening Questions",
+  "pages": [
+    {
+      "name": "Study Notes",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "Opening Panel",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Opening",
+              "hideNumber": false,
+              "html": "<p><strong>Phase: 1</strong></p><p><strong>Sponsor: Sagimet Biosciences, Inc.</strong></p><p>&nbsp;</p><p><strong>Opening</strong></p><p>&nbsp;</p><p>Acne is a very common inflammatory skin disease affecting approximately 231 million people globally. Normally, your skin produces oil known as sebum as a means of hydration. If sebum is overproduced however, it can clog pores and trap bacteria. This is a key reason for acne development, as <i>C. acnes</i>, a form of bacteria, builds up on the skin.</p><p>&nbsp;</p><p>Treatments such as antibiotics and topical treatments target <i>C. acnes</i> but is limited by their severe side effects.</p><p>&nbsp;</p><p>The point of this study is to test the safety and effectiveness of a new potential oral medication. It works by blocking an enzyme that helps produce sebum.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Study Design Panel",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Study Design",
+              "hideNumber": false,
+              "html": "<p><strong>Study Design</strong></p><p>&nbsp;</p><p>This is a <span style=\"color:red;\">Phase 1 trial</span>, and the aim is to evaluate the safety and effectiveness of the orally taken drug, TVB-3567, at different dose levels. Its purpose is to slow down sebum production so that <i>C. acnes</i> doesn't build up on the skin.</p><p>&nbsp;</p><p>Approximately 28 participants will be enrolled into this study.&nbsp;</p><p>&nbsp;</p><p><span>Everyone will receive the study drug and will receive increasing doses as the study goes on.</span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Study Schedule Panel",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Study Schedule",
+              "hideNumber": false,
+              "html": "<p><strong>Study schedule and visits</strong></p><p>This study is approximately <strong>5 weeks long</strong> not including the screening visit.&nbsp;</p><p>&nbsp;</p><p>The screening period can last up to 28 days, at which will further determine your eligibility for the study.</p><p>&nbsp;</p><p>After your screening you'll have 5 visits on:</p><ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e41c124507ad3003152c8685993bcc556\"><strong>Day -1</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e479399f4c316db599849d93cb06e877f\"><strong>Day 1</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"ec43a2e2d0334bca8e90912649fcdd200\"><strong>Day 8</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e3d9edd59f9902cab84f8310e9a62ceeb\"><strong>Day 16</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e9f7e5a9685647dcf3a0ca84107b089dd\"><strong>Day 29</strong></li></ul><p>&nbsp;</p><p>Then you will have <strong>one final visit 7-11 days after day 29</strong></p><p>&nbsp;</p><p><strong>Including screening, there are 7 visits.</strong></p>"
+            },
+            {
+              "type": "image",
+              "name": "Study Schedule Pic",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/1332/9edba23ef2a1c2100dfb7f98a649fa5ea3445e32c134eba4fa33d2555b7c9fb7.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "50%"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Reimbursement Panel",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Reimbursement",
+              "hideNumber": false,
+              "html": "<p><strong>Reimbursement</strong></p><p>&nbsp;</p><p>You will be reimbursed for any reasonable travel, parking, and other expenses.&nbsp;</p><p>&nbsp;</p><ul><li data-list-item-id=\"e912176899a91a148708bad76751eff43\">$258 for the Screening, Day -1, and end of study follow-up visit</li><li data-list-item-id=\"e71796c2565d5ec0da301aa4299c6b946\">$337 for the 3 in-clinic dosing visits - Day 1, 8, and 16</li><li data-list-item-id=\"ee62480b9e0df296b17ddb98e8e307ef5\">$50 per day you dose yourself with the study drug at home from days 2-7, days 9-15, and days 17-28. If you fail to administer your dose on one of these days, you will not receive the $50 for that day</li><li data-list-item-id=\"e16d8c750c9f534ac30a431d96e7416fc\">$100 for travel to the ophthalmology clinic (for your screening visit and on day 29)</li></ul><p>&nbsp;</p><p>This means if you attend all scheduled visits and dose yourself appropriately at home, you can receive up to $3235.</p><p>&nbsp;</p><p>If you must return to site for extra bloods, you will be reimbursed an additional $100, and if you have an unscheduled visit as deemed necessary by the study team, you will be reimbursed an additional $258. These are not included in the total I just mentioned.</p><p>&nbsp;</p><p>The study team will let you know if you're eligible for extra reimbursement related to rural travel.</p>"
+            },
+            {
+              "type": "html",
+              "name": "question28",
+              "hideNumber": false,
+              "html": "<p><strong>Disclosure</strong></p><p>&nbsp;</p><p>Before we go any further, I want to explain exactly how the reimbursement works, so there are no surprises for you later. The reimbursement I just went through is what you'd receive if everything goes ahead as planned. That can look a bit different depending on what happens on the day. For example, if the doctor looks over your information early on and finds you're not eligible before you even get to the consent form, if you decide not to sign the consent form yourself, or if something doesn't line up with what you've told me today, you'd likely only get a partial amount, or in some cases nothing, instead of the full reimbursement.</p><p>&nbsp;</p><p>That's actually a big part of why it matters that you're as accurate as possible with me right now. The doctor's early review is based on exactly what you tell me today, so the more accurate you are, the better your chances of making it all the way through screening and getting the full reimbursement.</p>"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "question45",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:blue;font-size:20px;\"><span><strong>That was all from me regarding the study information, did you have any questions for me?</strong></span></span></p><p>&nbsp;</p><p>&nbsp;</p><p><span style=\"color:blue;font-size:20px;\"><span><strong>Before we go on, please keep in mind that if you aren't successful for a screening this time, we do have other studies that you might be eligible for.&nbsp; We also have a referral program where you can earn up to $250 for referring people for any of our studies.&nbsp;Are you happy for us to continue into the medical questions?</strong></span></span></p>"
+        }
+      ],
+      "title": "Study Notes"
+    },
+    {
+      "name": "Demographics",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel2",
+          "elements": [
+            {
+              "type": "dobandage",
+              "name": "DOB",
+              "title": "What is your Date of Birth?",
+              "description": "Participants must be aged 18 to 55 (inclusive) at screening.",
+              "showNumber": false
+            },
+            {
+              "type": "html",
+              "name": "Age Exclusion",
+              "visibleIf": "{DOB.age} < 18 or {DOB.age} > 55",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;font-size:20px;\"><strong>Please exclude! PTs must be 18-55</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "Sex",
+              "title": "What sex were you assigned at birth?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1 ",
+                  "text": " Male"
+                },
+                {
+                  "value": "Item 2 ",
+                  "text": " Female"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Travel Feasibility",
+              "title": "Our facility is located in Botany. Would it be feasible for you to travel to us for your study visits?",
+              "description": "Lakes Business Park, 2, Building 2A, Ground Floor, Suite 2/12 Lord St, Botany NSW 2019",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1 ",
+                  "text": "Yes - continue screening ✅"
+                },
+                {
+                  "value": "Item 2 ",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question24",
+              "title": "You will have some eye scans at a separate location in Bondi Junction? Would it be feasible for you to travel there for visits?",
+              "description": "2/35 Spring St, Bondi Junction NSW 2022",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1 ",
+                  "text": "Yes - continue screening ✅"
+                },
+                {
+                  "value": "Item 2 ",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question63",
+              "title": "Do you have any holidays planned that may interfere with the visits?",
+              "description": "If yes, please check dates.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1 ",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 3 ",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "name": "question2",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/1332/806c06eeda7a21838118ca2f7cd3293d6800999f892405237b9976c463b1db51.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "100%"
+            }
+          ]
+        }
+      ],
+      "title": "Demographics"
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "bmi",
+          "name": "question23",
+          "title": "There's a BMI criterion for this study. Could I please get your height and weight?",
+          "description": "Must be between 18 and 37 (inclusive)",
+          "showNumber": false,
+          "bmiRangeMin": 18,
+          "bmiRangeMax": 37
+        },
+        {
+          "type": "panel",
+          "name": "panel3",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question4",
+              "title": "Do you currently have acne?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question42",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>No need for Dx</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question10",
+              "title": "Have you been diagnosed with any other forms of acne other than acne vulgaris? Eg: Acne conglobate, acne fulminans, chloracne, drug-induced acne, acne mechanica\n",
+              "description": "These are quite rare, severe forms of acne. Acne fulminans is accompanied by fever and joint pain. Acne mechanica is caused by friction or pressure on the skin.",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "question6",
+              "title": "The next few questions will be asking you to rate the severity of your acne. Is that something you are comfortable with? \nOn a scale of 0 to 4, where 0 = clear skin, 1 = almost clear, 2 = mild severity, 3 = moderate severity and 4 = severe, how would you rate the overall severity of your acne?",
+              "description": "Participants must have severe acne to be included",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "0 - clear skin, please exclude 🛑"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "1 - almost clear, please exclude 🛑"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "2 - mild severity (some visible spots/pimples, mostly non-inflamed), please exclude 🛑"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "3 - moderate severity (many pimples, with some inflamed/red spots) - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "4 - severe (Widespread inflamed (red and sore) pimples together with many other non-inflamed spots such as blackheads or whiteheads) - Continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question71",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;font-size:20px;\">We are now looking of participants with MODERATE to SEVERE acne</span></p>"
+            },
+            {
+              "type": "html",
+              "name": "question44",
+              "hideNumber": false,
+              "html": "<p><strong>Attention Recruiters</strong></p><p>&nbsp;</p><p>We are now only recruiting participants with <strong>moderate to severe acne</strong>.</p><p>&nbsp;</p><p>Please make sure you are completing lesion counts.</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question7",
+              "visibleIf": "false",
+              "title": "If you were to estimate, how many pimples do you currently have on your face?",
+              "description": "Papules + Pustules (describe them if necessary)\n\nPlease make sure they are counting lesions",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "hideFromPrint": true,
+              "choices": [
+                {
+                  "value": "Item 1please exclude 🚫",
+                  "text": "20 or more - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Less than 20 - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question58",
+              "title": "Looking at your face today, how many red bumps and pus-filled pimples would you say you have?",
+              "description": "Make them count papules + pustules please\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1please exclude 🚫",
+                  "text": "20 or more - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Less than 20 - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "name": "question9",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/1332/c1e8c7ef76421b46c48685389f1252045af53144bdf95c0ff7e4bd32eaa07fd5.png",
+              "contentMode": "image",
+              "imageHeight": "650",
+              "imageWidth": "600"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question59",
+              "title": "Looking at your face today, how many blackheads (tiny black spots) and whiteheads (small white bumps sticking out) would you say you have?",
+              "description": "Make them count please\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1please exclude 🚫",
+                  "text": "20 or more - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Less than 20 - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question60",
+              "title": "Looking at your face today, how many large, deep painful acne lumps do you have?",
+              "description": "Make them count please\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1please exclude 🚫",
+                  "text": "2 or less - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "More than 2 - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question8",
+              "visibleIf": "false",
+              "title": "How many nodules do you currently have on your face?",
+              "description": "Nodules are small, firm lumps (5mm or more)",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "2 or less - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "More than 2 - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "question27",
+              "visibleIf": "false",
+              "title": "In the last 14 days have you used any of the following prescription or non-prescription topical anti-acne treatments on your face?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 7",
+                  "text": "Benzoyl Peroxide (including Benzac)"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Azelaic acid"
+                },
+                {
+                  "value": "Item 1",
+                  "text": "Antibiotics (ex. erythromycin, lincomycin, clindamycin)"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Sulfonamides (ex. Klaron, Plexion, Avar/Avar-E)"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Corticosteroids (ex. hydrocortisone, betamethasone, clobetasone)"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Salicylic acid"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "None of the above - Continue ✅"
+                }
+              ],
+              "showSelectAllItem": true,
+              "selectAllText": "DON'T PICK - OPTION GLITCHING OUT"
+            },
+            {
+              "type": "html",
+              "name": "question38",
+              "visibleIf": "false",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>If <strong>not on face, it's OK</strong>.</p><p>&nbsp;</p><p>If PT has been on <strong>any of the topical treatments on the left in the last 14 days</strong> - <span style=\"color:#ffc107;\"><strong>delay screening</strong></span><span style=\"color:#000000;\"><strong>/</strong></span><span style=\"color:red;\"><strong>exclude</strong></span> (maybe <strong>check that everything else is fine first</strong>)</p><p>&nbsp;</p><p><span style=\"color:#000000;\"><strong>Includes </strong></span><span style=\"color:#ffc107;\"><strong>acne cosmeceuticals</strong></span><span style=\"color:#000000;\"> like cleansers, soaps, washes, serum, creams, medicated sunscreen, or makeup, <strong>if there is an active ingredient on the left - </strong></span><span style=\"color:#ffc107;\"><strong>Dr enquiry</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question20",
+              "title": "In the last 5 months, have you taken any oral tretinoins (isotretinoin)? This includes oral accutane and roaccutane",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question12",
+              "visibleIf": "false",
+              "title": "In the last 4 weeks, have you undergone photodynamic therapy, dermabrasion, or chemical peeling on your face?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay/exclude ⚠️/🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question41",
+              "visibleIf": "false",
+              "title": "In the last 4 weeks, have you taken oral or injectable corticosteroids, like Triamcinolone, Methasone, Prednisone, Prednisolone, or Cortisone?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay/exclude ⚠️/🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question43",
+              "visibleIf": "false",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Anything <span style=\"color:red;\"><strong>oral/injectable</strong></span> medicine <span style=\"color:red;\"><strong>ending in something on the left</strong></span> (ex. <strong>beta<u>methasone</u></strong>, <strong>dexa<u>methasone</u></strong>, <strong>hydro<u>cortisone</u></strong> etc.) is <span style=\"color:red;\"><strong>exclusionary</strong></span></p><p>&nbsp;</p><p><span style=\"color:#000000;\">If PT is on </span><span style=\"color:green;\"><strong>intranasal/inhaled corticosteroid</strong></span><span style=\"color:#000000;\"> and </span><span style=\"color:green;\"><strong>stable for last 4 weeks - OK</strong></span><span style=\"color:#000000;\">&nbsp;</span></p><p>&nbsp;</p><p><span style=\"color:#000000;\">(</span><span style=\"color:red;\"><strong>Unless</strong></span><span style=\"color:#000000;\"> taken </span><span style=\"color:red;\"><strong>for rhinitis</strong></span><span style=\"color:#000000;\">)</span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question73",
+              "visibleIf": "false",
+              "title": "Have you taken any oral antibiotics in the last 4 weeks?",
+              "description": "If continuous use of 5 days or less - Continue",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay/exclude ⚠️/🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question40",
+              "title": "In the last 4 weeks have you taken spironolactone? ",
+              "description": "If continuous use of 5 days or less - Continue",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question76",
+              "title": "In the last 2 months have you been taking Vitamin A supplements?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - less than 10,000 IU/day ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes, greater than 10,000 IU/day 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question3",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>Vit A supplements are taken orally</strong></p><p>&nbsp;</p><p>If on Vitamin A supplements, submit a <span style=\"color:#ffc107;\"><strong>Dr enquiry</strong></span> with the <strong>following information</strong>:<br>&nbsp;</p><p><strong>Vitamin brand + number per day</strong></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question77",
+              "title": "From now until the end of the study, you will need to refrain from undergoing or taking the treatments, medication, or supplements I just asked about. Do you anticipate needing to take these in the near future?",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "paneldynamic",
+              "name": "question1",
+              "title": "Acne Medication List",
+              "description": "Please refer to the list at the right for exclusionary medications. Participants might be able to discuss stopping their medication with the doctor during screening depending on what they are taking.\nPlease check with doctor if unsure.",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question64",
+                  "title": "Medication",
+                  "description": "Name of medication",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question65",
+                  "startWithNewLine": false,
+                  "title": "Indication",
+                  "description": "What is the medication used for?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question66",
+                  "startWithNewLine": false,
+                  "title": "Dose",
+                  "description": "How much do you take?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question67",
+                  "startWithNewLine": false,
+                  "title": "Frequency",
+                  "description": "How often do you take the medication?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question68",
+                  "startWithNewLine": false,
+                  "title": "Route",
+                  "description": "Tablet, Injection, inhaled, nasal, topical?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question69",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "When did you start taking this medication? If unsure, you just just provide an estimated year",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question70",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question13",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>&nbsp;</p><p><span style=\"color:#000000;\">Within last <strong>4 weeks</strong>:</span></p><ul><li data-list-item-id=\"efc16e00711373ff2c0e6e2c0478504ac\"><span style=\"color:red;\"><strong>Spironolactone</strong></span> (androgen blocker)</li></ul><p>&nbsp;</p><p><span style=\"color:#000000;\">Within last <strong>2 months</strong>:</span></p><ul><li data-list-item-id=\"ef05fd52ec4566bcad6745266e83f9b76\"><span style=\"color:red;\"><strong>Greater than 10,000 units/day</strong></span> of <span style=\"color:red;\"><strong>Vitamin A</strong></span> supplements for a time</li></ul><p>&nbsp;</p><p>Within last <strong>5 months:</strong></p><ul><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e9080bc403ffb6e9605ef4b6644cb2bdb\"><span style=\"color:red;\"><strong>Isotretinoin</strong></span><ul><li data-list-item-id=\"e29d2285a50fe3d9cbabdaf76076c8c83\">Accutane/roaccutane</li></ul></li></ul><p>&nbsp;</p><p>If PT mentions a procedure/treatment not talked about, <span style=\"color:#ffc107;\"><strong>Dr enquiry</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question14",
+              "title": "Do you have any intolerances or hypersensitivities to any acne medications?",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - check with doctor ⚠️"
+                }
+              ]
+            }
+          ],
+          "title": "Acne"
+        },
+        {
+          "type": "panel",
+          "name": "Optical Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question17",
+              "title": "Do you have an eye conditions that results in you having useful vision in only 1 eye?",
+              "description": "Amblyopia (clinically significant lazy eye), pre-existing ophthalmic condition",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question15",
+              "title": "Have you ever had a cornea transplant, or do you have any conditions that affect your cornea, such as corneal edema, keratitis, Fuch's (like books) dystrophy, corneal dystrophy, or guttae (Gut-ay)?",
+              "description": "Cornea = clear layer at the front of the eye that helps focus light and protect the eye",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question18",
+              "title": "Has an optometrist or doctor ever diagnosed you with dry eye or xerophthalmia, and have you ever needed prescription medication for it?",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question31",
+              "title": "Have you ever had dry eyes or felt the need to use eyedrops?",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Dr enquiry with details on frequency and drops used ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question90",
+              "title": "Do you have a history of adverse reactions to pupil dilators?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1Yes",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Dr enquiry ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question26",
+              "title": "Do you have glaucoma?",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes, not narrow angle glaucoma - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes, narrow angle glaucoma that has been definitively treated with laser peripheral iridotomy - continue ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Yes, not adequately treated narrow angle glaucoma - exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question5",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Laser peripheral iridotomy - A laser is used to form a small hole in the iris so that fluid pressure inside the eye is released.</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question16",
+              "title": "Do you have a history of laser refractive surgery (ex. PRK, LASIK)",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Yes - exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question57",
+              "title": "From 48h before your screening appointment till after the study, you must refrain from using contact lenses. Is this OK?",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue screening ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "No - exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question89",
+              "hideNumber": false,
+              "html": "<p>Other ocular disorders are allowed:</p><ul><li data-list-item-id=\"e767109ab027c9c0e5ede3a091619d049\">Cataracts</li><li data-list-item-id=\"e6a97edc4c92e731a5d6c3ca21cab74b0\">Previous cataract surgery</li><li data-list-item-id=\"e48f8305b1567f69b395bbdbf93a242c1\">Macular degeneration</li></ul>"
+            }
+          ],
+          "title": "Optical Panel"
+        }
+      ],
+      "title": "Medical History"
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel9",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question99",
+              "title": "Do you have any endocrine (hormone) conditions or disorders?",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question100",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>Diabetes mellitus, and any other endocrine conditions would be </strong><span style=\"color:red;\"><strong>exclusionary</strong></span></p><p>&nbsp;</p><p><strong>PMOS (formerly PCOS) is </strong><span style=\"color:red;\"><strong>also exclusionary</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question101",
+              "title": "Do you have any thyroid abnormalities?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Dr enquiry ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question102",
+              "title": "Do you have any liver diseases or conditions?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Dr enquiry ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question104",
+              "title": "Do you have any respiratory diseases or condtions?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes, not asthma - Dr enquiry ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question105",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>Asthma that has stable (for 4 weeks) non-exclusionary treatment</strong> is <span style=\"color:green;\"><strong>not exclusionary</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question106",
+              "title": "Do you have any kidney disease or condition?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Dr enquiry ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question108",
+              "title": "Have you been diagnosed with a form of diabetes? This includes congenital diabetes (from birth), Type 1 diabetes, and Type 2 diabetes.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question109",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#ffc107;\"><strong>Gestation diabetes - Dr enquiry</strong></span><span style=\"color:#000000;\"><strong> with details on when it occurred and if it still affects them</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question110",
+              "title": "Do you have any history of heart diseases or conditions?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Dr enquiry ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question112",
+              "title": "Do you have any other skin conditions that may interfere with study assessments? This also includes facial tattoos and recent severe sunburns on your face.\n",
+              "description": "Rash, eczema, tattoos, dermatitis solaris, psoriasis, seborrheic dermatitis, rosacea, folliculitis",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Dr enquiry with details on location, surface area affected ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question113",
+              "title": "Do you have any gastrointestinal conditions or history of any procedures that would affect your ability to handle a drug?\n",
+              "description": "Coeliac, Crohn's, Bowel resections, gastrectomy, gastric bypass surgery etc.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question114",
+              "title": "Have you ever gotten skin rashes due to using any form of medication?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No/yes, for penicillin - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes, for something other than penicillin - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question115",
+              "title": "Do you have alopecia areata, scalp psoriasis, or autoimmune disease-related alopecia?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question116",
+              "title": "Do you have any history of HIV?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question117",
+              "title": "Do you have history of Hepatitis B or C?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "If latent/treated well, note down how long ago they were diagnosed, how they were treated, their last Hep test, and if there were any complications if possible",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 1",
+                  "text": "Yes, but resolved/treated well (latent) - Dr Enquiry ⚠️"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes, active now/unresolved - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question11",
+              "title": "Have you donated or lost more than 450mL of blood in the last 30 days?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Delay ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question19",
+              "title": "Have you donated plasma in the last 7 days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Delay ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question30",
+              "title": "Have you donated bone marrow in the last 6 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Delay/Exclude ⚠️/🛑"
+                }
+              ]
+            }
+          ],
+          "title": "Other General Medical History"
+        },
+        {
+          "type": "panel",
+          "name": "panel5",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question33",
+              "title": "Have you been dosed or had your blood collected as part of another clinical study in the last 30 days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Delay/Exclude ⚠️/🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question32",
+              "title": "In the last 2 years have you had a history of drug abuse?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question34",
+              "title": "How many standards of alcohol do you consume a week?",
+              "description": "Exclusionary threshold is 14/week for women or 21/week for men",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "Below threshold - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Above threshold - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question35",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<div><div><div><p>Beer &amp; Cider</p><p><strong>1 standard is:</strong></p><ul><li data-list-item-id=\"ee0e391e9a444cea0a21f790330f0fce6\"><strong>1 pot/middy&nbsp;</strong><span>(285mL) of</span><strong> full-strength (4.8% ABV)</strong></li><li data-list-item-id=\"eed70f71a096559e0d39a8d54a8acd051\"><strong>1 stubby&nbsp;</strong><span>(375mL) of&nbsp;</span><strong>mid-strength (3.5% ABV)</strong></li><li data-list-item-id=\"eaf2b75daa5ecd25a7b86f0d313b7029d\"><strong>1 schooner&nbsp;</strong><span>(425mL) of</span><strong> Light (2.7% ABV)</strong></li></ul><p>&nbsp;</p><p>Wine</p><ul><li data-list-item-id=\"e71f466c7c0cea979d2cd71cbf4a0a317\"><strong>Restaurant pour&nbsp;</strong><span>(150mL) -&nbsp;</span><strong>1.4-1.6 standards</strong></li><li data-list-item-id=\"e035b11abfa03ad8a2bcc0b8bb94be0b7\"><strong>Bottle &nbsp;</strong><span>(750mL) -&nbsp;</span><strong>7-8 standards</strong></li></ul><p>&nbsp;</p><p>Spirits &amp; Liqueurs</p><ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e562f89a2f59ab4fbcdad45c7a7fef3c0\"><strong>Spirits (40% ABV) - 1 shot = 1 standard</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e1c123791459a92f3747ef9dbbfe90125\"><strong>Cocktails - 2-3 standards</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e0bce437534c2748fbba1bce935287a9d\"><strong>Ready-to-drink 375mL cans - 1-1.7 standards (3.5% - 6% ABV)</strong></li></ul></div></div></div>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question74",
+              "title": "In the last 2 years has there been a time where you have consistently consumed significantly more standards of alcohol than you currently drink?",
+              "description": "Exclusionary threshold is 14/week for women or 21/week for men",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "Below threshold - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Above threshold - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question82",
+              "visibleIf": "false",
+              "title": "You will need to refrain from consuming any alcohol-containing food or beverages for 48 hours prior to screening. Is this OK?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question83",
+              "visibleIf": "false",
+              "title": "You would be required to refrain from consuming caffeine and/or xanthene products (e.g., coffee, tea, chocolate, caffeine-containing sodas, colas) for 24 hours prior to your first visit, is this ok?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question84",
+              "visibleIf": "false",
+              "title": "You will need to refrain from consuming any grapefruit or seville oranges from now on. Is this OK? ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Comments",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question85",
+              "visibleIf": "false",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Protocol says 14 days before 1st dose</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question78",
+              "visibleIf": "false",
+              "title": "There will be urine drug and alcohol breath tests at screening. You must test negative. Is this alright?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question79",
+              "visibleIf": "false",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#000000;\"><strong>Positive test for cannabinoids (weed) - may be OK as long as there is no abuse, PI discretion ✅</strong></span></p><p>&nbsp;</p><p><span style=\"color:#000000;\"><strong>Poppy seeds OK</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question75",
+              "title": "In the last 2 years have you been hospitalised due to a psychiatric condition?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Questionable - Dr enquiry ⚠️"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question25",
+              "visibleIf": "false",
+              "title": "In the last 2 years have you had to change any medication used to treat a psychiatric condition?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Nicotine",
+              "title": "Do you smoke ciagarettes?",
+              "description": "Other nicotine-containing substances are fine",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Continue ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question87",
+              "visibleIf": "{Nicotine} = 'Item 3'",
+              "title": "How much do you consume per day or per week?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "5 or less cigarette equivalents/week - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "More than 5 cigarette equivalents/week - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question86",
+              "visibleIf": "false",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Vape in puffs - table on the right.</p><p>&nbsp;</p><p>Vape in pods - <a href=\"https://www.coloradoquits.com/vape-quiz\">https://www.coloradoquits.com/vape-quiz</a></p><p>&nbsp;</p><p><span style=\"color:#000000;\">One 7mg nicotine patch = 5 cigs</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>"
+            },
+            {
+              "type": "image",
+              "name": "question88",
+              "visibleIf": "false",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/1332/7673735917b3074cf9eaf14b54dac11cf27b23ccc82889ccdb79b81b85e50b9b.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "100%"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question80",
+              "visibleIf": "false",
+              "title": "In the last 14 days, have you taken any prescription medication for other conditions that we haven't discussed",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "More than 28 days ago - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Between 14 and 28 days ago - Dr enquiry ⚠️"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Less than 14 days ago - Dr enquiry + delay"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question81",
+              "visibleIf": "false",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Special subset of drugs need a 28-day washout period, so meds taken between 14 and 28 days ago may be exclusionary, hence the weird answer options. My apologies.</p><p>&nbsp;</p><p>For any drugs in the last 28 days submit a Dr enquiry</p><ul><li data-list-item-id=\"e27b6166848215fac663fb499be635b21\">Depending on their answer, book in or delay</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "BP",
+              "visibleIf": "false",
+              "title": "Have you ever had your blood pressure measured or monitored?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes - Continue⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question92",
+              "visibleIf": "false",
+              "title": "Were there any abnormalities?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes - Dr enquiry with details on any measurements if possible ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question91",
+              "visibleIf": "false",
+              "title": "Have you ever been told you have any abnormalities regarding your ECG (measuring electrical activity of the heart)? ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes - Dr enquiry with details ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question93",
+              "title": "Do you struggle to swallow tablets and capsules?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel1",
+          "elements": [
+            {
+              "type": "paneldynamic",
+              "name": "question36",
+              "title": "Are you currently taking any other non-acne medications?",
+              "description": "Please list down all medications, including non-prescription medications.\n\nMedications will be assessed at screening by the study doctors",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question39",
+                  "title": "Medication",
+                  "description": "Name of medication",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question46",
+                  "startWithNewLine": false,
+                  "title": "Indication",
+                  "description": "What is the medication used for?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question47",
+                  "startWithNewLine": false,
+                  "title": "Dose",
+                  "description": "How much do you take?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question48",
+                  "startWithNewLine": false,
+                  "title": "Frequency",
+                  "description": "How often do you take the medication?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question49",
+                  "startWithNewLine": false,
+                  "title": "Route",
+                  "description": "Tablet, Injection, inhaled, nasal, topical?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question50",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "When did you start taking this medication? If unsure, you just just provide an estimated year",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question51",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "paneldynamic",
+              "name": "question52",
+              "title": "Medical history",
+              "description": "Please list all your medical conditions or events",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question53",
+                  "title": "Medical Condition/Event",
+                  "description": "Name of condition or event",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question54",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "For the date, if you're not sure, you can just provide an estimated year.",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question55",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing or N/A",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question56",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Please <span style=\"color:#ffc107;\"><strong>Dr enquiry</strong></span>/<span style=\"color:red;\"><strong>exclude</strong></span>:</p><ul><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e61fbe1dcec2bd6862413219446a76d88\"><span style=\"color:red;\"><strong>Endocrine (hormone) condition</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"e52626830118152a405515c07b9c4b327\"><span style=\"color:#ffc107;\"><strong>Thyroid abnormality</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"e1c27432ca0360066e07041f25a86b0a3\"><span style=\"color:#ffc107;\"><strong>Liver disease</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"e246710bdfc9b5bc01fe7c835763a0754\"><span style=\"color:#ffc107;\"><strong>Respiratory disease</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"ee064b390eee33d06453ffe464e0e387e\"><span style=\"color:#ffc107;\"><strong>Kidney dysfunction</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"eeea640fe4c014d0c175d9e202f2c648b\"><span style=\"color:red;\"><strong>Diabetes mellitus</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"e7effabf6895f2bc20dc0cf9572f2c919\"><span style=\"color:#ffc107;\"><strong>Heart disease</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e3218de27b5515a13d8eeaac52266bf82\"><span style=\"color:red;\"><strong>Psychotic mental illness</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e77fe2771d82480ff70208af37bb14bcf\"><span style=\"color:red;\"><strong>Certain eye conditions</strong></span><ul><li data-list-item-id=\"ef08454a1e8077b0f2501821143a4a63f\">Useful vision in only 1 eye</li><li data-list-item-id=\"e6caaa40432684c2f7f694029530213ce\">Corneal abnormalities<ul><li data-list-item-id=\"eb9df68ce043fed820ccb5996b31684ce\">Corneal transplant</li><li data-list-item-id=\"e27847d25b5dd63c6e1ebe455fe6052d0\">Corneal oedema</li><li data-list-item-id=\"e44395841cd5eda8a831abfa1369b076c\">Keratitis</li><li data-list-item-id=\"e0f4d104cefae342c0d2a6914a28d78da\">Fuch's dystrophy</li><li data-list-item-id=\"eeac6379c37954bc8d7957e3dd28ac7b3\">Guttae</li><li data-list-item-id=\"e98f25a8e1d2af141dc77fd4967614149\">Corneal dystrophy</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"e91adcfd439bd1f0394ca7d9b9b524f8c\"><span style=\"color:#ffc107;\"><strong>Dry eye (xerophthalmia)</strong></span></li><li data-list-item-id=\"e03f88033fb1b03d20308b9cef028a81e\">Intolerance of pupil dilators</li><li data-list-item-id=\"e0be9cab623e34675971e5d69717d8ddf\">Untreated narrow angle glaucoma</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"ec8af9c73436734529b60b6d5544c540e\"><span style=\"color:red;\"><strong>Medication-induced skin rashes (barring penicillin)</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"ed21f36b405b81aeb21bbed631078f1d3\"><span style=\"color:red;\"><strong>GI conditions affecting drug absorption</strong></span><ul><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e535f4aeabc87afc716664f2e98d13e1b\"><span style=\"color:red;\"><strong>Bariatric surgery</strong></span></li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e12dc9211cce2d1c1b81d7f10330f7899\"><span style=\"color:red;\"><strong>History of alopecia areata, scalp psoriasis, or autoimmune disease-related alopecia</strong></span></li></ul>"
+            }
+          ]
+        }
+      ],
+      "title": "Medication History"
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question72",
+          "title": "This clinical trial has a contraception requirement. The following questions will involve questions surrounding contraception to determine eligibility. Is this ok?",
+          "hideNumber": false,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - Continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - Exclude 🛑"
+            },
+            "Item 3"
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Female Contraception Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Pregnant",
+              "title": "Are you pregnant, breastfeeding or planning to become pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "POCBP Confirmation",
+              "title": "Are you able to fall pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "Female Infertility Panel",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Infertility Option",
+                  "title": "Which of the following applies to you?",
+                  "hideNumber": false,
+                  "choices": [
+                    {
+                      "value": "Item 1",
+                      "text": "Infertile due to surgery - Continue ✅"
+                    },
+                    {
+                      "value": "Item 2",
+                      "text": "Postmenopausal, with cessation of menses for at least 12 months - Continue ✅"
+                    },
+                    {
+                      "value": "Item 4",
+                      "text": "None of the above - Continue ✅"
+                    }
+                  ]
+                },
+                {
+                  "type": "html",
+                  "name": "Infertility Info",
+                  "startWithNewLine": false,
+                  "hideNumber": false,
+                  "html": "<p>&nbsp;</p><p>“Infertility due to <span style=\"color:green;\"><strong>surgery</strong></span>” refers to:</p><ul><li data-list-item-id=\"ec2e9e80403e133772cc2823ac7f99e56\"><span style=\"color:green;\"><strong>Hysterectomy</strong></span> - Removal of uterus</li><li data-list-item-id=\"e120eccf469dee36a28d8c3f6144214a1\"><span style=\"color:green;\"><strong>Bilateral oophorectomy</strong></span> - Removal of both ovaries</li><li data-list-item-id=\"e80e5922530c58f8b6b550c2d60959d3d\"><span style=\"color:green;\"><strong>Bilateral salpingectomy</strong></span> - Removal of both Fallopian tubes</li><li data-list-item-id=\"e7780029596bf700e756d9c88a0133d54\"><span style=\"color:green;\"><strong>Bilateral tubal ligation </strong></span><span style=\"color:#000000;\">- Both Fallopian tubes tied/cut</span></li></ul><p>&nbsp;</p><p>\"<span style=\"color:#ffc107;\"><strong>Permanent infertility</strong></span> due to <span style=\"color:#ffc107;\"><strong>alternate medical cause</strong></span><strong>\"</strong> includes things like:</p><ul><li data-list-item-id=\"ee35c44f0123f054be7f39ed2747948d5\"><span style=\"color:#ffc107;\"><strong>Mullerian agenesis</strong></span> - Improper development of uterus and cervix from birth</li><li data-list-item-id=\"e3b62e801518d142bc7d77e18a3d7dc16\"><span style=\"color:#ffc107;\"><strong>Gonadal dysgenesis</strong></span> - Improper development of ovaries from birth</li></ul><p>&nbsp;</p><p>If a PT has something like this, it will likely be a doctor's enquiry. Check with TL and TST too though.</p>"
+                }
+              ],
+              "visibleIf": "{POCBP Confirmation} = 'Item 1'"
+            },
+            {
+              "type": "panel",
+              "name": "Female Contraceptive Use Panel",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "POCBP Options",
+                  "title": "Can you please tell me if any of these apply to you?",
+                  "hideNumber": false,
+                  "choices": [
+                    {
+                      "value": "Item 1",
+                      "text": "Abstinent as your preferred and usual lifestyle choice (abstinence can only be applied if it’s a lifestyle choice and not due to current circumstances such as being single and could potentially meet someone etc) - Continue ✅"
+                    },
+                    {
+                      "value": "Item 2",
+                      "text": "In a same sex relationship as your preferred and usual lifestyle choice - Continue ✅"
+                    },
+                    {
+                      "value": "Item 3",
+                      "text": "Currently using contraception - Continue ✅"
+                    },
+                    {
+                      "value": "Item 4",
+                      "text": "None - Exclude 🛑"
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "name": "Contraceptives Method Panel",
+                  "elements": [
+                    {
+                      "type": "radiogroup",
+                      "name": "Contraceptive Method",
+                      "title": "Which method of highly effective contraception are you using?",
+                      "description": "Needs to have been on stable dose of the contraception for at least 1 months (2 months for COCP)",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "commentText": "Please note down how longs, and dose and frequency if possible",
+                      "choices": [
+                        {
+                          "value": "Item 1",
+                          "text": "1) Copper intrauterine device (IUD) - Continue ✅"
+                        },
+                        {
+                          "value": "Item 4",
+                          "text": "2) Bilateral tubal occlusion (including ligation) - Continue ✅"
+                        },
+                        {
+                          "value": "Item 5",
+                          "text": "3) Vasectomised male partner (if only partner) - Continue ✅"
+                        },
+                        {
+                          "value": "Item 9",
+                          "text": "4) Azoospermic (cannot release sperm) male partner (if only partner) due to a medical cause - Check with TST ⚠️"
+                        },
+                        {
+                          "value": "Item 2",
+                          "text": "5) Hormonal IUD AKA IUS - Continue ✅"
+                        },
+                        {
+                          "value": "Item 3",
+                          "text": "6) Oral/injectable/implantable progestogen-only contraception (ex. Implanon, \"minipill\") - Continue ✅"
+                        },
+                        {
+                          "value": "Item 7",
+                          "text": "7) Combined oral contraceptive pill (ex. \"the pill\") - Continue ✅"
+                        },
+                        {
+                          "value": "Item 8",
+                          "text": "8) None of the above - Exclude 🛑"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "html",
+                      "name": "COCP Info",
+                      "startWithNewLine": false,
+                      "hideNumber": false,
+                      "html": "<p>&nbsp;</p><p><span style=\"color:#000000;\">If bilateral tubal occlusion in last 6 months - delay/exclude</span></p><p>&nbsp;</p><p>&nbsp;</p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "Double Barrier Confirmation",
+                      "title": "This study requires a double barrier method. Are you and your partner OK with using condoms in addition to your contraceptive method?",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "choices": [
+                        {
+                          "value": "Item 1",
+                          "text": "Yes - Continue ✅"
+                        },
+                        {
+                          "value": "Item 2",
+                          "text": "No - Exclude 🛑"
+                        }
+                      ]
+                    }
+                  ],
+                  "visibleIf": "{POCBP Options} = 'Item 3'"
+                }
+              ],
+              "visibleIf": "{POCBP Confirmation} = 'Item 2' or {Infertility Option} = 'Item 4'"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question22",
+              "title": "Can you refrain from donating eggs until 2 months after the end of the study?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{Sex} = 'Item 2 '",
+          "title": "Female Contraception Panel"
+        },
+        {
+          "type": "panel",
+          "name": "Male Contraception Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Male Opposite Sex",
+              "title": "Do you engage in sexual activity with a partner of the opposite sex?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No, same-sex partner - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No, abstinent as a preferred lifestyle choice - continue ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "No, no partner currently - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Male Double Barrier",
+              "visibleIf": "{Male Opposite Sex} = 'Item 1' or {Male Opposite Sex} = 'Item 4'",
+              "title": "This study requires male participants to use condoms when engaging in sex with female partners, unless they have had a vasectomy over 4 months ago. Is this OK?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes, will use condoms - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes, vasectomy over 4 months ago - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question21",
+              "visibleIf": "\n",
+              "title": "Are you able to refrain from donating sperm until 4 months after the end of the study?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{Sex} = 'Item 1 '",
+          "title": "Male Contraception Panel"
+        }
+      ],
+      "title": "Contraception Criteria"
+    },
+    {
+      "name": "page6",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel7",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question61",
+              "title": "Do you or any of your immediate family members work for Emeritus Research or as study staff?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question62",
+              "title": "Please note that by booking in your appointment this does not guarantee your participation in the trial. Clinical trials can experience delays or cancellations due to various factors. We will aim to notify you 24 to 48 hours before your appointment if we need to cancel or reschedule, however there are chances of same day cancellations. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "PT Confirmation Questions",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Confirmation Info",
+              "hideNumber": false,
+              "html": "<p><span style=\"background-color:rgb(255,255,255);color:red;\"><strong>Thank you for your time today. Before I finalise your booking, I need to run you through some quick questions to confirm that I have explained the following to you. By answering yes to these questions, you acknowledge that I have explained these things to you in full and that if any information you have given is incomplete or inaccurate, this may affect both your eligibility and your reimbursement.</strong></span></p>"
+            },
+            {
+              "type": "checkbox",
+              "name": "Confirmation Checklist",
+              "title": "Can you please confirm the following?\n",
+              "description": "Participant must answer yes to all questions below prior to being booked in.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "I have explained the study medication/background to you"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "I have explained the study commitment and dates to you"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "You don't have any upcoming travel plans that will clash with the study dates"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "I have explained the reimbursement to you"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "You have answered the medical questions honestly and to the best of your ability"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "I have explained that by not disclosing medical information relevant to this study, that can have an impact on the reimbursement, which may include the site choosing not to reimburse you at all"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Please confirm you understand that you must read the consent form that will be sent to you prior to attending your visit. If you don’t your appointment may be delayed or rescheduled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel4",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question29",
+              "title": "Before we wrap up, I’d like to share details about our referral program. If you refer someone to us you can receive up to $250 if they enrol and participate in the study. Would you like to hear more?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel6",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question37",
+              "hideNumber": false,
+              "html": "<p><strong>Great! Here's how it works:</strong></p><p>&nbsp;</p><p><strong>To refer someone, you will need to provide them with a unique referral ID. The person you refer will need to provide us this ID either when they sign up on our website, or when they speak to us over the phone. This ID is essential, as it ensures we can track and reimburse you for any referrals.</strong></p><p>&nbsp;</p><p><strong>For each person you refer who comes in for an in-person screening visit, you'll receive $50. If they go on to enrol and participate in the study, you'll earn an additional $200.</strong></p><p>&nbsp;</p><p><strong>There's no limit- you can refer as many people as you'd like, as long as you have an exisiting relationship with them. It's important to note that you cannot advertise for referrals. This program is based on personal connections, so please only refer people you know.</strong></p><p>&nbsp;</p><p><strong>If you're interested, we can set up your Unique Referral ID today if you would like</strong> <i>(the unique referral ID is REF[p number]. E.g., REFP14471)</i></p><p>&nbsp;</p><p><strong>Who do you know you might be interested in this trial?</strong> <i>(if they don't know anyone for this trial, they can also refer someone to any other trial)</i></p><p>&nbsp;</p><p><strong>Would you like us to send you an email that you can forward on to them?</strong></p>"
+            }
+          ],
+          "visibleIf": "{question29} = 'Item 1'"
+        },
+        {
+          "type": "panel",
+          "name": "Booking Instruction Panel",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Booking Instructions",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:blue;font-size:20px;\"><u>Booking Instructions:</u></span></p><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e6078306771a811be7117611a1f6cf455\"><span style=\"color:#000000;\"><strong>Calendar time - </strong>1.5 hours</span></li><li data-list-item-id=\"e40ccf55579a1c6aad93e749676e8d0d4\"><strong>Latest appointment time</strong> - 4PM<ul><li data-list-item-id=\"ecdfbb187ec6413beee1e27cd5d81ed75\"><strong>Exceed?</strong>&nbsp;<ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e90dcdcd127a1f47ccc23b85e0a54b075\"><span style=\"color:#000000;\">N/A</span></li></ul></li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(23,68%,46%);\" data-list-item-id=\"e59cc856e0c3522519db129cb85ee48f3\"><span style=\"color:hsl(23,68%,46%);\"><strong>No more overhang</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(290,68%,46%);\" data-list-item-id=\"e77f697b0ecc305aee47936c7a253d059\"><span style=\"color:hsl(290,68%,46%);\"><strong>Special instructions</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(290,68%,46%);\" data-list-item-id=\"edebd049f124da3fb8dfea307f0d797c6\">&nbsp;</li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(34,100%,51%);\" data-list-item-id=\"e32e0cca426df5d52c8ba30463e0b0248\"><span style=\"color:hsl(34,100%,51%);\"><strong>Overall time for PT</strong></span><ul><li data-list-item-id=\"e1df7b989b108cde169df5377bd88d331\">2.5h</li></ul></li></ul>"
+            }
+          ]
+        }
+      ],
+      "title": "Additional Questions"
+    }
+  ],
+  "version": "Version-1"
+}

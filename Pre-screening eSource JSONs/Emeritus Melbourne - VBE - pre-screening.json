@@ -1,0 +1,1257 @@
+{
+  "title": "VBE00001 Emeritus Melbourne Pre-screening Questions",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel1",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question23",
+              "hideNumber": false,
+              "html": "<p><strong>Opening&nbsp;</strong></p><p>&nbsp;</p><p>Acne is a very common inflammatory skin disease affecting approximately 231 million people globally. A key reason for acne development is a bacteria known as <i>C. acnes</i>. Treatments such as antibiotics and topical treatments target <i>C. acnes</i> but is limited by their severe side effects.</p><p>&nbsp;</p><p>Currently, there is no vaccine that is approved for the treatment of acne which is why Sanofi have developed a <span style=\"color:red;\">vaccine</span> against <i>C. acnes&nbsp;</i>as a potential new treatment.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel9",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question27",
+              "hideNumber": false,
+              "html": "<p><strong>Study Design</strong></p><p>&nbsp;</p><p>This is a <span style=\"color:red;\">Phase 1/2 first-in-human trial</span>, and the aim is to evaluate the safety and effectiveness of the vaccine at different dose levels. Approximately 260 participants will be enrolled into this study.&nbsp;</p><p>&nbsp;</p><p><span>Participants will be randomly assigned to </span><span style=\"color:red;\"><span>one of three cohorts</span></span><span>. The treatment that you receive will be dependent on the cohort you are allocated to. Some participants will receive the study vaccine, and some participants will be receiving a placebo. The study is double-blinded which means neither you nor the study doctors will know what treatment you are receiving</span></p><p>&nbsp;</p><p><span>Your initial screening visit will consist of another eligibility check with the doctors and blood tests, for which you should allow up to around 2-3 hours of time for. The first visit after this screen will be approximately 3-4 hours. You can also expect your subsequent follow-up visits to take around 1-2 hours</span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel10",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question38",
+              "hideNumber": false,
+              "html": "<p><strong>Study schedule and visits (Main Cohort B)</strong></p><p>&nbsp;</p><p>The study will last about <span style=\"color:red;\">10 months</span> with <span style=\"color:red;\">18 planned visits</span>. You will receive 3 vaccinations, on Day 1, Day 57 and Day 113.</p><p>&nbsp;</p><ul><li data-list-item-id=\"e29dd53c58b500b50352cb116652b5e59\"><strong>Screening Visit</strong> (Day -29 to Day -1). The screening period is up to 29 days. During this visit, we'll do some initial tests to ensure you meet the criteria to participate in the study.</li><li data-list-item-id=\"e70638eb5651f6f7dfc55c5091565d526\"><strong>Visit 1</strong> (Day 1). You will receive the first vaccine.</li><li data-list-item-id=\"e3e689a6f9557c6628f36bc188819fd76\"><strong>Visit 2</strong> (Day 4)</li><li data-list-item-id=\"ed6a2429a5ca04ae3095c004781d58f4b\"><strong>Visit 3</strong> (Day 8)</li><li data-list-item-id=\"e02bb6987254abc47f50df861ba035fd7\"><strong>Visit 4</strong> (Day 29/Month 1)</li><li data-list-item-id=\"ef3ac18434c5aa2881d98a658d5a5b9e4\"><strong>Visit 5</strong> (Day 57/Month 2). You will receive the second vaccine.</li><li data-list-item-id=\"e1fa6737dd8b5a8df58fe65a973060525\"><strong>Visit 6</strong> (Day 60)</li><li data-list-item-id=\"ee66d901bae86b8aec2ba15c404edcab4\"><strong>Visit 7</strong> (Day 64)</li><li data-list-item-id=\"eefdc7e6bc7ecf13f6828717d60ee4f0c\"><strong>Visit 8</strong> (Day 85/Month 3)</li><li data-list-item-id=\"e213cafd1dc94d57188458ae48954d4f1\"><strong>Visit 9</strong> (Day 113/Month 4). You will receive the third vaccine.</li><li data-list-item-id=\"ef18c46ae1e2733c4e8a95543735db1bb\"><strong>Visit 10</strong> (Day 116)</li><li data-list-item-id=\"e9e650b881d0c978ed54ed4fb6eb0d232\"><strong>Visit 11</strong> (Day 120)</li><li data-list-item-id=\"e1ef3709aabebf3408e7fa1362df15987\"><strong>Visit 12</strong> (Day 141/Month 5)</li><li data-list-item-id=\"e691aee891cfbe14eac2829a6ebd5b34e\"><strong>Visit 13</strong> (Day 169/Month 6)</li><li data-list-item-id=\"e73ffd9783e6a44d13ac3578d69428ac7\"><strong>Visit 14</strong> (Day 197/Month 7)</li><li data-list-item-id=\"e3c9bd26cdfc99aeac8c1eec127479157\"><strong>Visit 15</strong> (Day 225/Month 8)</li><li data-list-item-id=\"e06b7b016af22e8d06cd785ab355ffacc\"><strong>Visit 16</strong> (Day 253/Month 9)</li><li data-list-item-id=\"e7f7b911747230b03af6ebed9796702ad\"><strong>Visit 17</strong> (Day 281/Month 10).&nbsp;</li></ul><p>&nbsp;</p><p>To summarise, there will be 2 visits in the 7 days post vaccination, and then monthly follow up visits until the end of study.&nbsp;</p><p>The follow up visits will include physical examinations, blood samples for safety assessments and may also include collection of facial skin swabs.&nbsp;</p><p>&nbsp;</p><div><div><div><p><span>Participation in this research is voluntary. If you don’t wish to take part, you don’t have to. You will receive the best possible care whether or not you take part.</span></p></div></div></div>"
+            },
+            {
+              "type": "image",
+              "name": "question43",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/643/a6521ce12bcc2918748a27153be5bd00fe99fb6ebc1d774dbbada757b33cfe84.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "50%"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel11",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question40",
+              "hideNumber": false,
+              "html": "<p><strong>Reimbursement:</strong></p><p>You will be reimbursed $355 for each completed visit.</p><p>&nbsp;</p><p>This totals to $6390 <strong>if you attend each scheduled visit.</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "question90",
+          "hideNumber": false,
+          "html": "<p><strong>Disclosure</strong></p><p>&nbsp;</p><p><span style=\"color:#000000;\">Before we go any further, I want to explain exactly how the reimbursement works, so there are no surprises for you later. The reimbursement I just went through is what you'd receive if everything goes ahead as planned. That can look a bit different depending on what happens on the day. For example, if the doctor looks over your information early on and finds you're not eligible before you even get to the consent form, if you decide not to sign the consent form yourself, or if something doesn't line up with what you've told me today, you'd likely only get a partial amount, or in some cases nothing, instead of the full reimbursement.</span></p><p>&nbsp;</p><p><span style=\"color:#000000;\">That's actually a big part of why it matters that you're as accurate as possible with me right now. The doctor's early review is based on exactly what you tell me today, so the more accurate you are, the better your chances of making it all the way through screening and getting the full reimbursement.</span></p>"
+        },
+        {
+          "type": "html",
+          "name": "question45",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:blue;font-size:20px;\"><span><strong>That was all from me regarding the study information, did you have any questions for me?</strong></span></span></p><p>&nbsp;</p><p>&nbsp;</p><p><span style=\"color:blue;font-size:20px;\"><span><strong>Before we go on, please keep in mind that if you aren't successful for a screening this time, we do have other studies that you might be eligible for.&nbsp; We also have a referral program where you can earn up to $250 for referring people for any of our studies.&nbsp;Are you happy for us to continue into the medical questions?</strong></span></span></p>"
+        },
+        {
+          "type": "panel",
+          "name": "panel12",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question41",
+              "hideNumber": false,
+              "html": "<p><strong>Extra info:&nbsp;</strong></p><p>&nbsp;</p><ol><li>Has there been another acne vaccine developed before?</li></ol><p>Yes, a similar vaccine targeting <i>C. acnes</i> was developed and tested in a Phase 1 first-in-human trial in 2021. The overall safety profile result of that study was favourable with no safety concerns identified. Sanofi acquired the company which developed that vaccine.&nbsp;</p><p>&nbsp;</p><p>2. What are the benefits or risks to participating in this study?</p><p>Since this is a first-in-human study, the benefits and risks at the individual level are unknown. There are risks associated with the vaccine component of the study, but there are also risk management tests that will be done to ensure your safety on the study. For example, the follow up visits to monitor any reactions 7 days after vaccination.&nbsp;</p>"
+            }
+          ]
+        }
+      ],
+      "title": "Study Notes"
+    },
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel2",
+          "elements": [
+            {
+              "type": "dobandage",
+              "name": "question2",
+              "title": "What is your Date of Birth?",
+              "description": "Participants must be aged 18 to 45 (inclusive) at screening.",
+              "showNumber": false
+            },
+            {
+              "type": "radiogroup",
+              "name": "GenderQ",
+              "title": "What sex were you assigned at birth?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1 ",
+                  "text": " Male"
+                },
+                {
+                  "value": "Item 2 ",
+                  "text": " Female"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question3",
+              "title": "Our facility is located in Camberwell. Would it be feasible for you to travel to us for your study visits?",
+              "description": "If no, please exclude.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1 ",
+                  "text": "Yes - continue screening ✅"
+                },
+                {
+                  "value": "Item 2 ",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question63",
+              "title": "Do you have any holidays planned that may interfere with the visits?",
+              "description": "If yes, please check dates.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1 ",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2 ",
+                  "text": "Yes has holidays planned, may interfere - check visits ⚠️"
+                },
+                {
+                  "value": "Item 3 ",
+                  "text": "Yes will definitely interfere - please exclude 🛑"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "title": "Demographics"
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel3",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question4",
+              "title": "Do you currently have acne?",
+              "description": "Participant does not have to have a formal clinical diagnosis of acne vulgaris to be eligible for a screening visit.  ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No or unsure - continue screening ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question10",
+              "title": "Have you been diagnosed with any other forms of acne other than acne vulgaris? Eg: Acne conglobate, acne fulminans, chloracne, drug-induced acne, acne mechanica   ",
+              "description": "These are quite rare, severe forms of acne. Acne fulminans is accompanied by fever and joint pain. Acne mechanica is caused by friction or pressure on the skin.",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "question6",
+              "title": "The next few questions will be asking you to rate the severity of your acne. Is that something you are comfortable with? \nOn a scale of 0 to 4, where 0 = clear skin, 1 = almost clear, 2 = mild severity, 3 = moderate severity and 4 = severe, how would you rate the overall severity of your acne?",
+              "description": "Participants must have severe acne to be included",
+              "hideNumber": false,
+              "correctAnswer": [
+                "Item 3",
+                "Item 4",
+                "Item 5"
+              ],
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "0 - clear skin, please exclude"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "1 - almost clear, please exclude"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "2 - mild severity (some visible spots/pimples, mostly non-inflamed), please exclude"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "3 - moderate severity (many pimples, with some inflamed/red spots),"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "4 - severe (Widespread inflamed (red and sore) pimples together with many other non-inflamed spots such as blackheads or whiteheads), continue to screen"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question71",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;font-size:20px;\">We are now looking of participants with MODERATE to SEVERE acne</span></p>"
+            },
+            {
+              "type": "html",
+              "name": "question44",
+              "hideNumber": false,
+              "html": "<p><strong>Attention Recruiters</strong></p><p>&nbsp;</p><p>We are now only recruiting participants with <strong>moderate to severe acne</strong>.</p><p>&nbsp;</p><p>Please make sure you are completing lesion counts.</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question5",
+              "title": "How many non-inflammatory lesions, such as open and closed comedones, do you currently have? \n\n",
+              "description": "Open and closed comedones are blackheads and whiteheads. ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "18 or more - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Less than 18 - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "name": "question9",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/978/3b4442f304498af2c0561b703c1d0ddacf9db1032b13042a3e7d97780861c5f6.webp",
+              "contentMode": "image",
+              "imageHeight": "650",
+              "imageWidth": "600"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question7",
+              "title": "How many inflammatory lesions, such as papules and pustules, do you currently have?",
+              "description": "Papules are small, solid raised bumps on the skin (Papules are <5mm). Pustules are small, pus-filled blisters on the surface of the skin.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1please exclude 🚫",
+                  "text": "15 or more - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Less than 15 - please exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question8",
+              "title": "How many nodulocystic lesions, such as nodules and cysts, do you currently have?",
+              "description": "Nodules are small, firm lumps (Nodules are 5mm or more). Cysts are typically fluid-filled sacs that develop under the skin. ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "2 or less - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "More than 2 - continue screening ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question20",
+              "title": "Have you used oral isotretinoin before in the past?",
+              "description": "Also known as Accutane or Roaccutane. Only oral form is excluded, non-oral forms are ok.",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question12",
+              "title": "Are you currently taking any medication for your acne?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please note down below"
+                }
+              ]
+            },
+            {
+              "type": "paneldynamic",
+              "name": "question1",
+              "title": "Acne Medication List",
+              "description": "Please refer to the list at the right for exclusionary medications. Participants might be able to discuss stopping their medication with the doctor during screening depending on what they are taking.\nPlease check with doctor if unsure.",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question64",
+                  "title": "Medication",
+                  "description": "Name of medication",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question65",
+                  "startWithNewLine": false,
+                  "title": "Indication",
+                  "description": "What is the medication used for?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question66",
+                  "startWithNewLine": false,
+                  "title": "Dose",
+                  "description": "How much do you take?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question67",
+                  "startWithNewLine": false,
+                  "title": "Frequency",
+                  "description": "How often do you take the medication?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question68",
+                  "startWithNewLine": false,
+                  "title": "Route",
+                  "description": "Tablet, Injection, inhaled, nasal, topical?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question69",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "When did you start taking this medication? If unsure, you just just provide an estimated year",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question70",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question13",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Within <strong>2 weeks </strong>of first study dose:&nbsp;</p><ul><li>Prescribed or OTC acne cosmeceuticals (eg. cleansers, soaps, washes, serum, creams, medicated sunscreen or makeup)</li><li>Benzoyl peroxide</li><li>Alpha-hydroxy acids (eg. glycolic acid, lactic acid, malic acid)</li><li>Beta-hydroxy acids (eg. gluconolactone, lactobionic acid)</li><li>Azelaic acid</li><li>Dapsone</li><li>Sulfur-based products</li><li>Bleaching agents (eg. hydroquinone)</li><li>Wax epilation</li><li>Comedo extraction (eg. manual extraction, adhesive strips)</li></ul><p>&nbsp;</p><p>Within <strong>4 weeks</strong> of first study dose:</p><ul><li>Retinoic acid and retinoid derivatives</li><li>Steroids and corticosteroids including intramuscular and intralesional injections</li><li>Oral and topical antibiotics</li><li>Androgen receptor blockers (eg. spironolactone, flutamide)</li><li>Anti-inflammatory agents</li><li>Dermal fillers, threads and non-surgical lifting procedures on the facial area</li><li>Testosterone therapy, enhancers or booster supplements</li><li>Vitamin B12 doses higher than <span>500μg/day if oral</span></li></ul><p>&nbsp;</p><p><span>Within <strong>12 weeks</strong> of first study dose:</span></p><ul><li><span>Cryodestruction (eg. cryotherapy)</span></li><li><span>Chemidestruction (eg. trichloro acetic acid)</span></li><li><span>Abrasion methods</span></li><li><span>Acne scar surgery (eg. microneedling)</span></li><li><span>Chemical peels</span></li><li><span>Photodynamic therapy</span></li><li><span>Light-based therapies (eg. laser, infrared)</span></li><li><span>Radiofrequency devices</span></li><li><span>Therapeutic ultrasound devices</span></li><li><span>X-ray therapy</span></li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question14",
+              "title": "In the past 6 months, have you had vitamin A supplements (more than 10,000 units per day) or neuromuscular blocking agents such as Botox?",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude or delay accordingly ⚠️"
+                }
+              ]
+            }
+          ],
+          "title": "Acne"
+        },
+        {
+          "type": "panel",
+          "name": "panel4",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question11",
+              "title": "Do you have any facial tattoos or facial skin conditions that may interfere with study assessments?",
+              "description": "Excessive facial hair, conditions such as eczema, psoriasis, rosacea, acute or recent sunburn must be checked with the doctor. If participants have facial hair and are happy to shave that is fine. Please check with doctors if unsure. ",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - check with doctor ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question19",
+              "title": "Are you currently undergoing immunosuppressive therapy or have you in the past 6 months? ",
+              "description": "Some examples would be chemotherapy or radiation therapy.",
+              "hideNumber": false,
+              "correctAnswer": "Item 1",
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude or delay accordingly ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question15",
+              "title": "Are you currently taking systemic corticosteroids such as prednisone, or have you within the past 28 days?",
+              "description": "If participant took prednisone or equivalent for more than 14 consecutive days, please exclude.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude or delay screening 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question16",
+              "title": "Do you have any known hypersensitivity to components of the study vaccine such as polyethylene glycol (PEG) or polysorbate?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question17",
+              "title": "Do you have any known allergic reactions after receiving a Covid vaccine?",
+              "description": "Any allergic reaction such as anaphylaxis is exclusionary. Please check with doctors if unsure.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question42",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>clarifying allergic reactions with sponsor at SIV</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question18",
+              "title": "Do you have any history of myocarditis (inflammation of the heart), pericarditis (inflammation of the lining around the heart), or myopericarditis (inflammation of both the heart muscle and the lining around the heart)?",
+              "description": "Any previous history of the above is exclusionary.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question26",
+              "title": "Do you have a history of a bleeding disorder or a condition that affects your blood's ability to clot, which would make it risky to have injections or blood drawn?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question30",
+              "title": "Do you have any history of HIV, Hepatitis B or Hepatitis C?",
+              "description": "Please exclude any self-reported or documented history.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            }
+          ],
+          "title": "Other medical history"
+        }
+      ],
+      "title": "Medical History"
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel5",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question31",
+              "title": "Have you received any vaccines in the past 4 weeks?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude or delay accordingly ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question32",
+              "title": "Have you received any mRNA vaccines in the past 3 months?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question34",
+              "title": "Are you planning to receive any vaccines during the study duration, other than the study vaccine?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question35",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Participants can receive any non-mRNA vaccine 4 weeks after a study vaccine. For mRNA vaccines, they will have to wait until 3 months after a study vaccine.</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question33",
+              "title": "In the last 3 months, have you received any treatments involving immunoglobulins (antibodies) or blood products, such as intravenous immunoglobulin or blood transfusions?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "paneldynamic",
+              "name": "question36",
+              "title": "Are you currently taking any other medications?",
+              "description": "Please list down all medications.",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question39",
+                  "title": "Medication",
+                  "description": "Name of medication",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question46",
+                  "startWithNewLine": false,
+                  "title": "Indication",
+                  "description": "What is the medication used for?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question47",
+                  "startWithNewLine": false,
+                  "title": "Dose",
+                  "description": "How much do you take?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question48",
+                  "startWithNewLine": false,
+                  "title": "Frequency",
+                  "description": "How often do you take the medication?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question49",
+                  "startWithNewLine": false,
+                  "title": "Route",
+                  "description": "Tablet, Injection, inhaled, nasal, topical?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question50",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "When did you start taking this medication? If unsure, you just just provide an estimated year",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question51",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "paneldynamic",
+              "name": "question52",
+              "title": "Medical history",
+              "description": "Please list all your medical conditions or events",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question53",
+                  "title": "Medical Condition/Event",
+                  "description": "Name of condition or event",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question54",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "For the date, if you're not sure, you can just provide an estimated year.",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question55",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing or N/A",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question56",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Please exclude:</p><ul><li>Any skin condition that might interfere with study assessments or requires use of other therapies</li></ul>"
+            }
+          ]
+        }
+      ],
+      "title": "Medication History"
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "boolean",
+          "name": "question72",
+          "title": "This clinical trial has a contraception requirement. The following questions will involve questions surrounding contraception to determine eligibility. Is this ok?"
+        },
+        {
+          "type": "panel",
+          "name": "panel6",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question21",
+              "hideNumber": false,
+              "html": "<p><strong>This study has a contraception criteria that requires Women Of Childbearing Potential to use an effective form of contraception.</strong></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question22",
+              "title": "Are you currently pregnant, breastfeeding or planning to become pregnant",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "WOCBP",
+              "title": "Is it possible for you to fall pregnant?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue screening ✅"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "question24",
+              "visibleIf": "{WOCBP} = 'Item 1'",
+              "title": "Females are considered Women Not Of Childbearing Potential if they are:",
+              "description": "Please select all that apply",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Infertile due to surgery eg. hysterectomy or removal of ovaries/fallopian tubes ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "postmenopausal, with cessation of menses for at least 12 months ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "None of the above - ask next question ✅"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "question25",
+              "visibleIf": "{WOCBP} = 'Item 2'",
+              "title": "Can you please tell me if any of these apply to you?",
+              "description": "Please select all that apply",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Abstinent as your preferred and usual lifestyle choice (abstinence can only be applied if it’s a lifestyle choice and not due to current circumstances (such as being single and could potentially meet someone etc) - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "In a same sex relationship as your preferred and usual lifestyle choice - continue screening ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Currently using contraception - continue screening ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "None - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "Contraception options",
+              "visibleIf": "{question25} allof ['Item 3'] or {question24} allof ['Item 3']",
+              "title": "Please indicate which method of contraception you are using?",
+              "description": "Must be using 1 forms of highly effective contraception at least 4 weeks prior to first study dose until at least 4 weeks after the last study dose.",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Implant contraceptive (e.g., Jadelle®) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Intrauterine device (IUD) containing either copper or levonorgestrel (e.g., Mirena®) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Injectable contraceptive (e.g., Depo Provera®) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Oral contraceptive pill (combined hormonal contraceptive pill or progestogen-only “mini-pill”) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Vaginal contraceptive ring (e.g., NuvaRing®) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 9",
+                  "text": "Bilateral tubal ligation (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 10",
+                  "text": "Abstinence as your preferred and usual lifestyle choice"
+                },
+                {
+                  "value": "Item 11",
+                  "text": "Same sex relationship as your preferred and usual lifestyle choice"
+                },
+                {
+                  "value": "Item 8",
+                  "text": "Vasectomy (if only sexual partner) (Highly Effective) ✅"
+                },
+                {
+                  "value": "Item 12",
+                  "text": "Condom - please exclude 🛑"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "None - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question28",
+              "visibleIf": "{Contraception options} allof ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 9', 'Item 8']",
+              "title": "Have you been on the same form of contraception for the past 3 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question29",
+              "visibleIf": "{question28} = 'Item 1'",
+              "title": "Are you willing to be on the same form of contraception throughout the study period?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue screening ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{GenderQ} = 'Item 2 '",
+          "title": "Female only"
+        },
+        {
+          "type": "panel",
+          "name": "panel8",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question37",
+              "hideNumber": false,
+              "html": "<p><strong>No contraception criteria for male participants.</strong></p>"
+            }
+          ],
+          "visibleIf": "{GenderQ} = 'Item 1 '",
+          "title": "Male only"
+        }
+      ],
+      "title": "Contraception Criteria"
+    },
+    {
+      "name": "page6",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel7",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question57",
+              "title": "Have you ever struggled with alcohol, prescription drug or substance abuse?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please check with doctor ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question59",
+              "title": "Have you previously received any vaccines against C. acnes?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question58",
+              "title": "You will not be allowed to do any strenuous or endurance exercise up to 8 days after each study vaccine. Is that okay?",
+              "description": "This may include long-distance running and long-duration exercises.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question60",
+              "title": "Please note that you will not be allowed to use any other acne treatments for the duration of the study, is that okay?",
+              "description": "Non-medicated cleansers and sunscreen will be allowed. Doctors will discuss this at screening. ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "More details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question61",
+              "title": "Do you or any of your immediate family members work for Emeritus Research or study staff?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue to screen ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - please exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question62",
+              "title": "Please note that by booking in your appointment this does not guarantee your participation in the trial. Clinical trials can experience delays or cancellations due to various factors. We will aim to notify you 24 to 48 hours before your appointment if we need to cancel or reschedule, however there are chances of same day cancellations. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue to screen"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - please exclude"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "PT Confirmation Questions",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Confirmation Info",
+              "hideNumber": false,
+              "html": "<p><span style=\"background-color:rgb(255,255,255);color:red;\"><strong>Thank you for your time today. Before I finalise your booking, I need to run you through some quick questions to confirm that I have explained the following to you. By answering yes to these questions, you acknowledge that I have explained these things to you in full and that if any information you have given is incomplete or inaccurate, this may affect both your eligibility and your reimbursement.</strong></span></p>"
+            },
+            {
+              "type": "checkbox",
+              "name": "Confirmation Checklist",
+              "title": "Can you please confirm the following?\n",
+              "description": "Participant must answer yes to all questions below prior to being booked in.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "I have explained the study medication/background to you"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "I have explained the study commitment and dates to you"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "You don't have any upcoming travel plans that will clash with the study dates"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "I have explained the reimbursement to you"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "You have answered the medical questions honestly and to the best of your ability"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "I have explained that by not disclosing medical information relevant to this study, that can have an impact on the reimbursement, which may include the site choosing not to reimburse you at all"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Please confirm you understand that you must read the consent form that will be sent to you prior to attending your visit. If you don’t your appointment may be delayed or rescheduled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Booking Instruction Panel",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Booking Instructions",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:blue;font-size:20px;\"><u>Booking Instructions:</u></span></p><ul><li data-list-item-id=\"e6078306771a811be7117611a1f6cf455\"><span style=\"color:#000000;\"><strong>Calendar and chair time</strong></span> - 1.5h + 1.0hr</li><li data-list-item-id=\"e40ccf55579a1c6aad93e749676e8d0d4\"><strong>Latest appointment time</strong> - 2:00 PM<ul><li data-list-item-id=\"ecdfbb187ec6413beee1e27cd5d81ed75\"><strong>Exceed?</strong> - <span style=\"color:red;\">No 🛑</span></li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(278,100%,50%);\" data-list-item-id=\"e1447d16099c5058f19ca57e802e974fe\"><span style=\"color:hsl(278,100%,50%);\"><strong>Special instructions</strong></span><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"ec0c30f81a5251d3b0fe2543a963c6067\"><span style=\"color:#000000;\">N/A</span></li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"e0ff195cfab49a4399fdd56b1104c3455\"><span style=\"color:#ffc107;\"><strong>Overall time for PT</strong></span><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"eb4c65dae219a17a65290ff5ebca886e9\"><span style=\"color:#000000;\">2-3h</span></li></ul></li></ul>"
+            }
+          ]
+        }
+      ],
+      "title": "Additional Questions"
+    },
+    {
+      "name": "page7",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel13",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Referral",
+              "title": "Before we wrap up, I’d like to share details about our referral program. If you refer someone to us you can receive up to $250 if they enrol and participate in the study. Would you like to hear more?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel14",
+          "elements": [
+            {
+              "type": "html",
+              "name": "referral explanation",
+              "hideNumber": false,
+              "html": "<p><strong>Great! Here's how it works:</strong></p><p>&nbsp;</p><p><strong>To refer someone, you will need to provide them with a unique referral ID. The person you refer will need to provide us this ID either when they sign up on our website, or when they speak to us over the phone. This ID is essential, as it ensures we can track and reimburse you for any referrals.</strong></p><p>&nbsp;</p><p><strong>For each person you refer who comes in for an in-person screening visit, you'll receive $50. If they go on to enrol and participate in the study, you'll earn an additional $200.</strong></p><p>&nbsp;</p><p><strong>There's no limit- you can refer as many people as you'd like, as long as you have an exisiting relationship with them. It's important to note that you cannot advertise for referrals. This program is based on personal connections, so please only refer people you know.</strong></p><p>&nbsp;</p><p><strong>If you're interested, we can set up your Unique Referral ID today if you would like</strong> <i>(the unique referral ID is REF[p number]. E.g., REFP14471)</i></p><p>&nbsp;</p><p><strong>Who do you know you might be interested in this trial?</strong> <i>(if they don't know anyone for this trial, they can also refer someone to any other trial)</i></p><p>&nbsp;</p><p><strong>Would you like us to send you an email that you can forward on to them?</strong></p>"
+            }
+          ],
+          "visibleIf": "{Referral} = 'Item 1'"
+        }
+      ],
+      "title": "Referral"
+    }
+  ],
+  "version": "Version-1"
+}

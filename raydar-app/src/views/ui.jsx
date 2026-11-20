@@ -6,6 +6,8 @@ import { Expander } from '../motion/components.jsx';
 export const A = (a) => ({
   onClick: (e) => {
     e.preventDefault();
+    // A mouse click doesn't leave the button focused, so Enter and the answer keys keep working (2.4)
+    if (e.detail > 0 && e.currentTarget.blur) e.currentTarget.blur();
     if (a === 'theme') {
       // Theme switch: no colour transitions for the frame the theme flips, so colours don't fade at different speeds
       const root = document.documentElement;

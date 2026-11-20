@@ -1,0 +1,1990 @@
+{
+  "title": "D7260C00015 (EMBOLD) Pre-screening",
+  "pages": [
+    {
+      "name": "Study Notes",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "Study Notes Panel 1",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Opening",
+              "hideNumber": false,
+              "html": "<p><strong>Sponsor:</strong> AstraZeneca AB</p><p><strong>Phase:</strong> 3</p><p>&nbsp;</p><p><strong>Opening</strong></p><p><strong>&nbsp;</strong></p><p>Thank you for your interest in our weight loss clinical trial. As you may or may not know, obesity is rapidly increasing as a worldwide concern due to its innate risk factor for other life-threatening conditions such as type 2 diabetes, cardiovascular disease or heart failure. As such, there is an ongoing and urgent need to achieve sustained weight loss. Therefore, this study will be assessing the safety and effectiveness of a new medication to support weight loss.</p>"
+            },
+            {
+              "type": "html",
+              "name": "Study Drug and Design",
+              "hideNumber": false,
+              "html": "<p><strong>Study Drug and Design</strong></p><p>&nbsp;</p><p>The investigational product for this study is called <strong>Elecoglipron (E-LE-CO-GLI-PRON).</strong> It is an <strong>orally taken GLP-1 agonist</strong>, meaning it <strong>works similarly</strong> to some other weight loss drugs like <strong>Ozempic</strong>, by working on certain pathways to help <strong>suppress hunger</strong> and alter your metabolism to burn more energy.</p><p>&nbsp;</p><p>The study involves <strong>2 separate treatment periods</strong>. For the <strong>first</strong>, you're placed into one of <strong>3 groups</strong>, and for the <strong>second</strong>, the <strong>groups are split</strong> once more to become <strong>6 groups in total</strong>. <strong>Some</strong> participants will receive the <strong>study drug for both treatment periods</strong>, and <strong>some</strong> will receive it for <strong>one treatment period</strong> and a <strong>placebo for the other. </strong>Thus, regardless of which group you're in, <strong>everyone will receive the study drug</strong> at some point in time.</p><p>&nbsp;</p><p>This study is <strong>double-blinded</strong>, meaning neither you nor the study doctors will know the group you're in until the end of the study. This ensures a lack of bias and stronger reliability.</p><p>&nbsp;</p><p><strong>Screening time: 3.5h</strong></p><p>&nbsp;</p><p>(If <strong>PT wants more detail</strong> about the 6 groups and the allocation, go to the <strong>bottom of the page</strong> for additional information)</p><p>&nbsp;</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Study Notes Panel 2",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Study Duration",
+              "hideNumber": false,
+              "html": "<p><strong>Study Duration</strong><br>&nbsp;</p><p>This study goes on for about <strong>2.5 years</strong> and there are <strong>22 visits</strong>. I know that sounds like a large commitment, but the visits are <strong>spread out</strong>, and so you don't have to come in super frequently.&nbsp;</p><p>&nbsp;</p><p>Treatment <strong>period 1 is 72 weeks</strong>, and treatment <strong>period 2 is 52 weeks</strong>:</p><p>&nbsp;</p><ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e6a09d72dc9ff578caa8f8b7aea5d08ca\"><strong>Screening visit</strong></li><li data-list-item-id=\"ec7c45550b8a8815c68a9eff13007cbbb\">Treatment period 1:<ul><li data-list-item-id=\"e4e56f758b4eedc223ad5a4b1fb9ded6c\">Visit <strong>every 4 weeks</strong> from week <strong>0-24</strong><ul><li data-list-item-id=\"e895543d45606515ab6a439d5d1e4abc4\"><strong>Phone call halfway</strong> between each visit</li></ul></li><li data-list-item-id=\"e893dfbfb14121f12e8a21023ff7dc1f5\">Visit <strong>every 12 weeks</strong> from week <strong>24-72</strong><ul><li data-list-item-id=\"ed23cb79f569a6ea86b8e9b541d625267\"><strong>Phone call every 4 weeks</strong> from week <strong>28-68</strong></li></ul></li></ul></li><li data-list-item-id=\"e096ba0249715a0097abd72800eeb7fcb\">Treatment period 2:<ul><li data-list-item-id=\"e983fc3dc283777e681583fa62b3be029\">Visit <strong>every 4 weeks</strong> from week <strong>72-96</strong><ul><li data-list-item-id=\"e3f3031ab2b972de44dcea2bddb431f4d\"><strong>Phone call halfway</strong> between each visit</li></ul></li><li data-list-item-id=\"e8b3adf999ef3499a20bbf6d66370effd\">Visit <strong>every 12 weeks</strong> from week <strong>96-124</strong><ul><li data-list-item-id=\"e91fa9988527f3af7e7734f1399e1cf33\"><strong>Phone call every 4 weeks</strong> from week <strong>100-120</strong></li></ul></li><li data-list-item-id=\"e1f3493cf3c0ea7159d3ba1d29f40d0d2\"><strong>Last visit</strong> at week <strong>126</strong></li></ul></li></ul><p>&nbsp;</p><p>These visits include <strong>treatment titration</strong> (working you up to the desired dosage slowly so that you adapt well), and a variety of tests to see how you are doing and how the drug is affecting you. These include <strong>lab tests</strong>, like <strong>bloods and urine tests</strong>, and for <strong>some people</strong>, <strong>DEXA scans</strong> or <strong>diabetes checks</strong> like <strong>retinal fundus photography</strong> (pictures of the eyes).</p><p>&nbsp;</p><p>There are also windows of leniency around when these visits will occur, meaning if you can't make it on the exact day, you can come in a few days earlier or later.</p>"
+            },
+            {
+              "type": "image",
+              "name": "question1",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/1838/a7f08e9c3127a622ebff933c2aa29f752b839bab3d7de0aab2335924cf52a941.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "100%"
+            },
+            {
+              "type": "image",
+              "name": "question2",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/1838/6835f8d5483377cb49b03ab13dac267eb127310949afffae05eb8980a409e1c3.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "100%"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Study Notes Panel 3",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Reimbursement",
+              "hideNumber": false,
+              "html": "<p><strong>Reimbursement</strong></p><p>&nbsp;</p><p>You will be reimbursed the following for any reasonable travel, parking, meals, and other expenses associated with your study visits:&nbsp;</p><ul><li data-list-item-id=\"e4ff662f09e6046fdc9383ff4697e9189\">$100 for Screening, Visit 3, 4, 5, 6, 7, 9, 11, 13, 14, 15, 16, 17, 19, 20 and 22</li><li data-list-item-id=\"e47e2b0e8aa9dd50758a2a912645d1762\">$125 for Visit 2, 8, 10, 12, 18 and 21</li><li data-list-item-id=\"e5eaec3c1fbc80f2cc4e967df18e89458\">$50 for each scheduled phone call</li></ul><p>&nbsp;</p><p>This means if you attend all scheduled visits, you can receive up to $2650.</p><p>&nbsp;</p><p>If you're eligible for extra reimbursement related to rural travel, the study team will let you know.</p>"
+            },
+            {
+              "type": "html",
+              "name": "Disclosure",
+              "hideNumber": false,
+              "html": "<p><strong>Disclosure</strong></p><p>&nbsp;</p><p>Before we go any further, I want to explain exactly how the reimbursement works, so there are no surprises for you later. The reimbursement I just went through is what you'd receive if everything goes ahead as planned. That can look a bit different depending on what happens on the day. For example, if the doctor looks over your information early on and finds you're not eligible before you even get to the consent form, if you decide not to sign the consent form yourself, or if something doesn't line up with what you've told me today, you'd likely only get a partial amount, or in some cases nothing, instead of the full reimbursement.</p><p>&nbsp;</p><p>That's actually a big part of why it matters that you're as accurate as possible with me right now. The doctor's early review is based on exactly what you tell me today, so the more accurate you are, the better your chances of making it all the way through screening and getting the full reimbursement.</p>"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "Additional notes",
+          "hideNumber": false,
+          "html": "<p><strong><u>Additional study details if PT wants them</u></strong></p><p>&nbsp;</p><p>The study involves 2 separate treatment periods. For the <strong>first</strong>, you will be randomly placed into <strong>one of 3 groups</strong> and have an <strong>equal chance</strong> of being in any of the 3:</p><p>&nbsp;</p><p><strong>Group 1 -</strong> Low dose of Elecoglipron (45mg)</p><p><strong>Group 2 -</strong> High dose of Elecoglipron (65mg)</p><p><strong>Group 3 -</strong> Placebo</p><p>&nbsp;</p><p>After treatment period 1, you will be <strong>randomly placed</strong> into a group <strong>once more</strong> for treatment <strong>period 2</strong>. Each group of the first period will split further into two groups. If you're in <strong>group 1 or 2 </strong>for the first period, you have a <strong>⅔ chance of continuing</strong> on your dosage and a <strong>⅓ chance</strong> of being put on the <strong>placebo </strong>for the second period. If you're in the <strong>placebo group</strong> in the first period, you have a <strong>50% chance</strong> of receiving <strong>either a low or high dose </strong>for the second period.</p><p>&nbsp;</p><p>Your overall chances of each combination are as follows:</p><p>&nbsp;</p><p><strong>Group 1a - </strong>Low dose + Low dose = 2/9 (22.22%)</p><p><strong>Group 1b - </strong>Low dose + Placebo = 1/9 (11.11%)<br>&nbsp;</p><p><strong>Group 2a - </strong>High dose + High dose = 2/9 (22.22%)</p><p><strong>Group 2b - </strong>High dose + Placebo = 1/9 (11.11%)<br>&nbsp;</p><p><strong>Group 3a - </strong>Placebo + low dose = 1/6 (16.67%)</p><p><strong>Group 3b - </strong>Placebo + high dose = 1/6 (16.67%)</p>"
+        }
+      ],
+      "title": "Study Notes"
+    },
+    {
+      "name": "Demographics",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "Travel Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Clinic Location",
+              "title": "This study will be conducted in Camberwell. Is this feasible for you to travel to?",
+              "description": "1096 Toorak Rd, Camberwell VIC 3124,. on-site parking may not be availbable, but tram stop and train station nearby.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "DEXA Travel",
+              "title": "As mentioned, you may have some DEXA scans too. If you do, these would be at a separate location in Essendon. Is this feasible for you to get to?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Exclude 🚫"
+                }
+              ]
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "radiogroup",
+          "name": "Sex",
+          "title": "What is your sex assigned at birth?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Please leave a comment if intersex",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Male"
+            },
+            {
+              "value": "Item 2",
+              "text": "Female"
+            },
+            {
+              "value": "Item 3",
+              "text": "Other (please describe)"
+            }
+          ]
+        },
+        {
+          "type": "dobandage",
+          "name": "DOB",
+          "startWithNewLine": false,
+          "title": "Can you please confirm your date of birth?",
+          "description": "Participants need to be 18+ to be eligible.",
+          "showNumber": false
+        },
+        {
+          "type": "html",
+          "name": "Age Exclusion",
+          "visibleIf": "{DOB.age} < 18",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:red;font-size:20px;\"><strong>Please exclude, below 18 years-old</strong></span></p>"
+        },
+        {
+          "type": "panel",
+          "name": "Holiday Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Holiday",
+              "title": "Do you have any holidays planned that would interfere with the study visits we have discussed?",
+              "description": "If they have any holiday but it doesn't look to interfere with the visits, please note down\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes, has a holiday but won't interfere - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes, will interfere - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Holiday Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>&nbsp;</p><p>&nbsp;</p><p>If <span style=\"color:green;\"><strong>short holiday</strong></span> between <strong>0-24</strong> weeks or between <strong>72-96</strong> weeks, <span style=\"color:green;\"><strong>should be fine</strong></span> but note down anyway.<br><br>If <span style=\"color:green;\"><strong>&lt;12 weeks</strong></span> between <strong>24-72</strong> weeks or between <strong>96-126</strong> weeks, <span style=\"color:green;\"><strong>should be fine</strong></span> but note down anyway.</p><p>&nbsp;</p><p>Must still <strong>be able to take phone calls</strong> from clinic. Ex. <strong>3 week</strong> hiking holiday with <strong>no reception</strong> from week 5 to 8 would be <span style=\"color:red;\"><strong>exclusionary</strong></span>.</p><p>&nbsp;</p><p>Any holiday <span style=\"color:red;\"><strong>&gt;12 weeks</strong></span> would be <span style=\"color:red;\"><strong>exclusionary</strong></span> regardless of the time&nbsp;</p><p>&nbsp;</p>"
+            }
+          ]
+        }
+      ],
+      "title": "Demographics"
+    },
+    {
+      "name": "Obesity and T2D Questions - 1",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "T2D Check Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "T2D",
+              "startWithNewLine": false,
+              "title": "Have you been diagnosed with a form of diabetes?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes, type 2 diabetes (T2D) - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Yes, a non-T2D/gestational form of diabetes (including T1D and congenital) - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Gestational DM Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>&nbsp;</p><p>&nbsp;</p><p>If PT has had gestational diabetes and it has been resolved, click “No”</p>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "Unsuccessful Diet",
+          "title": "Have you had at least one dietary effort at losing body weight that was unsuccessful?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - Continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - Exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "T2D Panel 1",
+          "elements": [
+            {
+              "type": "bmi",
+              "name": "BMI (T2D)",
+              "title": "There is a BMI criterion for this study. Can you please confirm your height and weight?",
+              "description": "PTs need to have a BMI of 25 or more.",
+              "showNumber": false,
+              "bmiRangeMin": 25,
+              "bmiRangeMax": 100
+            },
+            {
+              "type": "radiogroup",
+              "name": "T2D Eye Tx",
+              "title": "Are you currently receiving or anticipating receiving treatment for any diabetes-related eye conditions?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "T2D Eye Tx Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Diabetes-related eye conditions include:</p><ul><li data-list-item-id=\"efcf85045d5cf2fddb1cd522914bd70cf\"><span style=\"color:red;\"><strong>Diabetic retinopathy</strong></span> - high blood sugar levels damage to blood vessels of the retina in the eyes</li><li data-list-item-id=\"e845e19eb25f397d01be28bbd5f4bea7e\"><span style=\"color:red;\"><strong>Macular oedema</strong></span> - Fluid buildup causing inflammation of part of the retina</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "T2D Hypoglycaemia Episodes",
+              "title": "In the last 6 months have you had an episode of severely low blood sugar (hypoglycaemia - high-po-gly-see-me-a) where you needed the help of another person for recovery?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "T2D Hypoglycaemia Unawareness",
+              "title": "Have you had a history of low blood sugar unawareness which required clinical intervention?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Fundoscopy Travel",
+              "title": "Aside from the clinic visits, you may need to travel to Ashwood for some retinal fundus photographs (where they check your eyes). Is this OK with you?",
+              "description": "Address",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Exclude 🚫"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{T2D} = 'Item 1'",
+          "title": "T2D Panel 1"
+        },
+        {
+          "type": "panel",
+          "name": "No T2D Panel 1",
+          "elements": [
+            {
+              "type": "bmi",
+              "name": "BMI (No T2D)",
+              "title": "There is a BMI criterion for this study. Can you please confirm your height and weight?",
+              "showNumber": false,
+              "bmiRangeMin": 25,
+              "bmiRangeMax": 100
+            },
+            {
+              "type": "checkbox",
+              "name": "Weight-related Conditions No T2D",
+              "visibleIf": "{BMI (No T2D).bmiscore} > 25 and {BMI (No T2D).bmiscore} < 31",
+              "title": "I'm going to list out a few weight-related conditions. Can you please tell me if any of the following apply to you, or if you've been told by a doctor that these apply to you?",
+              "description": "If BMI between 25 and 31, they need one of these weight-related conditions. If BMI above 31, then no other condition is OK.\n\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Hypertension (high blood pressure) - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Dyslipidaemia (abnormal balance of fats - usually high LDL or \"bad\" cholesterol, and low HDL or \"good\" cholesterol) - Continue ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "Prediabetes (diagnosed in the last 6 months) - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Cardiovascular disease - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Obstructive sleep apnea - Continue✅"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "None of the above and BMI below 31 - Exclude 🛑"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{T2D} = 'Item 2'",
+          "title": "No T2D Panel 1"
+        },
+        {
+          "type": "panel",
+          "name": "Weight Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "BW Stable",
+              "title": "Has your weight been stable for the last 90 days (no fluctuations beyond 5% either way)?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "BW Stability Ex",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong><u>Example for the 5% rule:</u></strong></p><p>&nbsp;</p><p><strong>Starting weight:</strong> 70 kg</p><ul><li data-list-item-id=\"e5d49749fbed7faa384b6b63bd6f60382\"><p><strong>5% weight change</strong> = 3.5 kg</p><p>&nbsp;</p><ul><li data-list-item-id=\"ef83242aead1eb3a8e79e32c309e2ec57\"><strong>More than 5%</strong> weight change (<span style=\"color:red;\"><strong>not allowed</strong></span>):<ul><li data-list-item-id=\"e553fbfc27bc94d2c17a7c54f98a5d02d\"><strong>Weight loss of 4 kg</strong> → New weight: <strong>66 kg</strong> (5.71% loss)</li><li data-list-item-id=\"edb02c5f6644bcb307da7e50b1d839667\"><p><strong>Weight gain of 4.5 kg</strong> → New weight: <strong>74.5 kg</strong> (6.43% gain)</p><p>&nbsp;</p></li></ul></li><li data-list-item-id=\"ee705432fbe9c9a423156155b0d65bbd8\"><strong>Less than 5% </strong>weight change (<span style=\"color:green;\"><strong>allowed</strong></span>):<ul><li data-list-item-id=\"efbf64c30facbf08bb79e490f56e49aca\"><strong>Weight loss of 2.5 kg</strong> → New weight: <strong>67.5 kg</strong> (3.57% loss)</li><li data-list-item-id=\"e034d60701c78483623c79396c8635e34\"><p><strong>Weight gain of 2 kg</strong> → New weight: <strong>72 kg</strong> (2.86% gain)</p><p>&nbsp;</p></li></ul></li></ul></li></ul><p>For this example, changes greater than 3.5 kg (either loss or gain) are not allowed, while changes less than 3.5 kg are acceptable.</p><p>&nbsp;</p><p><span style=\"color:#000000;\">Please keep in mind that these <strong>values change according to the starting weight!</strong> For example, for a person who weighs 120kg, a 5% weight change would be 6kg.</span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "Endocrine Induced Obesity",
+              "title": "Have you been told by a doctor that your weight gain has been induced by an endocrine (hormone) disorder like Cushing's sundrome or Prader-Willi syndrome?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Recent Weight Loss Medication",
+              "title": "Have you received any medication for weight loss in the last 90 days? ",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Delay screening if possible, otherwise exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Recent Weight Loss Medication Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>&nbsp;</p><p><span style=\"background-color:rgb(255,255,255);color:rgb(39,56,89);\">These include the following:</span></p><ul><li data-list-item-id=\"e1e563f17b6666bd0a203ab15ce33393d\">Incretins (GLP-1 or GIP drugs)</li><li data-list-item-id=\"effd4ae8176651e2895941b08f81114e9\">Amylin analogues</li><li data-list-item-id=\"ef986b0f28e950c6b2113b92e7b850b7c\">Orlistat</li><li data-list-item-id=\"ec36892e3cdb8ed0932b63f72e1f93642\">Bupropion/naltrexone</li><li data-list-item-id=\"e482d6d5581c46c51df2de75141d31231\">Phentermine/topiramate</li><li data-list-item-id=\"e0434c0d87f26f76d732b869dd96b48da\">Sibutramine</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "Weight Loss Surgery/Device",
+              "title": "Have you ever had an invasive weight loss surgery, or had a weight loss device fitted?",
+              "description": "Ex. Gastric sleeve, gastric bypass, gastric balloon, endoscopic sutures",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Weight Loss Surgery/Device Plan",
+              "title": "Do you plan to have an invasive weight loss surgery, or have a weight loss device fitted?",
+              "description": "Ex. Gastric sleeve, gastric bypass, gastric balloon, endoscopic sutures",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Non-lifestyle Weight Loss",
+              "title": "Do you plan to start a targeted weight loss program other than dietary and lifestyle considerations? This includes any form of medication, supplement or surgery",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Weight Gain Medication",
+              "title": "In the last 365 days, have you either started a therapy, or altered the dosage of a therapy associated with significant weight gain?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Weight Gain Meds Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>&nbsp;</p><p><strong>Command + F to make it easier</strong><br><br>Drugs associated with weight gain (<strong>alternate</strong> meds are <strong>bold</strong> to try to make it <strong>easier to read</strong>) as <strong>follows are all </strong><span style=\"color:red;\"><strong>exclusionary</strong></span><strong> if change in dosage in last 365 days:</strong></p><p>&nbsp;</p><ul><li data-list-item-id=\"e3dbb86d6fe62faa64d155f9215ca87d2\"><strong>Amitriptyline</strong>/Nortriptyline/<strong>Carbamazepine</strong></li><li data-list-item-id=\"eb0ae3627b139f2ad6582ce796026961b\">Olanzapine/<strong>Chlorpromazine</strong>/Paroxetine</li><li data-list-item-id=\"ed58cea7f5fdb88b79a77b409131a696f\"><strong>Clozapine</strong>/Perphenazine/<strong>Doxepin</strong></li><li data-list-item-id=\"e8e11c65028d14ef965da411a9622bad5\">Phenelzine/<strong>Fluoxetine</strong>/Quetiapine</li><li data-list-item-id=\"e49292dc951c0eb4f1772e7ad955c3e3a\"><strong>Fluvoxamine</strong>/Risperidone/<strong>Gabapentin</strong></li><li data-list-item-id=\"ed499d0b91f379803f2b852859ea1cd14\">Sertraline/<strong>Haloperidol</strong>/Thioridazine</li><li data-list-item-id=\"e21da352a780a7bd114d3104b4bff829e\">I<strong>mipramine</strong>/Tranylcypromine/<strong>Lithium</strong></li><li data-list-item-id=\"e75af852acbf7e03f9608d3dbd6862b75\">Trimipramine/<strong>Mirtazapine/</strong>Valproic acid and its derivatives</li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "GI and Liver Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Upper GI Condition",
+              "title": "Do you have a condition affecting the upper GI tract (mouth to first part of small intestine)? These include gastroparesis or gastric outlet obstruction, severe disease, or surgery.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Liver Problems",
+              "title": "Do you have a history of any of the following conditions associated with the liver?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Liver cirrhosis or decompensation (including ascites, hepatic encephalopathy, or variceal bleeding) - 🛑"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Liver transplant, or are you on a liver transplant list? - 🛑"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Liver disease - Exclude 🛑"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "None of the above - Continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Liver Problems Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Cirrhosis (si-ro-sis) = permanent scarring and stiffeninf of the liver, usually due to chronic liver disease</p><p>&nbsp;</p><p>Ascites (Uh-sigh-teez) - Abnormal buildup of excess fluid in abdominal cavity (usually caused by cirrhosis)</p><p>&nbsp;</p><p>Encephalopathy (En-se-fa-lo-path-ee) - Decline in brain function due to chronic liver disease</p><p>&nbsp;</p><p>Variceal (Va-ri-see-uhl) bleeding - Enlarged, fragile veins rupture and bleed due to cirrhosis</p><p>&nbsp;</p><p>“Liver disease” includes alcoholic/drug-induced/viral/autoimmune hepatitis, fatty liver disease, bile duct scarring/inflammation, liver damage caused by iron overload, alpha 1 antitrypsin deficiency, and Wilson's disease.</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "HIV",
+              "title": "Do you have a history of HIV?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Hep B/C",
+              "title": "Do you have history of Hepatitis B or C?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "If latent/treated well, note down how long ago they were diagnosed and if there were any complications if possible",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 1",
+                  "text": "Yes, but latent/treated well - Check with TST and Dr Enquiry ⚠️"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes, active now/unresolved - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Pancreatitis",
+              "title": "Do you have history of acute or chronic pancreatitis?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 1",
+                  "text": "Yes, resolved gallstone pancreatitis/after gallbladder removal - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes, another type of pancreatitis - Exclude 🛑"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "CV Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Arrhythmia",
+              "title": "Do you have any cardiac arrhythmia or have you been told by your doctor that your ECG's shape is abnormal?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 4",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Continue ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "Arrhythmia Panel",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Arrhythmia Type",
+                  "title": "Could you describe the arrhythmia please?",
+                  "description": "Check on the right to see what kind of arrhythmia PT has. If unable to tell, check with Dr",
+                  "hideNumber": false,
+                  "showCommentArea": true,
+                  "commentText": "Please leave a comment",
+                  "choices": [
+                    {
+                      "value": "Item 4",
+                      "text": "Atrial ventricular block/sinus node dysfunction with no pacemaker - Exclude 🛑"
+                    },
+                    {
+                      "value": "Item 1",
+                      "text": "Ventricular arrhythmia requiring treatment - Exclude 🛑"
+                    },
+                    {
+                      "value": "Item 2",
+                      "text": "Atrial fibrillation/flutter - Exclude 🛑"
+                    },
+                    {
+                      "value": "Item 3",
+                      "text": "None of the above - Confirm if PT has arrhythmia, check with Dr if you need to ⚠️"
+                    }
+                  ]
+                },
+                {
+                  "type": "html",
+                  "name": "Arrhythmia Info",
+                  "startWithNewLine": false,
+                  "hideNumber": false,
+                  "html": "<p><span style=\"color:red;\"><strong>See what best fits their description:</strong></span></p><p>&nbsp;</p><p>Atrioventricular block - <strong>Electrical signals from the atria (upper chambers) to the ventricles (lower chambers) are delayed/blocked</strong></p><p>&nbsp;</p><p>Sinus node dysfunction - <strong>Heart's natural pacemaker not able to keep its required rhythm</strong></p><p>&nbsp;</p><p>Ventricular arrhythmia - <strong>Abnormal heart rhythms originating in the ventricles (heart's lower chambers)</strong></p><p>&nbsp;</p><p>Atrial fibrillation/flutter - <strong>Abnormal rhythm in the atria (heart's upper chambers)</strong></p>"
+                }
+              ],
+              "visibleIf": "{Arrhythmia} = 'Item 1'"
+            },
+            {
+              "type": "radiogroup",
+              "name": "Recent CV Event",
+              "title": "In the last 90 days, have you had any heart related conditions that required you to go to the hospital such as a heart attack or stroke?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Recent CV Event Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>&nbsp;</p><p>These include:</p><ul><li data-list-item-id=\"e36a3dc207299b6e69d958bb11c52cc13\">Heart attack</li><li data-list-item-id=\"e5a1a7518bb346d7128fccfa9a8d7570f\">Stroke</li><li data-list-item-id=\"ebf6a210f328bea1b5b15d4e5507f8f86\">Unstable angina</li><li data-list-item-id=\"ecc9a1f1fe580a470c63e0c89b7af41e0\">Heart bypass surgery</li><li data-list-item-id=\"ec07aff0f6633456b07509d8789b688d5\">Coronary angioplasty<span style=\"background-color:rgb(255,255,255);color:rgb(39,56,89);\"> (stent to open up the artery)</span></li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "Congestive Heart Failure",
+              "title": "Have you had severe congestive heart failure?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Congestive Heart Failure Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>Heart failure symptoms:</p><ul><li data-list-item-id=\"e4024939a00dc73bd3cf0b66af8ea9576\"><strong>Shortness of breath</strong> (especially when lying down or active)</li><li class=\"ck-list-marker-bold\" data-list-item-id=\"eec9fece9dc32960596b126298a022e99\"><strong>Persistent fatigue</strong></li><li data-list-item-id=\"ec40ec9018b64082140713d198c91c1bd\">Rapid weight gain from <strong>fluid retention</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"ed4622afb54251b626293f225cda35053\"><strong>Swollen legs, ankles, or feet</strong></li></ul><p>&nbsp;</p><p>“Severe” = <strong>Symptoms with minimal activity/rest</strong></p><p>&nbsp;</p><p><strong>If not severe, should be OK</strong></p><p><span style=\"color:#ffc107;\"><strong>Unsure - Dr enquiry</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Mental Health Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Psychiatric Disorders",
+              "title": "Within the last 2 years, do you have a history of significant psychiatric disorders?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Yes, major depressive disorder (MDD) or general anxiety disorder - Continue ⚠️"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes, listed on the right - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Psychiatric Disorders Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>&nbsp;</p><p>These include:</p><ul><li data-list-item-id=\"eaa4dfec7d505eb88a266bbf294b43321\">Schizophrenia</li><li data-list-item-id=\"e567c46404c222a3d20f90459d9383809\">Bipolar disorder</li><li data-list-item-id=\"eb9fb4a5965b5afe6f16904d7e964954a\">Other serious mood/anxiety disorders</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "MDD/Anxiety Stability",
+              "visibleIf": "{Psychiatric Disorders} = 'Item 4'",
+              "title": "Is your MDD or general anxiety disorder considered stable? Unstable would refer to you needing hospitalisation or further medical intervention, or changing your medication or dosage recently.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes, stable medication with no recent - Continue ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Unsure - Take details on when diagnosed, medications etc, and check with Dr ⚠️"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "title": "Obesity and T2D Questions - 1"
+    },
+    {
+      "name": "Obesity and T2D Questions - 2",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "Endocrine and Cancer Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Thyroid Disease",
+              "title": "Do you have uncontrolled thyroid disease?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "Has thyroid disease but thinks is controlled - Take details on Dx and medication and submit medical query ⚠️"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Thyroid Cancer",
+              "title": "Do you or your family have a history of medullary thyroid cancer or multiple endocrine neoplasia type 2 (MEN 2)?",
+              "description": "Only concerned with 1st degree relatives (siblings and parents)",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Cancer History",
+              "title": "Have you had cancer in the last 5 years?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "Yes, basal/squamous cell skin cancer (BCC/SCC) adequately treated - Continue ✅"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Yes, in situ (Stage 0) cancer or Grade 1 (not equal to Stage 1) prostate cancer - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes, not one previously mentioned - Exclude 🛑"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Blood Condition, Abuse and Surgeries Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Haematological Conditions",
+              "title": "Do you have any blood conditions?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Haematological Conditions Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(39,56,89);\">Haematological (he-ma-tuh-logical) or blood conditions include:</span></p><ul><li data-list-item-id=\"e66c101bf782d3367077d8f9e35833dcb\"><span style=\"background-color:rgb(255,255,255);color:red;\"><strong>Haemoglobinopathy</strong></span><span style=\"background-color:rgb(255,255,255);color:rgb(39,56,89);\"> (he-ma-glo-bin-uh-path-y)</span><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:rgb(39,56,89);\" data-list-item-id=\"e189a3420b8a035becab4bf854bd412f7\"><span style=\"background-color:rgb(255,255,255);color:rgb(39,56,89);\">Any genetic blood disorder that affects the structure or production of haemoglobin</span></li></ul></li><li data-list-item-id=\"eef6ce3efb2b55fc906b717c7c72b23cc\"><span style=\"background-color:rgb(255,255,255);color:red;\"><strong>Haemolytic anaemia</strong></span><span style=\"background-color:rgb(255,255,255);color:rgb(39,56,89);\"> - red blood cells destroyed faster than they can be replaced</span></li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "RBC Transfusion",
+              "title": "Have you had a red blood cell transfusion in the last 90 days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Drug Abuse History",
+              "title": "Do you take any recreational substances?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Yes, decidedly infrequently - Continue ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "Yes, unsure if frequency is considered high or low - Dr enquiry ⚠️"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes, frequently - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Alcohol Standards",
+              "title": "How many standards do you drink per week?",
+              "description": "14 for females or 21 for males meets the threshold for alcohol abuse",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Less than threshold - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "More than threshold - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Alcohol Visit Refraining",
+              "title": "Before each visit you will need to refrain from drinking alcohol for 24 hours. Is that OK?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Major Surgery",
+              "title": "Do you have any major surgeries planned?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Major vs Minor Surgery Info",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p>&nbsp;</p><p><strong>Minor</strong> surgical procedures include ones under <strong>local anaesthetic or diagnostic procedures</strong>. These would <span style=\"color:green;\"><strong>not be exclusionary</strong></span>.</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "Recent Major Surgeries",
+              "title": "Have you had any major surgeries in the last 90 days?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Please leave a comment",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Yes - Delay/Exclude 🛑"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "GLP-1 RA Allergy",
+          "title": "Do you have a history of allergy, hypersensitivity, or severe intolerance to GLP-1 receptor agonists like Ozempic or Mounjaro, or any other drugs?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes, but not to GLP-1 receptor agonist - Check with Dr ⚠️"
+            },
+            {
+              "value": "Item 3",
+              "text": "Yes, to GLP-1 RAs - Exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "GLP-1 RA Allergy Info",
+          "startWithNewLine": false,
+          "hideNumber": false,
+          "html": "<p>&nbsp;</p><p>If PT mentions an intolerance to a “statin”, there will be statin-specific questions in a bit.</p>"
+        },
+        {
+          "type": "radiogroup",
+          "name": "LT Glucocorticoid",
+          "title": "Have you used oral/injectable glucocorticoids (like prednisone or prednisolone) for more than 14 consecutive days in the last 90 days?\n",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - Continue ✅"
+            },
+            {
+              "value": "Item 3",
+              "text": "Yes - Exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "LT Glucocorticoid Info",
+          "startWithNewLine": false,
+          "hideNumber": false,
+          "html": "<p>If PT says that <strong>they are deficient </strong>and they take <strong>glucocorticoids to mimic normal levels</strong> in the body - <span style=\"color:#ffc107;\"><strong>Dr enquiry</strong></span></p>"
+        },
+        {
+          "type": "panel",
+          "name": "panel1",
+          "elements": [
+            {
+              "type": "panel",
+              "name": "Long Concomitant List",
+              "elements": [
+                {
+                  "type": "panel",
+                  "name": "Concomitant Panel 1",
+                  "elements": [
+                    {
+                      "type": "html",
+                      "name": "Medication Note for Recruiters",
+                      "hideNumber": false,
+                      "html": "<p><strong>Don't read to PTs</strong>, just a note for yourself:<br><br>The prohibited medications are really specific. <strong>Ask all of the next questions, and then bring all your queries to TST altogether </strong>to prevent you having to come up multiple times for one call. <strong>It will likely be a Dr Enquiry anyway.</strong></p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "Anticonvulsants",
+                      "title": "Are you on any anticonvulsants, analgesics, oral/injectable antifungals?",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "choices": [
+                        {
+                          "value": "Item 1",
+                          "text": "No - Continue ✅"
+                        },
+                        {
+                          "value": "Item 3",
+                          "text": "Yes - Exclude 🛑"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "html",
+                      "name": "Anticonvulsants Info",
+                      "startWithNewLine": false,
+                      "hideNumber": false,
+                      "html": "<p>&nbsp;</p><p><span style=\"color:red;\"><strong>Exclusionary</strong></span><strong> </strong>medication includes:</p><ul><li data-list-item-id=\"ec195be73342d3c88737d30cf496afc00\">Anticonvulsants/analgesics<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e68e4ffffebf8915ba99ea1fa8309c2e0\"><strong>Carbamazepine</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e1fe75f7f85557b549bc7ba0070f222ae\"><strong>Phenytoin</strong></li></ul></li><li data-list-item-id=\"e2bc9bc106751a3b9e58af679f14d9a51\">Oral/injectable antifungals<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e3f61ce12873c88f6bbd3d1a1337e6706\"><strong>Itraconazole</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"eeafb436aa43048dbac5cdb7d4820bb2a\"><strong>Ketoconazole</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e2f9b12457952f4876aedee9250251ec2\"><strong>Clotrimazole</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e2df77a93dbdb96207830509e81b9656e\"><strong>Flucanazole</strong></li></ul></li></ul><p>&nbsp;</p><p>If PT mentions <span style=\"color:#ffc107;\"><strong>medication not in exclusionary</strong></span> list above but in the class of drugs, <span style=\"color:#ffc107;\"><strong>check with TST</strong></span> and maybe <span style=\"color:#ffc107;\"><strong>raise medical query</strong></span>.</p>"
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "name": "Concomitant Panel 2",
+                  "elements": [
+                    {
+                      "type": "radiogroup",
+                      "name": "Anti-Infectives",
+                      "title": "Are you on any anti-infectives or antivirals for hepatitis C?",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "choices": [
+                        {
+                          "value": "Item 1",
+                          "text": "No - Continue ✅"
+                        },
+                        {
+                          "value": "Item 3",
+                          "text": "Yes - Exclude 🛑"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "html",
+                      "name": "Anti-Infectives Info",
+                      "startWithNewLine": false,
+                      "hideNumber": false,
+                      "html": "<p>&nbsp;</p><p><span style=\"color:red;\"><strong>Exclusionary</strong></span><strong> </strong>medication includes:</p><ul><li data-list-item-id=\"ec195be73342d3c88737d30cf496afc00\">Anti-infectives<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"eee850ae1e1f9c9b89bece9d9d395fabf\"><strong>Clarithromycin (oral/injectable)</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e1fe75f7f85557b549bc7ba0070f222ae\"><strong>Rifampin</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e2ffbd77deb94b526fa21634a9ac6cd66\"><strong>Ciprofloxacin (oral/injectable)</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e5b21dc88ea55e317ecccfaa71e2638c2\"><strong>Erythromycin (oral/injectable)</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e78a33ffe84276235b313e6f90b2ab440\"><strong>Quinine</strong></li></ul></li><li data-list-item-id=\"e2bc9bc106751a3b9e58af679f14d9a51\">Antivirals for hepatitis C</li></ul><p>&nbsp;</p><p>If PT mentions <span style=\"color:#ffc107;\"><strong>medication not in exclusionary</strong></span> list above but in the class of drugs, <span style=\"color:#ffc107;\"><strong>check with TST</strong></span> and maybe <span style=\"color:#ffc107;\"><strong>raise medical query</strong></span>.</p>"
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "name": "Concomitant Panel 3",
+                  "elements": [
+                    {
+                      "type": "radiogroup",
+                      "name": "Ca2+ Blockers",
+                      "title": "Are you on any Calcium channel blockers, H2-blockers, or anti-platelet medication?",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "choices": [
+                        {
+                          "value": "Item 1",
+                          "text": "No - Continue ✅"
+                        },
+                        {
+                          "value": "Item 3",
+                          "text": "Yes - Exclude 🛑"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "html",
+                      "name": "Ca2+ Blockers Info",
+                      "startWithNewLine": false,
+                      "hideNumber": false,
+                      "html": "<p>&nbsp;</p><p><span style=\"color:red;\"><strong>Exclusionary</strong></span><strong> </strong>medication includes:</p><ul><li data-list-item-id=\"ec195be73342d3c88737d30cf496afc00\">Calcium channel blockers<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"eee850ae1e1f9c9b89bece9d9d395fabf\"><strong>Diltiazem</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e1fe75f7f85557b549bc7ba0070f222ae\"><strong>Verapamil</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e2ffbd77deb94b526fa21634a9ac6cd66\"><strong>Felodipine</strong></li></ul></li><li data-list-item-id=\"e2bc9bc106751a3b9e58af679f14d9a51\">H2-blocker<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e98384517238996dd2ebe8b839c842d73\"><strong>Cimetidine</strong></li></ul></li><li data-list-item-id=\"ee83528864a7d9a74d8f4a5d12f50c8b3\">Anti-platelet<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"eeea699b1095d1d76975cd0157fe677d9\"><strong>Ticagrelor</strong></li></ul></li></ul><p>&nbsp;</p><p>If PT mentions <span style=\"color:#ffc107;\"><strong>medication not in exclusionary</strong></span> list above but in the class of drugs, <span style=\"color:#ffc107;\"><strong>check with TST</strong></span> and maybe <span style=\"color:#ffc107;\"><strong>raise medical query</strong></span>.</p><p>&nbsp;</p>"
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "name": "Concomitant Panel 4",
+                  "elements": [
+                    {
+                      "type": "radiogroup",
+                      "name": "Antidepressants",
+                      "title": "Are you on any anxiolytics, antidepressants, antipsychotics, or oral/injectable glucocorticoids?",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "choices": [
+                        {
+                          "value": "Item 1",
+                          "text": "No - Continue ✅"
+                        },
+                        {
+                          "value": "Item 3",
+                          "text": "Yes - Exclude 🛑"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "html",
+                      "name": "Antidepressants Info",
+                      "startWithNewLine": false,
+                      "hideNumber": false,
+                      "html": "<p>&nbsp;</p><p><span style=\"color:red;\"><strong>Exclusionary</strong></span><strong> </strong>medication includes:</p><ul><li data-list-item-id=\"ec195be73342d3c88737d30cf496afc00\">Anxiolytics/antidepressants/antipsychotics<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e02fdc5213e187a8c17a8edf4fa3921b0\"><strong>Buspirone</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e60aa4382da8c66cd765bf5fba736c77a\"><strong>Quetiapine</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e5703d7c000b8f8626f47cd42d22b83e9\"><strong>Triazolam</strong></li></ul></li><li data-list-item-id=\"e2bc9bc106751a3b9e58af679f14d9a51\">Oral/injectable glucocorticoids<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e8e43134aa14a14a9b6550cc454cf68c9\"><strong>Budesonide</strong></li></ul></li></ul><p>&nbsp;</p><p>If PT mentions <span style=\"color:#ffc107;\"><strong>medication not in exclusionary</strong></span> list above but in the class of drugs, <span style=\"color:#ffc107;\"><strong>check with TST</strong></span> and maybe <span style=\"color:#ffc107;\"><strong>raise medical query</strong></span>.</p><p>&nbsp;</p>"
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "name": "Concomitant Panel 5",
+                  "elements": [
+                    {
+                      "type": "radiogroup",
+                      "name": "Anti-arrhythmics",
+                      "title": "Are you on any anti-arrhythmics, antigout, or immunosuppressive medication?",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "choices": [
+                        {
+                          "value": "Item 1",
+                          "text": "No - Continue ✅"
+                        },
+                        {
+                          "value": "Item 3",
+                          "text": "Yes - Exclude 🛑"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "html",
+                      "name": "Anti-arrhythmics Info",
+                      "startWithNewLine": false,
+                      "hideNumber": false,
+                      "html": "<p>&nbsp;</p><p><span style=\"color:red;\"><strong>Exclusionary</strong></span><strong> </strong>medication includes:</p><ul><li data-list-item-id=\"ec195be73342d3c88737d30cf496afc00\">Anti-arrhythmics<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e02fdc5213e187a8c17a8edf4fa3921b0\"><strong>Quinidine&nbsp;</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e60aa4382da8c66cd765bf5fba736c77a\"><strong>Digoxin</strong></li></ul></li><li data-list-item-id=\"e2bc9bc106751a3b9e58af679f14d9a51\">Antigout<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e8e43134aa14a14a9b6550cc454cf68c9\"><strong>Colchicine</strong></li></ul></li><li data-list-item-id=\"e22c07ff91a48d34e6689243ac2036688\">Immunosuppressive<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"eac012d99dfd3c624a4ae95006a83a21d\"><strong>Cyclosporine (oral/injectable)</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e06822408e98ddcb2a74448ceb135d574\"><strong>Sirolimus</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e714796715672fb4fb5aa36aaf0c850a9\"><strong>Tacrolimus (oral/injectable)</strong></li></ul></li></ul><p>&nbsp;</p><p>If PT mentions <span style=\"color:#ffc107;\"><strong>medication not in exclusionary</strong></span> list above but in the class of drugs, <span style=\"color:#ffc107;\"><strong>check with TST</strong></span> and maybe <span style=\"color:#ffc107;\"><strong>raise medical query</strong></span>.</p>"
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "name": "Concomitant Panel 6",
+                  "elements": [
+                    {
+                      "type": "radiogroup",
+                      "name": "Glucose-lowering",
+                      "title": "Are you on any phosphodiesterase (fos-fo-di-es-tuh-rays) inhibitors, or glucose lowering medication?\n",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "choices": [
+                        {
+                          "value": "Item 1",
+                          "text": "No - Continue ✅"
+                        },
+                        {
+                          "value": "Item 3",
+                          "text": "Yes - Exclude 🛑"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "html",
+                      "name": "Glucose-lowering Info",
+                      "startWithNewLine": false,
+                      "hideNumber": false,
+                      "html": "<p>&nbsp;</p><p><span style=\"color:red;\"><strong>Exclusionary</strong></span><strong> </strong>medication includes:</p><ul><li data-list-item-id=\"ec195be73342d3c88737d30cf496afc00\">Phosphodiesterase inhibitors<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"ecb334270f11c4676503b7bd499e0af87\"><strong>Sildenafil&nbsp;</strong></li></ul></li><li data-list-item-id=\"e2bc9bc106751a3b9e58af679f14d9a51\">Glucose-lowering medication<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"ee0cbcbd08c17a344baf2a2af4eef2ca5\"><strong>Pioglitazone</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e8f696e6cbcd0f3765a421984ce18a7fd\"><strong>Repaglinide</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"eefc502567d425ca8f606603a6d39dfd7\"><strong>Rosiglitazone</strong></li></ul></li></ul><p>&nbsp;</p><p>If PT mentions <span style=\"color:#ffc107;\"><strong>medication not in exclusionary</strong></span> list above but in the class of drugs, <span style=\"color:#ffc107;\"><strong>check with TST</strong></span> and maybe <span style=\"color:#ffc107;\"><strong>raise medical query</strong></span>.</p><p>&nbsp;</p>"
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "name": "Concomitant Panel 7",
+                  "elements": [
+                    {
+                      "type": "radiogroup",
+                      "name": "Antihypertensives",
+                      "title": "Are you on any antihypertensive or anti-inflammatory medication?\n",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "choices": [
+                        {
+                          "value": "Item 1",
+                          "text": "No - Continue ✅"
+                        },
+                        {
+                          "value": "Item 3",
+                          "text": "Yes - Exclude 🛑"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "html",
+                      "name": "Antihypertensives Info",
+                      "startWithNewLine": false,
+                      "hideNumber": false,
+                      "html": "<p>&nbsp;</p><p><span style=\"color:red;\"><strong>Exclusionary</strong></span><strong> </strong>medication includes:</p><ul><li data-list-item-id=\"ec195be73342d3c88737d30cf496afc00\">Antihypertensives<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e2c497ebac2a00c810feb999562c8b10d\"><strong>Prazosin</strong></li></ul></li><li data-list-item-id=\"e2bc9bc106751a3b9e58af679f14d9a51\">Anti-inflammatory medication<ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e923a3aac910a8a96fa2460a1edb6c1c8\"><strong>Sulfasalazine</strong></li></ul></li></ul><p>&nbsp;</p><p>If PT mentions <span style=\"color:#ffc107;\"><strong>medication not in exclusionary</strong></span> list above but in the class of drugs, <span style=\"color:#ffc107;\"><strong>check with TST</strong></span> and maybe <span style=\"color:#ffc107;\"><strong>raise medical query</strong></span>.</p><p>&nbsp;</p>"
+                    }
+                  ]
+                }
+              ],
+              "visibleIf": "false"
+            }
+          ],
+          "visibleIf": "false"
+        },
+        {
+          "type": "panel",
+          "name": "Statin Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Statin History",
+              "title": "Have you ever been on any medication ending in \"statin\"?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Continue ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Statin Tolerance",
+              "title": "Have you ever had an intolerance to a high dose of statins?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Check with Dr ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Statin Px",
+              "title": "Are you currently on any statin?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Continue, but take details on dose and frequency ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Which Statin?",
+              "visibleIf": "{Statin Px} = 'Item 3'",
+              "title": "What is the name of the statin medication that you are on?\n",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Fluvastatin - Continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Pravastatin ≤ 40mg/day - Continue ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Atorvastatin ≤ 20mg/day - Continue ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Rosuvastatin ≤ 10mg/day - Continue ✅"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "Pravastatin, atorvastatin, or rosuvastatin above the respective thresholds - Exclude 🛑"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Simvastatin, pitavastatin, and lovastatin - Exclude 🛑"
+                },
+                {
+                  "value": "Item 8",
+                  "text": "Other statin not above - Dr enquiry ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question3",
+              "visibleIf": "{Statin Px} = 'Item 3'",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>Make sure to take all details possible:</strong></p><ul><li class=\"ck-list-marker-bold\" data-list-item-id=\"e009964e99960bd7551fdd10ab6a98478\"><strong>Name</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e78a3d5839bc3c7e57f51bc9d8e3f3c03\"><strong>Brand</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"ef2db9f8c70873c491eb5b3f750349220\"><strong>Dose</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"ed718b10d810b67a3e0213d680115877f\"><strong>Frequency</strong></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e0be732840e3efe05a8ac545217162d18\"><strong>Started when (stability criterion is 3 months)</strong></li></ul><p>&nbsp;</p><p>&nbsp;</p>"
+            }
+          ]
+        },
+        {
+          "type": "paneldynamic",
+          "name": "Medication List",
+          "title": "Are you taking any other medication that we haven't gone through?\n",
+          "description": "Please list all medications, including OTC ones.\n\nStability criterion - 3 months (for OTC meds, 3 months isn't necessary, but gather info and submit a Dr enquiry anyway)",
+          "hideNumber": false,
+          "templateElements": [
+            {
+              "type": "text",
+              "name": "question10",
+              "title": "Medication",
+              "description": "Name of medication",
+              "hideNumber": false
+            },
+            {
+              "type": "text",
+              "name": "question14",
+              "startWithNewLine": false,
+              "title": "Indication",
+              "description": "What is the medication used for?",
+              "hideNumber": false
+            },
+            {
+              "type": "text",
+              "name": "question16",
+              "startWithNewLine": false,
+              "title": "Dose",
+              "description": "How much do you take?",
+              "hideNumber": false
+            },
+            {
+              "type": "text",
+              "name": "question17",
+              "startWithNewLine": false,
+              "title": "Frequency",
+              "description": "How often do you take the medication?",
+              "hideNumber": false
+            },
+            {
+              "type": "text",
+              "name": "question18",
+              "startWithNewLine": false,
+              "title": "Route",
+              "description": "Tablet, Injection, inhaled, nasal, topical?",
+              "hideNumber": false
+            },
+            {
+              "type": "text",
+              "name": "question19",
+              "startWithNewLine": false,
+              "title": "Start Date",
+              "description": "When did you start taking this medication? If unsure, you just just provide an estimated year",
+              "hideNumber": false
+            },
+            {
+              "type": "text",
+              "name": "question20",
+              "startWithNewLine": false,
+              "title": "Stop Date",
+              "description": "If blank, write ongoing",
+              "hideNumber": false
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "Exclusionary Meds Summary",
+          "startWithNewLine": false,
+          "hideNumber": false,
+          "html": "<p><strong>Command + F </strong>to make sure we haven't missed anything exclusionary.<strong> Also Command + F on previous page.</strong></p><p>&nbsp;</p><p>Reminder, exclusionary medications include:</p><ul><li data-list-item-id=\"ed565c273801db6a14ec57d689e2c4101\"><span style=\"color:red;\"><strong>Changes in last year</strong></span><strong> to drug doses </strong><span style=\"color:red;\"><strong>associated with weight gain</strong></span> (Amitriptyline, Nortriptyline, Carbamazepine, Olanzapine, Chlorpromazine Paroxetine, Clozapine, Perphenazine, Doxepin, Phenelzine, Fluoxetine, Quetiapine, Fluvoxamine, Risperidone, Gabapentin, Sertraline, Haloperidol, Thioridazine, Imipramine, Tranylcypromine, Lithium, Trimipramine, Mirtazapine, Valproic acid and its derivatives)</li><li data-list-item-id=\"ef2917bbcff526ef57445e967c3e821da\"><span style=\"color:red;\"><strong>Weight loss drugs</strong></span><strong> taken in the </strong><span style=\"color:red;\"><strong>last 90 days</strong></span> (GLP-1/GIP drugs, Orlistat, Bupropion/Naltrexone, Phentermine/Topiramate, Sibutramine)</li><li data-list-item-id=\"eadc3fa6f6a4c6c0e4d332b3a47e29859\"><span style=\"color:red;\"><strong>Recent systemic long-term glucocorticoid</strong> </span><span style=\"color:#000000;\">use (longer than 14 days consecutively in the last 90 days)</span></li><li class=\"ck-list-marker-bold\" data-list-item-id=\"e04e09b5e43993386f4c8320eba5e3494\"><span style=\"color:red;\"><strong>Current </strong></span><span style=\"color:#000000;\"><strong>use of</strong></span><span style=\"color:red;\"><strong> the following prohibited medication:</strong></span><ul><li data-list-item-id=\"e1b9600406bf57e99d1749af3383f59f5\"><span style=\"color:red;\">Carbamazepine, Phenytoin</span> (anticonvulsants/analgesics)</li><li data-list-item-id=\"ea50c7964e47dadc6b5424090c6d61ecd\"><span style=\"color:red;\">Itraconazole, Ketoconazole, Clotrimazole, Fluconazole</span> (oral/injectable antifungals)</li><li data-list-item-id=\"ece69d04a257796b4a1c2467a305c13d8\"><span style=\"color:red;\">Clarithromycin, Rifampin, oral/injectable Ciprofloxacin, oral/injectable Erythromycin, Quinine </span>(anti-infectives)</li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e2d074e7fb09ec62bd98e7d64859ea53e\"><span style=\"color:red;\">Antivirals for Hep C</span></li><li data-list-item-id=\"eff66608192a1806ec6cbbbfae0c58f4d\"><span style=\"color:red;\">Diltiazem, Verapamil, Felodipine</span> (calcium channel blockers)</li><li data-list-item-id=\"ec4f85f6968513120948dd07cc831403c\"><span style=\"color:red;\">Cimetidine</span> (H2-blockers)</li><li data-list-item-id=\"e61188a2196986b4597a5597500aa1eff\"><span style=\"color:red;\">Ticagrelor</span> (anti-platelet medication)</li><li data-list-item-id=\"e184349308ac8db3580c4c9b0ed3d3b3f\"><span style=\"color:red;\">Buspirone, Quetiapine, Triazolam</span> (anxiolytics/antidepressants/antipsychotics)</li><li data-list-item-id=\"e421292dc535a5ca7abe65ce00976c8cf\"><span style=\"color:red;\">Budesonide</span> (oral/injectable glucocorticoids)</li><li data-list-item-id=\"e5dd01fd66057f2955a09881110d53f00\"><span style=\"color:red;\">Quinidine</span>, Digoxin (anti-arrhythmics)</li><li data-list-item-id=\"eb213be60e18cd92bb055a29111244114\"><span style=\"color:red;\">Colchicine</span> (antigout medication)</li><li data-list-item-id=\"e1aea2d11e369cb6e8c321031eba23be4\"><span style=\"color:red;\">Cyclosporine, Sirolimus, Tacrolimus</span> (oral/injectable immunosuppressives)</li><li data-list-item-id=\"e0abb4c9d4308ba813ca3d9ac152fd0cd\"><span style=\"color:red;\">Sildenafil</span> (phosphodiesterase inhibitors)</li><li data-list-item-id=\"ef4d553f8432bc10715a21cf0909715a3\"><span style=\"color:red;\">Pioglitazone, Repaglinide, Rosiglitazone</span> (glucose-lowering medication)</li><li data-list-item-id=\"e71844b91a925712e8add3e1d43dd4790\"><span style=\"color:red;\">Prazosin</span> (antihypertensives)</li><li data-list-item-id=\"eed7b3ab2a8a8b104bb5561fa75a2fe21\"><span style=\"color:red;\">Sulfasalazine</span> (anti-inflammatory medication)</li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e331dfbc50a7be80083bc15ee7929e940\"><span style=\"color:red;\">Sulphonylureases</span><ul><li data-list-item-id=\"e9c39f6ca9620b10bd259c3b023bc2bd1\"><span><strong>Glimepiride</strong> (Amaryl)</span></li><li data-list-item-id=\"e6bec994b8364733b47bea3a0300a8896\"><span><strong>Glipizide</strong> (Glucotrol, Glucotrol XL)</span></li><li data-list-item-id=\"e09c0eebfd6848bc13d42bf1885c7be1c\"><span><strong>Glyburide</strong> / Glibenclamide (DiaBeta, Glynase)</span></li></ul></li><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e5ac06253c6b980103c8c351485d96709\"><span style=\"color:red;\"><span>Thiazolidinediones</span></span><ul><li data-list-item-id=\"e885538e7ee7993e5902f08ad819db5f6\"><span>Pioglitazone</span></li><li data-list-item-id=\"e80aff5e97bdb574368e64aaf29387d86\"><span>Rosiglitazone</span></li></ul></li></ul></li></ul>"
+        },
+        {
+          "type": "comment",
+          "name": "Additional Med Info",
+          "title": "Additional Information",
+          "description": "Please use this to note down any useful additional information",
+          "hideNumber": false
+        },
+        {
+          "type": "paneldynamic",
+          "name": "Medical History",
+          "title": "Do you have any other significant medical history?",
+          "description": "Please list all your medical conditions or events",
+          "hideNumber": false,
+          "templateElements": [
+            {
+              "type": "text",
+              "name": "question45",
+              "title": "Medical Condition/Event",
+              "description": "Name of condition or event",
+              "hideNumber": false
+            },
+            {
+              "type": "text",
+              "name": "question46",
+              "startWithNewLine": false,
+              "title": "Start Date",
+              "description": "For the date, if you're not sure, you can just provide an estimated year.",
+              "hideNumber": false
+            },
+            {
+              "type": "text",
+              "name": "question49",
+              "startWithNewLine": false,
+              "title": "Stop Date",
+              "description": "If blank, write ongoing or N/A",
+              "hideNumber": false
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Study-related",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Part of Trial",
+              "title": "Are you currently taking part in a clinical trial?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Recent Clinical Trial",
+              "title": "Have you received an intervention as part of another clinical study in the last 30 days?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Personnel",
+              "title": "Are you or have you worked as personnel for this study (as part of the study site staff, sponsor personnel, or in some other capacity)?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "title": "Obesity and T2D Questions - 2"
+    },
+    {
+      "name": "Contraception",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "Contraception Consent",
+          "title": "The next few questions will be regarding contraception. Is that okay?",
+          "hideNumber": false,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - Continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - Exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Female Contraception Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Pregnant",
+              "title": "Are you pregnant, breastfeeding or planning to become pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Exclude 🛑"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "POCBP Confirmation",
+              "title": "Are you able to fall pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - Continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "Female Infertility Panel",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "Infertility Option",
+                  "title": "Which of the following applies to you?",
+                  "hideNumber": false,
+                  "choices": [
+                    {
+                      "value": "Item 1",
+                      "text": "Infertile due to surgery - Continue ✅"
+                    },
+                    {
+                      "value": "Item 2",
+                      "text": "Postmenopausal, with cessation of menses for at least 12 months - Continue ✅"
+                    },
+                    {
+                      "value": "Item 4",
+                      "text": "None of the above - Continue ✅"
+                    }
+                  ]
+                },
+                {
+                  "type": "html",
+                  "name": "Infertility Info",
+                  "startWithNewLine": false,
+                  "hideNumber": false,
+                  "html": "<p>&nbsp;</p><p>“Infertility due to <span style=\"color:green;\"><strong>surgery</strong></span>” refers to:</p><ul><li data-list-item-id=\"e051dc1e7e3cecb5b1d2db5ac2f486d2f\"><span style=\"color:green;\"><strong>Hysterectomy</strong></span> - Removal of uterus</li><li data-list-item-id=\"ee93d64e3696e1690693e6e74032536e0\"><span style=\"color:green;\"><strong>Bilateral oophorectomy</strong></span> - Removal of both ovaries</li><li data-list-item-id=\"edef770c09a065f476d317f9fcf30d04b\"><span style=\"color:green;\"><strong>Bilateral salpingectomy</strong></span> - Removal of both Fallopian tubes</li></ul><p>&nbsp;</p><p>\"<span style=\"color:#ffc107;\"><strong>Permanent infertility</strong></span> due to <span style=\"color:#ffc107;\"><strong>alternate medical cause</strong></span><strong>\"</strong> includes things like:</p><ul><li data-list-item-id=\"e1b12b29527b730681e831033f1186406\"><span style=\"color:#ffc107;\"><strong>Mullerian agenesis</strong></span> - Improper development of uterus and cervix from birth</li><li data-list-item-id=\"eae92d6c972312d1a9b07d9e479e72b1e\"><span style=\"color:#ffc107;\"><strong>Gonadal dysgenesis</strong></span> - Improper development of ovaries from birth</li></ul><p>&nbsp;</p><p>If a PT has something like this, it will likely be a doctor's enquiry. Check with TL and TST too though.</p>"
+                }
+              ],
+              "visibleIf": "{POCBP Confirmation} = 'Item 1'"
+            },
+            {
+              "type": "panel",
+              "name": "Female Contraceptive Use Panel",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "POCBP Options",
+                  "title": "Can you please tell me if any of these apply to you?",
+                  "hideNumber": false,
+                  "choices": [
+                    {
+                      "value": "Item 1",
+                      "text": "Abstinent as your preferred and usual lifestyle choice (abstinence can only be applied if it’s a lifestyle choice and not due to current circumstances such as being single and could potentially meet someone etc) - Continue ✅"
+                    },
+                    {
+                      "value": "Item 2",
+                      "text": "In a same sex relationship as your preferred and usual lifestyle choice - Continue ✅"
+                    },
+                    {
+                      "value": "Item 3",
+                      "text": "Currently using contraception - Continue ✅"
+                    },
+                    {
+                      "value": "Item 4",
+                      "text": "None - Exclude 🛑"
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "name": "Contraceptives Method Panel",
+                  "elements": [
+                    {
+                      "type": "radiogroup",
+                      "name": "Contraceptive Method",
+                      "title": "Which method of  highly effective contraception are you using?",
+                      "description": "Needs to have been on the contraception for at least 1 month",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "commentText": "Please note down how longs, and dose and frequency if possible",
+                      "choices": [
+                        {
+                          "value": "Item 1Continue to screen if OK with double barrier (male partner uses condoms)⚠️",
+                          "text": "1) Copper intrauterine device (IUD) - Continue ✅"
+                        },
+                        {
+                          "value": "Item 4",
+                          "text": "2) Bilateral tubal occlusion (including ligation) - Continue ✅"
+                        },
+                        {
+                          "value": "Item 5",
+                          "text": "3) Vasectomised male partner (if only partner) - Continue ✅"
+                        },
+                        {
+                          "value": "Item 9",
+                          "text": "4) Azoospermic (cannot release sperm) male partner (if only partner) due to a medical cause - Check with TST ⚠️"
+                        },
+                        {
+                          "value": "Item 2",
+                          "text": "5) Hormonal IUD AKA IUS - Continue ✅"
+                        },
+                        {
+                          "value": "Item 3",
+                          "text": "6) Oral/injectable/implantable progestogen-only contraception (ex. Implanon, \"minipill\") - Continue ✅"
+                        },
+                        {
+                          "value": "Item 7",
+                          "text": "7) Combined oral contraceptive pill (ex. \"the pill\") - Refer to right ⚠️"
+                        },
+                        {
+                          "value": "Item 8",
+                          "text": "8) None of the above - Exclude 🛑"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "html",
+                      "name": "COCP Info",
+                      "startWithNewLine": false,
+                      "hideNumber": false,
+                      "html": "<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>“Combined” = oestrogen + progestogen</p><p>Ask for the <span style=\"color:#ffc107;\"><strong>brand and dosage, and raise Dr enquiry</strong></span></p><p>&nbsp;</p><p><span style=\"color:#000000;\"><strong>Ethinyl oestradiol</strong> (e-thin-il ee-stra-die-ol) <strong>dose is most important. Must be </strong></span><span style=\"background-color:rgb(255,255,255);color:#000000;\"><strong>≤ 20 micrograms</strong>, but regardless of dose, raise enquiry with all these details please.`</span></p>"
+                    },
+                    {
+                      "type": "radiogroup",
+                      "name": "Double Barrier Confirmation",
+                      "title": "This study requires a double barrier method. Are you and your partner OK with using condoms in addition to your contraceptive method?",
+                      "hideNumber": false,
+                      "showCommentArea": true,
+                      "choices": [
+                        {
+                          "value": "Item 1",
+                          "text": "Yes - Continue ✅"
+                        },
+                        {
+                          "value": "Item 2",
+                          "text": "No - Exclude 🛑"
+                        }
+                      ]
+                    }
+                  ],
+                  "visibleIf": "{POCBP Options} = 'Item 3'"
+                }
+              ],
+              "visibleIf": "{POCBP Confirmation} = 'Item 2' or {Infertility Option} = 'Item 4'"
+            }
+          ],
+          "visibleIf": "{Sex} = 'Item 2' or {Sex} = 'Item 3' and {Contraception Consent} = 'Item 1'"
+        },
+        {
+          "type": "panel",
+          "name": "Male Contraception Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Male Opposite Sex",
+              "title": "Do you engage in sexual activity with a partner of the opposite sex?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No, same-sex partner - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No, abstinent as a preferred lifestyle choice - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "Male Double Barrier",
+              "visibleIf": "{Male Opposite Sex} = 'Item 1'",
+              "title": "This study requires male participants to use a condom whenever engaging in sexual activity with the opposite sex, and female sexual partners should also be using a highly effective form of contraception if they are not menopausal or medically unable to have children. Is this OK?",
+              "description": "Menopausal = no menses for 12 months+\n\nMedically unable = hysterectomy, bilateral oopherectomy, bilateral salpingectomy\n\nHighly effective = IUD, IUS, the pill, minipill, implanon, biltareal tubal occlusion, male partner vasectomised",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - Continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - Exclude 🛑"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{Sex} = 'Item 1' and {Contraception Consent} = 'Item 1'"
+        }
+      ],
+      "title": "Contraception"
+    },
+    {
+      "name": "Miscellaneous",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "Booking Cancellation",
+          "title": "Please note that by booking in your appointment this does not guarantee your participation in the trial. Clinical trials can experience delays or cancellations due to various factors. We will aim to notify you 24 to 48 hours before your appointment if we need to cancel or reschedule, however there are chances of same day cancellations. Is this okay?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Details",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - Continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - Exclude 🛑"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "PT Confirmation Questions",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Confirmation Info",
+              "hideNumber": false,
+              "html": "<p><span style=\"background-color:rgb(255,255,255);color:red;\"><strong>Thank you for your time today. Before I finalise your booking, I need to run you through some quick questions to confirm that I have explained the following to you. By answering yes to these questions, you acknowledge that I have explained these things to you in full and that if any information you have given is incomplete or inaccurate, this may affect both your eligibility and your reimbursement.</strong></span></p>"
+            },
+            {
+              "type": "checkbox",
+              "name": "Confirmation Checklist",
+              "title": "Can you please confirm the following?\n",
+              "description": "Participant must answer yes to all questions below prior to being booked in.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "I have explained the study medication/background to you"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "I have explained the study commitment and dates to you"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "You don't have any upcoming travel plans that will clash with the study dates"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "I have explained the reimbursement to you"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "You have answered the medical questions honestly and to the best of your ability"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "I have explained that by not disclosing medical information relevant to this study, that can have an impact on the reimbursement, which may include the site choosing not to reimburse you at all"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Please confirm you understand that you must read the consent form that will be sent to you prior to attending your visit. If you don’t your appointment may be delayed or rescheduled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Booking Instruction Panel",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Booking Instructions",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:blue;font-size:20px;\"><u>Booking Instructions:</u></span></p><ul><li data-list-item-id=\"e6078306771a811be7117611a1f6cf455\"><span style=\"color:#000000;\"><strong>Calendar and chair time</strong></span> - 1.5h + 1.0h</li><li data-list-item-id=\"e40ccf55579a1c6aad93e749676e8d0d4\"><strong>Latest appointment time</strong> - 12:00 PM<ul><li data-list-item-id=\"ecdfbb187ec6413beee1e27cd5d81ed75\"><strong>Exceed?</strong> - No 🚫</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(290,68%,46%);\" data-list-item-id=\"e4a0bf0d1780ba504d3081f19f1f16401\"><span style=\"color:hsl(290,68%,46%);\"><strong>Special instructions</strong></span><ul><li data-list-item-id=\"eb08ed43f1412d258c0d23fd0ee3426ac\">N/A</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"e7ad24d637303e0e65497a0b70b64d8de\"><span style=\"color:#ffc107;\"><strong>Overall time for PT</strong></span><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e22dc21f1e54fb1426063ad8d55795d79\"><span style=\"color:#000000;\">3.5-4h</span></li></ul></li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "Referral Panel",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "Referral Q",
+              "title": "Before we wrap up, I’d like to share details about our referral program. If you refer someone to us you can receive up to $250 if they enrol and participate in the study. Would you like to hear more?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "Referral Info",
+              "visibleIf": "{Referral Q} = 'Item 1'",
+              "hideNumber": false,
+              "html": "<p><strong>Great! Here's how it works:</strong></p><p>&nbsp;</p><p><strong>To refer someone, you will need to provide them with a unique referral ID. The person you refer will need to provide us this ID either when they sign up on our website, or when they speak to us over the phone. This ID is essential, as it ensures we can track and reimburse you for any referrals.</strong></p><p>&nbsp;</p><p><strong>For each person you refer who comes in for an in-person screening visit, you'll receive $50. If they go on to enrol and participate in the study, you'll earn an additional $200.</strong></p><p>&nbsp;</p><p><strong>There's no limit- you can refer as many people as you'd like, as long as you have an exisiting relationship with them. It's important to note that you cannot advertise for referrals. This program is based on personal connections, so please only refer people you know.</strong></p><p>&nbsp;</p><p><strong>If you're interested, we can set up your Unique Referral ID today if you would like</strong> <i>(the unique referral ID is REF[p number]. E.g., REFP14471)</i></p><p>&nbsp;</p><p><strong>Who do you know you might be interested in this trial?</strong> <i>(if they don't know anyone for this trial, they can also refer someone to any other trial)</i></p><p>&nbsp;</p><p><strong>Would you like us to send you an email that you can forward on to them?</strong></p>"
+            }
+          ]
+        }
+      ],
+      "title": "Miscellaneous"
+    }
+  ],
+  "version": "Version-1"
+}

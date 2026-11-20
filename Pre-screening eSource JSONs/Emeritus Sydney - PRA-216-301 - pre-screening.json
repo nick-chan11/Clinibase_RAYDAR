@@ -1,0 +1,1467 @@
+{
+  "title": "PRA-216-301 (Atopic Dermatitis) Pre-screening Questions",
+  "pages": [
+    {
+      "name": "page7",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel10",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question46",
+              "hideNumber": false,
+              "html": "<p><strong>Protocol:</strong> PRA-216-301 (Atopic Dermatitis)</p><p><strong>Phase:</strong> 2a</p><p>&nbsp;</p><p><strong>Opening</strong></p><p>Thank you for your interest in our clinical trials for atopic dermatitis. As you may know, atopic dermatitis, or eczema is a chronic and often relapsing inflammatory skin diseases that lead to dry, scaly and itchy lesions. Depending on its severity, this can cause major psychological problems, significant sleep loss and a reduced quality of life. As such, Prana Therapeutics is assessing the safety a potential new treatment for atopic dermatitis.</p>"
+            },
+            {
+              "type": "html",
+              "name": "question45",
+              "hideNumber": false,
+              "html": "<p><strong>Study Drug and Design</strong></p><p>This study drug is called ‘PRA-216’, and has been designed to target both what triggers inflammation as well as the inflammation itself. This drug will be administered as a subcutaneous injection into *INJECTION SITE* (either in the abdomen, thigh or shoulder), and there is also a chance of receiving a placebo. You will receive up to 4 doses.</p><p>&nbsp;</p><p>As the study is double blinded, neither you not the study team will know which group you’re in until the end of the trial.</p><p>&nbsp;</p><div>This study also includes optional photography. Participants may be asked to wear briefs and a bralette while full-body photographs are taken (excluding the face) to assess skin involvement.</div><div>&nbsp;</div><div><strong>Participation in the full-body photography component is entirely optional.</strong></div><div>&nbsp;</div><div>Participants may choose to:</div><ul><li data-list-item-id=\"eac3ff8b6efbd0fd90af839f533669a11\">Consent to full-body photography,</li><li data-list-item-id=\"e0eb1c983ed460114d017ca71281b00f7\">Consent to photographs of target lesions only, or</li><li data-list-item-id=\"e3bbd699148674a7b9feddd48b2ae35cc\">Decline all study-related photography.</li></ul><p>&nbsp;</p><div><strong>No photographs will be taken at the screening visit</strong>. If participants choose to participate in the photography component, photographs will be taken at four scheduled time points throughout the study.</div>"
+            },
+            {
+              "type": "html",
+              "name": "question47",
+              "hideNumber": false,
+              "html": "<p><strong>Study Duration</strong></p><p>This study is expected to last around 6 months, with 13 in-clinic visits to the site in Botany, segmented between a screening period, dosing period and follow-up period.</p><p>&nbsp;</p><ul><li data-list-item-id=\"e79f4e446ac64c4a70ee50bbc997f6a52\">Screening: Day -28 to Day -1</li><li data-list-item-id=\"ef37845dc80f740da9c0da1cc0ad90006\">Dosing Period: Day 1, 15 and 29 (induction) and Day 85</li><li data-list-item-id=\"eacdc2bccef164d1f9606f65f51b0ac73\">Follow up: Day 86 to Day 197</li></ul><p>&nbsp;</p><p>As mentioned, you will receive 4 doses across visits 2, 4, 5 and 7.</p><p>&nbsp;</p><p>Your initial screening visit will include another eligibility check from the doctors, including a series of skin examinations and blood testing. Participants should allow up to 4 hours for this visit.&nbsp;</p><p>&nbsp;</p><p>Each dosing visit will also include post-dose monitoring, which can total the visit duration to up to 3 hours.</p><p>&nbsp;</p><p>For every other follow-up visit, participants can expect a duration of up to 2 hours.</p>"
+            },
+            {
+              "type": "image",
+              "name": "question48",
+              "hideNumber": false,
+              "imageLink": "/esource/inline-image/form/1574/ebc124d507154d1028d918c7440d1d7b80a7f5f82d0170f6725e9b87479e19f7.png",
+              "imageFit": "cover",
+              "imageHeight": "auto",
+              "imageWidth": "30%"
+            },
+            {
+              "type": "html",
+              "name": "question49",
+              "hideNumber": false,
+              "html": "<p><strong>Reimbursement</strong></p><p>You will be reimbursed the following for any reasonable travel, parking, meals, and other expenses associated with your study visits.</p><p>&nbsp;</p><p>For this study, you will be reimbursed $250 for each in-clinic visit.&nbsp;</p><p>&nbsp;</p><p>As mentioned, there are 13 visits associated with this study, so participants can earn up to $3,250 if they attend each scheduled visit.</p><p>&nbsp;</p><p>If you need to return for a repeat blood test, you will be reimbursed $105 for this.</p><p>&nbsp;</p><p>In the event that you require an unscheduled visit, you will be reimbursed $250 for each of those.</p><p>&nbsp;</p>"
+            },
+            {
+              "type": "html",
+              "name": "question60",
+              "hideNumber": false,
+              "html": "<div><p><strong>Disclosure</strong></p><p>&nbsp;</p><p>Before we go any further, I want to explain exactly how the reimbursement works, so there are no surprises for you later. The reimbursement I just went through is what you'd receive if everything goes ahead as planned. That can look a bit different depending on what happens on the day. For example, if the doctor looks over your information early on and finds you're not eligible before we even get to the consent form, if you decide not to sign the consent form yourself, or if something doesn't line up with what you've told me today, you'd likely only get a partial amount, or in some cases nothing, instead of the full reimbursement.</p><p>&nbsp;</p><p>That's actually a big part of why it matters that you're as accurate as possible with me right now. The doctor's early review is based on exactly what you tell me today, so the more accurate you are, the better your chances of making it all the way through screening and getting the full reimbursement.</p></div>"
+            }
+          ]
+        }
+      ],
+      "title": "Study Notes"
+    },
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question1",
+          "title": "As mentioned, this study will be conducted at Emeritus Research in Botany. Is this feasible for you travel to?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question3",
+          "title": "Could you please confirm your biological sex?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Male"
+            },
+            {
+              "value": "Item 2",
+              "text": "Female"
+            }
+          ]
+        },
+        {
+          "type": "dobandage",
+          "name": "question4",
+          "title": "Could you please confirm your date of birth?",
+          "description": "Participants need to be 18 - 70 (inclusive) to be eligible.",
+          "showNumber": false
+        },
+        {
+          "type": "html",
+          "name": "question5",
+          "visibleIf": "{question4.age} < 18 or {question4.age} > 70",
+          "hideNumber": false,
+          "html": "<p><span style=\"color:red;\"><strong>Outside age criteria, please exclude!</strong></span></p>"
+        },
+        {
+          "type": "radiogroup",
+          "name": "question2",
+          "title": "Do you have any holidays planned that might interfere with the visits we discussed?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes, does not interfere - double check before continuing ⚠️"
+            },
+            {
+              "value": "Item 3",
+              "text": "Yes, interferes - delay screening ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "bmi",
+          "name": "question6",
+          "title": "To calculate your BMI, could you please confirm your height and weight?",
+          "description": "Participants need to have a body weight of at least 40kg to be eligible.",
+          "showNumber": false,
+          "bmiRangeMin": 1,
+          "bmiRangeMax": 100
+        }
+      ],
+      "title": "Demographics"
+    },
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question57",
+          "title": "This study will involve physical examinations by the doctor. The study team will try to assign a male or female doctor as preferred, but this is not guaranteed. Is this okay?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Not comfortable with physical exams - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel1",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question7",
+              "title": "How long have you been diagnosed with chronic atopic dermatitis (eczema) for?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "At least 6 months - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Less than 6 months ago - exclude 🚫"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Not diagnosed with chronic atopic dermatitis - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question8",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Participants require a diagnosis of chronic atopic dermatitis (eczema) for at least 6 months</strong></span></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question52",
+              "visibleIf": "false",
+              "title": "To the best of your ability, could you determine whether you currently have eczema affecting at least 10% of your body?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "hideFromPrint": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Unsure / can't determine - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Definitely less than 10% - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question55",
+              "visibleIf": "false",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "hideFromPrint": true,
+              "html": "<p><span style=\"color:red;\"><strong>Participants require <u>current</u> atopic dermatitis/eczema that is affecting at least 10% of their body.</strong></span></p><p>&nbsp;</p><p><span style=\"color:red;\"><strong>Atopic dermatitis/eczema that is completely latent or in the past is ineligible.</strong></span></p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Estimation is accepted</p>"
+            },
+            {
+              "type": "comment",
+              "name": "question58",
+              "title": "I would like to get an idea of how much of your body is affected by eczema. Using your hands (including your fingers and palm together) how many handprints would it take to cover all of the eczema on your body? ​ ​ \n",
+              "description": "\n",
+              "hideNumber": false
+            },
+            {
+              "type": "html",
+              "name": "question59",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\">We are looking for </span><span style=\"color:hsl(0,83%,42%);font-family:'Trebuchet MS', Helvetica, sans-serif;\"><strong>moderate to severe</strong></span><span style=\"font-family:'Trebuchet MS', Helvetica, sans-serif;\"> atopic dermatitis. In terms of body surface area (BSA), this should be ≥10%.&nbsp;</span></p><p>&nbsp;</p><p><span>For reference, 10% BSA is roughly equivalent to the whole tummy/chest or whole back.&nbsp;</span></p><p>&nbsp;</p><p><span style=\"color:#d32f2f;font-family:'Trebuchet MS', Helvetica, sans-serif;\"><strong>1 hand print = 1% of their body</strong></span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question83",
+              "title": "[DO NOT READ] Does this participant have at least 10% of their BSA affected?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No, less than 10% - exclude 🚫"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "No current AD - exclude🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel2",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question9",
+              "visibleIf": "false",
+              "title": "Have you ever used topical medications as a standard of treatment for your skin in your lifetime? If so, how long for?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "hideFromPrint": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes, at least 2 weeks of use (unless otherwise recommended by product) - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes, sporadic / inconsistent use - exclude 🚫"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Ongoing use - exclude 🚫"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No, has never used - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question11",
+              "visibleIf": "false",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "hideFromPrint": true,
+              "html": "<p><span style=\"color:red;\"><strong>Participants need to have tried topical treatments for their eczema for a duration of at <u>least 2 weeks</u> in the past, or as otherwise recommended by the product/doctor.</strong></span></p><p>&nbsp;</p><p><span style=\"color:red;\"><strong>Sporadic / inconsistent use (less than 2 weeks) is excluded (unless otherwise instructed by the product)!</strong></span></p><p>&nbsp;</p><p>&nbsp;</p><p><strong>Previous use of one or more topical treatments of the below are accepted</strong></p><ul><li data-list-item-id=\"efa204cd940db25175a69ade27a434206\">Moderate to high potency topical steroids (TCS') and/or topical calcineurin inhibitors (TCIs)</li></ul><p>&nbsp;</p><p><strong>Common TCS'</strong></p><p>Temovate, Clobex, Cormax Diprolene</p><p>Ultravate</p><p>Vanos, Lidex</p><p>Topicort</p><p>Elocon</p><p>Kenalog&nbsp;</p><p>Kenalog&nbsp;</p><p>Cutivate</p><p>Luxiq</p><p>Beta-Val</p><p>Elocon (cream)</p><p>Locoid</p><p>&nbsp;</p><p><strong>Common TCI's</strong></p><p>Protopic</p><p>Elidel</p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question10",
+              "title": "During a flare up, did you find that your previous use of topical treatments completely eliminated your symptoms for the duration of the treatment?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Unable to use due to medical reasons - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Has never used topical treatments - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question12",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#000000;\"><strong>This study requires participants to have a history of <u>inadequate response</u> to treatment with topical medications, OR the determination that topical treatments are <u>medically inadvisable</u>.</strong></span></p><p>&nbsp;</p><p>Complete elimination of symptoms conclude that other topical treatments work well for the participant.</p><p><span style=\"color:red;\"><strong>If medication/treatment with other topical treatments work well, please exclude! 🚫</strong></span></p><p>&nbsp;</p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Moderate alleviation, or partial initial response is accepted.</p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel7",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question22",
+              "title": "Do you have atopic dermatitis that is currently infected, requiring antibiotic treatment?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question30",
+              "title": "Have you required antibiotics for any other reason within the past 2 week?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay screening ⚠️"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel5",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question23",
+              "title": "Have you used any treatments that could affect your atopic dermatitis, such as corticosteroids or laser therapy, within the past 2 weeks?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay screening ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question24",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>If participant has used any of the following within the past 2 weeks, please delay screening:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"eb316a1dee93a86dd729273f9746765aa\">Systemic treatments (other than biologics)</li><li data-list-item-id=\"e69bbe217030741f5825555fe598bb4c2\">Phototherapies</li><li data-list-item-id=\"e8f2bb07eb9b87800831a463f65d133b0\">Laser therapy</li></ul><p>&nbsp;</p><p><strong>Including but not limited to:</strong></p><ul><li data-list-item-id=\"ea262e77f3bc9fb38ec2891a22a210598\">Corticosteroids (oral, injected, suppository)</li><li data-list-item-id=\"e58a1aed9f1404bbeec2bafc26f5c3cd3\">Topical steroids</li><li data-list-item-id=\"ea2716f2434fb0b17f693b6b0847114a8\">Immunosuppressive therapies<ul><li data-list-item-id=\"eeb0a757a0906275d89d74a3e315602a1\">TNF inhibitors</li><li data-list-item-id=\"e61093df7151c362a8c8104bf78ee5f7f\">Cyclosporine</li><li data-list-item-id=\"e7856bd5a2cc78f746157fd0c7d5da128\">Methotrexate</li><li data-list-item-id=\"e58f683fd456308142d5ece6a1ba3a402\">Azathioprine</li><li data-list-item-id=\"ea8285c46c6384df7c7b8bfe5eacdb99b\">Tacrolimus</li><li data-list-item-id=\"e17d10be1fdedeffed4d98be041c5d56a\">Retinoids</li><li data-list-item-id=\"e50c2256dd4bb5bb062e525d00bcb0e99\">JAK, TYK or SYK inhibitors</li><li data-list-item-id=\"e93f8a0303ffcef1b0fdb5685a7a524fe\">Hydroxyurea</li></ul></li><li data-list-item-id=\"e3ba99941b7ed26f91126c1ce86de0b4f\">Ultraviolet B (UVB) phototherapy (including tanning beds/booths)</li><li data-list-item-id=\"ea4ec0efedbff13cf1c51f28210f39707\">Psoralen-ultraviolet A (UVA) treatment</li><li data-list-item-id=\"eede01a9932e52c1059402b88a98e8396\">Excimer laser</li><li data-list-item-id=\"edafdf9a4fb93b19a68aff4d97998f5c2\">Tacrolimus and pimecrolimus cream and/or ointment</li></ul><p>&nbsp;</p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exceptions</strong></span></p><ul><li data-list-item-id=\"e65a8c663254c346227ea8de17af22acb\">Participants that use a stable dose of non-medicated OTC moisturiser can continue to use the same product during the trial.</li><li data-list-item-id=\"e9dcde4fd7d25729d661c7711dd80bfd4\">Intranasal or inhaled steroids</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question25",
+              "title": "This study requires participants to wash out of any prescribed moisturisers. Is this okay?",
+              "description": "Wash out can occur at screening",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "false",
+          "hideFromPrint": true
+        },
+        {
+          "type": "panel",
+          "name": "panel6",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question26",
+              "title": "To the best of your knowledge, have you used or received treatment with Crisaborole (commonly known as Eucrisa or Staquis) within the past week?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay screening ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question27",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span><strong>Crisaborole (commonly sold under the brand name Eucrisa</strong></span><strong> or </strong><i><strong>Staquis</strong></i><strong>) is a non-steroidal prescription topical ointment used to treat mild-moderate eczema in adults.</strong></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question28",
+              "title": "Have you received or been treated with over-the-counter or prescribed antihistamines within the past week?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1No - continue ✅",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - delay screening ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question29",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>The following is prohibited in the past 7 days:</strong></span></p><ul><li data-list-item-id=\"ee3544e93e0ec76d9c451153c2893ad19\">Diphenhydramine</li><li data-list-item-id=\"ed5552b9dca3ac1c2f3646786a56efbc1\">Chlorpheniramine maleate</li><li data-list-item-id=\"e0f849839cafc04bb32ea45da433372f6\">Hydroxyzine</li></ul><p>&nbsp;</p><p><strong>⚠️ If participant requires regular, ongoing use of anti-histamines - gather detail and raise medical query.</strong></p><p>&nbsp;</p><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Exception</strong></span></p><p>Non-sedating antihistamines are accepted, i.e. Zyrtec, Telfast, Claratyne, Fexofanadine</p><p>&nbsp;</p><p><span style=\"color:#000000;\"><u>If requiring the above, please ensure that participants are not planning to switch antihistamines during the study.</u></span></p><p>&nbsp;</p><p><span style=\"color:red;\"><strong>Exclusionary</strong></span></p><ul><li data-list-item-id=\"e669852e571876012e5d00ebd0e811615\">Current use of sedating antihistamines, i.e. Phenergan, atarax</li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question31",
+          "title": "Have you had a bleach bath for the treatment of eczema in the past 2 weeks, or do you plan to during the trial?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - delay screening ⚠️"
+            },
+            {
+              "value": "Item 3",
+              "text": "Plans to during the trial - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question62",
+          "title": "To the best of your knowledge, do you currently have any rashes on your body that seems to be moving across the skin?",
+          "description": "Any unexplained pruritic migratory rash is excluded.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 3",
+              "text": "Yes - gather detail and query ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question56",
+          "title": "Do you have any other skin conditions, such as psoriasis, hives, contact allergies or skin infections?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - gather detail and query ⚠️"
+            }
+          ]
+        }
+      ],
+      "title": "Skin History"
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel3",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question13",
+              "title": "Have you recently been hospitalised for any conditions or disorders that you're diagnosed with?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - gather detail and raise query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question14",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>This can include, but not limited to:</strong></p><p>&nbsp;</p><ul><li data-list-item-id=\"e760082a14b878ddbf836cab2f6afc89e\">Cardiovascular</li><li data-list-item-id=\"e6532c82dd23f00bd8478de03a5c6d076\">Gastrointestinal</li><li data-list-item-id=\"e859154d8570543b3fa657f8df965ad42\">Hepatic</li><li data-list-item-id=\"e19dd8de6baadb20292eb78ea35b720e1\">Renal</li><li data-list-item-id=\"e962e09530e306fc3ca9a8a0c93f3ff45\">Neurological</li><li data-list-item-id=\"e4156f8fce87c25409d1019ea494f2f23\">Musculoskeletal</li><li data-list-item-id=\"ebe89edbf3ea3d2ce94d34ebc0746cbcb\">Infectious</li><li data-list-item-id=\"ed675018291f544c01f919c3824bba850\">Endocrine</li><li data-list-item-id=\"e6edff7cefe779b61c932e9c97cf46ae0\">Metabolic</li><li data-list-item-id=\"e451de0466b9e109444bf7a2fa304f514\">Hematological&nbsp;</li><li data-list-item-id=\"e9bcccc76f92d3a6e1c00a9898d0bf62e\">Immune</li><li data-list-item-id=\"e10e1fbac809d3d6106a81d6de66c40e0\">Psychiatric</li><li data-list-item-id=\"e69b0a2e5a53ca79a948fe8819f874eed\">Other major physical impairment</li></ul><p>&nbsp;</p><p><strong>⚠️</strong><span style=\"color:red;\"><strong> If hospitalised/unstable due to any of the above conditions, please gather detail and raise medical query&nbsp;</strong></span></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel4",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question17",
+              "title": "Have you ever undergone an ECG test before?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question18",
+              "visibleIf": "{question17} = 'Item 2'",
+              "title": "Were there any abnormalities?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - gather detail and raise query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question15",
+              "title": "Have you been diagnosed with any cardiovascular or heart diseases that isn't adequately managed?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - gather detail and raise query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question16",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>This study excludes unstable cardiovascular or heart diseases <u>in the opinion of the investigator</u>.</strong></span></p><p>&nbsp;</p><p><strong>Includes:</strong></p><p>&nbsp;</p><ul><li data-list-item-id=\"efe0523e362fd2b2ce62aeadb0a9a5853\">Unstable ischemic heart disease</li><li data-list-item-id=\"e35b840a92a0afa373303d59a692c33bf\">Arrhythmia</li><li data-list-item-id=\"ee114df67dcbf464dd82ad2a67b751aa2\">Cardiomyopathy</li><li data-list-item-id=\"ed5561cd873477c84925fe097e280492f\">Heart failure</li><li data-list-item-id=\"e1a70c1c132e4983aa647c4fdfedd17ee\">Renal failure</li><li data-list-item-id=\"e1960928ec9a5dc49d8476d7c4a054bec\">Uncontrolled high blood pressure&nbsp;</li></ul><p>&nbsp;</p><p>⚠️ <strong>If unsure, please raise medical query&nbsp;</strong></p>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question19",
+              "title": "Do you have any history of anaphylaxis to any medications?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - gather detail of reaction and raise medical query ⚠️"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question20",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Medications can include:</strong></span></p><p>&nbsp;</p><p><strong>Autoimmune / Inflammatory (most prescribed)</strong></p><ul><li data-list-item-id=\"eb3df3a014798e3e75ea666044ee44681\">Humira (adalimumab)</li><li data-list-item-id=\"e93c3b889dcca5a51279b2e7f4a062892\">Enbrel (etanercept)</li><li data-list-item-id=\"e7cb67b875faa563b81a1fbd54218abf9\">Remicade (infliximab)</li><li data-list-item-id=\"e01d7a57e8e493f5834d80874cdb37db2\">Stelara (ustekinumab)</li><li data-list-item-id=\"ecc427c74d9206db274de83dbba836a71\">Cosentyx (secukinumab)</li></ul><p><strong>Asthma / Allergies</strong></p><ul><li data-list-item-id=\"e6315e70bbc4558022cacce75196b8171\">Xolair (omalizumab)</li><li data-list-item-id=\"e5962ac040d4cd71ced4de7078441ed43\">Dupixent (dupilumab)</li></ul><p><strong>Cancer</strong></p><ul><li data-list-item-id=\"eb3da4524f1b15407f4f4569fab2e40f0\">Herceptin (trastuzumab)</li><li data-list-item-id=\"eb52524de02a785d82d34a9c30bab3e37\">Keytruda (pembrolizumab)</li><li data-list-item-id=\"eb7723eeba9fbc9156b3d89f78b411a66\">Avastin (bevacizumab)</li></ul><p><strong>Cholesterol</strong></p><ul><li data-list-item-id=\"e0ba56f53bfa32d49465e964b0c91c73f\">Repatha (evolocumab)</li></ul><p>&nbsp;</p><p>⚠️ <strong>If unsure, please raise medical query&nbsp;</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel12",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question32",
+              "title": "Have you been diagnosed with any untreated helminth parasitic infections within the past 6 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes, treated - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes, untreated - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question34",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Helminth parasitic infections include:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"eda44af85ff12c1dfda1d01a7edfe318c\">Roundworms (Nematodes)</li><li data-list-item-id=\"e4728de256efe70002ff55d9832f5f433\">Flatworms (tapeworms (Cestodes))</li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel13",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question33",
+              "title": "How many standards of alcohol do you consume per week?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Below threshold - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Above threshold - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question35",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Alcohol abuse can be defined as;</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"e5b69736080339cd2717b534b3a33a52f\">Greater than 21 standards per week for males, or</li><li data-list-item-id=\"e82c0d83689a0b1827ee46b27c1bdeb7b\">Greater than 14 standards per week for females&nbsp;</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question85",
+              "title": "Do you have any history of drug abuse in the past 12 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel26",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question36",
+              "title": "Do you have any history of cancer within the past 5 years?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question37",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>Exceptions</strong></span></p><ul><li data-list-item-id=\"eaf1565fea3257deb0f7af8ff1a476821\"><p>BCC's or SCC's of the skin or in situ carcinoma of the cervix (resolved at least 12 months ago)</p><p>&nbsp;</p></li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question105",
+              "title": "Do you have any history of skin cancer in the past 12 months?",
+              "description": "BCC's or SCC's of the skin or in situ carcinoma of the cervix must have been resolved at least 12 months ago",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question38",
+          "title": "Have you received immunoglobulins, blood or other blood products in the past 30 days?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - delay screening ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question40",
+          "title": "To the best of your knowledge, have you ever used or been treated with the study drug PRA-216?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 3",
+              "text": "Yes - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel8",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question41",
+              "title": "To the best of your knowledge, have you used or received any approved or investigational monoclonal or polyclonal antibody medications in the past 4 months?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question42",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>This study excludes the use or receipt of any approved/marketed or investigational monoclonal or polyclonal antibody medications in the past 4 months.</strong></span></p><p>&nbsp;</p><p><strong>Approved/marketed antibody medications include:</strong></p><ul><li data-list-item-id=\"e2337457a8348bb78e7548bef1be05b2b\">dupliumab</li><li data-list-item-id=\"e4b86d52070f57885f2d4da11fe9bb0ee\">tezepelumab</li><li data-list-item-id=\"ea02130c78925c43440c0c1194ab79076\">mepolizumab</li><li data-list-item-id=\"e8716198b1fdd80b392e0ed95d65788d1\">omalizumab</li></ul><p>&nbsp;</p><p><strong>Investigational antibody medications include:</strong></p><ul><li data-list-item-id=\"e9afeb350ae7e1a14fe822616b1d5d097\">gamma globulin</li></ul>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel19",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question53",
+              "title": "Have you received any live attenuated vaccines in the past month?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question54",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Examples of live attenuated vaccines include but aren't limited to:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ef1113d7f5fb351d2c453fbdda2b55341\">MMR (measles, mumps, rubella)</li><li data-list-item-id=\"e3f1e8f8317a53473a97eccc497d5815a\">Chickenpox (Varicella)</li><li data-list-item-id=\"e6bb0e020e56ac66d3794af941621c600\">Rotavirus</li><li data-list-item-id=\"eda894054d7d53615ba36eaeaa5faf2be\">Yellow fever</li><li data-list-item-id=\"e4e62caeb76f56b249fb257e78bad4916\">Nasal spray flu vaccine</li></ul><p>&nbsp;</p><p><strong>If unsure, please raise medical query ⚠️</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel23",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question63",
+              "title": "Do you have any active liver diseases such as jaundice or higher levels of AST?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question64",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:red;\"><strong>Any evidence of active liver disease, regardless of treatment, is excluded. Includes:</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"ec75a9a59f705acad788f9527d430d71f\">Jaundice</li><li data-list-item-id=\"eebb09b8e76fa6dae696177e1b4518cea\">Higher levels of aspartate transaminase (AST)</li><li data-list-item-id=\"edecbbca3e216679a83e6d44818bf570c\">Higher levels of alanine transminase (ALT)</li><li data-list-item-id=\"e92030ea65ed18150b665c084b78ea381\">Higher levels of alkaline phosphatase (ALP)</li></ul><p>&nbsp;</p><p><strong>⚠️ If unsure, please raise medical query!</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question65",
+          "title": "Do you have any history of any immunodeficient disorders such as HIV?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel24",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question66",
+              "title": "Do you have any history of hepatitis B or C?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question67",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:green;\"><strong>Exceptions</strong></span></p><p>History of hepatitis B vaccination without history of hepatitis B are accepted.</p><p>&nbsp;</p><p>Participants with positive hepatitis C antibodies due to prior resolved disease are accepted <strong>as long as a negative hepatitis C test is obtained/provided.</strong></p>"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question61",
+          "title": "Do you have any chronic or recurring gastrointestinal issues, such as abdominal pain, bloating or diarrhea?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - gather detail and raise query ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel25",
+          "elements": [
+            {
+              "type": "paneldynamic",
+              "name": "question68",
+              "title": "Are you taking any other medication?",
+              "description": "Please list all your medications",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question69",
+                  "title": "Medication",
+                  "description": "Name of medication",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question70",
+                  "startWithNewLine": false,
+                  "title": "Indication",
+                  "description": "What is the medication used for?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question71",
+                  "startWithNewLine": false,
+                  "title": "Dose",
+                  "description": "How much do you take?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question72",
+                  "startWithNewLine": false,
+                  "title": "Frequency",
+                  "description": "How often do you take the medication?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question73",
+                  "startWithNewLine": false,
+                  "title": "Route",
+                  "description": "Tablet, Injection, inhaled, nasal, topical?",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question74",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "When did you start taking this medication? If unsure, you just just provide an estimated year",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question75",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question76",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#f44336;\"><strong>PLEASE EXCLUDE THE FOLLOWING</strong></span></p><p>&nbsp;</p><ul><li data-list-item-id=\"e4d8dc643ddba59e0f18aa23d918ec742\">Infected atopic dermatitis that requires antibiotics</li><li data-list-item-id=\"ebbde92e017b1ff054edc4daab6141e1d\">Use of antibiotics for any other reason in the past 2 weeks</li><li data-list-item-id=\"ec5c94072866f50d028b0446d2b623d10\">Crisaborole (Eucrisa or Staquis) in the past 7 days</li><li data-list-item-id=\"e6a7dc6dd0a9a41ba9d5e479c9bcb104d\">OTC or prescribed antihistamines in the past 7 days<ul><li data-list-item-id=\"e23fe3f6e4e23287f0d0a9564ed1f8cbd\">Diphenhydramine</li><li data-list-item-id=\"e84019ce1cd85ed7680ba19a1c5cba998\">Chlorpheniramine maleate</li><li data-list-item-id=\"ed64481eaa4fc5e0c4e98b60ff7848545\">Hydroxyzine</li></ul></li><li data-list-item-id=\"e0f874382f2bd7f007ca5b7dd21a54eb4\">Bleach bath for the treatment of eczema in the past 2 weeks, or planned bleach bath during the trial</li><li data-list-item-id=\"ef87e926e502d6feeed65b6ce4d174406\">Receipt of immunoglobulins, blood or blood products</li><li data-list-item-id=\"ebb82fdf4fd5304e4c749174e7b55401f\">Use or receipt of PRA-216</li><li data-list-item-id=\"ecc7e2779b155ac088016b9a53271e5fa\"><p>Use or receipt of any approved or investigational monoclonal or polyclonal antibody medications in the past 4 months</p><p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Approved/marketed antibody medications include:</strong></p><ul><li data-list-item-id=\"e6cd683f7e75b12a5e65a1b79da065dd2\">dupliumab</li><li data-list-item-id=\"e6809c049af918d01cd786786abe15a8a\">tezepelumab</li><li data-list-item-id=\"ee775bded02af44a94ae1bc52fafcb187\">mepolizumab</li><li data-list-item-id=\"e64b51f5164193a563c21939a7bf1540f\"><p>omalizumab</p><p><strong>Investigational antibody medications include:</strong></p></li><li data-list-item-id=\"e3770f5c07f342bd6e496a78865802b70\">gamma globulin</li></ul></li><li data-list-item-id=\"e6d44cea1a6159d842357f174d15af305\">Receipt of any live attenuated vaccines in the past month<ul><li data-list-item-id=\"ec26a5da44baea170399ca292f939afd8\">MMR (measles, mumps, rubella)</li><li data-list-item-id=\"e5d637156ab31996d55fa736beb73f4ee\">Chickenpox (Varicella)</li><li data-list-item-id=\"e136b288b0a02b95265cfc8015fed3c2d\">Rotavirus</li><li data-list-item-id=\"e0d6ec1686bebf3bc43c7b602e7db5e30\">Yellow fever</li><li data-list-item-id=\"e2218e9ce17584677f7ea112b942e2a80\">Nasal spray flu vaccine</li></ul></li></ul><p>&nbsp;</p><p><span style=\"color:green;\"><strong>Stability of other medications can be determined on site i.e. no 3 month stability period required</strong></span></p><p>&nbsp;</p><p><span style=\"color:#ef5350;\"><strong>IF UNSURE, PLEASE RAISE MEDICAL QUERY!</strong></span></p>"
+            },
+            {
+              "type": "paneldynamic",
+              "name": "question77",
+              "title": "Do you have any other significant medical history?",
+              "description": "Please list all your medical conditions or events",
+              "hideNumber": false,
+              "templateElements": [
+                {
+                  "type": "text",
+                  "name": "question78",
+                  "title": "Medical Condition/Event",
+                  "description": "Name of condition or event",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question79",
+                  "startWithNewLine": false,
+                  "title": "Start Date",
+                  "description": "For the date, if you're not sure, you can just provide an estimated year.",
+                  "hideNumber": false
+                },
+                {
+                  "type": "text",
+                  "name": "question80",
+                  "startWithNewLine": false,
+                  "title": "Stop Date",
+                  "description": "If blank, write ongoing or N/A",
+                  "hideNumber": false
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question81",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><span style=\"color:#f44336;\"><strong>PLEASE EXCLUDE THE FOLLOWING</strong></span></p><ul><li data-list-item-id=\"e1b3ca72b6f0e93c08598941ff28d5b21\">Hospitalisation due to unstable conditions or disorders, as determined by Investigator</li><li data-list-item-id=\"e0ff8bc927063ed83e123293dae61f683\">Abnormal ECG results, as determined by Investigator</li><li data-list-item-id=\"e2fc48ed9490710dda6f754ce52bbded5\">Unstable cardiovascular or heart disease, in the opinion of the investigator<ul><li data-list-item-id=\"e02240470693ab3de7b0ea19d115df12b\">Unstable ischemic heart disease</li><li data-list-item-id=\"e2bd2aca71bf4a3ed36d223844e173524\">Arrhythmia</li><li data-list-item-id=\"efdd47e96a516914613fd47485a88b4c7\">Cardiomyopathy</li><li data-list-item-id=\"e3aa237193321cb6f7f51801492a14a14\">Heart failure</li><li data-list-item-id=\"eb7ad7efc6549f4d19ecab46287e5a670\">Renal failure</li><li data-list-item-id=\"ebda0c38aac5ab9d3541dcc465da93113\">Uncontrolled high blood pressure&nbsp;</li></ul></li><li data-list-item-id=\"e53ab6522384fa5fa62af580eab5ff7a1\">Diagnosis of any untreated helminth parasitic infections in the past 6 months</li><li data-list-item-id=\"e60b1ef7adf126e542daded6c95be60d0\">Alcohol and drug abuse in the past 12 months</li><li data-list-item-id=\"eedcb46d6c84c062e9cbf84b02c6f5f0a\">History of cancer in the past 5 years</li><li data-list-item-id=\"e9eb2ed58c7dff02a657892dab6f483c9\">Skin cancer in the past 12 months&nbsp;</li><li data-list-item-id=\"ecf24fc424e8d489fdd05208287688e41\">Active liver diseases such as Jaundice</li><li data-list-item-id=\"e2b57cb13f6c3472da8e8018d608aefb8\">History of hepatitis B or C</li><li data-list-item-id=\"e0f90dc5273c1102895a80faa25f2d589\">Unstable psychiatric conditions (schizophrenia, unstable bipolar disorder)</li></ul><p>&nbsp;</p><p><span style=\"color:#ef5350;\"><strong>IF UNSURE, PLEASE RAISE MEDICAL QUERY!</strong></span></p>"
+            },
+            {
+              "type": "comment",
+              "name": "question82",
+              "title": "Additional Information",
+              "description": "Please use this to note down any useful additional information",
+              "hideNumber": false
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question21",
+          "title": "Do you have any tattoos or other skin conditions that cover the *INJECTION SITE* abdomen, thighs or shoulders?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - exclude 🚫"
+            }
+          ]
+        }
+      ],
+      "title": "Other Medical History"
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel27",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question87",
+              "hideNumber": false,
+              "html": "<p><strong>There is no contraceptive requirement for males.</strong></p>"
+            }
+          ],
+          "visibleIf": "{question3} = 'Item 1'"
+        },
+        {
+          "type": "panel",
+          "name": "panel28",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question86",
+              "title": "The next few questions will be regarding contraception. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question90",
+              "visibleIf": "{question86} = 'Item 1'",
+              "title": "Are you pregnant, breastfeeding or planning to become pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "No - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Yes - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question96",
+              "visibleIf": "{question90} = 'Item 1'",
+              "title": "Are you able to fall pregnant?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No, postmenopausal for at least 12 months - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No, surgically sterile i.e. hysterectomy - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "html",
+              "name": "question99",
+              "visibleIf": "{question90} = 'Item 1'",
+              "startWithNewLine": false,
+              "hideNumber": false,
+              "html": "<p><strong>Other forms of surgical sterilisation include:</strong></p><p>&nbsp;</p><ul><li data-list-item-id=\"ef0c4726143a68371d93d211f44d6b79f\">Bilateral oophorectomy</li><li data-list-item-id=\"e5565491c5ba2e80c6fb57b33141cc464\">Bilateral salpingectomy</li></ul>"
+            },
+            {
+              "type": "radiogroup",
+              "name": "question97",
+              "visibleIf": "{question96} = 'Item 1'",
+              "title": "Do you engage in sexual activity with a partner of the opposite sex?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No, same sex relationship - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "No, abstinent as a preferred lifestyle choice - continue ✅"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question98",
+              "visibleIf": "{question97} = 'Item 1'",
+              "title": "This study requires women of childbearing potential who are sexually active to use a highly effective method of birth control, from the time of enrolment until at least 90 days after the last dose of the study drug. Is this okay?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes - continue ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Vasectomised partner - continue ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No - exclude 🚫"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "question100",
+              "visibleIf": "{question98} = 'Item 1'",
+              "title": "Can you please indicate which method of contraception you're currently using?",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Oral contraceptive pill ✅"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "Implant contraceptive e.g. implanon ✅"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "Intrauterine device (IUD) e.g. Merina ✅"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "Injectable contraceptive e.g. Depo Provera shot ✅"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "Not on contraception - exclude 🚫"
+                }
+              ]
+            }
+          ],
+          "visibleIf": "{question3} = 'Item 2'"
+        }
+      ],
+      "title": "Contraception"
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "question44",
+          "title": "Are you or any of your immediate family members an employee of Prana Therapeutics or Emeritus Research?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question39",
+          "title": "Have you used or received any investigational treatments from another clinical trial in the past 30 days?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "No - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "Yes - delay screening ⚠️"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question50",
+          "title": "To support the efficiency of your screening visit, the doctors have requested or participants to bring along a GP health summary and your vaccination records, obtainable from your regular doctor or myGov. Is this okay?",
+          "description": "If no, this can be obtained during screening period.",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - continue ✅"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question102",
+          "title": "Please note that by booking in your appointment this does not guarantee your participation in the trial. Clinical trials can experience delays or cancellations due to various factors. We will aim to notify you 24 to 48 hours before your appointment if we need to cancel or reschedule, however there are chances of same day cancellations. Is this okay?",
+          "hideNumber": false,
+          "showCommentArea": true,
+          "commentText": "Details",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Yes - continue to screen ✅"
+            },
+            {
+              "value": "Item 2",
+              "text": "No - exclude 🚫"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "PT Confirmation Questions",
+          "elements": [
+            {
+              "type": "html",
+              "name": "Confirmation Info",
+              "hideNumber": false,
+              "html": "<p><span style=\"background-color:rgb(255,255,255);color:red;\"><strong>Thank you for your time today. Before I finalise your booking, I need to run you through some quick questions to confirm that I have explained the following to you. By answering yes to these questions, you acknowledge that I have explained these things to you in full and that if any information you have given is incomplete or inaccurate, this may affect both your eligibility and your reimbursement.</strong></span></p>"
+            },
+            {
+              "type": "checkbox",
+              "name": "Confirmation Checklist",
+              "title": "Can you please confirm the following?\n",
+              "description": "Participant must answer yes to all questions below prior to being booked in.",
+              "hideNumber": false,
+              "showCommentArea": true,
+              "commentText": "Details",
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "I have explained the study medication/background to you"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "I have explained the study commitment and dates to you"
+                },
+                {
+                  "value": "Item 3",
+                  "text": "You don't have any upcoming travel plans that will clash with the study dates"
+                },
+                {
+                  "value": "Item 4",
+                  "text": "I have explained the reimbursement to you"
+                },
+                {
+                  "value": "Item 5",
+                  "text": "You have answered the medical questions honestly and to the best of your ability"
+                },
+                {
+                  "value": "Item 6",
+                  "text": "I have explained that by not disclosing medical information relevant to this study, that can have an impact on the reimbursement, which may include the site choosing not to reimburse you at all"
+                },
+                {
+                  "value": "Item 7",
+                  "text": "Please confirm you understand that you must read the consent form that will be sent to you prior to attending your visit. If you don’t your appointment may be delayed or rescheduled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel11",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question51",
+              "hideNumber": false,
+              "html": "<p><span style=\"color:blue;font-size:20px;\"><u>Booking Instructions:</u></span></p><ul><li data-list-item-id=\"e6078306771a811be7117611a1f6cf455\"><span style=\"color:#000000;\"><strong>Calendar</strong></span> - 2.0h</li><li data-list-item-id=\"e40ccf55579a1c6aad93e749676e8d0d4\"><strong>Latest appointment time</strong> - 1:00 PM<ul><li data-list-item-id=\"ecdfbb187ec6413beee1e27cd5d81ed75\"><strong>Exceed?</strong> - <span style=\"color:green;\">Yes ✅</span> (Inform PT they'll need to come back for bloods if booked beyond)</li></ul></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(23,68%,46%);\" data-list-item-id=\"e6b479ff48026e84e9cedb2b11fcb3b4e\"><span style=\"color:hsl(23,68%,46%);\"><strong>No more overhang</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:hsl(290,68%,46%);\" data-list-item-id=\"e4a0bf0d1780ba504d3081f19f1f16401\"><span style=\"color:hsl(290,68%,46%);\"><strong>Special instructions</strong></span></li></ul><p>&nbsp;</p><ul><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:#ffc107;\" data-list-item-id=\"e2cf2377b0847df1b118bca74b433edc3\"><span style=\"color:#ffc107;\"><strong>Overall time for PT</strong></span><ul><li class=\"ck-list-marker-color\" style=\"--ck-content-list-marker-color:#000000;\" data-list-item-id=\"e2bdca5d8e91a9ac7107be94ddd8a9639\"><span style=\"color:#000000;\">3-4h</span></li></ul></li></ul>"
+            }
+          ]
+        }
+      ],
+      "title": "Misc"
+    },
+    {
+      "name": "page6",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "panel22",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "question109",
+              "title": "Before we wrap up, I’d like to share details about our referral program. If you refer someone to us you can receive up to $250 if they enrol and participate in the study. Would you like to hear more?",
+              "hideNumber": false,
+              "choices": [
+                {
+                  "value": "Item 1",
+                  "text": "Yes"
+                },
+                {
+                  "value": "Item 2",
+                  "text": "No"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "panel9",
+          "elements": [
+            {
+              "type": "html",
+              "name": "question43",
+              "visibleIf": "{question109} = 'Item 1'",
+              "hideNumber": false,
+              "html": "<p><strong>Great! Here's how it works:</strong></p><p>&nbsp;</p><p><strong>To refer someone, you will need to provide them with a unique referral ID. The person you refer will need to provide us this ID either when they sign up on our website, or when they speak to us over the phone. This ID is essential, as it ensures we can track and reimburse you for any referrals.</strong></p><p>&nbsp;</p><p><strong>For each person you refer who comes in for an in-person screening visit, you'll receive $50. If they go on to enrol and participate in the study, you'll earn an additional $200.</strong></p><p>&nbsp;</p><p><strong>There's no limit- you can refer as many people as you'd like, as long as you have an exisiting relationship with them. It's important to note that you cannot advertise for referrals. This program is based on personal connections, so please only refer people you know.</strong></p><p>&nbsp;</p><p><strong>If you're interested, we can set up your Unique Referral ID today if you would like</strong> <i>(the unique referral ID is REF[p number]. E.g., REFP14471)</i></p><p>&nbsp;</p><p><strong>Who do you know you might be interested in this trial?</strong> <i>(if they don't know anyone for this trial, they can also refer someone to any other trial)</i></p><p>&nbsp;</p><p><strong>Would you like us to send you an email that you can forward on to them?</strong></p>"
+            }
+          ],
+          "visibleIf": "{question109} = 'Item 1'"
+        }
+      ],
+      "title": "Referral Program"
+    }
+  ],
+  "version": "Version-1"
+}

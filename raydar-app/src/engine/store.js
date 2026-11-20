@@ -2,6 +2,7 @@
    The only changes: act() ends with commit() instead of render(), the copy action moved
    into the Dr enquiry component, and functions that returned HTML strings became JSX in views/. */
 import {CONDS,ST,PRO,PAL,EQQ,GENQ,COR} from './data.js';
+import {resetKeys} from './keys.js';
 
 /* ---- store plumbing: React subscribes with useSyncExternalStore ---- */
 const listeners=new Set();let version=0;
@@ -35,7 +36,7 @@ function tipVisit(s,c,v){const a=vS(v),b=vE(v),st=vStat(v);return s.c+' · '+cn(
 function tipCohort(s,c){const k=cKey(c);return s.c+' · '+cn(c.n)+'\n'+rk(k)[0]+'\nStay::'+fmtR(c.in,c.out)+'\nFollow-ups::'+pl(c.v.length,'visit')+', last '+fmt(c.v[c.v.length-1].d)+'\nClick to jump::on the calendar'}
 function tipAway(a){return 'Participant away\n\nFrom::'+fmtL(a[0])+'\nUntil::'+fmtL(a[1])+'\nLength::'+pl(dd(a[0],a[1])+1,'day')}
 const EF=()=>({n:'',ind:'',dose:'',route:'',st:'',en:''});
-const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false});
+const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false});
 export let S=fresh(1);
 const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 const SC=c=>ST.find(x=>x.c===c);
@@ -85,7 +86,7 @@ function selC(s){s=s||S.study;if(!s||!s.cohorts)return [];const a=avl(s.c);retur
 function selTypes(s){return [...new Set(selC(s).map(c=>c.t))]}
 function qset(){const s=S.study;if(!s)return [];const L=srcQ(s),T=selTypes(),vis=new Set(),out=[];L.forEach(q=>{if(q.sex&&q.sex!==S.sex)return;if(q.only&&!q.only.some(t=>T.includes(t)))return;if(q.when&&!(vis.has(q.when.id)&&q.when.is.includes(S.ans[q.when.id])))return;vis.add(q.id);out.push(q)});return out}
 function srcQ(s){s=s||S.study;return !s?[]:s.qs==='pal'?PAL:s.qs==='eq'?EQQ:s.qs==='cor'?COR:GENQ}
-const RAYDAR_VERSION='RAYDAR 2.2 · study data updated 19 Nov 2026 (COR-PAG-26-101 pre-screening form)';
+const RAYDAR_VERSION='RAYDAR 2.4 · study data updated 19 Nov 2026 (COR-PAG-26-101 pre-screening form)';
 const oc=o=>o==='c'?'success':o==='d'?'warning':o==='x'?'danger':'accent';
 function curQ(){const L=qset();let i=L.findIndex(q=>q.id===S.qid);if(i<0){i=L.findIndex(q=>!S.out[q.id]);if(i<0)i=0;S.qid=L[i]&&L[i].id}return {L,i,q:L[i]}}
 function qMatches(q){if(!q.carry)return [];return S.log.filter(e=>inCarry(e,q.carry)).map(e=>({e,p:matchP(e)})).filter(z=>z.p&&z.p.o!=='ok')}
@@ -122,10 +123,38 @@ function drText(){const a=age(),sx=S.sex?(S.sex==='f'?'F':'M'):'';const li=e=>'-
 return ['Study: '+drCode(),'Age and Sex: '+(a!=null?a:'')+sx,'Participant link: '+(S.dre.url||''),'',...sec('Medications','med'),'',...sec('Supplements/OTC','otc'),'',...sec('Medical Conditions/Events','hx'),'','Concern:',...(con.length?con.map(x=>'- '+x.replace(/^[-*]\s*/,'')):['- '])].join('\n')}
 
 function start(c){if(!S.idok){S.stage='id';S.err={id:'Confirm identity before starting a pre-screen'};return}S.study=SC(c);S.proS=null;S.stage='ps';S.qon=false;S.sub='dates';S.qid=null;S.out={};S.ans={};S.why={};S.note={};S.tool=null;S.err={};S.fin=null;S.all=false;S.last=null;S.mOpen=false;S.mq='';S.infoOpen=false}
-function advance(){const {L,i}=curQ();S.mOpen=false;S.mq='';S.mErr='';S.peek=null;let j=i+1;while(j<L.length&&(S.out[L[j].id]||S.park[L[j].id]))j++;if(j<L.length)S.qid=L[j].id;else{const u=frontier(L);if(u)S.qid=u.id;else{S.stage='finish';S.fin=null}}}
+function advance(){const {L,i}=curQ();S.mOpen=false;S.mq='';S.mErr='';S.hOpen=false;S.hq='';S.hErr='';S.peek=null;let j=i+1;while(j<L.length&&(S.out[L[j].id]||S.park[L[j].id]))j++;if(j<L.length)S.qid=L[j].id;else{const u=frontier(L);if(u)S.qid=u.id}}
 function doJump(code,cid){const s=SC(code),c=s&&s.cohorts.find(z=>z.id===cid);if(!c)return;S.plan=true;S.tool=null;if(!pShown(s)){if(!S.pShow){const m={};planStudies().forEach(z=>m[z.c]=pShown(z));S.pShow=m}S.pShow[code]=true}if(S.hideClosed&&cStat(c)!=='open')S.hideClosed=false;S.psel=[code,cid];S.jumpSmooth=true;S.jumpTo=cKey(c)==='ok'||cStat(c)!=='open'?c.in:conflictDate(c)}
 function pushLog(F,t,ed){const e=Object.assign(EF(),{t},Object.fromEntries(Object.entries(F).map(([k,v])=>[k,String(v).trim()])),{t,src:(ed&&ed.src)||srcLabel(),auto:(ed&&ed.auto)||null,f:!!(ed&&ed.f)});S.log.push(e)}
-function addRows(pre,t,ed){const rows=pre==='r'?S.f:S.mf;const has=r=>Object.values(r).some(v=>String(v).trim());const filled=rows.filter(has);if(!filled.length)return t==='hx'?'Enter at least one condition or event':'Enter at least one name';const bad=rows.findIndex(r=>has(r)&&!r.n.trim());if(bad>=0)return 'Row '+(bad+1)+' needs a '+(t==='hx'?'condition':'name');filled.forEach((r,k)=>pushLog(r,t,k===0?ed:null));return ''}
+function addRows(pre,t,ed){const rows=pre==='r'?S.f:pre==='h'?S.hf:S.mf;const has=r=>Object.values(r).some(v=>String(v).trim());const filled=rows.filter(has);if(!filled.length)return t==='hx'?'Enter at least one condition or event':'Enter at least one name';const bad=rows.findIndex(r=>has(r)&&!r.n.trim());if(bad>=0)return 'Row '+(bad+1)+' needs a '+(t==='hx'?'condition':'name');filled.forEach((r,k)=>pushLog(r,t,k===0?ed:null));return ''}
+
+
+/* ---- RAYDAR 2.4: answer key order ----
+   Key 1 always goes to the answer most likely to be right: the suggested one when RAYDAR has a suggestion,
+   otherwise the answer that simply moves on (eligible, and doesn't open a follow-up). The rest keep their
+   on-screen order on keys 2, 3 and 4. */
+function opensFollowUp(q,label){return srcQ().some(z=>z.when&&z.when.id===q.id&&z.when.is.includes(label))}
+function sugIdx(q){const sg=sugQ(q);if(!sg)return -1;const byLabel=q.a.findIndex(b=>b[0]===sg);if(byLabel>=0)return byLabel;return q.a.findIndex(b=>b[1]===sg)}
+function primaryIdx(q){const s=sugIdx(q);if(s>=0)return {i:s,why:'suggested'};const m=q.a.findIndex(b=>b[1]==='c'&&!opensFollowUp(q,b[0]));return m>=0?{i:m,why:'moves on'}:{i:0,why:''}}
+/** answer indexes in key order: ansOrder(q)[0] is on key 1 */
+function ansOrder(q){const p=primaryIdx(q).i;return [p,...q.a.map((_,j)=>j).filter(j=>j!==p)]}
+/** which key slot (0-based) an answer sits on */
+function ansSlot(q,j){return ansOrder(q).indexOf(j)}
+
+/* ---- RAYDAR 2.4: stage completion and the next step ---- */
+function idReady(){return /^P\d{3,}/.test(S.pid)&&age()!=null&&S.match}
+function qcLeft(){const L=[];if(!S.sex)L.push('sex');if(bmi()==null)L.push('weight and height');if(S.sex!=='m'&&!S.preg)L.push('pregnancy');if(CONDS.some(c=>S.cond[c[0]]==null&&!(c[0]==='mphl'&&S.sex==='f')))L.push('conditions');if(!S.meds)L.push('medications');if(!S.smoke)L.push('smoking');return L}
+function qcDone(){return !qcLeft().length}
+function preqDone(){const s=S.study;return !!s&&(!s.cohorts||!!S.datesOk[s.c])&&!!S.read[s.c]}
+function psDone(){const L=qset();return !!L.length&&L.every(q=>S.out[q.id])}
+/** The step a recruiter would take next, once the current one is complete. null while there's still work here. */
+function nextStep(){
+if(S.stage==='id')return idReady()?{a:'confirm',done:'Identity details entered',to:'Quick check',btn:'Confirm and continue'}:null;
+if(S.stage==='qc'){if(!qcDone())return null;const b=S.study||ranked()[0].s;return {a:S.study?'go:ps':'start:'+b.c,done:'Quick check complete',to:'Pre-screen',sub:b.c+(S.study?'':' · best match so far'),btn:'Continue to pre-screen'}}
+if(S.stage==='ps'&&S.study&&!S.qon)return preqDone()?{a:'startq',done:'Dates and study information done',to:'Questions',sub:S.study.c,btn:'Start questions'}:null;
+if(S.stage==='ps'&&S.study&&S.qon){if(!psDone())return null;const L=qset(),x=L.filter(q=>S.out[q.id]==='x').length,d=L.filter(q=>S.out[q.id]==='d').length;return {a:'go:finish',done:'All '+L.length+' questions answered',to:'Finish',sub:x?x+' exclusion'+(x>1?'s':''):d?d+' for the doctor':'Nothing flagged',tone:x?'bad':d?'warn':'ok',btn:'Continue to finish'}}
+if(S.stage==='finish'&&S.saved)return {a:'new',done:'Saved',to:'Next call',btn:'Start next call'};
+return null}
 
 function act(a){const p=a.split(':'),k=p[0],x=p[1],y=p.slice(2).join(':');S.toast='';lastAction=k;
 if(k!=='discard')S.discard=false;
@@ -147,9 +176,11 @@ else if(k==='ans'||k==='ansl'){const L=qset();let q,j;if(k==='ans'){q=curQ().q;j
 if(b[1]!=='c'&&!w.length){const mm=qMatches(q);if(mm.length)S.why[q.id]=[mm[0].p.n]}
 if(was&&S.ans[q.id]!==b[0])S.hist[q.id]=S.ans[q.id];S.out[q.id]=b[1];S.ans[q.id]=b[0];delete S.park[q.id];S.err={};
 if(k==='ansl'){const L2=qset(),i2=L2.indexOf(q),Z=L2.filter(z=>z.sec===q.sec),nx=Z.slice(Z.indexOf(q)+1).find(z=>!S.out[z.id]&&!S.park[z.id])||Z.find(z=>!S.out[z.id]&&!S.park[z.id]);let moved='';if(nx)S.qid=nx.id;else{const fr=frontier(L2);if(fr){S.qid=fr.id;if(fr.sec!==q.sec)moved='Section done, now on '+fr.sec}else S.qid=q.id}S.scrollQ=true;S.last={qid:q.id,label:'Q'+(i2+1)+' recorded as '+b[0],next:S.qid,o:b[1],po:was,pa:pa,moved}}
-else{const lbl='Q'+(i+1)+' recorded as '+b[0]+(was&&S.hist[q.id]?' (was '+S.hist[q.id]+')':'');if(was){const fr=frontier(L);S.nav=[];if(fr){S.qid=fr.id;S.peek=null}else{S.stage='finish';S.fin=null}}else advance();S.last={qid:q.id,label:lbl,next:S.stage==='ps'?S.qid:null,o:b[1],po:was,pa:pa}}}
+else{const lbl='Q'+(i+1)+' recorded as '+b[0]+(was&&S.hist[q.id]?' (was '+S.hist[q.id]+')':'');if(was){const fr=frontier(L);S.nav=[];if(fr){S.qid=fr.id;S.peek=null}}else advance();S.last={qid:q.id,label:lbl,next:S.stage==='ps'?S.qid:null,o:b[1],po:was,pa:pa}}}
 else if(k==='undo'){if(S.last){S.stage='ps';S.qid=S.last.qid;if(S.last.po){S.out[S.qid]=S.last.po;S.ans[S.qid]=S.last.pa}else{delete S.out[S.qid];delete S.ans[S.qid]}S.last=null;S.scrollQ=true}}
 else if(k==='clr'){const rm=id=>{delete S.out[id];delete S.ans[id];delete S.why[id];srcQ().filter(z=>z.when&&z.when.id===id).forEach(z=>rm(z.id))};rm(x);delete S.park[x];S.qid=x;S.last=null;S.scrollQ=true;S.toast=''}
+else if(k==='rebind'){S.rebind=S.rebind===x?null:x||null;S.keyMsg=''}
+else if(k==='keyreset'){resetKeys();S.rebind=null;S.keyMsg='Shortcuts reset to the defaults'}
 else if(k==='tips'){S.tips=!S.tips;if(S.tool==='guide'&&!S.tips)S.tool=null}
 else if(k==='focus'){S.focusMode=!S.focusMode;if(S.focusMode)S.tool=null}
 else if(k==='park'){const {q}=curQ();S.park[q.id]=true;S.last=null;advance()}
@@ -194,13 +225,13 @@ else if(k==='import')S.toast='In the real tool this opens a file picker and resu
 else if(k==='lt'){S.lt=x;S.logErr=''}
 else if(k==='mt'){S.mt=x;S.mErr=''}
 else if(k==='logform'){S.logForm=!(S.logForm||S.ed);if(!S.logForm&&S.ed){pushLog(S.f[0],S.lt,S.ed);S.ed=null;S.f=[EF()]}S.logErr='';if(S.logForm)S.focus='rName0'}
-else if(k==='rowadd'){const rows=x==='r'?S.f:S.mf;rows.push(EF());S.focus=x+'Name'+(rows.length-1);if(x==='r')S.logForm=true}
-else if(k==='rowdel'){const rows=x==='r'?S.f:S.mf;rows.splice(+y,1);if(!rows.length)rows.push(EF())}
+else if(k==='rowadd'){const rows=x==='r'?S.f:x==='h'?S.hf:S.mf;rows.push(EF());S.focus=x+'Name'+(rows.length-1);if(x==='r')S.logForm=true}
+else if(k==='rowdel'){const rows=x==='r'?S.f:x==='h'?S.hf:S.mf;rows.splice(+y,1);if(!rows.length)rows.push(EF())}
 else if(k==='logadd'){const er=addRows('r',S.lt,S.ed);if(er){S.logErr=er;S.shake='logErr'}else{S.f=[EF()];S.logErr='';S.ed=null;S.logForm=false}}
 else if(k==='redit'){const e=S.log[+x];S.lt=e.t;S.f=[{n:e.n==='Regular medication'?'':e.n,ind:e.ind,dose:e.dose,route:e.route,st:e.st,en:e.en}];S.ed={src:e.src,auto:e.auto,f:e.f};S.log.splice(+x,1);S.logForm=true;S.col.log=false;S.focus='rName0'}
-else if(k==='madd'){const c=curQ().q.carry,t=c==='hx'?'hx':S.mt;const er=addRows('m',t,S.med);if(er){S.mErr=er;S.shake='mErr'}else{S.mf=[EF()];S.mErr='';S.med=null;S.focus='mName0'}}
-else if(k==='medit'){const e=S.log[+x];if(e.t!=='hx')S.mt=e.t;S.mf=[{n:e.n==='Regular medication'?'':e.n,ind:e.ind,dose:e.dose,route:e.route,st:e.st,en:e.en}];S.med={src:e.src,auto:e.auto,f:e.f};S.log.splice(+x,1);S.col.mlog=false;S.focus='mName0'}
-else if(k==='mpro')S.mOpen=!S.mOpen;
+else if(k==='madd'){const c=x||curQ().q.carry;if(c==='hx'){const er=addRows('h','hx',S.hed);if(er){S.hErr=er;S.shake='hErr'}else{S.hf=[EF()];S.hErr='';S.hed=null;S.focus='hName0'}}else{const er=addRows('m',S.mt,S.med);if(er){S.mErr=er;S.shake='mErr'}else{S.mf=[EF()];S.mErr='';S.med=null;S.focus='mName0'}}}
+else if(k==='medit'){const e=S.log[+x],F=[{n:e.n==='Regular medication'?'':e.n,ind:e.ind,dose:e.dose,route:e.route,st:e.st,en:e.en}],M={src:e.src,auto:e.auto,f:e.f};S.log.splice(+x,1);if(e.t==='hx'){S.hf=F;S.hed=M;S.col.hlog=false;S.focus='hName0'}else{S.mt=e.t;S.mf=F;S.med=M;S.col.mlog=false;S.focus='mName0'}}
+else if(k==='mpro'){if(x==='hx')S.hOpen=!S.hOpen;else S.mOpen=!S.mOpen}
 else if(k==='flag'){S.log[+x].f=!S.log[+x].f}
 else if(k==='del'){S.log.splice(+x,1)}
 else if(k==='dre'){if(x==='open'){S.dre.open=true;S.col.dre=false;S.copied='';S.tool=null}else if(x==='close')S.dre.open=false;
@@ -210,4 +241,4 @@ else if(x==='copy'){}
 else if(x==='send'){const t=S.dre.txt!=null?S.dre.txt:drText();if(typeof sendPrompt==='function'){sendPrompt('Here is the Dr enquiry for '+drCode()+':\n\n'+t);S.copied='Sent to chat'}else S.copied='Sending to chat is not available here'}}
 commit()}
 
-export {COL,DD,EF,EMRE,FLD,RAYDAR_VERSION,SC,TL,TODAY,TXT,ZP,act,add,addRows,advance,age,avl,bmi,cKey,cRisk,cStat,camel,cn,conflictDate,curQ,dd,doJump,drCode,drText,eParts,eText,esc,ev,fmt,fmtL,fmtR,fname,fresh,frontier,goQ,inCarry,isAway,isMedT,iso,lastDay,matchP,needsReview,nextOpen,nm,oc,ocls,openC,pShown,pl,planStudies,proFor,proS,pushLog,qMatches,qset,ranked,reason,rk,selC,selTypes,short,srcLabel,srcQ,start,stayHit,sug,sugQ,syncAuto,tipAway,tipCohort,tipStay,tipVisit,tlB,vE,vS,vStat};
+export {ansOrder,ansSlot,primaryIdx,opensFollowUp,idReady,qcLeft,qcDone,preqDone,psDone,nextStep,COL,DD,EF,EMRE,FLD,RAYDAR_VERSION,SC,TL,TODAY,TXT,ZP,act,add,addRows,advance,age,avl,bmi,cKey,cRisk,cStat,camel,cn,conflictDate,curQ,dd,doJump,drCode,drText,eParts,eText,esc,ev,fmt,fmtL,fmtR,fname,fresh,frontier,goQ,inCarry,isAway,isMedT,iso,lastDay,matchP,needsReview,nextOpen,nm,oc,ocls,openC,pShown,pl,planStudies,proFor,proS,pushLog,qMatches,qset,ranked,reason,rk,selC,selTypes,short,srcLabel,srcQ,start,stayHit,sug,sugQ,syncAuto,tipAway,tipCohort,tipStay,tipVisit,tlB,vE,vS,vStat};

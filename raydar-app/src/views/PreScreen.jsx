@@ -1,12 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import {
   S, upd, quiet, curQ, srcQ, selC, selTypes, avl, cStat, cKey, rk, fmt, fmtR, age, bmi, sugQ, ocls, oc,
-  needsReview, frontier, short,
+  needsReview, frontier, short, primaryIdx, ansSlot, preqDone, subscribe, getVersion,
 } from '../engine/store.js';
+import { keyName } from '../engine/keys.js';
+import { NextStep } from './NextStep.jsx';
 import { A, Ic, B, Emph, Hl, FuHint, PanelHead, Resizable } from './ui.jsx';
 import { MedLog } from './MedLog.jsx';
-import { Err, Expander, Piece } from '../motion/components.jsx';
+import { Err, Expander, Piece, QSlide, useDirection } from '../motion/components.jsx';
 import { DUR, tr } from '../motion/tokens.js';
 
 /** Keep showing the last real value while something closes. */
@@ -125,8 +127,9 @@ function PreQ({ s }) {
       </Piece>
       <Piece style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 12, borderTop: '.5px solid var(--border)', paddingTop: 10 }}>
         <span className="mut" style={{ fontSize: 12 }}>{sc.length ? 'Selected: ' + sc.map((c) => c.n).join(', ') : has ? 'No cohorts selected' : ''}</span>
-        <button className={'pill ' + (dOk && iOk ? 'pri' : '')} {...A('startq')}>Start questions</button>
+        {preqDone() ? null : <button className="pill" {...A('startq')}>Start questions</button>}
       </Piece>
+      <NextStep style={{ marginTop: 10 }} />
       <Err msg={S.err.s} />
     </div>
   );
@@ -249,8 +252,16 @@ function Extra({ q, s }) {
   return null;
 }
 
+/** A key badge for answer j of question q, or nothing past the fourth answer. */
+function AnsKey({ q, j }) {
+  const slot = ansSlot(q, j);
+  if (slot < 0 || slot > 3) return null;
+  return <span className={'k' + (slot === 0 ? ' k1' : '')}>{keyName('ans' + (slot + 1))}</span>;
+}
+
 function OneMode({ L, i, q }) {
-  const s = S.study, o = S.out[q.id], w = S.why[q.id] || [], sg = sugQ(q);
+  useSyncExternalStore(subscribe, getVersion); // keeps the leaving copy current while it slides out
+  const s = S.study, o = S.out[q.id], w = S.why[q.id] || [], P = primaryIdx(q);
   const critOpen = !!(S.critOpen || w.length), noteOpen = !!(S.noteOpen || S.note[q.id]);
   return (
     <>
@@ -295,15 +306,16 @@ function OneMode({ L, i, q }) {
           value={S.note[q.id] || ''} onChange={(e) => upd(() => (S.note[curQ().q.id] = e.target.value))}
         />
       </Expander>
-      {S.tips ? <div style={{ fontSize: 11, margin: '10px 0 4px' }} className="mut"><i>Tap an answer, or press its number key</i></div> : <div style={{ height: 10 }} />}
+      {S.tips ? <div style={{ fontSize: 11, margin: '10px 0 4px' }} className="mut"><i>Tap an answer or press its key. <b style={{ fontWeight: 500 }}>{keyName('ans1')}</b> picks the {P.why === 'suggested' ? 'suggested answer' : 'answer that moves on'}.</i></div> : <div style={{ height: 10 }} />}
       <div style={{ display: 'flex', gap: 6 }}>
         {q.a.map((b, j) => {
-          const isS = sg && ((sg === b[1] && q.a.filter((z) => z[1] === sg)[0] === b) || sg === b[0]);
+          const isS = P.why === 'suggested' && P.i === j;
           const picked = o && S.ans[q.id] === b[0];
           return (
             <button key={b[0]} {...A('ans:' + j)} className={'ans ' + (picked ? ocls(b[1]) : '')} aria-pressed={!!picked}
+              aria-keyshortcuts={ansSlot(q, j) < 4 ? keyName('ans' + (ansSlot(q, j) + 1)) : undefined}
               style={isS ? { outline: '2px solid var(--border-' + (b[1] === 'x' ? 'danger' : b[1] === 'd' ? 'warning' : 'success') + ')', outlineOffset: 1 } : null}>
-              {picked ? <><Ic n="ti-check" /> </> : null}{b[0]}{S.tips ? <span className="k">{j + 1}</span> : null}
+              {picked ? <><Ic n="ti-check pop" /> </> : null}{b[0]}{S.tips ? <AnsKey q={q} j={j} /> : null}
               {isS ? <><br /><span style={{ fontSize: 11 }} className="mut">suggested</span></> : null}
             </button>
           );
@@ -311,10 +323,10 @@ function OneMode({ L, i, q }) {
       </div>
       <FuHint q={q} />
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8, flexWrap: 'wrap', gap: 4 }}>
-        <button className="pill ib" {...A('prev')} style={i ? null : { visibility: 'hidden' }}><Ic n="ti-arrow-left" /> Previous</button>
+        <button className="pill ib" {...A('prev')} title={'Previous (' + keyName('prev') + ')'} style={i ? null : { visibility: 'hidden' }}><Ic n="ti-arrow-left" /> Previous</button>
         <span style={{ display: 'flex', gap: 4 }}>
-          {o ? null : <button className="pill ib" {...A('park')} title="Mark to come back to"><Ic n="ti-bookmark" /> Park for later</button>}
-          <button className="pill ib" {...A('next')} style={i < L.length - 1 ? null : { visibility: 'hidden' }}>Next without answering <Ic n="ti-arrow-right" /></button>
+          {o ? null : <button className="pill ib" {...A('park')} title={'Mark to come back to (' + keyName('park') + ')'}><Ic n="ti-bookmark" /> Park for later</button>}
+          <button className="pill ib" {...A('next')} title={'Next without answering (' + keyName('next') + ')'} style={i < L.length - 1 ? null : { visibility: 'hidden' }}>Next without answering <Ic n="ti-arrow-right" /></button>
         </span>
       </div>
       {S.focusMode ? null : <UpNext L={L} i={i} />}
@@ -322,24 +334,27 @@ function OneMode({ L, i, q }) {
   );
 }
 
-function ListMode({ L, q }) {
-  const secs = [...new Set(L.map((z) => z.sec))], si = secs.indexOf(q.sec), Z = L.filter((z) => z.sec === q.sec);
+/** One-at-a-time view: the answered question slides out as the next slides in. */
+function OneSlide({ L, i, q }) {
+  const dir = useDirection(i);
+  return <QSlide k={q.id} dir={dir}><OneMode L={L} i={i} q={q} /></QSlide>;
+}
+
+/** The questions in one section. Subscribes to the store so a leaving section still shows its last answer. */
+function SectionRows({ sec }) {
+  useSyncExternalStore(subscribe, getVersion);
+  const { L, q } = curQ(), Z = L.filter((z) => z.sec === sec), s = S.study;
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '6px 0 2px' }}>
-        <span style={{ fontSize: 17, fontWeight: 500 }}>{q.sec}</span>
-        <span style={{ display: 'flex', gap: 4 }}>
-          <button className="pill ib" {...A('secstep:-1')} style={si ? null : { visibility: 'hidden' }} aria-label="Previous section"><Ic n="ti-chevron-left" /></button>
-          <button className="pill ib" {...A('secstep:1')} style={si < secs.length - 1 ? null : { visibility: 'hidden' }} aria-label="Next section"><Ic n="ti-chevron-right" /></button>
-        </span>
-      </div>
-      {S.tips ? <p style={{ fontSize: 11, margin: '0 0 4px', fontStyle: 'italic' }} className="mut">Answer in any order. The view follows the next question to ask.</p> : null}
       {Z.map((z) => {
         const n = L.indexOf(z) + 1, cur = z.id === q.id, o = S.out[z.id], noteOpen = !!(cur || S.showNote[z.id]);
+        const full = z.carry || z.dates || z.hol || z.alc;
         return (
-          <div key={z.id} id={'qr-' + z.id} className={cur ? 'qcur' : ''}
+          <div key={z.id} id={'qr-' + z.id} className={'qrow' + (cur ? ' qcur' : '')}
             style={{ padding: '8px 8px 8px 10px', borderTop: '.5px solid var(--border)', scrollMarginTop: 120, ...(z.when ? { marginLeft: 22, borderLeft: '2px solid var(--border-accent)' } : null) }}>
-            <div style={{ display: 'flex', gap: 8 }}>
+            {/* 2.4: the "ask next" highlight glides from row to row */}
+            {cur ? <motion.div layoutId={'qcur-' + sec} className="qcur-bg" aria-hidden="true" transition={{ layout: tr(DUR.move, 'io') }} /> : null}
+            <div style={{ display: 'flex', gap: 8, position: 'relative' }}>
               <span className="mono" style={{ fontSize: 11, color: 'var(--text-secondary)', paddingTop: 3, width: 28, flexShrink: 0 }}>Q{n}</span>
               <div style={{ flex: 1, minWidth: 0 }}>
                 {cur && !o ? <div className="asknext"><Ic n="ti-arrow-big-right-filled" /> Ask next</div> : null}
@@ -350,17 +365,19 @@ function ListMode({ L, q }) {
                     <Expander open={noteOpen}><NoteBlock r={z.r} small /></Expander>
                   </>
                 ) : null}
-                {z.carry || z.dates || z.hol || z.alc ? (
-                  <button className="pill" {...A('goone:' + z.id)} style={{ marginTop: 4, fontSize: 11 }}>
-                    <Ic n="ti-arrows-maximize" /> Open full question{z.carry ? ' to log ' + (z.carry === 'hx' ? 'conditions' : 'medications') : ''}
-                  </button>
+                {/* 2.4: what used to sit behind "Open full question" is shown here */}
+                {full ? (
+                  <div className="qfull">
+                    {z.dates || z.hol || z.alc ? <Extra q={z} s={s} /> : null}
+                    {z.carry ? <MedLog c={z.carry} /> : null}
+                  </div>
                 ) : null}
                 <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 6 }}>
                   {z.a.map((b, j) => {
                     const picked = o && S.ans[z.id] === b[0];
                     return (
                       <button key={b[0]} className={'pill ' + (picked ? ocls(b[1]) : '')} aria-pressed={!!picked} {...A('ansl:' + z.id + ':' + j)} style={{ fontSize: 12 }}>
-                        {picked ? <><Ic n="ti-check" /> </> : null}{b[0]}
+                        {picked ? <><Ic n="ti-check pop" /> </> : null}{b[0]}{cur && S.tips ? <AnsKey q={z} j={j} /> : null}
                       </button>
                     );
                   })}
@@ -373,6 +390,24 @@ function ListMode({ L, q }) {
           </div>
         );
       })}
+    </>
+  );
+}
+
+function ListMode({ L, q }) {
+  const secs = [...new Set(L.map((z) => z.sec))], si = secs.indexOf(q.sec);
+  const dir = useDirection(si);
+  return (
+    <>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '6px 0 2px' }}>
+        <span style={{ fontSize: 17, fontWeight: 500 }}>{q.sec}</span>
+        <span style={{ display: 'flex', gap: 4 }}>
+          <button className="pill ib" {...A('secstep:-1')} style={si ? null : { visibility: 'hidden' }} aria-label="Previous section"><Ic n="ti-chevron-left" /></button>
+          <button className="pill ib" {...A('secstep:1')} style={si < secs.length - 1 ? null : { visibility: 'hidden' }} aria-label="Next section"><Ic n="ti-chevron-right" /></button>
+        </span>
+      </div>
+      {S.tips ? <p style={{ fontSize: 11, margin: '0 0 4px', fontStyle: 'italic' }} className="mut">Answer in any order. The view follows the next question to ask. <b style={{ fontWeight: 500 }}>{keyName('ans1')}</b> answers it with the suggested answer, or the one that moves on.</p> : null}
+      <QSlide k={q.sec} dir={dir}><SectionRows sec={q.sec} /></QSlide>
     </>
   );
 }
@@ -429,13 +464,14 @@ function QMapList() {
 }
 
 /* ---------------- Undo ---------------- */
-function UndoBar({ last, floating, onEnter, onLeave }) {
+function UndoBar({ last, floating, onEnter, onLeave, rise }) {
   return (
-    <div className={'undo ' + ocls(last.o || 'n') + (floating ? ' fl' : '')} role="status" onMouseEnter={onEnter} onMouseLeave={onLeave} onFocus={onEnter} onBlur={onLeave}>
-      <Ic n="ti-circle-check" />
+    <motion.div key={rise ? last.label + last.qid : 'bar'} className={'undo ' + ocls(last.o || 'n') + (floating ? ' fl' : '')} role="status" onMouseEnter={onEnter} onMouseLeave={onLeave} onFocus={onEnter} onBlur={onLeave}
+      initial={rise ? { opacity: 0, y: 6 } : false} animate={{ opacity: 1, y: 0, transition: tr(DUR.qIn) }}>
+      <Ic n="ti-circle-check pop" />
       <span style={{ flex: 1, minWidth: 0 }}>{last.label}{last.moved ? <span style={{ opacity: 0.8 }}> · {last.moved}</span> : null}</span>
-      <button className="pill undob" {...A('undo')} title="Undo this answer (U)"><Ic n="ti-arrow-back-up" /> Undo <span className="k">U</span></button>
-    </div>
+      <button className="pill undob" {...A('undo')} title={'Undo this answer (' + keyName('undo') + ')'}><Ic n="ti-arrow-back-up" /> Undo <span className="k">{keyName('undo')}</span></button>
+    </motion.div>
   );
 }
 
@@ -556,9 +592,10 @@ export function PreScreen() {
           {fr && fr.id !== q.id && S.out[q.id] ? <button className="pill" {...A('goq:' + fr.id)}>Continue from Q{L.indexOf(fr) + 1} <Ic n="ti-arrow-right" /></button> : null}
         </div>
       ) : null}
-      {S.mode === 'list' ? <UndoToast last={showUndo ? S.last : null} /> : showUndo ? <UndoBar last={S.last} /> : null}
+      {S.mode === 'list' ? <UndoToast last={showUndo ? S.last : null} /> : showUndo ? <UndoBar last={S.last} rise /> : null}
+      <NextStep style={{ marginBottom: 8 }} />
       <Expander open={!!S.peek}><PeekCard L={L} id={peekId} /></Expander>
-      <Piece>{S.mode === 'list' ? <ListMode L={L} q={q} /> : <OneMode L={L} i={i} q={q} />}</Piece>
+      <Piece>{S.mode === 'list' ? <ListMode L={L} q={q} /> : <OneSlide L={L} i={i} q={q} />}</Piece>
     </div>
   );
 }
