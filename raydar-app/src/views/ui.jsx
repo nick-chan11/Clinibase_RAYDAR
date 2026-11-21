@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { S, act, EMRE, srcQ, upd } from '../engine/store.js';
+import { S, act, EMRE, upd, followUpLabels, noteShows } from '../engine/store.js';
+import { sanitize } from '../esource/html.js';
 import { Expander } from '../motion/components.jsx';
 
 /** Click handler for an engine action, e.g. <button {...A('confirm')}> */
@@ -77,9 +78,8 @@ export function Badge({ p }) {
 }
 
 export function FuHint({ q }) {
-  const F = srcQ().filter((z) => z.when && z.when.id === q.id);
-  if (!F.length) return null;
-  const labs = [...new Set(F.flatMap((z) => z.when.is))];
+  const labs = q.a && q.a.length ? followUpLabels(q) : [];
+  if (!labs.length) return null;
   return (
     <p style={{ fontSize: 11, margin: '6px 0 0', color: 'var(--text-accent)' }}>
       <Ic n="ti-corner-down-right" /> Answering{' '}
@@ -145,4 +145,15 @@ export function Panel({ id, title, sub, right, children, rs, style }) {
 /** Text input bound to the store. */
 export function Field({ get, set, ...rest }) {
   return <input type="text" value={get() ?? ''} onChange={(e) => upd(() => set(e.target.value))} {...rest} />;
+}
+
+/** eSource HTML (Study Notes, recruiter notes), sanitised. Blocks with a condition show only while it's true. */
+export function HtmlBlocks({ blocks, style }) {
+  const shown = (blocks || []).filter(noteShows);
+  if (!shown.length) return null;
+  return (
+    <div className="esrc" style={style}>
+      {shown.map((b, i) => <div key={b.name + i} className="esrc-b" dangerouslySetInnerHTML={{ __html: sanitize(b.html) }} />)}
+    </div>
+  );
 }

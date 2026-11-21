@@ -6,7 +6,7 @@ import {
 } from '../engine/store.js';
 import { keyName } from '../engine/keys.js';
 import { NextStep } from './NextStep.jsx';
-import { A, Ic, B, Emph, Hl, FuHint, PanelHead, Resizable } from './ui.jsx';
+import { A, Ic, B, Emph, Hl, FuHint, PanelHead, Resizable, HtmlBlocks } from './ui.jsx';
 import { MedLog } from './MedLog.jsx';
 import { Err, Expander, Piece, QSlide, useDirection } from '../motion/components.jsx';
 import { DUR, tr } from '../motion/tokens.js';
@@ -24,30 +24,39 @@ const voice = { fontFamily: 'var(--font-voice)', fontSize: 15, lineHeight: 1.55,
 const h3 = { fontSize: 14, fontWeight: 500, margin: '8px 0 2px' };
 
 export function InfoBlock({ s }) {
-  const T = selTypes(s), all = Object.keys(s.types), show = T.length ? T : all;
-  const part = (title, txt) => txt ? <><h3 style={h3}>{title}</h3><Say /><p style={voice}><Emph t={txt} nums /></p></> : null;
+  const T = selTypes(s), all = s.types ? Object.keys(s.types) : [], show = T.length ? T : all;
   const td = { verticalAlign: 'top', padding: '1px 0' };
   return (
     <>
-      {s.info ? <>{part('Purpose and study drug', s.info.p)}{part('Study design', s.info.d)}{part('Schedule', s.info.sch)}{part('Reimbursement', s.info.pay)}</> : null}
-      <h3 style={{ fontSize: 14, fontWeight: 500, margin: '10px 0 4px' }}>{T.length ? 'Selected cohort details' : 'Cohort details'}</h3>
-      {T.length ? null : <p style={{ fontSize: 12, margin: '0 0 6px', fontStyle: 'italic' }} className="mut">No cohort selected yet, so every cohort type is shown.</p>}
-      {show.map((k) => {
-        const t = s.types[k];
-        return (
-          <div className="soft" key={k} style={{ marginBottom: 6 }}>
-            <div style={{ fontWeight: 500, fontSize: 13, marginBottom: 2 }}>{t.l}</div>
-            <table style={{ fontSize: 12, width: '100%', borderCollapse: 'collapse' }}>
-              <tbody>
-                <tr><td className="mut" style={{ ...td, width: 92 }}>In clinic</td><td><Emph t={t.stay} /></td></tr>
-                <tr><td className="mut" style={td}>Follow-up</td><td><Emph t={t.fu} /></td></tr>
-                <tr><td className="mut" style={td}>Reimbursement</td><td><B>{t.pay}</B> if dosed{t.alt ? ', ' + t.alt + ' if an alternate' : ''}</td></tr>
-                {t.note ? <tr><td className="mut" style={td}>Note</td><td style={{ color: 'var(--text-warning)', fontStyle: 'italic' }}>{t.note}</td></tr> : null}
-              </tbody>
-            </table>
-          </div>
-        );
-      })}
+      {/* 2.5: the eSource's Study Notes pages, as TST wrote them */}
+      {(s.notes || []).map((n) => (
+        <div key={n.page} style={{ marginBottom: 8 }}>
+          {s.notes.length > 1 ? <h3 style={{ fontSize: 14, fontWeight: 500, margin: '8px 0 4px' }}>{n.page}</h3> : null}
+          <HtmlBlocks blocks={n.blocks} />
+        </div>
+      ))}
+      {!(s.notes || []).length ? <p className="mut" style={{ fontSize: 12, fontStyle: 'italic' }}>This eSource has no Study Notes page.</p> : null}
+      {show.length ? (
+        <>
+          <h3 style={{ fontSize: 14, fontWeight: 500, margin: '10px 0 4px' }}>{T.length ? 'Selected cohort details' : 'Cohort details'}</h3>
+          {show.map((k) => {
+            const t = s.types[k];
+            return (
+              <div className="soft" key={k} style={{ marginBottom: 6 }}>
+                <div style={{ fontWeight: 500, fontSize: 13, marginBottom: 2 }}>{t.l}</div>
+                <table style={{ fontSize: 12, width: '100%', borderCollapse: 'collapse' }}>
+                  <tbody>
+                    <tr><td className="mut" style={{ ...td, width: 92 }}>In clinic</td><td><Emph t={t.stay} /></td></tr>
+                    <tr><td className="mut" style={td}>Follow-up</td><td><Emph t={t.fu} /></td></tr>
+                    <tr><td className="mut" style={td}>Reimbursement</td><td><B>{t.pay}</B> if dosed{t.alt ? ', ' + t.alt + ' if an alternate' : ''}</td></tr>
+                    {t.note ? <tr><td className="mut" style={td}>Note</td><td style={{ color: 'var(--text-warning)', fontStyle: 'italic' }}>{t.note}</td></tr> : null}
+                  </tbody>
+                </table>
+              </div>
+            );
+          })}
+        </>
+      ) : null}
     </>
   );
 }
@@ -57,7 +66,7 @@ function CohortCompare({ s }) {
   const F = [
     ['Type', (c) => s.types[c.t].l],
     ['Nights', (c) => (s.types[c.t].nights ? String(s.types[c.t].nights) : 'Day visit')],
-    ['Follow-up', (c) => (c.v.length === 1 ? fmt(c.v[0].d) + ' ±' + c.v[0].w : c.v.length + ' visits to ' + fmt(c.v[c.v.length - 1].d))],
+    ['Follow-up', (c) => (!c.v.length ? 'Not dated' : c.v.length === 1 ? fmt(c.v[0].d) + (c.v[0].w ? ' ±' + c.v[0].w : '') : c.v.length + ' visits to ' + fmt(c.v[c.v.length - 1].d))],
     ['Pays', (c) => s.types[c.t].pay],
     ['Note', (c) => (s.types[c.t].note ? 'Yes' : '-')],
   ];
@@ -86,7 +95,7 @@ function CohortCompare({ s }) {
           );
         })}
       </div>
-      <p className="mut" style={{ fontSize: 11, margin: '6px 0 0' }}>Values in blue differ between cohorts. Click a date to see it on the timeline.</p>
+      <p className="mut" style={{ fontSize: 11, margin: '6px 0 0' }}>Values in blue differ between cohorts. Click a date to see it on the timeline. Dates were read from the study notes{s.cohorts.some((c) => c.closed) ? '; filled cohorts are hidden' : ''}.</p>
     </>
   );
 }
@@ -115,7 +124,7 @@ function PreQ({ s }) {
               </div>
               <Err msg={S.err.d} />
             </>
-          ) : <p className="mut" style={{ fontSize: 12, margin: '8px 0' }}>No cohort schedule loaded for this study in the prototype.</p>
+          ) : <p className="mut" style={{ fontSize: 12, margin: '8px 0' }}>This study's notes don't give fixed cohort dates. Check availability as the study notes describe (Study information tab).</p>
         ) : (
           <>
             <InfoBlock s={s} />
@@ -145,7 +154,7 @@ export function SayBlock({ z, big }) {
   ) : (
     <>
       <div style={{ fontSize: 11, fontWeight: 500, color: 'var(--text-accent)', margin: '6px 0 2px' }}><Ic n="ti-microphone" /> Say</div>
-      <p style={{ fontFamily: 'var(--font-voice)', fontSize: big ? 17 : 14, lineHeight: 1.5, margin: 0, color: 'var(--text-primary)' }}><Emph t={z.t} nums /></p>
+      <p style={{ fontFamily: 'var(--font-voice)', fontSize: big ? 17 : 14, lineHeight: 1.5, margin: 0, color: 'var(--text-primary)', whiteSpace: 'pre-line' }}><Emph t={z.t} nums /></p>
     </>
   );
 }
@@ -154,7 +163,7 @@ export function NoteBlock({ r, small }) {
   return (
     <div style={{ marginTop: 8, padding: '6px 10px', borderLeft: '3px solid var(--border-warning)', background: 'var(--surface-1)', borderRadius: 0 }}>
       <div style={{ fontSize: 11, fontWeight: 500, color: 'var(--text-warning)' }}>Recruiter only</div>
-      <div style={{ fontSize: small ? 12 : 13, fontStyle: 'italic', lineHeight: 1.55 }}><Emph t={r} /></div>
+      <div style={{ fontSize: small ? 12 : 13, fontStyle: 'italic', lineHeight: 1.55, whiteSpace: 'pre-line' }}><Emph t={r} /></div>
     </div>
   );
 }
@@ -171,7 +180,7 @@ function PeekCard({ L, id }) {
         </span>
         <button className="pill ib" {...A('peek:')} aria-label="Close preview"><Ic n="ti-x" /></button>
       </div>
-      <SayBlock z={z} />
+      {z.kind === 'note' ? <HtmlBlocks blocks={z.html} style={{ marginTop: 6 }} /> : <SayBlock z={z} />}
       {z.r ? <NoteBlock r={z.r} small /> : null}
       {z.crit ? <div style={{ fontSize: 12, marginTop: 6 }}><span className="mut">Exclusion criteria:</span> {z.crit.join(' · ')}</div> : null}
       <div style={{ fontSize: 12, marginTop: 6, display: 'flex', gap: 4, flexWrap: 'wrap', alignItems: 'center' }}>
@@ -269,7 +278,7 @@ function OneMode({ L, i, q }) {
         <span style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
           {q.sec} · <B style={{ color: 'var(--text-primary)', fontSize: 14 }}>Question {i + 1}</B> of {L.length}
           {q.only ? <> · <i style={{ color: 'var(--text-accent)' }}>cohort-specific</i></> : null}
-          {q.when ? <> · <span className="pill bdg tag"><Ic n="ti-corner-down-right" /> Follow-up to Q{L.findIndex((z) => z.id === q.when.id) + 1} ({S.ans[q.when.id] || ''})</span></> : null}
+          {q.when && L.some((z) => z.id === q.when.id) ? <> · <span className="pill bdg tag"><Ic n="ti-corner-down-right" /> Follow-up to Q{L.findIndex((z) => z.id === q.when.id) + 1}{S.ans[q.when.id] ? ' (' + short(S.ans[q.when.id], 30) + ')' : ''}</span></> : null}
         </span>
         {o ? (
           <span style={{ display: 'inline-flex', gap: 4, alignItems: 'center' }}>
@@ -278,7 +287,8 @@ function OneMode({ L, i, q }) {
           </span>
         ) : S.park[q.id] ? <span className="pill bdg warn"><Ic n="ti-bookmark" /> Parked</span> : null}
       </div>
-      <SayBlock z={q} big />
+      {q.before ? <HtmlBlocks blocks={q.before} style={{ marginTop: 6 }} /> : null}
+      {q.kind === 'note' ? <><div className="notehead"><Ic n="ti-info-circle" /> Note from the eSource</div><HtmlBlocks blocks={q.html} /></> : <SayBlock z={q} big />}
       <Extra q={q} s={s} />
       {q.r ? <NoteBlock r={q.r} /> : null}
       {q.carry ? <MedLog c={q.carry} /> : null}
@@ -306,13 +316,14 @@ function OneMode({ L, i, q }) {
           value={S.note[q.id] || ''} onChange={(e) => upd(() => (S.note[curQ().q.id] = e.target.value))}
         />
       </Expander>
-      {S.tips ? <div style={{ fontSize: 11, margin: '10px 0 4px' }} className="mut"><i>Tap an answer or press its key. <b style={{ fontWeight: 500 }}>{keyName('ans1')}</b> picks the {P.why === 'suggested' ? 'suggested answer' : 'answer that moves on'}.</i></div> : <div style={{ height: 10 }} />}
-      <div style={{ display: 'flex', gap: 6 }}>
+      {S.tips ? <div style={{ fontSize: 11, margin: '10px 0 4px' }} className="mut"><i>{q.kind === 'multi' ? <>Tick what applies (keys {keyName('ans1')} to {keyName('ans4')}), then press <b style={{ fontWeight: 500 }}>{keyName('cont')}</b> to record.</> : q.kind === 'text' ? <>Type their answer and press <b style={{ fontWeight: 500 }}>Enter</b>.</> : q.kind === 'note' ? <>Read the note, then press <b style={{ fontWeight: 500 }}>{keyName('ans1')}</b>.</> : <>Tap an answer or press its key. <b style={{ fontWeight: 500 }}>{keyName('ans1')}</b> picks the {P.why === 'suggested' ? 'suggested answer' : 'answer that moves on'}.</>}</i></div> : <div style={{ height: 10 }} />}
+      {q.kind === 'multi' ? <MultiPick q={q} /> : q.kind === 'text' ? <TextAns q={q} focus /> : (
+      <div className="ansrow">
         {q.a.map((b, j) => {
           const isS = P.why === 'suggested' && P.i === j;
           const picked = o && S.ans[q.id] === b[0];
           return (
-            <button key={b[0]} {...A('ans:' + j)} className={'ans ' + (picked ? ocls(b[1]) : '')} aria-pressed={!!picked}
+            <button key={j} {...A('ans:' + j)} className={'ans ' + (picked ? ocls(b[1]) : '')} aria-pressed={!!picked}
               aria-keyshortcuts={ansSlot(q, j) < 4 ? keyName('ans' + (ansSlot(q, j) + 1)) : undefined}
               style={isS ? { outline: '2px solid var(--border-' + (b[1] === 'x' ? 'danger' : b[1] === 'd' ? 'warning' : 'success') + ')', outlineOffset: 1 } : null}>
               {picked ? <><Ic n="ti-check pop" /> </> : null}{b[0]}{S.tips ? <AnsKey q={q} j={j} /> : null}
@@ -321,7 +332,10 @@ function OneMode({ L, i, q }) {
           );
         })}
       </div>
+      )}
+      <Err msg={S.err.t} />
       <FuHint q={q} />
+      {q.after ? <HtmlBlocks blocks={q.after} style={{ marginTop: 8 }} /> : null}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8, flexWrap: 'wrap', gap: 4 }}>
         <button className="pill ib" {...A('prev')} title={'Previous (' + keyName('prev') + ')'} style={i ? null : { visibility: 'hidden' }}><Ic n="ti-arrow-left" /> Previous</button>
         <span style={{ display: 'flex', gap: 4 }}>
@@ -330,6 +344,48 @@ function OneMode({ L, i, q }) {
         </span>
       </div>
       {S.focusMode ? null : <UpNext L={L} i={i} />}
+    </>
+  );
+}
+
+/** 2.5: a multi-select question. Tick what applies, then record (Enter). Keys 1 to 4 tick the first four. */
+function MultiPick({ q, small }) {
+  const p = S.pick[q.id] || (Array.isArray(S.val[q.id]) ? S.val[q.id].map((v) => q.a.findIndex((b) => b[2] === v)).filter((j) => j >= 0) : []);
+  const cur = curQ().q === q;
+  return (
+    <>
+      <div className={small ? 'ansrow sm' : 'ansrow'}>
+        {q.a.map((b, j) => {
+          const on = p.includes(j);
+          return (
+            <button key={j} className={(small ? 'pill ' : 'ans multi ') + (on ? ocls(b[1]) : '')} aria-pressed={on} {...A('pick:' + q.id + ':' + j)} style={small ? { fontSize: 12, textAlign: 'left' } : null}>
+              <Ic n={on ? 'ti-square-check' : 'ti-square'} /> {b[0]}{S.tips && cur && j < 4 ? <span className="k">{keyName('ans' + (j + 1))}</span> : null}
+            </button>
+          );
+        })}
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
+        <button className={'pill ' + (S.out[q.id] ? '' : 'pri')} {...A('ansm:' + q.id)}>
+          {p.length ? 'Record ' + p.length + ' ticked' : 'None of these apply'}{cur ? <> <span className="k">{keyName('cont')}</span></> : null}
+        </button>
+      </div>
+    </>
+  );
+}
+
+/** 2.5: a typed answer (weight, a score, a list). Enter records it in a one-line box. */
+function TextAns({ q, small, focus }) {
+  const v = S.txt[q.id] != null ? S.txt[q.id] : S.out[q.id] ? S.ans[q.id] : '';
+  const set = (e) => upd(() => (S.txt[q.id] = e.target.value));
+  return (
+    <>
+    <div style={{ display: 'flex', gap: 6, alignItems: 'flex-start', marginTop: small ? 6 : 0 }}>
+      {q.long
+        ? <textarea data-f="qt" data-q={q.id} aria-label={q.s} value={v} onChange={set} placeholder="Type their answer" autoFocus={!!focus} style={{ flex: 1, minHeight: 56, fontSize: 13, boxSizing: 'border-box' }} />
+        : <input type="text" data-f="qt" data-q={q.id} aria-label={q.s} value={v} onChange={set} placeholder="Type their answer" autoFocus={!!focus} style={{ flex: 1, height: 34, fontSize: 13 }} />}
+      <button className={'pill ' + (S.out[q.id] ? '' : 'pri')} {...A('anst:' + q.id)}>{S.out[q.id] ? 'Update' : 'Record'} <span className="k">Enter</span></button>
+    </div>
+    {q.long && S.tips ? <div className="mut" style={{ fontSize: 11, marginTop: 2 }}>Shift+Enter for a new line</div> : null}
     </>
   );
 }
@@ -348,7 +404,7 @@ function SectionRows({ sec }) {
     <>
       {Z.map((z) => {
         const n = L.indexOf(z) + 1, cur = z.id === q.id, o = S.out[z.id], noteOpen = !!(cur || S.showNote[z.id]);
-        const full = z.carry || z.dates || z.hol || z.alc;
+        const full = z.carry || z.dates || z.hol || z.alc || z.auto;
         return (
           <div key={z.id} id={'qr-' + z.id} className={'qrow' + (cur ? ' qcur' : '')}
             style={{ padding: '8px 8px 8px 10px', borderTop: '.5px solid var(--border)', scrollMarginTop: 120, ...(z.when ? { marginLeft: 22, borderLeft: '2px solid var(--border-accent)' } : null) }}>
@@ -358,7 +414,8 @@ function SectionRows({ sec }) {
               <span className="mono" style={{ fontSize: 11, color: 'var(--text-secondary)', paddingTop: 3, width: 28, flexShrink: 0 }}>Q{n}</span>
               <div style={{ flex: 1, minWidth: 0 }}>
                 {cur && !o ? <div className="asknext"><Ic n="ti-arrow-big-right-filled" /> Ask next</div> : null}
-                {z.ro ? <div style={{ fontSize: 13, fontWeight: 500 }}><Emph t={z.t} /></div> : <div style={{ fontFamily: 'var(--font-voice)', fontSize: 14, lineHeight: 1.45 }}><Emph t={z.t} nums /></div>}
+                {z.before ? <HtmlBlocks blocks={z.before} style={{ marginBottom: 4 }} /> : null}
+                {z.kind === 'note' ? <HtmlBlocks blocks={z.html} /> : z.ro ? <div style={{ fontSize: 13, fontWeight: 500 }}><Emph t={z.t} /></div> : <div style={{ fontFamily: 'var(--font-voice)', fontSize: 14, lineHeight: 1.45, whiteSpace: 'pre-line' }}><Emph t={z.t} nums /></div>}
                 {z.r ? (
                   <>
                     {noteOpen ? null : <button className="lnk" {...A('shownote:' + z.id)} style={{ fontSize: 11 }}>Recruiter note</button>}
@@ -368,15 +425,17 @@ function SectionRows({ sec }) {
                 {/* 2.4: what used to sit behind "Open full question" is shown here */}
                 {full ? (
                   <div className="qfull">
-                    {z.dates || z.hol || z.alc ? <Extra q={z} s={s} /> : null}
+                    {z.dates || z.hol || z.alc || z.auto ? <Extra q={z} s={s} /> : null}
                     {z.carry ? <MedLog c={z.carry} /> : null}
                   </div>
                 ) : null}
+                {z.kind === 'multi' ? <MultiPick q={z} small /> : z.kind === 'text' ? <TextAns q={z} small /> : null}
+                {z.kind === 'text' && cur ? <Err msg={S.err.t} /> : null}
                 <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 6 }}>
-                  {z.a.map((b, j) => {
+                  {z.kind === 'multi' || z.kind === 'text' ? (o ? <span className={'pill bdg ' + ocls(o)}>Recorded: {short(S.ans[z.id], 60)}</span> : null) : z.a.map((b, j) => {
                     const picked = o && S.ans[z.id] === b[0];
                     return (
-                      <button key={b[0]} className={'pill ' + (picked ? ocls(b[1]) : '')} aria-pressed={!!picked} {...A('ansl:' + z.id + ':' + j)} style={{ fontSize: 12 }}>
+                      <button key={j} className={'pill ' + (picked ? ocls(b[1]) : '')} aria-pressed={!!picked} {...A('ansl:' + z.id + ':' + j)} style={{ fontSize: 12 }}>
                         {picked ? <><Ic n="ti-check pop" /> </> : null}{b[0]}{cur && S.tips ? <AnsKey q={z} j={j} /> : null}
                       </button>
                     );
@@ -385,6 +444,7 @@ function SectionRows({ sec }) {
                   {needsReview(z) ? <span className="pill bdg warn">Review</span> : null}
                 </div>
                 {o ? null : <FuHint q={z} />}
+                {z.after ? <HtmlBlocks blocks={z.after} style={{ marginTop: 6 }} /> : null}
               </div>
             </div>
           </div>

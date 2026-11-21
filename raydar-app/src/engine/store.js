@@ -1,7 +1,8 @@
 /* RAYDAR engine: state, eligibility rules and actions, carried over from RAYDAR 2.2.
    The only changes: act() ends with commit() instead of render(), the copy action moved
    into the Dr enquiry component, and functions that returned HTML strings became JSX in views/. */
-import {CONDS,ST,PRO,PAL,EQQ,GENQ,COR} from './data.js';
+import {CONDS} from './data.js';
+import {ST} from '../esource/studies.js';
 import {resetKeys} from './keys.js';
 
 /* ---- store plumbing: React subscribes with useSyncExternalStore ---- */
@@ -14,7 +15,7 @@ export function upd(fn){lastAction='input';fn(S);commit()}
 
 /* ---- frequency gate (UX skill, question 1) ----
    Actions people fire many times a call show their result on the next frame: no entrance animations. */
-export const FREQ=new Set(['ans','ansl','next','prev','goq','goone','navback','sec','secstep','undo','clr','peek','park','crit','avail','set','norest','fs','zoom','psel','pshow','sub','mode','lt','mt','rowadd','rowdel','flag','awdel','theme','key']);
+export const FREQ=new Set(['ans','ansl','ansm','anst','pick','next','prev','goq','goone','navback','sec','secstep','undo','clr','peek','park','crit','avail','set','norest','fs','zoom','psel','pshow','sub','mode','lt','mt','rowadd','rowdel','flag','awdel','theme','key']);
 export let lastAction='';
 export const quiet=()=>FREQ.has(lastAction);
 export function markAction(k){lastAction=k}
@@ -33,10 +34,10 @@ const pl=(n,w)=>n+' '+w+(n===1?'':'s');
 const cn=n=>n.replace(' (sample dates)','');
 function tipStay(s,c){const n=dd(c.in,c.out);return s.c+' · '+cn(c.n)+'\nIn-clinic stay\nCheck in::'+fmtL(c.in)+'\nCheck out::'+fmtL(c.out)+'\nDuration::'+pl(n+1,'day')+(n?', '+pl(n,'night'):'')+(S.away.length&&cStat(c)==='open'?'\nAway dates::'+(stayHit(c)?'Clash with the stay':'No clash'):'')}
 function tipVisit(s,c,v){const a=vS(v),b=vE(v),st=vStat(v);return s.c+' · '+cn(c.n)+'\n'+v.l+'\nPrescribed::'+fmtL(v.d)+'\nEarliest::'+fmtL(a)+'\nLatest::'+fmtL(b)+'\nWindow::'+(v.a?(dd(a,b)+1)+'-day window':'±'+pl(v.w,'day'))+(S.away.length&&cStat(c)==='open'?'\nAway dates::'+(st==='clash'?'Clash, whole window covered':st==='caution'?'Caution, window partly covered':'No clash'):'')}
-function tipCohort(s,c){const k=cKey(c);return s.c+' · '+cn(c.n)+'\n'+rk(k)[0]+'\nStay::'+fmtR(c.in,c.out)+'\nFollow-ups::'+pl(c.v.length,'visit')+', last '+fmt(c.v[c.v.length-1].d)+'\nClick to jump::on the calendar'}
+function tipCohort(s,c){const k=cKey(c);return s.c+' · '+cn(c.n)+'\n'+rk(k)[0]+'\nStay::'+fmtR(c.in,c.out)+'\nFollow-ups::'+(c.v.length?pl(c.v.length,'visit')+', last '+fmt(c.v[c.v.length-1].d):'None dated')+'\nClick to jump::on the calendar'}
 function tipAway(a){return 'Participant away\n\nFrom::'+fmtL(a[0])+'\nUntil::'+fmtL(a[1])+'\nLength::'+pl(dd(a[0],a[1])+1,'day')}
 const EF=()=>({n:'',ind:'',dose:'',route:'',st:'',en:''});
-const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false});
+const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false});
 export let S=fresh(1);
 const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 const SC=c=>ST.find(x=>x.c===c);
@@ -66,14 +67,14 @@ if(S.meds==='y')return s.strict?['no',s.medMsg||'No medication 14 days before do
 if(S.smoke==='y')return['check','Check nicotine limit'];
 if(CONDS.some(c=>S.cond[c[0]]==null&&!(c[0]==='mphl'&&S.sex==='f')))miss.push('conditions');
 if(S.meds==null)miss.push('medications')}
-else{const v=S.cond[s.need];if(v==='n')return['no','Recruits '+nm(s.need)+' only'];if(v==null)miss.push(nm(s.need))}
+else if(s.need){const v=S.cond[s.need];if(v==='n')return['no','Recruits '+nm(s.need)+' only'];if(v==null)miss.push(nm(s.need))}
 if(s.cohorts&&S.away.length&&openC(s).every(c=>cRisk(c)!=='ok'))return['check','Away dates touch every cohort'];
 return miss.length?['check','Ask about '+miss.slice(0,2).join(' and ')]:['yes','Nothing flagged so far']}
 function ranked(){const o={yes:0,check:1,no:2};return ST.map(s=>({s,r:ev(s)})).sort((a,b)=>o[a.r[0]]-o[b.r[0]])}
 const COL={yes:'var(--fill-success)',check:'var(--fill-warning)',no:'var(--border-stronger)'};
 const TXT={yes:'var(--text-success)',check:'var(--text-warning)',no:'var(--text-secondary)'};
 function proS(){return S.proS||(S.study&&S.study.c)||ranked()[0].s.c}
-function proFor(c){const s=SC(c);return PRO[s&&s.qs?s.qs:'gen']}
+function proFor(c){const s=SC(c);return (s&&s.pro)||{}}
 const isMedT=t=>t==='med'||t==='otc';
 const inCarry=(e,c)=>c==='hx'?e.t==='hx':isMedT(e.t);
 function eText(e){return [e.n,e.ind,e.dose,e.route].filter(Boolean).join(' ')}
@@ -84,16 +85,27 @@ const hm=S.log.some(e=>e.auto==='meds');if(S.meds==='y'&&!hm)S.log.push(Object.a
 function avl(code){return S.avail[code]||(S.avail[code]={})}
 function selC(s){s=s||S.study;if(!s||!s.cohorts)return [];const a=avl(s.c);return s.cohorts.filter(c=>a[c.id])}
 function selTypes(s){return [...new Set(selC(s).map(c=>c.t))]}
-function qset(){const s=S.study;if(!s)return [];const L=srcQ(s),T=selTypes(),vis=new Set(),out=[];L.forEach(q=>{if(q.sex&&q.sex!==S.sex)return;if(q.only&&!q.only.some(t=>T.includes(t)))return;if(q.when&&!(vis.has(q.when.id)&&q.when.is.includes(S.ans[q.when.id])))return;vis.add(q.id);out.push(q)});return out}
-function srcQ(s){s=s||S.study;return !s?[]:s.qs==='pal'?PAL:s.qs==='eq'?EQQ:s.qs==='cor'?COR:GENQ}
-const RAYDAR_VERSION='RAYDAR 2.4 · study data updated 19 Nov 2026 (COR-PAG-26-101 pre-screening form)';
+/* 2.5: a question shows when its eSource condition (visibleIf) is true. A hidden question's answer doesn't count. */
+function valueOf(name,vis,over){const s=S.study;if(!s)return undefined;const parts=String(name).split('.'),base=parts[0].trim(),sub=parts[1]&&parts[1].trim().toLowerCase(),q=s.byName[base];if(!q)return undefined;
+if(q.auto==='age'){const a=age();return a}
+if(q.auto==='bmi'){const b=bmi();if(!sub||sub==='bmiscore'||sub==='bmi')return b;if(sub==='weight')return parseFloat(S.wt);if(sub==='height')return parseFloat(S.ht);return undefined}
+if(over&&over.id===base)return over.v;
+if(vis&&!vis.has(base))return undefined;return S.val[base]}
+function qset(){const s=S.study;if(!s)return [];const L=srcQ(s),T=selTypes(),vis=new Set(),out=[];const get=n=>valueOf(n,vis);L.forEach(q=>{if(q.sex&&q.sex!==S.sex)return;if(q.only&&!q.only.some(t=>T.includes(t)))return;if(q.vis&&!q.vis.test(get))return;vis.add(q.id);out.push(q)});return out}
+/** Is this eSource note (a block with its own condition) showing right now? */
+function noteShows(b){if(!b.vis)return true;const vis=new Set(qset().map(q=>q.id));return b.vis.test(n=>valueOf(n,vis))}
+/** Would answering q with answer b open a question that is hidden now? */
+function opensWith(q,b){const s=S.study;if(!s)return false;const vis=new Set(qset().map(z=>z.id));vis.add(q.id);return s.Q.some(z=>z.vis&&z.deps&&z.deps.includes(q.id)&&!vis.has(z.id)&&z.vis.test(n=>valueOf(n,vis,{id:q.id,v:b[2]})))}
+function srcQ(s){s=s||S.study;return !s?[]:s.Q||[]}
+const RAYDAR_VERSION='RAYDAR 2.5 · questions, scripts and notes from the TST eSource files';
 const oc=o=>o==='c'?'success':o==='d'?'warning':o==='x'?'danger':'accent';
 function curQ(){const L=qset();let i=L.findIndex(q=>q.id===S.qid);if(i<0){i=L.findIndex(q=>!S.out[q.id]);if(i<0)i=0;S.qid=L[i]&&L[i].id}return {L,i,q:L[i]}}
 function qMatches(q){if(!q.carry)return [];return S.log.filter(e=>inCarry(e,q.carry)).map(e=>({e,p:matchP(e)})).filter(z=>z.p&&z.p.o!=='ok')}
-function sugQ(q){if(q.carry){const m=qMatches(q);if(m.some(z=>z.p.o==='x'))return 'x';if(m.length)return 'd';return S.log.some(e=>inCarry(e,q.carry))?null:'c'}
-if(q.auto==='sex')return S.sex==='m'?'Male':S.sex==='f'?'Female':null;
-if(q.auto==='age'){const a=age(),r=(S.study&&S.study.age)||[18,55];if(a==null)return null;return a>=r[0]&&a<=r[1]?'c':'x'}
-if(q.auto==='bmi'){const b=bmi(),w=parseFloat(S.wt),s=S.study||{},r=s.bmi||[18,33];if(b==null)return null;const minW=s.wMin?(S.sex==='m'?s.wMin[1]:s.wMin[0]):0;return b>=r[0]&&b<=r[1]&&w>=minW&&w<=(s.wMax||130)?'c':'x'}
+function sugQ(q){if(q.kind==='log'){const m=qMatches(q),has=S.log.some(e=>inCarry(e,q.carry));return !has?'None':m.length||S.log.some(e=>inCarry(e,q.carry)&&e.f)?'Logged, raise with doctors':'Logged'}
+if(q.carry){const m=qMatches(q);if(m.some(z=>z.p.o==='x'))return 'x';if(m.length)return 'd';return S.log.some(e=>inCarry(e,q.carry))?null:'c'}
+if(q.auto==='sex'){if(!S.sex)return null;const b=q.a.find(b=>(S.sex==='m'?/^male\b/i:/^female\b/i).test(b[0].trim()));return b?b[0]:null}
+if(q.auto==='age'){const a=age(),r=q.range||(S.study&&S.study.age);if(a==null)return null;if(!r)return 'c';return a>=r[0]&&a<=r[1]?'c':'x'}
+if(q.auto==='bmi'){const b=bmi(),r=q.range||(S.study&&S.study.bmi);if(b==null)return null;if(!r)return 'c';return b>=r[0]&&b<=r[1]?'c':'x'}
 if(q.hol){if(!S.away.length)return null;const r=selC().map(cRisk);return r.includes('clash')?'x':r.includes('caution')?'d':'c'}
 if(q.dates)return selC().length?null:'x';
 if(q.alc){const n=parseFloat(S.alc);if(isNaN(n))return null;return n<=(S.sex==='m'?21:14)?'c':'x'}
@@ -109,7 +121,7 @@ const ZP=()=>S.zoom==='far'?3:16;
 const FLD={med:[['n','Medication name','Valacyclovir'],['ind','Indication (what for)','Cold sores'],['dose','Dosage','500mg as needed'],['route','Route','Oral'],['st','Start date','2024'],['en','End date, if stopped','Mar 2026']],otc:[['n','Supplement or OTC name','Iron'],['ind','Indication (what for)','Low iron'],['dose','Dosage','1 tablet daily'],['route','Route','Oral'],['st','Start date','Jan 2026'],['en','End date, if stopped','']],hx:[['n','Condition or event','Low iron'],['st','Start date or diagnosed','2024'],['en','End date, if resolved','']]};
 const TL={med:'Medication',otc:'Supplement or OTC',hx:'Condition or event'};
 const EMRE=/(raise an enquiry|raise with the doctors|raise a doctor enquiry|doctor check)|(excludes|excluded|exclude|must be negative|not allowed)|(\bOK\b|is fine|are fine|allowed)|((?<![A-Za-z0-9-])\d+(?:\.\d+)?(?:\s?(?:to|or|-)\s?\d+(?:\.\d+)?)?(?:\s?(?:days?|weeks?|months?|hours?|hrs|kg|mg|nights?|years?|minutes|half-lives|a week|a day))?)/gi;
-const ocls=o=>o==='c'?'ok':o==='d'?'warn':o==='n'?'nt':'bad';
+const ocls=o=>o==='c'?'ok':o==='d'?'warn':o==='x'?'bad':'nt';
 function needsReview(q){const o=S.out[q.id];if(!o)return false;const sg=sugQ(q),r={c:0,n:0,d:1,x:2};if(!(sg in r))return false;return r[sg]>r[o]}
 function frontier(L){return L.find(z=>!S.out[z.id]&&!S.park[z.id])||L.find(z=>!S.out[z.id])}
 function goQ(id){const c=curQ();if(c.q&&c.q.id!==id){S.nav.push(c.q.id);if(S.nav.length>30)S.nav.shift()}S.qid=id;S.peek=null;S.qon=true;S.stage='ps'}
@@ -122,7 +134,7 @@ function drCode(){return S.dre.study||(S.study&&S.study.c)||proS()}
 function drText(){const a=age(),sx=S.sex?(S.sex==='f'?'F':'M'):'';const li=e=>'- '+e.n+(eParts(e).length?' - '+eParts(e).join(', '):'');const sec=(h,t)=>{const L=S.log.filter(e=>e.t===t);return [h+':',...(L.length?L.map(li):['- Nil'])]};const con=(S.dre.concern||'').split('\n').filter(x=>x.trim());
 return ['Study: '+drCode(),'Age and Sex: '+(a!=null?a:'')+sx,'Participant link: '+(S.dre.url||''),'',...sec('Medications','med'),'',...sec('Supplements/OTC','otc'),'',...sec('Medical Conditions/Events','hx'),'','Concern:',...(con.length?con.map(x=>'- '+x.replace(/^[-*]\s*/,'')):['- '])].join('\n')}
 
-function start(c){if(!S.idok){S.stage='id';S.err={id:'Confirm identity before starting a pre-screen'};return}S.study=SC(c);S.proS=null;S.stage='ps';S.qon=false;S.sub='dates';S.qid=null;S.out={};S.ans={};S.why={};S.note={};S.tool=null;S.err={};S.fin=null;S.all=false;S.last=null;S.mOpen=false;S.mq='';S.infoOpen=false}
+function start(c){if(!S.idok){S.stage='id';S.err={id:'Confirm identity before starting a pre-screen'};return}S.study=SC(c);S.proS=null;S.stage='ps';S.qon=false;S.sub='dates';S.qid=null;S.out={};S.ans={};S.val={};S.pick={};S.txt={};S.why={};S.note={};S.tool=null;S.err={};S.fin=null;S.all=false;S.last=null;S.mOpen=false;S.mq='';S.infoOpen=false}
 function advance(){const {L,i}=curQ();S.mOpen=false;S.mq='';S.mErr='';S.hOpen=false;S.hq='';S.hErr='';S.peek=null;let j=i+1;while(j<L.length&&(S.out[L[j].id]||S.park[L[j].id]))j++;if(j<L.length)S.qid=L[j].id;else{const u=frontier(L);if(u)S.qid=u.id}}
 function doJump(code,cid){const s=SC(code),c=s&&s.cohorts.find(z=>z.id===cid);if(!c)return;S.plan=true;S.tool=null;if(!pShown(s)){if(!S.pShow){const m={};planStudies().forEach(z=>m[z.c]=pShown(z));S.pShow=m}S.pShow[code]=true}if(S.hideClosed&&cStat(c)!=='open')S.hideClosed=false;S.psel=[code,cid];S.jumpSmooth=true;S.jumpTo=cKey(c)==='ok'||cStat(c)!=='open'?c.in:conflictDate(c)}
 function pushLog(F,t,ed){const e=Object.assign(EF(),{t},Object.fromEntries(Object.entries(F).map(([k,v])=>[k,String(v).trim()])),{t,src:(ed&&ed.src)||srcLabel(),auto:(ed&&ed.auto)||null,f:!!(ed&&ed.f)});S.log.push(e)}
@@ -133,7 +145,8 @@ function addRows(pre,t,ed){const rows=pre==='r'?S.f:pre==='h'?S.hf:S.mf;const ha
    Key 1 always goes to the answer most likely to be right: the suggested one when RAYDAR has a suggestion,
    otherwise the answer that simply moves on (eligible, and doesn't open a follow-up). The rest keep their
    on-screen order on keys 2, 3 and 4. */
-function opensFollowUp(q,label){return srcQ().some(z=>z.when&&z.when.id===q.id&&z.when.is.includes(label))}
+function opensFollowUp(q,label){const b=q.a.find(x=>x[0]===label);return !!b&&opensWith(q,b)}
+function followUpLabels(q){return q.a.filter(b=>opensWith(q,b)).map(b=>b[0])}
 function sugIdx(q){const sg=sugQ(q);if(!sg)return -1;const byLabel=q.a.findIndex(b=>b[0]===sg);if(byLabel>=0)return byLabel;return q.a.findIndex(b=>b[1]===sg)}
 function primaryIdx(q){const s=sugIdx(q);if(s>=0)return {i:s,why:'suggested'};const m=q.a.findIndex(b=>b[1]==='c'&&!opensFollowUp(q,b[0]));return m>=0?{i:m,why:'moves on'}:{i:0,why:''}}
 /** answer indexes in key order: ansOrder(q)[0] is on key 1 */
@@ -156,6 +169,10 @@ if(S.stage==='ps'&&S.study&&S.qon){if(!psDone())return null;const L=qset(),x=L.f
 if(S.stage==='finish'&&S.saved)return {a:'new',done:'Saved',to:'Next call',btn:'Start next call'};
 return null}
 
+/* 2.5: a multi-select answer is its ticked options (worst outcome wins); a typed answer is the text. */
+const RANK={x:4,d:3,c:2,n:1,i:0};
+function multiB(q){const p=(S.pick[q.id]||[]).filter(j=>q.a[j]);if(!p.length)return ['None of these','i',[]];const o=p.map(j=>q.a[j][1]).reduce((m,z)=>RANK[z]>RANK[m]?z:m,'i');return [p.map(j=>q.a[j][0]).join('; '),o,p.map(j=>q.a[j][2])]}
+function textB(q){const t=String(S.txt[q.id]||'').trim();if(!t){S.err={t:'Type their answer first'};S.shake='t';return null}return [t,'i',t]}
 function act(a){const p=a.split(':'),k=p[0],x=p[1],y=p.slice(2).join(':');S.toast='';lastAction=k;
 if(k!=='discard')S.discard=false;
 if(k==='go'){if(x!=='id'&&!S.idok){S.stage='id';S.err={id:x==='finish'?'Confirm identity first. The PID goes in the file name':'Confirm identity first'}}else if(x==='ps'&&!S.study){start(ranked()[0].s.c)}else{S.stage=x;S.err={}}}
@@ -172,13 +189,15 @@ else if(k==='avail'){const o=avl(x);o[y]=!o[y];if(S.study&&S.study.c===x&&!selC(
 else if(k==='info')S.infoOpen=!S.infoOpen;
 else if(k==='sec'){const sn=decodeURIComponent(x),L=qset().filter(q=>q.sec===sn);const u=L.find(q=>!S.out[q.id])||L[0];if(u)goQ(u.id);S.last=null}
 else if(k==='secstep'){const L=qset(),secs=[...new Set(L.map(z=>z.sec))],cq=curQ().q,si=secs.indexOf(cq.sec)+(+x);if(si>=0&&si<secs.length){const Z=L.filter(z=>z.sec===secs[si]);goQ((Z.find(z=>!S.out[z.id])||Z[0]).id)}}
-else if(k==='ans'||k==='ansl'){const L=qset();let q,j;if(k==='ans'){q=curQ().q;j=+x}else{q=L.find(z=>z.id===x);j=+y}const i=L.indexOf(q),b=q.a[j],w=S.why[q.id]||[],was=S.out[q.id],pa=S.ans[q.id];
+else if(k==='pick'){const q0=srcQ().find(z=>z.id===x),p=S.pick[x]=S.pick[x]||(q0&&Array.isArray(S.val[x])?S.val[x].map(v=>q0.a.findIndex(b=>b[2]===v)).filter(i=>i>=0):[]),j=+y,i=p.indexOf(j);if(i>=0)p.splice(i,1);else p.push(j);p.sort((a,b)=>a-b);S.err={}}
+else if(k==='ans'||k==='ansl'||k==='ansm'||k==='anst'){const L=qset();let q,b,lst=k==='ansl';if(k==='ans'){q=curQ().q;b=q&&q.a[+x]}else{q=L.find(z=>z.id===x);if(k==='ansl')b=q&&q.a[+y];else{lst=S.mode==='list';b=q&&(k==='ansm'?multiB(q):textB(q))}}
+if(q&&b){const i=L.indexOf(q),w=S.why[q.id]||[],was=S.out[q.id],pa=S.ans[q.id],pv=S.val[q.id];
 if(b[1]!=='c'&&!w.length){const mm=qMatches(q);if(mm.length)S.why[q.id]=[mm[0].p.n]}
-if(was&&S.ans[q.id]!==b[0])S.hist[q.id]=S.ans[q.id];S.out[q.id]=b[1];S.ans[q.id]=b[0];delete S.park[q.id];S.err={};
-if(k==='ansl'){const L2=qset(),i2=L2.indexOf(q),Z=L2.filter(z=>z.sec===q.sec),nx=Z.slice(Z.indexOf(q)+1).find(z=>!S.out[z.id]&&!S.park[z.id])||Z.find(z=>!S.out[z.id]&&!S.park[z.id]);let moved='';if(nx)S.qid=nx.id;else{const fr=frontier(L2);if(fr){S.qid=fr.id;if(fr.sec!==q.sec)moved='Section done, now on '+fr.sec}else S.qid=q.id}S.scrollQ=true;S.last={qid:q.id,label:'Q'+(i2+1)+' recorded as '+b[0],next:S.qid,o:b[1],po:was,pa:pa,moved}}
-else{const lbl='Q'+(i+1)+' recorded as '+b[0]+(was&&S.hist[q.id]?' (was '+S.hist[q.id]+')':'');if(was){const fr=frontier(L);S.nav=[];if(fr){S.qid=fr.id;S.peek=null}}else advance();S.last={qid:q.id,label:lbl,next:S.stage==='ps'?S.qid:null,o:b[1],po:was,pa:pa}}}
-else if(k==='undo'){if(S.last){S.stage='ps';S.qid=S.last.qid;if(S.last.po){S.out[S.qid]=S.last.po;S.ans[S.qid]=S.last.pa}else{delete S.out[S.qid];delete S.ans[S.qid]}S.last=null;S.scrollQ=true}}
-else if(k==='clr'){const rm=id=>{delete S.out[id];delete S.ans[id];delete S.why[id];srcQ().filter(z=>z.when&&z.when.id===id).forEach(z=>rm(z.id))};rm(x);delete S.park[x];S.qid=x;S.last=null;S.scrollQ=true;S.toast=''}
+if(was&&S.ans[q.id]!==b[0])S.hist[q.id]=S.ans[q.id];S.out[q.id]=b[1];S.ans[q.id]=b[0];S.val[q.id]=b[2];delete S.park[q.id];S.err={};
+if(lst){const L2=qset(),i2=L2.indexOf(q),Z=L2.filter(z=>z.sec===q.sec),nx=Z.slice(Z.indexOf(q)+1).find(z=>!S.out[z.id]&&!S.park[z.id])||Z.find(z=>!S.out[z.id]&&!S.park[z.id]);let moved='';if(nx)S.qid=nx.id;else{const fr=frontier(L2);if(fr){S.qid=fr.id;if(fr.sec!==q.sec)moved='Section done, now on '+fr.sec}else S.qid=q.id}S.scrollQ=true;S.last={qid:q.id,label:'Q'+(i2+1)+' recorded as '+short(b[0],60),next:S.qid,o:b[1],po:was,pa:pa,pv:pv,moved}}
+else{const lbl='Q'+(i+1)+' recorded as '+short(b[0],60)+(was&&S.hist[q.id]?' (was '+short(S.hist[q.id],40)+')':'');if(was){const fr=frontier(L);S.nav=[];if(fr){S.qid=fr.id;S.peek=null}}else advance();S.last={qid:q.id,label:lbl,next:S.stage==='ps'?S.qid:null,o:b[1],po:was,pa:pa,pv:pv}}}}
+else if(k==='undo'){if(S.last){S.stage='ps';S.qid=S.last.qid;if(S.last.po){S.out[S.qid]=S.last.po;S.ans[S.qid]=S.last.pa;S.val[S.qid]=S.last.pv}else{delete S.out[S.qid];delete S.ans[S.qid];delete S.val[S.qid]}S.last=null;S.scrollQ=true}}
+else if(k==='clr'){const rm=id=>{delete S.out[id];delete S.ans[id];delete S.val[id];delete S.why[id];delete S.pick[id];srcQ().filter(z=>z.deps&&z.deps.includes(id)&&S.out[z.id]).forEach(z=>rm(z.id))};rm(x);delete S.park[x];S.qid=x;S.last=null;S.scrollQ=true;S.toast=''}
 else if(k==='rebind'){S.rebind=S.rebind===x?null:x||null;S.keyMsg=''}
 else if(k==='keyreset'){resetKeys();S.rebind=null;S.keyMsg='Shortcuts reset to the defaults'}
 else if(k==='tips'){S.tips=!S.tips;if(S.tool==='guide'&&!S.tips)S.tool=null}
@@ -241,4 +260,4 @@ else if(x==='copy'){}
 else if(x==='send'){const t=S.dre.txt!=null?S.dre.txt:drText();if(typeof sendPrompt==='function'){sendPrompt('Here is the Dr enquiry for '+drCode()+':\n\n'+t);S.copied='Sent to chat'}else S.copied='Sending to chat is not available here'}}
 commit()}
 
-export {ansOrder,ansSlot,primaryIdx,opensFollowUp,idReady,qcLeft,qcDone,preqDone,psDone,nextStep,COL,DD,EF,EMRE,FLD,RAYDAR_VERSION,SC,TL,TODAY,TXT,ZP,act,add,addRows,advance,age,avl,bmi,cKey,cRisk,cStat,camel,cn,conflictDate,curQ,dd,doJump,drCode,drText,eParts,eText,esc,ev,fmt,fmtL,fmtR,fname,fresh,frontier,goQ,inCarry,isAway,isMedT,iso,lastDay,matchP,needsReview,nextOpen,nm,oc,ocls,openC,pShown,pl,planStudies,proFor,proS,pushLog,qMatches,qset,ranked,reason,rk,selC,selTypes,short,srcLabel,srcQ,start,stayHit,sug,sugQ,syncAuto,tipAway,tipCohort,tipStay,tipVisit,tlB,vE,vS,vStat};
+export {noteShows,opensWith,followUpLabels,valueOf,multiB,ansOrder,ansSlot,primaryIdx,opensFollowUp,idReady,qcLeft,qcDone,preqDone,psDone,nextStep,COL,DD,EF,EMRE,FLD,RAYDAR_VERSION,SC,TL,TODAY,TXT,ZP,act,add,addRows,advance,age,avl,bmi,cKey,cRisk,cStat,camel,cn,conflictDate,curQ,dd,doJump,drCode,drText,eParts,eText,esc,ev,fmt,fmtL,fmtR,fname,fresh,frontier,goQ,inCarry,isAway,isMedT,iso,lastDay,matchP,needsReview,nextOpen,nm,oc,ocls,openC,pShown,pl,planStudies,proFor,proS,pushLog,qMatches,qset,ranked,reason,rk,selC,selTypes,short,srcLabel,srcQ,start,stayHit,sug,sugQ,syncAuto,tipAway,tipCohort,tipStay,tipVisit,tlB,vE,vS,vStat};

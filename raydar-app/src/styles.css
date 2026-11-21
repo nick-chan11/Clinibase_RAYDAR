@@ -168,3 +168,22 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 /* Rebindable key caps */
 #rd .keycap{min-width:64px;text-align:center;font-family:var(--font-mono);font-size:12px;padding:2px 8px}
 #rd .keycap.on{border-color:var(--border-accent);box-shadow:0 0 0 2px var(--bg-accent)}
+
+/* ===================== RAYDAR 2.5: eSource content ===================== */
+/* Answers wrap into columns, since eSource answers are often full sentences */
+#rd .ansrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:6px}
+#rd .ansrow.sm{display:flex;flex-wrap:wrap;gap:4px}
+#rd .ans{padding:9px 10px}
+#rd .ans.multi{text-align:left}
+#rd .notehead{font-size:11px;font-weight:500;color:var(--text-accent);margin:6px 0 2px;display:flex;align-items:center;gap:4px}
+/* Study Notes and recruiter notes written in the eSource editor */
+#rd .esrc{font-size:13px;line-height:1.55}
+#rd .esrc-b+.esrc-b{margin-top:6px}
+#rd .esrc p{margin:0 0 4px}
+#rd .esrc p:empty{margin:0 0 6px}
+#rd .esrc ul,#rd .esrc ol{margin:2px 0 6px;padding-left:20px}
+#rd .esrc h1,#rd .esrc h2,#rd .esrc h3,#rd .esrc h4{font-size:14px;font-weight:600;margin:8px 0 4px}
+#rd .esrc table{border-collapse:collapse;margin:4px 0;font-size:12px}
+#rd .esrc td,#rd .esrc th{border:.5px solid var(--border-strong);padding:3px 6px;vertical-align:top}
+#rd .esrc a{color:var(--text-accent)}
+#rd .esrc strong,#rd .esrc b{font-weight:600}

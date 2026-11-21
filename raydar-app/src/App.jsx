@@ -75,6 +75,8 @@ function onKey(e) {
   if (f && /^r\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('logadd'); return; }
   if (f && /^m\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('madd:med'); return; }
   if (f && /^h\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('madd:hx'); return; }
+  // 2.5: Enter records a typed answer; Shift+Enter starts a new line in a longer box
+  if (f === 'qt' && e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); act('anst:' + e.target.dataset.q); return; }
   if (f === 'qs' && e.key === 'Escape') { upd(() => { S.qs = ''; S.mapOpen = false; }); return; }
   const tg = e.target.tagName || '';
   // Enter submits the identity form from its own fields, never from a focused button elsewhere
@@ -89,13 +91,19 @@ function onKey(e) {
   if ((e.key === 'Enter' || e.key === ' ') && (tg === 'BUTTON' || tg === 'A')) return;
   const id = actionFor(e.key);
   if (id === 'undo') { if (S.last) { e.preventDefault(); act('undo'); } return; }
-  if (id === 'cont') { const n = nextStep(); if (n) { e.preventDefault(); act(n.a); } return; }
+  if (id === 'cont') {
+    // 2.5: on a multi-select question, the continue key records what's ticked
+    if (S.stage === 'ps' && S.qon) { const cq = curQ().q; if (cq && cq.kind === 'multi') { e.preventDefault(); act('ansm:' + cq.id); return; } }
+    const n = nextStep(); if (n) { e.preventDefault(); act(n.a); } return;
+  }
   if (!(S.stage === 'ps' && S.qon)) return;
   if (e.key === 'Escape') { if (S.peek) act('peek:'); else if (S.qs) upd(() => (S.qs = '')); return; }
   if (!id) return;
   const { q } = curQ();
   if (/^ans\d$/.test(id)) {
     if (!q) return;
+    if (q.kind === 'multi') { const j = +id.slice(3) - 1; if (q.a[j]) { e.preventDefault(); act('pick:' + q.id + ':' + j); } return; }
+    if (q.kind === 'text') { e.preventDefault(); document.querySelector('[data-f="qt"][data-q="' + CSS.escape(q.id) + '"]')?.focus(); return; }
     const j = ansOrder(q)[+id.slice(3) - 1];
     if (j == null) return;
     e.preventDefault();
