@@ -1,6 +1,6 @@
-import { memo, useEffect, useLayoutEffect, useRef, useSyncExternalStore } from 'react';
+import { memo, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { S, act, ansOrder, commit, curQ, getVersion, nextStep, subscribe, upd } from './engine/store.js';
+import { S, act, ansOrder, commit, curQ, getVersion, nextStep, ranked, subscribe, upd } from './engine/store.js';
 import { KEY_ACTIONS, UNBINDABLE, actionFor, bind, keyLabel, keyName } from './engine/keys.js';
 import { Expander, shake } from './motion/components.jsx';
 import { STAGE, STAGE_EXIT, prefersReduced } from './motion/tokens.js';
@@ -75,6 +75,8 @@ function onKey(e) {
   if (f && /^r\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('logadd'); return; }
   if (f && /^m\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('madd:med'); return; }
   if (f && /^h\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('madd:hx'); return; }
+  // 2.5: Enter records a typed answer; Shift+Enter starts a new line in a longer box
+  if (f === 'qt' && e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); act('anst:' + e.target.dataset.q); return; }
   if (f === 'qs' && e.key === 'Escape') { upd(() => { S.qs = ''; S.mapOpen = false; }); return; }
   const tg = e.target.tagName || '';
   // Enter submits the identity form from its own fields, never from a focused button elsewhere
@@ -89,13 +91,27 @@ function onKey(e) {
   if ((e.key === 'Enter' || e.key === ' ') && (tg === 'BUTTON' || tg === 'A')) return;
   const id = actionFor(e.key);
   if (id === 'undo') { if (S.last) { e.preventDefault(); act('undo'); } return; }
-  if (id === 'cont') { const n = nextStep(); if (n) { e.preventDefault(); act(n.a); } return; }
+  // 2.6: the call script, and choosing a study by number
+  if (e.key === 'Escape' && S.script) { e.preventDefault(); act('script:close'); return; }
+  if (id === 'script' && S.stage === 'ps' && S.study) { e.preventDefault(); act('script:side'); return; }
+  if (S.stage === 'ps' && !S.study && /^[1-9]$/.test(e.key)) {
+    const order = ['yes', 'check', 'no'], L = ranked().slice().sort((a, b) => order.indexOf(a.r[0]) - order.indexOf(b.r[0])), x = L[+e.key - 1];
+    if (x) { e.preventDefault(); act('start:' + x.s.c); }
+    return;
+  }
+  if (id === 'cont') {
+    // 2.5: on a multi-select question, the continue key records what's ticked
+    if (S.stage === 'ps' && S.qon) { const cq = curQ().q; if (cq && cq.kind === 'multi') { e.preventDefault(); act('ansm:' + cq.id); return; } }
+    const n = nextStep(); if (n) { e.preventDefault(); act(n.a); } return;
+  }
   if (!(S.stage === 'ps' && S.qon)) return;
   if (e.key === 'Escape') { if (S.peek) act('peek:'); else if (S.qs) upd(() => (S.qs = '')); return; }
   if (!id) return;
   const { q } = curQ();
   if (/^ans\d$/.test(id)) {
     if (!q) return;
+    if (q.kind === 'multi') { const j = +id.slice(3) - 1; if (q.a[j]) { e.preventDefault(); act('pick:' + q.id + ':' + j); } return; }
+    if (q.kind === 'text') { e.preventDefault(); document.querySelector('[data-f="qt"][data-q="' + CSS.escape(q.id) + '"]')?.focus(); return; }
     const j = ansOrder(q)[+id.slice(3) - 1];
     if (j == null) return;
     e.preventDefault();
@@ -123,6 +139,14 @@ export default function App() {
   useSyncExternalStore(subscribe, getVersion);
   const rootRef = useRef(null), headRef = useRef(null), gridRef = useRef(null);
   const rail = S.rail && !S.focusMode;
+  // 2.6: the header shrinks to one line once you scroll down, and returns at the top (a gap between the two
+  // thresholds stops it flickering as the page height changes)
+  const [slim, setSlim] = useState(false);
+  useEffect(() => {
+    const on = () => setSlim((v) => (v ? window.scrollY > 8 : window.scrollY > 80));
+    window.addEventListener('scroll', on, { passive: true });
+    return () => window.removeEventListener('scroll', on);
+  }, []);
   const cols = rail ? (S.lw ? S.lw + 'px 14px minmax(0,1fr)' : 'minmax(0,1.5fr) 14px minmax(0,1fr)') : 'minmax(0,1fr)';
 
   useEffect(() => {
@@ -164,7 +188,7 @@ export default function App() {
   });
 
   return (
-    <div id="rd" ref={rootRef} className={S.dark ? 'dk' : ''} style={{ fontSize: S.fs }}>
+    <div id="rd" ref={rootRef} className={(S.dark ? 'dk' : '') + (slim ? ' slim' : '')} style={{ fontSize: S.fs }}>
       <div id="h" ref={headRef}>
         <Header />
         <Steps />

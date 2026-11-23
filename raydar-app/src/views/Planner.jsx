@@ -5,6 +5,7 @@ import {
   S, upd, act, ZP, tlB, planStudies, pShown, ev, cStat, cKey, rk, avl, SC, dd, add, DD, TODAY, COL,
   vS, vE, vStat, stayHit, fmtR, cn, tipStay, tipVisit, tipCohort, tipAway,
 } from '../engine/store.js';
+import { earliestScreen } from '../esource/schedule.js';
 import { A, Ic, Panel } from './ui.jsx';
 import { Row } from '../motion/components.jsx';
 
@@ -182,6 +183,12 @@ export function Planner() {
         <div><span className="fl">Participant away from</span><input type="date" aria-label="Participant away from" value={S.awF} style={{ width: 140 }} onChange={(e) => upd(() => (S.awF = e.target.value))} /></div>
         <div><span className="fl">Until (optional)</span><input type="date" aria-label="Away until" value={S.awT} min={S.awF || undefined} style={{ width: 140 }} onChange={(e) => upd(() => (S.awT = e.target.value))} /></div>
         <button className="pill" {...A('awadd')} disabled={!S.awF} title={S.awF ? undefined : 'Pick a start date first'} style={{ height: 30 }}>Add away dates</button>
+        {studies.some((x) => x.sched) ? (
+          <div title="Emeritus studies recruit on a rolling basis: their visits are worked out from this screening date">
+            <span className="fl">Screening date (rolling studies)</span>
+            <input type="date" aria-label="Screening date for rolling studies" value={S.scr || earliestScreen('melbourne')} style={{ width: 140 }} onChange={(e) => act('scr:' + e.target.value)} />
+          </div>
+        ) : null}
         <AnimatePresence initial={false} mode="popLayout">
           {S.away.map((a, i) => (
             <Row as="span" key={a[0] + '_' + a[1]} className="pill bad bdg" style={{ padding: '3px 6px', cursor: 'help' }} data-tip={tipAway(a)}>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { S, upd, age, drCode, drText } from '../engine/store.js';
-import { ST } from '../engine/data.js';
+import { ST } from '../esource/studies.js';
 import { A, Ic, Panel } from './ui.jsx';
 import { IconSwap } from '../motion/components.jsx';
 

@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>RAYDAR 2.4</title>
+    <title>RAYDAR 2.6</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+    <!-- Spoken words use Atkinson Hyperlegible; offline it falls back to the system font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" />
   </head>
   <body>
-    <div class="trial-banner"><b style="font-weight:500">Prototype for trial use.</b> Nothing is saved: refreshing or closing this tab clears the call. RAYDAR and CTMS stay the official record. Sample dates are used for studies other than COR-PAG-26-101, PAL-119-001 and EQ504-101. Questions marked "follow-up added in RAYDAR 2.0" are not on the current study forms. Hover calendar bars and dots for dates; open Guide in the top bar for help.</div>
-    <h1 class="sr-only">RAYDAR 2.4, the component-based RAYDAR pre-screening prototype</h1>
+    <div class="trial-banner"><b style="font-weight:500">Prototype for trial use.</b> Nothing is saved: refreshing or closing this tab clears the call. RAYDAR and CTMS stay the official record. Questions, scripts and study notes come from the TST eSource files; cohort dates were read from the study notes, so check them against the eSource before booking. Open Guide in the top bar for help.</div>
+    <h1 class="sr-only">RAYDAR 2.6, the RAYDAR pre-screening prototype built from the TST eSource files</h1>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { S, act, upd, ranked, nextOpen, fmt, COL, RAYDAR_VERSION } from '../engine/store.js';
 import { KEY_ACTIONS, isDefault, keyName } from '../engine/keys.js';
-import { ST } from '../engine/data.js';
+import { ST, SOURCE, loadFiles } from '../esource/studies.js';
 import { A, Ic, B } from './ui.jsx';
 import { Legend } from './Header.jsx';
 import { Expander } from '../motion/components.jsx';
@@ -17,7 +17,7 @@ function H({ title }) {
 const Card = ({ children }) => <div className="card" style={{ padding: '10px 12px', marginBottom: 10 }}>{children}</div>;
 
 function Menu() {
-  const items = [['plan', 'ti-calendar-stats', 'Compare dates'], ['dre:open', 'ti-stethoscope', 'Create Dr enquiry'], ['tool:snap', 'ti-list-search', 'Study snapshot'], ['tool:guide', 'ti-help-circle', 'How to use RAYDAR'], ['tool:help', 'ti-keyboard', 'Keyboard shortcuts (change keys)'], ['import', 'ti-file-import', 'Import callback or PDF']];
+  const items = [['plan', 'ti-calendar-stats', 'Compare dates'], ['dre:open', 'ti-stethoscope', 'Create Dr enquiry'], ['tool:files', 'ti-files', 'Study files and file check'], ['tool:snap', 'ti-list-search', 'Study snapshot'], ['tool:guide', 'ti-help-circle', 'How to use RAYDAR'], ['tool:help', 'ti-keyboard', 'Keyboard shortcuts (change keys)'], ['import', 'ti-file-import', 'Import callback or PDF']];
   const row = (l, ctl) => <div className="row"><span>{l}</span>{ctl}</div>;
   return (
     <Card>
@@ -121,7 +121,7 @@ function Switch() {
       <H title="Switch study" />
       {ranked().map((x) => (
         <button key={x.s.c} className="pill wide" {...A('start:' + x.s.c)} style={{ width: '100%', textAlign: 'left', marginBottom: 4 }}>
-          <span className="dot" style={{ background: COL[x.r[0]] }} /><span className="mono">{x.s.c}</span>
+          <span className="dot" style={{ background: COL[x.r[0]] }} /><span className="mono">{x.s.c}</span> <span className="mut" style={{ fontSize: 11 }}>{x.s.site}</span>
         </button>
       ))}
       <p className="mut" style={{ fontSize: 11, margin: '4px 0 0' }}>Meds, history and away dates carry over.</p>
@@ -154,7 +154,51 @@ function Snap() {
   );
 }
 
-const TOOLS = { menu: Menu, guide: Guide, help: Help, switch: Switch, snap: Snap };
+/* 2.5: where the studies come from, loading new or updated eSource files, and the file check */
+function Files() {
+  const inp = useRef(null);
+  const pick = async (e) => {
+    const res = await loadFiles(e.target.files);
+    e.target.value = '';
+    upd(() => {
+      S.fileMsg = res;
+      if (S.study) { const now = ST.find((x) => x.file === S.study.file); if (now) S.study = now; } // keep the call on the newer version
+    });
+  };
+  const withIssues = ST.filter((s) => s.issues.length);
+  return (
+    <Card>
+      <H title="Study files" />
+      <p style={{ fontSize: 12, margin: '0 0 8px' }}>
+        <B>{ST.length} studies</B> from the TST eSource files{SOURCE.builtAt ? ', built into this RAYDAR on ' + SOURCE.builtAt : ''}. Questions, scripts and notes are used exactly as written in each eSource. Cohort dates come from RAYDAR cohort dates.json.
+      </p>
+      <input ref={inp} type="file" accept=".json,application/json" multiple onChange={pick} style={{ display: 'none' }} />
+      <button className="pill wide" onClick={() => inp.current && inp.current.click()} style={{ width: '100%' }}><Ic n="ti-file-upload" /> Load eSource files (.json)</button>
+      <p className="mut" style={{ fontSize: 11, margin: '4px 0 0' }}>A file with the same name as a built-in study replaces it until this tab closes; a new name adds a study.</p>
+      {S.fileMsg ? (
+        <div role="status" style={{ marginTop: 8 }}>
+          {S.fileMsg.map((r, i) => <div key={i} style={{ fontSize: 12, color: r.ok ? 'var(--text-success)' : 'var(--text-danger)' }}><Ic n={r.ok ? 'ti-check' : 'ti-alert-triangle'} /> {r.file}: {r.msg}</div>)}
+        </div>
+      ) : null}
+      <div style={{ fontSize: 12, fontWeight: 500, margin: '12px 0 2px' }}>File check {withIssues.length ? <span className="mut" style={{ fontWeight: 400 }}>· {withIssues.reduce((n, s) => n + s.issues.length, 0)} things to check across {withIssues.length} files</span> : null}</div>
+      <p className="mut" style={{ fontSize: 11, margin: '0 0 4px' }}>Things in an eSource that stop a question showing, or leave an answer without an outcome. Worth passing to TST.</p>
+      <div style={{ maxHeight: 340, overflowY: 'auto' }}>
+        {ST.map((s) => (
+          <div key={s.file} className="row" style={{ fontSize: 12, alignItems: 'flex-start', padding: '5px 0' }}>
+            <div style={{ minWidth: 0, flex: 1 }}>
+              <div><span className="mono">{s.c}</span> <span className="mut">{s.site}{s.version ? ' · ' + s.version : ''}{s.loaded ? ' · loaded file' : ''}</span></div>
+              <div className="mut" style={{ fontSize: 11 }}>{s.Q.length} steps{s.cohorts ? ' · ' + s.cohorts.length + ' cohorts with dates' : ''}{s.age ? ' · age ' + s.age[0] + (s.age[1] < 120 ? '-' + s.age[1] : '+') : ''}{s.bmi ? ' · BMI ' + s.bmi[0] + (s.bmi[1] < 100 ? '-' + s.bmi[1] : '+') : ''}</div>
+              {s.issues.map((x, i) => <div key={i} style={{ fontSize: 11, color: 'var(--text-warning)', marginTop: 2 }}><Ic n="ti-alert-triangle" /> {x.q ? <B>{x.q}: </B> : null}{x.msg}</div>)}
+            </div>
+            {s.issues.length ? null : <Ic n="ti-check" style={{ color: 'var(--text-success)' }} label="No problems found" />}
+          </div>
+        ))}
+      </div>
+    </Card>
+  );
+}
+
+const TOOLS = { menu: Menu, guide: Guide, help: Help, switch: Switch, snap: Snap, files: Files };
 
 /** The tools drawer opens with the expander, so whatever sits below it glides down instead of jumping. */
 export function Drawer({ open }) {

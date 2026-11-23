@@ -98,7 +98,8 @@ export const ERow = forwardRef(function ERow({ e, pre, showBadge, i }, ref) {
           <button className="lnk" {...A(pre + 'edit:' + idx)} style={{ fontSize: 11, color: 'var(--text-warning)' }}>Add details</button>
         )}
         <div>
-          {showBadge ? <Badge p={p} /> : p ? <><span className={'pill bdg ' + (p.o === 'x' ? 'bad' : p.o === 'd' ? 'warn' : 'ok')}>{p.o === 'x' ? 'Prohibited' : p.o === 'd' ? 'Doctor' : 'Allowed'}</span> </> : null}
+          {showBadge ? <Badge p={p} /> : p ? <><span className={'pill bdg ' + (p.o === 'x' ? 'bad' : p.o === 'd' ? 'warn' : 'ok')}>{p.o === 'x' ? 'On the list' : p.o === 'd' ? 'Doctor' : 'Allowed'}</span> </> : null}
+          {p ? <button className="lnk" {...A('notmatch:' + idx + ':' + encodeURIComponent(p.n))} style={{ fontSize: 11, marginLeft: 6 }} title="RAYDAR matched this by name; say so if it's wrong">Not a match</button> : null}
           <span style={{ fontSize: 11, color: 'var(--text-muted)', marginLeft: 6, fontStyle: 'italic' }}>{e.src}</span>
         </div>
       </div>
@@ -123,9 +124,10 @@ export function MedLog({ c }) {
   const pre = hx ? 'h' : 'm', rows = hx ? S.hf : S.mf, err = hx ? S.hErr : S.mErr, ed = hx ? S.hed : S.med;
   const panel = hx ? 'hlog' : 'mlog', proOpen = hx ? S.hOpen : S.mOpen, pq = hx ? S.hq : S.mq;
   const n = S.log.filter((e) => types.includes(e.t)).length;
+  const P = proFor(code), hasList = ((P.med || []).length + (P.hx || []).length) > 0; // 2.5: most eSources have no list yet
   return (
     <div style={{ marginTop: 10, background: 'var(--surface-1)', borderRadius: 'var(--radius)', padding: '8px 10px' }}>
-      <PanelHead id={panel} title={(c === 'hx' ? 'Medical history' : 'Medications, supplements and OTC') + ' logged'} sub={n + ' · checked against ' + code} />
+      <PanelHead id={panel} title={(c === 'hx' ? 'Medical history' : 'Medications, supplements and OTC') + ' logged'} sub={n + (hasList ? ' · checked against ' + code : '')} />
       <Expander open={!S.col[panel]}>
         <Resizable id={panel}>
           {types.map((tt) => {
@@ -136,7 +138,7 @@ export function MedLog({ c }) {
                   {groupName(tt)} <span className="mut" style={{ fontWeight: 400 }}>({L.length})</span>
                 </div>
                 <AnimatePresence initial={false} mode="popLayout">
-                  {L.map((e, i) => <ERow key={eKey(e)} e={e} pre="m" showBadge i={i} />)}
+                  {L.map((e, i) => <ERow key={eKey(e)} e={e} pre="m" showBadge={hasList} i={i} />)}
                 </AnimatePresence>
                 {!L.length ? <p className="mut" style={{ fontSize: 12, margin: '2px 0 0', fontStyle: 'italic' }}>None logged.</p> : null}
               </div>
@@ -160,12 +162,12 @@ export function MedLog({ c }) {
             <Err msg={err} />
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 6 }}>
-            <button className="pill ib" {...A('mpro:' + c)} aria-expanded={proOpen} style={{ paddingLeft: 0, color: 'var(--text-accent)' }}>
+            {hasList ? <button className="pill ib" {...A('mpro:' + c)} aria-expanded={proOpen} style={{ paddingLeft: 0, color: 'var(--text-accent)' }}>
               <Ic n="ti-list-search" /> {proOpen ? 'Hide' : 'Search'} prohibited {c === 'hx' ? 'conditions' : 'medications'}
-            </button>
+            </button> : <span />}
             <button className="pill ib" {...A('dre:open')} style={{ color: 'var(--text-warning)' }}><Ic n="ti-stethoscope" /> Create Dr enquiry</button>
           </div>
-          <Expander open={proOpen}>
+          <Expander open={hasList && proOpen}>
             <input type="text" data-f={hx ? 'hq' : 'mq'} placeholder={hx ? 'Search, e.g. epilepsy' : 'Search, e.g. sertraline'} value={pq} style={{ marginTop: 4 }} onChange={(e) => upd(() => { if (hx) S.hq = e.target.value; else S.mq = e.target.value; })} />
             <div><ProRows Pl={proFor(code)} types={[hx ? 'hx' : 'med']} q={pq} limit={5} /></div>
           </Expander>
