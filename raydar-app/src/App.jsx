@@ -1,4 +1,4 @@
-import { memo, useEffect, useLayoutEffect, useRef, useSyncExternalStore } from 'react';
+import { memo, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { S, act, ansOrder, commit, curQ, getVersion, nextStep, ranked, subscribe, upd } from './engine/store.js';
 import { KEY_ACTIONS, UNBINDABLE, actionFor, bind, keyLabel, keyName } from './engine/keys.js';
@@ -139,6 +139,14 @@ export default function App() {
   useSyncExternalStore(subscribe, getVersion);
   const rootRef = useRef(null), headRef = useRef(null), gridRef = useRef(null);
   const rail = S.rail && !S.focusMode;
+  // 2.6: the header shrinks to one line once you scroll down, and returns at the top (a gap between the two
+  // thresholds stops it flickering as the page height changes)
+  const [slim, setSlim] = useState(false);
+  useEffect(() => {
+    const on = () => setSlim((v) => (v ? window.scrollY > 8 : window.scrollY > 80));
+    window.addEventListener('scroll', on, { passive: true });
+    return () => window.removeEventListener('scroll', on);
+  }, []);
   const cols = rail ? (S.lw ? S.lw + 'px 14px minmax(0,1fr)' : 'minmax(0,1.5fr) 14px minmax(0,1fr)') : 'minmax(0,1fr)';
 
   useEffect(() => {
@@ -180,7 +188,7 @@ export default function App() {
   });
 
   return (
-    <div id="rd" ref={rootRef} className={S.dark ? 'dk' : ''} style={{ fontSize: S.fs }}>
+    <div id="rd" ref={rootRef} className={(S.dark ? 'dk' : '') + (slim ? ' slim' : '')} style={{ fontSize: S.fs }}>
       <div id="h" ref={headRef}>
         <Header />
         <Steps />

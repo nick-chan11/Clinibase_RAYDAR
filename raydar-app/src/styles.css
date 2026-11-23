@@ -238,3 +238,24 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 /* Choose a study */
 #rd .pick{display:flex;align-items:center;gap:12px;padding:10px 12px;border-top:.5px solid var(--border)}
 #rd .pick:first-child{border-top:0}
+
+/* 2.6 follow-up: question and recruiter info on top, answers across the bottom (notes always in full) */
+#rd .qtop{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:stretch}
+#rd .qtop .say{height:100%;box-sizing:border-box}
+#rd .qtop .qinfo{position:static;max-height:none;overflow:visible;border:.5px solid var(--border-warning);background:var(--bg-warning);border-radius:10px;padding:10px 12px}
+#rd.dk .qtop .qinfo{background:#2e2410}
+#rd .qfoot{display:flex;flex-direction:column;gap:10px;border-top:.5px solid var(--border);padding-top:10px;margin-top:2px}
+#rd .qfoot .qnote{margin-top:0}
+#rd .qnav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+#rd .qnav>.navbtn:first-child{margin-right:auto}
+@media (max-width:1000px){#rd .qtop{grid-template-columns:minmax(0,1fr)}}
+/* The question-pane toolbar locks under the header while you scroll */
+#rd .qbar{position:sticky;top:var(--hh,60px);z-index:5;background:var(--surface-2);margin:-12px -14px 6px;padding:12px 14px 2px;border-radius:12px 12px 0 0;border-bottom:.5px solid var(--border)}
+#rd.slim .qbar{box-shadow:0 6px 12px -6px rgba(0,0,0,.25)}
+/* Once you scroll, the header shrinks to one slim line; back at the top it returns to full size */
+#rd .only-slim{display:none}
+#rd.slim .only-slim{display:inline}
+#rd.slim .slim-hide,#rd.slim .stepsrow{display:none !important}
+#rd.slim .bar{min-height:0;padding:6px 14px;gap:10px;flex-wrap:nowrap;overflow:hidden}
+#rd.slim .bar .brand{font-size:17px}
+#rd.slim .bar .pill{font-size:13px;padding:4px 10px}

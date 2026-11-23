@@ -346,55 +346,11 @@ function OneMode({ L, i, q }) {
           </span>
         ) : S.park[q.id] ? <span className="pill bdg warn"><Ic n="ti-bookmark" /> Parked</span> : null}
       </div>
-      <div className={info ? 'q2' : ''} style={{ marginTop: 6 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 0 }}>
+      {/* 2.6 (your layout): the spoken question and the recruiter information side by side on top;
+          answers, notes and buttons across the full width underneath. Notes always show in full. */}
+      <div className={info ? 'qtop' : ''} style={{ marginTop: 6 }}>
+        <div style={{ minWidth: 0 }}>
           {q.kind === 'note' ? <><div className="notehead"><Ic n="ti-info-circle" /> Note from the eSource</div><HtmlBlocks blocks={q.html} /></> : <SayBlock z={q} big />}
-          <Extra q={q} s={s} />
-          {q.carry ? <MedLog c={q.carry} /> : null}
-          {q.crit ? (
-            <>
-              <button className="lnk" {...A('critopen')} aria-expanded={critOpen} style={{ fontSize: 12, alignSelf: 'flex-start' }}>
-                {critOpen ? 'Hide' : 'Show'} exclusion reasons ({q.crit.length}){w.length ? ' · ' + w.length + ' ticked' : ''}
-              </button>
-              <Expander open={critOpen}>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-                  {q.crit.map((c, j) => (
-                    <button key={c} className={'pill ' + (w.includes(c) ? 'bad' : '')} aria-pressed={w.includes(c)} {...A('crit:' + j)}>{w.includes(c) ? <><Ic n="ti-check" /> </> : null}{c}</button>
-                  ))}
-                </div>
-              </Expander>
-            </>
-          ) : null}
-          {S.tips ? <div style={{ fontSize: 11 }} className="mut"><i>{q.kind === 'multi' ? <>Tick what applies (keys {keyName('ans1')} to {keyName('ans4')}), then press <b style={{ fontWeight: 500 }}>{keyName('cont')}</b> to record.</> : q.kind === 'text' ? <>Type their answer and press <b style={{ fontWeight: 500 }}>Enter</b>.</> : q.kind === 'note' ? <>Read the note, then press <b style={{ fontWeight: 500 }}>{keyName('ans1')}</b>.</> : <>Tap an answer or press its key. <b style={{ fontWeight: 500 }}>{keyName('ans1')}</b> picks the {P.why === 'suggested' ? 'suggested answer' : 'answer that moves on'}.</>}</i></div> : null}
-          {q.kind === 'multi' ? <MultiPick q={q} /> : q.kind === 'text' ? <TextAns q={q} focus /> : (
-          <div className="ansrow">
-            {q.a.map((b, j) => {
-              const isS = P.why === 'suggested' && P.i === j;
-              const picked = o && S.ans[q.id] === b[0];
-              return (
-                <button key={j} {...A('ans:' + j)} className={'ans ' + (picked ? ocls(b[1]) : '')} aria-pressed={!!picked}
-                  aria-keyshortcuts={ansSlot(q, j) < 4 ? keyName('ans' + (ansSlot(q, j) + 1)) : undefined}
-                  style={isS ? { outline: '2px solid var(--border-' + (b[1] === 'x' ? 'danger' : b[1] === 'd' ? 'warning' : 'success') + ')', outlineOffset: 1 } : null}>
-                  {picked ? <><Ic n="ti-check pop" /> </> : null}{b[0]}{S.tips ? <AnsKey q={q} j={j} /> : null}
-                  {isS ? <><br /><span style={{ fontSize: 11 }} className="mut">suggested</span></> : null}
-                </button>
-              );
-            })}
-          </div>
-          )}
-          <Err msg={S.err.t} />
-          <FuHint q={q} />
-          {/* 2.6: the notes box is always there, under the answers */}
-          <label className="qnote">Notes for this question
-            <textarea data-f="note" placeholder="Anything the coordinator should know. No names, phone numbers or emails." value={S.note[q.id] || ''} onChange={(e) => upd(() => (S.note[q.id] = e.target.value))} />
-          </label>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap', borderTop: '.5px solid var(--border)', paddingTop: 10, marginTop: 2 }}>
-            <button className="navbtn" {...A('prev')} style={i ? null : { visibility: 'hidden' }}><Ic n="ti-chevron-left" /> Previous question <span className="k">{keyName('prev')}</span></button>
-            <span style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-              {o ? null : <button className="navbtn quiet" {...A('park')}><Ic n="ti-bookmark" /> Park for later <span className="k">{keyName('park')}</span></button>}
-              <button className="navbtn" {...A('next')} style={i < L.length - 1 ? null : { visibility: 'hidden' }}>Skip to next <span className="k">{keyName('next')}</span> <Ic n="ti-chevron-right" /></button>
-            </span>
-          </div>
         </div>
         {info ? (
           <aside className="qinfo" aria-label="Recruiter only">
@@ -404,6 +360,53 @@ function OneMode({ L, i, q }) {
             {q.after ? <HtmlBlocks blocks={q.after} style={{ marginTop: q.before ? 6 : 0 }} /> : null}
           </aside>
         ) : null}
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 10 }}>
+        <Extra q={q} s={s} />
+        {q.carry ? <MedLog c={q.carry} /> : null}
+        {q.crit ? (
+          <>
+            <button className="lnk" {...A('critopen')} aria-expanded={critOpen} style={{ fontSize: 12, alignSelf: 'flex-start' }}>
+              {critOpen ? 'Hide' : 'Show'} exclusion reasons ({q.crit.length}){w.length ? ' · ' + w.length + ' ticked' : ''}
+            </button>
+            <Expander open={critOpen}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                {q.crit.map((c, j) => (
+                  <button key={c} className={'pill ' + (w.includes(c) ? 'bad' : '')} aria-pressed={w.includes(c)} {...A('crit:' + j)}>{w.includes(c) ? <><Ic n="ti-check" /> </> : null}{c}</button>
+                ))}
+              </div>
+            </Expander>
+          </>
+        ) : null}
+        {S.tips ? <div style={{ fontSize: 11 }} className="mut"><i>{q.kind === 'multi' ? <>Tick what applies (keys {keyName('ans1')} to {keyName('ans4')}), then press <b style={{ fontWeight: 500 }}>{keyName('cont')}</b> to record.</> : q.kind === 'text' ? <>Type their answer and press <b style={{ fontWeight: 500 }}>Enter</b>.</> : q.kind === 'note' ? <>Read the note, then press <b style={{ fontWeight: 500 }}>{keyName('ans1')}</b>.</> : <>Tap an answer or press its key. <b style={{ fontWeight: 500 }}>{keyName('ans1')}</b> picks the {P.why === 'suggested' ? 'suggested answer' : 'answer that moves on'}.</>}</i></div> : null}
+        {q.kind === 'multi' ? <MultiPick q={q} /> : q.kind === 'text' ? <TextAns q={q} focus /> : (
+        <div className="ansrow">
+          {q.a.map((b, j) => {
+            const isS = P.why === 'suggested' && P.i === j;
+            const picked = o && S.ans[q.id] === b[0];
+            return (
+              <button key={j} {...A('ans:' + j)} className={'ans ' + (picked ? ocls(b[1]) : '')} aria-pressed={!!picked}
+                aria-keyshortcuts={ansSlot(q, j) < 4 ? keyName('ans' + (ansSlot(q, j) + 1)) : undefined}
+                style={isS ? { outline: '2px solid var(--border-' + (b[1] === 'x' ? 'danger' : b[1] === 'd' ? 'warning' : 'success') + ')', outlineOffset: 1 } : null}>
+                {picked ? <><Ic n="ti-check pop" /> </> : null}{b[0]}{S.tips ? <AnsKey q={q} j={j} /> : null}
+                {isS ? <><br /><span style={{ fontSize: 11 }} className="mut">suggested</span></> : null}
+              </button>
+            );
+          })}
+        </div>
+        )}
+        <Err msg={S.err.t} />
+        <FuHint q={q} />
+        <div className="qfoot">
+          <label className="qnote">Notes for this question
+            <textarea data-f="note" placeholder="Anything the coordinator should know. No names, phone numbers or emails." value={S.note[q.id] || ''} onChange={(e) => upd(() => (S.note[q.id] = e.target.value))} />
+          </label>
+          <div className="qnav">
+            <button className="navbtn" {...A('prev')} style={i ? null : { visibility: 'hidden' }}><Ic n="ti-chevron-left" /> Previous question <span className="k">{keyName('prev')}</span></button>
+            {o ? null : <button className="navbtn quiet" {...A('park')}><Ic n="ti-bookmark" /> Park for later <span className="k">{keyName('park')}</span></button>}
+            <button className="navbtn" {...A('next')} style={i < L.length - 1 ? null : { visibility: 'hidden' }}>Skip to next <span className="k">{keyName('next')}</span> <Ic n="ti-chevron-right" /></button>
+          </div>
+        </div>
       </div>
       {S.focusMode ? null : <UpNext L={L} i={i} />}
     </>
@@ -517,18 +520,25 @@ function SectionRows({ sec }) {
   );
 }
 
+/** Section list: the section's name and arrows, shown in the locked toolbar */
+function SectionHead({ L, q }) {
+  const secs = [...new Set(L.map((z) => z.sec))], si = secs.indexOf(q.sec);
+  return (
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0 0 6px' }}>
+      <span style={{ fontSize: 17, fontWeight: 600 }}>{q.sec}</span>
+      <span style={{ display: 'flex', gap: 4 }}>
+        <button className="pill ib" {...A('secstep:-1')} style={si ? null : { visibility: 'hidden' }} aria-label="Previous section"><Ic n="ti-chevron-left" /></button>
+        <button className="pill ib" {...A('secstep:1')} style={si < secs.length - 1 ? null : { visibility: 'hidden' }} aria-label="Next section"><Ic n="ti-chevron-right" /></button>
+      </span>
+    </div>
+  );
+}
+
 function ListMode({ L, q }) {
   const secs = [...new Set(L.map((z) => z.sec))], si = secs.indexOf(q.sec);
   const dir = useDirection(si);
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '6px 0 2px' }}>
-        <span style={{ fontSize: 17, fontWeight: 500 }}>{q.sec}</span>
-        <span style={{ display: 'flex', gap: 4 }}>
-          <button className="pill ib" {...A('secstep:-1')} style={si ? null : { visibility: 'hidden' }} aria-label="Previous section"><Ic n="ti-chevron-left" /></button>
-          <button className="pill ib" {...A('secstep:1')} style={si < secs.length - 1 ? null : { visibility: 'hidden' }} aria-label="Next section"><Ic n="ti-chevron-right" /></button>
-        </span>
-      </div>
       {S.tips ? <p style={{ fontSize: 11, margin: '0 0 4px', fontStyle: 'italic' }} className="mut">Answer in any order. The view follows the next question to ask. <b style={{ fontWeight: 500 }}>{keyName('ans1')}</b> answers it with the suggested answer, or the one that moves on.</p> : null}
       <QSlide k={q.sec} dir={dir}><SectionRows sec={q.sec} /></QSlide>
     </>
@@ -649,6 +659,8 @@ export function PreScreen() {
 
   return (
     <div className="card">
+      {/* 2.6: this toolbar stays in view under the header while the questions scroll */}
+      <div className="qbar">
       <Piece style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
         <div style={{ position: 'relative', flex: 1, minWidth: 150 }}>
           <Ic n="ti-search" style={{ position: 'absolute', left: 8, top: 8, color: 'var(--text-secondary)' }} />
@@ -661,11 +673,6 @@ export function PreScreen() {
           <button role="tab" aria-selected={S.mode === 'list'} {...A('mode:list')} className={S.mode === 'list' ? 'sel' : ''}>Section list</button>
         </span>
       </Piece>
-      <Expander open={mapOpen}>
-        <Resizable id="qmap" style={{ ...(S.sz.qmap ? null : S.qs.trim() ? { maxHeight: 260 } : { height: 220 }), padding: '4px 8px', marginTop: 6, background: 'var(--surface-1)', borderRadius: 'var(--radius)' }}>
-          {mapOpen ? <QMapList /> : null}
-        </Resizable>
-      </Expander>
       <Piece>
         <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', margin: '8px 0 6px' }}>
           <button className={'pill ' + (S.script === 'tab' ? 'tag' : '')} aria-pressed={S.script === 'tab'} {...A('script:tab')} style={{ cursor: 'pointer', fontSize: 11 }}><Ic n="ti-script" /> Call script</button>
@@ -685,6 +692,13 @@ export function PreScreen() {
           <motion.div style={{ height: 4, background: 'var(--fill-accent)', transformOrigin: 'left center' }} initial={false} animate={{ scaleX: done / L.length }} transition={tr(DUR.move, 'io')} />
         </div>
       </Piece>
+      {S.mode === 'list' && S.script !== 'tab' ? <SectionHead L={L} q={q} /> : null}
+      </div>
+      <Expander open={mapOpen}>
+        <Resizable id="qmap" style={{ ...(S.sz.qmap ? null : S.qs.trim() ? { maxHeight: 260 } : { height: 220 }), padding: '4px 8px', marginTop: 6, background: 'var(--surface-1)', borderRadius: 'var(--radius)' }}>
+          {mapOpen ? <QMapList /> : null}
+        </Resizable>
+      </Expander>
       {s.cohorts && !S.focusMode ? (
         <>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, alignItems: 'center', marginBottom: 6 }}>

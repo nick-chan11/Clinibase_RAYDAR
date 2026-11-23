@@ -4,7 +4,8 @@ A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-an
 
 ## New in 2.6
 
-- **Question layout (1B):** the spoken question and the answers on the left, the recruiter-only information (descriptions and eSource notes) beside them. A notes box sits under every question's answers, and Previous / Skip to next are full-size buttons.
+- **Question layout:** the spoken question and the recruiter-only information (descriptions and eSource notes, always in full) side by side on top; the answers, a notes box and full-size Previous / Park / Skip to next buttons run across the full width underneath.
+- **Locked toolbar, slim header:** the question pane's toolbar (search, view, call script, section tabs, progress and, in the section list, the section title) stays in view under the header while you scroll. Once you scroll down, the header shrinks to one line (participant, study, site and step, Tools, Finish call) and returns to full size at the top.
 - **Spoken words** are in a light blue "Say" card in Atkinson Hyperlegible (loaded from Google Fonts; offline, the system font).
 - **Notes go with the right question:** TST writes a note straight after the question it explains, so RAYDAR now attaches it to the question before it (2.5 put it on the next one).
 - **Date of birth, height and weight** from Quick check are editable on the questions that reconfirm them (cm or ft/in).

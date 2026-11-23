@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { S, SITE, age, bmi, nextStep, RAYDAR_VERSION } from '../engine/store.js';
+import { S, SITE, age, bmi, nextStep, curQ, RAYDAR_VERSION } from '../engine/store.js';
 import { SITES } from '../esource/studies.js';
 import { keyName } from '../engine/keys.js';
 import { A, Ic, B } from './ui.jsx';
@@ -26,6 +26,14 @@ function HBtn({ a, ic, lab, tip, on }) {
   );
 }
 
+/** What the slim header says about where you are: site and step */
+function slimLine() {
+  const site = SITE.city === 'all' ? 'All sites' : SITE.city === 'sydney' ? 'Sydney' : 'Melbourne';
+  let where = { id: 'Identity', qc: 'Quick check', ps: 'Pre-screen', finish: 'Finish' }[S.stage] || '';
+  if (S.stage === 'ps' && S.study && S.qon) { const { L, i } = curQ(); if (L.length) where += ', Q' + (i + 1) + ' of ' + L.length; }
+  return site + ' · ' + where;
+}
+
 export function Header() {
   const s = S.study, a = age(), b = bmi();
   return (
@@ -46,9 +54,10 @@ export function Header() {
       {s && (S.stage === 'ps' || S.stage === 'finish') ? (
         <button className="pill" {...A('tool:switch')} title="Switch study">{s.c} <Ic n="ti-selector" /></button>
       ) : null}
-      <SitePicker />
+      <span className="slim-hide"><SitePicker /></span>
+      <span className="only-slim mut" style={{ fontSize: 13, whiteSpace: 'nowrap' }}>{slimLine()}</span>
       <span style={{ flex: 1 }} />
-      <button className={'pill ' + (S.discard ? 'bad' : 'ib')} {...A('discard')} title="Clear this call and start again" style={S.discard ? null : { color: 'var(--text-danger)' }}>
+      <button className={'slim-hide pill ' + (S.discard ? 'bad' : 'ib')} {...A('discard')} title="Clear this call and start again" style={S.discard ? null : { color: 'var(--text-danger)' }}>
         <Ic n="ti-trash" /> {S.discard ? 'Click again to discard' : 'Discard'}
       </button>
       <span className="hgrp">
@@ -56,7 +65,7 @@ export function Header() {
         <HBtn a="tool:menu" ic="ti-tool" lab="Tools" tip="Dr enquiry, study snapshot, shortcuts and layout" on={S.tool === 'menu'} />
         <HBtn a="tool:guide" ic="ti-help-circle" lab="Guide" tip="How to use RAYDAR" on={S.tool === 'guide'} />
       </span>
-      <span className="hgrp">
+      <span className="hgrp slim-hide">
         <HBtn a="focus" ic="ti-focus-2" tip={S.focusMode ? 'Exit focus mode' : 'Focus mode: hide side panels and extras'} on={S.focusMode} />
         <HBtn a="rail" ic={'ti-layout-sidebar-right' + (S.rail ? '' : '-collapse')} tip={(S.rail ? 'Hide' : 'Show') + ' side panel'} on={S.rail && !S.focusMode} />
         <HBtn a="theme" ic={'ti-' + (S.dark ? 'sun' : 'moon')} tip={S.dark ? 'Switch to light mode' : 'Switch to dark mode'} />
@@ -97,7 +106,7 @@ export function Steps() {
   // 2.4: once this stage is done, the next step's number pulses twice to point the way
   const ready = n ? STEPS.findIndex((x) => x[1] === n.to) : -1;
   return (
-    <div style={{ display: 'flex', gap: 4, marginTop: 8 }}>
+    <div className="stepsrow" style={{ display: 'flex', gap: 4, marginTop: 8 }}>
       {STEPS.map((x, i) => (
         <button
           key={x[0]}
