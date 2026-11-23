@@ -15,6 +15,7 @@ export const KEY_ACTIONS = [
   ['park', 'Park the question for later', 'p'],
   ['undo', 'Undo the last answer', 'u'],
   ['search', 'Search questions', '/'],
+  ['script', 'Call script beside the question', 's'],
 ];
 export const DEFAULT_KEYS = Object.fromEntries(KEY_ACTIONS.map((a) => [a[0], a[2]]));
 const STORE = 'raydar.keys.v1';

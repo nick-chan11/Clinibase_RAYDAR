@@ -187,3 +187,54 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd .esrc td,#rd .esrc th{border:.5px solid var(--border-strong);padding:3px 6px;vertical-align:top}
 #rd .esrc a{color:var(--text-accent)}
 #rd .esrc strong,#rd .esrc b{font-weight:600}
+
+/* ===================== RAYDAR 2.6 ===================== */
+/* A bigger header: the anchor of the screen */
+#rd .bar{gap:12px;min-height:64px;padding:12px 18px;border:1px solid var(--border-strong);border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+#rd .bar .brand{font-size:21px;font-weight:700;letter-spacing:.06em}
+#rd .bar .pill{font-size:14px;padding:6px 12px}
+#rd .bar .pill.ib{padding:6px 8px}
+#rd .bar .hgrp .pill{padding:6px 10px}
+#rd .seg.big button{font-size:14px;padding:8px 14px;min-width:0}
+#rd .sitepick{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+#rd .sitechip{border-radius:999px !important;font-size:13px !important;padding:5px 11px !important}
+#rd .site-melbourne{--sc:#0f766e;--sb:#e6f4f1;--st:#0b5d56}
+#rd .site-melbourne-v{--sc:#6b3fa0;--sb:#f1ebfa;--st:#55307f}
+#rd .site-sydney{--sc:#b45309;--sb:#fbeee2;--st:#8a4300}
+#rd.dk .site-melbourne{--sb:#123a35;--st:#8fd9cc}
+#rd.dk .site-melbourne-v{--sb:#2e2142;--st:#cdb3ee}
+#rd.dk .site-sydney{--sb:#3d2712;--st:#f3b98a}
+#rd .sitechip.on{border:1px solid var(--sc);background:var(--sb);color:var(--st)}
+#rd .sitetag{font-size:11px;padding:1px 7px;border-radius:999px;background:var(--sb);color:var(--st);white-space:nowrap;font-family:var(--font-sans);font-weight:400}
+/* Spoken words (option 2): a light blue card in Atkinson Hyperlegible, a font made for fast, accurate reading */
+:root{--font-say:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;--say-bg:#eef5fd;--say-line:#b9d6f5;--say-ink:#10233a}
+#rd.dk{--say-bg:#13263d;--say-line:#2c4f78;--say-ink:#e6f0fb}
+#rd .say{background:var(--say-bg);border:1px solid var(--say-line);border-radius:10px;padding:12px 14px}
+#rd .say-l{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text-accent);display:flex;gap:5px;align-items:center;text-transform:uppercase}
+#rd .say-t{margin:6px 0 0;font-family:var(--font-say);color:var(--say-ink);white-space:pre-line}
+#rd .script .esrc{font-family:var(--font-say);font-size:15px;line-height:1.6}
+/* Question layout 1B: question and answers on the left, recruiter information beside them */
+#rd .q2{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start}
+#rd .q2 .qinfo{position:sticky;top:calc(var(--hh,60px) + 12px);max-height:calc(100vh - var(--hh,60px) - 40px);overflow-y:auto;border:.5px solid var(--border-warning);background:var(--bg-warning);border-radius:10px;padding:10px 12px}
+#rd.dk .q2 .qinfo{background:#2e2410}
+#rd .qinfo-h{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text-warning);text-transform:uppercase;margin-bottom:6px}
+@media (max-width:900px){#rd .q2{grid-template-columns:minmax(0,1fr)}#rd .q2 .qinfo{position:static;max-height:none}}
+/* Clear question navigation */
+#rd .navbtn{height:40px;padding:0 16px;border-radius:var(--radius);border:1px solid var(--border-stronger);background:var(--surface-2);font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+#rd .navbtn.quiet{font-weight:400;color:var(--text-secondary);border-color:var(--border-strong)}
+#rd .navbtn .k{margin-left:0}
+/* Notes box under every question */
+#rd .qnote{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:600;margin-top:10px}
+#rd .qnote textarea{min-height:52px;font-size:13px;font-weight:400;box-sizing:border-box;width:100%;resize:vertical}
+/* Call script in a side panel */
+#rd .scriptside{position:fixed;top:12px;right:12px;bottom:12px;width:min(520px,92vw);z-index:30;background:var(--surface-2);border:1px solid var(--border-accent);border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.2);display:flex;flex-direction:column}
+#rd .scriptside .sbody{overflow-y:auto;padding:12px 16px}
+/* Visit timeline */
+#rd .vt-track{position:relative;height:96px;margin:6px 0}
+#rd .vt-dot{position:absolute;top:41px;width:12px;height:12px;margin-left:-6px;border-radius:50%}
+#rd .vt table{border-collapse:collapse;width:100%;font-size:12px}
+#rd .vt td,#rd .vt th{padding:5px 8px;text-align:left;border-top:.5px solid var(--border);vertical-align:top}
+#rd .vt th{font-weight:600;color:var(--text-secondary);border-top:0}
+/* Choose a study */
+#rd .pick{display:flex;align-items:center;gap:12px;padding:10px 12px;border-top:.5px solid var(--border)}
+#rd .pick:first-child{border-top:0}

@@ -69,7 +69,7 @@ export function Seg({ k, opts, cur }) {
 
 export function Badge({ p }) {
   if (!p) return <span className="mut" style={{ fontSize: 11 }}>Not on the list</span>;
-  const c = p.o === 'x' ? 'bad' : p.o === 'd' ? 'warn' : 'ok', l = p.o === 'x' ? 'Prohibited' : p.o === 'd' ? 'Doctor check' : 'Allowed';
+  const c = p.o === 'x' ? 'bad' : p.o === 'd' ? 'warn' : 'ok', l = p.o === 'x' ? 'On the exclusion list' : p.o === 'd' ? 'Doctor check' : 'Allowed';
   return (
     <>
       <span className={'pill bdg ' + c}>{l}</span> <span className="mut" style={{ fontSize: 11 }}>{p.n} · {p.w}</span>

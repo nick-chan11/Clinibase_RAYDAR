@@ -2,7 +2,8 @@
    The only changes: act() ends with commit() instead of render(), the copy action moved
    into the Dr enquiry component, and functions that returned HTML strings became JSX in views/. */
 import {CONDS} from './data.js';
-import {ST} from '../esource/studies.js';
+import {ST,setCohortHook} from '../esource/studies.js';
+import {plan,earliestScreen,iso as isoD} from '../esource/schedule.js';
 import {resetKeys} from './keys.js';
 
 /* ---- store plumbing: React subscribes with useSyncExternalStore ---- */
@@ -37,8 +38,14 @@ function tipVisit(s,c,v){const a=vS(v),b=vE(v),st=vStat(v);return s.c+' · '+cn(
 function tipCohort(s,c){const k=cKey(c);return s.c+' · '+cn(c.n)+'\n'+rk(k)[0]+'\nStay::'+fmtR(c.in,c.out)+'\nFollow-ups::'+(c.v.length?pl(c.v.length,'visit')+', last '+fmt(c.v[c.v.length-1].d):'None dated')+'\nClick to jump::on the calendar'}
 function tipAway(a){return 'Participant away\n\nFrom::'+fmtL(a[0])+'\nUntil::'+fmtL(a[1])+'\nLength::'+pl(dd(a[0],a[1])+1,'day')}
 const EF=()=>({n:'',ind:'',dose:'',route:'',st:'',en:''});
-const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false});
+const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,scr:'',d1:{},script:null,railAll:false,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false});
 export let S=fresh(1);
+/* 2.6: site filter. City (all, Melbourne, Sydney) and, within a city, which sites. Kept in this browser. */
+const SITE_KEY='raydar.site.v1';
+function loadSite(){try{const v=JSON.parse(localStorage.getItem(SITE_KEY)||'null');if(v&&['all','melbourne','sydney'].includes(v.city))return {city:v.city,off:v.off||{}}}catch(e){}return {city:'all',off:{}}}
+export let SITE=loadSite();
+function saveSite(){try{localStorage.setItem(SITE_KEY,JSON.stringify(SITE))}catch(e){}}
+function siteOk(s){if(SITE.city!=='all'&&s.city!==SITE.city)return false;return !SITE.off[s.site]}
 const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 const SC=c=>ST.find(x=>x.c===c);
 function age(){if(!S.dob)return null;const d=new Date(S.dob),t=new Date();if(isNaN(d))return null;let a=t.getFullYear()-d.getFullYear();if(t.getMonth()<d.getMonth()||(t.getMonth()===d.getMonth()&&t.getDate()<d.getDate()))a--;return a>=0&&a<120?a:null}
@@ -70,7 +77,7 @@ if(S.meds==null)miss.push('medications')}
 else if(s.need){const v=S.cond[s.need];if(v==='n')return['no','Recruits '+nm(s.need)+' only'];if(v==null)miss.push(nm(s.need))}
 if(s.cohorts&&S.away.length&&openC(s).every(c=>cRisk(c)!=='ok'))return['check','Away dates touch every cohort'];
 return miss.length?['check','Ask about '+miss.slice(0,2).join(' and ')]:['yes','Nothing flagged so far']}
-function ranked(){const o={yes:0,check:1,no:2};return ST.map(s=>({s,r:ev(s)})).sort((a,b)=>o[a.r[0]]-o[b.r[0]])}
+function ranked(all){const o={yes:0,check:1,no:2};return ST.filter(s=>all||siteOk(s)).map(s=>({s,r:ev(s)})).sort((a,b)=>o[a.r[0]]-o[b.r[0]])}
 const COL={yes:'var(--fill-success)',check:'var(--fill-warning)',no:'var(--border-stronger)'};
 const TXT={yes:'var(--text-success)',check:'var(--text-warning)',no:'var(--text-secondary)'};
 function proS(){return S.proS||(S.study&&S.study.c)||ranked()[0].s.c}
@@ -78,7 +85,7 @@ function proFor(c){const s=SC(c);return (s&&s.pro)||{}}
 const isMedT=t=>t==='med'||t==='otc';
 const inCarry=(e,c)=>c==='hx'?e.t==='hx':isMedT(e.t);
 function eText(e){return [e.n,e.ind,e.dose,e.route].filter(Boolean).join(' ')}
-function matchP(e,c){const t=' '+eText(e).toLowerCase()+' ';const L=proFor(c||proS())[e.t==='hx'?'hx':'med']||[];const rank={x:0,d:1,ok:2};return L.filter(p=>p.k.some(k=>t.includes(k))&&!(p.no||[]).some(k=>t.includes(k))).sort((a,b)=>rank[a.o]-rank[b.o])[0]||null}
+function matchP(e,c){const t=' '+eText(e).toLowerCase()+' ';const L=proFor(c||proS())[e.t==='hx'?'hx':'med']||[];const rank={x:0,d:1,ok:2};return L.filter(p=>p.k.length&&p.k.some(k=>t.includes(k))&&!(p.no||[]).some(k=>t.includes(k))&&!(e.nm||[]).includes(p.n)).sort((a,b)=>rank[a.o]-rank[b.o])[0]||null}
 function eParts(e){const p=[];if(e.t==='hx'){if(e.st)p.push('dx '+e.st);if(e.en)p.push('resolved '+e.en);return p}if(e.ind)p.push('for '+e.ind);if(e.dose)p.push(e.dose);if(e.route)p.push(e.route);if(e.st)p.push('started '+e.st);if(e.en)p.push('stopped '+e.en);return p}
 function syncAuto(){CONDS.forEach(c=>{const has=S.log.some(e=>e.auto===c[0]);if(S.cond[c[0]]==='y'&&!has)S.log.push(Object.assign(EF(),{t:'hx',n:c[1],src:'Quick check',auto:c[0],f:false}));if(S.cond[c[0]]!=='y'&&has)S.log=S.log.filter(e=>!(e.auto===c[0]&&!eParts(e).length))});
 const hm=S.log.some(e=>e.auto==='meds');if(S.meds==='y'&&!hm)S.log.push(Object.assign(EF(),{t:'med',n:'Regular medication',src:'Quick check',auto:'meds',f:false}));if(S.meds!=='y'&&hm)S.log=S.log.filter(e=>!(e.auto==='meds'&&!eParts(e).length))}
@@ -97,7 +104,7 @@ function noteShows(b){if(!b.vis)return true;const vis=new Set(qset().map(q=>q.id
 /** Would answering q with answer b open a question that is hidden now? */
 function opensWith(q,b){const s=S.study;if(!s)return false;const vis=new Set(qset().map(z=>z.id));vis.add(q.id);return s.Q.some(z=>z.vis&&z.deps&&z.deps.includes(q.id)&&!vis.has(z.id)&&z.vis.test(n=>valueOf(n,vis,{id:q.id,v:b[2]})))}
 function srcQ(s){s=s||S.study;return !s?[]:s.Q||[]}
-const RAYDAR_VERSION='RAYDAR 2.5 · questions, scripts and notes from the TST eSource files';
+const RAYDAR_VERSION='RAYDAR 2.6 · questions, scripts and notes from the TST eSource files';
 const oc=o=>o==='c'?'success':o==='d'?'warning':o==='x'?'danger':'accent';
 function curQ(){const L=qset();let i=L.findIndex(q=>q.id===S.qid);if(i<0){i=L.findIndex(q=>!S.out[q.id]);if(i<0)i=0;S.qid=L[i]&&L[i].id}return {L,i,q:L[i]}}
 function qMatches(q){if(!q.carry)return [];return S.log.filter(e=>inCarry(e,q.carry)).map(e=>({e,p:matchP(e)})).filter(z=>z.p&&z.p.o!=='ok')}
@@ -114,7 +121,7 @@ return null}
 function srcLabel(){if(S.stage==='id')return 'Identity';if(S.stage==='qc')return 'Quick check';if(S.stage==='ps'&&S.study){const q=curQ();return (S.qon?'Q'+(q.i+1)+' · ':'')+S.study.c}return 'Finish'}
 function rk(r){return {ok:['Available','ok','var(--fill-success)'],caution:['Caution','warn','var(--fill-warning)'],clash:['Clash','bad','var(--fill-danger)'],closed:['Closed','','var(--surface-1)'],soon:['Too soon','','var(--surface-1)']}[r]}
 function cKey(c){const st=cStat(c);return st!=='open'?st:cRisk(c)}
-function planStudies(){return ST.filter(s=>s.cohorts)}
+function planStudies(){return ST.filter(s=>siteOk(s)&&s.cohorts)}
 function pShown(s){if(S.pShow&&s.c in S.pShow)return S.pShow[s.c];if(S.pShow)return false;if(S.study&&S.study.c===s.c)return true;return ev(s)[0]!=='no'||!S.idok}
 function tlB(){const start=add(TODAY,-7);let end=add(TODAY,365);planStudies().forEach(s=>s.cohorts.forEach(c=>{const l=lastDay(c);if(l>end)end=l}));end=add(end,30);return {start,end,days:dd(start,end)+1}}
 const ZP=()=>S.zoom==='far'?3:16;
@@ -163,7 +170,7 @@ function psDone(){const L=qset();return !!L.length&&L.every(q=>S.out[q.id])}
 /** The step a recruiter would take next, once the current one is complete. null while there's still work here. */
 function nextStep(){
 if(S.stage==='id')return idReady()?{a:'confirm',done:'Identity details entered',to:'Quick check',btn:'Confirm and continue'}:null;
-if(S.stage==='qc'){if(!qcDone())return null;const b=S.study||ranked()[0].s;return {a:S.study?'go:ps':'start:'+b.c,done:'Quick check complete',to:'Pre-screen',sub:b.c+(S.study?'':' · best match so far'),btn:'Continue to pre-screen'}}
+if(S.stage==='qc'){if(!qcDone())return null;return {a:'go:ps',done:'Quick check complete',to:'Pre-screen',sub:S.study?S.study.c:'choose a study',btn:S.study?'Continue to pre-screen':'Choose a study'}}
 if(S.stage==='ps'&&S.study&&!S.qon)return preqDone()?{a:'startq',done:'Dates and study information done',to:'Questions',sub:S.study.c,btn:'Start questions'}:null;
 if(S.stage==='ps'&&S.study&&S.qon){if(!psDone())return null;const L=qset(),x=L.filter(q=>S.out[q.id]==='x').length,d=L.filter(q=>S.out[q.id]==='d').length;return {a:'go:finish',done:'All '+L.length+' questions answered',to:'Finish',sub:x?x+' exclusion'+(x>1?'s':''):d?d+' for the doctor':'Nothing flagged',tone:x?'bad':d?'warn':'ok',btn:'Continue to finish'}}
 if(S.stage==='finish'&&S.saved)return {a:'new',done:'Saved',to:'Next call',btn:'Start next call'};
@@ -173,9 +180,14 @@ return null}
 const RANK={x:4,d:3,c:2,n:1,i:0};
 function multiB(q){const p=(S.pick[q.id]||[]).filter(j=>q.a[j]);if(!p.length)return ['None of these','i',[]];const o=p.map(j=>q.a[j][1]).reduce((m,z)=>RANK[z]>RANK[m]?z:m,'i');return [p.map(j=>q.a[j][0]).join('; '),o,p.map(j=>q.a[j][2])]}
 function textB(q){const t=String(S.txt[q.id]||'').trim();if(!t){S.err={t:'Type their answer first'};S.shake='t';return null}return [t,'i',t]}
+/* 2.6: a rolling study's one cohort: Day 1 and its visits, from the screening date and away dates */
+const emCache=new Map();
+function emPlan(s){if(!s||!s.sched)return null;const scr=S.scr||earliestScreen(s.site),k=[s.sched,s.site,scr,JSON.stringify(S.away),S.d1[s.c]||''].join('|');if(!emCache.has(k)){if(emCache.size>200)emCache.clear();emCache.set(k,plan(s.sched,scr,s.site,S.away,S.d1[s.c]))}return emCache.get(k)}
+function emCohorts(s){const P=emPlan(s);if(!P)return null;const d1=isoD(P.D1);return [{id:'tl',n:'Day 1 '+fmt(d1)+' (screening '+fmt(isoD(P.S))+')',t:'tl',in:d1,out:d1,closed:false,rolling:true,v:P.rows.filter(r=>!r.screen&&r.status!=='phone'&&r.v.day!==1).map(r=>({d:isoD(r.from),a:isoD(r.from),b:isoD(r.to),w:0,l:r.v.name}))}]}
+setCohortHook(emCohorts);
 function act(a){const p=a.split(':'),k=p[0],x=p[1],y=p.slice(2).join(':');S.toast='';lastAction=k;
 if(k!=='discard')S.discard=false;
-if(k==='go'){if(x!=='id'&&!S.idok){S.stage='id';S.err={id:x==='finish'?'Confirm identity first. The PID goes in the file name':'Confirm identity first'}}else if(x==='ps'&&!S.study){start(ranked()[0].s.c)}else{S.stage=x;S.err={}}}
+if(k==='go'){if(x!=='id'&&!S.idok){S.stage='id';S.err={id:x==='finish'?'Confirm identity first. The PID goes in the file name':'Confirm identity first'}}else{S.stage=x;S.err={}}}
 else if(k==='confirm'){const e={};if(!/^P\d{3,}/.test(S.pid))e.pid='Enter a PID like P12345';if(age()==null)e.dob='Enter a valid date of birth';if(!S.match)e.match='Check name, phone and email against the profile';S.err=e;S.shake=Object.keys(e)[0]||null;if(!Object.keys(e).length){S.idok=true;S.stage='qc'}}
 else if(k==='set'){if(x.indexOf('cond.')===0){const c=x.slice(5);S.cond[c]=S.cond[c]===y?null:y}else S[x]=S[x]===y?null:y;syncAuto()}
 else if(k==='norest'){CONDS.forEach(c=>{if(S.cond[c[0]]==null)S.cond[c[0]]='n'});syncAuto()}
@@ -183,7 +195,7 @@ else if(k==='start'){start(x);S.nav=[];S.park={};S.hist={};S.peek=null}
 else if(k==='pstart'){start(x);S.nav=[];S.park={};S.hist={};S.peek=null;if(S.study){avl(x)[y]=true;S.plan=false}}
 else if(k==='sub')S.sub=x;
 else if(k==='read'){S.read[S.study.c]=true;S.err={};if(S.study.cohorts&&!S.datesOk[S.study.c])S.sub='dates'}
-else if(k==='dok'){if(!selC().length){S.err={d:'Select at least one cohort first'};S.shake='d'}else{S.datesOk[S.study.c]=true;S.err={};if(!S.read[S.study.c])S.sub='info'}}
+else if(k==='dok'){if(S.study&&S.study.sched){avl(S.study.c).tl=true}if(!selC().length){S.err={d:'Select at least one cohort first'};S.shake='d'}else{S.datesOk[S.study.c]=true;S.err={};if(!S.read[S.study.c])S.sub='info'}}
 else if(k==='startq'){const s=S.study,dOk=!s.cohorts||S.datesOk[s.c];if(!dOk||!S.read[s.c])S.err={s:(!dOk?'Confirm the dates':'')+(!dOk&&!S.read[s.c]?' and ':'')+(!S.read[s.c]?(dOk?'Read':'read')+' the study information':'')+' first'},S.shake='s';else{S.qon=true;S.err={};S.qid=null}}
 else if(k==='avail'){const o=avl(x);o[y]=!o[y];if(S.study&&S.study.c===x&&!selC().length)S.datesOk[x]=false}
 else if(k==='info')S.infoOpen=!S.infoOpen;
@@ -198,6 +210,13 @@ if(lst){const L2=qset(),i2=L2.indexOf(q),Z=L2.filter(z=>z.sec===q.sec),nx=Z.slic
 else{const lbl='Q'+(i+1)+' recorded as '+short(b[0],60)+(was&&S.hist[q.id]?' (was '+short(S.hist[q.id],40)+')':'');if(was){const fr=frontier(L);S.nav=[];if(fr){S.qid=fr.id;S.peek=null}}else advance();S.last={qid:q.id,label:lbl,next:S.stage==='ps'?S.qid:null,o:b[1],po:was,pa:pa,pv:pv}}}}
 else if(k==='undo'){if(S.last){S.stage='ps';S.qid=S.last.qid;if(S.last.po){S.out[S.qid]=S.last.po;S.ans[S.qid]=S.last.pa;S.val[S.qid]=S.last.pv}else{delete S.out[S.qid];delete S.ans[S.qid];delete S.val[S.qid]}S.last=null;S.scrollQ=true}}
 else if(k==='clr'){const rm=id=>{delete S.out[id];delete S.ans[id];delete S.val[id];delete S.why[id];delete S.pick[id];srcQ().filter(z=>z.deps&&z.deps.includes(id)&&S.out[z.id]).forEach(z=>rm(z.id))};rm(x);delete S.park[x];S.qid=x;S.last=null;S.scrollQ=true;S.toast=''}
+else if(k==='city'){SITE={city:x,off:{}};saveSite()}
+else if(k==='sitet'){const key=decodeURIComponent(x);SITE={...SITE,off:{...SITE.off,[key]:!SITE.off[key]}};saveSite()}
+else if(k==='railall'){S.railAll=!S.railAll}
+else if(k==='scr'){S.scr=x||'';S.d1={}}
+else if(k==='d1'){S.d1[S.study.c]=x}
+else if(k==='script'){S.script=x==='close'||S.script===x?null:x}
+else if(k==='notmatch'){const e=S.log[+x];if(e){e.nm=(e.nm||[]).concat(decodeURIComponent(y))}}
 else if(k==='rebind'){S.rebind=S.rebind===x?null:x||null;S.keyMsg=''}
 else if(k==='keyreset'){resetKeys();S.rebind=null;S.keyMsg='Shortcuts reset to the defaults'}
 else if(k==='tips'){S.tips=!S.tips;if(S.tool==='guide'&&!S.tips)S.tool=null}
@@ -260,4 +279,4 @@ else if(x==='copy'){}
 else if(x==='send'){const t=S.dre.txt!=null?S.dre.txt:drText();if(typeof sendPrompt==='function'){sendPrompt('Here is the Dr enquiry for '+drCode()+':\n\n'+t);S.copied='Sent to chat'}else S.copied='Sending to chat is not available here'}}
 commit()}
 
-export {noteShows,opensWith,followUpLabels,valueOf,multiB,ansOrder,ansSlot,primaryIdx,opensFollowUp,idReady,qcLeft,qcDone,preqDone,psDone,nextStep,COL,DD,EF,EMRE,FLD,RAYDAR_VERSION,SC,TL,TODAY,TXT,ZP,act,add,addRows,advance,age,avl,bmi,cKey,cRisk,cStat,camel,cn,conflictDate,curQ,dd,doJump,drCode,drText,eParts,eText,esc,ev,fmt,fmtL,fmtR,fname,fresh,frontier,goQ,inCarry,isAway,isMedT,iso,lastDay,matchP,needsReview,nextOpen,nm,oc,ocls,openC,pShown,pl,planStudies,proFor,proS,pushLog,qMatches,qset,ranked,reason,rk,selC,selTypes,short,srcLabel,srcQ,start,stayHit,sug,sugQ,syncAuto,tipAway,tipCohort,tipStay,tipVisit,tlB,vE,vS,vStat};
+export {siteOk,emPlan,noteShows,opensWith,followUpLabels,valueOf,multiB,ansOrder,ansSlot,primaryIdx,opensFollowUp,idReady,qcLeft,qcDone,preqDone,psDone,nextStep,COL,DD,EF,EMRE,FLD,RAYDAR_VERSION,SC,TL,TODAY,TXT,ZP,act,add,addRows,advance,age,avl,bmi,cKey,cRisk,cStat,camel,cn,conflictDate,curQ,dd,doJump,drCode,drText,eParts,eText,esc,ev,fmt,fmtL,fmtR,fname,fresh,frontier,goQ,inCarry,isAway,isMedT,iso,lastDay,matchP,needsReview,nextOpen,nm,oc,ocls,openC,pShown,pl,planStudies,proFor,proS,pushLog,qMatches,qset,ranked,reason,rk,selC,selTypes,short,srcLabel,srcQ,start,stayHit,sug,sugQ,syncAuto,tipAway,tipCohort,tipStay,tipVisit,tlB,vE,vS,vStat};

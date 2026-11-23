@@ -1,6 +1,18 @@
-# RAYDAR 2.5 (React + Motion)
+# RAYDAR 2.6 (React + Motion)
 
 A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-animation skill.
+
+## New in 2.6
+
+- **Question layout (1B):** the spoken question and the answers on the left, the recruiter-only information (descriptions and eSource notes) beside them. A notes box sits under every question's answers, and Previous / Skip to next are full-size buttons.
+- **Spoken words** are in a light blue "Say" card in Atkinson Hyperlegible (loaded from Google Fonts; offline, the system font).
+- **Notes go with the right question:** TST writes a note straight after the question it explains, so RAYDAR now attaches it to the question before it (2.5 put it on the next one).
+- **Date of birth, height and weight** from Quick check are editable on the questions that reconfirm them (cm or ft/in).
+- **Bigger header with a site filter:** All, Melbourne or Sydney, then the sites within the city (Melbourne = Emeritus Melbourne + Veritus). It filters every study list and Compare dates, and is remembered in the browser. Pivotable studies can override it with "All sites".
+- **Choose a study:** after Quick check, Pre-screen lists the site's studies by fit (number keys start one) instead of picking one.
+- **Emeritus visit timelines:** rolling-recruitment studies use the protocol schedules from RAYDAR Original's Visit calculator (`../RAYDAR visit schedules.json`). Enter a screening date and away dates and every visit is mapped; weekends, public holidays (VIC or NSW) and away dates are closed days. Emeritus studies also join Compare dates from that screening date.
+- **Call script:** a "Call script" tab before the first section, or beside the question (side panel button, or the S key; Esc closes).
+- **Prohibited lists from the eSource:** the bulleted exclusion notes are read into Medications and Conditions lists, shown as TST wrote them. Logged medications are matched by drug name; a match is flagged for the recruiter ("Not a match" dismisses it), never answered.
 
 ## New in 2.5: built from the TST eSource files
 
@@ -27,10 +39,10 @@ A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-an
 npm install
 npm run dev      # http://localhost:5173
 npm run build    # static site in dist/ — needs a web server (e.g. `npm run preview`); double-clicking dist/index.html shows a blank page
-npm run build:single   # one self-contained file, written to ../RAYDAR_2.5.html — opens by double-click
+npm run build:single   # one self-contained file, written to ../RAYDAR_2.6.html — opens by double-click
 ```
 
-After changing anything in `src/`, run `npm run build:single` again to refresh `RAYDAR_2.5.html`.
+After changing anything in `src/`, run `npm run build:single` again to refresh `RAYDAR_2.6.html`.
 
 ## Where things live
 
@@ -40,6 +52,8 @@ After changing anything in `src/`, run `npm run build:single` again to refresh `
 | `src/esource/studies.js` | The study list: built-in eSources, plus files loaded at run time |
 | `src/esource/convert.js` | eSource (SurveyJS JSON) → RAYDAR study, and the file check |
 | `src/esource/expr.js` | Evaluates the eSource's visibleIf conditions |
+| `src/esource/schedule.js` | Emeritus visit timelines from the protocol schedules |
+| `src/views/Timeline.jsx` | The visit timeline view |
 | `src/esource/html.js` | Shows Study Notes HTML safely (allow-listed tags and styles only) |
 | `src/engine/store.js` | State, eligibility rules and `act()`, generated from 2.2; `commit()` replaces `render()`. 2.4 adds `ansOrder()` and `nextStep()` |
 | `src/engine/keys.js` | Keyboard bindings: defaults, rebinding, labels |

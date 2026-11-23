@@ -98,7 +98,8 @@ export const ERow = forwardRef(function ERow({ e, pre, showBadge, i }, ref) {
           <button className="lnk" {...A(pre + 'edit:' + idx)} style={{ fontSize: 11, color: 'var(--text-warning)' }}>Add details</button>
         )}
         <div>
-          {showBadge ? <Badge p={p} /> : p ? <><span className={'pill bdg ' + (p.o === 'x' ? 'bad' : p.o === 'd' ? 'warn' : 'ok')}>{p.o === 'x' ? 'Prohibited' : p.o === 'd' ? 'Doctor' : 'Allowed'}</span> </> : null}
+          {showBadge ? <Badge p={p} /> : p ? <><span className={'pill bdg ' + (p.o === 'x' ? 'bad' : p.o === 'd' ? 'warn' : 'ok')}>{p.o === 'x' ? 'On the list' : p.o === 'd' ? 'Doctor' : 'Allowed'}</span> </> : null}
+          {p ? <button className="lnk" {...A('notmatch:' + idx + ':' + encodeURIComponent(p.n))} style={{ fontSize: 11, marginLeft: 6 }} title="RAYDAR matched this by name; say so if it's wrong">Not a match</button> : null}
           <span style={{ fontSize: 11, color: 'var(--text-muted)', marginLeft: 6, fontStyle: 'italic' }}>{e.src}</span>
         </div>
       </div>

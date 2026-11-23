@@ -89,7 +89,7 @@ export function convert(file, json, dates) {
   const ageNames = items.filter((x) => x.el.type === 'dobandage').map((x) => x.el.name);
 
   /* 3. Questions, notes and Study Notes */
-  const Q = [], notes = [], pendingBefore = {}, lastQ = {};
+  const Q = [], notes = [], pendingBefore = {}, lastQ = {}, proSources = [];
   let hidden = 0;
   const isNotesPage = (page) => /study\s*notes?/i.test(page);
   const htmlOf = (el) => (el.type === 'image'
@@ -108,9 +108,13 @@ export function convert(file, json, dates) {
       } else if (vis) {
         // A note that appears only after certain answers becomes a step of its own, so it can't be missed
         Q.push({ id: el.name, kind: 'note', sec: page, t: '', html: [block], a: [['Noted', 'i', 'noted']], s: 'Note', vis, r: '' });
+      } else if (lastQ[page]) {
+        // TST writes a note straight after the question it explains (2.6 fix: 2.5 put it on the next question)
+        lastQ[page].after = (lastQ[page].after || []).concat(block);
       } else {
         (pendingBefore[page] = pendingBefore[page] || []).push(block);
       }
+      if (el.type === 'html') proSources.push({ el, prevQ: lastQ[page] || null });
       continue;
     }
     if (!QUESTION_TYPES.has(el.type)) continue;
@@ -199,7 +203,10 @@ export function convert(file, json, dates) {
   const noMark = Q.filter((q) => (q.kind === 'choice' || q.kind === 'multi') && !q.auto && q.a.some((b) => b[1] === 'i'));
   if (noMark.length) issues.push({ q: '', msg: noMark.length + ' question' + (noMark.length > 1 ? 's have' : ' has') + ' answers with no outcome marker (✅ ⚠️ 🛑), so RAYDAR shows them in grey: ' + noMark.slice(0, 8).map((q) => q.s).join('; ') + (noMark.length > 8 ? '…' : '') });
 
+  const pro = extractPro(proSources);
+
   return {
+    pro: pro.lists, proNotes: pro.notes,
     c: code, code, site, siteShort: SITE_SHORT[site] || site.slice(0, 3).toUpperCase(), file: String(file).replace(/^.*[\\/]/, ''),
     d: plain(json.title || code).replace(/\s*pre-?screening\s*$/i, ''), version: plain(json.version || ''),
     Q, byName: qById, notes, age, bmi, hidden, issues,
@@ -207,4 +214,63 @@ export function convert(file, json, dates) {
     cohorts: dates && dates.cohorts && dates.cohorts.length ? dates.cohorts.map((c) => ({ ...c, closed: !!c.closed, v: (c.v || []).map((v) => ({ ...v, w: v.w || 0 })) })) : null,
     datesSrc: dates ? dates.cohorts.map((c) => c.src).filter(Boolean) : [],
   };
+}
+
+/* ---- Prohibited lists (2.6) ----
+   TST keeps each study's exclusion lists as bulleted notes ("Exclusionary Medication List", "PLEASE EXCLUDE THE
+   FOLLOWING"). RAYDAR keeps every bullet as written, groups it under its parent bullet, and sorts the note into
+   medications or conditions from its title or the question it follows. Logged medications are matched on drug
+   names found in a bullet (capitalised names, common drug endings, "ending in ..."); conditions are listed for
+   reference only, since matching them on words would misfire (a "type 2 diabetes" study excludes "non-type 2 diabetes"). */
+const PRO_NOTE = /exclude the following|exclusionary|prohibited|please exclude|not permitted|are exclusionary|following are excluded/i;
+const MED_WORDS = /medication|\bmeds?\b|drug|medicine|tablet|inhaler|supplement/i;
+const HX_WORDS = /condition|medical history|history|disease|diagnos|illness|disorder/i;
+const STOP = new Set('please exclude following within months weeks years oral certain chronic other including unless history illicit stability medication medications drugs agents inhibitors agonists antagonists blockers receptor therapy therapies treatment treatments systemic topical injectable injection injections prescription prescribed current currently recent recently previous prior unsure raise medical query severe condition conditions disease diseases except exception exceptions allowed permitted stable daily weekly doses doctor doctors calcium channel serotonin dopamine antibiotics anticholinergics antispasmodics cholinergic sulfonylureas weight receipt anticipation yellow nasal anything liquid laser started critical commencement maintenance infected bleach plans interventions muscular cholesterol changes sodium synthetic spinal atrophy lateral duchenne dystrophy amyotrophic sclerosis platelet-rich narrowband anti-cancer biologics monoamine glucose-lowering specific timeframe required determined known participants participant study screening should would their there these those which where while during before after above below between under every first second third types type acute active approved being cannot could given greater higher lower other over regular regularly short long term significant unknown using visit years-old hours minutes stable'.split(' '));
+const DRUG_END = /(pril|sartan|olol|statin|mab|nib|tide|gliptin|gliflozin|azole|mycin|cillin|cycline|floxacin|dipine|pine|lone|sone|olone|azepam|zolam|pam|oxetine|aline|amine|triptan|parin|xaban|gatran|vir|dronate|setron|prazole|tidine|lukast|terol|tropium|onium|caine|codone|morphone|profen|fenac|coxib|semide|thiazide|zide|formin|glinide|glitazone|lutide|glutide)$/i;
+
+function proKeywords(text) {
+  const k = new Set();
+  const end = /ending in\s*["“'‘]?([a-z]{4,})/i.exec(text);
+  if (end) k.add(end[1].toLowerCase());
+  String(text).split(/[^A-Za-z0-9-]+/).forEach((w) => {
+    const lw = w.toLowerCase().replace(/^-+|-+$/g, '');
+    if (lw.length < 5 || STOP.has(lw) || /^\d/.test(lw)) return;
+    if (/^[A-Z][a-z]/.test(w) || DRUG_END.test(lw)) k.add(lw);
+  });
+  return [...k];
+}
+
+/** Bullets with their parent bullet, from editor HTML, without a DOM. */
+function bullets(html) {
+  const out = [], stack = [];
+  const re = /<(\/?)(li|ul|ol)\b[^>]*>|<[^>]+>|([^<]+)/gi;
+  let m;
+  while ((m = re.exec(String(html)))) {
+    if (m[3] != null) { if (stack.length) stack[stack.length - 1].text += m[3]; continue; }
+    const tag = (m[2] || '').toLowerCase();
+    if (tag === 'li' && !m[1]) { const node = { text: '', parent: stack[stack.length - 1] || null, kids: 0 }; if (node.parent) node.parent.kids++; stack.push(node); out.push(node); }
+    else if (tag === 'li' && m[1]) stack.pop();
+  }
+  return out.map((n) => ({ text: plain(n.text), parent: n.parent ? plain(n.parent.text) : '', leaf: !n.kids })).filter((n) => n.text);
+}
+
+function extractPro(sources) {
+  const lists = { med: [], hx: [] }, notes = { med: [], hx: [] };
+  sources.forEach(({ el, prevQ }) => {
+    const html = String(el.html || ''), text = plain(html);
+    if (!PRO_NOTE.test(el.name + ' ' + text.slice(0, 200)) || /holiday|travel|location|schedule|availability/i.test(el.name)) return;
+    const items = bullets(html);
+    if (items.length < 2) return;
+    const head = el.name + ' ' + text.slice(0, 160);
+    let kind = MED_WORDS.test(head) && !HX_WORDS.test(head) ? 'med' : HX_WORDS.test(head) && !MED_WORDS.test(head) ? 'hx' : '';
+    if (!kind && prevQ) kind = prevQ.carry === 'med' || MED_WORDS.test(prevQ.t) ? 'med' : prevQ.carry === 'hx' || HX_WORDS.test(prevQ.t) ? 'hx' : '';
+    if (!kind) kind = items.filter((i) => proKeywords(i.text).some((w) => DRUG_END.test(w))).length >= 2 ? 'med' : 'hx';
+    const where = autoName(el.name) ? (prevQ ? 'Under: ' + words(prevQ.t, 8) : 'eSource note') : plain(el.name);
+    notes[kind].push({ name: el.name, html, vis: null, title: where });
+    items.filter((i) => i.leaf).forEach((i) => {
+      const t = (i.parent ? i.parent + ': ' : '') + i.text;
+      lists[kind].push({ n: i.text, w: i.parent || where, o: /raise|query|⚠|check with|doctor/i.test(t) ? 'd' : 'x', k: kind === 'med' ? proKeywords(i.text) : [], no: [], src: el.name });
+    });
+  });
+  return { lists, notes };
 }

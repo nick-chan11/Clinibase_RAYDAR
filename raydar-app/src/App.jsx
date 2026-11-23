@@ -1,6 +1,6 @@
 import { memo, useEffect, useLayoutEffect, useRef, useSyncExternalStore } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { S, act, ansOrder, commit, curQ, getVersion, nextStep, subscribe, upd } from './engine/store.js';
+import { S, act, ansOrder, commit, curQ, getVersion, nextStep, ranked, subscribe, upd } from './engine/store.js';
 import { KEY_ACTIONS, UNBINDABLE, actionFor, bind, keyLabel, keyName } from './engine/keys.js';
 import { Expander, shake } from './motion/components.jsx';
 import { STAGE, STAGE_EXIT, prefersReduced } from './motion/tokens.js';
@@ -91,6 +91,14 @@ function onKey(e) {
   if ((e.key === 'Enter' || e.key === ' ') && (tg === 'BUTTON' || tg === 'A')) return;
   const id = actionFor(e.key);
   if (id === 'undo') { if (S.last) { e.preventDefault(); act('undo'); } return; }
+  // 2.6: the call script, and choosing a study by number
+  if (e.key === 'Escape' && S.script) { e.preventDefault(); act('script:close'); return; }
+  if (id === 'script' && S.stage === 'ps' && S.study) { e.preventDefault(); act('script:side'); return; }
+  if (S.stage === 'ps' && !S.study && /^[1-9]$/.test(e.key)) {
+    const order = ['yes', 'check', 'no'], L = ranked().slice().sort((a, b) => order.indexOf(a.r[0]) - order.indexOf(b.r[0])), x = L[+e.key - 1];
+    if (x) { e.preventDefault(); act('start:' + x.s.c); }
+    return;
+  }
   if (id === 'cont') {
     // 2.5: on a multi-select question, the continue key records what's ticked
     if (S.stage === 'ps' && S.qon) { const cq = curQ().q; if (cq && cq.kind === 'multi') { e.preventDefault(); act('ansm:' + cq.id); return; } }

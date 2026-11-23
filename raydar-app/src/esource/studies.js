@@ -2,6 +2,7 @@
    with cohort dates from "RAYDAR cohort dates.json". At run time, Tools → Study files can load more eSource
    files (or newer versions of these); they replace a built-in study with the same file name for this session. */
 import { convert } from './convert.js';
+import { scheduleKeyFor } from './schedule.js';
 import DATES from '../../../RAYDAR cohort dates.json';
 
 const BUILT_IN = import.meta.glob('../../../Pre-screening eSource JSONs/*.json', { eager: true, import: 'default' });
@@ -19,9 +20,32 @@ function assignCodes() {
   ST.forEach((s) => (s.c = n[s.code] > 1 ? s.code + ' ' + s.siteShort : s.code));
 }
 
+/* 2.6: city and site, for the site filter */
+export const SITES = [
+  { key: 'Emeritus Melbourne', city: 'melbourne', short: 'Emeritus Melb' },
+  { key: 'Veritus', city: 'melbourne', short: 'Veritus', label: 'Veritus Melbourne' },
+  { key: 'Emeritus Sydney', city: 'sydney', short: 'Emeritus Syd' },
+];
+export const cityOf = (site) => (/sydney/i.test(site || '') ? 'sydney' : 'melbourne');
+export const siteLabel = (site) => (SITES.find((x) => x.key === site) || {}).label || site;
+
+/* 2.6: a rolling-recruitment study's cohort is worked out from the screening date (esource/schedule.js).
+   The store registers how; until then such a study has no cohorts. */
+let cohortHook = null;
+export const setCohortHook = (f) => { cohortHook = f; };
+
 function put(file, json, fromFile) {
   const s = convert(file, json, DATES[file.replace(/^.*[\\/]/, '')]);
   s.loaded = !!fromFile;
+  s.city = cityOf(s.site);
+  s.siteLabel = siteLabel(s.site);
+  // Emeritus studies recruit on a rolling basis: their visits come from the protocol schedule, not fixed cohorts
+  s.sched = !s.cohorts && /emeritus/i.test(s.site) ? scheduleKeyFor(s.code) : null;
+  if (s.sched) {
+    const types = { tl: { l: 'Rolling recruitment', nights: 0, stay: 'Clinic day visits from Day 1', fu: '', pay: '' } };
+    s.types = types;
+    Object.defineProperty(s, 'cohorts', { get: () => (cohortHook ? cohortHook(s) : null), enumerable: true, configurable: true });
+  }
   const i = ST.findIndex((x) => x.file === s.file);
   if (i >= 0) ST.splice(i, 1, s); else ST.push(s);
   return { s, replaced: i >= 0 };

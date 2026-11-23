@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { S, age, bmi, nextStep, RAYDAR_VERSION } from '../engine/store.js';
+import { S, SITE, age, bmi, nextStep, RAYDAR_VERSION } from '../engine/store.js';
+import { SITES } from '../esource/studies.js';
 import { keyName } from '../engine/keys.js';
 import { A, Ic, B } from './ui.jsx';
 import { Expander, IconSwap } from '../motion/components.jsx';
@@ -29,8 +30,8 @@ export function Header() {
   const s = S.study, a = age(), b = bmi();
   return (
     <div className="bar">
-      <span style={{ fontWeight: 500, letterSpacing: '.06em' }} title={RAYDAR_VERSION}>
-        RAYDAR <span style={{ color: 'var(--text-accent)' }}>2.5</span>
+      <span className="brand" title={RAYDAR_VERSION}>
+        RAYDAR <span style={{ color: 'var(--text-accent)' }}>2.6</span>
       </span>
       {S.idok ? (
         <span className="pill ok" style={{ cursor: 'default' }}>
@@ -45,6 +46,7 @@ export function Header() {
       {s && (S.stage === 'ps' || S.stage === 'finish') ? (
         <button className="pill" {...A('tool:switch')} title="Switch study">{s.c} <Ic n="ti-selector" /></button>
       ) : null}
+      <SitePicker />
       <span style={{ flex: 1 }} />
       <button className={'pill ' + (S.discard ? 'bad' : 'ib')} {...A('discard')} title="Clear this call and start again" style={S.discard ? null : { color: 'var(--text-danger)' }}>
         <Ic n="ti-trash" /> {S.discard ? 'Click again to discard' : 'Discard'}
@@ -61,6 +63,29 @@ export function Header() {
       </span>
       <button className="pill pri" {...A('go:finish')}>Finish call</button>
     </div>
+  );
+}
+
+/** 2.6: the site filter. A city (or all), then which sites in it. Filters every study list and the dates calendar. */
+export function SitePicker() {
+  const inCity = SITES.filter((x) => SITE.city === 'all' || x.city === SITE.city);
+  return (
+    <span className="sitepick" role="group" aria-label="Site">
+      <span className="mut" style={{ fontSize: 13 }}>Site</span>
+      <span className="seg big">
+        {[['all', 'All'], ['melbourne', 'Melbourne'], ['sydney', 'Sydney']].map(([k, l]) => (
+          <button key={k} {...A('city:' + k)} className={SITE.city === k ? 'sel' : ''} aria-pressed={SITE.city === k}>{l}</button>
+        ))}
+      </span>
+      {SITE.city !== 'all' && inCity.length > 1 ? inCity.map((x) => {
+        const on = !SITE.off[x.key];
+        return (
+          <button key={x.key} className={'pill sitechip ' + (on ? 'on ' : '') + 'site-' + x.city + (x.key === 'Veritus' ? '-v' : '')} aria-pressed={on} {...A('sitet:' + encodeURIComponent(x.key))}>
+            {on ? <Ic n="ti-check" /> : null} {x.label || x.key}
+          </button>
+        );
+      }) : null}
+    </span>
   );
 }
 
@@ -104,7 +129,8 @@ export function Steps() {
 function guideText() {
   if (S.stage === 'id') return <><B>Start here.</B> Check the PID and date of birth against their profile, then press <B>Enter</B>.</>;
   if (S.stage === 'qc') return <><B>Quick check</B> rules studies out fast. Studies they can't do drop down the <B>Pivotable studies</B> list on the right. Pick one to pre-screen.</>;
-  if (S.stage === 'ps' && !S.qon) return <>Read the <B>cohort dates</B> and the <B>study information</B> in either order, then press <B>Start questions</B>.</>;
+  if (S.stage === 'ps' && !S.study) return <><B>Choose a study.</B> The list follows the site picked in the header; press a study's number or click Start.</>;
+  if (S.stage === 'ps' && !S.qon) return <>Check the {S.study.sched ? <B>visit timeline</B> : <B>cohort dates</B>} and read the <B>study information</B> in either order, then press <B>Start questions</B>.</>;
   if (S.stage === 'ps')
     return (
       <>

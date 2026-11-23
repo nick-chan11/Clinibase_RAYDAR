@@ -1,0 +1,3164 @@
+{
+ "_about": "Visit schedules for rolling-recruitment (Emeritus) studies, copied unchanged from RAYDAR Original (built there from each protocol's schedule of assessments). Day 1 is the anchor; a visit has a study day and a window in days (win before, winAfter after if different), or a dayFrom/dayTo range. type phone = no clinic visit. byCode maps a study code (as in the eSource file name or the original RAYDAR) to its schedule. Public holidays and weekends count as closed days.",
+ "byCode": {
+  "223977": "223977",
+  "FB102-701": "fb102",
+  "D8750C00012": "selene2",
+  "D8750C00014": "selene1",
+  "MRX-4TZT-05": "ms",
+  "PRA-216-301": "pra301-ph2a",
+  "KIT2014-03": "kit-copd",
+  "mRNA-NEXT-001": "ebv",
+  "OLX72021-02": "olx-ph2a",
+  "SB3567-CLIN-001": "sbacne",
+  "D7261C00005": "eluminate",
+  "PRA-216-101": "asthma-ph2a",
+  "SRSD384-101": "srsd",
+  "SRN-705-014": "srn",
+  "D7260C00015": "az",
+  "GSBR-1290-12": "gsbr12",
+  "GSBR-1290-15": "gsbr15",
+  "VBE00001": "vbe",
+  "PRA-216-201": "pra201-ph2a"
+ },
+ "schedules": {
+  "223977": {
+   "label": "GSK 223977 — Bronchiectasis (Anti-inflammatory)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (Dose 1)",
+   "note": "Protocol Final 27 May 2025, Table 3 (2 doses: Day 1 and Week 12). Days are counted as the protocol prints them from Day 1 (Week 12 = 84 days after Day 1, matching the 12-week dose interval). The Week 58 phone follow-up for women of child-bearing potential has no day or window in the protocol, so it is not checked.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic",
+     "offFrom": -28,
+     "offTo": -1
+    },
+    {
+     "name": "Day 1 — Dose 1 (Week 0)",
+     "day": 1,
+     "win": 0,
+     "type": "clinic",
+     "off": 0
+    },
+    {
+     "name": "Week 1 (Day 7)",
+     "day": 7,
+     "win": 1,
+     "type": "clinic",
+     "off": 7
+    },
+    {
+     "name": "Week 2 (Day 14)",
+     "day": 14,
+     "win": 2,
+     "type": "clinic",
+     "off": 14
+    },
+    {
+     "name": "Week 4 (Day 28)",
+     "day": 28,
+     "win": 3,
+     "type": "clinic",
+     "off": 28
+    },
+    {
+     "name": "Week 8 (Day 56)",
+     "day": 56,
+     "win": 3,
+     "type": "clinic",
+     "off": 56
+    },
+    {
+     "name": "Week 12 (Day 84) — Dose 2",
+     "day": 84,
+     "win": 1,
+     "type": "clinic",
+     "off": 84
+    },
+    {
+     "name": "Week 13 (Day 91)",
+     "day": 91,
+     "win": 1,
+     "type": "clinic",
+     "off": 91
+    },
+    {
+     "name": "Week 18 (Day 126)",
+     "day": 126,
+     "win": 6,
+     "type": "clinic",
+     "off": 126
+    },
+    {
+     "name": "Week 24 (Day 168)",
+     "day": 168,
+     "win": 4,
+     "type": "clinic",
+     "off": 168
+    },
+    {
+     "name": "Week 36 (Day 252)",
+     "day": 252,
+     "win": 4,
+     "type": "clinic",
+     "off": 252
+    },
+    {
+     "name": "Week 42 (Day 294)",
+     "day": 294,
+     "win": 6,
+     "type": "clinic",
+     "off": 294
+    },
+    {
+     "name": "Week 48 (Day 336) — Follow-up visit",
+     "day": 336,
+     "win": 6,
+     "type": "clinic",
+     "off": 336
+    }
+   ]
+  },
+  "fb102": {
+   "label": "FB102-701 — Alopecia Areata",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (Dose 1)",
+   "note": "Protocol V2.0 18 Sep 2025. Dosing visits Day 1 to Day 92, then end of treatment (Day 113) and two follow-up visits.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Dose 1",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8 — Dose 2",
+     "day": 8,
+     "win": 1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 15 — Dose 3",
+     "day": 15,
+     "win": 1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 22 — Dose 4",
+     "day": 22,
+     "win": 1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 36 — Dose 5",
+     "day": 36,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 50 — Dose 6",
+     "day": 50,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 64 — Dose 7",
+     "day": 64,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 78 — Dose 8",
+     "day": 78,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 92 — Dose 9 (last dose)",
+     "day": 92,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113 — End of treatment",
+     "day": 113,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169 — Follow-up",
+     "day": 169,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 253 — Follow-up (end of study)",
+     "day": 253,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "kit-copd": {
+   "label": "KIT2014-03 — COPD (KIT Pharma)",
+   "screenMinToD1": 2,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (Dose 1)",
+   "note": "Protocol v2.0 16 Jun 2026. Seven daily doses at the clinic (Day 1 to Day 7). The protocol prints no day windows for this study.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day -1 — Baseline",
+     "day": -1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Dose 1",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 2 — Dose 2",
+     "day": 2,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 3 — Dose 3",
+     "day": 3,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 4 — Dose 4",
+     "day": 4,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 5 — Dose 5",
+     "day": 5,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 6 — Dose 6",
+     "day": 6,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 7 — Dose 7 (last dose)",
+     "day": 7,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8 — 24 h after last dose",
+     "day": 8,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 9 — Follow-up (end of study)",
+     "day": 9,
+     "win": 0,
+     "type": "clinic"
+    }
+   ]
+  },
+  "olx-ph2a": {
+   "label": "OLX72021-02 — Male Pattern Hair Loss Phase 2a",
+   "screenMinToD1": 3,
+   "screenMaxToD1": 45,
+   "anchor": "Day 1 (Treatment 1)",
+   "note": "Protocol v4.0 27 Oct 2025, Phase 2a (Table 2). Phase 1b has a different schedule and is not built here.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -45,
+     "dayTo": -3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Treatment 1",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 15",
+     "day": 15,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 — Treatment 2",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 43 (phone)",
+     "day": 43,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 57 — Treatment 3",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 71 (phone)",
+     "day": 71,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 85 — Treatment 4",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113 — Treatment 5",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141 — Treatment 6 (end of treatment)",
+     "day": 141,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169 — End of study",
+     "day": 169,
+     "win": 7,
+     "type": "clinic"
+    }
+   ]
+  },
+  "selene1": {
+   "label": "D8750C00014 — SELENE 1 (Obesity, no T2D)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 14,
+   "anchor": "Day 1 (first dose)",
+   "note": "Protocol CSP v1.0 29 May 2026. Not checked because the protocol gives no study day: the safety follow-up visit (4 weeks after the last dose, all participants) and the phone calls every 4 weeks for women of child-bearing potential.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -14,
+     "dayTo": -1,
+     "type": "clinic",
+     "note": "Protocol: up to 14 days before Day 1."
+    },
+    {
+     "name": "Day 1 — Randomisation, first dose",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8 — Titration",
+     "day": 8,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 15 — Titration",
+     "day": 15,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 22 — Titration",
+     "day": 22,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 — Titration",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57 — Titration",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85 — Titration",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113 — Maintenance",
+     "day": 113,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141 — Maintenance",
+     "day": 141,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169 — Maintenance",
+     "day": 169,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 197 — Maintenance",
+     "day": 197,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 281 — Maintenance",
+     "day": 281,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 365 — Maintenance",
+     "day": 365,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 477 — End of maintenance, start of extension",
+     "day": 477,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 505 — Extension",
+     "day": 505,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 533 — Extension",
+     "day": 533,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 561 — Extension (phone call)",
+     "day": 561,
+     "win": 5,
+     "type": "phone"
+    },
+    {
+     "name": "Day 645 — Extension",
+     "day": 645,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 729 — End of treatment",
+     "day": 729,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "selene2": {
+   "label": "D8750C00012 — SELENE 2 (T2D + Obesity)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 14,
+   "anchor": "Day 1 (first dose)",
+   "note": "Protocol CSP v1.0 29 May 2026. No extension period in this study. Not checked because the protocol gives no study day: the safety follow-up visit (4 weeks after the last dose, all participants) and the phone calls for women of child-bearing potential.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -14,
+     "dayTo": -1,
+     "type": "clinic",
+     "note": "Protocol: up to 14 days before Day 1."
+    },
+    {
+     "name": "Day 1 — Randomisation, first dose",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8 — Titration",
+     "day": 8,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 15 — Titration",
+     "day": 15,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 22 — Titration",
+     "day": 22,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 — Titration",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57 — Titration",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85 — Titration",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113 — Maintenance",
+     "day": 113,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141 — Maintenance",
+     "day": 141,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169 — Maintenance",
+     "day": 169,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 197 — Maintenance",
+     "day": 197,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 281 — Maintenance",
+     "day": 281,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 365 — Maintenance",
+     "day": 365,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 477 — End of treatment",
+     "day": 477,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "az": {
+   "label": "D7260C00015 — EMBOLD Elecoglipron (AZ)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (first dose)",
+   "note": "Protocol CSP v1.0 10 Mar 2026. The protocol lists the phone calls by study week; the day shown is 7 x week + 1, the same rule the protocol uses for its clinic visits.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Randomisation, first dose",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 2 (Day 15)",
+     "day": 15,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 29 — Titration",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 6 (Day 43)",
+     "day": 43,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 57 — Titration",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 10 (Day 71)",
+     "day": 71,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 85 — Titration",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 14 (Day 99)",
+     "day": 99,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 113 — Titration",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 18 (Day 127)",
+     "day": 127,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 141 — Titration / maintenance",
+     "day": 141,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 22 (Day 155)",
+     "day": 155,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 169 — Maintenance",
+     "day": 169,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 28 (Day 197)",
+     "day": 197,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Phone call, Week 32 (Day 225)",
+     "day": 225,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 253 — Maintenance",
+     "day": 253,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 40 (Day 281)",
+     "day": 281,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Phone call, Week 44 (Day 309)",
+     "day": 309,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 337 — Maintenance",
+     "day": 337,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 52 (Day 365)",
+     "day": 365,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Phone call, Week 56 (Day 393)",
+     "day": 393,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 421 — Maintenance",
+     "day": 421,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 64 (Day 449)",
+     "day": 449,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Phone call, Week 68 (Day 477)",
+     "day": 477,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 505 — Start of extension",
+     "day": 505,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 74 (Day 519)",
+     "day": 519,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 533 — Extension",
+     "day": 533,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 78 (Day 547)",
+     "day": 547,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 561 — Extension",
+     "day": 561,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 82 (Day 575)",
+     "day": 575,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 589 — Extension",
+     "day": 589,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 86 (Day 603)",
+     "day": 603,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 617 — Extension",
+     "day": 617,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 90 (Day 631)",
+     "day": 631,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 645 — Extension",
+     "day": 645,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 94 (Day 659)",
+     "day": 659,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 673 — Extension",
+     "day": 673,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 100 (Day 701)",
+     "day": 701,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Phone call, Week 104 (Day 729)",
+     "day": 729,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 757 — Extension",
+     "day": 757,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Phone call, Week 112 (Day 785)",
+     "day": 785,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Phone call, Week 116 (Day 813)",
+     "day": 813,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 841 — Extension",
+     "day": 841,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 869 — End of treatment",
+     "day": 869,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 883 — Follow-up",
+     "day": 883,
+     "win": 3,
+     "type": "clinic"
+    }
+   ]
+  },
+  "eluminate": {
+   "label": "D7261C00005 — ELUMINATE (T2D + CV)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (first dose)",
+   "note": "Protocol CSP v1.0 16 Mar 2026. The optional pre-screening visit is not included.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Randomisation, first dose",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 — Titration",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57 — Titration",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85 — Titration",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113 — Titration",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141 — Titration",
+     "day": 141,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169 — Treatment",
+     "day": 169,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 197 — Phone call (women of child-bearing potential only)",
+     "day": 197,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 225 — Treatment",
+     "day": 225,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 253 — Phone call (women of child-bearing potential only)",
+     "day": 253,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 281 — Treatment",
+     "day": 281,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 309 — Phone call (women of child-bearing potential only)",
+     "day": 309,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 337 — Phone call (women of child-bearing potential only)",
+     "day": 337,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 365 — End of treatment",
+     "day": 365,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 379 — Follow-up",
+     "day": 379,
+     "win": 3,
+     "type": "clinic"
+    }
+   ]
+  },
+  "asthma-ph2a": {
+   "label": "PRA-216-101 — Asthma Phase 2a",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (randomisation)",
+   "note": "Protocol PRA-216-101 Phase 2a, Table 3. The protocol does not label visit types; all are treated as clinic visits.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Randomisation, first dose",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 15 — Dose",
+     "day": 15,
+     "win": 1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 — Dose",
+     "day": 29,
+     "win": 1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57",
+     "day": 57,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85 — Re-dose",
+     "day": 85,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141",
+     "day": 141,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169",
+     "day": 169,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 197",
+     "day": 197,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 225",
+     "day": 225,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 253",
+     "day": 253,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 281 — End of study",
+     "day": 281,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "pra201-ph2a": {
+   "label": "PRA-216-201 — COPD Phase 2a",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (randomisation)",
+   "note": "Protocol PRA-216-201. Screening visit 1a falls 1 to 20 days before Day 1. The protocol does not label every visit type; all are treated as clinic visits.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Screening visit 1a (eligibility review)",
+     "dayFrom": -20,
+     "dayTo": -1,
+     "type": "clinic",
+     "note": "Protocol window: Day -20 to Day -1, plus or minus 3 days."
+    },
+    {
+     "name": "Day 1 — Randomisation, first dose",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8",
+     "day": 8,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 15 — Dose",
+     "day": 15,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 — Dose",
+     "day": 29,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57",
+     "day": 57,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85 — Re-dose",
+     "day": 85,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 92",
+     "day": 92,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141",
+     "day": 141,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169",
+     "day": 169,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 197",
+     "day": 197,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 225",
+     "day": 225,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 253",
+     "day": 253,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 281 — End of study",
+     "day": 281,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "pra301-ph2a": {
+   "label": "PRA-216-301 — Atopic Dermatitis Phase 2a",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (randomisation)",
+   "note": "Protocol PRA-216-301. Screening visit 1a falls up to 21 days before Day 1. The protocol does not label every visit type; all are treated as clinic visits.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Screening visit 1a",
+     "dayFrom": -21,
+     "dayTo": -1,
+     "type": "clinic",
+     "note": "Protocol window: Day -21 to Day -1, plus or minus 2 days."
+    },
+    {
+     "name": "Day 1 — Randomisation, first dose",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8",
+     "day": 8,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 15 — Dose",
+     "day": 15,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 — Dose",
+     "day": 29,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57",
+     "day": 57,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85 — Re-dose",
+     "day": 85,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 92",
+     "day": 92,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141",
+     "day": 141,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169",
+     "day": 169,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 197 — End of study",
+     "day": 197,
+     "win": 3,
+     "type": "clinic"
+    }
+   ]
+  },
+  "ms": {
+   "label": "MRX-4TZT-05 — MS Spasticity",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (Period 1 Day 1)",
+   "note": "Protocol Amendment 3 v4.0 16 Jul 2026. The washout between Period 2 and Period 3 is 4 to 7 days, so Period 3 and the end of study visit are shown as ranges. Not checked: the optional extra clinic days (Day 23, 24, 34, 35) and the taper safety phone calls.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Period 1 Day 1",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8 (phone)",
+     "day": 8,
+     "win": 3,
+     "winAfter": 0,
+     "type": "phone",
+     "note": "May be done up to 3 days earlier."
+    },
+    {
+     "name": "Day 15 (phone)",
+     "day": 15,
+     "win": 3,
+     "winAfter": 0,
+     "type": "phone",
+     "note": "May be done up to 3 days earlier."
+    },
+    {
+     "name": "Day 22 — Period 2 Day 1",
+     "day": 22,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 25 (phone)",
+     "day": 25,
+     "win": 0,
+     "type": "phone"
+    },
+    {
+     "name": "Day 26 — Period 2 Day 5",
+     "day": 26,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Period 3 Day 1",
+     "dayFrom": 33,
+     "dayTo": 36,
+     "type": "clinic",
+     "note": "Day 33 if the washout is 4 days, up to Day 36 if it is 7 days."
+    },
+    {
+     "name": "Period 3 Day 4 (phone)",
+     "dayFrom": 36,
+     "dayTo": 39,
+     "type": "phone"
+    },
+    {
+     "name": "Period 3 Day 5",
+     "dayFrom": 37,
+     "dayTo": 40,
+     "type": "clinic"
+    },
+    {
+     "name": "End of study",
+     "dayFrom": 53,
+     "dayTo": 60,
+     "type": "clinic",
+     "note": "Protocol: Day 55, plus or minus 2 days, moving later by any washout days beyond 4."
+    }
+   ]
+  },
+  "srsd": {
+   "label": "SRSD384-101 — T2D + Tirzepatide (Sirius)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 0 (dosing day)",
+   "note": "Protocol V1.0 1 Apr 2026, Part B. Day 0 is the dosing day in this protocol (there is no Day 1 anchor), so Day 7 is exactly 7 days after dosing.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic",
+     "offFrom": -28,
+     "offTo": -1
+    },
+    {
+     "name": "Day 0 — Dosing",
+     "day": 0,
+     "win": 0,
+     "type": "clinic",
+     "off": 0
+    },
+    {
+     "name": "Day 1 (24 h after dose)",
+     "day": 1,
+     "win": 0,
+     "type": "clinic",
+     "off": 1
+    },
+    {
+     "name": "Day 2 (48 h after dose)",
+     "day": 2,
+     "win": 0,
+     "type": "clinic",
+     "off": 2
+    },
+    {
+     "name": "Day 7",
+     "day": 7,
+     "win": 1,
+     "type": "clinic",
+     "off": 7
+    },
+    {
+     "name": "Day 14",
+     "day": 14,
+     "win": 1,
+     "type": "clinic",
+     "off": 14
+    },
+    {
+     "name": "Day 28",
+     "day": 28,
+     "win": 2,
+     "type": "clinic",
+     "off": 28
+    },
+    {
+     "name": "Day 42",
+     "day": 42,
+     "win": 3,
+     "type": "clinic",
+     "off": 42
+    },
+    {
+     "name": "Day 56",
+     "day": 56,
+     "win": 3,
+     "type": "clinic",
+     "off": 56
+    },
+    {
+     "name": "Day 70",
+     "day": 70,
+     "win": 3,
+     "type": "clinic",
+     "off": 70
+    },
+    {
+     "name": "Day 84",
+     "day": 84,
+     "win": 3,
+     "type": "clinic",
+     "off": 84
+    },
+    {
+     "name": "Day 98",
+     "day": 98,
+     "win": 7,
+     "type": "clinic",
+     "off": 98
+    },
+    {
+     "name": "Day 112",
+     "day": 112,
+     "win": 7,
+     "type": "clinic",
+     "off": 112
+    },
+    {
+     "name": "Day 140",
+     "day": 140,
+     "win": 7,
+     "type": "clinic",
+     "off": 140
+    },
+    {
+     "name": "Day 168 — End of study",
+     "day": 168,
+     "win": 7,
+     "type": "clinic",
+     "off": 168
+    }
+   ]
+  },
+  "ebv": {
+   "label": "mRNA-NEXT-001 — EBV Vaccine (Moderna)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (dose 1)",
+   "note": "Protocol Original 21 Nov 2025. The protocol lets screening be combined with Day 1; at least 1 day is assumed here. After dose 2 the protocol counts visits from the dose 2 date, which only matches these dates if dose 2 is given on Day 57. Windows marked \"+\" mean the visit can only be late, not early.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic",
+     "note": "Protocol: up to 28 days before Day 1."
+    },
+    {
+     "name": "Day 1 — Dose 1",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 2",
+     "day": 2,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 4",
+     "day": 4,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8",
+     "day": 8,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29",
+     "day": 29,
+     "win": 0,
+     "winAfter": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57 — Dose 2",
+     "day": 57,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 58",
+     "day": 58,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 60",
+     "day": 60,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 64",
+     "day": 64,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85",
+     "day": 85,
+     "win": 0,
+     "winAfter": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141 (safety phone call)",
+     "day": 141,
+     "win": 5,
+     "type": "phone"
+    },
+    {
+     "name": "Day 225 — End of study",
+     "day": 225,
+     "win": 14,
+     "type": "clinic"
+    }
+   ]
+  },
+  "vbe": {
+   "label": "VBE00001 — Sanofi Acne mRNA Vaccine (3 doses)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 29,
+   "anchor": "Day 1 (Vaccination 1)",
+   "note": "Protocol v6.0 Amendment 3, Table 5 (the 3-dose cohort: vaccinations on Day 1, Day 57 and Day 113). \"Early\" windows are one day before, \"late\" windows up to three days after.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -29,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Vaccination 1",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 4",
+     "day": 4,
+     "win": 1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8",
+     "day": 8,
+     "win": 1,
+     "winAfter": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29",
+     "day": 29,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57 — Vaccination 2",
+     "day": 57,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 60",
+     "day": 60,
+     "win": 1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 64",
+     "day": 64,
+     "win": 1,
+     "winAfter": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85",
+     "day": 85,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113 — Vaccination 3",
+     "day": 113,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 116",
+     "day": 116,
+     "win": 1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 120",
+     "day": 120,
+     "win": 1,
+     "winAfter": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141",
+     "day": 141,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169",
+     "day": 169,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 197",
+     "day": 197,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 225",
+     "day": 225,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 253",
+     "day": 253,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 281 — End of study",
+     "day": 281,
+     "win": 7,
+     "type": "clinic"
+    }
+   ]
+  },
+  "sbacne": {
+   "label": "SB3567-CLIN-001 — Acne (Sagimet TVB-3567)",
+   "screenMinToD1": 2,
+   "screenMaxToD1": 35,
+   "anchor": "Day 1 (first dose)",
+   "note": "Protocol Amendment 7 v8.0 18 Jun 2026, Part D. Dosing at the clinic on Day 1, 8 and 16 only (other days are home dosing). The protocol prints no visit windows. The follow-up visit is 7 to 11 days after the last dose on Day 28.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -35,
+     "dayTo": -2,
+     "type": "clinic",
+     "note": "Protocol: within 35 days before the first dose."
+    },
+    {
+     "name": "Day -1 — Check-in (same day, no overnight)",
+     "day": -1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Dose 1",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8 — Clinic dose",
+     "day": 8,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 16 — Clinic dose",
+     "day": 16,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 — Return visit",
+     "day": 29,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Follow-up (7 to 11 days after the last dose)",
+     "dayFrom": 35,
+     "dayTo": 39,
+     "type": "clinic"
+    }
+   ]
+  },
+  "gsbr12": {
+   "label": "GSBR-1290-12 - Aleniglipron, Obesity/Overweight + Comorbidity (Gasherbrum)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (first dose)",
+   "note": "Protocol Amendment 1, schedule of assessments. The protocol gives visit weeks, not days; the day shown is 7 x week + 1 (Week 0 = Day 1), the same rule used for the other calculator studies. Screening is up to 4 weeks. Treatment is 76 weeks and the end of study visit is 1 week after the last visit of the treatment period. Scheduled visits are fasting (8 hours) clinic visits, except the telehealth visits at Weeks 40, 52, 56, 64 and 68 (shown as Phone). A telehealth visit may be converted to an office visit. An early discontinuation visit is done only if the participant stops, so it is not listed. The DXA substudy (select sites only) is done within about 21 days before Visit 1.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic",
+     "note": "Protocol: Screening period of up to 4 weeks before Visit 1. Fasting (8 hours) is required, so screening activities may be split over more than 1 day."
+    },
+    {
+     "name": "Day 1 - Visit 1, randomisation, first dose",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 - Visit 2, Week 4",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57 - Visit 3, Week 8",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85 - Visit 4, Week 12",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113 - Visit 5, Week 16",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141 - Visit 6, Week 20",
+     "day": 141,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169 - Visit 7, Week 24",
+     "day": 169,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 197 - Visit 8, Week 28",
+     "day": 197,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 225 - Visit 9, Week 32",
+     "day": 225,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 253 - Visit 10, Week 36",
+     "day": 253,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Telehealth, Visit 11, Week 40 (Day 281)",
+     "day": 281,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 309 - Visit 12, Week 44",
+     "day": 309,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 337 - Visit 13, Week 48",
+     "day": 337,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Telehealth, Visit 14, Week 52 (Day 365)",
+     "day": 365,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Telehealth, Visit 15, Week 56 (Day 393)",
+     "day": 393,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 421 - Visit 16, Week 60",
+     "day": 421,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Telehealth, Visit 17, Week 64 (Day 449)",
+     "day": 449,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Telehealth, Visit 18, Week 68 (Day 477)",
+     "day": 477,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 505 - Visit 19, Week 72",
+     "day": 505,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 533 - Visit 20, Week 76, end of treatment",
+     "day": 533,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 541 - End of study visit, Week 77",
+     "day": 541,
+     "win": 3,
+     "type": "clinic"
+    }
+   ]
+  },
+  "gsbr15": {
+   "label": "GSBR-1290-15 - Aleniglipron, Obesity/Overweight + T2D (Gasherbrum)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (first dose)",
+   "note": "Protocol Amendment 1, schedule of assessments. The protocol gives visit weeks, not days; the day shown is 7 x week + 1 (Week 0 = Day 1), the same rule used for the other calculator studies. Screening is up to 4 weeks. Treatment is 76 weeks and the end of study visit is 1 week after the last visit of the treatment period. Scheduled visits are fasting (8 hours) clinic visits, except the telehealth visits at Weeks 40, 52, 56, 64 and 68 (shown as Phone). A telehealth visit may be converted to an office visit. An early discontinuation visit is done only if the participant stops, so it is not listed. The DXA substudy (select sites only) is done within about 21 days before Visit 1. Optional prescreening visit (Week -8 to -1) before Screening is allowed in this protocol and is not listed; the maximum study duration is about 85 weeks if it is used.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic",
+     "note": "Protocol: Screening period of up to 4 weeks before Visit 1. Fasting (8 hours) is required, so screening activities may be split over more than 1 day."
+    },
+    {
+     "name": "Day 1 - Visit 1, randomisation, first dose",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 - Visit 2, Week 4",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57 - Visit 3, Week 8",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85 - Visit 4, Week 12",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113 - Visit 5, Week 16",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 141 - Visit 6, Week 20",
+     "day": 141,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 169 - Visit 7, Week 24",
+     "day": 169,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 197 - Visit 8, Week 28",
+     "day": 197,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 225 - Visit 9, Week 32",
+     "day": 225,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 253 - Visit 10, Week 36",
+     "day": 253,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Telehealth, Visit 11, Week 40 (Day 281)",
+     "day": 281,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 309 - Visit 12, Week 44",
+     "day": 309,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 337 - Visit 13, Week 48",
+     "day": 337,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Telehealth, Visit 14, Week 52 (Day 365)",
+     "day": 365,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Telehealth, Visit 15, Week 56 (Day 393)",
+     "day": 393,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 421 - Visit 16, Week 60",
+     "day": 421,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Telehealth, Visit 17, Week 64 (Day 449)",
+     "day": 449,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Telehealth, Visit 18, Week 68 (Day 477)",
+     "day": 477,
+     "win": 3,
+     "type": "phone"
+    },
+    {
+     "name": "Day 505 - Visit 19, Week 72",
+     "day": 505,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 533 - Visit 20, Week 76, end of treatment",
+     "day": 533,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 541 - End of study visit, Week 77",
+     "day": 541,
+     "win": 3,
+     "type": "clinic"
+    }
+   ]
+  },
+  "strep": {
+   "label": "GSK 217935 — Strep A Vaccine",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (Vaccination 1)",
+   "note": "3 vaccinations at Day 1, 31, 121. ~10-month total.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Vaccination 1",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8",
+     "day": 8,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 31 — Vaccination 2",
+     "day": 31,
+     "win": 4,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 38",
+     "day": 38,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 61",
+     "day": 61,
+     "win": 4,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 121 — Vaccination 3",
+     "day": 121,
+     "win": 14,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 128",
+     "day": 128,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 151",
+     "day": 151,
+     "win": 4,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 301 — EOS",
+     "day": 301,
+     "win": 21,
+     "type": "clinic"
+    }
+   ]
+  },
+  "rsv-ya": {
+   "label": "GSK 223960 — RSV/hMPV Young Adults (18–49)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 14,
+   "anchor": "Day 1 (Vaccination)",
+   "note": "Single vaccination. 6-month follow-up.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -14,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Vaccination",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8",
+     "day": 8,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 31",
+     "day": 31,
+     "win": 6,
+     "type": "clinic"
+    },
+    {
+     "name": "Month 6 (~Day 180)",
+     "day": 180,
+     "win": 15,
+     "type": "clinic"
+    }
+   ]
+  },
+  "rsv": {
+   "label": "GSK 223960 — RSV/hMPV Older Adults (60–80)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 14,
+   "anchor": "Day 1 (Vaccination)",
+   "note": "Single vaccination. Up to 24-month follow-up.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -14,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Vaccination",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8",
+     "day": 8,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 31",
+     "day": 31,
+     "win": 6,
+     "type": "clinic"
+    },
+    {
+     "name": "Month 6 (~Day 180)",
+     "day": 180,
+     "win": 15,
+     "type": "clinic"
+    },
+    {
+     "name": "Month 12 (~Day 365)",
+     "day": 365,
+     "win": 15,
+     "type": "clinic"
+    },
+    {
+     "name": "Month 24 (~Day 730)",
+     "day": 730,
+     "win": 15,
+     "type": "clinic",
+     "note": "Selected groups only"
+    }
+   ]
+  },
+  "cagri": {
+   "label": "NN9838-7910 — CagriSema (T2D & Obesity)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 21,
+   "anchor": "Day 1 (Randomization / Week 0)",
+   "note": "80-week study. Phone contacts not shown.",
+   "visits": [
+    {
+     "name": "Screening (Week -3)",
+     "dayFrom": -21,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Randomization",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 4",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 8",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 12",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 16",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 20",
+     "day": 141,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 24",
+     "day": 169,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 28",
+     "day": 197,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 32",
+     "day": 225,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 40",
+     "day": 281,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 48",
+     "day": 337,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 56",
+     "day": 393,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 64",
+     "day": 449,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 72 — End of Treatment",
+     "day": 505,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 80 — End of Study",
+     "day": 561,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "kailera": {
+   "label": "K9531-3104 — Kailera",
+   "screenMinToD1": 28,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (Randomization)",
+   "note": "76-week treatment + 4-week follow-up. Remote visits from Week 32.",
+   "visits": [
+    {
+     "name": "Screening (Week -4)",
+     "day": -28,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Randomization",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 4",
+     "day": 29,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 8",
+     "day": 57,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 12",
+     "day": 85,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 16",
+     "day": 113,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 20",
+     "day": 141,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 24",
+     "day": 169,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 28",
+     "day": 197,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 32",
+     "day": 225,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 36",
+     "day": 253,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 40",
+     "day": 281,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 44",
+     "day": 309,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 48",
+     "day": 337,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 52",
+     "day": 365,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 56",
+     "day": 393,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 60",
+     "day": 421,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 64",
+     "day": 449,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 68",
+     "day": 477,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 72",
+     "day": 505,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 76 — End of Treatment",
+     "day": 533,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 80 — Follow-up",
+     "day": 561,
+     "win": 3,
+     "type": "clinic"
+    }
+   ]
+  },
+  "macupat": {
+   "label": "J2V-MC-GZLF — Macupat Obesity",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 42,
+   "anchor": "Day 1 (Randomization)",
+   "note": "Fasting visits. 32-week treatment + 10-week follow-up.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -42,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Randomization",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 1",
+     "day": 8,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 4",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 8",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 12",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 16",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 20",
+     "day": 141,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 24",
+     "day": 169,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 28",
+     "day": 197,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 32",
+     "day": 225,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Safety Follow-up (~Week 42)",
+     "day": 295,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "lilly-ob": {
+   "label": "J3R-MC-YDAG — Lilly Eloralintide Obesity",
+   "screenMinToD1": 35,
+   "screenMaxToD1": 35,
+   "anchor": "Day 1 (Randomization)",
+   "note": "V1 at Week -5, V2 at Week -2. 64-week treatment.",
+   "visits": [
+    {
+     "name": "Visit 1 — Screening (Week -5)",
+     "day": -35,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Visit 2 — Week -2",
+     "day": -14,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Randomization",
+     "day": 1,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 4",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 8",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 12",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 16",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 20",
+     "day": 141,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 24",
+     "day": 169,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 28",
+     "day": 197,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 32",
+     "day": 225,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 36",
+     "day": 253,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 40",
+     "day": 281,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 44",
+     "day": 309,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 48",
+     "day": 337,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 52",
+     "day": 365,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 56",
+     "day": 393,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 60",
+     "day": 421,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 64",
+     "day": 449,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Safety Follow-up (~Week 70)",
+     "day": 491,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "j3r-ydal": {
+   "label": "J3R-MC-YDAL — Lilly Eloralintide T2D",
+   "screenMinToD1": 67,
+   "screenMaxToD1": 73,
+   "anchor": "Day 1 (Randomization)",
+   "note": "8-week lead-in before Day 1. V1 at Week -10.",
+   "visits": [
+    {
+     "name": "Visit 1 — Screening (Week -10)",
+     "day": -70,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Visit 2 — Lead-in Start (Week -8)",
+     "day": -56,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Visit 3 — Week -4",
+     "day": -28,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Randomization",
+     "day": 1,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 2",
+     "day": 15,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 4",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 8",
+     "day": 57,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 12",
+     "day": 85,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 16",
+     "day": 113,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 20",
+     "day": 141,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 24",
+     "day": 169,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 28",
+     "day": 197,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 32",
+     "day": 225,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 36",
+     "day": 253,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 40",
+     "day": 281,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 44",
+     "day": 309,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 48",
+     "day": 337,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 52",
+     "day": 365,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 56",
+     "day": 393,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 60",
+     "day": 421,
+     "win": 3,
+     "type": "remote"
+    },
+    {
+     "name": "Week 64",
+     "day": 449,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Safety Follow-up (~Week 70)",
+     "day": 491,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "aroinhbe": {
+   "label": "AROINHBE-1001 — ARO-INHBE (SAD)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 35,
+   "anchor": "Day 1 (Dosing)",
+   "note": "Single dose. Admission Day -1, discharge Day 2. Follow-up to Day 113.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -35,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day -1 — Admission",
+     "day": -1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Dosing",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 2 — Discharge",
+     "day": 2,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 3",
+     "day": 3,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8",
+     "day": 8,
+     "win": 1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 15",
+     "day": 15,
+     "win": 1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29",
+     "day": 29,
+     "win": 3,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 43",
+     "day": 43,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57",
+     "day": 57,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 71",
+     "day": 71,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85",
+     "day": 85,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 99",
+     "day": 99,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 113 — EOS",
+     "day": 113,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "k9531-3103": {
+   "label": "K9531-3103 — Kailera Obesity (Sydney)",
+   "screenMinToD1": 28,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (Randomization)",
+   "note": "84-week study. 15 in-person + 7 virtual visits. SubQ injection Q4W.",
+   "visits": [
+    {
+     "name": "Screening (Week -4)",
+     "day": -28,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Randomization",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 4",
+     "day": 29,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 8",
+     "day": 57,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 12",
+     "day": 85,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 16",
+     "day": 113,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 20",
+     "day": 141,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 24",
+     "day": 169,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 28",
+     "day": 197,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 32",
+     "day": 225,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 36",
+     "day": 253,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 40",
+     "day": 281,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 44",
+     "day": 309,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 48",
+     "day": 337,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 52",
+     "day": 365,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 56",
+     "day": 393,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 60",
+     "day": 421,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 64",
+     "day": 449,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 68",
+     "day": 477,
+     "win": 7,
+     "type": "remote"
+    },
+    {
+     "name": "Week 72",
+     "day": 505,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 76",
+     "day": 533,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 80 — End of Treatment",
+     "day": 561,
+     "win": 7,
+     "type": "clinic"
+    },
+    {
+     "name": "Week 84 — Follow-up / EOS",
+     "day": 589,
+     "win": 3,
+     "type": "clinic"
+    }
+   ]
+  },
+  "srn": {
+   "label": "SRN-705-014 — Sirnaomics Chin Fat (SubQ)",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 28,
+   "anchor": "Day 1 (Dose 1)",
+   "note": "16-week study. 5 visits. 3 SubQ injections (chin) + EOS.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -28,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Dose 1",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 29 — Dose 2 (~Week 4)",
+     "day": 29,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 57 — Dose 3 (~Week 8)",
+     "day": 57,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 85 — EOS (~Week 12)",
+     "day": 85,
+     "win": 5,
+     "type": "clinic"
+    }
+   ]
+  },
+  "vca25397": {
+   "label": "VCA25397 — Sanofi RSV+hMPV Vaccine",
+   "screenMinToD1": 1,
+   "screenMaxToD1": 14,
+   "anchor": "Day 1 (Vaccination)",
+   "note": "12-month study. Cohort 1: 6 clinic visits. Cohort 2: 5 clinic + 3 telehealth. IM injection.",
+   "visits": [
+    {
+     "name": "Screening",
+     "dayFrom": -14,
+     "dayTo": -1,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 1 — Vaccination",
+     "day": 1,
+     "win": 0,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 8",
+     "day": 8,
+     "win": 2,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 30 (Month 1)",
+     "day": 30,
+     "win": 5,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 90 (Month 3)",
+     "day": 90,
+     "win": 7,
+     "type": "clinic",
+     "note": "Cohort 1 only"
+    },
+    {
+     "name": "Day 180 (Month 6)",
+     "day": 180,
+     "win": 14,
+     "type": "clinic"
+    },
+    {
+     "name": "Day 365 (Month 12) — EOS",
+     "day": 365,
+     "win": 14,
+     "type": "clinic",
+     "note": "Cohort 2 EOS; Cohort 1 may end at M6"
+    }
+   ]
+  }
+ },
+ "holidays": {
+  "melbourne": {
+   "label": "Victoria",
+   "days": {
+    "2026-01-01": "New Year's Day",
+    "2026-01-26": "Australia Day",
+    "2026-03-09": "Labour Day",
+    "2026-04-03": "Good Friday",
+    "2026-04-04": "Saturday before Easter Sunday",
+    "2026-04-05": "Easter Sunday",
+    "2026-04-06": "Easter Monday",
+    "2026-04-25": "ANZAC Day",
+    "2026-06-08": "King's Birthday",
+    "2026-09-25": "Friday before the AFL Grand Final",
+    "2026-11-03": "Melbourne Cup Day",
+    "2026-12-25": "Christmas Day",
+    "2026-12-26": "Boxing Day",
+    "2026-12-28": "Boxing Day (substitute)",
+    "2027-01-01": "New Year's Day",
+    "2027-01-26": "Australia Day",
+    "2027-03-08": "Labour Day",
+    "2027-03-26": "Good Friday",
+    "2027-03-27": "Saturday before Easter Sunday",
+    "2027-03-28": "Easter Sunday",
+    "2027-03-29": "Easter Monday",
+    "2027-04-25": "ANZAC Day",
+    "2027-06-14": "King's Birthday",
+    "2027-09-24": "Friday before the AFL Grand Final (date to be confirmed)",
+    "2027-11-02": "Melbourne Cup Day",
+    "2027-12-25": "Christmas Day",
+    "2027-12-26": "Boxing Day",
+    "2027-12-27": "Christmas Day (substitute)",
+    "2027-12-28": "Boxing Day (substitute)"
+   }
+  },
+  "sydney": {
+   "label": "NSW",
+   "days": {
+    "2026-01-01": "New Year's Day",
+    "2026-01-26": "Australia Day",
+    "2026-04-03": "Good Friday",
+    "2026-04-04": "Easter Saturday",
+    "2026-04-05": "Easter Sunday",
+    "2026-04-06": "Easter Monday",
+    "2026-04-25": "ANZAC Day",
+    "2026-04-27": "ANZAC Day (additional day)",
+    "2026-06-08": "King's Birthday",
+    "2026-10-05": "Labour Day",
+    "2026-12-25": "Christmas Day",
+    "2026-12-26": "Boxing Day",
+    "2026-12-28": "Boxing Day (additional day)",
+    "2027-01-01": "New Year's Day",
+    "2027-01-26": "Australia Day",
+    "2027-03-26": "Good Friday",
+    "2027-03-27": "Easter Saturday",
+    "2027-03-28": "Easter Sunday",
+    "2027-03-29": "Easter Monday",
+    "2027-04-25": "ANZAC Day",
+    "2027-04-26": "ANZAC Day (additional day)",
+    "2027-06-14": "King's Birthday",
+    "2027-10-04": "Labour Day",
+    "2027-12-25": "Christmas Day",
+    "2027-12-26": "Boxing Day",
+    "2027-12-27": "Christmas Day (additional day)",
+    "2027-12-28": "Boxing Day (additional day)"
+   }
+  }
+ }
+}
