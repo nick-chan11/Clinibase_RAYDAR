@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'motion/react';
-import { S, SITE, upd, ranked, nextOpen, fmt, matchP, proS, proFor, siteOk, COL, TXT } from '../engine/store.js';
+import { S, SITE, upd, ranked, nextOpen, fmt, matchP, proS, proFor, siteOk, ev, COL, TXT } from '../engine/store.js';
 import { HtmlBlocks } from './ui.jsx';
 import { ST } from '../esource/studies.js';
 import { A, Ic, B, Panel } from './ui.jsx';
@@ -13,9 +13,11 @@ import { LogPanelBody, ProRows } from './MedLog.jsx';
 export function Studies() {
   const r = ranked(S.railAll), n = (k) => r.filter((x) => x.r[0] === k).length;
   const inPs = S.study && (S.stage === 'ps' || S.stage === 'finish');
+  // 2.7: the study on screen stays at the top even when the site filter hides it (switching city mid-call used to crash here)
+  const me = inPs ? r.find((x) => x.s.c === S.study.c) || { s: S.study, r: ev(S.study), off: true } : null;
   let L;
-  if (S.all) L = r;
-  else if (inPs) L = [r.find((x) => x.s.c === S.study.c)].concat(r.filter((x) => x.s.c !== S.study.c && x.r[0] !== 'no').slice(0, 2));
+  if (S.all) L = me && me.off ? [me].concat(r) : r;
+  else if (inPs) L = [me].concat(r.filter((x) => x.s.c !== S.study.c && x.r[0] !== 'no').slice(0, 2));
   else L = r.slice(0, 3);
   const sub = <><span style={{ color: 'var(--text-success)' }}>{n('yes')}</span> · <span style={{ color: 'var(--text-warning)' }}>{n('check')}</span> · {n('no')}</>;
   return (
@@ -29,7 +31,7 @@ export function Studies() {
             return (
               <Row key={x.s.c} i={i} className="row" style={{ padding: '5px 0', background: 'var(--surface-2)' }} title={x.s.d + ' · ' + x.s.site}>
                 <div style={{ minWidth: 0 }}>
-                  <div className="mono" style={{ fontWeight: 500 }}><span className="dot" style={{ background: COL[x.r[0]] }} />{x.s.c} <span className={'sitetag site-' + x.s.city + (x.s.site === 'Veritus' ? '-v' : '')}>{x.s.siteLabel}</span></div>
+                  <div className="mono" style={{ fontWeight: 500 }}><span className="dot" style={{ background: COL[x.r[0]] }} />{x.s.c} <span className={'sitetag site-' + x.s.city + (x.s.site === 'Veritus' ? '-v' : '')}>{x.s.siteLabel}</span>{x.off ? <span className="mut" style={{ fontSize: 11 }}> · outside the site filter</span> : null}</div>
                   <div style={{ fontSize: 11, color: TXT[x.r[0]], whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{x.r[1]}</div>
                   {no ? <div className="mut" style={{ fontSize: 11 }}>{x.s.sched ? 'Earliest Day 1' : 'Next stay'} <button className="lnk" style={{ fontSize: 11 }} {...A('jump:' + x.s.c + ':' + no.id)}>{fmt(no.in)}</button></div> : null}
                 </div>

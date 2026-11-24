@@ -38,7 +38,7 @@ function tipVisit(s,c,v){const a=vS(v),b=vE(v),st=vStat(v);return s.c+' · '+cn(
 function tipCohort(s,c){const k=cKey(c);return s.c+' · '+cn(c.n)+'\n'+rk(k)[0]+'\nStay::'+fmtR(c.in,c.out)+'\nFollow-ups::'+(c.v.length?pl(c.v.length,'visit')+', last '+fmt(c.v[c.v.length-1].d):'None dated')+'\nClick to jump::on the calendar'}
 function tipAway(a){return 'Participant away\n\nFrom::'+fmtL(a[0])+'\nUntil::'+fmtL(a[1])+'\nLength::'+pl(dd(a[0],a[1])+1,'day')}
 const EF=()=>({n:'',ind:'',dose:'',route:'',st:'',en:''});
-const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,scr:'',d1:{},script:null,railAll:false,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false,drMode:'hold',cbr:'',finalNotes:'',resumed:null,rev:1,impMsg:null});
+const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,scr:'',d1:{},script:null,railAll:false,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false,drMode:'hold',cbr:'',finalNotes:'',resumed:null,rev:1,impMsg:null,kept:{},carried:null});
 export let S=fresh(1);
 /** Import callback swaps in a whole new call. */
 export function replaceS(n){S=n;lastAction='import';commit()}
@@ -52,7 +52,14 @@ const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const SC=c=>ST.find(x=>x.c===c);
 function age(){if(!S.dob)return null;const d=new Date(S.dob),t=new Date();if(isNaN(d))return null;let a=t.getFullYear()-d.getFullYear();if(t.getMonth()<d.getMonth()||(t.getMonth()===d.getMonth()&&t.getDate()<d.getDate()))a--;return a>=0&&a<120?a:null}
 function bmi(){const w=parseFloat(S.wt),h=parseFloat(S.ht);if(!(w>20&&h>100))return null;return Math.round(w/((h/100)**2)*10)/10}
-function nm(k){return CONDS.find(c=>c[0]===k)[1].toLowerCase()}
+function nm(k){const c=CONDS.find(c=>c[0]===k);return c?c[1].toLowerCase():k}
+/** 2.7: the Quick check answer a rule looks at, and what to call it when it hasn't been asked */
+function qcVal(item){return item==='smoke'?S.smoke:item==='meds'?S.meds:item==='preg'?S.preg:S.cond[item]}
+function qcLabel(item){if(item==='smoke')return 'smoking';if(item==='meds')return 'medications';const c=CONDS.find(z=>z[0]===item);if(!c||(c[2]&&S.sex&&c[2]!==S.sex))return null;return /^[A-Z]{2,}/.test(c[1])?c[1]:c[1].toLowerCase()}
+/** 2.7: the conditions Quick check asks about: those at least one loaded study has a rule for, for this sex */
+function askConds(){const used=new Set();ST.forEach(s=>(s.qc||[]).forEach(r=>used.add(r.item)));return CONDS.filter(c=>used.has(c[0])&&!(c[2]&&S.sex&&c[2]!==S.sex))}
+/** 2.7: which studies a Quick check item matters to, for the hint under it */
+function qcUse(item){const L=[];ST.forEach(s=>(s.qc||[]).forEach(r=>{if(r.item===item)L.push({s,r})}));return L}
 function cStat(c){if(c.closed)return 'closed';if(dd(TODAY,c.in)<3)return 'soon';return 'open'}
 function isAway(d){return S.away.some(a=>a[0]<=d&&d<=a[1])}
 function vStat(v){if(!S.away.length)return 'ok';let n=0,t=0;for(let d=vS(v);d<=vE(v);d=add(d,1)){t++;if(isAway(d))n++}return n===0?'ok':n===t?'clash':'caution'}
@@ -68,6 +75,9 @@ if(S.preg==='y')return['no','Pregnant or breastfeeding'];
 if(s.age){if(a==null)miss.push('age');else if(a<s.age[0]||a>s.age[1])return['no','Age must be '+s.age[0]+' to '+s.age[1]]}
 if(s.bmi){if(b==null)miss.push('BMI');else if(b<s.bmi[0]||b>s.bmi[1])return['no','BMI must be '+s.bmi[0]+' to '+s.bmi[1]]}
 if(s.wMax&&parseFloat(S.wt)>s.wMax)return['no','Max weight '+s.wMax+' kg'];
+if(s.female&&S.sex==='m')return['no','Women only'];
+/* 2.7: Quick check rules read from the study's eSource questions (src/esource/qcrules.js) */
+const chk=[];for(const r of s.qc||[]){const v=qcVal(r.item);if(v==null){const l=qcLabel(r.item);if(l&&!miss.includes(l))miss.push(l);continue}if(v===r.when){if(r.result==='no')return['no',r.why];chk.push(r.why)}}
 if(s.bmiMin){if(b==null)miss.push('BMI');else if(b<s.bmiMin)return['no','BMI must be '+s.bmiMin+' or above']}
 if(s.cohorts&&!openC(s).length)return['no','No open cohorts'];
 if(s.cohorts&&S.away.length&&openC(s).every(c=>cRisk(c)==='clash'))return['no','Every open cohort clashes'];
@@ -78,6 +88,7 @@ if(CONDS.some(c=>S.cond[c[0]]==null&&!(c[0]==='mphl'&&S.sex==='f')))miss.push('c
 if(S.meds==null)miss.push('medications')}
 else if(s.need){const v=S.cond[s.need];if(v==='n')return['no','Recruits '+nm(s.need)+' only'];if(v==null)miss.push(nm(s.need))}
 if(s.cohorts&&S.away.length&&openC(s).every(c=>cRisk(c)!=='ok'))return['check','Away dates touch every cohort'];
+if(chk.length)return['check',chk[0]];
 return miss.length?['check','Ask about '+miss.slice(0,2).join(' and ')]:['yes','Nothing flagged so far']}
 function ranked(all){const o={yes:0,check:1,no:2};return ST.filter(s=>all||siteOk(s)).map(s=>({s,r:ev(s)})).sort((a,b)=>o[a.r[0]]-o[b.r[0]])}
 const COL={yes:'var(--fill-success)',check:'var(--fill-warning)',no:'var(--border-stronger)'};
@@ -143,7 +154,15 @@ function drCode(){return S.dre.study||(S.study&&S.study.c)||proS()}
 function drText(){const a=age(),sx=S.sex?(S.sex==='f'?'F':'M'):'';const li=e=>'- '+e.n+(eParts(e).length?' - '+eParts(e).join(', '):'');const sec=(h,t)=>{const L=S.log.filter(e=>e.t===t);return [h+':',...(L.length?L.map(li):['- Nil'])]};const con=(S.dre.concern||'').split('\n').filter(x=>x.trim());
 return ['Study: '+drCode(),'Age and Sex: '+(a!=null?a:'')+sx,'Participant link: '+(S.dre.url||''),'',...sec('Medications','med'),'',...sec('Supplements/OTC','otc'),'',...sec('Medical Conditions/Events','hx'),'','Concern:',...(con.length?con.map(x=>'- '+x.replace(/^[-*]\s*/,'')):['- '])].join('\n')}
 
-function start(c){if(!S.idok){S.stage='id';S.err={id:'Confirm identity before starting a pre-screen'};return}S.study=SC(c);S.proS=null;S.stage='ps';S.qon=false;S.sub='dates';S.qid=null;S.out={};S.ans={};S.val={};S.pick={};S.txt={};S.why={};S.note={};S.tool=null;S.err={};S.fin=null;S.all=false;S.last=null;S.mOpen=false;S.mq='';S.infoOpen=false}
+/* 2.7: answers are kept per study for the whole call. Switching study (or site) and back restores them, and the same
+   study at another site starts with every answer whose question reads the same in both eSource files. */
+const KEEP=['out','ans','val','pick','txt','why','note','park','hist'];
+function stash(){if(!S.study)return;if(!Object.keys(S.out).length&&!Object.keys(S.note).length){delete S.kept[S.study.c];return}S.kept[S.study.c]=Object.assign(Object.fromEntries(KEEP.map(k=>[k,S[k]])),{qon:S.qon,qid:S.qid,sub:S.sub})}
+const sameQ=(a,b)=>a&&b&&a.t===b.t&&a.kind===b.kind&&JSON.stringify((a.a||[]).map(x=>[x[0],x[2]]))===JSON.stringify((b.a||[]).map(x=>[x[0],x[2]]));
+function carryFrom(s){for(const [code,k] of Object.entries(S.kept)){const src=SC(code);if(!src||src===s||src.code!==s.code)continue;let n=0;s.Q.forEach(q=>{if(!k.out[q.id]||!sameQ(q,src.Q.find(z=>z.id===q.id)))return;S.out[q.id]=k.out[q.id];S.ans[q.id]=k.ans[q.id];S.val[q.id]=k.val[q.id];if(k.pick[q.id])S.pick[q.id]=k.pick[q.id].slice();if(k.txt[q.id]!=null)S.txt[q.id]=k.txt[q.id];if(k.why[q.id])S.why[q.id]=k.why[q.id].slice();if(k.note[q.id])S.note[q.id]=k.note[q.id];n++});if(n)return {from:code,n,of:Object.keys(k.out).length};}return null}
+function start(c){if(!S.idok){S.stage='id';S.err={id:'Confirm identity before starting a pre-screen'};return}stash();S.study=SC(c);S.proS=null;S.stage='ps';S.qon=false;S.sub='dates';S.qid=null;S.out={};S.ans={};S.val={};S.pick={};S.txt={};S.why={};S.note={};S.park={};S.hist={};S.tool=null;S.err={};S.fin=null;S.all=false;S.last=null;S.mOpen=false;S.mq='';S.infoOpen=false;S.carried=null;
+const k=S.kept[c];if(k){KEEP.forEach(f=>{S[f]=k[f]});S.qon=k.qon;S.qid=k.qid;S.sub=k.sub;S.carried={back:true,n:Object.keys(k.out).length};return}
+const cf=carryFrom(S.study);if(cf)S.carried=cf}
 function advance(){const {L,i}=curQ();S.mOpen=false;S.mq='';S.mErr='';S.hOpen=false;S.hq='';S.hErr='';S.peek=null;let j=i+1;while(j<L.length&&(S.out[L[j].id]||S.park[L[j].id]))j++;if(j<L.length)S.qid=L[j].id;else{const u=frontier(L);if(u)S.qid=u.id}}
 function doJump(code,cid){const s=SC(code),c=s&&s.cohorts.find(z=>z.id===cid);if(!c)return;S.plan=true;S.tool=null;if(!pShown(s)){if(!S.pShow){const m={};planStudies().forEach(z=>m[z.c]=pShown(z));S.pShow=m}S.pShow[code]=true}if(S.hideClosed&&cStat(c)!=='open')S.hideClosed=false;S.psel=[code,cid];S.jumpSmooth=true;S.jumpTo=cKey(c)==='ok'||cStat(c)!=='open'?c.in:conflictDate(c)}
 function pushLog(F,t,ed){const e=Object.assign(EF(),{t},Object.fromEntries(Object.entries(F).map(([k,v])=>[k,String(v).trim()])),{t,src:(ed&&ed.src)||srcLabel(),auto:(ed&&ed.auto)||null,f:!!(ed&&ed.f)});S.log.push(e)}
@@ -165,7 +184,7 @@ function ansSlot(q,j){return ansOrder(q).indexOf(j)}
 
 /* ---- RAYDAR 2.4: stage completion and the next step ---- */
 function idReady(){return /^P\d{3,}/i.test(S.pid)&&age()!=null&&S.match}
-function qcLeft(){const L=[];if(!S.sex)L.push('sex');if(bmi()==null)L.push('weight and height');if(S.sex!=='m'&&!S.preg)L.push('pregnancy');if(CONDS.some(c=>S.cond[c[0]]==null&&!(c[0]==='mphl'&&S.sex==='f')))L.push('conditions');if(!S.meds)L.push('medications');if(!S.smoke)L.push('smoking');return L}
+function qcLeft(){const L=[];if(!S.sex)L.push('sex');if(bmi()==null)L.push('weight and height');if(S.sex!=='m'&&!S.preg)L.push('pregnancy');if(askConds().some(c=>S.cond[c[0]]==null))L.push('conditions');if(!S.meds)L.push('medications');if(!S.smoke)L.push('smoking');return L}
 function qcDone(){return !qcLeft().length}
 function preqDone(){const s=S.study;return !!s&&(!s.cohorts||!!S.datesOk[s.c])&&!!S.read[s.c]}
 function psDone(){const L=qset();return !!L.length&&L.every(q=>S.out[q.id])}
@@ -192,9 +211,9 @@ if(k!=='discard')S.discard=false;
 if(k==='go'){if(x!=='id'&&!S.idok){S.stage='id';S.err={id:x==='finish'?'Confirm identity first. The PID goes in the file name':'Confirm identity first'}}else{S.stage=x;S.err={}}}
 else if(k==='confirm'){const e={};if(!/^P\d{3,}/i.test(S.pid))e.pid='Enter a PID like p123456_1101';if(age()==null)e.dob='Enter a valid date of birth';if(!S.match)e.match='Check name, phone and email against the profile';S.err=e;S.shake=Object.keys(e)[0]||null;if(!Object.keys(e).length){S.idok=true;S.stage='qc'}}
 else if(k==='set'){if(x.indexOf('cond.')===0){const c=x.slice(5);S.cond[c]=S.cond[c]===y?null:y}else S[x]=S[x]===y?null:y;syncAuto()}
-else if(k==='norest'){CONDS.forEach(c=>{if(S.cond[c[0]]==null)S.cond[c[0]]='n'});syncAuto()}
-else if(k==='start'){start(x);S.nav=[];S.park={};S.hist={};S.peek=null}
-else if(k==='pstart'){start(x);S.nav=[];S.park={};S.hist={};S.peek=null;if(S.study){avl(x)[y]=true;S.plan=false}}
+else if(k==='norest'){askConds().forEach(c=>{if(S.cond[c[0]]==null)S.cond[c[0]]='n'});syncAuto()}
+else if(k==='start'){start(x);S.nav=[];S.peek=null}
+else if(k==='pstart'){start(x);S.nav=[];S.peek=null;if(S.study){avl(x)[y]=true;S.plan=false}}
 else if(k==='sub')S.sub=x;
 else if(k==='read'){S.read[S.study.c]=true;S.err={};if(S.study.cohorts&&!S.datesOk[S.study.c])S.sub='dates'}
 else if(k==='dok'){if(S.study&&S.study.sched){avl(S.study.c).tl=true}if(!selC().length){S.err={d:'Select at least one cohort first'};S.shake='d'}else{S.datesOk[S.study.c]=true;S.err={};if(!S.read[S.study.c])S.sub='info'}}
@@ -264,6 +283,7 @@ else if(k==='fs')S.fs=Math.max(11,Math.min(17,S.fs+(+x)));
 else if(k==='drmode')S.drMode=x==='book'?'book':'hold';
 else if(k==='cbr')S.cbr=decodeURIComponent(x||'');
 else if(k==='impclose')S.impMsg=null;
+else if(k==='carriedx')S.carried=null;
 else if(k==='lt'){S.lt=x;S.logErr=''}
 else if(k==='mt'){S.mt=x;S.mErr=''}
 else if(k==='logform'){S.logForm=!(S.logForm||S.ed);if(!S.logForm&&S.ed){pushLog(S.f[0],S.lt,S.ed);S.ed=null;S.f=[EF()]}S.logErr='';if(S.logForm)S.focus='rName0'}
@@ -283,4 +303,4 @@ else if(x==='copy'){}
 else if(x==='send'){const t=S.dre.txt!=null?S.dre.txt:drText();if(typeof sendPrompt==='function'){sendPrompt('Here is the Dr enquiry for '+drCode()+':\n\n'+t);S.copied='Sent to chat'}else S.copied='Sending to chat is not available here'}}
 commit()}
 
-export {siteOk,emPlan,noteShows,opensWith,followUpLabels,valueOf,multiB,ansOrder,ansSlot,primaryIdx,opensFollowUp,idReady,qcLeft,qcDone,preqDone,psDone,nextStep,COL,DD,EF,EMRE,FLD,RAYDAR_VERSION,SC,TL,TODAY,TXT,ZP,act,add,addRows,advance,age,avl,bmi,cKey,cRisk,cStat,camel,cn,conflictDate,curQ,dd,doJump,drCode,drText,eParts,eText,esc,ev,fmt,fmtL,fmtR,fname,fresh,frontier,goQ,inCarry,isAway,isMedT,iso,lastDay,matchP,needsReview,nextOpen,nm,oc,ocls,openC,pShown,pl,planStudies,proFor,proS,pushLog,qMatches,qset,ranked,reason,rk,selC,selTypes,short,srcLabel,srcQ,start,stayHit,sug,sugQ,syncAuto,tipAway,tipCohort,tipStay,tipVisit,tlB,vE,vS,vStat};
+export {askConds,qcUse,qcVal,siteOk,emPlan,noteShows,opensWith,followUpLabels,valueOf,multiB,ansOrder,ansSlot,primaryIdx,opensFollowUp,idReady,qcLeft,qcDone,preqDone,psDone,nextStep,COL,DD,EF,EMRE,FLD,RAYDAR_VERSION,SC,TL,TODAY,TXT,ZP,act,add,addRows,advance,age,avl,bmi,cKey,cRisk,cStat,camel,cn,conflictDate,curQ,dd,doJump,drCode,drText,eParts,eText,esc,ev,fmt,fmtL,fmtR,fname,fresh,frontier,goQ,inCarry,isAway,isMedT,iso,lastDay,matchP,needsReview,nextOpen,nm,oc,ocls,openC,pShown,pl,planStudies,proFor,proS,pushLog,qMatches,qset,ranked,reason,rk,selC,selTypes,short,srcLabel,srcQ,start,stayHit,sug,sugQ,syncAuto,tipAway,tipCohort,tipStay,tipVisit,tlB,vE,vS,vStat};

@@ -1,5 +1,3 @@
-/* Quick check conditions. Since RAYDAR 2.5, studies, questions and study notes come from the TST eSource files
-   (see src/esource/), and cohort dates from RAYDAR cohort dates.json. */
-const CONDS=[['t2d','Type 2 diabetes'],['asthma','Asthma'],['copd','COPD'],['eczema','Eczema'],['acne','Acne'],['mphl','Male pattern hair loss']];
-
-export { CONDS };
+/* Quick check conditions come from "RAYDAR quick check.json" (see src/esource/qcrules.js); the rules that use them are
+   read from each study's eSource questions. Studies and questions come from the TST eSource files (src/esource/). */
+export { CONDS } from '../esource/qcrules.js';

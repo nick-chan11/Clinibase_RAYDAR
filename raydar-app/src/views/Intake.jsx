@@ -1,7 +1,6 @@
-import { S, bmi, upd, idReady, qcLeft } from '../engine/store.js';
+import { S, bmi, upd, idReady, qcLeft, askConds, qcUse, siteOk } from '../engine/store.js';
 import { NextStep } from './NextStep.jsx';
 import { keyName } from '../engine/keys.js';
-import { CONDS as CONDS_LIST } from '../engine/data.js';
 import { A, Ic, Seg } from './ui.jsx';
 import { Err, Piece } from '../motion/components.jsx';
 import { ImportButton, ImportNote } from './Import.jsx';
@@ -55,17 +54,38 @@ export function Identity() {
   );
 }
 
-function Row({ label, children }) {
+function Row({ label, children, item }) {
   return (
     <Piece className="row">
-      <span style={{ fontWeight: 500 }}>{label}</span>
+      <span style={{ fontWeight: 500, flex: 1, minWidth: 0 }}>{label}{item ? <Uses item={item} /> : null}</span>
       {children}
     </Piece>
   );
 }
 
+/** 2.7: which studies a Quick check answer matters to, read from their eSource questions. Hover for the question. */
+function Uses({ item }) {
+  const L = qcUse(item), here = L.filter((x) => siteOk(x.s)), other = L.length - here.length;
+  if (!L.length) return null;
+  const grp = (when, res) => here.filter((x) => x.r.when === when && x.r.result === res);
+  const parts = [
+    ['Needed by', grp('n', 'no'), 'var(--text-secondary)'],
+    ['Rules out', grp('y', 'no'), 'var(--text-danger)'],
+    ['Check for', grp('y', 'check').concat(grp('n', 'check')), 'var(--text-warning)'],
+  ].filter((p) => p[1].length);
+  const tip = (x) => x.s.c + ': ' + x.r.why + (x.r.qt ? '\nFrom the eSource: ' + x.r.qt + (x.r.a ? '\nAnswer: ' + x.r.a : '') : '');
+  return (
+    <span className="qcuse">
+      {parts.map((p) => (
+        <span key={p[0]} style={{ color: p[2] }}>{p[0]} {p[1].map((x, i) => <span key={x.s.c} title={tip(x)} className="mono">{i ? ', ' : ''}{x.s.c}</span>)}</span>
+      ))}
+      {other ? <span className="mut">{(parts.length ? '+' : '') + other} at other sites</span> : null}
+    </span>
+  );
+}
+
 export function QuickCheck() {
-  const conds = CONDS_LIST.filter((c) => !(c[0] === 'mphl' && S.sex === 'f'));
+  const conds = askConds();
   const un = conds.filter((c) => S.cond[c[0]] == null).length;
   const b = bmi();
   return (
@@ -84,12 +104,12 @@ export function QuickCheck() {
       </Row>
       {conds.map((c) => (
         <div className="row" key={c[0]} style={{ padding: '5px 0 5px 10px' }}>
-          <span>{c[1]}</span>
+          <span style={{ flex: 1, minWidth: 0 }}>{c[1]}<Uses item={c[0]} /></span>
           <Seg k={'cond.' + c[0]} opts={[['n', 'No'], ['y', 'Yes', 'warn']]} cur={S.cond[c[0]]} />
         </div>
       ))}
-      <Row label="Regular medications?"><Seg k="meds" opts={[['n', 'No'], ['y', 'Yes', 'warn']]} cur={S.meds} /></Row>
-      <Row label="Smokes, vapes or nicotine?"><Seg k="smoke" opts={[['n', 'No'], ['y', 'Yes', 'warn']]} cur={S.smoke} /></Row>
+      <Row label="Regular medications?" item="meds"><Seg k="meds" opts={[['n', 'No'], ['y', 'Yes', 'warn']]} cur={S.meds} /></Row>
+      <Row label="Smokes, vapes or nicotine?" item="smoke"><Seg k="smoke" opts={[['n', 'No'], ['y', 'Yes', 'warn']]} cur={S.smoke} /></Row>
       <Row label="Away or on holiday soon?">
         <button className="pill" {...A('plan')}>
           <Ic n="ti-calendar-stats" /> {S.away.length ? S.away.length + ' period' + (S.away.length > 1 ? 's' : '') + ' added' : 'Add away dates'}

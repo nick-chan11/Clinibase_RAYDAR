@@ -3,6 +3,7 @@
    files (or newer versions of these); they replace a built-in study with the same file name for this session. */
 import { convert } from './convert.js';
 import { scheduleKeyFor } from './schedule.js';
+import { rulesFor, missingConditions, setConfig } from './qcrules.js';
 import DATES from '../../../RAYDAR cohort dates.json';
 
 const BUILT_IN = import.meta.glob('../../../Pre-screening eSource JSONs/*.json', { eager: true, import: 'default' });
@@ -39,6 +40,7 @@ function put(file, json, fromFile) {
   s.loaded = !!fromFile;
   s.city = cityOf(s.site);
   s.siteLabel = siteLabel(s.site);
+  quickRules(s);
   // Emeritus studies recruit on a rolling basis: their visits come from the protocol schedule, not fixed cohorts
   s.sched = !s.cohorts && /emeritus/i.test(s.site) ? scheduleKeyFor(s.code) : null;
   if (s.sched) {
@@ -55,6 +57,16 @@ Object.entries(BUILT_IN).forEach(([path, json]) => put(path, json, false));
 ST.sort(order);
 assignCodes();
 
+/** 2.7: Quick check rules, read from the study's own questions; and male- or female-only from its sex question */
+function quickRules(s) {
+  s.qc = rulesFor(s);
+  s.qcMissing = missingConditions(s);
+  const sq = s.Q.find((q) => q.auto === 'sex');
+  const out = (re) => { const b = sq && sq.a.find((x) => re.test(String(x[0]).trim())); return b ? b[1] : null; };
+  s.male = out(/^female\b/i) === 'x';
+  s.female = out(/^male\b/i) === 'x';
+}
+
 /**
  * Load eSource files chosen in the browser. Returns one line per file for the recruiter.
  * @param files a FileList or array of File
@@ -65,6 +77,14 @@ export async function loadFiles(files) {
     if (!/\.json$/i.test(f.name)) { out.push({ file: f.name, ok: false, msg: 'Not a .json file, skipped' }); continue; }
     try {
       const json = JSON.parse(await f.text());
+      // 2.7: the Quick check settings file
+      if (json && Array.isArray(json.conditions) && !json.pages) {
+        const err = setConfig(json);
+        if (err) throw new Error(err);
+        ST.forEach(quickRules);
+        out.push({ file: f.name, ok: true, msg: 'Quick check settings: ' + json.conditions.length + ' conditions, ' + ST.reduce((n, x) => n + x.qc.length, 0) + ' rules across the studies' });
+        continue;
+      }
       if (!json || !Array.isArray(json.pages)) throw new Error('no pages in it, so it is not an eSource form');
       const { s, replaced } = put(f.name, json, true);
       out.push({ file: f.name, ok: true, msg: (replaced ? 'Updated' : 'Added') + ': ' + s.Q.length + ' steps' + (s.cohorts ? ', ' + s.cohorts.length + ' cohorts' : ', no cohort dates') + (s.issues.length ? ', ' + s.issues.length + ' thing' + (s.issues.length > 1 ? 's' : '') + ' to check' : '') });

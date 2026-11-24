@@ -5,7 +5,7 @@
    never holds the participant's name, phone, email or date of birth: the date of birth is asked again on reopening.
    jsPDF is bundled, so saving works offline. */
 import { jsPDF } from 'jspdf';
-import { S, qset, age, bmi, selC, matchP, eParts, noteShows, inCarry, fmtR, fresh, replaceS } from '../engine/store.js';
+import { S, qset, age, bmi, selC, matchP, eParts, noteShows, inCarry, fmtR, fresh, replaceS, askConds } from '../engine/store.js';
 import { CONDS } from '../engine/data.js';
 import { ST, SOURCE } from '../esource/studies.js';
 
@@ -193,7 +193,7 @@ function quickRows() {
   out.push({ q: 'Biological sex', a: S.sex === 'f' ? 'Female' : S.sex === 'm' ? 'Male' : '-' });
   out.push({ q: 'Height / weight / BMI', a: S.ht || S.wt ? (S.ht || '?') + ' cm / ' + (S.wt || '?') + ' kg' + (b != null ? ' / ' + b + ' kg/m2' : '') : '-' });
   if (S.sex !== 'm') out.push({ q: 'Pregnant or breastfeeding', a: yn(S.preg) });
-  const conds = CONDS.filter((c) => !(c[0] === 'mphl' && S.sex === 'f'));
+  const conds = askConds();
   const yes = conds.filter((c) => S.cond[c[0]] === 'y').map((c) => c[1]), notAsked = conds.filter((c) => S.cond[c[0]] == null).map((c) => c[1]);
   out.push({ q: 'Conditions', a: yes.length ? yes.join(', ') + (notAsked.length ? ' (not asked: ' + notAsked.join(', ') + ')' : '') : notAsked.length === conds.length ? '-' : notAsked.length ? 'None of those asked (not asked: ' + notAsked.join(', ') + ')' : 'None, generally healthy' });
   out.push({ q: 'On regular prescription medications', a: yn(S.meds) });
