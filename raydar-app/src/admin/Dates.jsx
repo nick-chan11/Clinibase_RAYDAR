@@ -6,6 +6,7 @@ import { planWith, earliestScreen, winText } from '../esource/schedule.js';
 import { DATE_RE } from '../esource/diff.js';
 import { VisitTrack } from '../views/Timeline.jsx';
 import { Seg } from './AdminApp.jsx';
+import { TextBox } from './TextBox.jsx';
 
 const Ic = ({ n }) => <i className={'ti ' + n} aria-hidden="true" />;
 const MON = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
@@ -161,14 +162,14 @@ function Rolling({ b }) {
         <span className="ad-mut ad-small">days after screening</span>
       </div>
       <label className="ad-field">Source and notes <input value={s.note || ''} onChange={(e) => set((x) => { x.value.note = e.target.value; })} placeholder="e.g. Protocol v2.0, schedule of activities, Table 1" /></label>
-      <label className="ad-field">Study codes that use this schedule <input value={(b.schedule.codes || []).join(', ')} onChange={(e) => set((x) => { x.codes = e.target.value.split(',').map((c) => c.trim()).filter(Boolean); })} /></label>
+      <label className="ad-field">Study codes that use this schedule <TextBox value={(b.schedule.codes || []).join(', ')} onChange={(v) => set((x) => { x.codes = v.split(',').map((c) => c.trim()).filter(Boolean); })} /></label>
       <div className="ad-visits">
         <div className="ad-vh roll"><span>Visit</span><span>Study day</span><span>Window ±</span><span>Type</span><span /></div>
         {s.visits.map((v, k) => (
           <div key={k} className="ad-vr roll">
             <input aria-label="Visit name" value={v.name} onChange={(e) => set((x) => { x.value.visits[k].name = e.target.value; })} />
             {v.dayFrom !== undefined
-              ? <input aria-label="Days" value={v.dayFrom + ' to ' + v.dayTo} onChange={(e) => { const m = /(-?\d+)\s*to\s*(-?\d+)/.exec(e.target.value); if (m) set((x) => { x.value.visits[k].dayFrom = +m[1]; x.value.visits[k].dayTo = +m[2]; }); }} />
+              ? <TextBox aria-label="Days" value={v.dayFrom + ' to ' + v.dayTo} onChange={(t) => { const m = /(-?\d+)\s*to\s*(-?\d+)/.exec(t); if (m) set((x) => { x.value.visits[k].dayFrom = +m[1]; x.value.visits[k].dayTo = +m[2]; }); }} />
               : <input aria-label="Study day" type="number" value={v.day} onChange={(e) => set((x) => { x.value.visits[k].day = +e.target.value; })} />}
             <input aria-label="Window" type="number" min="0" value={v.dayFrom !== undefined ? '' : v.win || 0} disabled={v.dayFrom !== undefined} onChange={(e) => set((x) => { x.value.visits[k].win = +e.target.value; })} />
             <select aria-label="Type" value={v.type} onChange={(e) => set((x) => { x.value.visits[k].type = e.target.value; })}><option value="clinic">Clinic</option><option value="phone">Phone</option><option value="remote">Remote</option></select>
