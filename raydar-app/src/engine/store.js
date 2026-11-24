@@ -38,8 +38,10 @@ function tipVisit(s,c,v){const a=vS(v),b=vE(v),st=vStat(v);return s.c+' · '+cn(
 function tipCohort(s,c){const k=cKey(c);return s.c+' · '+cn(c.n)+'\n'+rk(k)[0]+'\nStay::'+fmtR(c.in,c.out)+'\nFollow-ups::'+(c.v.length?pl(c.v.length,'visit')+', last '+fmt(c.v[c.v.length-1].d):'None dated')+'\nClick to jump::on the calendar'}
 function tipAway(a){return 'Participant away\n\nFrom::'+fmtL(a[0])+'\nUntil::'+fmtL(a[1])+'\nLength::'+pl(dd(a[0],a[1])+1,'day')}
 const EF=()=>({n:'',ind:'',dose:'',route:'',st:'',en:''});
-const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,scr:'',d1:{},script:null,railAll:false,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false});
+const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,scr:'',d1:{},script:null,railAll:false,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false,drMode:'hold',cbr:'',finalNotes:'',resumed:null,rev:1,impMsg:null});
 export let S=fresh(1);
+/** Import callback swaps in a whole new call. */
+export function replaceS(n){S=n;lastAction='import';commit()}
 /* 2.6: site filter. City (all, Melbourne, Sydney) and, within a city, which sites. Kept in this browser. */
 const SITE_KEY='raydar.site.v1';
 function loadSite(){try{const v=JSON.parse(localStorage.getItem(SITE_KEY)||'null');if(v&&['all','melbourne','sydney'].includes(v.city))return {city:v.city,off:v.off||{}}}catch(e){}return {city:'all',off:{}}}
@@ -104,7 +106,7 @@ function noteShows(b){if(!b.vis)return true;const vis=new Set(qset().map(q=>q.id
 /** Would answering q with answer b open a question that is hidden now? */
 function opensWith(q,b){const s=S.study;if(!s)return false;const vis=new Set(qset().map(z=>z.id));vis.add(q.id);return s.Q.some(z=>z.vis&&z.deps&&z.deps.includes(q.id)&&!vis.has(z.id)&&z.vis.test(n=>valueOf(n,vis,{id:q.id,v:b[2]})))}
 function srcQ(s){s=s||S.study;return !s?[]:s.Q||[]}
-const RAYDAR_VERSION='RAYDAR 2.6 · questions, scripts and notes from the TST eSource files';
+const RAYDAR_VERSION='RAYDAR 2.7 · questions, scripts and notes from the TST eSource files';
 const oc=o=>o==='c'?'success':o==='d'?'warning':o==='x'?'danger':'accent';
 function curQ(){const L=qset();let i=L.findIndex(q=>q.id===S.qid);if(i<0){i=L.findIndex(q=>!S.out[q.id]);if(i<0)i=0;S.qid=L[i]&&L[i].id}return {L,i,q:L[i]}}
 function qMatches(q){if(!q.carry)return [];return S.log.filter(e=>inCarry(e,q.carry)).map(e=>({e,p:matchP(e)})).filter(z=>z.p&&z.p.o!=='ok')}
@@ -162,7 +164,7 @@ function ansOrder(q){const p=primaryIdx(q).i;return [p,...q.a.map((_,j)=>j).filt
 function ansSlot(q,j){return ansOrder(q).indexOf(j)}
 
 /* ---- RAYDAR 2.4: stage completion and the next step ---- */
-function idReady(){return /^P\d{3,}/.test(S.pid)&&age()!=null&&S.match}
+function idReady(){return /^P\d{3,}/i.test(S.pid)&&age()!=null&&S.match}
 function qcLeft(){const L=[];if(!S.sex)L.push('sex');if(bmi()==null)L.push('weight and height');if(S.sex!=='m'&&!S.preg)L.push('pregnancy');if(CONDS.some(c=>S.cond[c[0]]==null&&!(c[0]==='mphl'&&S.sex==='f')))L.push('conditions');if(!S.meds)L.push('medications');if(!S.smoke)L.push('smoking');return L}
 function qcDone(){return !qcLeft().length}
 function preqDone(){const s=S.study;return !!s&&(!s.cohorts||!!S.datesOk[s.c])&&!!S.read[s.c]}
@@ -188,7 +190,7 @@ setCohortHook(emCohorts);
 function act(a){const p=a.split(':'),k=p[0],x=p[1],y=p.slice(2).join(':');S.toast='';lastAction=k;
 if(k!=='discard')S.discard=false;
 if(k==='go'){if(x!=='id'&&!S.idok){S.stage='id';S.err={id:x==='finish'?'Confirm identity first. The PID goes in the file name':'Confirm identity first'}}else{S.stage=x;S.err={}}}
-else if(k==='confirm'){const e={};if(!/^P\d{3,}/.test(S.pid))e.pid='Enter a PID like P12345';if(age()==null)e.dob='Enter a valid date of birth';if(!S.match)e.match='Check name, phone and email against the profile';S.err=e;S.shake=Object.keys(e)[0]||null;if(!Object.keys(e).length){S.idok=true;S.stage='qc'}}
+else if(k==='confirm'){const e={};if(!/^P\d{3,}/i.test(S.pid))e.pid='Enter a PID like p123456_1101';if(age()==null)e.dob='Enter a valid date of birth';if(!S.match)e.match='Check name, phone and email against the profile';S.err=e;S.shake=Object.keys(e)[0]||null;if(!Object.keys(e).length){S.idok=true;S.stage='qc'}}
 else if(k==='set'){if(x.indexOf('cond.')===0){const c=x.slice(5);S.cond[c]=S.cond[c]===y?null:y}else S[x]=S[x]===y?null:y;syncAuto()}
 else if(k==='norest'){CONDS.forEach(c=>{if(S.cond[c[0]]==null)S.cond[c[0]]='n'});syncAuto()}
 else if(k==='start'){start(x);S.nav=[];S.park={};S.hist={};S.peek=null}
@@ -259,7 +261,9 @@ else if(k==='new'){const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dar
 else if(k==='all')S.all=!S.all;
 else if(k==='proall')S.proAll=!S.proAll;
 else if(k==='fs')S.fs=Math.max(11,Math.min(17,S.fs+(+x)));
-else if(k==='import')S.toast='In the real tool this opens a file picker and resumes the call.';
+else if(k==='drmode')S.drMode=x==='book'?'book':'hold';
+else if(k==='cbr')S.cbr=decodeURIComponent(x||'');
+else if(k==='impclose')S.impMsg=null;
 else if(k==='lt'){S.lt=x;S.logErr=''}
 else if(k==='mt'){S.mt=x;S.mErr=''}
 else if(k==='logform'){S.logForm=!(S.logForm||S.ed);if(!S.logForm&&S.ed){pushLog(S.f[0],S.lt,S.ed);S.ed=null;S.f=[EF()]}S.logErr='';if(S.logForm)S.focus='rName0'}

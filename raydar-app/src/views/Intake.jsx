@@ -4,22 +4,28 @@ import { keyName } from '../engine/keys.js';
 import { CONDS as CONDS_LIST } from '../engine/data.js';
 import { A, Ic, Seg } from './ui.jsx';
 import { Err, Piece } from '../motion/components.jsx';
+import { ImportButton, ImportNote } from './Import.jsx';
 
 export function Identity() {
   const e = S.err;
   return (
+    <>
+    <ImportNote />
     <div className="card">
       <Piece>
-        <p style={{ fontWeight: 500, margin: 0 }}>Confirm who you're speaking to</p>
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'flex-start' }}>
+          <p style={{ fontWeight: 500, margin: 0 }}>Confirm who you're speaking to</p>
+          {S.resumed ? null : <ImportButton label="Resume a callback PDF" />}
+        </div>
         <p className="mut" style={{ margin: '0 0 10px', fontSize: 12 }}>Check against their profile. Only the PID is saved to any file.</p>
       </Piece>
       <Piece style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
         <div>
           <label className="lab" htmlFor="f-pid" style={{ display: 'block' }}>Clinibase PID</label>
           <input
-            id="f-pid" type="text" data-f="pid" placeholder="P12345" autoComplete="off" value={S.pid}
+            id="f-pid" type="text" data-f="pid" placeholder="p123456_1101" autoComplete="off" value={S.pid}
             aria-invalid={!!e.pid}
-            onChange={(ev) => upd(() => { S.pid = ev.target.value.trim().toUpperCase(); delete S.err.pid; })}
+            onChange={(ev) => upd(() => { S.pid = ev.target.value.trim(); delete S.err.pid; })}
           />
           <Err msg={e.pid} />
         </div>
@@ -45,6 +51,7 @@ export function Identity() {
         </Piece>
       )}
     </div>
+    </>
   );
 }
 

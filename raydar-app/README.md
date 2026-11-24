@@ -1,6 +1,17 @@
-# RAYDAR 2.6 (React + Motion)
+# RAYDAR 2.7 (React + Motion)
 
 A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-animation skill.
+
+## New in 2.7: the pre-screen PDF and Import callback
+
+- **Save PDF** on Finish makes the same clinic PDF as RAYDAR Combined (`src/pdf/report.js`): page 1 with the protocol number, PID, verdict banner, callback reason, jump-to links, date of birth / sex / BMI, Needs attention and the call notes; then every answered question in full (shaded when it needs attention), the Quick Check details and the study notes. jsPDF is bundled, so it works offline.
+- **Four outcomes**, named the way the team files them (`PID-PROTOCOL-Reason.pdf`):
+  - Clear to book: `CONTINUE - CLEAR TO BOOK` → `Booked` (or `INCOMPLETE - N QUESTIONS NOT ANSWERED` → `Incomplete` if questions are left).
+  - Exclude: `EXCLUDE - DO NOT BOOK` → `Fail_<reason>` (the criteria ticked, the age or BMI range, or the question).
+  - Doctor enquiry: hold the booking (`DOCTOR ENQUIRY - HOLD BOOKING UNTIL THE DOCTOR REPLIES`, callback "Doctor enquiry pending" → `Callback_Doctor_enquiry_pending`) or book now (`BOOK NOW, CANCEL IF THE DOCTOR SAYS NO` → `Booked_DrEnquiry`).
+  - Save for callback: Combined's reasons (Not a good time, Unsure on dates, Holidays interfere, No available slots, …) → `Callback_<reason>`.
+- **Import callback** (Identity screen, or Tools): open a RAYDAR 2.7 PDF and the call carries on: PID, Quick Check, medication and history log, study, dates, answers, notes and call notes come back. Like Combined, the data in the PDF never holds the name, phone, email or date of birth, so the date of birth and the identity check are done again. Questions the eSource has changed since are asked again. PDFs from RAYDAR Combined or Original can't be reopened here (their questions are named differently); RAYDAR says so.
+- PIDs keep the case they're typed in (`p123456_1101`).
 
 ## New in 2.6
 
@@ -40,10 +51,10 @@ A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-an
 npm install
 npm run dev      # http://localhost:5173
 npm run build    # static site in dist/ — needs a web server (e.g. `npm run preview`); double-clicking dist/index.html shows a blank page
-npm run build:single   # one self-contained file, written to ../RAYDAR_2.6.html — opens by double-click
+npm run build:single   # one self-contained file, written to ../RAYDAR_2.7.html — opens by double-click
 ```
 
-After changing anything in `src/`, run `npm run build:single` again to refresh `RAYDAR_2.6.html`.
+After changing anything in `src/`, run `npm run build:single` again to refresh `RAYDAR_2.7.html`.
 
 ## Where things live
 
@@ -55,6 +66,8 @@ After changing anything in `src/`, run `npm run build:single` again to refresh `
 | `src/esource/expr.js` | Evaluates the eSource's visibleIf conditions |
 | `src/esource/schedule.js` | Emeritus visit timelines from the protocol schedules |
 | `src/views/Timeline.jsx` | The visit timeline view |
+| `src/pdf/report.js` | 2.7: the pre-screen PDF (layout from RAYDAR Combined), the callback data inside it, and Import callback |
+| `src/views/Import.jsx` | 2.7: the Import callback button and the note shown after reopening |
 | `src/esource/html.js` | Shows Study Notes HTML safely (allow-listed tags and styles only) |
 | `src/engine/store.js` | State, eligibility rules and `act()`, generated from 2.2; `commit()` replaces `render()`. 2.4 adds `ansOrder()` and `nextStep()` |
 | `src/engine/keys.js` | Keyboard bindings: defaults, rebinding, labels |

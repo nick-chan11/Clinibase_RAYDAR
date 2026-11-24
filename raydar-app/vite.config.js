@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { viteSingleFile } from 'vite-plugin-singlefile';
+import { fileURLToPath } from 'node:url';
+
+const stub = fileURLToPath(new URL('./src/pdf/stub.js', import.meta.url));
 
 // `npm run build`        → dist/ (several files, needs a web server)
 // `npm run build:single` → one self-contained HTML file, copied to ../RAYDAR_2.6.html (opens by double-click)
@@ -10,6 +13,9 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: single ? [react(), viteSingleFile()] : [react()],
     base: './',
+    // jsPDF's optional extras (HTML rendering, SVG) are never used, so they are left out of the build
+    resolve: { alias: { html2canvas: stub, canvg: stub, dompurify: stub } },
+    optimizeDeps: { entries: ['index.html'] },
     define: { __BUILD_DATE__: JSON.stringify(new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })) },
     server: { port: 5173 },
     build: single ? { outDir: 'dist-single' } : {},

@@ -5,6 +5,7 @@ import { ST, SOURCE, loadFiles } from '../esource/studies.js';
 import { A, Ic, B } from './ui.jsx';
 import { Legend } from './Header.jsx';
 import { Expander } from '../motion/components.jsx';
+import { ImportButton } from './Import.jsx';
 
 function H({ title }) {
   return (
@@ -17,7 +18,7 @@ function H({ title }) {
 const Card = ({ children }) => <div className="card" style={{ padding: '10px 12px', marginBottom: 10 }}>{children}</div>;
 
 function Menu() {
-  const items = [['plan', 'ti-calendar-stats', 'Compare dates'], ['dre:open', 'ti-stethoscope', 'Create Dr enquiry'], ['tool:files', 'ti-files', 'Study files and file check'], ['tool:snap', 'ti-list-search', 'Study snapshot'], ['tool:guide', 'ti-help-circle', 'How to use RAYDAR'], ['tool:help', 'ti-keyboard', 'Keyboard shortcuts (change keys)'], ['import', 'ti-file-import', 'Import callback or PDF']];
+  const items = [['plan', 'ti-calendar-stats', 'Compare dates'], ['dre:open', 'ti-stethoscope', 'Create Dr enquiry'], ['tool:files', 'ti-files', 'Study files and file check'], ['tool:snap', 'ti-list-search', 'Study snapshot'], ['tool:guide', 'ti-help-circle', 'How to use RAYDAR'], ['tool:help', 'ti-keyboard', 'Keyboard shortcuts (change keys)']];
   const row = (l, ctl) => <div className="row"><span>{l}</span>{ctl}</div>;
   return (
     <Card>
@@ -25,6 +26,7 @@ function Menu() {
       {items.map((x) => (
         <button key={x[0]} className="pill wide" {...A(x[0])} style={{ width: '100%', textAlign: 'left', marginBottom: 6 }}><Ic n={x[1]} /> {x[2]}</button>
       ))}
+      <ImportButton label="Import callback PDF" className="pill wide" style={{ width: '100%', textAlign: 'left', marginBottom: 6 }} />
       <div style={{ fontSize: 12, fontWeight: 500, margin: '8px 0 2px' }}>Layout</div>
       {row('Text size', <span className="seg"><button {...A('fs:-1')} aria-label="Smaller text">A-</button><button {...A('fs:1')} aria-label="Larger text">A+</button></span>)}
       {row('Collapse all panels', <button className="pill" {...A('colall')}>Collapse</button>)}

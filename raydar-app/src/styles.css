@@ -259,3 +259,9 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd.slim .bar{min-height:0;padding:6px 14px;gap:10px;flex-wrap:nowrap;overflow:hidden}
 #rd.slim .bar .brand{font-size:17px}
 #rd.slim .bar .pill{font-size:13px;padding:4px 10px}
+
+/* 2.6: the verdict line on Finish (2.7), coloured like the PDF banner */
+.soft.verdict.ok{color:var(--text-success)}
+.soft.verdict.warn{color:var(--text-warning)}
+.soft.verdict.bad{color:var(--text-danger)}
+.soft.verdict.idle{color:var(--text-secondary)}
