@@ -230,8 +230,21 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd .scriptside{position:fixed;top:12px;right:12px;bottom:12px;width:min(520px,92vw);z-index:30;background:var(--surface-2);border:1px solid var(--border-accent);border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.2);display:flex;flex-direction:column}
 #rd .scriptside .sbody{overflow-y:auto;padding:12px 16px}
 /* Visit timeline */
-#rd .vt-track{position:relative;height:96px;margin:6px 0}
-#rd .vt-dot{position:absolute;top:41px;width:12px;height:12px;margin-left:-6px;border-radius:50%}
+/* 2.7: the visit timeline scrolls sideways at a readable scale */
+#rd .vt-scroll{overflow-x:auto;overflow-y:hidden;border:1px solid var(--border);border-radius:10px;background:var(--surface-1);scrollbar-width:thin}
+#rd .vt-scroll:focus-visible{outline:2px solid var(--border-accent);outline-offset:2px}
+#rd .vt-canvas{position:relative}
+#rd .vt-month{position:absolute;top:0;bottom:0;border-left:1px solid var(--border-strong)}
+#rd .vt-month span{position:absolute;top:6px;left:4px;font-size:11px;font-weight:600;color:var(--text-secondary);white-space:nowrap}
+#rd .vt-week{position:absolute;top:22px;bottom:0;border-left:1px dashed var(--border)}
+#rd .vt-away{position:absolute;top:22px;bottom:0;background:var(--bg-danger);border-left:1px solid var(--border-danger);border-right:1px solid var(--border-danger);opacity:.85}
+#rd .vt-axis{position:absolute;left:0;right:0;height:1px;background:var(--border-strong)}
+#rd .vt-bar{position:absolute;height:13px;border-radius:7px;box-shadow:0 0 0 2px var(--surface-1)}
+#rd .vt-lab{position:absolute;font-size:11px;font-weight:600;white-space:nowrap;transform:translateX(-2px)}
+#rd .vt-phone{position:absolute;height:8px;border-radius:4px;border:1px dashed var(--border-stronger);background:transparent}
+#rd .vt-lane{position:absolute;left:6px;font-size:10px;color:var(--text-secondary)}
+#rd .vt-tablewrap{max-height:380px;overflow:auto;border:1px solid var(--border);border-radius:10px}
+#rd .vt-tablewrap thead th{position:sticky;top:0;background:var(--surface-2);z-index:1}
 #rd .vt table{border-collapse:collapse;width:100%;font-size:12px}
 #rd .vt td,#rd .vt th{padding:5px 8px;text-align:left;border-top:.5px solid var(--border);vertical-align:top}
 #rd .vt th{font-weight:600;color:var(--text-secondary);border-top:0}
@@ -265,3 +278,15 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 .soft.verdict.warn{color:var(--text-warning)}
 .soft.verdict.bad{color:var(--text-danger)}
 .soft.verdict.idle{color:var(--text-secondary)}
+
+/* 2.7: under a Quick check item, the studies it matters to */
+.qcuse{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:11px;font-weight:400;margin-top:1px}
+.qcuse .mono{font-size:11px;cursor:help}
+.row > .seg{flex-shrink:0}
+
+/* 2.7: hide/show on collapsible panels: a bordered button with a chevron and a word */
+#rd .coltog{display:inline-flex;align-items:center;gap:3px;height:26px;padding:0 9px 0 6px;border:1px solid var(--border-stronger);border-radius:8px;background:var(--surface-1);color:var(--text-primary);font-size:12px;font-weight:500;cursor:pointer;flex-shrink:0;transition:border-color .12s,background-color .12s,color .12s}
+#rd .coltog .chev{font-size:16px}
+#rd .coltog:hover,#rd .coltog:focus-visible{border-color:var(--border-accent);color:var(--text-accent);background:var(--surface-2)}
+#rd .coltog.shut{background:var(--bg-accent);border-color:var(--border-accent);color:var(--text-accent)}
+#rd .coltitle:hover{color:var(--text-accent)!important}

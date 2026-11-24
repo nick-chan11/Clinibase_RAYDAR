@@ -12,6 +12,7 @@ import { Planner } from './views/Planner.jsx';
 import { DrPanel } from './views/DrPanel.jsx';
 import { Drawer, markBound } from './views/Drawer.jsx';
 import { Studies, LogPanel, ProPanel } from './views/Rail.jsx';
+import { Safe } from './views/Safe.jsx';
 import { RoutesList } from './views/MedLog.jsx';
 import { Tooltip } from './views/Tooltip.jsx';
 
@@ -194,21 +195,21 @@ export default function App() {
         <Steps />
       </div>
       <Guide />
-      <Expander open={S.plan}><Planner /></Expander>
+      <Safe name="Compare dates"><Expander open={S.plan}><Planner /></Expander></Safe>
       <div className="grid" id="grid" ref={gridRef} style={{ gridTemplateColumns: cols }}>
         <main id="m" style={{ minWidth: 0 }}>
-          <Drawer open={!rail} />
-          <Expander open={S.dre.open}><DrPanel /></Expander>
-          <StageHost />
+          <Safe name="Tools"><Drawer open={!rail} /></Safe>
+          <Safe name="Dr enquiry"><Expander open={S.dre.open}><DrPanel /></Expander></Safe>
+          <Safe name="The main panel"><StageHost /></Safe>
         </main>
         {rail ? (
           <>
             <Splitter gridRef={gridRef} />
             <aside className="rail" id="rail" aria-label="Side panel" style={{ display: 'flex', flexDirection: 'column', gap: 10, minWidth: 0 }}>
-              <Drawer open />
-              <Studies />
-              <LogPanel />
-              <ProPanel />
+              <Safe name="Tools"><Drawer open /></Safe>
+              <Safe name="Pivotable studies"><Studies /></Safe>
+              <Safe name="Meds and history"><LogPanel /></Safe>
+              <Safe name="Prohibited list"><ProPanel /></Safe>
             </aside>
           </>
         ) : null}

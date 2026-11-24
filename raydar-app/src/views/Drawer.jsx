@@ -175,15 +175,15 @@ function Files() {
         <B>{ST.length} studies</B> from the TST eSource files{SOURCE.builtAt ? ', built into this RAYDAR on ' + SOURCE.builtAt : ''}. Questions, scripts and notes are used exactly as written in each eSource. Cohort dates come from RAYDAR cohort dates.json.
       </p>
       <input ref={inp} type="file" accept=".json,application/json" multiple onChange={pick} style={{ display: 'none' }} />
-      <button className="pill wide" onClick={() => inp.current && inp.current.click()} style={{ width: '100%' }}><Ic n="ti-file-upload" /> Load eSource files (.json)</button>
-      <p className="mut" style={{ fontSize: 11, margin: '4px 0 0' }}>A file with the same name as a built-in study replaces it until this tab closes; a new name adds a study.</p>
+      <button className="pill wide" onClick={() => inp.current && inp.current.click()} style={{ width: '100%' }}><Ic n="ti-file-upload" /> Load eSource or Quick check files (.json)</button>
+      <p className="mut" style={{ fontSize: 11, margin: '4px 0 0' }}>A file with the same name as a built-in study replaces it until this tab closes; a new name adds a study. Quick check rules are read from each study's questions; RAYDAR quick check.json lists the conditions and any extra rules.</p>
       {S.fileMsg ? (
         <div role="status" style={{ marginTop: 8 }}>
           {S.fileMsg.map((r, i) => <div key={i} style={{ fontSize: 12, color: r.ok ? 'var(--text-success)' : 'var(--text-danger)' }}><Ic n={r.ok ? 'ti-check' : 'ti-alert-triangle'} /> {r.file}: {r.msg}</div>)}
         </div>
       ) : null}
       <div style={{ fontSize: 12, fontWeight: 500, margin: '12px 0 2px' }}>File check {withIssues.length ? <span className="mut" style={{ fontWeight: 400 }}>· {withIssues.reduce((n, s) => n + s.issues.length, 0)} things to check across {withIssues.length} files</span> : null}</div>
-      <p className="mut" style={{ fontSize: 11, margin: '0 0 4px' }}>Things in an eSource that stop a question showing, or leave an answer without an outcome. Worth passing to TST.</p>
+      <p className="mut" style={{ fontSize: 11, margin: '0 0 4px' }}>Things in an eSource that stop a question showing, or leave an answer without an outcome (worth passing to TST), and the Quick check rules read from each study. Hover a rule for its question.</p>
       <div style={{ maxHeight: 340, overflowY: 'auto' }}>
         {ST.map((s) => (
           <div key={s.file} className="row" style={{ fontSize: 12, alignItems: 'flex-start', padding: '5px 0' }}>
@@ -191,6 +191,15 @@ function Files() {
               <div><span className="mono">{s.c}</span> <span className="mut">{s.site}{s.version ? ' · ' + s.version : ''}{s.loaded ? ' · loaded file' : ''}</span></div>
               <div className="mut" style={{ fontSize: 11 }}>{s.Q.length} steps{s.cohorts ? ' · ' + s.cohorts.length + ' cohorts with dates' : ''}{s.age ? ' · age ' + s.age[0] + (s.age[1] < 120 ? '-' + s.age[1] : '+') : ''}{s.bmi ? ' · BMI ' + s.bmi[0] + (s.bmi[1] < 100 ? '-' + s.bmi[1] : '+') : ''}</div>
               {s.issues.map((x, i) => <div key={i} style={{ fontSize: 11, color: 'var(--text-warning)', marginTop: 2 }}><Ic n="ti-alert-triangle" /> {x.q ? <B>{x.q}: </B> : null}{x.msg}</div>)}
+              {(s.qc || []).map((r, i) => (
+                <div key={'qc' + i} style={{ fontSize: 11, marginTop: 2 }} title={r.qt ? 'From the eSource: ' + r.qt + (r.a ? '\nAnswer: ' + r.a : '') : ''}>
+                  <span style={{ color: r.result === 'no' ? 'var(--text-danger)' : 'var(--text-warning)' }}>Quick check: {r.why}</span>
+                  <span className="mut"> · {r.auto ? 'read from "' + (r.qt.length > 70 ? r.qt.slice(0, 69) + '…' : r.qt) + '"' : 'from RAYDAR quick check.json'}</span>
+                </div>
+              ))}
+              {(s.qcMissing || []).map((m, i) => (
+                <div key={'qm' + i} style={{ fontSize: 11, color: 'var(--text-warning)', marginTop: 2 }}><Ic n="ti-alert-triangle" /> Needs <B>{m.name}</B>, which Quick check doesn't ask about yet. Add it to RAYDAR quick check.json.</div>
+              ))}
             </div>
             {s.issues.length ? null : <Ic n="ti-check" style={{ color: 'var(--text-success)' }} label="No problems found" />}
           </div>

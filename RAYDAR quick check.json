@@ -1,0 +1,28 @@
+{
+  "_about": [
+    "Quick check settings for RAYDAR 2.7. Most rules are NOT kept here: RAYDAR reads them from each study's own eSource questions every time a file loads,",
+    "e.g. 'Have you been diagnosed with a form of diabetes?' answered 'No - Exclude' means the study needs type 2 diabetes.",
+    "conditions: the conditions Quick check can ask about. A condition only shows on Quick check when at least one loaded study has a rule for it.",
+    "  key: short id, never change it once used. label: what the recruiter sees. match: words (a regular expression) that find the condition in an eSource question.",
+    "  answer / answerNot (optional): when one question covers several kinds, e.g. 'Yes, type 2' versus 'Yes, type 1', which answers mean this condition and which mean another.",
+    "  sex (optional): only ask this sex (m or f).",
+    "rules: rules the eSource questions don't spell out, each with the eSource wording it comes from. item is a condition key, 'smoke' or 'meds'; when is the Quick check answer (y or n); result is 'no' (rules the study out) or 'check'.",
+    "ignore: rules RAYDAR read from the eSource that turned out wrong. Give the file and the question name, and optionally the item.",
+    "After editing, run npm run build:single, or load this file with Tools > Study files to try it in the open tab."
+  ],
+  "conditions": [
+    { "key": "t2d", "label": "Type 2 diabetes", "match": "diabet", "answer": "t2d|type ?(2|ii)\\b", "answerNot": "non-? ?(t2d|type)|type ?(1|i)\\b|t1d|gestation" },
+    { "key": "asthma", "label": "Asthma", "match": "asthma" },
+    { "key": "copd", "label": "COPD", "match": "copd|chronic obstructive" },
+    { "key": "eczema", "label": "Eczema (atopic dermatitis)", "match": "eczema|atopic dermatitis" },
+    { "key": "acne", "label": "Acne", "match": "acne" },
+    { "key": "mphl", "label": "Male pattern hair loss", "match": "male pattern|androgenetic", "sex": "m" },
+    { "key": "aa", "label": "Alopecia areata", "match": "alopecia areata" },
+    { "key": "ra", "label": "Rheumatoid arthritis", "match": "rheumatoid arthritis" }
+  ],
+  "rules": [
+    { "file": "Veritus - CORSERA - pre-screening.json", "item": "meds", "when": "y", "result": "check", "why": "Daily prescription medication isn't suitable (contraception is okay)", "source": "If the PT is taking any prescription medications daily they are not suitable (contraception is okay)" },
+    { "file": "Veritus - EQ - pre-screening.json", "item": "meds", "when": "y", "result": "check", "why": "Daily prescription medication: unlikely to be eligible", "source": "If you rely on daily prescription medication, you're unlikely to be eligible for this study." }
+  ],
+  "ignore": []
+}

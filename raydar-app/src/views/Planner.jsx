@@ -130,7 +130,7 @@ function Detail() {
           {st === 'open' && (!S.study || S.study.c !== s.c || S.stage !== 'ps') ? <button className="pill pri" {...A('pstart:' + s.c + ':' + c.id)}>Pre-screen for this</button> : null}
         </span>
       </div>
-      {vrow('stay', 'In clinic', c.in, c.out, st === 'open' ? (stayHit(c) ? 'clash' : 'ok') : null)}
+      {vrow('stay', c.in === c.out ? 'Day 1 visit' : 'In clinic', c.in, c.out, st === 'open' ? (stayHit(c) ? 'clash' : 'ok') : null)}
       {c.v.map((v) => vrow(v.d + v.l, v.l, vS(v), vE(v), st === 'open' ? vStat(v) : null))}
       {ty.note ? <div className="mut" style={{ fontSize: 11 }}>{ty.note}</div> : null}
     </div>

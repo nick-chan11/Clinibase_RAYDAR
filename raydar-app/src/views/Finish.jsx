@@ -47,7 +47,11 @@ function Saved({ k }) {
       </Piece>
       <Piece as="p" className="mono" style={{ margin: '0 0 8px', wordBreak: 'break-all' }}>{name}</Piece>
       <Piece as="p" className="mut" style={{ fontSize: 12, margin: '0 0 12px' }}>It's in your Downloads folder. Upload it to the participant profile in CTMS. Nothing else from this call is kept. To carry on later, use Import callback on this PDF.</Piece>
-      <Piece><button className="pill pri" {...A('new')}>Start next call <Ic n="ti-arrow-right" /> <span className="k">{keyName('cont')}</span></button></Piece>
+      <Piece style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
+        <button className="pill pri" {...A('new')}>Start next call <Ic n="ti-arrow-right" /> <span className="k">{keyName('cont')}</span></button>
+        <button className="pill" {...A('unsave')}><Ic n="ti-arrow-back-up" /> Wrong outcome? Change it</button>
+      </Piece>
+      <Piece as="p" className="mut" style={{ fontSize: 11, margin: '8px 0 0' }}>Changing it keeps every answer. The corrected PDF is marked as a revision and names the file it replaces; delete the first one from CTMS.</Piece>
     </div>
   );
 }
@@ -67,6 +71,11 @@ export function Finish() {
   const flags = L.filter((q) => S.out[q.id] === 'x' || S.out[q.id] === 'd');
   return (
     <div className="card">
+      {S.prevFile ? (
+        <div role="status" style={{ fontSize: 12, padding: '8px 10px', marginBottom: 10, borderLeft: '3px solid var(--border-warning)', background: 'var(--bg-warning)', borderRadius: 6 }}>
+          Correcting <span className="mono" style={{ wordBreak: 'break-all' }}>{S.prevFile}</span>. Pick the right outcome and save again: the new PDF is <b style={{ fontWeight: 600 }}>revision {S.rev}</b> and says which file it replaces.
+        </div>
+      ) : null}
       <Piece as="p" style={{ fontWeight: 500, margin: '0 0 8px' }}>How did the call end?</Piece>
       <Piece style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }} role="radiogroup" aria-label="Call outcome">
         {O.map((x) => (

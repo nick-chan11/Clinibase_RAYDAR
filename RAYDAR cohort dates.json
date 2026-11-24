@@ -78,20 +78,32 @@
   },
   "Emeritus Melbourne - V175-001 - pre-screening.json": {
     "types": {
-      "day": { "l": "Vaccine study, day visits", "nights": 0, "stay": "Clinic appointment of about 5 to 6 hours. Another day can be booked if they can't make it", "fu": "Visits on Day 2, 8 (±1), 29 (±2), 90 (±1 week), 180, 270 and 365 (±2 weeks); calls on Day 3 and 15", "pay": "$3,440", "note": "The study notes don't say which study day 30 November is, so follow-up dates aren't calculated." }
+      "day": { "l": "Vaccine study, day visits only (no overnight stays)", "nights": 0, "stay": "Day 1 vaccination visit of about 5 to 6 hours, no overnight stay. Another day can be booked if they can't make 30 November", "fu": "In-clinic visits on Day 2, 8 (±1 day), 29 (±2 days), 90 (±1 week), 180, 270 and 365 (±2 weeks); telehealth calls on Day 3 and 15", "pay": "$3,440" }
     },
     "cohorts": [
-      { "id": "d1", "n": "Clinic appointment, Mon 30 Nov", "t": "day", "in": "2026-11-30", "out": "2026-11-30", "v": [],
-        "src": "You will need to be able to come into the clinic on Monday the 30th of November. This appointment is about 5-6 hours. If you can't. we can book you in another day." }
+      { "id": "d1", "n": "Day 1 (vaccination) Mon 30 Nov", "t": "day", "in": "2026-11-30", "out": "2026-11-30",
+        "v": [
+          { "d": "2026-12-01", "w": 0, "l": "Day 2 visit" }, { "d": "2026-12-07", "w": 1, "l": "Day 8 visit (±1 day)" },
+          { "d": "2026-12-28", "w": 2, "l": "Day 29 visit (±2 days)" }, { "d": "2027-02-27", "w": 7, "l": "Day 90 visit (±1 week)" },
+          { "d": "2027-05-28", "w": 14, "l": "Day 180 visit (±2 weeks)" }, { "d": "2027-08-26", "w": 14, "l": "Day 270 visit (±2 weeks)" },
+          { "d": "2027-11-29", "w": 14, "l": "Day 365 visit (±2 weeks)" }
+        ],
+        "src": "You will need to be able to come into the clinic on Monday the 30th of November. This appointment is about 5-6 hours. If you can't. we can book you in another day. | Schedule: Day 1, Day 2, Day 3 - telehealth call, Day 8 (+/- 1 day), Day 15 - telehealth call, Day 29 (+/- 2 days), Day 90 (+/- 1 week), Day 180 (+/- 2 weeks), Day 270 (+/- 2 weeks), Day 365 (+/- 2 weeks). $540 for Day 1 (Vaccination Visit). Day N is 30 Nov plus N-1 days; telehealth calls aren't listed as they need no clinic day." }
     ]
   },
   "Emeritus Sydney - V175-001 - pre-screening.json": {
     "types": {
-      "day": { "l": "Vaccine study, day visits", "nights": 0, "stay": "Clinic appointment of about 5 to 6 hours. Another day can be booked if they can't make it", "fu": "Visits on Day 2, 8 (±1), 29 (±2), 90 (±1 week), 180, 270 and 365 (±2 weeks); calls on Day 3 and 15", "pay": "$3,440", "note": "The study notes don't say which study day 30 November is, so follow-up dates aren't calculated." }
+      "day": { "l": "Vaccine study, day visits only (no overnight stays)", "nights": 0, "stay": "Day 1 vaccination visit of about 5 to 6 hours, no overnight stay. Another day can be booked if they can't make 30 November", "fu": "In-clinic visits on Day 2, 8 (±1 day), 29 (±2 days), 90 (±1 week), 180, 270 and 365 (±2 weeks); telehealth calls on Day 3 and 15", "pay": "$3,440" }
     },
     "cohorts": [
-      { "id": "d1", "n": "Clinic appointment, Mon 30 Nov", "t": "day", "in": "2026-11-30", "out": "2026-11-30", "v": [],
-        "src": "You will need to be able to come into the clinic on Monday the 30th of November. This appointment is about 5-6 hours. If you can't. we can book you in another day." }
+      { "id": "d1", "n": "Day 1 (vaccination) Mon 30 Nov", "t": "day", "in": "2026-11-30", "out": "2026-11-30",
+        "v": [
+          { "d": "2026-12-01", "w": 0, "l": "Day 2 visit" }, { "d": "2026-12-07", "w": 1, "l": "Day 8 visit (±1 day)" },
+          { "d": "2026-12-28", "w": 2, "l": "Day 29 visit (±2 days)" }, { "d": "2027-02-27", "w": 7, "l": "Day 90 visit (±1 week)" },
+          { "d": "2027-05-28", "w": 14, "l": "Day 180 visit (±2 weeks)" }, { "d": "2027-08-26", "w": 14, "l": "Day 270 visit (±2 weeks)" },
+          { "d": "2027-11-29", "w": 14, "l": "Day 365 visit (±2 weeks)" }
+        ],
+        "src": "You will need to be able to come into the clinic on Monday the 30th of November. This appointment is about 5-6 hours. If you can't. we can book you in another day. | Schedule: Day 1, Day 2, Day 3 - telehealth call, Day 8 (+/- 1 day), Day 15 - telehealth call, Day 29 (+/- 2 days), Day 90 (+/- 1 week), Day 180 (+/- 2 weeks), Day 270 (+/- 2 weeks), Day 365 (+/- 2 weeks). $540 for Day 1 (Vaccination Visit). Day N is 30 Nov plus N-1 days; telehealth calls aren't listed as they need no clinic day." }
     ]
   }
 }

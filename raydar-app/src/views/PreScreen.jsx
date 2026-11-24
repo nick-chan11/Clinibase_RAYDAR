@@ -647,7 +647,7 @@ export function PreScreen() {
   const s = S.study;
   const peekId = useLatest(S.peek);
   if (!s) return <PickStudy />;
-  if (!S.qon) return <PreQ s={s} />;
+  if (!S.qon) return <><Carried /><PreQ s={s} /></>;
   const { L, i, q } = curQ();
   if (!q) return <div className="card">No questions.</div>;
   const done = L.filter((z) => S.out[z.id]).length, fr = frontier(L), rev = L.filter(needsReview), pk = L.filter((z) => S.park[z.id] && !S.out[z.id]);
@@ -658,6 +658,8 @@ export function PreScreen() {
   const mapOpen = !!(S.mapOpen || S.qs.trim());
 
   return (
+    <>
+    <Carried />
     <div className="card">
       {/* 2.6: this toolbar stays in view under the header while the questions scroll */}
       <div className="qbar">
@@ -737,11 +739,28 @@ export function PreScreen() {
       <Piece>{S.script === 'tab' ? <ScriptView s={s} q={q} L={L} /> : S.mode === 'list' ? <ListMode L={L} q={q} /> : <OneSlide L={L} i={i} q={q} />}</Piece>
       {S.script === 'side' ? <ScriptSide s={s} q={q} L={L} /> : null}
     </div>
+    </>
   );
 }
 
 /* ---------------- 2.6: choosing a study ---------------- */
 /** When Quick check is done and no study is picked, Pre-screen lists the site's studies by how well they fit. */
+/** 2.7: after switching study or site, what came with the call */
+function Carried() {
+  const c = S.carried;
+  if (!c) return null;
+  return (
+    <div className="card" role="status" style={{ borderLeft: '3px solid var(--border-accent)', marginBottom: 10, fontSize: 13, display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'flex-start' }}>
+      <span>
+        {c.back
+          ? <>Back on {S.study.c}: your {c.n} answer{c.n === 1 ? ' is' : 's are'} as you left {c.n === 1 ? 'it' : 'them'}.</>
+          : <><b style={{ fontWeight: 600 }}>{c.n} of {c.of} answers carried over from {c.from}.</b> Only questions worded the same in both eSource files came across. Check them with the participant; the rest are asked fresh. Your {c.from} answers are kept if you switch back.</>}
+      </span>
+      <button className="pill ib" {...A('carriedx')} aria-label="Dismiss"><Ic n="ti-x" /></button>
+    </div>
+  );
+}
+
 export function PickStudy() {
   const all = ranked(), q = (S.pq || '').trim().toLowerCase();
   const L = all.filter((x) => !q || (x.s.c + ' ' + x.s.d + ' ' + x.s.site).toLowerCase().includes(q));

@@ -105,15 +105,22 @@ export function Resizable({ id, children, style, className = '', ...rest }) {
 }
 
 const Chev = ({ shut }) => <i className={'ti ti-chevron-down chev' + (shut ? ' shut' : '')} aria-hidden="true" />;
+/** 2.7: the hide/show control on every collapsible panel: a bordered button with a chevron and a word, so it reads as a control */
+function ColToggle({ id, shut, name }) {
+  return (
+    <button type="button" className={'coltog' + (shut ? ' shut' : '')} {...A('col:' + id)} aria-expanded={!shut}
+      aria-label={(shut ? 'Show ' : 'Hide ') + (name || 'panel')} title={(shut ? 'Show ' : 'Hide ') + (name || 'this panel')}>
+      <Chev shut={shut} /><span>{shut ? 'Show' : 'Hide'}</span>
+    </button>
+  );
+}
 
 export function PanelHead({ id, title, sub, right }) {
   const c = S.col[id];
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-      <button className="pill ib" {...A('col:' + id)} aria-expanded={!c} aria-label={(c ? 'Expand ' : 'Collapse ') + (typeof title === 'string' ? title : '')} style={{ padding: '0 2px' }}>
-        <Chev shut={c} />
-      </button>
-      <button className="lnk" {...A('col:' + id)} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontSize: 13, fontWeight: 500, textAlign: 'left' }}>{title}</button>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+      <ColToggle id={id} shut={c} name={typeof title === 'string' ? title : ''} />
+      <button className="lnk coltitle" {...A('col:' + id)} tabIndex={-1} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontSize: 13, fontWeight: 500, textAlign: 'left' }}>{title}</button>
       {sub ? <span style={{ fontSize: 11, color: 'var(--text-secondary)' }}>{sub}</span> : null}
       <span style={{ flex: 1 }} />
       {right}
@@ -126,11 +133,9 @@ export function Panel({ id, title, sub, right, children, rs, style }) {
   const c = !!S.col[id];
   return (
     <div className="card" style={{ padding: '10px 12px', ...style }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-        <button className="pill ib" {...A('col:' + id)} aria-expanded={!c} aria-label={c ? 'Expand' : 'Collapse'} style={{ padding: '0 2px' }}>
-          <Chev shut={c} />
-        </button>
-        <button className="lnk" {...A('col:' + id)} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontSize: 15, fontWeight: 500, textAlign: 'left' }}>{title}</button>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <ColToggle id={id} shut={c} name={typeof title === 'string' ? title : ''} />
+        <button className="lnk coltitle" {...A('col:' + id)} tabIndex={-1} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontSize: 15, fontWeight: 500, textAlign: 'left' }}>{title}</button>
         {sub ? <span style={{ fontSize: 11, color: 'var(--text-secondary)', marginLeft: 4 }}>{sub}</span> : null}
         <span style={{ flex: 1 }} />
         {right}

@@ -5,7 +5,7 @@
    never holds the participant's name, phone, email or date of birth: the date of birth is asked again on reopening.
    jsPDF is bundled, so saving works offline. */
 import { jsPDF } from 'jspdf';
-import { S, qset, age, bmi, selC, matchP, eParts, noteShows, inCarry, fmtR, fresh, replaceS } from '../engine/store.js';
+import { S, qset, age, bmi, selC, matchP, eParts, noteShows, inCarry, fmtR, fresh, replaceS, askConds } from '../engine/store.js';
 import { CONDS } from '../engine/data.js';
 import { ST, SOURCE } from '../esource/studies.js';
 
@@ -173,7 +173,7 @@ export function summary(k, opt) {
     k, dr, s, code, pid, fileName, verdictLabel: vLabel, verdictKind: vKind, isCallback, callbackReason,
     kind: isCallback || vKind === 'idle' ? 'callback' : 'pdf',
     pop: popLine(s), rows, extra, quickRows: quickRows(), notesReviewed: !!(s && S.read[s.c]),
-    cohorts: s ? selC().map((c) => c.n) : [], notes: String(S.finalNotes || '').trim(), rev: S.rev || 1,
+    cohorts: s ? selC().map((c) => c.n) : [], notes: String(S.finalNotes || '').trim(), rev: S.rev || 1, prevFile: S.prevFile || '',
   };
 }
 function popLine(s) {
@@ -184,7 +184,7 @@ function popLine(s) {
   const parts = [s.siteLabel || s.site];
   if (rest) parts.push(rest);
   if (s.age) parts.push('age ' + s.age[0] + (s.age[1] >= 120 ? '+' : ' to ' + s.age[1]));
-  if (s.bmi && !(s.bmi[0] <= 0 && s.bmi[1] >= 100)) parts.push('BMI ' + s.bmi[0] + ' to ' + s.bmi[1]);
+  if (s.bmi && !(s.bmi[0] <= 0 && s.bmi[1] >= 100)) parts.push('BMI ' + (s.bmi[1] >= 100 ? s.bmi[0] + '+' : s.bmi[0] <= 0 ? 'up to ' + s.bmi[1] : s.bmi[0] + ' to ' + s.bmi[1]));
   return parts.join(' - ');
 }
 function quickRows() {
@@ -193,7 +193,7 @@ function quickRows() {
   out.push({ q: 'Biological sex', a: S.sex === 'f' ? 'Female' : S.sex === 'm' ? 'Male' : '-' });
   out.push({ q: 'Height / weight / BMI', a: S.ht || S.wt ? (S.ht || '?') + ' cm / ' + (S.wt || '?') + ' kg' + (b != null ? ' / ' + b + ' kg/m2' : '') : '-' });
   if (S.sex !== 'm') out.push({ q: 'Pregnant or breastfeeding', a: yn(S.preg) });
-  const conds = CONDS.filter((c) => !(c[0] === 'mphl' && S.sex === 'f'));
+  const conds = askConds();
   const yes = conds.filter((c) => S.cond[c[0]] === 'y').map((c) => c[1]), notAsked = conds.filter((c) => S.cond[c[0]] == null).map((c) => c[1]);
   out.push({ q: 'Conditions', a: yes.length ? yes.join(', ') + (notAsked.length ? ' (not asked: ' + notAsked.join(', ') + ')' : '') : notAsked.length === conds.length ? '-' : notAsked.length ? 'None of those asked (not asked: ' + notAsked.join(', ') + ')' : 'None, generally healthy' });
   out.push({ q: 'On regular prescription medications', a: yn(S.meds) });
@@ -287,6 +287,7 @@ export function buildPdf(sum) {
 
   font('normal', 8.5); ink(MUTED);
   const meta = ['Generated ' + new Date().toLocaleString('en-AU')];
+  if (sum.prevFile) meta.push('Replaces ' + sum.prevFile);
   if (sum.cohorts.length) meta.push('Cohort: ' + sum.cohorts.join(', '));
   if (sum.s) meta.push('Study notes reviewed: ' + (sum.notesReviewed ? 'Yes' : 'No'));
   meta.push(BUILD + (SOURCE.builtAt ? ' (' + SOURCE.builtAt + ')' : ''));
@@ -543,7 +544,7 @@ export function buildCsv(sum) {
   put('meta', 'raydar_version', BUILD + (SOURCE.builtAt ? ' (' + SOURCE.builtAt + ')' : ''), '');
   put('meta', 'exported_at', new Date().toISOString(), ''); put('meta', 'pid', sum.pid, '');
   put('meta', 'kind', sum.kind, ''); put('meta', 'outcome', sum.k, ''); put('meta', 'doctor_mode', sum.dr, '');
-  put('meta', 'reason', sum.callbackReason || '', ''); put('meta', 'revision', sum.rev, '');
+  put('meta', 'reason', sum.callbackReason || '', ''); put('meta', 'revision', sum.rev, ''); if (sum.prevFile) put('meta', 'replaces', sum.prevFile, '');
   put('meta', 'stage', S.stage, ''); put('meta', 'study', code, ''); put('meta', 'study_file', s ? s.file : '', ''); put('meta', 'site', s ? s.site : '', '');
   // Quick Check, without the date of birth: it is asked again when the callback is reopened
   ['sex', 'wt', 'ht', 'preg', 'meds', 'smoke', 'alc', 'scr'].forEach((k) => { if (S[k] != null && S[k] !== '') put('quick', k, S[k], ''); });
