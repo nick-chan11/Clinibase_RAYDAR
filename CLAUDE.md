@@ -1,7 +1,9 @@
 # RAYDAR: notes for Claude
 
 RAYDAR is the pre-screening tool Clinibase recruiters use on calls. Recruiters open one self-contained file,
-`RAYDAR_<version>.html` (repo root), in Chrome from Dropbox. The app's source is in `raydar-app/` (React + Vite); see
+`RAYDAR_<version>.html` (repo root), in Chrome from Dropbox. Since 2.8 the same code also builds
+`RAYDAR_<version>_Admin.html` (the study admin, where TST and team leads build and publish studies) and an
+all-in-one file. Published studies live in a shared Dropbox "studies folder" with the same layout as this repo. The app's source is in `raydar-app/` (React + Vite); see
 `raydar-app/README.md` for how it's built and what's in each folder.
 
 ## Where studies come from
@@ -11,6 +13,11 @@ RAYDAR is the pre-screening tool Clinibase recruiters use on calls. Recruiters o
 - `RAYDAR cohort dates.json`: fixed cohort, stay and follow-up dates, read by hand from the Study Notes.
 - `RAYDAR visit schedules.json`: rolling-recruitment (Emeritus) visit schedules and VIC/NSW public holidays.
 - `RAYDAR quick check.json`: Quick check conditions, extra rules and corrections.
+- `RAYDAR study settings.json`: paused studies, protocol numbers for file names, prohibited-list corrections, notes
+  for recruiters, saved builder blocks.
+- The studies folder in Dropbox holds the published copies of all of the above (plus `_drafts/` and `_history/`).
+  When studies are managed in the study admin, the folder is the live version: copy it into the repo before working
+  on the same files here, and back again after, so the two don't drift.
 - `RAYDAR Original.html`, `ARCHIVE RAYDAR versions/`: older versions, for reference only.
 
 ## Skills for study work
@@ -26,7 +33,7 @@ Use these (in `.claude/skills/`) rather than improvising:
 - `raydar-release`: build, test, ship.
 
 Tools they use, run from `raydar-app/`: `npm run study:report`, `npm run study:diff`, `npm run study:check-data`,
-`npm run test:studies`, `npm run test:pdf`, `npm run test:offline`.
+`npm run test:studies`, `npm run test:pdf`, `npm run test:admin`, `npm run test:offline`.
 
 ## Rules
 

@@ -1,6 +1,24 @@
-# RAYDAR 2.7 (React + Motion)
+# RAYDAR 2.8 (React + Motion)
 
 A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-animation skill.
+
+## New in 2.8: the study admin and the shared studies folder
+
+- **Three files from the same code** (`npm run build:all`):
+  - `RAYDAR_2.8.html` for recruiters. No study admin inside (`build:single`).
+  - `RAYDAR_2.8_Admin.html` for TST, team leads and admins. Opens straight into the study admin; it also holds the call screens, to preview drafts (`build:admin`).
+  - `RAYDAR_2.8_All-in-one.html`: both, the admin behind Tools › Study admin and an optional PIN (`build:combined`).
+  The admin code is left out of the recruiter build at build time (`src/admin/gate.js`).
+- **Shared studies folder** (`src/esource/folder.js`, `connect.js`): a Dropbox folder with the same layout as the repo (`Pre-screening eSource JSONs/`, the four `RAYDAR *.json` files, `_drafts/`, `_history/`). Recruiters connect it once from Tools › Studies folder; RAYDAR reads it each time it opens (Chrome asks for one click after a restart) and falls back to the studies built into the file. Publishing a study no longer needs a new RAYDAR file.
+- **Study admin** (`src/admin/`):
+  - Studies list: search, filter, status (live, draft, paused), Quick check rules, dates; new study, import an eSource file, copy to another site, pause or resume, discard a draft.
+  - Question builder: drag blocks in (Yes/No, pick one, tick all, typed answer, date of birth and age, BMI, medication and history logs, recruiter notes, sections, saved blocks), drag to reorder or between sections, edit the spoken wording, hint, answers and their outcomes (saved as the eSource's ✅ ⚠️ 🛑), "only when" conditions picked from lists, formatted notes, age and BMI ranges; undo and redo. Saved as eSource JSON, so TST's tool opens it too.
+  - Dates and visits: fixed cohorts (kinds of stay, cohort dates, follow-ups worked out from Day 1, the study-notes sentence required, suggested dates from a sentence) or a rolling schedule with a live visit timeline.
+  - Quick check and lists: the rules read from the questions (switch off, add with their eSource wording), prohibited lists (words matched, "not a prohibited list", try a medication), the file check.
+  - Preview and publish: run the draft in the real call screens with a made-up participant; what changes for recruiters (and how many reopened callbacks will re-ask); apply to the other site; a note shown once to recruiters; a second check; publish into the folder with a history copy. Change history and roll back.
+  - Quick check settings page (conditions, extra rules, rules switched off) and the studies folder page (connect, fill an empty folder from the built-in studies, the all-in-one file's PIN).
+- `RAYDAR study settings.json` (repo root): paused studies, protocol numbers for file names (CORSERA's `COR-PAG-26-101` moved here), prohibited-list corrections, notes for recruiters, saved blocks, the PIN.
+- `npm run test:admin` runs the admin end to end.
 
 ## New in 2.7: the pre-screen PDF and Import callback
 
@@ -58,10 +76,10 @@ A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-an
 npm install
 npm run dev      # http://localhost:5173
 npm run build    # static site in dist/ — needs a web server (e.g. `npm run preview`); double-clicking dist/index.html shows a blank page
-npm run build:single   # one self-contained file, written to ../RAYDAR_2.7.html — opens by double-click
+npm run build:single   # one self-contained file, written to ../RAYDAR_2.8.html — opens by double-click
 ```
 
-After changing anything in `src/`, run `npm run build:single` again to refresh `RAYDAR_2.7.html`.
+After changing anything in `src/`, run `npm run build:single` again to refresh `RAYDAR_2.8.html` (or `npm run build:all` for all three files).
 
 ## Where things live
 
@@ -77,6 +95,8 @@ After changing anything in `src/`, run `npm run build:single` again to refresh `
 | `src/views/Import.jsx` | 2.7: the Import callback button and the note shown after reopening |
 | `scripts/tools/` | Study tools for the skills in `../.claude/skills/`: `npm run study:report`, `study:diff`, `study:check-data` (see `../HOW TO USE THE RAYDAR SKILLS.md`) |
 | `scripts/tests/` | `npm run test:studies`, `test:pdf`, `test:offline` (need Playwright) |
+| `src/admin/` | 2.8: the study admin (`AdminApp.jsx` shell and studies list, `Builder.jsx`, `Dates.jsx`, `Checks.jsx`, `Publish.jsx`, `QcPage.jsx`; `ws.js` drafts and publishing; `ops.js` eSource editing) |
+| `src/esource/folder.js`, `connect.js` | 2.8: the shared studies folder |
 | `src/esource/codes.js` | Protocol numbers for file names (and overrides such as CORSERA), and the question fingerprint callbacks use |
 | `src/esource/html.js` | Shows Study Notes HTML safely (allow-listed tags and styles only) |
 | `src/engine/store.js` | State, eligibility rules and `act()`, generated from 2.2; `commit()` replaces `render()`. 2.4 adds `ansOrder()` and `nextStep()` |

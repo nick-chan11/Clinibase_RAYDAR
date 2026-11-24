@@ -6,6 +6,8 @@ import { A, Ic, B } from './ui.jsx';
 import { Legend } from './Header.jsx';
 import { Expander } from '../motion/components.jsx';
 import { ImportButton } from './Import.jsx';
+import { FolderTool } from './Folder.jsx';
+import { ADMIN_MODE } from '../admin/gate.js';
 
 function H({ title }) {
   return (
@@ -18,7 +20,7 @@ function H({ title }) {
 const Card = ({ children }) => <div className="card" style={{ padding: '10px 12px', marginBottom: 10 }}>{children}</div>;
 
 function Menu() {
-  const items = [['plan', 'ti-calendar-stats', 'Compare dates'], ['dre:open', 'ti-stethoscope', 'Create Dr enquiry'], ['tool:files', 'ti-files', 'Study files and file check'], ['tool:snap', 'ti-list-search', 'Study snapshot'], ['tool:guide', 'ti-help-circle', 'How to use RAYDAR'], ['tool:help', 'ti-keyboard', 'Keyboard shortcuts (change keys)']];
+  const items = [['plan', 'ti-calendar-stats', 'Compare dates'], ['dre:open', 'ti-stethoscope', 'Create Dr enquiry'], ['tool:files', 'ti-files', 'Study files and file check'], ['tool:snap', 'ti-list-search', 'Study snapshot'], ['tool:guide', 'ti-help-circle', 'How to use RAYDAR'], ['tool:help', 'ti-keyboard', 'Keyboard shortcuts (change keys)'], ['tool:folder', 'ti-folder', 'Studies folder (Dropbox)']].concat(ADMIN_MODE === 'combined' ? [['admin:open', 'ti-settings', 'Study admin']] : []);
   const row = (l, ctl) => <div className="row"><span>{l}</span>{ctl}</div>;
   return (
     <Card>
@@ -209,7 +211,7 @@ function Files() {
   );
 }
 
-const TOOLS = { menu: Menu, guide: Guide, help: Help, switch: Switch, snap: Snap, files: Files };
+const TOOLS = { menu: Menu, guide: Guide, help: Help, switch: Switch, snap: Snap, files: Files, folder: FolderTool };
 
 /** The tools drawer opens with the expander, so whatever sits below it glides down instead of jumping. */
 export function Drawer({ open }) {

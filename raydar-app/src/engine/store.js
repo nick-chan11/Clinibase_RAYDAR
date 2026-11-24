@@ -2,7 +2,8 @@
    The only changes: act() ends with commit() instead of render(), the copy action moved
    into the Dr enquiry component, and functions that returned HTML strings became JSX in views/. */
 import {CONDS} from './data.js';
-import {ST,setCohortHook} from '../esource/studies.js';
+import {ST,ALL,setCohortHook,onStudiesChange} from '../esource/studies.js';
+import {onFolderChange} from '../esource/connect.js';
 import {plan,earliestScreen,iso as isoD} from '../esource/schedule.js';
 import {resetKeys} from './keys.js';
 
@@ -120,7 +121,7 @@ function noteShows(b){if(!b.vis)return true;const vis=new Set(qset().map(q=>q.id
 /** Would answering q with answer b open a question that is hidden now? */
 function opensWith(q,b){const s=S.study;if(!s)return false;const vis=new Set(qset().map(z=>z.id));vis.add(q.id);return s.Q.some(z=>z.vis&&z.deps&&z.deps.includes(q.id)&&!vis.has(z.id)&&z.vis.test(n=>valueOf(n,vis,{id:q.id,v:b[2]})))}
 function srcQ(s){s=s||S.study;return !s?[]:s.Q||[]}
-const RAYDAR_VERSION='RAYDAR 2.7 · questions, scripts and notes from the TST eSource files';
+const RAYDAR_VERSION='RAYDAR 2.8 · questions, scripts and notes from the TST eSource files';
 const oc=o=>o==='c'?'success':o==='d'?'warning':o==='x'?'danger':'accent';
 function curQ(){const L=qset();let i=L.findIndex(q=>q.id===S.qid);if(i<0){i=L.findIndex(q=>!S.out[q.id]);if(i<0)i=0;S.qid=L[i]&&L[i].id}return {L,i,q:L[i]}}
 function qMatches(q){if(!q.carry)return [];return S.log.filter(e=>inCarry(e,q.carry)).map(e=>({e,p:matchP(e)})).filter(z=>z.p&&z.p.o!=='ok')}
@@ -209,6 +210,10 @@ const emCache=new Map();
 function emPlan(s){if(!s||!s.sched)return null;const scr=S.scr||earliestScreen(s.site),k=[s.sched,s.site,scr,JSON.stringify(S.away),S.d1[s.c]||''].join('|');if(!emCache.has(k)){if(emCache.size>200)emCache.clear();emCache.set(k,plan(s.sched,scr,s.site,S.away,S.d1[s.c]))}return emCache.get(k)}
 function emCohorts(s){const P=emPlan(s);if(!P)return null;const d1=isoD(P.D1);return [{id:'tl',n:'Day 1 '+fmt(d1)+' (screening '+fmt(isoD(P.S))+')',t:'tl',in:d1,out:d1,closed:false,rolling:true,v:P.rows.filter(r=>!r.screen&&r.status!=='phone'&&r.v.day!==1).map(r=>({d:isoD(r.from),a:isoD(r.from),b:isoD(r.to),w:0,l:r.v.name}))}]}
 setCohortHook(emCohorts);
+/* 2.8: when the studies change (the studies folder was read, a draft is previewed, the admin published), keep the
+   call on the newest copy of its study and re-render */
+onStudiesChange(()=>{emCache.clear();if(S.study){const n=ALL.find(x=>x.file===S.study.file);if(n)S.study=n}if(S.dre&&S.dre.study&&!ST.find(x=>x.c===S.dre.study))S.dre.study=null;commit()});
+onFolderChange(()=>commit());
 function act(a){const p=a.split(':'),k=p[0],x=p[1],y=p.slice(2).join(':');S.toast='';lastAction=k;
 if(k!=='discard')S.discard=false;
 if(k==='go'){if(x!=='id'&&!S.idok){S.stage='id';S.err={id:x==='finish'?'Confirm identity first. The PID goes in the file name':'Confirm identity first'}}else{S.stage=x;S.err={}}}
@@ -289,6 +294,7 @@ else if(k==='drmode')S.drMode=x==='book'?'book':'hold';
 else if(k==='cbr')S.cbr=decodeURIComponent(x||'');
 else if(k==='impclose')S.impMsg=null;
 else if(k==='carriedx')S.carried=null;
+else if(k==='admin'){S.admin=x==='open';S.tool=null}
 else if(k==='lt'){S.lt=x;S.logErr=''}
 else if(k==='mt'){S.mt=x;S.mErr=''}
 else if(k==='logform'){S.logForm=!(S.logForm||S.ed);if(!S.logForm&&S.ed){pushLog(S.f[0],S.lt,S.ed);S.ed=null;S.f=[EF()]}S.logErr='';if(S.logForm)S.focus='rName0'}

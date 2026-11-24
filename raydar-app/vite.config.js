@@ -9,15 +9,17 @@ const stub = fileURLToPath(new URL('./src/pdf/stub.js', import.meta.url));
 // `npm run build:single` → one self-contained HTML file, copied to ../RAYDAR_2.6.html (opens by double-click)
 // The eSource files (../Pre-screening eSource JSONs) and ../RAYDAR cohort dates.json are built in.
 export default defineConfig(({ mode }) => {
-  const single = mode === 'single';
+  // 2.8: three single-file builds from the same code: recruiter (single), study admin (admin), both in one (combined)
+  const single = ['single', 'admin', 'combined'].includes(mode);
+  const adminMode = mode === 'single' ? 'none' : mode === 'admin' ? 'admin' : 'combined';
   return {
     plugins: single ? [react(), viteSingleFile()] : [react()],
     base: './',
     // jsPDF's optional extras (HTML rendering, SVG) are never used, so they are left out of the build
     resolve: { alias: { html2canvas: stub, canvg: stub, dompurify: stub } },
     optimizeDeps: { entries: ['index.html'] },
-    define: { __BUILD_DATE__: JSON.stringify(new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })) },
+    define: { __ADMIN_MODE__: JSON.stringify(adminMode), __BUILD_DATE__: JSON.stringify(new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })) },
     server: { port: 5173 },
-    build: single ? { outDir: 'dist-single' } : {},
+    build: single ? { outDir: 'dist-' + mode } : {},
   };
 });

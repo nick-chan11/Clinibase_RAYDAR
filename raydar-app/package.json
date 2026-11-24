@@ -1,20 +1,24 @@
 {
   "name": "raydar-app",
   "private": true,
-  "version": "2.7.0",
+  "version": "2.8.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:single": "vite build --mode single && node scripts/copy-single.mjs",
+    "build:single": "vite build --mode single && node scripts/copy-single.mjs single",
     "study:report": "node --import ./scripts/tools/lib/register.mjs scripts/tools/study-report.mjs",
     "study:diff": "node --import ./scripts/tools/lib/register.mjs scripts/tools/esource-diff.mjs",
     "study:check-data": "node scripts/tools/check-data.mjs",
     "test:studies": "node scripts/tests/studies.mjs",
     "test:pdf": "node scripts/tests/pdf.mjs",
     "test:offline": "node scripts/tests/offline.mjs",
-    "test": "npm run study:check-data && npm run test:studies && npm run test:pdf"
+    "test": "npm run study:check-data && npm run test:studies && npm run test:pdf && npm run test:admin",
+    "build:admin": "vite build --mode admin && node scripts/copy-single.mjs admin",
+    "build:combined": "vite build --mode combined && node scripts/copy-single.mjs combined",
+    "build:all": "npm run build:single && npm run build:admin && npm run build:combined",
+    "test:admin": "node scripts/tests/admin.mjs"
   },
   "dependencies": {
     "jspdf": "^2.5.2",

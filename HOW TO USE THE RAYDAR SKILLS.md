@@ -1,5 +1,9 @@
 # How to use the RAYDAR skills
 
+Since RAYDAR 2.8, TST and team leads can add and update studies themselves in the study admin
+(`RAYDAR_2.8_Admin.html`), with no Claude involved. The skills are for the repo side: checking studies, reading dates
+from study notes, writing up eSource problems for TST, and building new RAYDAR versions.
+
 The RAYDAR skills are step-by-step instructions that Claude follows for the study jobs we do over and over: adding
 a study, updating one when TST change the eSource, reading dates from the study notes, building and shipping a new
 RAYDAR file. They live in this repo (`.claude/skills/`), so anyone who opens the repo in Claude Code gets them, and
@@ -55,7 +59,8 @@ You can also run these yourself, from `raydar-app/`:
 | `npm run study:check-data` | Checks the dates, visit schedules and Quick check files for mistakes |
 | `npm run test:studies` | Answers every study start to finish by keyboard, as a woman and as a man |
 | `npm run test:pdf` | Saves a PDF for every Finish outcome and reopens it |
-| `npm run build:single` | Builds `RAYDAR_<version>.html` in the repo root |
+| `npm run test:admin` | The study admin end to end: set up a folder, add a question, publish, preview |
+| `npm run build:all` | Builds `RAYDAR_<version>.html`, `RAYDAR_<version>_Admin.html` and the all-in-one file in the repo root |
 | `npm run test:offline` | Checks the built file works with no internet |
 
 ## Ground rules (Claude follows these too)
