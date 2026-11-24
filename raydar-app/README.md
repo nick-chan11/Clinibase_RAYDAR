@@ -75,6 +75,9 @@ After changing anything in `src/`, run `npm run build:single` again to refresh `
 | `src/views/Timeline.jsx` | The visit timeline view |
 | `src/pdf/report.js` | 2.7: the pre-screen PDF (layout from RAYDAR Combined), the callback data inside it, and Import callback |
 | `src/views/Import.jsx` | 2.7: the Import callback button and the note shown after reopening |
+| `scripts/tools/` | Study tools for the skills in `../.claude/skills/`: `npm run study:report`, `study:diff`, `study:check-data` (see `../HOW TO USE THE RAYDAR SKILLS.md`) |
+| `scripts/tests/` | `npm run test:studies`, `test:pdf`, `test:offline` (need Playwright) |
+| `src/esource/codes.js` | Protocol numbers for file names (and overrides such as CORSERA), and the question fingerprint callbacks use |
 | `src/esource/html.js` | Shows Study Notes HTML safely (allow-listed tags and styles only) |
 | `src/engine/store.js` | State, eligibility rules and `act()`, generated from 2.2; `commit()` replaces `render()`. 2.4 adds `ansOrder()` and `nextStep()` |
 | `src/engine/keys.js` | Keyboard bindings: defaults, rebinding, labels |

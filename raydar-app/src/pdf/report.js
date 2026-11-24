@@ -24,15 +24,9 @@ export const BUILD = 'RAYDAR 2.7';
 const FORMAT = 'RAYDAR-CALLBACK-CSV', FORMAT_VERSION = '1', PDF_DATA_NAME = 'raydar_prescreen_data.csv', MARK = 'record,study,key,value';
 const CSV_MAX_BYTES = 4e6, CSV_MAX_ROWS = 50000, CSV_MAX_CELL = 400000;
 
-/* The team's file names use the protocol number. The eSource title starts with it, except CORSERA, whose eSource
-   says COR-PAG-26 while the PDFs the team already files say COR-PAG-26-101. */
-const PROTO_OVERRIDE = { CORSERA: 'COR-PAG-26-101' };
-export function protoCode(s) {
-  if (!s) return 'QuickCheck';
-  if (PROTO_OVERRIDE[s.code]) return PROTO_OVERRIDE[s.code];
-  const m = /^\s*([A-Za-z0-9][A-Za-z0-9.-]*\d[A-Za-z0-9.-]*)/.exec(s.d || '');
-  return m ? m[1] : s.code;
-}
+export { protoCode } from '../esource/codes.js';
+import { protoCode, qhash } from '../esource/codes.js';
+
 export function fnPart(s, max) {
   let t = String(s || '').replace(/&[a-z]+;/gi, ' ').replace(/[^a-z0-9]+/gi, '_').replace(/^_+|_+$/g, '');
   if (max && t.length > max) {
@@ -528,13 +522,6 @@ function drawHtml(doc, html, o) {
 }
 
 /* ---------- the data inside the PDF ---------- */
-/** A short fingerprint of a question's wording and answers, to tell on import whether the eSource changed it */
-function qhash(q) {
-  const t = q.t + '|' + (q.a || []).map((b) => b[0] + '=' + b[2]).join(';');
-  let h = 2166136261;
-  for (let i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = Math.imul(h, 16777619); }
-  return (h >>> 0).toString(36);
-}
 const cell = (v) => { v = String(v); return /[",\r\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
 
 export function buildCsv(sum) {
