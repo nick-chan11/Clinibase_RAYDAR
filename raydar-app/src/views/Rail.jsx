@@ -33,7 +33,7 @@ export function Studies() {
                 <div style={{ minWidth: 0 }}>
                   <div className="mono" style={{ fontWeight: 500 }}><span className="dot" style={{ background: COL[x.r[0]] }} />{x.s.c} <span className={'sitetag site-' + x.s.city + (x.s.site === 'Veritus' ? '-v' : '')}>{x.s.siteLabel}</span>{x.off ? <span className="mut" style={{ fontSize: 11 }}> · outside the site filter</span> : null}</div>
                   <div style={{ fontSize: 11, color: TXT[x.r[0]], whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{x.r[1]}</div>
-                  {no ? <div className="mut" style={{ fontSize: 11 }}>{x.s.sched ? 'Earliest Day 1' : 'Next stay'} <button className="lnk" style={{ fontSize: 11 }} {...A('jump:' + x.s.c + ':' + no.id)}>{fmt(no.in)}</button></div> : null}
+                  {no ? <div className="mut" style={{ fontSize: 11 }}>{x.s.sched ? 'Earliest Day 1' : no.in === no.out ? 'Next Day 1' : 'Next stay'} <button className="lnk" style={{ fontSize: 11 }} {...A('jump:' + x.s.c + ':' + no.id)}>{fmt(no.in)}</button></div> : null}
                 </div>
                 {cur ? <span className="pill tag">Screening</span> : (
                   <button className="pill" style={{ fontSize: 11 }} {...A('start:' + x.s.c)}>{x.r[0] === 'no' ? 'View' : inPs ? 'Switch' : 'Start'}</button>

@@ -33,13 +33,16 @@ const fmtR=(a,b)=>a===b?fmt(a):fmt(a)+' to '+fmt(b);
 const fmtL=s=>DD(s).toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
 const pl=(n,w)=>n+' '+w+(n===1?'':'s');
 const cn=n=>n.replace(' (sample dates)','');
-function tipStay(s,c){const n=dd(c.in,c.out);return s.c+' · '+cn(c.n)+'\nIn-clinic stay\nCheck in::'+fmtL(c.in)+'\nCheck out::'+fmtL(c.out)+'\nDuration::'+pl(n+1,'day')+(n?', '+pl(n,'night'):'')+(S.away.length&&cStat(c)==='open'?'\nAway dates::'+(stayHit(c)?'Clash with the stay':'No clash'):'')}
+function tipStay(s,c){const n=dd(c.in,c.out);if(!n)return s.c+' · '+cn(c.n)+'\nDay visit, no overnight stay\nDate::'+fmtL(c.in)+'\nFollow-ups::'+(c.v.length?pl(c.v.length,'visit')+', last '+fmt(c.v[c.v.length-1].d):'None dated')+(S.away.length&&cStat(c)==='open'?'\nAway dates::'+(stayHit(c)?'Clash with Day 1':'No clash'):'');return s.c+' · '+cn(c.n)+'\nIn-clinic stay\nCheck in::'+fmtL(c.in)+'\nCheck out::'+fmtL(c.out)+'\nDuration::'+pl(n+1,'day')+(n?', '+pl(n,'night'):'')+(S.away.length&&cStat(c)==='open'?'\nAway dates::'+(stayHit(c)?'Clash with the stay':'No clash'):'')}
 function tipVisit(s,c,v){const a=vS(v),b=vE(v),st=vStat(v);return s.c+' · '+cn(c.n)+'\n'+v.l+'\nPrescribed::'+fmtL(v.d)+'\nEarliest::'+fmtL(a)+'\nLatest::'+fmtL(b)+'\nWindow::'+(v.a?(dd(a,b)+1)+'-day window':'±'+pl(v.w,'day'))+(S.away.length&&cStat(c)==='open'?'\nAway dates::'+(st==='clash'?'Clash, whole window covered':st==='caution'?'Caution, window partly covered':'No clash'):'')}
 function tipCohort(s,c){const k=cKey(c);return s.c+' · '+cn(c.n)+'\n'+rk(k)[0]+'\nStay::'+fmtR(c.in,c.out)+'\nFollow-ups::'+(c.v.length?pl(c.v.length,'visit')+', last '+fmt(c.v[c.v.length-1].d):'None dated')+'\nClick to jump::on the calendar'}
 function tipAway(a){return 'Participant away\n\nFrom::'+fmtL(a[0])+'\nUntil::'+fmtL(a[1])+'\nLength::'+pl(dd(a[0],a[1])+1,'day')}
 const EF=()=>({n:'',ind:'',dose:'',route:'',st:'',en:''});
-const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,scr:'',d1:{},script:null,railAll:false,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false,drMode:'hold',cbr:'',finalNotes:'',resumed:null,rev:1,impMsg:null,kept:{},carried:null});
+const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,scr:'',d1:{},script:null,railAll:false,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false,drMode:'hold',cbr:'',finalNotes:'',resumed:null,rev:1,impMsg:null,kept:{},carried:null,prevFile:null,savedName:null});
 export let S=fresh(1);
+/** 2.7: the call before "Start next call", so a call ended by mistake can be reopened (this tab only) */
+let PREV=null;
+export const prevCall=()=>PREV;
 /** Import callback swaps in a whole new call. */
 export function replaceS(n){S=n;lastAction='import';commit()}
 /* 2.6: site filter. City (all, Melbourne, Sydney) and, within a city, which sites. Kept in this browser. */
@@ -275,8 +278,10 @@ else if(k==='colall'){['plan','dre','stud','log','pro','mlog','upnext'].forEach(
 else if(k==='layoutreset'){S.sz={};S.col={};S.lw=null;S.rail=true;S.tool=null}
 else if(k==='fin')S.fin=x;
 else if(k==='save')S.saved=true;
-else if(k==='discard'){if(S.discard){const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(fresh(S.call+1),keep)}else S.discard=true}
-else if(k==='new'){const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(fresh(S.call+1),keep)}
+else if(k==='discard'){if(S.discard){PREV=S;PREV.discard=false;const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(fresh(S.call+1),keep)}else S.discard=true}
+else if(k==='unsave'){S.saved=false;S.prevFile=S.savedName;S.savedName=null;S.rev=(S.rev||1)+1}
+else if(k==='lastcall'){if(PREV){const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(PREV,keep);PREV=null}}
+else if(k==='new'){PREV=S;const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(fresh(S.call+1),keep)}
 else if(k==='all')S.all=!S.all;
 else if(k==='proall')S.proAll=!S.proAll;
 else if(k==='fs')S.fs=Math.max(11,Math.min(17,S.fs+(+x)));

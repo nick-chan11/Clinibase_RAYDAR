@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { S, upd, act, emPlan, fmtR, tipAway } from '../engine/store.js';
 import { earliestScreen, iso, winText } from '../esource/schedule.js';
 import { A, Ic, B } from './ui.jsx';
@@ -22,11 +23,6 @@ export function VisitTimeline({ s }) {
     : P.level === 'ok' ? ['ok', 'Good fit: every visit can be attended', P.okD.length + ' of the ' + P.d1s.length + ' possible Day 1 dates work.']
       : P.level === 'warn' ? ['warn', 'At risk: only ' + P.okD.length + ' of the ' + P.d1s.length + ' possible Day 1 dates fit', 'Book Day 1 in one of the ranges below, or move screening later.']
         : ['bad', 'Not a fit from this screening date', 'No Day 1 lets them attend every visit. Try a later screening date, or check their away dates.'];
-  // the track: from the screening date to the end of the last visit window
-  const t0 = P.S.getTime(), t1 = Math.max(...P.rows.map((r) => r.to.getTime()), t0 + 864e5);
-  const X = (d) => ((d.getTime() - t0) / (t1 - t0)) * 100 + '%';
-  const months = [];
-  for (let d = new Date(P.S.getFullYear(), P.S.getMonth() + 1, 1, 12); d.getTime() <= t1; d = new Date(d.getFullYear(), d.getMonth() + 1, 1, 12)) months.push(d);
   return (
     <div className="vt" style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 8 }}>
       <div className="mut" style={{ fontSize: 12 }}>{P.sched.label} · {s.siteLabel} · Day 1 can fall {P.sched.screenMinToD1} to {P.sched.screenMaxToD1} days after screening. Weekends and {/sydney/i.test(s.site) ? 'NSW' : 'Victoria'} public holidays are closed days.</div>
@@ -62,21 +58,15 @@ export function VisitTimeline({ s }) {
         </div>
       ) : null}
 
-      <div className="vt-track" aria-hidden="true">
-        <div style={{ position: 'absolute', left: 0, right: 0, top: 46, height: 2, background: 'var(--border-strong)' }} />
-        {S.away.map((a) => {
-          const A0 = new Date(a[0] + 'T12:00:00'), A1 = new Date((a[1] || a[0]) + 'T12:00:00');
-          if (A1.getTime() < t0 || A0.getTime() > t1) return null;
-          return <div key={'aw' + a[0]} title={'Away ' + fmtR(a[0], a[1])} style={{ position: 'absolute', left: X(A0 < P.S ? P.S : A0), width: 'calc(' + X(A1) + ' - ' + X(A0 < P.S ? P.S : A0) + ' + 3px)', top: 30, height: 34, background: 'var(--bg-danger)', border: '1px solid var(--border-danger)', borderRadius: 4 }} />;
-        })}
-        {P.rows.map((r, i) => <div key={i} className="vt-dot" title={r.v.name + ': ' + span(r.from, r.to)} style={{ left: X(r.from), background: r.screen ? 'var(--fill-accent)' : COLOUR[r.status] }} />)}
-        {months.map((m) => <span key={iso(m)} style={{ position: 'absolute', left: X(m), top: 70, fontSize: 11, color: 'var(--text-secondary)', borderLeft: '1px solid var(--border)', paddingLeft: 3 }}>{MON[m.getMonth()]}</span>)}
-      </div>
+      <VisitTrack P={P} />
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', fontSize: 12 }} className="mut">
-        {['free', 'part', 'clash'].map((k) => <span key={k}><span className="dot" style={{ background: COLOUR[k] }} />{WORD[k]}</span>)}
+        {['free', 'part', 'clash', 'phone'].map((k) => <span key={k}><span className="dot" style={{ background: COLOUR[k] }} />{WORD[k]}</span>)}
+        <span><span className="dot" style={{ background: 'var(--bg-danger)', outline: '1px solid var(--border-danger)' }} />Away</span>
+        <span>Bar = the visit's window</span>
       </div>
 
       <div style={{ fontSize: 13, fontWeight: 600 }}>Visits if Day 1 is {day(P.D1)}</div>
+      <div className="vt-tablewrap">
       <table>
         <thead><tr><th>Visit</th><th>Day</th><th>Window</th><th>Dates</th><th>Status</th></tr></thead>
         <tbody>
@@ -93,7 +83,86 @@ export function VisitTimeline({ s }) {
           ))}
         </tbody>
       </table>
+      </div>
       {P.sched.note ? <p className="mut" style={{ fontSize: 11, margin: 0 }}>Schedule: {P.sched.note}</p> : null}
+    </div>
+  );
+}
+
+/**
+ * 2.7: the visits on a timeline you scroll sideways, at a readable scale (it was squeezed into the card's width, so a
+ * year-long study like EMBOLD was a row of overlapping dots). Weeks view: about a week per 50px, with visit labels;
+ * Whole study fits it all in. Each visit is a bar across its window, phone calls sit on their own lane.
+ */
+function VisitTrack({ P }) {
+  const [zoom, setZoom] = useState('weeks');
+  const box = useRef(null);
+  const DAY = 864e5, t0 = P.S.getTime() - 3 * DAY, t1 = Math.max(...P.rows.map((r) => r.to.getTime()), t0 + 30 * DAY) + 10 * DAY;
+  const days = Math.round((t1 - t0) / DAY);
+  const [w, setW] = useState(800);
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return undefined;
+    const ro = new ResizeObserver(() => setW(el.clientWidth));
+    ro.observe(el);
+    setW(el.clientWidth);
+    return () => ro.disconnect();
+  }, []);
+  const ppd = zoom === 'weeks' ? 7 : Math.max(0.6, (w - 16) / days);
+  const width = Math.max(w - 2, Math.round(days * ppd));
+  const X = (d) => Math.round(((d.getTime() - t0) / DAY) * ppd);
+  useEffect(() => { if (box.current) box.current.scrollLeft = 0; }, [zoom, P.S.getTime()]);
+  const months = [];
+  for (let d = new Date(new Date(t0).getFullYear(), new Date(t0).getMonth() + 1, 1, 12); d.getTime() <= t1; d = new Date(d.getFullYear(), d.getMonth() + 1, 1, 12)) months.push(d);
+  // label every month when there's room, otherwise every 2nd, 3rd or 6th; the year shows when it changes
+  const step = [1, 2, 3, 6].find((k) => 30.4 * ppd * k >= 66) || 12;
+  const weeks = [];
+  if (zoom === 'weeks') for (let d = new Date(t0 + ((8 - new Date(t0).getDay()) % 7) * DAY); d.getTime() <= t1; d = new Date(d.getTime() + 7 * DAY)) weeks.push(d);
+  const clinic = P.rows.filter((r) => r.status !== 'phone'), phone = P.rows.filter((r) => r.status === 'phone');
+  // labels alternate between two lines when visits sit close together
+  const lab = (r) => (r.screen ? 'Screening' : r.v.day !== undefined ? 'D' + r.v.day : r.v.name);
+  let lastX = -1e9, row = 0;
+  const placed = clinic.map((r) => { const x = X(r.from); row = x - lastX < 46 ? 1 - row : 0; lastX = x; return { r, x, row }; });
+  const H = 150;
+  return (
+    <div>
+      <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 4, fontSize: 12 }}>
+        <span className="seg" role="tablist" aria-label="Timeline zoom">
+          <button role="tab" aria-selected={zoom === 'weeks'} className={zoom === 'weeks' ? 'sel' : ''} onClick={() => setZoom('weeks')}>Weeks</button>
+          <button role="tab" aria-selected={zoom === 'all'} className={zoom === 'all' ? 'sel' : ''} onClick={() => setZoom('all')}>Whole study</button>
+        </span>
+        <span className="mut">{zoom === 'weeks' ? 'Scroll sideways (or Shift + scroll) to follow the study. ' : ''}{P.rows.length} visits over {Math.round(days / 30.4)} months</span>
+      </div>
+      <div className="vt-scroll" ref={box} tabIndex={0} aria-label="Visit timeline, scrolls sideways">
+        <div className="vt-canvas" style={{ width, height: H }}>
+          {S.away.map((a) => {
+            const A0 = new Date(a[0] + 'T12:00:00'), A1 = new Date((a[1] || a[0]) + 'T12:00:00');
+            if (A1.getTime() < t0 || A0.getTime() > t1) return null;
+            return <div key={'aw' + a[0]} className="vt-away" title={'Away ' + fmtR(a[0], a[1])} style={{ left: X(A0), width: Math.max(3, X(A1) - X(A0) + ppd) }} />;
+          })}
+          {weeks.map((d) => <div key={'w' + d.getTime()} className="vt-week" style={{ left: X(d) }} />)}
+          {months.map((m, i) => {
+            const show = i % step === 0, prev = months[i - step];
+            return (
+              <div key={'m' + m.getTime()} className="vt-month" style={{ left: X(m) }}>
+                {show ? <span>{MON[m.getMonth()]}{!prev || prev.getFullYear() !== m.getFullYear() ? ' ' + m.getFullYear() : ''}</span> : null}
+              </div>
+            );
+          })}
+          <div className="vt-axis" style={{ top: 70 }} />
+          {placed.map(({ r, x, row: rw }, i) => {
+            const wd = Math.max(10, X(r.to) - X(r.from) + ppd), c = r.screen ? 'var(--fill-accent)' : COLOUR[r.status];
+            return (
+              <div key={'c' + i} title={r.v.name + ': ' + span(r.from, r.to) + (r.status === 'part' || r.status === 'clash' ? ' (' + (r.note || WORD[r.status]) + ')' : '')}>
+                <div className="vt-bar" style={{ left: x, width: wd, top: 64, background: c }} />
+                {zoom === 'weeks' || clinic.length < 14 ? <span className="vt-lab" style={{ left: x, top: rw ? 28 : 44, color: c === COLOUR.free ? 'var(--text-primary)' : c }}>{lab(r)}</span> : null}
+              </div>
+            );
+          })}
+          {phone.map((r, i) => <div key={'p' + i} className="vt-phone" title={r.v.name + ': ' + span(r.from, r.to)} style={{ left: X(r.from), width: Math.max(8, X(r.to) - X(r.from) + ppd), top: 90 }} />)}
+          {phone.length ? <span className="vt-lane" style={{ top: 100 }}>Phone calls</span> : null}
+        </div>
+      </div>
     </div>
   );
 }

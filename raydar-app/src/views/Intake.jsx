@@ -1,4 +1,4 @@
-import { S, bmi, upd, idReady, qcLeft, askConds, qcUse, siteOk } from '../engine/store.js';
+import { S, bmi, upd, idReady, qcLeft, askConds, qcUse, siteOk, prevCall } from '../engine/store.js';
 import { NextStep } from './NextStep.jsx';
 import { keyName } from '../engine/keys.js';
 import { A, Ic, Seg } from './ui.jsx';
@@ -14,7 +14,10 @@ export function Identity() {
       <Piece>
         <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'flex-start' }}>
           <p style={{ fontWeight: 500, margin: 0 }}>Confirm who you're speaking to</p>
-          {S.resumed ? null : <ImportButton label="Resume a callback PDF" />}
+          <span style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+            {prevCall() && !S.pid && !S.dob ? <button className="pill" {...A('lastcall')} title="Started the next call by mistake? Go back to the last one, answers and all."><Ic n="ti-arrow-back-up" /> Back to the last call{prevCall().pid ? ' (' + prevCall().pid + ')' : ''}</button> : null}
+            {S.resumed ? null : <ImportButton label="Resume a callback PDF" />}
+          </span>
         </div>
         <p className="mut" style={{ margin: '0 0 10px', fontSize: 12 }}>Check against their profile. Only the PID is saved to any file.</p>
       </Piece>
