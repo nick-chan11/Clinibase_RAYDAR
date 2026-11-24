@@ -5,6 +5,11 @@ description: Add a new study to RAYDAR from a TST eSource JSON export. Use when 
 
 # Add a new study to RAYDAR
 
+Since RAYDAR 2.8 a TST member or team lead can do this themselves in the study admin (`RAYDAR_<version>_Admin.html`:
+Import an eSource file, check, set dates, publish into the studies folder). Use this skill when the work is done in
+the repo instead, or to double-check a study the admin published. If the team manages studies in the studies folder,
+work on a copy of the folder's files and say so.
+
 RAYDAR reads studies straight from TST's eSource JSON files. Questions, scripts, answers and notes are used exactly as
 TST wrote them: **never retype or "fix" eSource wording in RAYDAR**. If the wording is wrong, it goes back to TST
 (raydar-esource-report skill).
@@ -29,8 +34,8 @@ npm run study:report -- "<file name or a unique part of it>"
 Read the whole report and go through it with the person:
 
 - **Protocol code**: this is what PDFs and file names use. It comes from the first word of the eSource title. If the
-  team files PDFs under a different number (CORSERA → `COR-PAG-26-101`), add it to `PROTO_OVERRIDE` in
-  `raydar-app/src/esource/codes.js`.
+  team files PDFs under a different number (CORSERA → `COR-PAG-26-101`), set `protocol` for the file in
+  `RAYDAR study settings.json`.
 - **Age and BMI range**: if "none found", RAYDAR's Quick check won't check age or BMI for this study. Look at the date
   of birth question's conditions; if the eSource states the range only in text, tell the person (TST can add a
   condition, which is the reliable fix).

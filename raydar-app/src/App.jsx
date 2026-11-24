@@ -1,4 +1,4 @@
-import { memo, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { memo, Suspense, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { S, act, ansOrder, commit, curQ, getVersion, nextStep, ranked, subscribe, upd } from './engine/store.js';
 import { KEY_ACTIONS, UNBINDABLE, actionFor, bind, keyLabel, keyName } from './engine/keys.js';
@@ -15,6 +15,11 @@ import { Studies, LogPanel, ProPanel } from './views/Rail.jsx';
 import { Safe } from './views/Safe.jsx';
 import { RoutesList } from './views/MedLog.jsx';
 import { Tooltip } from './views/Tooltip.jsx';
+import { FolderBanner } from './views/Folder.jsx';
+import { autoConnect } from './esource/connect.js';
+import { SOURCE } from './esource/studies.js';
+import { ADMIN_MODE, AdminApp } from './admin/gate.js';
+import { PreviewBar } from './views/PreviewBar.jsx';
 
 const stageKey = () =>
   'stage-' + S.stage +
@@ -71,6 +76,7 @@ function rebindKey(e) {
 }
 
 function onKey(e) {
+  if (S.admin) return; // 2.8: the study admin has its own keys
   if (S.rebind) { rebindKey(e); return; }
   const f = e.target.dataset && e.target.dataset.f;
   if (f && /^r\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('logadd'); return; }
@@ -154,6 +160,8 @@ export default function App() {
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, []);
+  // 2.8: read the shared studies folder picked last time, if Chrome still allows it without a click
+  useEffect(() => { if (!SOURCE.preview) autoConnect(); }, []);
 
   // Sticky side panel sits under the sticky header
   useEffect(() => {
@@ -188,13 +196,23 @@ export default function App() {
     }
   });
 
+  // 2.8: the all-in-one file opens the study admin in place of the call screens
+  if (AdminApp && ADMIN_MODE === 'combined' && S.admin) {
+    return (
+      <div id="rd" className={S.dark ? 'dk' : ''} style={{ fontSize: S.fs }}>
+        <Suspense fallback={<p className="mut">Opening the study admin…</p>}><AdminApp embedded onExit={() => act('admin:close')} /></Suspense>
+      </div>
+    );
+  }
   return (
     <div id="rd" ref={rootRef} className={(S.dark ? 'dk' : '') + (slim ? ' slim' : '')} style={{ fontSize: S.fs }}>
+      {SOURCE.preview ? <PreviewBar /> : null}
       <div id="h" ref={headRef}>
         <Header />
         <Steps />
       </div>
       <Guide />
+      <FolderBanner />
       <Safe name="Compare dates"><Expander open={S.plan}><Planner /></Expander></Safe>
       <div className="grid" id="grid" ref={gridRef} style={{ gridTemplateColumns: cols }}>
         <main id="m" style={{ minWidth: 0 }}>

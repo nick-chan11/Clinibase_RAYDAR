@@ -6,7 +6,22 @@
 import DATA from '../../../RAYDAR visit schedules.json';
 
 export const SCHEDULES = DATA.schedules;
-const CODES = Object.entries(DATA.byCode).map(([code, key]) => [code.toUpperCase(), key]);
+let CODES = [];
+const codes = () => { CODES = Object.entries(DATA.byCode).map(([code, key]) => [code.toUpperCase(), key]); };
+codes();
+/** 2.8: the whole schedules file as it stands (the study admin, the studies folder) */
+export const scheduleData = () => DATA;
+/** 2.8: use another schedules file (the studies folder, or a draft being previewed). Changed in place. */
+export function setScheduleData(d) {
+  if (!d || !d.schedules) return;
+  const copy = JSON.parse(JSON.stringify(d));
+  Object.keys(DATA.schedules).forEach((k) => delete DATA.schedules[k]);
+  Object.assign(DATA.schedules, copy.schedules);
+  DATA.byCode = copy.byCode || {};
+  if (copy.holidays) DATA.holidays = copy.holidays;
+  if (copy._about) DATA._about = copy._about;
+  codes();
+}
 
 /** The schedule for a study code from an eSource file name, e.g. "OLX" → OLX72021-02, "SELENE 1 (D8750C00014)" → D8750C00014. */
 export function scheduleKeyFor(code) {
@@ -50,7 +65,10 @@ function openIn(c, a, b) { for (let d = a; d <= b; d = addDays(d, 1)) if (!c.clo
  * @returns {{S, d1s, okD, ranges, level, D1, rows, screenClosed}}
  */
 export function plan(key, screen, site, away, pickD1) {
-  const sched = SCHEDULES[key];
+  return planWith(SCHEDULES[key], screen, site, away, pickD1);
+}
+/** 2.8: the same, for a schedule that isn't published yet (the study admin's preview) */
+export function planWith(sched, screen, site, away, pickD1) {
   if (!sched || !screen) return null;
   const S = at(screen), c = closedDays(site, away);
   // Day 1 is itself a visit, so only open days can be Day 1

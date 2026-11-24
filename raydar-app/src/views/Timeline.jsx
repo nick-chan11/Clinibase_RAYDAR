@@ -94,7 +94,7 @@ export function VisitTimeline({ s }) {
  * year-long study like EMBOLD was a row of overlapping dots). Weeks view: about a week per 50px, with visit labels;
  * Whole study fits it all in. Each visit is a bar across its window, phone calls sit on their own lane.
  */
-function VisitTrack({ P }) {
+export function VisitTrack({ P }) {
   const [zoom, setZoom] = useState('weeks');
   const box = useRef(null);
   const DAY = 864e5, t0 = P.S.getTime() - 3 * DAY, t1 = Math.max(...P.rows.map((r) => r.to.getTime()), t0 + 30 * DAY) + 10 * DAY;

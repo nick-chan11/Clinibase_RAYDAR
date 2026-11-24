@@ -19,8 +19,10 @@ function parse(j) {
   const conditions = (j.conditions || []).filter((c) => c && c.key && c.label && c.match)
     .map((c) => ({ key: String(c.key), label: String(c.label), match: rx(c.match), answer: rx(c.answer), answerNot: rx(c.answerNot), sex: c.sex === 'm' || c.sex === 'f' ? c.sex : null, src: c.match }))
     .filter((c) => c.match);
-  return { conditions, rules: Array.isArray(j.rules) ? j.rules : [], ignore: Array.isArray(j.ignore) ? j.ignore : [] };
+  return { conditions, rules: Array.isArray(j.rules) ? j.rules : [], ignore: Array.isArray(j.ignore) ? j.ignore : [], raw: JSON.parse(JSON.stringify(j)) };
 }
+/** 2.8: a settings object (as in the file) ready for rulesFor, so the study admin can try edits before publishing */
+export const parseConfig = (j) => parse(j || {});
 /** Use a new settings file (Tools → Study files). Returns an error message, or ''. */
 export function setConfig(j) {
   if (!j || !Array.isArray(j.conditions)) return 'No "conditions" list in it';
@@ -37,10 +39,11 @@ const FORMER = /former|ex-?smoker|used to|quit|stopped/i;
 const clean = (t) => String(t || '').replace(/[☀-➿️\u{1F300}-\u{1FAFF}]/gu, '').replace(/\s+/g, ' ').trim();
 
 /** The condition this question asks the participant whether they have, if any. */
-function condFor(q) {
+function condFor(q, cfg) {
+  cfg = cfg || QC;
   const t = q.t || '';
   if (SKIP_ALL.test(t)) return null;
-  for (const c of QC.conditions) {
+  for (const c of cfg.conditions) {
     const m = new RegExp('(?:\\bhave|\\bhaving|diagnosed with|suffer(?:ing)? from)\\s+(?:(?:a|an|any|the|chronic|current|currently|known|diagnosed)\\s+|(?:form|history|diagnosis) of\\s+)*(?:' + c.match.source + ')[\\w-]*', 'i').exec(t);
     if (!m) continue;
     // "atopic dermatitis that is currently infected" is about something else
@@ -63,15 +66,16 @@ function verdict(outs) {
 }
 
 /** The Quick check rules for one converted study: [{ item, when, result, why, q, qt, a, auto }] */
-export function rulesFor(s) {
+export function rulesFor(s, cfg) {
+  cfg = cfg || QC;
   const out = [], file = s.file;
-  const ignored = (qid, item) => QC.ignore.some((g) => g && g.file === file && g.question === qid && (!g.item || g.item === item));
+  const ignored = (qid, item) => cfg.ignore.some((g) => g && g.file === file && g.question === qid && (!g.item || g.item === item));
   const sexIds = new Set(s.Q.filter((q) => q.auto === 'sex').map((q) => q.id));
   s.Q.forEach((q) => {
     if (q.kind !== 'choice' || q.auto || !q.a || q.a.length < 2) return;
     if (q.vis && !(q.vis.deps || []).every((d) => sexIds.has(d))) return; // a follow-up: leave it to the pre-screen
     let item, label, duration = false, ans = null, ansNot = null;
-    const cf = condFor(q);
+    const cf = condFor(q, cfg);
     if (cf) { item = cf.c.key; label = cf.c.label; duration = cf.duration; ans = cf.c.answer; ansNot = cf.c.answerNot; }
     else if (smokeQ(q)) { item = 'smoke'; label = SMOKE.label; }
     else return;
@@ -92,7 +96,7 @@ export function rulesFor(s) {
     if (duration && !no.length) add('n', 'no', [{ l: 'asks how long since diagnosis, so it needs the diagnosis' }]);
     else add('n', verdict(no.concat(former).map((b) => b.o)), no.concat(former));
   });
-  QC.rules.forEach((r) => {
+  cfg.rules.forEach((r) => {
     if (!r || r.file !== file || !r.item || !['y', 'n'].includes(r.when) || !['no', 'check'].includes(r.result)) return;
     out.push({ item: r.item, when: r.when, result: r.result, why: String(r.why || ''), q: '', qt: String(r.source || ''), a: '', auto: false });
   });
@@ -115,12 +119,13 @@ function whyText(item, label, when, res, ans) {
  * Conditions a study needs that Quick check doesn't ask about yet: a "Do you have X?" question that excludes "No".
  * Shown in Tools → Study files, so someone can add X to "RAYDAR quick check.json".
  */
-export function missingConditions(s) {
+export function missingConditions(s, cfg) {
+  cfg = cfg || QC;
   const out = [];
   s.Q.forEach((q) => {
     if (q.kind !== 'choice' || q.auto || q.vis || !q.a) return;
     const t = q.t || '';
-    if (SKIP_ALL.test(t) || condFor(q) || smokeQ(q)) return;
+    if (SKIP_ALL.test(t) || condFor(q, cfg) || smokeQ(q)) return;
     const m = /(?:\bdo you (?:currently )?have|diagnosed with|diagnosis of)\s+(?:(?:a|an|any|chronic|current)\s+)*([a-z][\w\s-]{2,40}?)(?=\s*(?:\?|,|\(|\bthat\b|\bwhich\b|\bconfirmed\b|$))/i.exec(t);
     if (!m || /\b(your|from|after|pain)\b/i.test(m[1])) return;
     const A = q.a.map((b) => ({ l: clean(b[0]), o: b[1] }));

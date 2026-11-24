@@ -5,6 +5,7 @@
 export const PROTO_OVERRIDE = { CORSERA: 'COR-PAG-26-101' };
 export function protoCode(s) {
   if (!s) return 'QuickCheck';
+  if (s.protocolOverride) return s.protocolOverride; // 2.8: set in the study admin (RAYDAR study settings.json)
   if (PROTO_OVERRIDE[s.code]) return PROTO_OVERRIDE[s.code];
   const m = /^\s*([A-Za-z0-9][A-Za-z0-9.-]*\d[A-Za-z0-9.-]*)/.exec(s.d || '');
   return m ? m[1] : s.code;
