@@ -91,7 +91,11 @@ let saveTimer = null;
 export function edit(fn, what) {
   const b = W.drafts[W.file];
   if (!b) return;
-  if (what === 'esource') {
+  // a burst of typing ('typing') is one undo step, not one per letter; any other change is its own step
+  const now = Date.now(), typing = what === 'typing';
+  const burst = typing && W.lastTyping && now - W.lastEdit < 1200;
+  if (what === 'esource' || typing) { W.lastEdit = now; W.lastTyping = typing; }
+  if ((what === 'esource' || typing) && !burst) {
     (W.undo[W.file] = W.undo[W.file] || []).push(JSON.stringify(b.esource));
     if (W.undo[W.file].length > 60) W.undo[W.file].shift();
     W.redo[W.file] = [];
@@ -105,13 +109,13 @@ export function undo() {
   const u = W.undo[W.file]; if (!u || !u.length) return;
   const b = W.drafts[W.file];
   (W.redo[W.file] = W.redo[W.file] || []).push(JSON.stringify(b.esource));
-  b.esource = JSON.parse(u.pop()); W.sel = null; notify(); saveDraft(W.file);
+  b.esource = JSON.parse(u.pop()); W.lastTyping = false; notify(); saveDraft(W.file);
 }
 export function redo() {
   const r = W.redo[W.file]; if (!r || !r.length) return;
   const b = W.drafts[W.file];
   W.undo[W.file].push(JSON.stringify(b.esource));
-  b.esource = JSON.parse(r.pop()); W.sel = null; notify(); saveDraft(W.file);
+  b.esource = JSON.parse(r.pop()); W.lastTyping = false; notify(); saveDraft(W.file);
 }
 
 /* ---- drafts: saved in the folder, or this browser ---- */

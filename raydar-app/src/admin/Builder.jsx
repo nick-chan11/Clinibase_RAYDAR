@@ -2,6 +2,7 @@
    section, drop onto a section tab to move a question there. Edits are made to the eSource JSON itself. */
 import { useEffect, useRef, useState } from 'react';
 import { W, edit, notify, say, saveSetting } from './ws.js';
+import { TextBox } from './TextBox.jsx';
 import { SETTINGS } from '../esource/studies.js';
 import { sanitize } from '../esource/html.js';
 import { plain } from '../esource/convert.js';
@@ -189,22 +190,23 @@ function Inspector({ json, sel }) {
   const el = sel ? (() => { try { return elAt(json, sel); } catch (e) { return null; } })() : null;
   if (!el) return <aside className="ad-insp"><div className="ad-cap">QUESTION SETTINGS</div><p className="ad-mut">Click a card to edit it.</p></aside>;
   const up = (fn) => edit((b) => fn(elAt(b.esource, W.sel)), 'esource');
+  const upT = (fn) => edit((b) => fn(elAt(b.esource, W.sel)), 'typing');
   const isQ = !['html', 'image', 'expression', 'panel'].includes(el.type);
   return (
-    <aside className="ad-insp" aria-label="Question settings">
+    <aside className="ad-insp" aria-label="Question settings" key={W.file + ':' + W.sel.join('.')}>
       <div className="ad-cap">{el.type === 'html' ? 'NOTE' : el.type === 'panel' ? 'GROUP' : 'QUESTION'} SETTINGS <span className="ad-mut mono">{el.name}</span></div>
       {isQ || el.type === 'panel' ? (
         <label className="ad-field">{el.type === 'panel' ? 'Group title' : 'Say (read aloud)'}
-          <textarea className={el.type === 'panel' ? '' : 'say'} rows={3} value={plain(el.title || '')} onChange={(e) => up((x) => { x.title = e.target.value; })} />
+          <TextBox multiline className={el.type === 'panel' ? '' : 'say'} rows={3} value={plain(el.title || '')} onChange={(v) => upT((x) => { x.title = v; })} />
         </label>
       ) : null}
       {isQ ? (
         <label className="ad-field">Recruiter hint (under the question)
-          <textarea rows={2} value={plain(el.description || '')} onChange={(e) => up((x) => { if (e.target.value) x.description = e.target.value; else delete x.description; })} />
+          <TextBox multiline rows={2} value={plain(el.description || '')} onChange={(v) => upT((x) => { if (v) x.description = v; else delete x.description; })} />
         </label>
       ) : null}
       {el.type === 'html' ? <RichText key={W.file + el.name} html={el.html || ''} onChange={(h) => edit((b) => { elAt(b.esource, W.sel).html = h; })} onFirst={() => edit(() => {}, 'esource')} /> : null}
-      {CHOICE_TYPES.has(el.type) && el.type !== 'boolean' ? <Answers el={el} up={up} /> : null}
+      {CHOICE_TYPES.has(el.type) && el.type !== 'boolean' ? <Answers el={el} up={up} upT={upT} /> : null}
       {el.type === 'text' || el.type === 'comment' ? <label className="ad-check"><input type="checkbox" checked={el.type === 'comment'} onChange={(e) => up((x) => { x.type = e.target.checked ? 'comment' : 'text'; })} /> Long answer (several lines)</label> : null}
       {el.type === 'dobandage' ? <AgeRange json={json} el={el} /> : null}
       {el.type === 'bmi' ? (
@@ -241,15 +243,16 @@ function moveBy(d) {
   }, 'esource');
 }
 
-function Answers({ el, up }) {
+function Answers({ el, up, upT }) {
   const ch = choicesOf(el);
   const set = (fn) => up((x) => { const l = choicesOf(x); fn(l); setChoices(x, l); });
+  const setT = (fn) => upT((x) => { const l = choicesOf(x); fn(l); setChoices(x, l); });
   return (
     <div className="ad-field">
       <span>Answers and outcomes</span>
       {ch.map((c, k) => (
         <div key={k} className="ad-ans">
-          <input aria-label={'Answer ' + (k + 1)} value={bareText(plain(c.text))} onChange={(e) => set((l) => { l[k].text = withOutcome(e.target.value, outcomeKey(l[k].text)); })} />
+          <TextBox aria-label={'Answer ' + (k + 1)} value={bareText(plain(c.text))} onChange={(v) => setT((l) => { l[k].text = withOutcome(v, outcomeKey(l[k].text)); })} />
           <select aria-label={'Outcome for answer ' + (k + 1)} className={'oc ' + OC[outcomeKey(c.text)]} value={outcomeKey(c.text)} onChange={(e) => set((l) => { l[k].text = withOutcome(swapWord(bareText(l[k].text), e.target.value), e.target.value); })}>
             {OUTCOMES.map((o) => <option key={o[0]} value={o[0]}>{o[1]}</option>)}
           </select>
