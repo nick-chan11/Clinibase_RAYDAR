@@ -46,6 +46,7 @@ that looks wrong).
 | `raydar-visit-schedule` | An Emeritus (rolling) study has no visit timeline, or a wrong one | The protocol's visit schedule added, so RAYDAR maps every visit from the screening date |
 | `raydar-quick-check` | Quick check offers a study it shouldn't, or misses one | The rules checked against the eSource questions, and corrected |
 | `raydar-esource-report` | You want to tell TST what's wrong in their files | A message ready to paste, sorted by impact |
+| `raydar-medicines` | Monthly medicines refresh, or a medicine name isn't recognised (or matches the wrong thing) | The dictionary rebuilt from the AMT and PBS files with a report of what changed, or the missing name added to the extras file |
 | `raydar-release` | Time to give recruiters a new RAYDAR file | All checks and tests run, the file built, a "what's new" note for the team lead |
 
 ## The tools the skills use
@@ -60,6 +61,8 @@ You can also run these yourself, from `raydar-app/`:
 | `npm run test:studies` | Answers every study start to finish by keyboard, as a woman and as a man |
 | `npm run test:pdf` | Saves a PDF for every Finish outcome and reopens it |
 | `npm run test:admin` | The study admin end to end: set up a folder, add a question, publish, preview |
+| `npm run dict:update` | Rebuilds the medicines dictionary from the AMT and PBS files in `Clinibase RAYDAR/` and the extras file, and says what changed |
+| `npm run test:medicines` | Checks medicine names, spellings, groups and prohibited-item matching |
 | `npm run build:all` | Builds `RAYDAR_<version>.html`, `RAYDAR_<version>_Admin.html` and the all-in-one file in the repo root |
 | `npm run test:offline` | Checks the built file works with no internet |
 

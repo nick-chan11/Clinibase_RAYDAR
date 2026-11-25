@@ -2,6 +2,38 @@
 
 A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-animation skill.
 
+## New in 2.8: the medicines dictionary
+
+- **Recruiters can check a medicine by any name.** `../RAYDAR medicines.json` maps about 11,000 Australian brand names
+  and 2,500 active ingredients to their drug groups. It's built from the Australian Medicines Terminology (NCTS) and
+  the PBS's ATC codes by `npm run dict:update` (`scripts/tools/medicines-build.mjs`), plus `../RAYDAR medicine
+  extras.json` for aliases (US names, nicknames), herbal ingredients and RAYDAR's own groups (vaccines, live vaccines,
+  medicinal cannabis, THC). The source files stay outside the repo; see the `raydar-medicines` skill.
+- **Left panel, Prohibited list:** searching a brand, ingredient or misspelling shows what it is, the list item it
+  falls under for the chosen study, the time window and the eSource wording, with "Add to med log"
+  (`src/views/Medicines.jsx`).
+- **Med log:** the name box suggests brands and ingredients as you type, fills the route when there's only one, and
+  each logged medicine shows what it was recognised as, or "Not recognised, did you mean…".
+- **Matching** (`src/medicines/items.js`): a logged medicine matches a list item by ingredient or drug group, then
+  the item's form ("oral/injectable" makes a cream a doctor check), time window (from the end date) and allowed doses
+  ("atorvastatin up to 20 mg a day") decide Excluded, Doctor check or OK, with the reason. Items RAYDAR can't match by
+  medicine (devices, treatments, dose changes) still match on their own words, as before. Conditions only ever show
+  "Possible match, check".
+- **Study admin, Quick check and lists:** each medication bullet is pre-filled from its wording (medicines named,
+  group words, "in the past 30 days", "oral/injectable"; a group in brackets after named drugs is only suggested) and
+  TST confirms it. Publishing asks for every item to be confirmed, or "Publish with RAYDAR's reading". Saved as
+  `proItems` in `RAYDAR study settings.json` (`src/admin/ProItems.jsx`).
+- **Lists for every study** (`src/esource/convert.js`): besides notes titled as prohibited lists, RAYDAR reads
+  - medication questions that name a medicine or drug group and whose "yes" answer excludes or needs the doctors
+    ("In the last 4 weeks have you taken spironolactone?"), and condition questions ("Do you have glaucoma?"), in their
+    own words, shown under "From the questions";
+  - bulleted drug lists without a title when the note says the study excludes them, explains such a question, or
+    follows the medication log (SB3567's acne medication list).
+  Bullets under "Exceptions", "Permitted", "is required", "can be used" or "wouldn't be exclusionary" are left out
+  (KT502's required and allowed RA drugs, its permitted non-live vaccines). Hidden questions stay out.
+- A studies folder can carry a newer `RAYDAR medicines.json`; RAYDAR uses it when it's at least as new as its own.
+- `npm run test:medicines` checks names, spellings, groups and matching without a browser.
+
 ## New in 2.8: the study admin and the shared studies folder
 
 - **Three files from the same code** (`npm run build:all`):

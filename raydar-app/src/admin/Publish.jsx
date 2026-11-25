@@ -8,6 +8,7 @@ import { nameParts } from '../esource/convert.js';
 import { diffStudies } from '../esource/diff.js';
 import { ADMIN_MODE } from './gate.js';
 import { blocking } from './Checks.jsx';
+import { unconfirmed } from './ProItems.jsx';
 import { fileFor, SITES } from './ws.js';
 
 const Ic = ({ n }) => <i className={'ti ' + n} aria-hidden="true" />;
@@ -20,13 +21,14 @@ export function PublishTab({ b }) {
   const datesChanged = JSON.stringify((live && live.dates) || null) !== JSON.stringify(b.dates || null) || JSON.stringify((live && live.schedule) || null) !== JSON.stringify(b.schedule || null);
   const setChanged = JSON.stringify((live && live.settings) || {}) !== JSON.stringify(b.settings || {});
   const must = s.error ? [] : blocking(s);
+  const unconf = s.error ? [] : unconfirmed(s, b);
   // dates that aren't finished stop publishing too
   const dateProbs = [];
   if (b.dates) b.dates.cohorts.forEach((c) => { if (!c.in || !c.out) dateProbs.push(c.n + ' has no dates'); else if (!c.src || c.src.trim().length < 10) dateProbs.push(c.n + ' has no study-notes sentence'); (c.v || []).forEach((v) => { if (!v.d) dateProbs.push(c.n + ': a follow-up visit has no date'); }); });
   if (b.schedule && !(b.schedule.value.visits || []).some((v) => v.day === 1)) dateProbs.push('The visit schedule has no Day 1');
   const others = SITES.filter((x) => x !== site).map((x) => fileFor(x, code)).filter((f) => ALL.find((st) => st.file === f));
   const [p, setP] = useState({ sex: 'f', age: 35, ht: 168, wt: 70 });
-  const [o, setO] = useState({ approver: '', noSecond: false, note: '', alsoTo: [], anyway: false });
+  const [o, setO] = useState({ approver: '', noSecond: false, note: '', alsoTo: [], anyway: false, unconf: false });
   const [res, setRes] = useState(null);
   // 2.8: say why Publish is greyed out, rather than leaving the button dead
   const why = [];
@@ -35,6 +37,7 @@ export function PublishTab({ b }) {
   if (!W.name) why.push('enter your name at the top of the page');
   if (dateProbs.length) why.push('finish the dates (see above)');
   if (must.length && !o.anyway) why.push('tick "Publish anyway" or fix the file check problems');
+  if (unconf.length && !o.unconf) why.push('confirm the prohibited medication items, or tick "Publish with RAYDAR\'s reading"');
   if (!o.noSecond && !o.approver.trim()) why.push('enter who checked it, or tick "Publish without a second check"');
   const ready = !why.length;
 
@@ -106,6 +109,10 @@ export function PublishTab({ b }) {
         {must.length ? (
           <div className="ad-msg bad">The file check found {must.length} problem(s) that make questions never show (Quick check and lists tab).
             <label className="ad-check"><input type="checkbox" checked={o.anyway} onChange={(e) => setO({ ...o, anyway: e.target.checked })} /> Publish anyway (the eSource has the same problem)</label></div>
+        ) : null}
+        {unconf.length ? (
+          <div className="ad-msg warn">{unconf.length} prohibited medication item{unconf.length > 1 ? 's aren\'t' : ' isn\'t'} confirmed yet (Quick check and lists tab). Until then recruiters see RAYDAR's own reading of {unconf.length > 1 ? 'them' : 'it'}, labelled as not confirmed.
+            <label className="ad-check"><input type="checkbox" checked={o.unconf} onChange={(e) => setO({ ...o, unconf: e.target.checked })} /> Publish with RAYDAR's reading for now</label></div>
         ) : null}
         {others.length ? (
           <fieldset className="ad-fs"><legend>Also apply the questions to</legend>

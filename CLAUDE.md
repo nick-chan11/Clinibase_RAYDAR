@@ -13,8 +13,11 @@ all-in-one file. Published studies live in a shared Dropbox "studies folder" wit
 - `RAYDAR cohort dates.json`: fixed cohort, stay and follow-up dates, read by hand from the Study Notes.
 - `RAYDAR visit schedules.json`: rolling-recruitment (Emeritus) visit schedules and VIC/NSW public holidays.
 - `RAYDAR quick check.json`: Quick check conditions, extra rules and corrections.
-- `RAYDAR study settings.json`: paused studies, protocol numbers for file names, prohibited-list corrections, notes
-  for recruiters, saved builder blocks.
+- `RAYDAR study settings.json`: paused studies, protocol numbers for file names, prohibited-list corrections and
+  confirmed prohibited items (`proItems`), notes for recruiters, saved builder blocks.
+- `RAYDAR medicines.json`: the medicines dictionary (brand → ingredient → drug group), built by `npm run dict:update`
+  from the AMT and PBS files kept outside the repo in `Clinibase RAYDAR/`, plus `RAYDAR medicine extras.json`
+  (hand-kept aliases and RAYDAR's own groups). It only recognises names; the eSource decides what's prohibited.
 - The studies folder in Dropbox holds the published copies of all of the above (plus `_drafts/` and `_history/`).
   When studies are managed in the study admin, the folder is the live version: copy it into the repo before working
   on the same files here, and back again after, so the two don't drift.
@@ -30,10 +33,12 @@ Use these (in `.claude/skills/`) rather than improvising:
 - `raydar-visit-schedule`: Emeritus rolling schedules.
 - `raydar-quick-check`: which conditions rule studies in or out.
 - `raydar-esource-report`: writing up eSource problems for TST.
+- `raydar-medicines`: the monthly AMT/PBS refresh, and names that aren't recognised.
 - `raydar-release`: build, test, ship.
 
 Tools they use, run from `raydar-app/`: `npm run study:report`, `npm run study:diff`, `npm run study:check-data`,
-`npm run test:studies`, `npm run test:pdf`, `npm run test:admin`, `npm run test:offline`.
+`npm run test:studies`, `npm run test:pdf`, `npm run test:admin`, `npm run test:offline`, `npm run dict:update`,
+`npm run test:medicines`.
 
 ## Rules
 
@@ -41,6 +46,7 @@ Tools they use, run from `raydar-app/`: `npm run study:report`, `npm run study:d
   or notes in RAYDAR. Problems go back to TST.
 - **Never invent dates, windows or rules.** Every date or rule quotes the sentence it came from. When the source
   doesn't say, ask.
+- **The AMT and PBS source files stay out of the repo** (licensed and large); only the built dictionary goes in.
 - **No participant data in the repo**: no real PIDs, dates of birth, names, phone numbers or saved PDFs. Test PIDs
   look like `p123456_0000`.
 - **Design changes get a mockup first.** Show the person mockups and wait for their choice before changing how

@@ -165,14 +165,19 @@ export default function App() {
   // Between calls (no participant started) it switches over by itself; during a call it asks.
   useEffect(() => { if (!SOURCE.preview) { autoConnect(); startUpdateChecks(() => !SOURCE.preview && !S.admin && S.stage === 'id' && !S.pid); } }, []);
 
-  // Sticky side panel sits under the sticky header
+  // Sticky side panel and question toolbar sit under the sticky header.
+  // 2.8 fix: the study admin replaces the call screens, so coming back from it makes a new header. Measure the new
+  // one; measuring only the first left --hh stuck at an old height (a gap above the side panel once the header shrank).
+  const inAdmin = !!(AdminApp && ADMIN_MODE === 'combined' && S.admin);
   useEffect(() => {
     const h = headRef.current;
     if (!h || typeof ResizeObserver === 'undefined') return;
-    const ro = new ResizeObserver(() => rootRef.current?.style.setProperty('--hh', h.offsetHeight + 'px'));
+    const set = () => rootRef.current?.style.setProperty('--hh', h.offsetHeight + 'px');
+    set();
+    const ro = new ResizeObserver(set);
     ro.observe(h);
     return () => ro.disconnect();
-  }, []);
+  }, [inAdmin]);
 
   // Work the engine asks for after a change: scroll, focus, shake
   useLayoutEffect(() => {
