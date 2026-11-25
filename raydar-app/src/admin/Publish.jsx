@@ -28,7 +28,15 @@ export function PublishTab({ b }) {
   const [p, setP] = useState({ sex: 'f', age: 35, ht: 168, wt: 70 });
   const [o, setO] = useState({ approver: '', noSecond: false, note: '', alsoTo: [], anyway: false });
   const [res, setRes] = useState(null);
-  const ready = !s.error && !dateProbs.length && (changed(b.file) || W.qcDirty) && (o.noSecond || o.approver.trim()) && (!must.length || o.anyway) && W.name;
+  // 2.8: say why Publish is greyed out, rather than leaving the button dead
+  const why = [];
+  if (s.error) why.push('the draft can\'t be read');
+  if (!(changed(b.file) || W.qcDirty)) why.push('nothing has changed: this study is the same as the live version. Make a change in another tab first');
+  if (!W.name) why.push('enter your name at the top of the page');
+  if (dateProbs.length) why.push('finish the dates (see above)');
+  if (must.length && !o.anyway) why.push('tick "Publish anyway" or fix the file check problems');
+  if (!o.noSecond && !o.approver.trim()) why.push('enter who checked it, or tick "Publish without a second check"');
+  const ready = !why.length;
 
   const preview = () => {
     const saved = S;
@@ -90,7 +98,7 @@ export function PublishTab({ b }) {
         </section>
       </div>
 
-      <section className="ad-card">
+      <section className="ad-card" id="ad-publish">
         <h2>Publish</h2>
         {!W.name ? <p className="ad-msg warn">Enter your name at the top first: it's recorded with every publish.</p> : null}
         {FOLDER.status !== 'connected' || !FOLDER.write ? <p className="ad-msg warn">No studies folder you can save to is connected, so publishing downloads the changed files for you to put in the folder. Connect it on the Studies folder page to publish straight in.</p> : null}
@@ -113,6 +121,7 @@ export function PublishTab({ b }) {
           <button className="ad-btn pri big" disabled={!ready || W.busy} onClick={go}>{W.busy ? 'Publishing…' : 'Publish ' + code}</button>
           <span className="ad-mut ad-small">Recorded in the change history with your name{o.noSecond ? '' : ' and the checker\'s'}. Every version is kept and can be rolled back.</span>
         </div>
+        {why.length ? <p className="ad-msg warn" role="status">To publish: {why.join('; ')}.</p> : null}
         {res && !res.ok ? <p className="ad-msg bad">{res.msg}</p> : null}
       </section>
       <HistoryList file={b.file} />

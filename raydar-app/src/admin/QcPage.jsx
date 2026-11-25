@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { W, notify, publishQc } from './ws.js';
+import { W, notify, publishQc, markQc } from './ws.js';
 import { ALL } from '../esource/studies.js';
 
 const Ic = ({ n }) => <i className={'ti ' + n} aria-hidden="true" />;
-const mark = () => { W.qcDirty = true; notify(); };
+const mark = () => markQc();
 
 /** The Quick check settings file: conditions it can ask, extra rules, rules switched off. */
 export function QcPage() {
