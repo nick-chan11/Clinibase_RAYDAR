@@ -122,7 +122,7 @@ function noteShows(b){if(!b.vis)return true;const vis=new Set(qset().map(q=>q.id
 /** Would answering q with answer b open a question that is hidden now? */
 function opensWith(q,b){const s=S.study;if(!s)return false;const vis=new Set(qset().map(z=>z.id));vis.add(q.id);return s.Q.some(z=>z.vis&&z.deps&&z.deps.includes(q.id)&&!vis.has(z.id)&&z.vis.test(n=>valueOf(n,vis,{id:q.id,v:b[2]})))}
 function srcQ(s){s=s||S.study;return !s?[]:s.Q||[]}
-const RAYDAR_VERSION='RAYDAR 2.8 · questions, scripts and notes from the TST eSource files';
+const RAYDAR_VERSION='RAYDAR 2.9 · questions, scripts and notes from the TST eSource files';
 const oc=o=>o==='c'?'success':o==='d'?'warning':o==='x'?'danger':'accent';
 function curQ(){const L=qset();let i=L.findIndex(q=>q.id===S.qid);if(i<0){i=L.findIndex(q=>!S.out[q.id]);if(i<0)i=0;S.qid=L[i]&&L[i].id}return {L,i,q:L[i]}}
 function qMatches(q){if(!q.carry)return [];return S.log.filter(e=>inCarry(e,q.carry)).map(e=>({e,p:matchP(e)})).filter(z=>z.p&&z.p.o!=='ok')}

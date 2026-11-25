@@ -1,7 +1,7 @@
 {
   "name": "raydar-app",
   "private": true,
-  "version": "2.8.0",
+  "version": "2.9.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -20,7 +20,8 @@
     "build:all": "npm run build:single && npm run build:admin && npm run build:combined",
     "test:admin": "node scripts/tests/admin.mjs",
     "dict:update": "node scripts/tools/medicines-build.mjs",
-    "test:medicines": "node --import ./scripts/tools/lib/register.mjs scripts/tests/medicines.mjs"
+    "test:medicines": "node --import ./scripts/tools/lib/register.mjs scripts/tests/medicines.mjs",
+    "test:suggest": "node scripts/tests/suggest.mjs"
   },
   "dependencies": {
     "jspdf": "^2.5.2",

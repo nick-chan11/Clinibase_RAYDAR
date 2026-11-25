@@ -1,6 +1,18 @@
-# RAYDAR 2.8 (React + Motion)
+# RAYDAR 2.9 (React + Motion)
 
 A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-animation skill.
+
+## New in 2.9: medicine name suggestions
+
+- **Suggestions stay open once the whole name is typed.** In the med log (the side panel and the medication
+  questions), typing "Metformin" in full used to make the list disappear; it now stays, with Metformin highlighted
+  and the names like it underneath (`src/views/Medicines.jsx`).
+- **Tab fills the highlighted suggestion** and stays in the name box (with the route, when the medicine only comes
+  one way). Once the name is filled, Tab moves on to the next box as usual; Shift+Tab always goes back. A close
+  spelling ("Not listed? Type it as heard") is only filled by Tab when it was picked with the arrow keys or the
+  mouse, so a name RAYDAR doesn't know is never swapped for another medicine by tabbing past it.
+- Enter still fills the highlighted suggestion; on a name already typed in full it adds the row, as before.
+- `npm run test:suggest` checks all of this in a browser.
 
 ## New in 2.8: the medicines dictionary
 

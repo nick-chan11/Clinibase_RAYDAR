@@ -20,7 +20,7 @@ export const CALLBACK_REASONS = [
   ['Not eligible now', 'Not eligible now (may be eligible later)'],
   ['', 'Other / no specific reason'],
 ];
-export const BUILD = 'RAYDAR 2.8';
+export const BUILD = 'RAYDAR 2.9';
 const FORMAT = 'RAYDAR-CALLBACK-CSV', FORMAT_VERSION = '1', PDF_DATA_NAME = 'raydar_prescreen_data.csv', MARK = 'record,study,key,value';
 const CSV_MAX_BYTES = 4e6, CSV_MAX_ROWS = 50000, CSV_MAX_CELL = 400000;
 

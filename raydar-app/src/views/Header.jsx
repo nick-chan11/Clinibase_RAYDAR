@@ -39,7 +39,7 @@ export function Header() {
   return (
     <div className="bar">
       <span className="brand" title={RAYDAR_VERSION}>
-        RAYDAR <span style={{ color: 'var(--text-accent)' }}>2.8</span>
+        RAYDAR <span style={{ color: 'var(--text-accent)' }}>2.9</span>
       </span>
       {S.idok ? (
         <span className="pill ok" style={{ cursor: 'default' }}>

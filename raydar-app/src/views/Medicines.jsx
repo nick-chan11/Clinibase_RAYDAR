@@ -4,7 +4,7 @@
    - MedLookup: the left panel's prohibited-list search, for a medicine name (brand, ingredient or misspelling) */
 import { useState, useId } from 'react';
 import { S, upd, EF } from '../engine/store.js';
-import { resolve, suggest, close, describe, cap } from '../medicines/dict.js';
+import { resolve, suggest, close, describe, cap, norm } from '../medicines/dict.js';
 import { checkMed, windowWords } from '../medicines/items.js';
 import { Ic, B } from './ui.jsx';
 
@@ -12,11 +12,13 @@ const ROUTE_FIELD = { o: 'Oral', h: 'Inhaled', n: 'Nasal', t: 'Topical', s: 'Tra
 
 /** The medication name box, with suggestions underneath */
 export function NameField({ F, inputProps }) {
-  const [open, setOpen] = useState(false), [hi, setHi] = useState(0);
+  const [open, setOpen] = useState(false), [hi, setHi] = useState(0), [moved, setMoved] = useState(false);
   const id = useId();
   const q = F.n || '';
   const list = open && q.trim().length >= 2 ? suggest(q, 6) : [];
-  const exact = list.length && list[0].name === q.trim().toLowerCase();
+  // 2.9: the list stays open once the whole name is typed ("Metformin" still shows Metformin and the names like it)
+  const typed = norm(q);
+  const same = (x) => !!x && x.name === typed;
   const pick = (x) => {
     upd(() => {
       F.n = x.label;
@@ -26,9 +28,18 @@ export function NameField({ F, inputProps }) {
   };
   const onKey = (e) => {
     if (!list.length) return;
-    if (e.key === 'ArrowDown') { e.preventDefault(); setHi((h) => (h + 1) % list.length); }
-    else if (e.key === 'ArrowUp') { e.preventDefault(); setHi((h) => (h - 1 + list.length) % list.length); }
-    else if (e.key === 'Enter' && !exact) { e.preventDefault(); pick(list[hi] || list[0]); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); setMoved(true); setHi((h) => (h + 1) % list.length); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setMoved(true); setHi((h) => (h - 1 + list.length) % list.length); }
+    // Enter fills the highlighted name; on the name already typed it goes on to add the row, as before
+    else if (e.key === 'Enter' && !same(list[hi] || list[0])) { e.preventDefault(); pick(list[hi] || list[0]); }
+    // 2.9: Tab fills the highlighted name and stays in the box; once the name is filled, Tab moves on as usual.
+    // A close spelling ("Not listed? Type it as heard") is only filled when it was chosen with the arrow keys,
+    // so a name RAYDAR doesn't know is never swapped for another medicine by tabbing past it.
+    else if (e.key === 'Tab' && !e.shiftKey) {
+      const x = list[hi] || list[0];
+      if (same(x)) pick(x);
+      else if (moved || x.name.startsWith(typed)) { e.preventDefault(); pick(x); }
+    }
     else if (e.key === 'Escape') { e.preventDefault(); setOpen(false); }
   };
   return (
@@ -36,16 +47,16 @@ export function NameField({ F, inputProps }) {
       <input
         {...inputProps}
         role="combobox" aria-expanded={list.length > 0} aria-controls={id} aria-autocomplete="list"
-        onChange={(e) => { setOpen(true); setHi(0); inputProps.onChange(e); }}
+        onChange={(e) => { setOpen(true); setHi(0); setMoved(false); inputProps.onChange(e); }}
         onFocus={() => setOpen(true)}
         onBlur={() => setTimeout(() => setOpen(false), 120)}
         onKeyDown={onKey}
       />
-      {list.length && !exact ? (
+      {list.length ? (
         <div className="msug" role="listbox" id={id}>
           {list.map((x, i) => (
             <div key={x.name} role="option" aria-selected={i === hi} className={'msug-o' + (i === hi ? ' on' : '')}
-              onMouseDown={(e) => { e.preventDefault(); pick(x); }} onMouseEnter={() => setHi(i)}>
+              onMouseDown={(e) => { e.preventDefault(); pick(x); }} onMouseEnter={() => { setHi(i); setMoved(true); }}>
               <span><B>{x.label}</B> <span className="mut">{x.type === 'b' || x.type === 'a' ? x.ings.join(' + ') : x.groups[0] || ''}</span></span>
               <span className="mut msug-t">{x.type === 'b' ? 'brand' : x.type === 'a' ? 'also called' : 'ingredient'}</span>
             </div>
