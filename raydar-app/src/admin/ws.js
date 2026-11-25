@@ -7,8 +7,17 @@ import { ALL, SETTINGS, liveSource, liveDates, liveData, useData, startPreview, 
 import { SCHEDULES, scheduleKeyFor, scheduleData } from '../esource/schedule.js';
 import { convert, nameParts } from '../esource/convert.js';
 import { QC, parseConfig, rulesFor, missingConditions } from '../esource/qcrules.js';
-import { FOLDER, reload } from '../esource/connect.js';
-import { ESOURCE_DIR, FILES, writeJson, readAt, listJson, removeFile, stampName, download } from '../esource/folder.js';
+import { FOLDER, reload, setLoadedVersion } from '../esource/connect.js';
+import { ESOURCE_DIR, FILES, writeJson, readAt, listJson, removeFile, stampName, download, writeBundle } from '../esource/folder.js';
+
+/** 2.8: after every publish, rewrite the studies file in _system that recruiters' RAYDAR reads */
+export async function rebundle() {
+  if (!(FOLDER.write && FOLDER.handle)) return null;
+  const v = await writeBundle(FOLDER.handle, W.name);
+  FOLDER.bundle = { version: v, by: W.name || '' };
+  setLoadedVersion(v);
+  return v;
+}
 import { clone } from './ops.js';
 
 const listeners = new Set();
@@ -250,10 +259,11 @@ export async function publish(file, opt) {
       await writeJson(h, ['_history', histDir(file)], stampName(W.name), record);
       await removeFile(h, ['_drafts'], file);
       delete W.drafts[file]; delete W.undo[file]; delete W.redo[file];
+      await rebundle();
       const r = await reload();
       if (!r.ok) throw new Error(r.msg);
       W.busy = false;
-      say('Published ' + file.replace(/ - pre-screening\.json$/, '') + (others.length ? ' (and ' + others.length + ' other site)' : '') + '. Recruiters get it the next time RAYDAR reads the folder.');
+      say('Published ' + file.replace(/ - pre-screening\.json$/, '') + (others.length ? ' (and ' + others.length + ' other site)' : '') + '. Recruiters\' RAYDAR picks it up within a few minutes.');
       return { ok: true };
     }
     // No folder to write to: the files come down as downloads, and this tab uses them straight away
@@ -284,6 +294,7 @@ export async function publishQc() {
       await writeJson(FOLDER.handle, [], FILES.qc, W.qc);
       await writeJson(FOLDER.handle, ['_history', '_quick check'], stampName(W.name), { at: new Date().toISOString(), by: W.name, qc: W.qc });
       qcPublished();
+      await rebundle();
       await reload();
       say('Quick check settings published.');
     } else {
@@ -305,6 +316,7 @@ export async function setPaused(file, paused) {
     if (FOLDER.write && FOLDER.handle) {
       await writeJson(FOLDER.handle, [], FILES.settings, settings);
       await writeJson(FOLDER.handle, ['_history', histDir(file)], stampName(W.name), { at: new Date().toISOString(), by: W.name, file, action: paused ? 'paused' : 'resumed' });
+      await rebundle();
       await reload();
     } else {
       download(FILES.settings, settings);
@@ -320,7 +332,7 @@ export async function setPaused(file, paused) {
 export async function saveSetting(key, value) {
   const settings = clone(await readLive(FILES.settings, liveData().settings));
   settings[key] = value;
-  if (FOLDER.write && FOLDER.handle) { await writeJson(FOLDER.handle, [], FILES.settings, settings); await reload(); }
+  if (FOLDER.write && FOLDER.handle) { await writeJson(FOLDER.handle, [], FILES.settings, settings); await rebundle(); await reload(); }
   else { download(FILES.settings, settings); useData({ ...liveData(), settings }, 'loaded', null); }
 }
 
