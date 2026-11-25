@@ -5,10 +5,10 @@ import { S, act, subscribe, getVersion, replaceS } from '../engine/store.js';
 import App from '../App.jsx';
 import { ADMIN_MODE } from './gate.js';
 import { previewEvents } from './events.js';
-import { W, useWS, notify, say, setName, studyRows, openStudy, createStudy, loadDrafts, discardDraft, setPaused, history, openFromHistory, publishQc, saveSetting, SITES, finishPreview } from './ws.js';
-import { FOLDER, connect, reconnect, reload, autoConnect, folderLine, canOpenFolders } from '../esource/connect.js';
+import { W, useWS, notify, say, setName, studyRows, openStudy, createStudy, loadDrafts, discardDraft, setPaused, history, openFromHistory, publishQc, saveSetting, SITES, finishPreview, rebundle } from './ws.js';
+import { FOLDER, connect, reconnect, reload, autoConnect, folderLine, canOpenFolders, whenText } from '../esource/connect.js';
 import { SETTINGS, SOURCE, builtInData, ALL } from '../esource/studies.js';
-import { writeAll, readFolder } from '../esource/folder.js';
+import { writeAll, readFolder, SYSTEM_DIR, BUNDLE } from '../esource/folder.js';
 import { newStudy, clone } from './ops.js';
 import { Editor } from './Editor.jsx';
 import { QcPage } from './QcPage.jsx';
@@ -238,7 +238,12 @@ function FolderPage() {
     const existing = await readFolder(FOLDER.handle);
     if (Object.keys(existing.esource).length && !window.confirm('This folder already has ' + Object.keys(existing.esource).length + ' eSource files. Overwrite them with the studies built into this RAYDAR?')) return;
     setBusy('Writing ' + Object.keys(builtInData().esource).length + ' studies…');
-    try { await writeAll(FOLDER.handle, builtInData()); await reload(); say('The folder is set up with the studies built into this RAYDAR. Recruiters can connect to it now.'); } catch (e) { say('Couldn\'t write to the folder: ' + e.message, 'warn'); }
+    try { await writeAll(FOLDER.handle, builtInData()); await rebundle(); await reload(); say('The folder is set up with the studies built into this RAYDAR. Put the RAYDAR file in it and recruiters get these studies.'); } catch (e) { say('Couldn\'t write to the folder: ' + e.message, 'warn'); }
+    setBusy('');
+  };
+  const remake = async () => {
+    setBusy('Writing the studies file…');
+    try { await rebundle(); say('The studies file is up to date. Recruiters\' RAYDAR picks it up within a few minutes.'); } catch (e) { say('Couldn\'t write the studies file: ' + e.message, 'warn'); }
     setBusy('');
   };
   return (
@@ -249,14 +254,21 @@ function FolderPage() {
         <p><b>Now using:</b> {folderLine()}{FOLDER.status === 'connected' ? (FOLDER.write ? ' · you can publish into it' : ' · read only for now') : ''}</p>
         <div className="ad-row">
           {canOpenFolders() ? <button className="ad-btn pri" onClick={() => connect(true).then(loadDrafts)}><Ic n="ti-folder-open" /> {FOLDER.status === 'built-in' ? 'Connect the studies folder' : 'Pick a different folder'}</button> : <p className="ad-msg warn">This browser can't save into a folder. Use Chrome or Edge for the study admin.</p>}
-          {FOLDER.status === 'connected' && !FOLDER.write ? <button className="ad-btn" onClick={() => reconnect(true).then(loadDrafts)}>Allow saving to it</button> : null}
+          {(FOLDER.status === 'connected' && !FOLDER.write) || (FOLDER.status === 'file' && FOLDER.handle) ? <button className="ad-btn" onClick={() => reconnect(true).then(loadDrafts)}>Allow saving to it</button> : null}
           {FOLDER.status === 'connected' ? <button className="ad-btn" onClick={() => reload().then(loadDrafts)}><Ic n="ti-refresh" /> Read it again</button> : null}
         </div>
         {FOLDER.msg ? <p className="ad-mut ad-small">{FOLDER.msg}</p> : null}
       </div>
       <div className="ad-card">
+        <h2>How recruiters get the studies</h2>
+        <p className="ad-mut">Every publish also writes one studies file, <span className="mono">{SYSTEM_DIR}/{BUNDLE}</span>. Recruiters open the RAYDAR file <b>from this folder</b> (it sits next to <span className="mono">{SYSTEM_DIR}</span>), and it reads the studies file by itself: no folder to connect, no permission to give, any browser. A RAYDAR that's already open checks for a newer studies file every few minutes and when its tab is brought back. Between calls it switches over by itself; during a call it shows a "Studies were updated" bar.</p>
+        <p><b>Studies file:</b> {FOLDER.bundle ? 'published ' + whenText(FOLDER.bundle.version) + (FOLDER.bundle.by ? ' by ' + FOLDER.bundle.by : '') : 'not written yet (or this RAYDAR wasn\'t opened from the studies folder)'}</p>
+        <button className="ad-btn" disabled={!FOLDER.write || !!busy} onClick={remake}><Ic n="ti-refresh" /> Rewrite the studies file now</button>
+        <p className="ad-mut ad-small">Only needed if files were changed in the folder by hand or by the Claude study skills: publishing here rewrites it for you.</p>
+      </div>
+      <div className="ad-card">
         <h2>Set up a new folder</h2>
-        <p className="ad-mut">Make an empty folder in Dropbox (for example "RAYDAR studies"), share it with the recruiters as view-only and with admins as editors, connect it above, then fill it with the studies built into this RAYDAR.</p>
+        <p className="ad-mut">Make an empty folder in Dropbox (for example "RAYDAR studies"), share it with the recruiters as view-only and with admins as editors, connect it above, then fill it with the studies built into this RAYDAR. Put the RAYDAR file in the same folder.</p>
         <button className="ad-btn" disabled={!FOLDER.write || !!busy} onClick={setUp}>{busy || 'Fill the folder with the built-in studies'}</button>
         {empty ? <p className="ad-msg warn">The connected folder has no studies yet.</p> : null}
       </div>

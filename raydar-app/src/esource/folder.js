@@ -135,3 +135,30 @@ export function download(name, data) {
   a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 5000);
 }
+
+/* ---- 2.8: the studies file in _system (read by RAYDAR with no folder permission, the way RAYDAR Original reads its
+   "newest version" pointer). Every publish rewrites both files:
+     _system/raydar_studies.js          window.RAYDAR_STUDIES = { version, by, data: { esource, dates, schedules, qc, settings } }
+     _system/raydar_studies_version.js  window.RAYDAR_STUDIES_VERSION = { version, by }   (tiny, checked every few minutes)
+   A RAYDAR file opened from the same Dropbox folder loads them with a plain <script src>, which works from a
+   double-clicked file in any browser. ---- */
+export const SYSTEM_DIR = '_system', BUNDLE = 'raydar_studies.js', BUNDLE_VERSION = 'raydar_studies_version.js';
+export async function writeText(h, path, name, text) {
+  const d = await dir(h, path, true);
+  const fh = await d.getFileHandle(name, { create: true });
+  const w = await fh.createWritable();
+  await w.write(text);
+  await w.close();
+}
+/** Rebuild the studies file from what's in the folder now. Returns its version. */
+export async function writeBundle(h, by) {
+  const d = await readFolder(h);
+  if (!Object.keys(d.esource).length) throw new Error('No eSource files in the folder, so there is nothing to put in the studies file');
+  const version = new Date().toISOString();
+  const head = { version, by: by || '' };
+  const data = { esource: d.esource, dates: d.dates, schedules: d.schedules, qc: d.qc, settings: d.settings };
+  // the version file is written last, so a RAYDAR that sees the new version always finds the new studies file
+  await writeText(h, [SYSTEM_DIR], BUNDLE, '/* RAYDAR studies, written by the study admin. Do not edit by hand: publish from the study admin instead. */\nwindow.RAYDAR_STUDIES = ' + JSON.stringify({ ...head, data }) + ';\n');
+  await writeText(h, [SYSTEM_DIR], BUNDLE_VERSION, 'window.RAYDAR_STUDIES_VERSION = ' + JSON.stringify(head) + ';\n');
+  return version;
+}

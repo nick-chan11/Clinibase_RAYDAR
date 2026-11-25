@@ -16,7 +16,7 @@ import { Safe } from './views/Safe.jsx';
 import { RoutesList } from './views/MedLog.jsx';
 import { Tooltip } from './views/Tooltip.jsx';
 import { FolderBanner } from './views/Folder.jsx';
-import { autoConnect } from './esource/connect.js';
+import { autoConnect, startUpdateChecks } from './esource/connect.js';
 import { SOURCE } from './esource/studies.js';
 import { ADMIN_MODE, AdminApp } from './admin/gate.js';
 import { PreviewBar } from './views/PreviewBar.jsx';
@@ -161,7 +161,9 @@ export default function App() {
     return () => document.removeEventListener('keydown', onKey);
   }, []);
   // 2.8: read the shared studies folder picked last time, if Chrome still allows it without a click
-  useEffect(() => { if (!SOURCE.preview) autoConnect(); }, []);
+  // and keep an eye on the studies file in _system: a publish reaches a RAYDAR that's open all day.
+  // Between calls (no participant started) it switches over by itself; during a call it asks.
+  useEffect(() => { if (!SOURCE.preview) { autoConnect(); startUpdateChecks(() => !SOURCE.preview && !S.admin && S.stage === 'id' && !S.pid); } }, []);
 
   // Sticky side panel sits under the sticky header
   useEffect(() => {
