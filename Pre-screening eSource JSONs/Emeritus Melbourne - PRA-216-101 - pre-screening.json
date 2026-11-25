@@ -209,12 +209,6 @@
               ]
             },
             {
-              "type": "html",
-              "name": "question106",
-              "hideNumber": false,
-              "html": "<p><span style=\"color:red;\"><strong>CLICK BELOW for helpful reference during this section:</strong></span></p><p>&nbsp;</p><p><a href=\"https://emeritus.clinibase.com/fetch_file/public/6831\"><strong>PRA-216-101 Reference Guide</strong></a></p>"
-            },
-            {
               "type": "paneldynamic",
               "name": "question88",
               "title": "What are you currently managing your asthma with?",
@@ -284,7 +278,7 @@
               "type": "html",
               "name": "question107",
               "hideNumber": false,
-              "html": "<p><span style=\"color:red;font-size:20px;\"><strong><u>PARTICIPANTS MUST BE ON A MAINTENANCE THERAPY </u></strong></span><span style=\"color:blue;font-size:20px;\"><strong><u>PRESCRIBED AT LEAST ONCE DAILY</u></strong></span><span style=\"color:red;font-size:20px;\"><strong><u> - DEFINED AS ICS ALONE (or ICS/LABA and ICS+LAMA)</u></strong></span></p><p>&nbsp;</p><p><span style=\"color:red;\"><strong>⚠️ If participant has been prescribed an ICS other than at least once daily (e.g. 2-3x per week), they are ineligible.</strong></span></p><p>&nbsp;</p><ul><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e476d8e83d1dc8a8b51f94e850f448811\"><span style=\"color:red;\"><strong>Relievers (e.g. Ventolin) are not considered a maintenance therapy</strong></span></li><li class=\"ck-list-marker-bold ck-list-marker-color\" style=\"--ck-content-list-marker-color:red;\" data-list-item-id=\"e6d619de2ffdcbaebdba18f2672a137d9\"><span style=\"color:red;\"><span><strong>Maintenance therapy generally implies a <u>regular ongoing preventer regimen</u>, such as a daily ICS or ICS/LABA</strong></span></span></li></ul><p>&nbsp;</p><p><span><strong>⚠️ Please ensure maintenance therapies have been stable for at least 2 months.</strong></span></p>"
+              "html": "<p><span style=\"color:red\"><strong>CLICK BELOW for helpful reference during this section:</strong></span></p><p>&nbsp;</p><p><a href=\"https://emeritus.clinibase.com/fetch_file/public/6831\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>PRA-216-101 Reference Guide</strong></a></p><p><span style=\"color:red\"><strong><u>PARTICIPANTS MUST BE ON A MAINTENANCE THERAPY </u></strong></span><span style=\"color:blue\"><strong><u>PRESCRIBED AT LEAST ONCE DAILY</u></strong></span><span style=\"color:red\"><strong><u> - DEFINED AS ICS ALONE (or ICS/LABA and ICS+LAMA)</u></strong></span></p><p>&nbsp;</p><p><span style=\"color:red\"><strong>⚠️ If participant has been prescribed an ICS other than at least once daily (e.g. 2-3x per week), they are ineligible.</strong></span></p><p>&nbsp;</p><ul><li><span style=\"color:red\"><strong>Relievers (e.g. Ventolin) are not considered a maintenance therapy</strong></span></li><li><span style=\"color:red\"><span><strong>Maintenance therapy generally implies a <u>regular ongoing preventer regimen</u>, such as a daily ICS or ICS/LABA</strong></span></span></li></ul><p>&nbsp;</p><p><span><strong>⚠️ Please ensure maintenance therapies have been stable for at least 2 months.</strong></span></p>"
             },
             {
               "type": "html",
