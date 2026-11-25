@@ -1,7 +1,10 @@
 {
   "_about": "Per-study settings the study admin keeps (RAYDAR 2.8). studies: keyed by eSource file name. paused: hidden from recruiters. protocol: the protocol number for PDF file names when the eSource title doesn't start with it. proSkip: eSource notes that are not prohibited lists. proKeys: words a prohibited-list item matches in the medication log. news: notes shown once to recruiters after a publish. blocks: saved question blocks for the builder. adminPin: SHA-256 of the all-in-one file's admin PIN (a soft lock only).",
   "studies": {
-    "Veritus - CORSERA - pre-screening.json": { "protocol": "COR-PAG-26-101" }
+    "Veritus - CORSERA - pre-screening.json": {
+      "protocol": "COR-PAG-26-101"
+    },
+    "Emeritus Melbourne - D7260C00015 (EMBOLD) - pre-screening.json": {}
   },
   "news": [],
   "blocks": {},
