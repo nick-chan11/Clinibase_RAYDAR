@@ -2,108 +2,475 @@
   "_about": "Cohort and visit dates RAYDAR uses, read by hand from each eSource's Study Notes on 21 Nov 2026. Keyed by eSource file name. Years are not written in the study notes: dates from late November to December are 2026, January onwards 2027 (CORSERA's last follow-ups run into 2028). Each cohort keeps the sentence it came from in 'src'. Studies not listed here have no fixed cohort dates in their study notes.",
   "Veritus - EQ - pre-screening.json": {
     "types": {
-      "fe": { "l": "SAD food effect (Cohort 3)", "nights": 8, "stay": "8 nights, Day -1 to Day 8. Doses on Day 1 (fasted) and Day 5 (after a high-fat meal)", "fu": "Day 12", "pay": "$4,760", "alt": "$820", "note": "High-fat meal with animal products before the Day 5 dose. Not for vegetarians, vegans or restricted diets." },
-      "mad": { "l": "MAD", "nights": 13, "stay": "13 nights, Day -1 to Day 13. Daily dose Days 1 to 10", "fu": "Day 17 (±1 day)", "pay": "$8,400", "alt": "$900", "note": "Two flexible sigmoidoscopies, Days 3 and 10: overnight fast, enema, sedation, 10 to 20 minutes." }
+      "fe": {
+        "l": "SAD food effect (Cohort 3)",
+        "nights": 8,
+        "stay": "8 nights, Day -1 to Day 8. Doses on Day 1 (fasted) and Day 5 (after a high-fat meal)",
+        "fu": "Day 12",
+        "pay": "$4,760",
+        "alt": "$820",
+        "note": "High-fat meal with animal products before the Day 5 dose. Not for vegetarians, vegans or restricted diets."
+      },
+      "mad": {
+        "l": "MAD",
+        "nights": 13,
+        "stay": "13 nights, Day -1 to Day 13. Daily dose Days 1 to 10",
+        "fu": "Day 17 (±1 day)",
+        "pay": "$8,400",
+        "alt": "$900",
+        "note": "Two flexible sigmoidoscopies, Days 3 and 10: overnight fast, enema, sedation, 10 to 20 minutes."
+      }
     },
     "cohorts": [
-      { "id": "c3s", "n": "Cohort 3 Sentinel Food Effect", "t": "fe", "in": "2026-12-03", "out": "2026-12-11", "closed": true,
-        "v": [{ "d": "2026-12-15", "w": 1, "l": "Follow-up (Day 12)" }],
-        "src": "Cohort 3 Sentinel Food Effect: [FILLED] Your in-clinic stay will be from the 3rd - 11th of December. You would then return to the clinic for a follow-up visit on the 15th of December (± 1 day)." },
-      { "id": "c3r", "n": "Cohort 3 ROC Food Effect", "t": "fe", "in": "2026-12-09", "out": "2026-12-17", "closed": true,
-        "v": [{ "d": "2026-12-21", "w": 1, "l": "Follow-up (Day 12)" }],
-        "src": "Cohort 3 ROC Food Effect: [FILLED] Your in-clinic stay will be from the 9th - 17th of December. You would then return to the clinic for a follow-up visit on the 21st of December (± 1 day)." },
-      { "id": "m6g2", "n": "MAD 6 Group 2", "t": "mad", "in": "2026-12-06", "out": "2026-12-19",
-        "v": [{ "d": "2026-12-23", "w": 1, "l": "Follow-up (Day 17)" }],
-        "src": "MAD 6 Group 2. Your in-clinic stay will be from the 6th - 19th of December. You would then return to the clinic for a follow-up visit on the 23rd of December (±1 day." }
+      {
+        "id": "c3s",
+        "n": "Cohort 3 Sentinel Food Effect",
+        "t": "fe",
+        "in": "2026-12-03",
+        "out": "2026-12-11",
+        "closed": true,
+        "v": [
+          {
+            "d": "2026-12-15",
+            "w": 1,
+            "l": "Follow-up (Day 12)"
+          }
+        ],
+        "src": "Cohort 3 Sentinel Food Effect: [FILLED] Your in-clinic stay will be from the 3rd - 11th of December. You would then return to the clinic for a follow-up visit on the 15th of December (± 1 day)."
+      },
+      {
+        "id": "c3r",
+        "n": "Cohort 3 ROC Food Effect",
+        "t": "fe",
+        "in": "2026-12-09",
+        "out": "2026-12-17",
+        "closed": true,
+        "v": [
+          {
+            "d": "2026-12-21",
+            "w": 1,
+            "l": "Follow-up (Day 12)"
+          }
+        ],
+        "src": "Cohort 3 ROC Food Effect: [FILLED] Your in-clinic stay will be from the 9th - 17th of December. You would then return to the clinic for a follow-up visit on the 21st of December (± 1 day)."
+      },
+      {
+        "id": "m6g2",
+        "n": "MAD 6 Group 2",
+        "t": "mad",
+        "in": "2026-12-06",
+        "out": "2026-12-19",
+        "v": [
+          {
+            "d": "2026-12-23",
+            "w": 1,
+            "l": "Follow-up (Day 17)"
+          }
+        ],
+        "src": "MAD 6 Group 2. Your in-clinic stay will be from the 6th - 19th of December. You would then return to the clinic for a follow-up visit on the 23rd of December (±1 day."
+      }
     ]
   },
   "Veritus - CORSERA - pre-screening.json": {
     "types": {
-      "sad": { "l": "Single dose, 1 year follow-up", "nights": 3, "stay": "3 nights. One injection on Day 1, after the first night", "fu": "14 follow-ups over about a year, plus 24-hour blood pressure monitoring (ABPM) 3 times", "pay": "$7,300", "alt": "$600", "note": "Starts with a pre-screening blood test (LDL-C) visit, then a separate screening visit." }
+      "sad": {
+        "l": "Single dose, 1 year follow-up",
+        "nights": 3,
+        "stay": "3 nights. One injection on Day 1, after the first night",
+        "fu": "14 follow-ups over about a year, plus 24-hour blood pressure monitoring (ABPM) 3 times",
+        "pay": "$7,300",
+        "alt": "$600",
+        "note": "Starts with a pre-screening blood test (LDL-C) visit, then a separate screening visit."
+      }
     },
     "cohorts": [
-      { "id": "a1r", "n": "Cohort A1 ROC", "t": "sad", "in": "2026-12-10", "out": "2026-12-13",
+      {
+        "id": "a1r",
+        "n": "Cohort A1 ROC",
+        "t": "sad",
+        "in": "2026-12-10",
+        "out": "2026-12-13",
         "v": [
-          { "d": "2026-12-04", "a": "2026-12-04", "b": "2026-12-09", "l": "ABPM fitted, 6 to 1 days before admission" },
-          { "d": "2026-12-18", "w": 1, "l": "Follow-up" }, { "d": "2026-12-25", "w": 1, "l": "Follow-up" },
-          { "d": "2027-01-09", "w": 2, "l": "Follow-up" }, { "d": "2027-02-08", "w": 3, "l": "Follow-up" },
-          { "d": "2027-03-10", "w": 3, "l": "Follow-up" }, { "d": "2027-04-09", "w": 7, "l": "Follow-up" },
-          { "d": "2027-05-09", "w": 7, "l": "Follow-up" }, { "d": "2027-06-08", "w": 7, "l": "Follow-up" },
-          { "d": "2027-07-08", "w": 7, "l": "Follow-up" }, { "d": "2027-08-07", "w": 7, "l": "Follow-up" },
-          { "d": "2027-09-06", "w": 7, "l": "Follow-up" }, { "d": "2027-10-06", "w": 7, "l": "Follow-up" },
-          { "d": "2027-11-05", "w": 7, "l": "Follow-up" }, { "d": "2027-12-05", "w": 7, "l": "Final follow-up" }
+          {
+            "d": "2026-12-04",
+            "a": "2026-12-04",
+            "b": "2026-12-09",
+            "l": "ABPM fitted, 6 to 1 days before admission"
+          },
+          {
+            "d": "2026-12-18",
+            "w": 1,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2026-12-25",
+            "w": 1,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-01-09",
+            "w": 2,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-02-08",
+            "w": 3,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-03-10",
+            "w": 3,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-04-09",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-05-09",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-06-08",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-07-08",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-08-07",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-09-06",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-10-06",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-11-05",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-12-05",
+            "w": 7,
+            "l": "Final follow-up"
+          }
         ],
-        "src": "Cohort A1 ROC. Your in-clinic stay will be from the 10th - 13th of December. You would then return to the clinic for follow-up appointments on the 18th and 25th of December (±1 day), 9th of January (±2 days), 8th of February (±3 days), 10th of March (±3 days), 9th of April (±7 days), 9th of May (±7 days), 8th of June (±7 days), 8th of July (±7 days), 7th of August (±7 days), 6th of September (±7 days), 6th of October (±7 days), 5th of November (±7 days) and the 5th of December (±7 days). ABPM: between 6-1 days before admission." },
-      { "id": "a2s", "n": "Cohort A2 Sentinel", "t": "sad", "in": "2027-01-21", "out": "2027-01-24",
+        "src": "Cohort A1 ROC. Your in-clinic stay will be from the 10th - 13th of December. You would then return to the clinic for follow-up appointments on the 18th and 25th of December (±1 day), 9th of January (±2 days), 8th of February (±3 days), 10th of March (±3 days), 9th of April (±7 days), 9th of May (±7 days), 8th of June (±7 days), 8th of July (±7 days), 7th of August (±7 days), 6th of September (±7 days), 6th of October (±7 days), 5th of November (±7 days) and the 5th of December (±7 days). ABPM: between 6-1 days before admission."
+      },
+      {
+        "id": "a2s",
+        "n": "Cohort A2 Sentinel",
+        "t": "sad",
+        "in": "2027-01-21",
+        "out": "2027-01-24",
         "v": [
-          { "d": "2027-01-15", "a": "2027-01-15", "b": "2027-01-20", "l": "ABPM fitted, 6 to 1 days before admission" },
-          { "d": "2027-01-29", "w": 0, "l": "Follow-up (no window given)" }, { "d": "2027-02-05", "w": 1, "l": "Follow-up" },
-          { "d": "2027-02-20", "w": 2, "l": "Follow-up" }, { "d": "2027-03-22", "w": 3, "l": "Follow-up" },
-          { "d": "2027-04-21", "w": 3, "l": "Follow-up" }, { "d": "2027-05-21", "w": 7, "l": "Follow-up" },
-          { "d": "2027-06-20", "w": 7, "l": "Follow-up" }, { "d": "2027-07-20", "w": 7, "l": "Follow-up" },
-          { "d": "2027-08-19", "w": 7, "l": "Follow-up" }, { "d": "2027-09-18", "w": 7, "l": "Follow-up" },
-          { "d": "2027-10-18", "w": 7, "l": "Follow-up" }, { "d": "2027-11-17", "w": 7, "l": "Follow-up" },
-          { "d": "2027-12-17", "w": 7, "l": "Follow-up" }, { "d": "2028-01-16", "w": 7, "l": "Final follow-up" }
+          {
+            "d": "2027-01-15",
+            "a": "2027-01-15",
+            "b": "2027-01-20",
+            "l": "ABPM fitted, 6 to 1 days before admission"
+          },
+          {
+            "d": "2027-01-29",
+            "w": 0,
+            "l": "Follow-up (no window given)"
+          },
+          {
+            "d": "2027-02-05",
+            "w": 1,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-02-20",
+            "w": 2,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-03-22",
+            "w": 3,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-04-21",
+            "w": 3,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-05-21",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-06-20",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-07-20",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-08-19",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-09-18",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-10-18",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-11-17",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2027-12-17",
+            "w": 7,
+            "l": "Follow-up"
+          },
+          {
+            "d": "2028-01-16",
+            "w": 7,
+            "l": "Final follow-up"
+          }
         ],
-        "src": "Cohort A2 Sentinel. Your in-clinic stay will be from the 21st - 24th of January. You would then return to the clinic for follow-up appointments on the 29th of January, the 5th (±1 day) and 20th of February (±2 days), 22nd of March (±3 days), 21st of April (±3 days), 21st of May (±7 days), 20th of June (±7 days), 20th of July (±7 days), 19th of August (±7 days), 18th of September (±7 days), 18th of October (±7 days), 17th of November (±7 days), 17th of December (±7 days) and the 16th of January (±7 days). ABPM: between 6-1 days before admission." }
+        "src": "Cohort A2 Sentinel. Your in-clinic stay will be from the 21st - 24th of January. You would then return to the clinic for follow-up appointments on the 29th of January, the 5th (±1 day) and 20th of February (±2 days), 22nd of March (±3 days), 21st of April (±3 days), 21st of May (±7 days), 20th of June (±7 days), 20th of July (±7 days), 19th of August (±7 days), 18th of September (±7 days), 18th of October (±7 days), 17th of November (±7 days), 17th of December (±7 days) and the 16th of January (±7 days). ABPM: between 6-1 days before admission."
+      }
     ]
   },
   "Veritus - SUN - pre-screening.json": {
     "types": {
-      "s": { "l": "SAD, 4 stays", "nights": 12, "stay": "Four separate 3-night stays (12 nights in total). A dose after the first night of each stay", "fu": "12 follow-up phone calls after the last stay", "pay": "$6,760", "alt": "$780", "note": "Participants must be available for every possible date in their group. No leeway from Period 2 onwards. Period 2 to 4 stays fall on one of two date options." }
+      "s": {
+        "l": "SAD, 4 stays",
+        "nights": 12,
+        "stay": "Four separate 3-night stays (12 nights in total). A dose after the first night of each stay",
+        "fu": "12 follow-up phone calls after the last stay",
+        "pay": "$6,760",
+        "alt": "$780",
+        "note": "Participants must be available for every possible date in their group. No leeway from Period 2 onwards. Period 2 to 4 stays fall on one of two date options."
+      }
     },
     "cohorts": [
-      { "id": "s1r", "n": "S1 ROC", "t": "s", "in": "2026-11-30", "out": "2026-12-03",
+      {
+        "id": "s1r",
+        "n": "S1 ROC",
+        "t": "s",
+        "in": "2026-11-30",
+        "out": "2026-12-03",
         "v": [
-          { "d": "2027-01-05", "a": "2027-01-05", "b": "2027-01-09", "l": "Period 2 stay: 5-8 or 6-9 Jan" },
-          { "d": "2027-02-08", "a": "2027-02-08", "b": "2027-02-12", "l": "Period 3 stay: 8-11 or 9-12 Feb" },
-          { "d": "2027-03-14", "a": "2027-03-14", "b": "2027-03-18", "l": "Period 4 stay: 14-17 or 15-18 Mar" }
+          {
+            "d": "2027-01-05",
+            "a": "2027-01-05",
+            "b": "2027-01-09",
+            "l": "Period 2 stay: 5-8 or 6-9 Jan"
+          },
+          {
+            "d": "2027-02-08",
+            "a": "2027-02-08",
+            "b": "2027-02-12",
+            "l": "Period 3 stay: 8-11 or 9-12 Feb"
+          },
+          {
+            "d": "2027-03-14",
+            "a": "2027-03-14",
+            "b": "2027-03-18",
+            "l": "Period 4 stay: 14-17 or 15-18 Mar"
+          }
         ],
-        "src": "SAD Cohort S1 Period 1 [Sentinel is filled, pls book ROC only] Your in-clinic stay will fall on the 30th of November - 3rd of December (ROC). Period 2: either the 5th - 8th of January or the 6th - 9th of January. Period 3: either the 8th - 11th of February or the 9th - 12th of February. Period 4: either the 14th - 17th of March or the 15th - 18th of March." },
-      { "id": "s2s", "n": "S2 Sentinel", "t": "s", "in": "2026-12-14", "out": "2026-12-17",
+        "src": "SAD Cohort S1 Period 1 [Sentinel is filled, pls book ROC only] Your in-clinic stay will fall on the 30th of November - 3rd of December (ROC). Period 2: either the 5th - 8th of January or the 6th - 9th of January. Period 3: either the 8th - 11th of February or the 9th - 12th of February. Period 4: either the 14th - 17th of March or the 15th - 18th of March."
+      },
+      {
+        "id": "s2s",
+        "n": "S2 Sentinel",
+        "t": "s",
+        "in": "2026-12-14",
+        "out": "2026-12-17",
         "v": [
-          { "d": "2027-01-21", "a": "2027-01-21", "b": "2027-01-27", "l": "Period 2 stay: 21-24 or 24-27 Jan" },
-          { "d": "2027-02-24", "a": "2027-02-24", "b": "2027-02-28", "l": "Period 3 stay: 24-27 or 25-28 Feb" },
-          { "d": "2027-03-31", "a": "2027-03-31", "b": "2027-04-04", "l": "Period 4 stay: 31 Mar-3 Apr or 1-4 Apr" }
+          {
+            "d": "2027-01-21",
+            "a": "2027-01-21",
+            "b": "2027-01-27",
+            "l": "Period 2 stay: 21-24 or 24-27 Jan"
+          },
+          {
+            "d": "2027-02-24",
+            "a": "2027-02-24",
+            "b": "2027-02-28",
+            "l": "Period 3 stay: 24-27 or 25-28 Feb"
+          },
+          {
+            "d": "2027-03-31",
+            "a": "2027-03-31",
+            "b": "2027-04-04",
+            "l": "Period 4 stay: 31 Mar-3 Apr or 1-4 Apr"
+          }
         ],
-        "src": "SAD Cohort S2 Period 1: either the 14th - 17th of December (Sentinel) or the 15th - 18th of December (ROC). Period 2: either the 21st - 24th of January or the 24th - 27th of January. Period 3: either the 24th - 27th of February or the 25th - 28th of February. Period 4: either the 31st of March - 3rd of April or the 1st - 4th of April." },
-      { "id": "s2r", "n": "S2 ROC", "t": "s", "in": "2026-12-15", "out": "2026-12-18",
+        "src": "SAD Cohort S2 Period 1: either the 14th - 17th of December (Sentinel) or the 15th - 18th of December (ROC). Period 2: either the 21st - 24th of January or the 24th - 27th of January. Period 3: either the 24th - 27th of February or the 25th - 28th of February. Period 4: either the 31st of March - 3rd of April or the 1st - 4th of April."
+      },
+      {
+        "id": "s2r",
+        "n": "S2 ROC",
+        "t": "s",
+        "in": "2026-12-15",
+        "out": "2026-12-18",
         "v": [
-          { "d": "2027-01-21", "a": "2027-01-21", "b": "2027-01-27", "l": "Period 2 stay: 21-24 or 24-27 Jan" },
-          { "d": "2027-02-24", "a": "2027-02-24", "b": "2027-02-28", "l": "Period 3 stay: 24-27 or 25-28 Feb" },
-          { "d": "2027-03-31", "a": "2027-03-31", "b": "2027-04-04", "l": "Period 4 stay: 31 Mar-3 Apr or 1-4 Apr" }
+          {
+            "d": "2027-01-21",
+            "a": "2027-01-21",
+            "b": "2027-01-27",
+            "l": "Period 2 stay: 21-24 or 24-27 Jan"
+          },
+          {
+            "d": "2027-02-24",
+            "a": "2027-02-24",
+            "b": "2027-02-28",
+            "l": "Period 3 stay: 24-27 or 25-28 Feb"
+          },
+          {
+            "d": "2027-03-31",
+            "a": "2027-03-31",
+            "b": "2027-04-04",
+            "l": "Period 4 stay: 31 Mar-3 Apr or 1-4 Apr"
+          }
         ],
-        "src": "SAD Cohort S2 Period 1: either the 14th - 17th of December (Sentinel) or the 15th - 18th of December (ROC). Periods 2 to 4 as for S2 Sentinel." }
+        "src": "SAD Cohort S2 Period 1: either the 14th - 17th of December (Sentinel) or the 15th - 18th of December (ROC). Periods 2 to 4 as for S2 Sentinel."
+      }
     ]
   },
   "Emeritus Melbourne - V175-001 - pre-screening.json": {
     "types": {
-      "day": { "l": "Vaccine study, day visits only (no overnight stays)", "nights": 0, "stay": "Day 1 vaccination visit of about 5 to 6 hours, no overnight stay. Another day can be booked if they can't make 30 November", "fu": "In-clinic visits on Day 2, 8 (±1 day), 29 (±2 days), 90 (±1 week), 180, 270 and 365 (±2 weeks); telehealth calls on Day 3 and 15", "pay": "$3,440" }
+      "day": {
+        "l": "Vaccine study, day visits only (no overnight stays)",
+        "nights": 0,
+        "stay": "Day 1 vaccination visit of about 5 to 6 hours, no overnight stay. Another day can be booked if they can't make 30 November",
+        "fu": "In-clinic visits on Day 2, 8 (±1 day), 29 (±2 days), 90 (±1 week), 180, 270 and 365 (±2 weeks); telehealth calls on Day 3 and 15",
+        "pay": "$3,440"
+      }
     },
     "cohorts": [
-      { "id": "d1", "n": "Day 1 (vaccination) Mon 30 Nov", "t": "day", "in": "2026-11-30", "out": "2026-11-30",
+      {
+        "id": "d1",
+        "n": "Day 1 (vaccination) Mon 30 Nov",
+        "t": "day",
+        "in": "2026-11-30",
+        "out": "2026-11-30",
         "v": [
-          { "d": "2026-12-01", "w": 0, "l": "Day 2 visit" }, { "d": "2026-12-07", "w": 1, "l": "Day 8 visit (±1 day)" },
-          { "d": "2026-12-28", "w": 2, "l": "Day 29 visit (±2 days)" }, { "d": "2027-02-27", "w": 7, "l": "Day 90 visit (±1 week)" },
-          { "d": "2027-05-28", "w": 14, "l": "Day 180 visit (±2 weeks)" }, { "d": "2027-08-26", "w": 14, "l": "Day 270 visit (±2 weeks)" },
-          { "d": "2027-11-29", "w": 14, "l": "Day 365 visit (±2 weeks)" }
+          {
+            "d": "2026-12-01",
+            "w": 0,
+            "l": "Day 2 visit"
+          },
+          {
+            "d": "2026-12-07",
+            "w": 1,
+            "l": "Day 8 visit (±1 day)"
+          },
+          {
+            "d": "2026-12-28",
+            "w": 2,
+            "l": "Day 29 visit (±2 days)"
+          },
+          {
+            "d": "2027-02-27",
+            "w": 7,
+            "l": "Day 90 visit (±1 week)"
+          },
+          {
+            "d": "2027-05-28",
+            "w": 14,
+            "l": "Day 180 visit (±2 weeks)"
+          },
+          {
+            "d": "2027-08-26",
+            "w": 14,
+            "l": "Day 270 visit (±2 weeks)"
+          },
+          {
+            "d": "2027-11-29",
+            "w": 14,
+            "l": "Day 365 visit (±2 weeks)"
+          }
         ],
-        "src": "You will need to be able to come into the clinic on Monday the 30th of November. This appointment is about 5-6 hours. If you can't. we can book you in another day. | Schedule: Day 1, Day 2, Day 3 - telehealth call, Day 8 (+/- 1 day), Day 15 - telehealth call, Day 29 (+/- 2 days), Day 90 (+/- 1 week), Day 180 (+/- 2 weeks), Day 270 (+/- 2 weeks), Day 365 (+/- 2 weeks). $540 for Day 1 (Vaccination Visit). Day N is 30 Nov plus N-1 days; telehealth calls aren't listed as they need no clinic day." }
+        "src": "You will need to be able to come into the clinic on Monday the 30th of November. This appointment is about 5-6 hours. If you can't. we can book you in another day. | Schedule: Day 1, Day 2, Day 3 - telehealth call, Day 8 (+/- 1 day), Day 15 - telehealth call, Day 29 (+/- 2 days), Day 90 (+/- 1 week), Day 180 (+/- 2 weeks), Day 270 (+/- 2 weeks), Day 365 (+/- 2 weeks). $540 for Day 1 (Vaccination Visit). Day N is 30 Nov plus N-1 days; telehealth calls aren't listed as they need no clinic day."
+      }
     ]
   },
   "Emeritus Sydney - V175-001 - pre-screening.json": {
     "types": {
-      "day": { "l": "Vaccine study, day visits only (no overnight stays)", "nights": 0, "stay": "Day 1 vaccination visit of about 5 to 6 hours, no overnight stay. Another day can be booked if they can't make 30 November", "fu": "In-clinic visits on Day 2, 8 (±1 day), 29 (±2 days), 90 (±1 week), 180, 270 and 365 (±2 weeks); telehealth calls on Day 3 and 15", "pay": "$3,440" }
+      "day": {
+        "l": "Vaccine study, day visits only (no overnight stays)",
+        "nights": 0,
+        "stay": "Day 1 vaccination visit of about 5 to 6 hours, no overnight stay. Another day can be booked if they can't make 30 November",
+        "fu": "In-clinic visits on Day 2, 8 (±1 day), 29 (±2 days), 90 (±1 week), 180, 270 and 365 (±2 weeks); telehealth calls on Day 3 and 15",
+        "pay": "$3,440"
+      }
     },
     "cohorts": [
-      { "id": "d1", "n": "Day 1 (vaccination) Mon 30 Nov", "t": "day", "in": "2026-11-30", "out": "2026-11-30",
+      {
+        "id": "d1",
+        "n": "Day 1 (vaccination) Mon 30 Nov",
+        "t": "day",
+        "in": "2026-11-30",
+        "out": "2026-11-30",
         "v": [
-          { "d": "2026-12-01", "w": 0, "l": "Day 2 visit" }, { "d": "2026-12-07", "w": 1, "l": "Day 8 visit (±1 day)" },
-          { "d": "2026-12-28", "w": 2, "l": "Day 29 visit (±2 days)" }, { "d": "2027-02-27", "w": 7, "l": "Day 90 visit (±1 week)" },
-          { "d": "2027-05-28", "w": 14, "l": "Day 180 visit (±2 weeks)" }, { "d": "2027-08-26", "w": 14, "l": "Day 270 visit (±2 weeks)" },
-          { "d": "2027-11-29", "w": 14, "l": "Day 365 visit (±2 weeks)" }
+          {
+            "d": "2026-12-01",
+            "w": 0,
+            "l": "Day 2 visit"
+          },
+          {
+            "d": "2026-12-07",
+            "w": 1,
+            "l": "Day 8 visit (±1 day)"
+          },
+          {
+            "d": "2026-12-28",
+            "w": 2,
+            "l": "Day 29 visit (±2 days)"
+          },
+          {
+            "d": "2027-02-27",
+            "w": 7,
+            "l": "Day 90 visit (±1 week)"
+          },
+          {
+            "d": "2027-05-28",
+            "w": 14,
+            "l": "Day 180 visit (±2 weeks)"
+          },
+          {
+            "d": "2027-08-26",
+            "w": 14,
+            "l": "Day 270 visit (±2 weeks)"
+          },
+          {
+            "d": "2027-11-29",
+            "w": 14,
+            "l": "Day 365 visit (±2 weeks)"
+          }
         ],
-        "src": "You will need to be able to come into the clinic on Monday the 30th of November. This appointment is about 5-6 hours. If you can't. we can book you in another day. | Schedule: Day 1, Day 2, Day 3 - telehealth call, Day 8 (+/- 1 day), Day 15 - telehealth call, Day 29 (+/- 2 days), Day 90 (+/- 1 week), Day 180 (+/- 2 weeks), Day 270 (+/- 2 weeks), Day 365 (+/- 2 weeks). $540 for Day 1 (Vaccination Visit). Day N is 30 Nov plus N-1 days; telehealth calls aren't listed as they need no clinic day." }
+        "src": "You will need to be able to come into the clinic on Monday the 30th of November. This appointment is about 5-6 hours. If you can't. we can book you in another day. | Schedule: Day 1, Day 2, Day 3 - telehealth call, Day 8 (+/- 1 day), Day 15 - telehealth call, Day 29 (+/- 2 days), Day 90 (+/- 1 week), Day 180 (+/- 2 weeks), Day 270 (+/- 2 weeks), Day 365 (+/- 2 weeks). $540 for Day 1 (Vaccination Visit). Day N is 30 Nov plus N-1 days; telehealth calls aren't listed as they need no clinic day."
+      }
     ]
   }
 }
