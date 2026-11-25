@@ -1,6 +1,6 @@
 /* Quick check rules, prohibited lists and the file check for one study, on its draft. */
 import { useState } from 'react';
-import { W, edit, notify, draftStudy } from './ws.js';
+import { W, edit, notify, draftStudy, markQc } from './ws.js';
 import { plain } from '../esource/convert.js';
 import { CONDS } from '../esource/qcrules.js';
 import { CHOICE_TYPES, outcomeKey } from './ops.js';
@@ -41,7 +41,7 @@ function Rules({ b, s }) {
     qc.ignore = qc.ignore || [];
     const i = qc.ignore.findIndex((g) => g.file === b.file && g.question === r.q && (!g.item || g.item === r.item));
     if (i >= 0) qc.ignore.splice(i, 1); else qc.ignore.push({ file: b.file, question: r.q, item: r.item });
-    W.qcDirty = true; notify();
+    markQc();
   };
   const offRows = (qc.ignore || []).filter((g) => g.file === b.file);
   const items = [['smoke', 'Smokes, vapes or nicotine'], ['meds', 'Regular medications']].concat(CONDS.map((c) => [c[0], c[1]]));
@@ -71,10 +71,10 @@ function Rules({ b, s }) {
             </div>
             {r.auto
               ? <button className="ad-btn sm ghost" onClick={() => toggle(r)}>Switch off</button>
-              : <button className="ad-btn sm ghost" onClick={() => { const k = qc.rules.findIndex((x) => x.file === b.file && x.item === r.item && x.when === r.when); if (k >= 0) { qc.rules.splice(k, 1); W.qcDirty = true; notify(); } }}>Remove</button>}
+              : <button className="ad-btn sm ghost" onClick={() => { const k = qc.rules.findIndex((x) => x.file === b.file && x.item === r.item && x.when === r.when); if (k >= 0) { qc.rules.splice(k, 1); markQc(); } }}>Remove</button>}
           </div>
         ))}
-        {offRows.map((g, i) => <div key={'off' + i} className="ad-rule2 off"><div className="ad-rule2-main"><span>Switched off: the rule read from question <span className="mono">{g.question}</span>{g.item ? ' (' + itemLabel(g.item) + ')' : ''}</span></div><button className="ad-btn sm ghost" onClick={() => { qc.ignore.splice(qc.ignore.indexOf(g), 1); W.qcDirty = true; notify(); }}>Switch back on</button></div>)}
+        {offRows.map((g, i) => <div key={'off' + i} className="ad-rule2 off"><div className="ad-rule2-main"><span>Switched off: the rule read from question <span className="mono">{g.question}</span>{g.item ? ' (' + itemLabel(g.item) + ')' : ''}</span></div><button className="ad-btn sm ghost" onClick={() => { qc.ignore.splice(qc.ignore.indexOf(g), 1); markQc(); }}>Switch back on</button></div>)}
         {!(s.qc || []).length && !offRows.length ? <p className="ad-mut">No rules yet. Quick check still checks age, BMI, sex and pregnancy for {code}; its other answers don't move the study.</p> : null}
       </div>
 
@@ -104,7 +104,7 @@ function Rules({ b, s }) {
             <b>In Quick check:</b> a participant who {said(form.item, form.when)} will see {code} {form.result === 'no' ? 'ruled out' : 'kept, flagged amber'}{form.why.trim() ? <>, with <b>{form.why.trim()}</b></> : ''}.
           </div>
           {form.source.trim().length > 0 && form.source.trim().length < 10 ? <p className="ad-err">Copy the whole sentence from the eSource.</p> : null}
-          <div className="ad-row"><button className="ad-btn pri" disabled={!form.why.trim() || form.source.trim().length < 10} onClick={() => { (qc.rules = qc.rules || []).push({ file: b.file, ...form, why: form.why.trim(), source: form.source.trim() }); W.qcDirty = true; setForm(null); }}>Add the rule</button><button className="ad-btn ghost" onClick={() => setForm(null)}>Cancel</button></div>
+          <div className="ad-row"><button className="ad-btn pri" disabled={!form.why.trim() || form.source.trim().length < 10} onClick={() => { (qc.rules = qc.rules || []).push({ file: b.file, ...form, why: form.why.trim(), source: form.source.trim() }); markQc(); setForm(null); }}>Add the rule</button><button className="ad-btn ghost" onClick={() => setForm(null)}>Cancel</button></div>
         </div>
       ) : <button className="ad-btn" onClick={() => setForm({ item: 'meds', when: 'y', result: 'check', why: '', source: '' })}><Ic n="ti-plus" /> Add a rule</button>}
       {W.qcDirty ? <p className="ad-mut ad-small">Quick check changes are saved with this study when you publish it (or from the Quick check settings page). They apply to every study.</p> : null}
