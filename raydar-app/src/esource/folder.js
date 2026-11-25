@@ -2,13 +2,14 @@
    It holds the same files as the repo, so the study admin, RAYDAR and the Claude study skills all use one layout:
      Pre-screening eSource JSONs/*.json
      RAYDAR cohort dates.json · RAYDAR visit schedules.json · RAYDAR quick check.json · RAYDAR study settings.json
+     RAYDAR medicines.json (optional: a newer medicines dictionary than the one built into the file)
      _drafts/   the study admin's unpublished drafts
      _history/  a copy of every publish, to see who changed what and to roll back
    Chrome lets a page open a folder (File System Access API) and remember it; it asks again for permission after a
    restart, which needs one click. Browsers without it can still read a folder through a folder picker (read only). */
 
 export const ESOURCE_DIR = 'Pre-screening eSource JSONs';
-export const FILES = { dates: 'RAYDAR cohort dates.json', schedules: 'RAYDAR visit schedules.json', qc: 'RAYDAR quick check.json', settings: 'RAYDAR study settings.json' };
+export const FILES = { dates: 'RAYDAR cohort dates.json', schedules: 'RAYDAR visit schedules.json', qc: 'RAYDAR quick check.json', settings: 'RAYDAR study settings.json', medicines: 'RAYDAR medicines.json' };
 export const canOpenFolders = () => typeof window !== 'undefined' && typeof window.showDirectoryPicker === 'function';
 
 /* ---- remembering the folder (IndexedDB; any failure just means "ask again") ---- */
@@ -157,6 +158,7 @@ export async function writeBundle(h, by) {
   const version = new Date().toISOString();
   const head = { version, by: by || '' };
   const data = { esource: d.esource, dates: d.dates, schedules: d.schedules, qc: d.qc, settings: d.settings };
+  if (d.medicines) data.medicines = d.medicines; // the medicines dictionary, when the folder has one
   // the version file is written last, so a RAYDAR that sees the new version always finds the new studies file
   await writeText(h, [SYSTEM_DIR], BUNDLE, '/* RAYDAR studies, written by the study admin. Do not edit by hand: publish from the study admin instead. */\nwindow.RAYDAR_STUDIES = ' + JSON.stringify({ ...head, data }) + ';\n');
   await writeText(h, [SYSTEM_DIR], BUNDLE_VERSION, 'window.RAYDAR_STUDIES_VERSION = ' + JSON.stringify(head) + ';\n');

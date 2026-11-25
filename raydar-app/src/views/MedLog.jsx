@@ -3,6 +3,7 @@ import { AnimatePresence } from 'motion/react';
 import { S, FLD, TL, isMedT, matchP, eParts, proS, proFor, upd } from '../engine/store.js';
 import { A, Ic, Badge, PanelHead, Resizable } from './ui.jsx';
 import { Err, Expander, Row } from '../motion/components.jsx';
+import { NameField, MedLine } from './Medicines.jsx';
 
 /* Stable identities for rows and logged items, kept outside the objects so the engine's
    "is this row filled in?" checks never see them. */
@@ -16,13 +17,13 @@ export const RoutesList = () => (
 );
 
 /** Rows from a study's prohibited list, optionally filtered by a search. */
-export function ProRows({ Pl, types, q, limit }) {
+export function ProRows({ Pl, types, q, limit, quiet }) {
   let L = [];
   types.forEach((t) => (Pl[t] || []).forEach((p) => L.push({ t, ...p })));
   if (q) { const z = q.toLowerCase(); L = L.filter((p) => (p.n + ' ' + p.w + ' ' + p.k.join(' ')).toLowerCase().includes(z)); }
   const tot = L.length;
   if (limit && !q) L = L.slice(0, limit);
-  if (!L.length) return <p className="mut" style={{ fontSize: 12, margin: '6px 0 0' }}>Nothing on the list matches. Not listed doesn't mean allowed: raise an enquiry if unsure.</p>;
+  if (!L.length) return quiet ? null : <p className="mut" style={{ fontSize: 12, margin: '6px 0 0' }}>Nothing on the list matches. Not listed doesn't mean allowed: raise an enquiry if unsure.</p>;
   return (
     <>
       {L.map((p) => {
@@ -62,16 +63,20 @@ export function Form({ pre, rows, t, wide }) {
               {flds.map((f) => (
                 <label key={f[0]} style={{ display: 'block', ...(!wide && (f[0] === 'n' || f[0] === 'ind') ? { gridColumn: 'span 2' } : null) }}>
                   <span className="fl">{f[1]}{f[0] === 'n' ? <> <span style={{ color: 'var(--text-danger)' }}>*</span></> : null}</span>
-                  <input
-                    type="text"
-                    id={f[0] === 'n' ? pre + 'Name' + ri : undefined}
-                    list={f[0] === 'route' ? 'routes' : undefined}
-                    data-f={pre + '.' + ri + '.' + f[0]}
-                    placeholder={ri ? '' : f[2]}
-                    autoComplete="off"
-                    value={F[f[0]] || ''}
-                    onChange={(e) => upd(() => (F[f[0]] = e.target.value))}
-                  />
+                  {(() => {
+                    const ip = {
+                      type: 'text',
+                      id: f[0] === 'n' ? pre + 'Name' + ri : undefined,
+                      list: f[0] === 'route' ? 'routes' : undefined,
+                      'data-f': pre + '.' + ri + '.' + f[0],
+                      placeholder: ri ? '' : f[2],
+                      autoComplete: 'off',
+                      value: F[f[0]] || '',
+                      onChange: (e) => upd(() => (F[f[0]] = e.target.value)),
+                    };
+                    // medication and supplement names suggest brands and ingredients from the medicines dictionary
+                    return f[0] === 'n' && t !== 'hx' ? <NameField F={F} inputProps={ip} /> : <input {...ip} />;
+                  })()}
                 </label>
               ))}
             </div>
@@ -97,8 +102,10 @@ export const ERow = forwardRef(function ERow({ e, pre, showBadge, i }, ref) {
         ) : (
           <button className="lnk" {...A(pre + 'edit:' + idx)} style={{ fontSize: 11, color: 'var(--text-warning)' }}>Add details</button>
         )}
+        <MedLine e={e} />
         <div>
-          {showBadge ? <Badge p={p} /> : p ? <><span className={'pill bdg ' + (p.o === 'x' ? 'bad' : p.o === 'd' ? 'warn' : 'ok')}>{p.o === 'x' ? 'On the list' : p.o === 'd' ? 'Doctor' : 'Allowed'}</span> </> : null}
+          {showBadge ? <Badge p={p} /> : p ? <><span className={'pill bdg ' + (p.o === 'x' ? 'bad' : p.o === 'd' ? 'warn' : 'ok')}>{p.pm ? 'Possible match, check' : p.o === 'x' ? 'Excluded' : p.o === 'd' ? 'Doctor check' : 'OK'}</span> </> : null}
+          {p && p.why && !showBadge ? <div style={{ fontSize: 11, color: 'var(--text-secondary)' }}>{p.why}. <span className="mut">{p.n}</span></div> : null}
           {p ? <button className="lnk" {...A('notmatch:' + idx + ':' + encodeURIComponent(p.n))} style={{ fontSize: 11, marginLeft: 6 }} title="RAYDAR matched this by name; say so if it's wrong">Not a match</button> : null}
           <span style={{ fontSize: 11, color: 'var(--text-muted)', marginLeft: 6, fontStyle: 'italic' }}>{e.src}</span>
         </div>

@@ -208,3 +208,28 @@
   #rd .ad-tr{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   #rd .ad-tr.ad-th{display:none}
 }
+/* prohibited items (src/admin/ProItems.jsx) */
+#rd .ad-tag.acc{background:var(--bg-accent);color:var(--text-accent)}
+#rd .ad-warn{color:var(--text-warning);font-size:12px}
+#rd .ad-fl{font-size:12px;font-weight:600;margin:12px 0 4px;color:var(--text-secondary)}
+#rd .ad-pro2{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:900px){#rd .ad-pro2{grid-template-columns:1fr}}
+#rd .ad-pro2-list{max-height:620px;overflow:auto;border:1px solid var(--border);border-radius:10px;padding:6px;background:var(--surface-1)}
+#rd .ad-pro2-src{padding:6px 4px;border-top:1px solid var(--border)}
+#rd .ad-pro2-src:first-child{border-top:0}
+#rd .ad-pro2-i{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;width:100%;text-align:left;font-size:12px;padding:5px 6px;border:1px solid transparent;border-radius:6px;background:transparent;color:var(--text-primary);cursor:pointer;font-family:inherit}
+#rd .ad-pro2-i:hover{background:var(--surface-2)}
+#rd .ad-pro2-i.on{background:var(--surface-2);border-color:var(--border-strong)}
+#rd .ad-pro2-ed{border:1px solid var(--border);border-radius:10px;padding:12px 14px;background:var(--surface-2);min-width:0}
+#rd .ad-pro2-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:4px 16px}
+#rd .ad-chip{display:inline-flex;align-items:center;gap:4px}
+#rd .ad-sugg-wrap{position:relative;margin-top:6px;max-width:420px}
+#rd .ad-sugg-wrap input{width:100%;box-sizing:border-box}
+#rd .ad-sugg-list{position:absolute;left:0;right:0;top:100%;z-index:20;background:var(--surface-2);border:1px solid var(--border-strong);border-radius:0 0 8px 8px;display:flex;flex-direction:column}
+#rd .ad-sugg-list button{text-align:left;border:0;border-top:1px solid var(--border);background:transparent;color:var(--text-primary);padding:6px 8px;font-size:12px;cursor:pointer;font-family:inherit}
+#rd .ad-sugg-list button:hover{background:var(--surface-1)}
+#rd .ad-checks .ad-pro-card{grid-column:1/-1}
+#rd .ad-pro2-i span:first-child{min-width:0;overflow-wrap:anywhere}
+#rd .ad-pro2-ed .ad-quote{overflow-wrap:anywhere}
+#rd .ad-pro2-ed select{max-width:100%;min-width:0}
+#rd .ad-pro2-grid>div{min-width:0}

@@ -5,6 +5,7 @@ import { plain } from '../esource/convert.js';
 import { CONDS } from '../esource/qcrules.js';
 import { CHOICE_TYPES, outcomeKey } from './ops.js';
 import { TextBox } from './TextBox.jsx';
+import { Prohibited } from './ProItems.jsx';
 
 const Ic = ({ n }) => <i className={'ti ' + n} aria-hidden="true" />;
 export const blocking = (s) => (s.issues || []).filter((i) => /never shows|can't be read|no such answer/.test(i.msg));
@@ -108,46 +109,6 @@ function Rules({ b, s }) {
         </div>
       ) : <button className="ad-btn" onClick={() => setForm({ item: 'meds', when: 'y', result: 'check', why: '', source: '' })}><Ic n="ti-plus" /> Add a rule</button>}
       {W.qcDirty ? <p className="ad-mut ad-small">Quick check changes are saved with this study when you publish it (or from the Quick check settings page). They apply to every study.</p> : null}
-    </section>
-  );
-}
-
-function Prohibited({ b, s }) {
-  const [kind, setKind] = useState('med'), [test, setTest] = useState('');
-  const set = b.settings || {};
-  const all = (s.proAll || {})[kind] || [];
-  const skip = set.proSkip || [];
-  const srcs = [...new Set(all.map((p) => p.src))];
-  const title = (src) => { const n = ((s.proNotes || {})[kind] || []).find((x) => x.name === src); return n ? n.title : src; };
-  const shown = all.filter((p) => !skip.includes(p.src));
-  const t = ' ' + test.toLowerCase() + ' ';
-  const hit = test.trim() ? shown.find((p) => { const k = (set.proKeys && set.proKeys[p.n]) || p.k || []; return k.length && k.some((w) => t.includes(w)) && !(p.no || []).some((w) => t.includes(w)); }) : null;
-  return (
-    <section className="ad-card">
-      <h2>Prohibited lists</h2>
-      <p className="ad-mut ad-small">Read from the bulleted exclusion notes. Each item lists the words RAYDAR matches in the medication log. Mark a note "not a prohibited list" if it was picked up by mistake.</p>
-      <span className="ad-seg"><button className={kind === 'med' ? 'on' : ''} onClick={() => setKind('med')}>Medications ({((s.proAll || {}).med || []).length})</button><button className={kind === 'hx' ? 'on' : ''} onClick={() => setKind('hx')}>Conditions ({((s.proAll || {}).hx || []).length})</button></span>
-      {srcs.map((src) => (
-        <div key={src} className="ad-prosrc">
-          <div className="ad-row"><span className="ad-small"><b>From:</b> {String(title(src)).slice(0, 80)}</span><span style={{ flex: 1 }} />
-            <label className="ad-check ad-small"><input type="checkbox" checked={skip.includes(src)} onChange={(e) => edit((x) => { x.settings = x.settings || {}; const l = new Set(x.settings.proSkip || []); if (e.target.checked) l.add(src); else l.delete(src); x.settings.proSkip = [...l]; if (!x.settings.proSkip.length) delete x.settings.proSkip; })} /> Not a prohibited list</label></div>
-          {skip.includes(src) ? null : all.filter((p) => p.src === src).slice(0, 40).map((p, i) => {
-            const k = (set.proKeys && set.proKeys[p.n]) || p.k || [];
-            return (
-              <div key={i} className="ad-proitem">
-                <span className={p.o === 'x' ? 'bad' : 'warn'}>{p.n.slice(0, 90)}</span>
-                <label className="ad-small">Matches <TextBox value={k.join(', ')} placeholder={kind === 'hx' ? 'Conditions are for reference only' : 'words, comma separated'} onChange={(v) => edit((x) => { x.settings = x.settings || {}; x.settings.proKeys = { ...(x.settings.proKeys || {}), [p.n]: v.split(',').map((w) => w.trim().toLowerCase()).filter(Boolean) }; })} /></label>
-              </div>
-            );
-          })}
-        </div>
-      ))}
-      {!srcs.length ? <p className="ad-mut">None found.</p> : null}
-      {kind === 'med' ? (
-        <label className="ad-field">Try a medication <input value={test} onChange={(e) => setTest(e.target.value)} placeholder="e.g. Ozempic 0.5mg weekly" />
-          {test.trim() ? <span className={hit ? 'ad-err' : 'ad-ok'}>{hit ? 'Matches "' + hit.n.slice(0, 60) + '": ' + (hit.o === 'x' ? 'on the prohibited list' : 'doctor check') : 'No match on this study\'s lists'}</span> : null}
-        </label>
-      ) : null}
     </section>
   );
 }

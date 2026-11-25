@@ -35,6 +35,9 @@ await p.click('.ad-etabs button:has-text("Preview and publish")');
 check(/Added/.test(await p.locator('.ad-chg').first().innerText()), '"What changes" lists the new question');
 await p.fill('input[placeholder="e.g. your team lead"]', 'Test Lead');
 await p.fill('input[placeholder^="e.g. V175"]', 'V175: new blood donation question');
+// V175-001's prohibited medication items aren't confirmed yet, so publishing waits until this is ticked
+check(await p.locator('label:has-text("Publish with RAYDAR\'s reading")').count() === 1, 'unconfirmed prohibited items hold publishing until confirmed or ticked');
+await p.check('label:has-text("Publish with RAYDAR\'s reading") input');
 await p.click('button:has-text("Publish V175-001")'); await p.waitForTimeout(3000);
 const inFolder = await p.evaluate(async () => {
   const root = await (await navigator.storage.getDirectory()).getDirectoryHandle('RAYDAR studies');

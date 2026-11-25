@@ -6,6 +6,7 @@ import {ST,ALL,setCohortHook,onStudiesChange} from '../esource/studies.js';
 import {onFolderChange} from '../esource/connect.js';
 import {plan,earliestScreen,iso as isoD} from '../esource/schedule.js';
 import {resetKeys} from './keys.js';
+import {checkMed,checkHx} from '../medicines/items.js';
 
 /* ---- store plumbing: React subscribes with useSyncExternalStore ---- */
 const listeners=new Set();let version=0;
@@ -102,7 +103,7 @@ function proFor(c){const s=SC(c);return (s&&s.pro)||{}}
 const isMedT=t=>t==='med'||t==='otc';
 const inCarry=(e,c)=>c==='hx'?e.t==='hx':isMedT(e.t);
 function eText(e){return [e.n,e.ind,e.dose,e.route].filter(Boolean).join(' ')}
-function matchP(e,c){const t=' '+eText(e).toLowerCase()+' ';const L=proFor(c||proS())[e.t==='hx'?'hx':'med']||[];const rank={x:0,d:1,ok:2};return L.filter(p=>p.k.length&&p.k.some(k=>t.includes(k))&&!(p.no||[]).some(k=>t.includes(k))&&!(e.nm||[]).includes(p.n)).sort((a,b)=>rank[a.o]-rank[b.o])[0]||null}
+function matchP(e,c){const s=SC(c||proS());if(!s)return null;return e.t==='hx'?checkHx(e,s):checkMed(e,s)}
 function eParts(e){const p=[];if(e.t==='hx'){if(e.st)p.push('dx '+e.st);if(e.en)p.push('resolved '+e.en);return p}if(e.ind)p.push('for '+e.ind);if(e.dose)p.push(e.dose);if(e.route)p.push(e.route);if(e.st)p.push('started '+e.st);if(e.en)p.push('stopped '+e.en);return p}
 function syncAuto(){CONDS.forEach(c=>{const has=S.log.some(e=>e.auto===c[0]);if(S.cond[c[0]]==='y'&&!has)S.log.push(Object.assign(EF(),{t:'hx',n:c[1],src:'Quick check',auto:c[0],f:false}));if(S.cond[c[0]]!=='y'&&has)S.log=S.log.filter(e=>!(e.auto===c[0]&&!eParts(e).length))});
 const hm=S.log.some(e=>e.auto==='meds');if(S.meds==='y'&&!hm)S.log.push(Object.assign(EF(),{t:'med',n:'Regular medication',src:'Quick check',auto:'meds',f:false}));if(S.meds!=='y'&&hm)S.log=S.log.filter(e=>!(e.auto==='meds'&&!eParts(e).length))}

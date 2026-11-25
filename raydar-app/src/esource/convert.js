@@ -3,6 +3,7 @@
    any cohort dates from RAYDAR cohort dates.json. Nothing in the eSource is rewritten: answer text, notes and
    conditions are used as TST wrote them. Problems that would stop a question showing are listed in `issues`. */
 import { compile, all } from './expr.js';
+import { readCovers } from '../medicines/items.js';
 
 const EMOJI_X = /\u{1F6D1}|\u{1F6AB}|❌|⛔/u; // 🛑 🚫 ❌ ⛔ exclude
 const EMOJI_D = /⚠/u; // ⚠ check with doctors
@@ -114,7 +115,7 @@ export function convert(file, json, dates) {
       } else {
         (pendingBefore[page] = pendingBefore[page] || []).push(block);
       }
-      if (el.type === 'html') proSources.push({ el, prevQ: lastQ[page] || null });
+      if (el.type === 'html' && !isNotesPage(page)) proSources.push({ el, prevQ: lastQ[page] || null, page });
       continue;
     }
     if (!QUESTION_TYPES.has(el.type)) continue;
@@ -204,6 +205,7 @@ export function convert(file, json, dates) {
   if (noMark.length) issues.push({ q: '', msg: noMark.length + ' question' + (noMark.length > 1 ? 's have' : ' has') + ' answers with no outcome marker (✅ ⚠️ 🛑), so RAYDAR shows them in grey: ' + noMark.slice(0, 8).map((q) => q.s).join('; ') + (noMark.length > 8 ? '…' : '') });
 
   const pro = extractPro(proSources);
+  extractQuestions(Q, pro); // 2.8: medication and condition questions with exclude or doctor answers
 
   return {
     pro: pro.lists, proNotes: pro.notes,
@@ -222,7 +224,7 @@ export function convert(file, json, dates) {
    medications or conditions from its title or the question it follows. Logged medications are matched on drug
    names found in a bullet (capitalised names, common drug endings, "ending in ..."); conditions are listed for
    reference only, since matching them on words would misfire (a "type 2 diabetes" study excludes "non-type 2 diabetes"). */
-const PRO_NOTE = /exclude the following|exclusionary|prohibited|please exclude|not permitted|are exclusionary|following are excluded/i;
+const PRO_NOTE = /dr enquiry\s*\/\s*exclude|exclude\s*\/\s*dr enquiry|exclude the following|exclusionary|prohibited|please exclude|not permitted|are exclusionary|following are excluded/i;
 const MED_WORDS = /medication|\bmeds?\b|drug|medicine|tablet|inhaler|supplement/i;
 const HX_WORDS = /condition|medical history|history|disease|diagnos|illness|disorder/i;
 const STOP = new Set('please exclude following within months weeks years oral certain chronic other including unless history illicit stability medication medications drugs agents inhibitors agonists antagonists blockers receptor therapy therapies treatment treatments systemic topical injectable injection injections prescription prescribed current currently recent recently previous prior unsure raise medical query severe condition conditions disease diseases except exception exceptions allowed permitted stable daily weekly doses doctor doctors calcium channel serotonin dopamine antibiotics anticholinergics antispasmodics cholinergic sulfonylureas weight receipt anticipation yellow nasal anything liquid laser started critical commencement maintenance infected bleach plans interventions muscular cholesterol changes sodium synthetic spinal atrophy lateral duchenne dystrophy amyotrophic sclerosis platelet-rich narrowband anti-cancer biologics monoamine glucose-lowering specific timeframe required determined known participants participant study screening should would their there these those which where while during before after above below between under every first second third types type acute active approved being cannot could given greater higher lower other over regular regularly short long term significant unknown using visit years-old hours minutes stable'.split(' '));
@@ -243,33 +245,92 @@ function proKeywords(text) {
 /** Bullets with their parent bullet, from editor HTML, without a DOM. */
 function bullets(html) {
   const out = [], stack = [];
-  const re = /<(\/?)(li|ul|ol)\b[^>]*>|<[^>]+>|([^<]+)/gi;
-  let m;
+  const re = /<(\/?)(li|ul|ol|p|div|h[1-6]|br)\b[^>]*>|<[^>]+>|([^<]+)/gi;
+  let m, top = '', last = '';
   while ((m = re.exec(String(html)))) {
-    if (m[3] != null) { if (stack.length) stack[stack.length - 1].text += m[3]; continue; }
+    if (m[3] != null) { if (stack.length) stack[stack.length - 1].text += m[3]; else top += m[3]; continue; }
     const tag = (m[2] || '').toLowerCase();
-    if (tag === 'li' && !m[1]) { const node = { text: '', parent: stack[stack.length - 1] || null, kids: 0 }; if (node.parent) node.parent.kids++; stack.push(node); out.push(node); }
+    // 2.8: the line of text just before a list ("Exceptions", "Non-live vaccines are permitted") goes with its bullets
+    if (/^(p|div|h[1-6]|br)$/.test(tag) && !m[1] && !stack.length) { if (plain(top).replace(/\u00a0/g, '').trim()) last = plain(top); top = ''; }
+    if (tag === 'li' && !m[1]) { const parent = stack[stack.length - 1] || null; const node = { text: '', parent, kids: 0, ctx: parent ? parent.ctx : (plain(top).replace(/\u00a0/g, '').trim() ? plain(top) : last) }; if (parent) parent.kids++; stack.push(node); out.push(node); }
     else if (tag === 'li' && m[1]) stack.pop();
   }
-  return out.map((n) => ({ text: plain(n.text), parent: n.parent ? plain(n.parent.text) : '', leaf: !n.kids })).filter((n) => n.text);
+  return out.map((n) => ({ text: plain(n.text), parent: n.parent ? plain(n.parent.text) : '', leaf: !n.kids, ctx: n.ctx || '' })).filter((n) => n.text);
+}
+/* Bullets that say what's allowed, accepted or doesn't count, not what's prohibited */
+const ALLOWED = /^\W*(exceptions?\b|permitted\b|allowed\b|accepted\b|non-live|examples of non-live|what does not count)|\b(are|is) (permitted|allowed|accepted|fine|ok(ay)?)\b|wouldn't be exclusionary|(are|is) not exclusionary|does(n't| not) count|can be used|(is|are) required|must be (using|taking|on)\b/i;
+
+/* 2.8: prohibited items read from the questions themselves. A question that asks whether the participant has taken
+   or received a medicine the dictionary knows ("In the last 4 weeks have you taken spironolactone?"), and where a
+   "yes" answer excludes or needs the doctors, becomes an item in its own words; so does a condition question ("Do you
+   have glaucoma?"). Each choice of a tick-all question that names a medicine does too. Nothing is reworded: the item
+   is the question's text, its outcome the answers' markers. Hidden questions never get here. */
+const EXCLUDES = /\bexclud(es|ed|e)\b|\bexclusion|cannot have|must not have|not be taking|not permitted|delay screening/i;
+const NOT_MED_Q = /contracep|condom|pregnan|breastfeed|refrain|abstain|is this (ok|okay|alright)|are you (ok|okay|happy)|allerg|intoleran|hypersensitiv|sensitivit|participat|clinical (trial|study)|investigational|feasib|consent|donat|blood test|drug test|urine|breath test|contact lens|swallow|gelatin|travel|holiday|visits?\b/i;
+const MED_Q = /\b(taken|taking|take|used|using|use|received|receiving|been on|treated with|prescribed|had any)\b/i;
+const HX_Q = /\b(do you have|have you (ever )?(been diagnosed|had|suffered)|diagnosed with|history of|do you suffer)\b/i;
+const medCovers = (t) => { const c = readCovers(t); return c.i.length || c.g.length; };
+/* a bullet that names a medicine, or a vaccine under a vaccines heading ("herpes zoster (shingles) vaccine") */
+const listedDrug = (i) => medCovers(i.text) || (/vaccin/i.test(i.text) && readCovers(i.ctx + ' ' + i.parent).g.some((g) => g.startsWith('x-vaccine')));
+const yesOutcome = (a) => {
+  const yes = a.filter((b) => !/^\s*no\b|^\s*none\b|^\s*n\/a\b/i.test(b[0]) && b[1] !== 'i' && b[1] !== 'n');
+  if (!yes.some((b) => b[1] === 'x' || b[1] === 'd')) return null;
+  // a plain "Yes - Exclude" decides it; qualified answers ("Yes, metformin for non-diabetic reasons") are exceptions
+  const plainYes = yes.find((b) => /^\s*yes\s*[-–:]/i.test(b[0]));
+  if (plainYes && (plainYes[1] === 'x' || plainYes[1] === 'd')) return plainYes[1];
+  return yes.every((b) => b[1] === 'x') ? 'x' : 'd';
+};
+function extractQuestions(Q, pro) {
+  const have = { med: new Set(pro.lists.med.map((p) => p.n)), hx: new Set(pro.lists.hx.map((p) => p.n)) };
+  const add = (kind, item) => { if (have[kind].has(item.n)) return; have[kind].add(item.n); pro.lists[kind].push(item); };
+  Q.forEach((q) => {
+    if (!(q.kind === 'choice' || q.kind === 'multi') || q.auto || !q.t || NOT_MED_Q.test(q.t)) return;
+    const where = 'Question: ' + words(q.t, 10);
+    if (q.kind === 'multi') {
+      q.a.filter((b) => (b[1] === 'x' || b[1] === 'd') && medCovers(b[0])).forEach((b) => add('med', { n: b[0], w: plain(q.t), o: b[1], k: proKeywords(b[0]), no: [], src: q.id, from: 'q' }));
+      return;
+    }
+    const o = yesOutcome(q.a);
+    if (!o) return;
+    if (MED_Q.test(q.t) && medCovers(q.t)) add('med', { n: q.t, w: where, o, k: proKeywords(q.t), no: [], src: q.id, from: 'q' });
+    else if (HX_Q.test(q.t) && !MED_Q.test(q.t.replace(HX_Q, ''))) add('hx', { n: q.t, w: where, o, k: [], no: [], src: q.id, from: 'q' });
+  });
 }
 
+export const _proDebug = () => ({ bullets, ALLOWED });
 function extractPro(sources) {
   const lists = { med: [], hx: [] }, notes = { med: [], hx: [] };
   sources.forEach(({ el, prevQ }) => {
     const html = String(el.html || ''), text = plain(html);
-    if (!PRO_NOTE.test(el.name + ' ' + text.slice(0, 200)) || /holiday|travel|location|schedule|availability/i.test(el.name)) return;
+    if (/holiday|travel|location|schedule|availability/i.test(el.name)) return;
     const items = bullets(html);
     if (items.length < 2) return;
+    // 2.8: a bulleted note without a "prohibited" title still counts when two or more bullets name medicines the
+    // dictionary knows (SB3567's "If currently taking: oral antibiotics… spironolactone… isotretinoin")
+    const titled = PRO_NOTE.test(el.name + ' ' + text.slice(0, 200));
+    // an untitled note counts only when it says the study excludes something, or it explains a question whose
+    // "yes" answer excludes or needs the doctors; a list of what's required or allowed never counts
+    let qo = null;
+    if (!titled) {
+      const drugs = items.filter((i) => i.leaf && !ALLOWED.test(i.ctx + ' ' + i.parent) && listedDrug(i)).length;
+      const says = EXCLUDES.test(text);
+      qo = prevQ && !NOT_MED_Q.test(prevQ.t) && MED_Q.test(prevQ.t) ? yesOutcome(prevQ.a || []) : null;
+      // a drug list written straight after the medication log is what recruiters check the log against
+      if (!qo && prevQ && prevQ.kind === 'log' && prevQ.carry === 'med') qo = 'x';
+      const leaves = items.filter((i) => i.leaf && !ALLOWED.test(i.ctx + ' ' + i.parent)).length;
+      if (drugs < 2 || drugs * 2 < leaves || (!says && !qo) || NOT_MED_Q.test(text.slice(0, 200))) return;
+    }
+    const forced = titled ? '' : 'med';
     const head = el.name + ' ' + text.slice(0, 160);
-    let kind = MED_WORDS.test(head) && !HX_WORDS.test(head) ? 'med' : HX_WORDS.test(head) && !MED_WORDS.test(head) ? 'hx' : '';
+    let kind = forced || (MED_WORDS.test(head) && !HX_WORDS.test(head)) ? forced || 'med' : HX_WORDS.test(head) && !MED_WORDS.test(head) ? 'hx' : '';
     if (!kind && prevQ) kind = prevQ.carry === 'med' || MED_WORDS.test(prevQ.t) ? 'med' : prevQ.carry === 'hx' || HX_WORDS.test(prevQ.t) ? 'hx' : '';
     if (!kind) kind = items.filter((i) => proKeywords(i.text).some((w) => DRUG_END.test(w))).length >= 2 ? 'med' : 'hx';
     const where = autoName(el.name) ? (prevQ ? 'Under: ' + words(prevQ.t, 8) : 'eSource note') : plain(el.name);
     notes[kind].push({ name: el.name, html, vis: null, title: where });
-    items.filter((i) => i.leaf).forEach((i) => {
+    items.filter((i) => i.leaf && !ALLOWED.test(i.ctx + ' ' + i.parent) && (titled || listedDrug(i))).forEach((i) => {
       const t = (i.parent ? i.parent + ': ' : '') + i.text;
-      lists[kind].push({ n: i.text, w: i.parent || where, o: /raise|query|⚠|check with|doctor/i.test(t) ? 'd' : 'x', k: kind === 'med' ? proKeywords(i.text) : [], no: [], src: el.name });
+      const o = /raise|query|⚠|check with|doctor|dr enquiry|\bdelay/i.test(t) ? 'd' : qo || 'x';
+      lists[kind].push({ n: i.text, w: i.parent || i.ctx || where, o, k: kind === 'med' ? proKeywords(i.text) : [], no: [], src: el.name, q: prevQ ? prevQ.t : '' });
     });
   });
   return { lists, notes };

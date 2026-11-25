@@ -5,6 +5,8 @@ import { ST } from '../esource/studies.js';
 import { A, Ic, B, Panel } from './ui.jsx';
 import { Row } from '../motion/components.jsx';
 import { LogPanelBody, ProRows } from './MedLog.jsx';
+import { MedLookup } from './Medicines.jsx';
+import { resolve } from '../medicines/dict.js';
 
 /**
  * Pivotable studies. When Quick check answers rule a study out, it moves down the list:
@@ -74,7 +76,7 @@ export function ProPanel() {
     >
       {hits.length ? hits.map((z, i) => (
         <div key={i} style={{ fontSize: 12, padding: '2px 0' }}>
-          <span className={'pill bdg ' + (z.p.o === 'x' ? 'bad' : 'warn')}>{z.p.o === 'x' ? 'On the list' : 'Doctor'}</span> <B>{z.e.n}</B> <span className="mut">· {z.p.n}</span>
+          <span className={'pill bdg ' + (z.p.o === 'x' ? 'bad' : 'warn')}>{z.p.pm ? 'Possible match' : z.p.o === 'x' ? 'Excluded' : 'Doctor check'}</span> <B>{z.e.n}</B> <span className="mut">· {z.p.n}</span>
         </div>
       )) : null}
       {!total ? (
@@ -85,8 +87,9 @@ export function ProPanel() {
             <button style={{ flex: 1 }} className={tab === 'med' ? 'sel' : ''} onClick={() => upd(() => (S.proTab = 'med'))}>Medications ({(P.med || []).length})</button>
             <button style={{ flex: 1 }} className={tab === 'hx' ? 'sel' : ''} onClick={() => upd(() => (S.proTab = 'hx'))}>Conditions ({(P.hx || []).length})</button>
           </div>
-          <input type="search" aria-label="Search the list" placeholder={tab === 'med' ? 'Search, e.g. gliptin' : 'Search, e.g. thyroid'} value={S.rq} style={{ height: 30, fontSize: 12, width: '100%', boxSizing: 'border-box' }} onChange={(e) => upd(() => (S.rq = e.target.value))} />
-          {S.rq.trim() ? <ProRows Pl={P} types={[tab]} q={S.rq} limit={0} /> : (
+          <input type="search" aria-label="Search the list" placeholder={tab === 'med' ? 'Search a medicine, e.g. Lipitor' : 'Search, e.g. thyroid'} value={S.rq} style={{ height: 30, fontSize: 12, width: '100%', boxSizing: 'border-box' }} onChange={(e) => upd(() => (S.rq = e.target.value))} />
+          {S.rq.trim() && tab === 'med' ? <MedLookup q={S.rq} study={st} /> : null}
+          {S.rq.trim() ? <ProRows Pl={P} types={[tab]} q={S.rq} limit={0} quiet={tab === 'med' && S.rq.trim().length >= 3 && !!resolve(S.rq)} /> : (
             <div style={{ marginTop: 6 }}>
               {(notes[tab] || []).map((n) => (
                 <div key={n.name} style={{ marginBottom: 8 }}>
@@ -94,10 +97,21 @@ export function ProPanel() {
                   <HtmlBlocks blocks={[n]} style={{ fontSize: 12 }} />
                 </div>
               ))}
-              {!(notes[tab] || []).length ? <p className="mut" style={{ fontSize: 12, fontStyle: 'italic' }}>No {tab === 'med' ? 'medication' : 'condition'} list found in this eSource.</p> : null}
+              {(P[tab] || []).some((p) => p.from === 'q') ? (
+                <div style={{ marginTop: 4 }}>
+                  <div className="mut" style={{ fontSize: 11, marginBottom: 2 }}>From the questions</div>
+                  {(P[tab] || []).filter((p) => p.from === 'q').map((p) => (
+                    <div key={p.src + p.n} className="row" style={{ padding: '4px 0', alignItems: 'flex-start' }}>
+                      <span style={{ fontSize: 12, minWidth: 0 }}>{p.n}</span>
+                      <span className={'pill bdg ' + (p.o === 'x' ? 'bad' : 'warn')}>{p.o === 'x' ? 'Excluded' : 'Doctor check'}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+              {!(notes[tab] || []).length && !(P[tab] || []).length ? <p className="mut" style={{ fontSize: 12, fontStyle: 'italic' }}>No {tab === 'med' ? 'medication' : 'condition'} list found in this eSource.</p> : null}
             </div>
           )}
-          <p className="mut" style={{ fontSize: 11, margin: '4px 0 0' }}>{tab === 'med' ? 'Logged medications are checked against these by drug name. A match is a prompt to check, not an answer.' : 'Conditions are listed for reference; RAYDAR does not match them automatically.'}</p>
+          <p className="mut" style={{ fontSize: 11, margin: '4px 0 0' }}>{tab === 'med' ? 'Brand names, ingredients and drug groups are recognised (Australian Medicines Terminology and PBS). A match is a prompt to check, not an answer.' : 'Logged conditions that share words with this list show as a possible match, to check with the participant.'}</p>
         </>
       )}
     </Panel>

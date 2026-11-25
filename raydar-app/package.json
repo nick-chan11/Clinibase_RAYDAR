@@ -18,7 +18,9 @@
     "build:admin": "vite build --mode admin && node scripts/copy-single.mjs admin",
     "build:combined": "vite build --mode combined && node scripts/copy-single.mjs combined",
     "build:all": "npm run build:single && npm run build:admin && npm run build:combined",
-    "test:admin": "node scripts/tests/admin.mjs"
+    "test:admin": "node scripts/tests/admin.mjs",
+    "dict:update": "node scripts/tools/medicines-build.mjs",
+    "test:medicines": "node --import ./scripts/tools/lib/register.mjs scripts/tests/medicines.mjs"
   },
   "dependencies": {
     "jspdf": "^2.5.2",

@@ -9,6 +9,7 @@ import { scheduleKeyFor, setScheduleData, scheduleData } from './schedule.js';
 import { rulesFor, missingConditions, setConfig, QC } from './qcrules.js';
 import DATES from '../../../RAYDAR cohort dates.json';
 import SETTINGS_JSON from '../../../RAYDAR study settings.json';
+import { useDictionary, dictionary } from '../medicines/dict.js';
 
 const BUILT_IN = import.meta.glob('../../../Pre-screening eSource JSONs/*.json', { eager: true, import: 'default' });
 const clone = (x) => JSON.parse(JSON.stringify(x));
@@ -19,7 +20,9 @@ const BUILT = {
   esource: Object.fromEntries(Object.entries(BUILT_IN).map(([p, j]) => [baseName(p), clone(j)])),
   dates: clone(DATES), schedules: clone(scheduleData()), qc: clone(QC.raw), settings: clone(SETTINGS_JSON),
 };
-export const builtInData = () => clone(BUILT);
+const BUILT_MEDICINES = dictionary();
+// the medicines dictionary is large and never edited here, so it's shared rather than copied
+export const builtInData = () => ({ ...clone(BUILT), medicines: BUILT_MEDICINES });
 
 /** Recruiter-visible studies (not paused). Mutated in place so every importer sees changes. */
 export const ST = [];
@@ -80,6 +83,7 @@ export function studyFrom(file, json, origin) {
   const set = (SETTINGS.studies || {})[s.file] || {};
   s.paused = !!set.paused;
   s.protocolOverride = set.protocol || '';
+  s.proItems = set.proItems || {}; // the prohibited items TST confirmed in the study admin (src/medicines/items.js)
   // 2.8: corrections to the prohibited lists, made in the study admin
   ['med', 'hx'].forEach((k) => {
     if (!s.pro || !s.pro[k]) return;
@@ -119,7 +123,7 @@ export const liveFiles = () => [...SRC.keys()];
 export const liveDates = (file) => (DATES[file] ? clone(DATES[file]) : null);
 export const liveData = () => ({
   esource: Object.fromEntries([...SRC].filter(([, v]) => v.origin !== 'preview').map(([f, v]) => [f, clone(v.json)])),
-  dates: clone(DATES), schedules: clone(scheduleData()), qc: clone(QC.raw), settings: clone(SETTINGS),
+  dates: clone(DATES), schedules: clone(scheduleData()), qc: clone(QC.raw), settings: clone(SETTINGS), medicines: dictionary(),
 });
 
 function replaceDates(d) {
@@ -139,6 +143,9 @@ export function useData(data, origin, meta) {
   if (data.schedules) setScheduleData(data.schedules);
   if (data.qc) setConfig(data.qc);
   if (data.settings) SETTINGS = clone(data.settings);
+  // a folder's dictionary is used only when it's at least as new as the one built in
+  if (data.medicines && data.medicines !== dictionary() && data.medicines.version && String(data.medicines.version.built || '') >= String((BUILT_MEDICINES.version || {}).built || '')) useDictionary(data.medicines);
+  else if (origin === 'built-in') useDictionary(BUILT_MEDICINES);
   SOURCE.folder = meta || null;
   SOURCE.preview = null;
   rebuild();

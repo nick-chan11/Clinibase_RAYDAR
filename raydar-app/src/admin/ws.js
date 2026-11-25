@@ -94,6 +94,7 @@ export function draftStudy(b) {
   try {
     s = convert(b.file, b.esource, b.dates || undefined);
     const set = b.settings || {};
+    s.proItems = set.proItems || {};
     ['med', 'hx'].forEach((k) => {
       if (!s.pro || !s.pro[k]) return;
       s.proAll = s.proAll || {}; s.proAll[k] = s.pro[k].slice();

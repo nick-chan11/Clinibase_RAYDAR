@@ -290,3 +290,12 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd .coltog:hover,#rd .coltog:focus-visible{border-color:var(--border-accent);color:var(--text-accent);background:var(--surface-2)}
 #rd .coltog.shut{background:var(--bg-accent);border-color:var(--border-accent);color:var(--text-accent)}
 #rd .coltitle:hover{color:var(--text-accent)!important}
+/* medicines dictionary: name suggestions and the prohibited-list lookup */
+#rd .msug-wrap{position:relative}
+#rd .msug{position:absolute;left:0;right:0;top:100%;z-index:30;background:var(--surface-2);border:.5px solid var(--border-strong);border-top:0;border-radius:0 0 var(--radius) var(--radius);max-height:240px;overflow:auto}
+#rd .msug-o{display:flex;justify-content:space-between;gap:8px;padding:5px 8px;font-size:12px;cursor:pointer;border-top:.5px solid var(--border)}
+#rd .msug-o:first-child{border-top:0}
+#rd .msug-o.on{background:var(--surface-1)}
+#rd .msug-t{font-size:11px;white-space:nowrap}
+#rd .msug-n{font-size:11px;padding:4px 8px;border-top:.5px solid var(--border);font-style:italic}
+#rd .mlook{margin-top:8px;background:var(--surface-1);border-radius:var(--radius);padding:8px}

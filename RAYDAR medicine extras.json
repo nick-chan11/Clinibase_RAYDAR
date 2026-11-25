@@ -1,0 +1,509 @@
+{
+  "_about": [
+    "Hand-kept additions to RAYDAR's medicines dictionary. The dictionary itself (RAYDAR medicines.json) is built from the",
+    "Australian Medicines Terminology (AMT) and the PBS by `npm run dict:update` (run from raydar-app/). Edit this file, then run that again.",
+    "This file never makes a medicine prohibited. Only a study's eSource does that; this file only helps RAYDAR recognise names.",
+    "Every line says who added it and when ('by', 'date'). Clinical judgements ('review') stay marked until a doctor has checked them.",
+    "aliases: other names recruiters hear, pointing at AMT ingredient names, e.g. { \"name\": \"blue puffer\", \"to\": [\"salbutamol\"], \"by\": \"TST\", \"date\": \"2026-12-01\" }.",
+    "ingredients: medicines AMT doesn't have (often herbal), with any groups they belong to, e.g. { \"name\": \"st john's wort\", \"groups\": [\"x-herbal\"], \"by\": \"TST\", \"date\": \"2026-12-01\" }.",
+    "groups: RAYDAR's own groups (codes start with x-). The rule-based ones are filled by the build from AMT names; hand groups list their members and the source they came from.",
+    "liveVaccines: corrections to the rule 'a vaccine is live when its AMT name says live'.",
+    "groupWords: words in a prohibited-list item that suggest a drug group, used only to pre-fill the study admin. TST confirms every item before it counts."
+  ],
+  "version": "2026-11-25",
+  "aliases": [
+    {
+      "name": "cyclosporine",
+      "to": [
+        "ciclosporin"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "cyclosporin",
+      "to": [
+        "ciclosporin"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "rifampin",
+      "to": [
+        "rifampicin"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "glyburide",
+      "to": [
+        "glibenclamide"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "chlorpheniramine",
+      "to": [
+        "chlorphenamine"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "valproic acid",
+      "to": [
+        "valproate"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "sodium valproate",
+      "to": [
+        "valproate"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "divalproex",
+      "to": [
+        "valproate"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "acetaminophen",
+      "to": [
+        "paracetamol"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "albuterol",
+      "to": [
+        "salbutamol"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "meperidine",
+      "to": [
+        "pethidine"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "frusemide",
+      "to": [
+        "furosemide"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "lignocaine",
+      "to": [
+        "lidocaine"
+      ],
+      "why": "US or older name for the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "dexamphetamine",
+      "to": [
+        "dexamfetamine"
+      ],
+      "why": "Other way of writing the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "dexamphetamines",
+      "to": [
+        "dexamfetamine"
+      ],
+      "why": "Other way of writing the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "5-fluorouracil",
+      "to": [
+        "fluorouracil"
+      ],
+      "why": "Other way of writing the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "5fu",
+      "to": [
+        "fluorouracil"
+      ],
+      "why": "Other way of writing the Australian name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "rsv vaccine",
+      "to": [
+        "rsv (respiratory syncytial virus) vaccine",
+        "rsv (respiratory syncytial virus) bivalent vaccine"
+      ],
+      "why": "Short name for the RSV vaccines",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    },
+    {
+      "name": "hypericum",
+      "to": [
+        "st john's wort"
+      ],
+      "why": "Latin name",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "st john's wort",
+      "groups": [
+        "x-herbal"
+      ],
+      "why": "Herbal medicine AMT doesn't list; named in SUN's eSource",
+      "by": "RAYDAR set-up",
+      "date": "2026-11-25"
+    }
+  ],
+  "groups": {
+    "x-vaccine": {
+      "name": "Vaccines",
+      "rule": "AMT name contains 'vaccine', or is a COVID-19 mRNA vaccine (ends in -meran), or is BCG"
+    },
+    "x-vaccine-live": {
+      "name": "Live vaccines",
+      "rule": "a vaccine whose AMT name says 'live', with the corrections in liveVaccines"
+    },
+    "x-cannabis": {
+      "name": "Medicinal cannabis (any cannabinoid)",
+      "rule": "AMT ingredient is a cannabinoid (THC, CBD, CBG, CBN and others)"
+    },
+    "x-cannabis-thc": {
+      "name": "Medicinal cannabis: contains THC",
+      "rule": "AMT ingredient is tetrahydrocannabinol"
+    },
+    "x-herbal": {
+      "name": "Herbal medicines",
+      "rule": "hand-kept: ingredients listed in this file with this group"
+    },
+    "x-vaccine-mrna": {
+      "name": "mRNA vaccines",
+      "rule": "AMT ingredient name ends in -meran (COVID-19 mRNA vaccines) or says mRNA"
+    }
+  },
+  "liveVaccines": {
+    "notLive": [
+      {
+        "name": "mpox live replication deficient vaccine",
+        "why": "AMT calls it 'live replication deficient'; it cannot replicate, so it is not usually treated as a live vaccine",
+        "review": "needs a doctor to confirm"
+      }
+    ],
+    "live": [
+      {
+        "name": "mycobacterium bovis bcg tice strain",
+        "why": "BCG is live bacteria; the AMT name doesn't say 'live'",
+        "review": "needs a doctor to confirm"
+      },
+      {
+        "name": "mycobacterium bovis bcg connaught strain",
+        "why": "BCG is live bacteria; the AMT name doesn't say 'live'",
+        "review": "needs a doctor to confirm"
+      }
+    ]
+  },
+  "groupWords": [
+    {
+      "words": "statins?",
+      "groups": [
+        "C10AA"
+      ]
+    },
+    {
+      "words": "beta[- ]?blockers?|beta blocking",
+      "groups": [
+        "C07"
+      ]
+    },
+    {
+      "words": "steroid creams?|topical (cortico)?steroids?|steroid ointments?",
+      "groups": [
+        "D07"
+      ]
+    },
+    {
+      "words": "anabolic steroids?",
+      "groups": [
+        "A14A"
+      ]
+    },
+    {
+      "words": "glucocorticoids?|corticosteroids?|steroids?|steroid medications?",
+      "groups": [
+        "H02"
+      ]
+    },
+    {
+      "words": "antibiotics?|antibacterials?",
+      "groups": [
+        "J01"
+      ]
+    },
+    {
+      "words": "antivirals? for hep(atitis)? c",
+      "groups": [
+        "J05AP"
+      ]
+    },
+    {
+      "words": "antivirals?",
+      "groups": [
+        "J05"
+      ]
+    },
+    {
+      "words": "antifungals?|antimycotics?",
+      "groups": [
+        "J02"
+      ]
+    },
+    {
+      "words": "antipsychotics?",
+      "groups": [
+        "N05A"
+      ]
+    },
+    {
+      "words": "phenothiazines?",
+      "groups": [
+        "N05AA",
+        "N05AB",
+        "N05AC"
+      ]
+    },
+    {
+      "words": "antihistamines?",
+      "groups": [
+        "R06A"
+      ]
+    },
+    {
+      "words": "benzodiazepines?",
+      "groups": [
+        "N05BA",
+        "N05CD"
+      ]
+    },
+    {
+      "words": "ssris?|selective serotonin reuptake inhibitors?",
+      "groups": [
+        "N06AB"
+      ]
+    },
+    {
+      "words": "antidepressants?",
+      "groups": [
+        "N06A"
+      ]
+    },
+    {
+      "words": "glp-?1",
+      "groups": [
+        "A10BJ"
+      ]
+    },
+    {
+      "words": "sulph?onylureas?|sulphonylureases",
+      "groups": [
+        "A10BB"
+      ]
+    },
+    {
+      "words": "thiazolidinediones?",
+      "groups": [
+        "A10BG"
+      ]
+    },
+    {
+      "words": "calcium channel blockers?",
+      "groups": [
+        "C08"
+      ]
+    },
+    {
+      "words": "h2[- ]?(blockers?|receptor antagonists?)",
+      "groups": [
+        "A02BA"
+      ]
+    },
+    {
+      "words": "immunosuppressi(ve|ves|ants?)",
+      "groups": [
+        "L04"
+      ]
+    },
+    {
+      "words": "jak inhibitors?",
+      "groups": [
+        "L04AF"
+      ]
+    },
+    {
+      "words": "chemotherap(y|ies)|chemotherapeutic|cytotoxic|anti-?cancer|antineoplastics?",
+      "groups": [
+        "L01"
+      ]
+    },
+    {
+      "words": "anticoagulants?|blood thinners?",
+      "groups": [
+        "B01AA",
+        "B01AB",
+        "B01AE",
+        "B01AF"
+      ]
+    },
+    {
+      "words": "anti-?platelets?",
+      "groups": [
+        "B01AC"
+      ]
+    },
+    {
+      "words": "retinoids?",
+      "groups": [
+        "D10BA",
+        "D05BB"
+      ]
+    },
+    {
+      "words": "amphetamines?|adhd med(ication)?s?|stimulants?",
+      "groups": [
+        "N06BA"
+      ]
+    },
+    {
+      "words": "anti-?androgen(s|ic)?",
+      "groups": [
+        "G03H",
+        "L02BB"
+      ]
+    },
+    {
+      "words": "testosterone|androgenic agents?",
+      "groups": [
+        "G03B"
+      ]
+    },
+    {
+      "words": "anticonvulsants?|antiepileptics?",
+      "groups": [
+        "N03"
+      ]
+    },
+    {
+      "words": "weight loss (drugs|medications?)",
+      "groups": [
+        "A08",
+        "A10BJ"
+      ]
+    },
+    {
+      "words": "phosphodiesterase inhibitors?|pde-?5",
+      "groups": [
+        "G04BE"
+      ]
+    },
+    {
+      "words": "opioids?",
+      "groups": [
+        "N02A"
+      ]
+    },
+    {
+      "words": "nsaids?|non-steroidal anti-inflammator(y|ies)",
+      "groups": [
+        "M01A"
+      ]
+    },
+    {
+      "words": "immunoglobulins?|gamma globulin",
+      "groups": [
+        "J06B"
+      ]
+    },
+    {
+      "words": "mrna vaccines?|mrna vaccinations?",
+      "groups": [
+        "x-vaccine-mrna"
+      ]
+    },
+    {
+      "words": "live (attenuated )?vaccines?",
+      "groups": [
+        "x-vaccine-live"
+      ]
+    },
+    {
+      "words": "vaccines?|vaccinations?",
+      "groups": [
+        "x-vaccine"
+      ]
+    },
+    {
+      "words": "cannabis|cannabinoids?|marijuana",
+      "groups": [
+        "x-cannabis"
+      ]
+    },
+    {
+      "words": "thc|tetrahydrocannabinol",
+      "groups": [
+        "x-cannabis-thc"
+      ]
+    },
+    {
+      "words": "anti-?arrhythmics?",
+      "groups": [
+        "C01B"
+      ]
+    },
+    {
+      "words": "insulins?",
+      "groups": [
+        "A10A"
+      ]
+    }
+  ]
+}
