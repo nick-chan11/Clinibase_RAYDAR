@@ -42,11 +42,15 @@ const inFolder = await p.evaluate(async () => {
   let q = null; const go = (l) => (l || []).forEach((x) => { if (x.title === 'Have you donated blood in the past 3 months?') q = x; if (x.elements) go(x.elements); }); j.pages.forEach((pg) => go(pg.elements));
   const hist = []; for await (const [n] of (await (await root.getDirectoryHandle('_history')).getDirectoryHandle('Emeritus Melbourne - V175-001 - pre-screening')).entries()) hist.push(n);
   const st = JSON.parse(await (await (await root.getFileHandle('RAYDAR study settings.json')).getFile()).text());
-  return { q, hist, news: st.news || [] };
+  // 2.8: the studies file recruiters read, rewritten by the publish
+  let bundle = null;
+  try { const sys = await root.getDirectoryHandle('_system'); const t = await (await (await sys.getFileHandle('raydar_studies.js')).getFile()).text(); const v = await (await (await sys.getFileHandle('raydar_studies_version.js')).getFile()).text(); const w = {}; new Function('window', t + v)(w); bundle = { by: w.RAYDAR_STUDIES.by, same: w.RAYDAR_STUDIES.version === w.RAYDAR_STUDIES_VERSION.version, has: JSON.stringify(w.RAYDAR_STUDIES.data.esource['Emeritus Melbourne - V175-001 - pre-screening.json']).includes('donated blood'), n: Object.keys(w.RAYDAR_STUDIES.data.esource).length }; } catch (e) { bundle = { err: e.message }; }
+  return { q, hist, news: st.news || [], bundle };
 });
 check(inFolder.q && /⚠️/.test(inFolder.q.choices[1].text), 'the published eSource has the question with its ⚠️ marker');
 check(inFolder.hist.length === 1 && /by Test Admin/.test(inFolder.hist[0]), 'a history copy is kept (' + inFolder.hist[0] + ')');
 check(inFolder.news.some((n) => /blood donation/.test(n.text)), 'the note for recruiters is saved');
+check(inFolder.bundle && inFolder.bundle.has && inFolder.bundle.same && inFolder.bundle.by === 'Test Admin', 'the studies file in _system is rewritten with the change (' + JSON.stringify(inFolder.bundle) + ')');
 check(await p.evaluate(() => window.raydar.ranked(true).some((x) => x.s.file === 'Emeritus Melbourne - V175-001 - pre-screening.json' && x.s.Q.some((q) => /donated blood/.test(q.t)))), 'RAYDAR uses the published version straight away');
 
 await p.fill('.ad-search', 'SRSD'); await p.locator('.ad-tr', { hasText: 'SRSD' }).locator('button:has-text("Open")').click();

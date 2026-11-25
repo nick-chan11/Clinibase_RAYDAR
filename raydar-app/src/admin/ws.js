@@ -7,8 +7,17 @@ import { ALL, SETTINGS, liveSource, liveDates, liveData, useData, startPreview, 
 import { SCHEDULES, scheduleKeyFor, scheduleData } from '../esource/schedule.js';
 import { convert, nameParts } from '../esource/convert.js';
 import { QC, parseConfig, rulesFor, missingConditions } from '../esource/qcrules.js';
-import { FOLDER, reload } from '../esource/connect.js';
-import { ESOURCE_DIR, FILES, writeJson, readAt, listJson, removeFile, stampName, download } from '../esource/folder.js';
+import { FOLDER, reload, setLoadedVersion } from '../esource/connect.js';
+import { ESOURCE_DIR, FILES, writeJson, readAt, listJson, removeFile, stampName, download, writeBundle } from '../esource/folder.js';
+
+/** 2.8: after every publish, rewrite the studies file in _system that recruiters' RAYDAR reads */
+export async function rebundle() {
+  if (!(FOLDER.write && FOLDER.handle)) return null;
+  const v = await writeBundle(FOLDER.handle, W.name);
+  FOLDER.bundle = { version: v, by: W.name || '' };
+  setLoadedVersion(v);
+  return v;
+}
 import { clone } from './ops.js';
 
 const listeners = new Set();
@@ -27,6 +36,21 @@ export const W = {
   qc: clone(QC.raw), qcDirty: false,
   previewing: false, msg: null, busy: false, dialog: null, unlocked: false,
 };
+/* 2.8: unpublished Quick check changes are kept like a draft (studies folder _drafts, or this browser) */
+const QC_DRAFT = '_quick check.json', LOCAL_QC = 'raydar.admin.qcdraft';
+let qcTimer = null;
+export function markQc() { W.qcDirty = true; notify(); clearTimeout(qcTimer); qcTimer = setTimeout(saveQcDraft, 500); }
+async function saveQcDraft() {
+  try {
+    if (FOLDER.write && FOLDER.handle) {
+      if (W.qcDirty) await writeJson(FOLDER.handle, ['_drafts'], QC_DRAFT, { qc: W.qc, savedBy: W.name, savedAt: new Date().toISOString() });
+      else await removeFile(FOLDER.handle, ['_drafts'], QC_DRAFT);
+    } else if (W.qcDirty) ls.set(LOCAL_QC, JSON.stringify(W.qc));
+    else { try { localStorage.removeItem(LOCAL_QC); } catch (e) { /* nothing kept */ } }
+  } catch (e) { say('The Quick check changes couldn\'t be saved as a draft: ' + e.message, 'warn'); }
+}
+function qcPublished() { W.qcDirty = false; saveQcDraft(); }
+
 export function setName(n) { W.name = String(n || '').trim(); ls.set(NAME_KEY, W.name); notify(); }
 export function say(text, kind) { W.msg = text ? { text, kind: kind || 'ok' } : null; notify(); }
 
@@ -141,6 +165,13 @@ export async function loadDrafts() {
       for (const f of await listJson(FOLDER.handle, ['_drafts'])) { const d = await readAt(FOLDER.handle, ['_drafts'], f); if (d && d.esource) found[f] = d; }
     } else Object.assign(found, JSON.parse(ls.get(LOCAL_DRAFTS) || '{}'));
   } catch (e) { /* no drafts */ }
+  // the unpublished Quick check changes, if any
+  try {
+    let q = null;
+    if (FOLDER.handle && FOLDER.status === 'connected') { const d = await readAt(FOLDER.handle, ['_drafts'], QC_DRAFT); q = d && d.qc; delete found[QC_DRAFT]; }
+    else q = JSON.parse(ls.get(LOCAL_QC) || 'null');
+    if (q && Array.isArray(q.conditions) && !W.qcDirty) { W.qc = q; W.qcDirty = true; }
+  } catch (e) { /* none */ }
   Object.entries(found).forEach(([f, d]) => { if (!W.drafts[f]) W.drafts[f] = { file: f, esource: d.esource, dates: d.dates || null, schedule: d.schedule || null, settings: d.settings || {}, isNew: !!d.isNew, savedBy: d.savedBy, savedAt: d.savedAt }; });
   notify();
 }
@@ -224,14 +255,15 @@ export async function publish(file, opt) {
       await writeJson(h, [], FILES.dates, dates);
       await writeJson(h, [], FILES.schedules, sched);
       await writeJson(h, [], FILES.settings, settings);
-      if (W.qcDirty) { await writeJson(h, [], FILES.qc, W.qc); W.qcDirty = false; }
+      if (W.qcDirty) { await writeJson(h, [], FILES.qc, W.qc); qcPublished(); }
       await writeJson(h, ['_history', histDir(file)], stampName(W.name), record);
       await removeFile(h, ['_drafts'], file);
       delete W.drafts[file]; delete W.undo[file]; delete W.redo[file];
+      await rebundle();
       const r = await reload();
       if (!r.ok) throw new Error(r.msg);
       W.busy = false;
-      say('Published ' + file.replace(/ - pre-screening\.json$/, '') + (others.length ? ' (and ' + others.length + ' other site)' : '') + '. Recruiters get it the next time RAYDAR reads the folder.');
+      say('Published ' + file.replace(/ - pre-screening\.json$/, '') + (others.length ? ' (and ' + others.length + ' other site)' : '') + '. Recruiters\' RAYDAR picks it up within a few minutes.');
       return { ok: true };
     }
     // No folder to write to: the files come down as downloads, and this tab uses them straight away
@@ -240,7 +272,7 @@ export async function publish(file, opt) {
     download(file, b.esource);
     others.forEach((o) => download(o, b.esource));
     download(FILES.dates, dates); download(FILES.schedules, sched); download(FILES.settings, settings);
-    if (W.qcDirty) { download(FILES.qc, W.qc); W.qcDirty = false; }
+    if (W.qcDirty) { download(FILES.qc, W.qc); qcPublished(); }
     download(stampName(W.name).replace(/\.json$/, '') + ' - ' + histDir(file) + ' (history).json', record);
     useData({ esource, dates, schedules: sched, qc: W.qc, settings }, 'loaded', null);
     await saveDraftRemove(file);
@@ -261,11 +293,12 @@ export async function publishQc() {
     if (FOLDER.write && FOLDER.handle) {
       await writeJson(FOLDER.handle, [], FILES.qc, W.qc);
       await writeJson(FOLDER.handle, ['_history', '_quick check'], stampName(W.name), { at: new Date().toISOString(), by: W.name, qc: W.qc });
-      W.qcDirty = false;
+      qcPublished();
+      await rebundle();
       await reload();
       say('Quick check settings published.');
     } else {
-      download(FILES.qc, W.qc); W.qcDirty = false;
+      download(FILES.qc, W.qc); qcPublished();
       useData({ ...liveData(), qc: W.qc }, 'loaded', null);
       say('No studies folder is connected, so the file was downloaded. Put it in the studies folder.', 'warn');
     }
@@ -283,6 +316,7 @@ export async function setPaused(file, paused) {
     if (FOLDER.write && FOLDER.handle) {
       await writeJson(FOLDER.handle, [], FILES.settings, settings);
       await writeJson(FOLDER.handle, ['_history', histDir(file)], stampName(W.name), { at: new Date().toISOString(), by: W.name, file, action: paused ? 'paused' : 'resumed' });
+      await rebundle();
       await reload();
     } else {
       download(FILES.settings, settings);
@@ -298,7 +332,7 @@ export async function setPaused(file, paused) {
 export async function saveSetting(key, value) {
   const settings = clone(await readLive(FILES.settings, liveData().settings));
   settings[key] = value;
-  if (FOLDER.write && FOLDER.handle) { await writeJson(FOLDER.handle, [], FILES.settings, settings); await reload(); }
+  if (FOLDER.write && FOLDER.handle) { await writeJson(FOLDER.handle, [], FILES.settings, settings); await rebundle(); await reload(); }
   else { download(FILES.settings, settings); useData({ ...liveData(), settings }, 'loaded', null); }
 }
 

@@ -26,7 +26,9 @@ export function Editor() {
         <button className="ad-btn sm" onClick={undo} disabled={!(W.undo[b.file] || []).length}><Ic n="ti-arrow-back-up" /> Undo</button>
         <button className="ad-btn sm" onClick={redo} disabled={!(W.redo[b.file] || []).length}><Ic n="ti-arrow-forward-up" /> Redo</button>
         {dirty ? <button className="ad-btn sm ghost" onClick={() => { if (window.confirm('Throw away every unpublished change to ' + code + '?')) discardDraft(b.file); }}>Discard draft</button> : null}
-        <button className="ad-btn pri" onClick={() => { W.tab = 'publish'; notify(); }}>Preview and publish</button>
+        {W.tab === 'publish'
+          ? <button className="ad-btn pri" onClick={() => { const el = document.getElementById('ad-publish'); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); const f = el.querySelector('input:not([disabled]), button:not([disabled])'); if (f) f.focus({ preventScroll: true }); } }}>Go to Publish ↓</button>
+          : <button className="ad-btn pri" onClick={() => { W.tab = 'publish'; notify(); }}>Preview and publish</button>}
       </div>
       <nav className="ad-etabs" role="tablist" aria-label="Study parts">
         {TABS.map(([k, l]) => <button key={k} role="tab" aria-selected={W.tab === k} className={W.tab === k ? 'on' : ''} onClick={() => { W.tab = k; W.sel = null; notify(); }}>{l}</button>)}
