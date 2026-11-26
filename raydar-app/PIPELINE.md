@@ -1,10 +1,15 @@
 # RAYDAR pipeline
 
-**RAYDAR 2.10.** Settled: search S1 with tags Drug class, Common brands (ingredients), Active ingredient(s) and
-Same as (brands), no route tag; test mode T1 in every file (recruiter, admin, all-in-one) with "Show questions
-hidden by earlier answers" on to start; branding A; the Say card keeps Atkinson Hyperlegible; the Mounjaro fix;
-a Frequency field in the med log. Still open: the Frequency mockup, and whether to add the PBS original-brand
-marker for "Common brands" (or leave that tag out for now).
+**RAYDAR 2.10 is built** (search S1, test mode T1, branding A, Frequency, the Mounjaro fix); see "New in 2.10" in
+`README.md`. Still to do:
+- **Common brands** tag: left out of 2.10. Needs the PBS original-brand ("innovator") marker read by `dict:update`
+  (one more PBS file) and a short hand-kept list for pharmacy brands.
+- **TST to confirm** EMBOLD's "Incretins (GLP-1 or GIP drugs)" item in the study admin (it now includes
+  tirzepatide as RAYDAR's reading).
+- **For TST** (`raydar-esource-report`): D7261C00005 and SELENE 1 list "Semaglutide (Ozempic, Mounjaro)", but
+  Mounjaro is tirzepatide.
+- Dark mode: some eSource notes carry their own dark text colour ("These include the following:" in EMBOLD's
+  prohibited list), which is hard to read on dark backgrounds. Already the case in 2.9.
 
 ## Found while mocking up: Mounjaro isn't caught on EMBOLD (fix in 2.10, to confirm)
 
