@@ -4,9 +4,11 @@ import { keyName } from '../engine/keys.js';
 import { A, Ic, Seg } from './ui.jsx';
 import { Err, Piece } from '../motion/components.jsx';
 import { ImportButton, ImportNote } from './Import.jsx';
+import { TestEntry, TestIdentity } from './TestMode.jsx';
 
 export function Identity() {
   const e = S.err;
+  if (S.tm) return <TestIdentity />;
   return (
     <>
     <ImportNote />
@@ -52,6 +54,7 @@ export function Identity() {
           <span className="k">Enter</span>
         </Piece>
       )}
+      <Piece><TestEntry /></Piece>
     </div>
     </>
   );

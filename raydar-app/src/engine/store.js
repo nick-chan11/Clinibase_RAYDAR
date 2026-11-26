@@ -40,7 +40,7 @@ function tipVisit(s,c,v){const a=vS(v),b=vE(v),st=vStat(v);return s.c+' · '+cn(
 function tipCohort(s,c){const k=cKey(c);return s.c+' · '+cn(c.n)+'\n'+rk(k)[0]+'\nStay::'+fmtR(c.in,c.out)+'\nFollow-ups::'+(c.v.length?pl(c.v.length,'visit')+', last '+fmt(c.v[c.v.length-1].d):'None dated')+'\nClick to jump::on the calendar'}
 function tipAway(a){return 'Participant away\n\nFrom::'+fmtL(a[0])+'\nUntil::'+fmtL(a[1])+'\nLength::'+pl(dd(a[0],a[1])+1,'day')}
 const EF=()=>({n:'',ind:'',dose:'',fr:'',route:'',st:'',en:''});
-const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,scr:'',d1:{},script:null,railAll:false,rq:'',rqHi:0,proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false,drMode:'hold',cbr:'',finalNotes:'',resumed:null,rev:1,impMsg:null,kept:{},carried:null,prevFile:null,savedName:null});
+const fresh=c=>({call:c,tm:false,tmAll:true,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,scr:'',d1:{},script:null,railAll:false,rq:'',rqHi:0,proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false,drMode:'hold',cbr:'',finalNotes:'',resumed:null,rev:1,impMsg:null,kept:{},carried:null,prevFile:null,savedName:null});
 export let S=fresh(1);
 /** 2.7: the call before "Start next call", so a call ended by mistake can be reopened (this tab only) */
 let PREV=null;
@@ -116,7 +116,10 @@ if(q.auto==='age'){const a=age();return a}
 if(q.auto==='bmi'){const b=bmi();if(!sub||sub==='bmiscore'||sub==='bmi')return b;if(sub==='weight')return parseFloat(S.wt);if(sub==='height')return parseFloat(S.ht);return undefined}
 if(over&&over.id===base)return over.v;
 if(vis&&!vis.has(base))return undefined;return S.val[base]}
-function qset(){const s=S.study;if(!s)return [];const L=srcQ(s),T=selTypes(),vis=new Set(),out=[];const get=n=>valueOf(n,vis);L.forEach(q=>{if(q.sex&&q.sex!==S.sex)return;if(q.only&&!q.only.some(t=>T.includes(t)))return;if(q.vis&&!q.vis.test(get))return;vis.add(q.id);out.push(q)});return out}
+/* 2.10 test mode: questions earlier answers would hide can be shown too (HID), never counted as unanswered */
+let HID=new Set();
+const isHiddenQ=id=>HID.has(id);
+function qset(){HID=new Set();const s=S.study;if(!s)return [];const L=srcQ(s),T=selTypes(),vis=new Set(),out=[];const get=n=>valueOf(n,vis);const all=S.tm&&S.tmAll;L.forEach(q=>{const hide=(q.sex&&q.sex!==S.sex)||(q.only&&!q.only.some(t=>T.includes(t)))||(q.vis&&!q.vis.test(get));if(hide){if(all){HID.add(q.id);out.push(q)}return}vis.add(q.id);out.push(q)});return out}
 /** Is this eSource note (a block with its own condition) showing right now? */
 function noteShows(b){if(!b.vis)return true;const vis=new Set(qset().map(q=>q.id));return b.vis.test(n=>valueOf(n,vis))}
 /** Would answering q with answer b open a question that is hidden now? */
@@ -157,7 +160,7 @@ function camel(t){return t.replace(/[^A-Za-z0-9 ]/g,' ').split(' ').filter(Boole
 function fname(k){const code=S.study?S.study.c:'QuickCheck',L=qset(),done=L.filter(q=>S.out[q.id]).length,hasD=L.some(q=>S.out[q.id]==='d');const suf=k==='c'?'Booked':k==='d'?'Booked_DrEnquiry':k==='x'?'Fail_'+camel(reason()||'Not specified'):'Callback_'+(hasD?'DoctorEnquiryPending':S.study?'Q'+(done+1)+'of'+L.length:'QuickCheck');return (S.pid||'P?????')+'-'+code+'-'+suf+'.pdf'}
 function drCode(){return S.dre.study||(S.study&&S.study.c)||proS()}
 function drText(){const a=age(),sx=S.sex?(S.sex==='f'?'F':'M'):'';const li=e=>'- '+e.n+(eParts(e).length?' - '+eParts(e).join(', '):'');const sec=(h,t)=>{const L=S.log.filter(e=>e.t===t);return [h+':',...(L.length?L.map(li):['- Nil'])]};const con=(S.dre.concern||'').split('\n').filter(x=>x.trim());
-return ['Study: '+drCode(),'Age and Sex: '+(a!=null?a:'')+sx,'Participant link: '+(S.dre.url||''),'',...sec('Medications','med'),'',...sec('Supplements/OTC','otc'),'',...sec('Medical Conditions/Events','hx'),'','Concern:',...(con.length?con.map(x=>'- '+x.replace(/^[-*]\s*/,'')):['- '])].join('\n')}
+return [...(S.tm?['TEST MODE: practice only, not a real participant. Do not send.','']:[]),'Study: '+drCode(),'Age and Sex: '+(a!=null?a:'')+sx,'Participant link: '+(S.dre.url||''),'',...sec('Medications','med'),'',...sec('Supplements/OTC','otc'),'',...sec('Medical Conditions/Events','hx'),'','Concern:',...(con.length?con.map(x=>'- '+x.replace(/^[-*]\s*/,'')):['- '])].join('\n')}
 
 /* 2.7: answers are kept per study for the whole call. Switching study (or site) and back restores them, and the same
    study at another site starts with every answer whose question reads the same in both eSource files. */
@@ -165,9 +168,11 @@ const KEEP=['out','ans','val','pick','txt','why','note','park','hist'];
 function stash(){if(!S.study)return;if(!Object.keys(S.out).length&&!Object.keys(S.note).length){delete S.kept[S.study.c];return}S.kept[S.study.c]=Object.assign(Object.fromEntries(KEEP.map(k=>[k,S[k]])),{qon:S.qon,qid:S.qid,sub:S.sub})}
 const sameQ=(a,b)=>a&&b&&a.t===b.t&&a.kind===b.kind&&JSON.stringify((a.a||[]).map(x=>[x[0],x[2]]))===JSON.stringify((b.a||[]).map(x=>[x[0],x[2]]));
 function carryFrom(s){for(const [code,k] of Object.entries(S.kept)){const src=SC(code);if(!src||src===s||src.code!==s.code)continue;let n=0;s.Q.forEach(q=>{if(!k.out[q.id]||!sameQ(q,src.Q.find(z=>z.id===q.id)))return;S.out[q.id]=k.out[q.id];S.ans[q.id]=k.ans[q.id];S.val[q.id]=k.val[q.id];if(k.pick[q.id])S.pick[q.id]=k.pick[q.id].slice();if(k.txt[q.id]!=null)S.txt[q.id]=k.txt[q.id];if(k.why[q.id])S.why[q.id]=k.why[q.id].slice();if(k.note[q.id])S.note[q.id]=k.note[q.id];n++});if(n)return {from:code,n,of:Object.keys(k.out).length};}return null}
-function start(c){if(!S.idok){S.stage='id';S.err={id:'Confirm identity before starting a pre-screen'};return}stash();S.study=SC(c);S.proS=null;S.stage='ps';S.qon=false;S.sub='dates';S.qid=null;S.out={};S.ans={};S.val={};S.pick={};S.txt={};S.why={};S.note={};S.park={};S.hist={};S.tool=null;S.err={};S.fin=null;S.all=false;S.last=null;S.mOpen=false;S.mq='';S.infoOpen=false;S.carried=null;
-const k=S.kept[c];if(k){KEEP.forEach(f=>{S[f]=k[f]});S.qon=k.qon;S.qid=k.qid;S.sub=k.sub;S.carried={back:true,n:Object.keys(k.out).length};return}
-const cf=carryFrom(S.study);if(cf)S.carried=cf}
+/** Test mode skips the identity check: no PID, date of birth or profile match */
+function tmReady(){S.idok=true;S.stage='qc';S.err={}}
+function start(c){if(!S.idok&&!S.tm){S.stage='id';S.err={id:'Confirm identity before starting a pre-screen'};return}stash();S.study=SC(c);S.proS=null;S.stage='ps';S.qon=false;S.sub='dates';S.qid=null;S.out={};S.ans={};S.val={};S.pick={};S.txt={};S.why={};S.note={};S.park={};S.hist={};S.tool=null;S.err={};S.fin=null;S.all=false;S.last=null;S.mOpen=false;S.mq='';S.infoOpen=false;S.carried=null;
+const k=S.kept[c];if(k){KEEP.forEach(f=>{S[f]=k[f]});S.qon=k.qon;S.qid=k.qid;S.sub=k.sub;S.carried={back:true,n:Object.keys(k.out).length};if(S.tm)S.qon=true;return}
+const cf=carryFrom(S.study);if(cf)S.carried=cf;if(S.tm){S.qon=true}}
 function advance(){const {L,i}=curQ();S.mOpen=false;S.mq='';S.mErr='';S.hOpen=false;S.hq='';S.hErr='';S.peek=null;let j=i+1;while(j<L.length&&(S.out[L[j].id]||S.park[L[j].id]))j++;if(j<L.length)S.qid=L[j].id;else{const u=frontier(L);if(u)S.qid=u.id}}
 function doJump(code,cid){const s=SC(code),c=s&&s.cohorts.find(z=>z.id===cid);if(!c)return;S.plan=true;S.tool=null;if(!pShown(s)){if(!S.pShow){const m={};planStudies().forEach(z=>m[z.c]=pShown(z));S.pShow=m}S.pShow[code]=true}if(S.hideClosed&&cStat(c)!=='open')S.hideClosed=false;S.psel=[code,cid];S.jumpSmooth=true;S.jumpTo=cKey(c)==='ok'||cStat(c)!=='open'?c.in:conflictDate(c)}
 function pushLog(F,t,ed){const e=Object.assign(EF(),{t},Object.fromEntries(Object.entries(F).map(([k,v])=>[k,String(v).trim()])),{t,src:(ed&&ed.src)||srcLabel(),auto:(ed&&ed.auto)||null,f:!!(ed&&ed.f)});S.log.push(e)}
@@ -192,7 +197,7 @@ function idReady(){return /^P\d{3,}/i.test(S.pid)&&age()!=null&&S.match}
 function qcLeft(){const L=[];if(!S.sex)L.push('sex');if(bmi()==null)L.push('weight and height');if(S.sex!=='m'&&!S.preg)L.push('pregnancy');if(askConds().some(c=>S.cond[c[0]]==null))L.push('conditions');if(!S.meds)L.push('medications');if(!S.smoke)L.push('smoking');return L}
 function qcDone(){return !qcLeft().length}
 function preqDone(){const s=S.study;return !!s&&(!s.cohorts||!!S.datesOk[s.c])&&!!S.read[s.c]}
-function psDone(){const L=qset();return !!L.length&&L.every(q=>S.out[q.id])}
+function psDone(){const L=qset().filter(q=>!HID.has(q.id));return !!L.length&&L.every(q=>S.out[q.id])}
 /** The step a recruiter would take next, once the current one is complete. null while there's still work here. */
 function nextStep(){
 if(S.stage==='id')return idReady()?{a:'confirm',done:'Identity details entered',to:'Quick check',btn:'Confirm and continue'}:null;
@@ -284,10 +289,14 @@ else if(k==='colall'){['plan','dre','stud','log','pro','mlog','upnext'].forEach(
 else if(k==='layoutreset'){S.sz={};S.col={};S.lw=null;S.rail=true;S.tool=null}
 else if(k==='fin')S.fin=x;
 else if(k==='save')S.saved=true;
-else if(k==='discard'){if(S.discard){PREV=S;PREV.discard=false;const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(fresh(S.call+1),keep)}else S.discard=true}
+else if(k==='discard'){if(S.discard){if(!S.tm){PREV=S;PREV.discard=false}const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode,tm:S.tm,tmAll:S.tmAll};S=Object.assign(fresh(S.call+1),keep);if(S.tm)tmReady()}else S.discard=true}
 else if(k==='unsave'){S.saved=false;S.prevFile=S.savedName;S.savedName=null;S.rev=(S.rev||1)+1}
-else if(k==='lastcall'){if(PREV){const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(PREV,keep);PREV=null}}
-else if(k==='new'){PREV=S;const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(fresh(S.call+1),keep)}
+else if(k==='lastcall'){if(PREV&&!S.tm){const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode,tm:S.tm,tmAll:S.tmAll};S=Object.assign(PREV,keep);PREV=null}}
+else if(k==='new'){if(!S.tm)PREV=S;const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode,tm:S.tm,tmAll:S.tmAll};S=Object.assign(fresh(S.call+1),keep);if(S.tm)tmReady()}
+/* 2.10 test mode: on from the Identity screen or Tools, off with "Back to normal mode" (a clean call) */
+else if(k==='tmon'){if(!S.tm){if(S.pid||S.study||S.log.length){PREV=S}const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(fresh(S.call+1),keep,{tm:true,tmAll:true});tmReady()}}
+else if(k==='tmoff'){const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(fresh(S.call+1),keep,{tm:false})}
+else if(k==='tmall'){S.tmAll=!S.tmAll}
 else if(k==='all')S.all=!S.all;
 else if(k==='proall')S.proAll=!S.proAll;
 else if(k==='fs')S.fs=Math.max(11,Math.min(17,S.fs+(+x)));
@@ -315,4 +324,4 @@ else if(x==='copy'){}
 else if(x==='send'){const t=S.dre.txt!=null?S.dre.txt:drText();if(typeof sendPrompt==='function'){sendPrompt('Here is the Dr enquiry for '+drCode()+':\n\n'+t);S.copied='Sent to chat'}else S.copied='Sending to chat is not available here'}}
 commit()}
 
-export {askConds,qcUse,qcVal,siteOk,emPlan,noteShows,opensWith,followUpLabels,valueOf,multiB,ansOrder,ansSlot,primaryIdx,opensFollowUp,idReady,qcLeft,qcDone,preqDone,psDone,nextStep,COL,DD,EF,EMRE,FLD,RAYDAR_VERSION,SC,TL,TODAY,TXT,ZP,act,add,addRows,advance,age,avl,bmi,cKey,cRisk,cStat,camel,cn,conflictDate,curQ,dd,doJump,drCode,drText,eParts,eText,esc,ev,fmt,fmtL,fmtR,fname,fresh,frontier,goQ,inCarry,isAway,isMedT,iso,lastDay,matchP,needsReview,nextOpen,nm,oc,ocls,openC,pShown,pl,planStudies,proFor,proS,pushLog,qMatches,qset,ranked,reason,rk,selC,selTypes,short,srcLabel,srcQ,start,stayHit,sug,sugQ,syncAuto,tipAway,tipCohort,tipStay,tipVisit,tlB,vE,vS,vStat};
+export {isHiddenQ,askConds,qcUse,qcVal,siteOk,emPlan,noteShows,opensWith,followUpLabels,valueOf,multiB,ansOrder,ansSlot,primaryIdx,opensFollowUp,idReady,qcLeft,qcDone,preqDone,psDone,nextStep,COL,DD,EF,EMRE,FLD,RAYDAR_VERSION,SC,TL,TODAY,TXT,ZP,act,add,addRows,advance,age,avl,bmi,cKey,cRisk,cStat,camel,cn,conflictDate,curQ,dd,doJump,drCode,drText,eParts,eText,esc,ev,fmt,fmtL,fmtR,fname,fresh,frontier,goQ,inCarry,isAway,isMedT,iso,lastDay,matchP,needsReview,nextOpen,nm,oc,ocls,openC,pShown,pl,planStudies,proFor,proS,pushLog,qMatches,qset,ranked,reason,rk,selC,selTypes,short,srcLabel,srcQ,start,stayHit,sug,sugQ,syncAuto,tipAway,tipCohort,tipStay,tipVisit,tlB,vE,vS,vStat};

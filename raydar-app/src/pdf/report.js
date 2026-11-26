@@ -5,7 +5,7 @@
    never holds the participant's name, phone, email or date of birth: the date of birth is asked again on reopening.
    jsPDF is bundled, so saving works offline. */
 import { jsPDF } from 'jspdf';
-import { S, qset, age, bmi, selC, matchP, eParts, noteShows, inCarry, fmtR, fresh, replaceS, askConds } from '../engine/store.js';
+import { S, qset, age, bmi, selC, matchP, eParts, noteShows, inCarry, fmtR, fresh, replaceS, askConds, isHiddenQ } from '../engine/store.js';
 import { CONDS } from '../engine/data.js';
 import { ST, SOURCE } from '../esource/studies.js';
 
@@ -141,7 +141,7 @@ export function summary(k, opt) {
   const isCallback = k === 'cb' || (k === 'd' && dr !== 'book');
   const cbr = CALLBACK_REASONS.find((r) => r[0] === (opt.cbr || '')) || CALLBACK_REASONS[CALLBACK_REASONS.length - 1];
   const callbackReason = k === 'd' ? 'Doctor enquiry pending' : k === 'cb' ? cbr[0] : '';
-  const un = L.filter((q) => q.kind !== 'note' && !S.out[q.id]).length;
+  const un = L.filter((q) => q.kind !== 'note' && !S.out[q.id] && !isHiddenQ(q.id)).length;
   let fileReason;
   if (k === 'x') fileReason = 'Fail_' + fnPart(failReason(), 45);
   else if (k === 'd') fileReason = dr === 'book' ? 'Booked_DrEnquiry' : 'Callback_Doctor_enquiry_pending';
@@ -149,7 +149,8 @@ export function summary(k, opt) {
   else fileReason = s && un ? 'Incomplete' : 'Booked';
   const code = protoCode(s);
   const pid = String(S.pid || '').trim();
-  const fileName = [fnPart(pid, 30) || 'NoPID', fnStudyCode(code), fnPart(fileReason, 60)].join('-') + '.pdf';
+  // 2.10: a PDF made in test mode says so in its name, and has no PID unless one was typed
+  const fileName = (S.tm ? 'TEST-' : '') + [fnPart(pid, 30) || (S.tm ? '' : 'NoPID'), fnStudyCode(code), fnPart(fileReason, 60)].filter(Boolean).join('-') + '.pdf';
 
   const rows = L.filter((q) => q.kind !== 'note' && S.out[q.id]).map((q) => {
     const tag = tagOf(q);
@@ -164,7 +165,7 @@ export function summary(k, opt) {
     else if (e.f) extra.push({ k: 'f', m: e.n + ': flagged for the doctors' });
   });
   return {
-    k, dr, s, code, pid, fileName, verdictLabel: vLabel, verdictKind: vKind, isCallback, callbackReason,
+    test: !!S.tm, k, dr, s, code, pid, fileName, verdictLabel: vLabel, verdictKind: vKind, isCallback, callbackReason,
     kind: isCallback || vKind === 'idle' ? 'callback' : 'pdf',
     pop: popLine(s), rows, extra, quickRows: quickRows(), notesReviewed: !!(s && S.read[s.c]),
     cohorts: s ? selC().map((c) => c.n) : [], notes: String(S.finalNotes || '').trim(), rev: S.rev || 1, prevFile: S.prevFile || '',
@@ -250,6 +251,13 @@ export function buildPdf(sum) {
   }
 
   /* page 1: the clinic summary */
+  const PINK = [176, 6, 106], PINK_BG = [252, 231, 243];
+  if (sum.test) {
+    fill(PINK_BG); doc.setDrawColor(PINK[0], PINK[1], PINK[2]); doc.setLineWidth(1.2); doc.rect(margin, y, contentW, 34, 'FD');
+    font('bold', 12); ink(PINK); doc.text('TEST, NOT A REAL PRE-SCREEN', margin + 12, y + 15);
+    font('normal', 9); doc.text('Made in RAYDAR\'s test mode. Don\'t file it, book from it or send it to the doctors.', margin + 12, y + 27);
+    y += 46;
+  }
   font('bold', 8.5); ink(MUTED); doc.text('RAYDAR PRE-SCREEN', margin, y + 8);
   font('bold', 21); ink(NAVY); doc.text(cpSafe(sum.code), margin, y + 31);
   font('normal', 10.5); ink(MUTED);
@@ -467,6 +475,7 @@ export function buildPdf(sum) {
     font('normal', 8); ink(MUTED);
     doc.text(cpSafe((sum.pid ? 'PID ' + sum.pid + '   |   ' : '') + sum.code), margin, pageH - 26);
     doc.text('Page ' + p + ' of ' + total, pageW - margin, pageH - 26, { align: 'right' });
+    if (sum.test) { font('bold', 8); ink(PINK); doc.text('TEST, not a real pre-screen', pageW / 2, pageH - 26, { align: 'center' }); }
   }
   attachData(doc, buildCsv(sum));
   return doc.output('blob');
@@ -530,6 +539,7 @@ export function buildCsv(sum) {
   put('meta', 'format', FORMAT, ''); put('meta', 'format_version', FORMAT_VERSION, ''); put('meta', 'build', BUILD, '');
   put('meta', 'raydar_version', BUILD + (SOURCE.builtAt ? ' (' + SOURCE.builtAt + ')' : ''), '');
   put('meta', 'exported_at', new Date().toISOString(), ''); put('meta', 'pid', sum.pid, '');
+  if (sum.test) put('meta', 'test_mode', true, '');
   put('meta', 'kind', sum.kind, ''); put('meta', 'outcome', sum.k, ''); put('meta', 'doctor_mode', sum.dr, '');
   put('meta', 'reason', sum.callbackReason || '', ''); put('meta', 'revision', sum.rev, ''); if (sum.prevFile) put('meta', 'replaces', sum.prevFile, '');
   put('meta', 'stage', S.stage, ''); put('meta', 'study', code, ''); put('meta', 'study_file', s ? s.file : '', ''); put('meta', 'site', s ? s.site : '', '');
@@ -715,12 +725,14 @@ export async function importCallback(file) {
   N.rev = (+meta.revision || 1) + 1;
   N.resumed = { file: file.name, at: meta.exported_at || '', reason: meta.reason || '', study: st ? st.c : meta.study || '', missingStudy: !!meta.study && !st, restored, changed: changed.map((q) => q.s || q.id), dropped };
   N.stage = 'id';
+  // a test-mode PDF reopens in test mode, with the identity check skipped
+  if (meta.test_mode === true) { N.tm = true; N.tmAll = true; N.idok = true; N.stage = st ? 'ps' : 'qc'; }
   replaceS(N);
   const parts = [];
   if (st) parts.push(restored + ' answer' + (restored === 1 ? '' : 's') + ' restored for ' + st.c + '.');
   if (meta.study && !st) parts.push('The study ' + meta.study + ' isn\'t in this copy of RAYDAR, so only the Quick Check came back.');
   if (changed.length) parts.push(changed.length + ' question' + (changed.length === 1 ? ' has' : 's have') + ' changed in the eSource since, so ask ' + (changed.length === 1 ? 'it' : 'them') + ' again.');
   if (dropped.length) parts.push(dropped.length + ' answer' + (dropped.length === 1 ? ' is' : 's are') + ' for questions no longer in the eSource.');
-  parts.push('Re-enter the date of birth and confirm identity to continue.');
+  parts.push(meta.test_mode === true ? 'This PDF was made in test mode, so it has reopened in test mode.' : 'Re-enter the date of birth and confirm identity to continue.');
   return { ok: true, msg: parts.join(' ') };
 }

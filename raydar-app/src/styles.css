@@ -318,3 +318,21 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd .lhit{font-size:12px;border-left:3px solid var(--border-danger);padding:2px 0 2px 8px}
 #rd .lhit.d{border-left-color:var(--border-warning)}
 #rd .lhit.none{border-left-color:var(--border-strong);color:var(--text-secondary);font-size:11px}
+
+/* 2.10 test mode (src/views/TestMode.jsx). Clinibase pink, kept for test mode only so it can't be missed. */
+:root{--tm-bg:#fce7f3;--tm-line:#dd0881;--tm-ink:#7a0447;--tm-acc:#a10663}
+#rd.dk,body.dk{--tm-bg:#3d1230;--tm-line:#e0459c;--tm-ink:#ffc2e2;--tm-acc:#ff9fd4}
+body.tm .trial-banner{display:none}
+body.tm::after{content:"";position:fixed;inset:0;border:4px solid var(--tm-line);pointer-events:none;z-index:1000}
+#rd .tmbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between;background:var(--tm-bg);color:var(--tm-ink);border:1px solid var(--tm-line);border-radius:8px;padding:7px 12px;margin-bottom:8px;font-size:13px;line-height:1.45}
+#rd .tmbar > span{flex:1;min-width:260px}
+#rd .tmbar-k{letter-spacing:.06em;margin-right:6px}
+#rd .tmbtn{border-color:var(--tm-line);color:var(--tm-acc);background:var(--surface-2);white-space:nowrap}
+#rd .tmpill{background:var(--tm-bg);color:var(--tm-acc);border-color:var(--tm-line)}
+#rd .tmskip{color:var(--tm-acc);font-size:11px}
+#rd .tment{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:.5px solid var(--border);font-size:12px;color:var(--text-secondary)}
+#rd .tment > span{flex:1;min-width:220px}
+#rd .tment b{color:var(--text-primary);font-weight:500}
+#rd .tmtog{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--tm-acc);margin-left:4px}
+#rd .tmtog input{accent-color:var(--tm-line)}
+#rd .tmhid{background:var(--tm-bg);color:var(--tm-acc);border-color:var(--tm-line)}

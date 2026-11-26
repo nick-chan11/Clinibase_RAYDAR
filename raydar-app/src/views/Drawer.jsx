@@ -20,7 +20,7 @@ function H({ title }) {
 const Card = ({ children }) => <div className="card" style={{ padding: '10px 12px', marginBottom: 10 }}>{children}</div>;
 
 function Menu() {
-  const items = [['plan', 'ti-calendar-stats', 'Compare dates'], ['dre:open', 'ti-stethoscope', 'Create Dr enquiry'], ['tool:files', 'ti-files', 'Study files and file check'], ['tool:snap', 'ti-list-search', 'Study snapshot'], ['tool:guide', 'ti-help-circle', 'How to use RAYDAR'], ['tool:help', 'ti-keyboard', 'Keyboard shortcuts (change keys)'], ['tool:folder', 'ti-folder', 'Studies folder (Dropbox)']].concat(ADMIN_MODE === 'combined' ? [['admin:open', 'ti-settings', 'Study admin']] : []);
+  const items = [['plan', 'ti-calendar-stats', 'Compare dates'], ['dre:open', 'ti-stethoscope', 'Create Dr enquiry'], ['tool:files', 'ti-files', 'Study files and file check'], ['tool:snap', 'ti-list-search', 'Study snapshot'], ['tool:guide', 'ti-help-circle', 'How to use RAYDAR'], ['tool:help', 'ti-keyboard', 'Keyboard shortcuts (change keys)'], ['tool:folder', 'ti-folder', 'Studies folder (Dropbox)'], S.tm ? ['tmoff', 'ti-arrow-back-up', 'Back to normal mode (leave test mode)'] : ['tmon', 'ti-ghost', 'Test mode: explore any study, no checks']].concat(ADMIN_MODE === 'combined' ? [['admin:open', 'ti-settings', 'Study admin']] : []);
   const row = (l, ctl) => <div className="row"><span>{l}</span>{ctl}</div>;
   return (
     <Card>

@@ -20,6 +20,7 @@ import { autoConnect, startUpdateChecks } from './esource/connect.js';
 import { SOURCE } from './esource/studies.js';
 import { ADMIN_MODE, AdminApp } from './admin/gate.js';
 import { PreviewBar } from './views/PreviewBar.jsx';
+import { TestBanner } from './views/TestMode.jsx';
 
 const stageKey = () =>
   'stage-' + S.stage +
@@ -185,6 +186,7 @@ export default function App() {
   useLayoutEffect(() => {
     document.body.classList.toggle('dk', !!S.dark);
     document.documentElement.classList.toggle('dk', !!S.dark);
+    document.body.classList.toggle('tm', !!S.tm); // 2.10 test mode: pink frame, no trial banner
     if (S.scrollQ) {
       S.scrollQ = false;
       if (S.mode === 'list' && S.qon && S.stage === 'ps') {
@@ -217,6 +219,7 @@ export default function App() {
     <div id="rd" ref={rootRef} className={(S.dark ? 'dk' : '') + (slim ? ' slim' : '')} style={{ fontSize: S.fs }}>
       {SOURCE.preview ? <PreviewBar /> : null}
       <div id="h" ref={headRef}>
+        <TestBanner />
         <Header />
         <Steps />
       </div>

@@ -41,7 +41,13 @@ export function Header() {
       <span className="brand" title={RAYDAR_VERSION}>
         RAYDAR <span style={{ color: 'var(--text-accent)' }}>2.10</span>
       </span>
-      {S.idok ? (
+      {S.tm ? (
+        <span className="pill tmpill" style={{ cursor: 'default' }}>
+          <Ic n="ti-ghost" /> Test mode · no participant
+          {S.sex ? ' · ' + (S.sex === 'f' ? 'F' : 'M') : ''}
+          {b != null ? ' · BMI ' + b : ''}
+        </span>
+      ) : S.idok ? (
         <span className="pill ok" style={{ cursor: 'default' }}>
           <Ic n="ti-user-check" /> {S.pid}
           {S.sex ? ' · ' + (S.sex === 'f' ? 'F' : 'M') : ''}
@@ -122,6 +128,7 @@ export function Steps() {
             <IconSwap k={i < ix ? 'done' : 'n'}>{i < ix ? <Ic n="ti-check" /> : i + 1}</IconSwap>
           </span>
           {x[1]}
+          {S.tm && x[0] === 'id' ? <span className="tmskip"> · skipped</span> : null}
           {i === ix ? (
             <motion.span
               layoutId="step-underline"

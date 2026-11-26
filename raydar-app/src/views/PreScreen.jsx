@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import {
   S, upd, quiet, curQ, srcQ, selC, selTypes, avl, cStat, cKey, rk, fmt, fmtR, age, bmi, sugQ, ocls, oc,
-  needsReview, frontier, short, primaryIdx, ansSlot, preqDone, subscribe, getVersion, noteShows, ranked, cn,
+  needsReview, frontier, short, primaryIdx, ansSlot, preqDone, subscribe, getVersion, noteShows, ranked, cn, isHiddenQ,
 } from '../engine/store.js';
 import { VisitTimeline } from './Timeline.jsx';
 import { keyName } from '../engine/keys.js';
@@ -337,6 +337,7 @@ function OneMode({ L, i, q }) {
         <span style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
           {q.sec} · <B style={{ color: 'var(--text-primary)', fontSize: 14 }}>Question {i + 1}</B> of {L.length}
           {q.only ? <> · <i style={{ color: 'var(--text-accent)' }}>cohort-specific</i></> : null}
+          {S.tm && isHiddenQ(q.id) ? <> · <span className="pill bdg tmhid" title="Test mode shows it; in a real call earlier answers hide it">Hidden in a real call</span></> : null}
           {q.when && L.some((z) => z.id === q.when.id) ? <> · <span className="pill bdg tag"><Ic n="ti-corner-down-right" /> Follow-up to Q{L.findIndex((z) => z.id === q.when.id) + 1}{S.ans[q.when.id] ? ' (' + short(S.ans[q.when.id], 30) + ')' : ''}</span></> : null}
         </span>
         {o ? (
@@ -688,6 +689,9 @@ export function PreScreen() {
               </button>
             );
           })}
+          {S.tm ? (
+            <label className="tmtog"><input type="checkbox" checked={!!S.tmAll} onChange={() => upd(() => { S.tmAll = !S.tmAll; })} /> Show questions hidden by earlier answers</label>
+          ) : null}
         </div>
         {/* Progress fill grows from its last value with scaleX, never width */}
         <div style={{ height: 4, background: 'var(--border)', borderRadius: 2, marginBottom: 8, overflow: 'hidden' }} role="progressbar" aria-label="Questions answered" aria-valuemin={0} aria-valuemax={L.length} aria-valuenow={done}>
