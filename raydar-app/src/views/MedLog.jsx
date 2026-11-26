@@ -3,7 +3,7 @@ import { AnimatePresence } from 'motion/react';
 import { S, FLD, TL, isMedT, matchP, eParts, proS, proFor, upd } from '../engine/store.js';
 import { A, Ic, Badge, PanelHead, Resizable } from './ui.jsx';
 import { Err, Expander, Row } from '../motion/components.jsx';
-import { NameField, MedLine } from './Medicines.jsx';
+import { NameField, MedLine, ListField, FREQS } from './Medicines.jsx';
 
 /* Stable identities for rows and logged items, kept outside the objects so the engine's
    "is this row filled in?" checks never see them. */
@@ -75,6 +75,7 @@ export function Form({ pre, rows, t, wide }) {
                       onChange: (e) => upd(() => (F[f[0]] = e.target.value)),
                     };
                     // medication and supplement names suggest brands and ingredients from the medicines dictionary
+                    if (f[0] === 'fr') return <ListField options={FREQS} inputProps={ip} />;
                     return f[0] === 'n' && t !== 'hx' ? <NameField F={F} inputProps={ip} /> : <input {...ip} />;
                   })()}
                 </label>

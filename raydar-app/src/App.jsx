@@ -78,6 +78,8 @@ function rebindKey(e) {
 function onKey(e) {
   if (S.admin) return; // 2.8: the study admin has its own keys
   if (S.rebind) { rebindKey(e); return; }
+  // 2.10: a key a box has already used (Enter or Tab filling a suggestion) does nothing more here
+  if (e.defaultPrevented) return;
   const f = e.target.dataset && e.target.dataset.f;
   if (f && /^r\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('logadd'); return; }
   if (f && /^m\./.test(f) && e.key === 'Enter') { e.preventDefault(); act('madd:med'); return; }

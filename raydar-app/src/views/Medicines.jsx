@@ -68,6 +68,50 @@ export function NameField({ F, inputProps }) {
   );
 }
 
+/** 2.10: how often a medicine is taken. Common choices as you type; anything can be typed as heard. */
+export const FREQS = ['Once daily', 'Twice daily', 'Three times daily', 'Four times daily', 'Every morning', 'At night', 'Every second day', 'Weekly', 'Fortnightly', 'Monthly', 'As needed'];
+
+/** A box with suggestions from a fixed list (Frequency). Same keys as the name box: arrows, Enter, Tab, Esc. */
+export function ListField({ options, inputProps }) {
+  const [open, setOpen] = useState(false), [hi, setHi] = useState(0);
+  const id = useId();
+  const q = String(inputProps.value || '').trim().toLowerCase();
+  const all = q ? [...options.filter((o) => o.toLowerCase().startsWith(q)), ...options.filter((o) => !o.toLowerCase().startsWith(q) && o.toLowerCase().includes(q))] : options;
+  const list = open ? all : [];
+  const same = (x) => !!x && x.toLowerCase() === q;
+  const pick = (x) => { inputProps.onChange({ target: { value: x } }); setOpen(false); };
+  const onKey = (e) => {
+    if (!list.length) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); setHi((h) => (h + 1) % list.length); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setHi((h) => (h - 1 + list.length) % list.length); }
+    else if (e.key === 'Enter' && q && !same(list[hi])) { e.preventDefault(); pick(list[hi] || list[0]); }
+    else if (e.key === 'Tab' && !e.shiftKey && q) { const x = list[hi] || list[0]; if (!same(x)) e.preventDefault(); pick(x); }
+    else if (e.key === 'Escape') { e.preventDefault(); setOpen(false); }
+  };
+  return (
+    <div className="msug-wrap">
+      <input
+        {...inputProps}
+        role="combobox" aria-expanded={list.length > 0} aria-controls={id} aria-autocomplete="list"
+        onChange={(e) => { setOpen(true); setHi(0); inputProps.onChange(e); }}
+        onFocus={() => setOpen(true)}
+        onBlur={() => setTimeout(() => setOpen(false), 120)}
+        onKeyDown={onKey}
+      />
+      {list.length ? (
+        <div className="msug" role="listbox" id={id}>
+          {list.map((x, i) => (
+            <div key={x} role="option" aria-selected={i === hi} className={'msug-o' + (i === hi ? ' on' : '')}
+              onMouseDown={(e) => { e.preventDefault(); pick(x); }} onMouseEnter={() => setHi(i)}>
+              <span>{x}</span>
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 /** Under a logged medicine: what it is, or that RAYDAR doesn't recognise it */
 export function MedLine({ e }) {
   if (e.t === 'hx' || e.auto) return null;

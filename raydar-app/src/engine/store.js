@@ -39,7 +39,7 @@ function tipStay(s,c){const n=dd(c.in,c.out);if(!n)return s.c+' · '+cn(c.n)+'\n
 function tipVisit(s,c,v){const a=vS(v),b=vE(v),st=vStat(v);return s.c+' · '+cn(c.n)+'\n'+v.l+'\nPrescribed::'+fmtL(v.d)+'\nEarliest::'+fmtL(a)+'\nLatest::'+fmtL(b)+'\nWindow::'+(v.a?(dd(a,b)+1)+'-day window':'±'+pl(v.w,'day'))+(S.away.length&&cStat(c)==='open'?'\nAway dates::'+(st==='clash'?'Clash, whole window covered':st==='caution'?'Caution, window partly covered':'No clash'):'')}
 function tipCohort(s,c){const k=cKey(c);return s.c+' · '+cn(c.n)+'\n'+rk(k)[0]+'\nStay::'+fmtR(c.in,c.out)+'\nFollow-ups::'+(c.v.length?pl(c.v.length,'visit')+', last '+fmt(c.v[c.v.length-1].d):'None dated')+'\nClick to jump::on the calendar'}
 function tipAway(a){return 'Participant away\n\nFrom::'+fmtL(a[0])+'\nUntil::'+fmtL(a[1])+'\nLength::'+pl(dd(a[0],a[1])+1,'day')}
-const EF=()=>({n:'',ind:'',dose:'',route:'',st:'',en:''});
+const EF=()=>({n:'',ind:'',dose:'',fr:'',route:'',st:'',en:''});
 const fresh=c=>({call:c,stage:'id',pid:'',dob:'',match:false,idok:false,err:{},sex:null,wt:'',ht:'',preg:null,cond:{},meds:null,smoke:null,study:null,qid:null,out:{},ans:{},why:{},note:{},read:{},datesOk:{},sub:'dates',tool:null,all:false,fin:null,saved:false,discard:false,snapQ:'',toast:'',fs:13,log:[],lt:'med',f:[EF()],logErr:'',focus:null,ed:null,mt:'med',mf:[EF()],mErr:'',med:null,mq:'',mOpen:false,hf:[EF()],hErr:'',hed:null,hq:'',hOpen:false,rebind:null,keyMsg:'',val:{},pick:{},txt:{},fileMsg:null,scr:'',d1:{},script:null,railAll:false,rq:'',proAll:false,proS:null,last:null,avail:{},plan:false,pShow:null,hideClosed:true,away:[],awF:'',awT:'',psel:null,alc:'',infoOpen:false,zoom:'near',sx:0,jumpTo:null,dre:{open:false,url:'',concern:'',study:null,txt:null},copied:'',col:{},sz:{},lw:null,rail:true,dark:false,tips:true,focusMode:false,scrollQ:false,ry:0,qs:'',mapOpen:false,peek:null,mode:'one',park:{},nav:[],hist:{},showNote:{},critOpen:false,noteOpen:false,logForm:false,drMode:'hold',cbr:'',finalNotes:'',resumed:null,rev:1,impMsg:null,kept:{},carried:null,prevFile:null,savedName:null});
 export let S=fresh(1);
 /** 2.7: the call before "Start next call", so a call ended by mistake can be reopened (this tab only) */
@@ -102,9 +102,9 @@ function proS(){return S.proS||(S.study&&S.study.c)||ranked()[0].s.c}
 function proFor(c){const s=SC(c);return (s&&s.pro)||{}}
 const isMedT=t=>t==='med'||t==='otc';
 const inCarry=(e,c)=>c==='hx'?e.t==='hx':isMedT(e.t);
-function eText(e){return [e.n,e.ind,e.dose,e.route].filter(Boolean).join(' ')}
+function eText(e){return [e.n,e.ind,e.dose,e.fr,e.route].filter(Boolean).join(' ')}
 function matchP(e,c){const s=SC(c||proS());if(!s)return null;return e.t==='hx'?checkHx(e,s):checkMed(e,s)}
-function eParts(e){const p=[];if(e.t==='hx'){if(e.st)p.push('dx '+e.st);if(e.en)p.push('resolved '+e.en);return p}if(e.ind)p.push('for '+e.ind);if(e.dose)p.push(e.dose);if(e.route)p.push(e.route);if(e.st)p.push('started '+e.st);if(e.en)p.push('stopped '+e.en);return p}
+function eParts(e){const p=[];if(e.t==='hx'){if(e.st)p.push('dx '+e.st);if(e.en)p.push('resolved '+e.en);return p}if(e.ind)p.push('for '+e.ind);if(e.dose)p.push(e.dose);if(e.fr)p.push(e.fr);if(e.route)p.push(e.route);if(e.st)p.push('started '+e.st);if(e.en)p.push('stopped '+e.en);return p}
 function syncAuto(){CONDS.forEach(c=>{const has=S.log.some(e=>e.auto===c[0]);if(S.cond[c[0]]==='y'&&!has)S.log.push(Object.assign(EF(),{t:'hx',n:c[1],src:'Quick check',auto:c[0],f:false}));if(S.cond[c[0]]!=='y'&&has)S.log=S.log.filter(e=>!(e.auto===c[0]&&!eParts(e).length))});
 const hm=S.log.some(e=>e.auto==='meds');if(S.meds==='y'&&!hm)S.log.push(Object.assign(EF(),{t:'med',n:'Regular medication',src:'Quick check',auto:'meds',f:false}));if(S.meds!=='y'&&hm)S.log=S.log.filter(e=>!(e.auto==='meds'&&!eParts(e).length))}
 function avl(code){return S.avail[code]||(S.avail[code]={})}
@@ -122,7 +122,7 @@ function noteShows(b){if(!b.vis)return true;const vis=new Set(qset().map(q=>q.id
 /** Would answering q with answer b open a question that is hidden now? */
 function opensWith(q,b){const s=S.study;if(!s)return false;const vis=new Set(qset().map(z=>z.id));vis.add(q.id);return s.Q.some(z=>z.vis&&z.deps&&z.deps.includes(q.id)&&!vis.has(z.id)&&z.vis.test(n=>valueOf(n,vis,{id:q.id,v:b[2]})))}
 function srcQ(s){s=s||S.study;return !s?[]:s.Q||[]}
-const RAYDAR_VERSION='RAYDAR 2.9 · questions, scripts and notes from the TST eSource files';
+const RAYDAR_VERSION='RAYDAR 2.10 · questions, scripts and notes from the TST eSource files';
 const oc=o=>o==='c'?'success':o==='d'?'warning':o==='x'?'danger':'accent';
 function curQ(){const L=qset();let i=L.findIndex(q=>q.id===S.qid);if(i<0){i=L.findIndex(q=>!S.out[q.id]);if(i<0)i=0;S.qid=L[i]&&L[i].id}return {L,i,q:L[i]}}
 function qMatches(q){if(!q.carry)return [];return S.log.filter(e=>inCarry(e,q.carry)).map(e=>({e,p:matchP(e)})).filter(z=>z.p&&z.p.o!=='ok')}
@@ -143,7 +143,7 @@ function planStudies(){return ST.filter(s=>siteOk(s)&&s.cohorts)}
 function pShown(s){if(S.pShow&&s.c in S.pShow)return S.pShow[s.c];if(S.pShow)return false;if(S.study&&S.study.c===s.c)return true;return ev(s)[0]!=='no'||!S.idok}
 function tlB(){const start=add(TODAY,-7);let end=add(TODAY,365);planStudies().forEach(s=>s.cohorts.forEach(c=>{const l=lastDay(c);if(l>end)end=l}));end=add(end,30);return {start,end,days:dd(start,end)+1}}
 const ZP=()=>S.zoom==='far'?3:16;
-const FLD={med:[['n','Medication name','Valacyclovir'],['ind','Indication (what for)','Cold sores'],['dose','Dosage','500mg as needed'],['route','Route','Oral'],['st','Start date','2024'],['en','End date, if stopped','Mar 2026']],otc:[['n','Supplement or OTC name','Iron'],['ind','Indication (what for)','Low iron'],['dose','Dosage','1 tablet daily'],['route','Route','Oral'],['st','Start date','Jan 2026'],['en','End date, if stopped','']],hx:[['n','Condition or event','Low iron'],['st','Start date or diagnosed','2024'],['en','End date, if resolved','']]};
+const FLD={med:[['n','Medication name','Valacyclovir'],['ind','Indication (what for)','Cold sores'],['dose','Dosage','500 mg'],['fr','Frequency','As needed'],['route','Route','Oral'],['st','Start date','2024'],['en','End date, if stopped','Mar 2026']],otc:[['n','Supplement or OTC name','Iron'],['ind','Indication (what for)','Low iron'],['dose','Dosage','1 tablet'],['fr','Frequency','Once daily'],['route','Route','Oral'],['st','Start date','Jan 2026'],['en','End date, if stopped','']],hx:[['n','Condition or event','Low iron'],['st','Start date or diagnosed','2024'],['en','End date, if resolved','']]};
 const TL={med:'Medication',otc:'Supplement or OTC',hx:'Condition or event'};
 const EMRE=/(raise an enquiry|raise with the doctors|raise a doctor enquiry|doctor check)|(excludes|excluded|exclude|must be negative|not allowed)|(\bOK\b|is fine|are fine|allowed)|((?<![A-Za-z0-9-])\d+(?:\.\d+)?(?:\s?(?:to|or|-)\s?\d+(?:\.\d+)?)?(?:\s?(?:days?|weeks?|months?|hours?|hrs|kg|mg|nights?|years?|minutes|half-lives|a week|a day))?)/gi;
 const ocls=o=>o==='c'?'ok':o==='d'?'warn':o==='x'?'bad':'nt';
@@ -302,9 +302,9 @@ else if(k==='logform'){S.logForm=!(S.logForm||S.ed);if(!S.logForm&&S.ed){pushLog
 else if(k==='rowadd'){const rows=x==='r'?S.f:x==='h'?S.hf:S.mf;rows.push(EF());S.focus=x+'Name'+(rows.length-1);if(x==='r')S.logForm=true}
 else if(k==='rowdel'){const rows=x==='r'?S.f:x==='h'?S.hf:S.mf;rows.splice(+y,1);if(!rows.length)rows.push(EF())}
 else if(k==='logadd'){const er=addRows('r',S.lt,S.ed);if(er){S.logErr=er;S.shake='logErr'}else{S.f=[EF()];S.logErr='';S.ed=null;S.logForm=false}}
-else if(k==='redit'){const e=S.log[+x];S.lt=e.t;S.f=[{n:e.n==='Regular medication'?'':e.n,ind:e.ind,dose:e.dose,route:e.route,st:e.st,en:e.en}];S.ed={src:e.src,auto:e.auto,f:e.f};S.log.splice(+x,1);S.logForm=true;S.col.log=false;S.focus='rName0'}
+else if(k==='redit'){const e=S.log[+x];S.lt=e.t;S.f=[{n:e.n==='Regular medication'?'':e.n,ind:e.ind,dose:e.dose,fr:e.fr||'',route:e.route,st:e.st,en:e.en}];S.ed={src:e.src,auto:e.auto,f:e.f};S.log.splice(+x,1);S.logForm=true;S.col.log=false;S.focus='rName0'}
 else if(k==='madd'){const c=x||curQ().q.carry;if(c==='hx'){const er=addRows('h','hx',S.hed);if(er){S.hErr=er;S.shake='hErr'}else{S.hf=[EF()];S.hErr='';S.hed=null;S.focus='hName0'}}else{const er=addRows('m',S.mt,S.med);if(er){S.mErr=er;S.shake='mErr'}else{S.mf=[EF()];S.mErr='';S.med=null;S.focus='mName0'}}}
-else if(k==='medit'){const e=S.log[+x],F=[{n:e.n==='Regular medication'?'':e.n,ind:e.ind,dose:e.dose,route:e.route,st:e.st,en:e.en}],M={src:e.src,auto:e.auto,f:e.f};S.log.splice(+x,1);if(e.t==='hx'){S.hf=F;S.hed=M;S.col.hlog=false;S.focus='hName0'}else{S.mt=e.t;S.mf=F;S.med=M;S.col.mlog=false;S.focus='mName0'}}
+else if(k==='medit'){const e=S.log[+x],F=[{n:e.n==='Regular medication'?'':e.n,ind:e.ind,dose:e.dose,fr:e.fr||'',route:e.route,st:e.st,en:e.en}],M={src:e.src,auto:e.auto,f:e.f};S.log.splice(+x,1);if(e.t==='hx'){S.hf=F;S.hed=M;S.col.hlog=false;S.focus='hName0'}else{S.mt=e.t;S.mf=F;S.med=M;S.col.mlog=false;S.focus='mName0'}}
 else if(k==='mpro'){if(x==='hx')S.hOpen=!S.hOpen;else S.mOpen=!S.mOpen}
 else if(k==='flag'){S.log[+x].f=!S.log[+x].f}
 else if(k==='del'){S.log.splice(+x,1)}

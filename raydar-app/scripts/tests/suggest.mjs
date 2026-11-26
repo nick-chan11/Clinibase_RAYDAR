@@ -63,6 +63,28 @@ await page.keyboard.press('Shift+Tab'); await page.waitForTimeout(100);
 s = await state();
 check(s.value === 'metf' && !s.focused, 'Shift+Tab goes back without filling', s);
 
+// 7. Enter on a suggestion fills the name only; the row is added by a second Enter (2.9 added it straight away)
+await fresh(); await box.pressSequentially('metf', { delay: 15 }); await page.waitForTimeout(100);
+await page.keyboard.press('Enter'); await page.waitForTimeout(150);
+let lg = await page.evaluate(() => ({ n: window.raydar.S.log.length, v: document.querySelector('[data-f="r.0.n"]')?.value }));
+check(lg.n === 0 && /metformin/i.test(lg.v || ''), 'Enter on a suggestion fills the name and leaves the row open', lg);
+
+// 8. Frequency (2.10): suggestions, Tab fills and stays, typed text is kept
+const fr = page.locator('[data-f="r.0.fr"]');
+await fr.click(); await fr.pressSequentially('twi', { delay: 15 }); await page.waitForTimeout(100);
+await page.keyboard.press('Tab'); await page.waitForTimeout(100);
+s = await page.evaluate(() => ({ v: document.querySelector('[data-f="r.0.fr"]').value, focused: document.activeElement === document.querySelector('[data-f="r.0.fr"]') }));
+check(s.v === 'Twice daily' && s.focused, 'Frequency: Tab on "twi" fills Twice daily and stays in the box', s);
+await fr.fill(''); await fr.pressSequentially('every 3 days', { delay: 10 }); await page.keyboard.press('Tab'); await page.waitForTimeout(100);
+s = await page.evaluate(() => document.querySelector('[data-f="r.0.fr"]').value);
+check(s === 'every 3 days', 'Frequency: text with no matching choice is kept as typed', s);
+
+// 9. Enter adds the row, with the frequency shown on the logged medicine
+await box.click(); await page.keyboard.press('Enter'); await page.waitForTimeout(200);
+lg = await page.evaluate(() => window.raydar.S.log.map((e) => [e.n, e.fr]));
+const txt = await page.evaluate(() => document.body.innerText);
+check(lg.length === 1 && lg[0][1] === 'every 3 days' && txt.includes('every 3 days'), 'Enter adds the row; the logged medicine shows its frequency', lg);
+
 check(!errors.length, 'no page errors', errors);
 await browser.close();
 await srv.close();

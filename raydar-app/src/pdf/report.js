@@ -20,7 +20,7 @@ export const CALLBACK_REASONS = [
   ['Not eligible now', 'Not eligible now (may be eligible later)'],
   ['', 'Other / no specific reason'],
 ];
-export const BUILD = 'RAYDAR 2.9';
+export const BUILD = 'RAYDAR 2.10';
 const FORMAT = 'RAYDAR-CALLBACK-CSV', FORMAT_VERSION = '1', PDF_DATA_NAME = 'raydar_prescreen_data.csv', MARK = 'record,study,key,value';
 const CSV_MAX_BYTES = 4e6, CSV_MAX_ROWS = 50000, CSV_MAX_CELL = 400000;
 
@@ -537,7 +537,7 @@ export function buildCsv(sum) {
   ['sex', 'wt', 'ht', 'preg', 'meds', 'smoke', 'alc', 'scr'].forEach((k) => { if (S[k] != null && S[k] !== '') put('quick', k, S[k], ''); });
   Object.entries(S.cond).forEach(([k, v]) => { if (v) put('quick', 'cond.' + k, v, ''); });
   if (S.away.length) put('quick', 'away', S.away, '');
-  S.log.forEach((e, i) => put('log', String(i), { t: e.t, n: e.n, ind: e.ind, dose: e.dose, route: e.route, st: e.st, en: e.en, src: e.src, auto: e.auto, f: !!e.f, nm: e.nm || [] }, ''));
+  S.log.forEach((e, i) => put('log', String(i), { t: e.t, n: e.n, ind: e.ind, dose: e.dose, fr: e.fr || '', route: e.route, st: e.st, en: e.en, src: e.src, auto: e.auto, f: !!e.f, nm: e.nm || [] }, ''));
   if (s) {
     s.Q.forEach((q) => {
       if (S.out[q.id] != null) { put('answer', q.id, { o: S.out[q.id], a: S.ans[q.id], v: S.val[q.id] }); put('qhash', q.id, qhash(q)); }
@@ -686,7 +686,7 @@ export async function importCallback(file) {
       else if (key.startsWith('cond.')) { if (v === 'y' || v === 'n') N.cond[key.slice(5)] = v; }
       else if (['sex', 'wt', 'ht', 'preg', 'meds', 'smoke', 'alc', 'scr'].includes(key)) N[key] = String(v);
     } else if (rec === 'log' && v && typeof v === 'object' && v.n) {
-      N.log.push({ t: ['med', 'otc', 'hx'].includes(v.t) ? v.t : 'med', n: String(v.n), ind: String(v.ind || ''), dose: String(v.dose || ''), route: String(v.route || ''), st: String(v.st || ''), en: String(v.en || ''), src: String(v.src || 'Callback'), auto: v.auto || null, f: !!v.f, nm: Array.isArray(v.nm) ? v.nm.map(String) : [] });
+      N.log.push({ t: ['med', 'otc', 'hx'].includes(v.t) ? v.t : 'med', n: String(v.n), ind: String(v.ind || ''), dose: String(v.dose || ''), fr: String(v.fr || ''), route: String(v.route || ''), st: String(v.st || ''), en: String(v.en || ''), src: String(v.src || 'Callback'), auto: v.auto || null, f: !!v.f, nm: Array.isArray(v.nm) ? v.nm.map(String) : [] });
     } else if (rec === 'callnotes') N.finalNotes = String(v || '');
     else if (st && rec === 'answer') {
       const q = st.Q.find((z) => z.id === key);
