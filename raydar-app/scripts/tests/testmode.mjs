@@ -7,7 +7,7 @@ import path from 'node:path';
 import { playwright, startRaydar, openPage } from './lib.mjs';
 
 const { chromium } = playwright();
-const OUT = mkdtempSync(path.join(tmpdir(), 'raydar-tm-'));
+const OUT = process.env.RAYDAR_TM_OUT || mkdtempSync(path.join(tmpdir(), 'raydar-tm-'));
 const srv = await startRaydar();
 const browser = await chromium.launch();
 const { page, errors } = await openPage(browser, srv.url);

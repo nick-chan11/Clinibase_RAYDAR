@@ -5,6 +5,7 @@ import { keyName } from '../engine/keys.js';
 import { A, Ic, B } from './ui.jsx';
 import { Expander, IconSwap } from '../motion/components.jsx';
 import { DUR, tr } from '../motion/tokens.js';
+import { ClinibaseLogo } from './Logo.jsx';
 
 export function Legend() {
   const L = [['--fill-success', 'Eligible'], ['--fill-warning', 'Dr check'], ['--fill-danger', 'Exclude'], ['--fill-accent', 'Opens a follow-up']];
@@ -38,6 +39,7 @@ export function Header() {
   const s = S.study, a = age(), b = bmi();
   return (
     <div className="bar">
+      <span className="cblogo"><ClinibaseLogo /></span>
       <span className="brand" title={RAYDAR_VERSION}>
         RAYDAR <span style={{ color: 'var(--text-accent)' }}>2.10</span>
       </span>

@@ -1,0 +1,6 @@
+/* 2.10: Fira Sans, Clinibase's typeface, built into the RAYDAR file (latin, woff2 only) so it works offline.
+   The Say card keeps Atkinson Hyperlegible (--font-say). */
+@font-face{font-family:'Fira Sans';font-style:normal;font-display:swap;font-weight:400;src:url('../node_modules/@fontsource/fira-sans/files/fira-sans-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Fira Sans';font-style:normal;font-display:swap;font-weight:500;src:url('../node_modules/@fontsource/fira-sans/files/fira-sans-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'Fira Sans';font-style:normal;font-display:swap;font-weight:600;src:url('../node_modules/@fontsource/fira-sans/files/fira-sans-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'Fira Sans';font-style:normal;font-display:swap;font-weight:700;src:url('../node_modules/@fontsource/fira-sans/files/fira-sans-latin-700-normal.woff2') format('woff2')}

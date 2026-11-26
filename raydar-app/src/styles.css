@@ -1,5 +1,5 @@
 /* Base styles carried over from RAYDAR 2.2 */
-:root{--surface-0:#f5f4ef;--surface-1:#f3f1ea;--surface-2:#ffffff;--border:rgba(31,30,29,.14);--border-strong:rgba(31,30,29,.24);--border-stronger:rgba(31,30,29,.45);--text-primary:#1f1e1d;--text-secondary:#5e5d59;--text-muted:#8a8984;--bg-accent:#e6f1fb;--text-accent:#185fa5;--border-accent:#378add;--fill-accent:#2c6fcf;--on-accent:#fff;--bg-success:#eaf3de;--text-success:#3b6d11;--border-success:#97c459;--fill-success:#639922;--bg-warning:#faeeda;--text-warning:#854f0b;--border-warning:#ef9f27;--fill-warning:#ef9f27;--bg-danger:#fcebeb;--text-danger:#a32d2d;--border-danger:#f09595;--fill-danger:#e24b4a;--radius:8px;--font-sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--font-voice:Georgia,"Times New Roman",serif}
+:root{--surface-0:#f2f3f4;--surface-1:#eef1f4;--surface-2:#ffffff;--border:rgba(27,42,63,.13);--border-strong:rgba(27,42,63,.24);--border-stronger:rgba(27,42,63,.45);--text-primary:#1b2a3f;--text-secondary:#4a5a70;--text-muted:#66727f;--bg-accent:#e3f5fd;--text-accent:#00669c;--border-accent:#00aff5;--fill-accent:#0077b6;--on-accent:#fff;--bg-success:#eaf3de;--text-success:#3b6d11;--border-success:#97c459;--fill-success:#639922;--bg-warning:#faeeda;--text-warning:#854f0b;--border-warning:#ef9f27;--fill-warning:#ef9f27;--bg-danger:#fcebeb;--text-danger:#a32d2d;--border-danger:#f09595;--fill-danger:#e24b4a;--radius:8px;--font-sans:"Fira Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--font-voice:Georgia,"Times New Roman",serif}
 html,body{margin:0;background:var(--surface-0);color:var(--text-primary);font-family:var(--font-sans)}
 body{padding:12px 16px}#rd{max-width:1320px;margin:0 auto}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -7,7 +7,7 @@ button,input,select,textarea{font-family:inherit;color:var(--text-primary)}
 input[type=text],input[type=number],input[type=date],input[type=url],select,textarea{border:.5px solid var(--border-strong);border-radius:var(--radius);background:#fff;padding:0 8px}
 textarea{padding:6px 8px}
 h3{color:var(--text-primary)}
-html.dk,body.dk{background:#1c1c1a;color:#ecebe6}
+html.dk,body.dk{background:#0e1621;color:#eaf1f8}
 body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd.dk{padding:10px}
 .trial-banner{max-width:1320px;margin:0 auto 8px;font-size:12px;color:var(--text-warning);background:var(--bg-warning);border:.5px solid var(--border-warning);border-radius:8px;padding:6px 10px}
@@ -40,7 +40,7 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd .split::before{content:'';width:4px;border-radius:2px;background:var(--border);margin:6px 0}
 #rd .split:hover::before,#rd .split.on::before{background:var(--border-accent)}
 #rd .rs{resize:vertical;overflow:auto;min-height:40px}
-#rd.dk{--surface-0:#1c1c1a;--surface-1:#262624;--surface-2:#2f2f2c;--border:rgba(236,235,230,.14);--border-strong:rgba(236,235,230,.26);--border-stronger:rgba(236,235,230,.5);--text-primary:#ecebe6;--text-secondary:#bcbab3;--text-muted:#94928b;--bg-accent:#173554;--text-accent:#9cc8f2;--border-accent:#4a95e0;--fill-accent:#3d86d6;--on-accent:#ffffff;--bg-success:#203512;--text-success:#addb7c;--border-success:#5d8f2a;--fill-success:#6aa22a;--bg-warning:#3d2a0a;--text-warning:#f5c272;--border-warning:#b9791c;--fill-warning:#e69a2a;--bg-danger:#481b1b;--text-danger:#f7a9a9;--border-danger:#c24a49;--fill-danger:#e05a59;background:var(--surface-0);color:var(--text-primary);color-scheme:dark;border-radius:12px;padding:10px}
+#rd.dk{--surface-0:#0e1621;--surface-1:#152030;--surface-2:#1b2a3f;--border:rgba(214,230,247,.13);--border-strong:rgba(214,230,247,.25);--border-stronger:rgba(214,230,247,.5);--text-primary:#eaf1f8;--text-secondary:#b4c1d0;--text-muted:#8f9db0;--bg-accent:#0c3a58;--text-accent:#5fd0fb;--border-accent:#00aff5;--fill-accent:#00aff5;--on-accent:#0b1a2b;--bg-success:#203512;--text-success:#addb7c;--border-success:#5d8f2a;--fill-success:#6aa22a;--bg-warning:#3d2a0a;--text-warning:#f5c272;--border-warning:#b9791c;--fill-warning:#e69a2a;--bg-danger:#481b1b;--text-danger:#f7a9a9;--border-danger:#c24a49;--fill-danger:#e05a59;background:var(--surface-0);color:var(--text-primary);color-scheme:dark;border-radius:12px;padding:10px}
 #rd.dk input,#rd.dk select,#rd.dk textarea{background:var(--surface-1);color:var(--text-primary);border-color:var(--border-strong)}
 #rd.dk input::placeholder,#rd.dk textarea::placeholder{color:var(--text-muted)}
 #rd .nt,#rd .seg button.nt{background:var(--bg-accent);color:var(--text-accent);border-color:var(--border-accent)}
@@ -98,8 +98,8 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
    Motion (src/motion) owns mount/unmount, layout and springs. Both read the same tokens. */
 :root{--ease-out:cubic-bezier(.32,.72,0,1);--ease-in:cubic-bezier(.55,0,1,.45);--ease-io:cubic-bezier(.77,0,.175,1);
   --t-hover:120ms;--t-press:150ms;--t-open:250ms;--t-close:190ms;
-  --hover-tint:rgba(31,30,29,.05);--press-tint:rgba(31,30,29,.09)}
-#rd.dk{--hover-tint:rgba(236,235,230,.07);--press-tint:rgba(236,235,230,.12)}
+  --hover-tint:rgba(27,42,63,.05);--press-tint:rgba(27,42,63,.09)}
+#rd.dk{--hover-tint:rgba(214,230,247,.07);--press-tint:rgba(214,230,247,.12)}
 
 /* Press: scale to .96 on pointer-down. Elements now persist between renders, so letting go glides back. */
 #rd button.pill,#rd .ans,#rd .cchip,#rd .seg button{transition:transform var(--t-press) var(--ease-out),box-shadow var(--t-hover) ease}
@@ -207,8 +207,8 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd .sitechip.on{border:1px solid var(--sc);background:var(--sb);color:var(--st)}
 #rd .sitetag{font-size:11px;padding:1px 7px;border-radius:999px;background:var(--sb);color:var(--st);white-space:nowrap;font-family:var(--font-sans);font-weight:400}
 /* Spoken words (option 2): a light blue card in Atkinson Hyperlegible, a font made for fast, accurate reading */
-:root{--font-say:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;--say-bg:#eef5fd;--say-line:#b9d6f5;--say-ink:#10233a}
-#rd.dk{--say-bg:#13263d;--say-line:#2c4f78;--say-ink:#e6f0fb}
+:root{--font-say:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;--say-bg:#eaf7fe;--say-line:#a6dff8;--say-ink:#0d3060}
+#rd.dk{--say-bg:#0f2f4a;--say-line:#1f5c88;--say-ink:#e6f4fd}
 #rd .say{background:var(--say-bg);border:1px solid var(--say-line);border-radius:10px;padding:12px 14px}
 #rd .say-l{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text-accent);display:flex;gap:5px;align-items:center;text-transform:uppercase}
 #rd .say-t{margin:6px 0 0;font-family:var(--font-say);color:var(--say-ink);white-space:pre-line}
@@ -336,3 +336,9 @@ body.tm::after{content:"";position:fixed;inset:0;border:4px solid var(--tm-line)
 #rd .tmtog{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--tm-acc);margin-left:4px}
 #rd .tmtog input{accent-color:var(--tm-line)}
 #rd .tmhid{background:var(--tm-bg);color:var(--tm-acc);border-color:var(--tm-line)}
+
+/* 2.10 Clinibase branding (option A): the logo beside RAYDAR and a Clinibase Blue edge on the header */
+#rd .bar{border-top:4px solid #00aff5}
+#rd .cblogo{display:inline-flex;align-items:center;padding-right:14px;margin-right:2px;border-right:1px solid var(--border-strong);color:var(--text-primary)}
+#rd .cblogo svg{height:22px;width:auto;display:block}
+#rd.slim .cblogo svg{height:17px}

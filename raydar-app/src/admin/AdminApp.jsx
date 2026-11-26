@@ -13,6 +13,7 @@ import { newStudy, clone } from './ops.js';
 import { Editor } from './Editor.jsx';
 import { QcPage } from './QcPage.jsx';
 import './admin.css';
+import { ClinibaseLogo } from '../views/Logo.jsx';
 
 // The recruiter screens' "Back to the study admin" button ends a preview
 if (previewEvents) previewEvents.addEventListener('end', () => { finishPreview(); if (ADMIN_MODE === 'combined') act('admin:open'); });
@@ -49,6 +50,7 @@ function Shell({ embedded, onExit }) {
   return (
     <div className="ad">
       <header className="ad-top">
+        <span className="cblogo"><ClinibaseLogo /></span>
         <span className="ad-brand">RAYDAR <span>2.10</span></span>
         <span className="ad-badge">STUDY ADMIN</span>
         <span className="ad-sub">Changes reach recruiters only when you publish</span>

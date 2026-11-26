@@ -26,6 +26,8 @@ const CSV_MAX_BYTES = 4e6, CSV_MAX_ROWS = 50000, CSV_MAX_CELL = 400000;
 
 export { protoCode } from '../esource/codes.js';
 import { protoCode, qhash } from '../esource/codes.js';
+// 2.10: the Clinibase logo on page 1 (from Clinibase Branding), built into the file
+import LOGO from '../../../Clinibase Branding/Logos Red Bilby/CLINIBASE LOGO/Logos/CLINIBASE-LOGO-BLACK-BLUE300x58.png?inline';
 
 export function fnPart(s, max) {
   let t = String(s || '').replace(/&[a-z]+;/gi, ' ').replace(/[^a-z0-9]+/gi, '_').replace(/^_+|_+$/g, '');
@@ -251,6 +253,7 @@ export function buildPdf(sum) {
   }
 
   /* page 1: the clinic summary */
+  try { doc.addImage(LOGO, 'PNG', margin, y, 84, 16.24); y += 28; } catch (e) { /* the logo is a nicety */ }
   const PINK = [176, 6, 106], PINK_BG = [252, 231, 243];
   if (sum.test) {
     fill(PINK_BG); doc.setDrawColor(PINK[0], PINK[1], PINK[2]); doc.setLineWidth(1.2); doc.rect(margin, y, contentW, 34, 'FD');
