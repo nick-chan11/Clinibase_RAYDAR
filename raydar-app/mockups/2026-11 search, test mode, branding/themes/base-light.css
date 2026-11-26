@@ -1,0 +1,2 @@
+#rd,:root{--surface-0:#f2f3f4;--surface-1:#eef1f4;--surface-2:#ffffff;--border:rgba(27,42,63,.13);--border-strong:rgba(27,42,63,.24);--border-stronger:rgba(27,42,63,.45);--text-primary:#1b2a3f;--text-secondary:#4a5a70;--text-muted:#66727f;--bg-accent:#e3f5fd;--text-accent:#00669c;--border-accent:#00aff5;--fill-accent:#0077b6;--on-accent:#fff;--say-bg:#eaf7fe;--say-line:#a6dff8;--say-ink:#0d3060;--font-sans:"Fira Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--hover-tint:rgba(27,42,63,.05);--press-tint:rgba(27,42,63,.09)}
+html,body{background:#f2f3f4!important}

@@ -1,0 +1,5 @@
+/* C: Brand blue. Clinibase Blue buttons with navy text, Montserrat headings, a blue band across the top */
+body::before{content:"";display:block;height:6px;background:#00aff5}
+#rd,:root{--fill-accent:#00aff5;--on-accent:#0b1a2b}
+#rd .bar .brand,#rd h1,#rd h2,#rd h3,#rd .card h3,#rd .ttl,#rd .coltitle{font-family:"Montserrat",var(--font-sans)}
+#rd .bar .brand{font-weight:700;letter-spacing:.04em}

@@ -1,0 +1,3 @@
+/* B: Navy header, like the Clinibase CTMS top bar */
+#rd .bar{background:#1b2a3f;border-color:#1b2a3f;--surface-2:#1b2a3f;--surface-1:#243651;--text-primary:#ffffff;--text-secondary:#c9d5e3;--text-muted:#a9b7c8;--border:rgba(255,255,255,.18);--border-strong:rgba(255,255,255,.32);--bg-accent:rgba(0,175,245,.22);--text-accent:#5fd0fb;--fill-accent:#00aff5;--on-accent:#0b1a2b;--text-danger:#ffadad;--hover-tint:rgba(255,255,255,.08);color:#fff}
+#rd.dk .bar{background:#0d3060;border-color:#0d3060;--surface-2:#0d3060}

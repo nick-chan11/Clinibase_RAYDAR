@@ -1,0 +1,318 @@
+<title>RAYDAR Next Mockups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: one reading column in Clinibase's own look (white, navy type, Clinibase Blue for structure); each
+   decision is a section with its options side by side, and a "what I need from you" box at the end. */
+:root{
+  --bg:#ffffff; --bg-soft:#f2f3f4; --card:#ffffff; --ink:#1b2a3f; --ink-2:#4a5a70; --line:#d9dee4;
+  --blue:#00aff5; --blue-ink:#00669c; --blue-soft:#e3f5fd; --pink:#b8066f; --pink-soft:#fce7f3;
+  --ok:#3b6d11; --ok-soft:#eaf3de;
+  --f-body:"Fira Sans", "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1621; --bg-soft:#152030; --card:#1b2a3f; --ink:#eaf1f8; --ink-2:#b4c1d0; --line:#2a3b53;
+  --blue-ink:#5fd0fb; --blue-soft:#0c3a58; --pink:#ff7cc6; --pink-soft:#3d1230; --ok:#addb7c; --ok-soft:#203512; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1621; --bg-soft:#152030; --card:#1b2a3f; --ink:#eaf1f8; --ink-2:#b4c1d0; --line:#2a3b53;
+  --blue-ink:#5fd0fb; --blue-soft:#0c3a58; --pink:#ff7cc6; --pink-soft:#3d1230; --ok:#addb7c; --ok-soft:#203512; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;margin:0}
+.band{height:6px;background:var(--blue)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{display:flex;flex-direction:column;gap:6px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink);font-weight:600}
+h1{font-size:clamp(28px,4vw,40px);font-weight:500;margin:0;line-height:1.15;text-wrap:balance}
+h2{font-size:26px;font-weight:500;margin:0;text-wrap:balance}
+h3{font-size:18px;font-weight:600;margin:0}
+p{margin:0;max-width:68ch}
+.lede{color:var(--ink-2);font-size:17px}
+section{padding-block:36px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:18px}
+.toc a{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);background:var(--card)}
+.toc a:hover{border-color:var(--blue)}
+.toc a:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.toc b{font-weight:600}.toc span{font-size:14px;color:var(--ink-2)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:22px;align-items:start}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:18px;align-items:start}
+figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+figcaption{font-size:14px;color:var(--ink-2)}
+figcaption b{color:var(--ink);font-weight:600}
+.opt{display:flex;flex-direction:column;gap:10px;min-width:0}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--bg-soft);color:var(--ink-2);align-self:flex-start}
+.tag.rec{background:var(--blue-soft);color:var(--blue-ink)}
+ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;max-width:72ch}
+.note{background:var(--bg-soft);border-radius:10px;padding:14px 16px;font-size:15px;color:var(--ink-2);max-width:none}
+.note b{color:var(--ink)}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.sw i{width:28px;height:28px;border-radius:6px;border:1px solid var(--line);display:block}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;align-self:flex-start}
+.seg button{font:inherit;font-size:14px;border:0;background:transparent;color:var(--ink);padding:6px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--blue-soft);color:var(--blue-ink);font-weight:500}
+.ask{border:2px solid var(--blue);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;background:var(--card)}
+.ask ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:10px}
+.ask li b{font-weight:600}
+.small{font-size:14px;color:var(--ink-2)}
+
+/* ---- Pictures of RAYDAR's dark side panel, matching the screenshots sent. They stay dark in either page theme. ---- */
+.rp{--s0:#1c1c1a;--s1:#262624;--s2:#2f2f2c;--b:rgba(236,235,230,.14);--bs:rgba(236,235,230,.26);--t:#ecebe6;--t2:#bcbab3;--tm:#94928b;
+  --acc-bg:#173554;--acc:#9cc8f2;--bad-bg:#481b1b;--bad:#f7a9a9;--bad-b:#c24a49;--warn-bg:#3d2a0a;--warn:#f5c272;--warn-b:#b9791c;
+  background:var(--s2);color:var(--t);border:1px solid var(--bs);border-radius:12px;padding:12px 14px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:9px;min-width:0;position:relative}
+.rp .hd{display:flex;align-items:center;gap:8px}
+.rp .hb{border:1px solid var(--bs);border-radius:8px;padding:2px 9px;font-size:12px;color:var(--t)}
+.rp .ttl{font-weight:500;font-size:14px}
+.rp .sel{margin-left:auto;border:1px solid var(--bs);border-radius:6px;padding:2px 8px;font-size:11px;color:var(--t);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46%}
+.rp .tabs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--bs);border-radius:8px;overflow:hidden;font-size:12px;text-align:center}
+.rp .tabs span{padding:4px}.rp .tabs .on{background:var(--acc-bg);color:var(--acc)}
+.rp .box{border:1px solid var(--bs);border-radius:4px;padding:6px 8px;background:var(--s1);font-size:13px;color:var(--t)}
+.rp .box::after{content:"";display:inline-block;width:1px;height:14px;background:var(--t);margin-left:1px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.rp .box::after{animation:none}}
+.rp .sug{border:1px solid var(--bs);border-radius:8px;overflow:hidden;background:var(--s1)}
+.rp .sh{font-size:11px;color:var(--tm);padding:6px 10px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between;gap:8px}
+.rp .row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;padding:6px 10px;border-top:1px solid var(--b)}
+.rp .sh + .row{border-top:0}
+.rp .row.hi{background:#3a3a36;box-shadow:inset 3px 0 0 var(--acc)}
+.rp .nm{font-weight:600}.rp .ty{color:var(--tm);font-size:11px}
+.rp .gp{color:var(--t2);font-size:11px}
+.rp .why{color:var(--t2);font-size:11px;margin-top:1px}
+.rp .pill{font-size:11px;border-radius:999px;padding:1px 8px;white-space:nowrap;border:1px solid var(--bs);color:var(--t2);background:var(--s2)}
+.rp .pill.x{background:var(--bad-bg);color:var(--bad);border-color:var(--bad-b)}
+.rp .pill.d{background:var(--warn-bg);color:var(--warn);border-color:var(--warn-b)}
+.rp .foot{font-size:11px;color:var(--tm);padding:6px 10px;border-top:1px solid var(--b)}
+.rp .msg{background:var(--s1);border-radius:8px;padding:9px 10px;font-size:12px}
+.rp .msg .m{color:var(--tm)}
+.rp .lnk{color:var(--acc);text-decoration:underline}
+.rp .li{border-top:1px solid var(--b);padding-top:8px;font-size:12px}
+.rp .li b{font-weight:600;font-size:13px}
+.rp .dd{position:absolute;left:14px;right:14px;top:118px;z-index:2;border:1px solid var(--bs);border-top:0;background:var(--s2);border-radius:0 0 8px 8px;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.rp .dd .row{border-top:1px solid var(--b)}
+.rp .ghost{opacity:.45}
+.cap{font-size:14px;color:var(--ink-2)}
+.cap b{color:var(--ink);font-weight:600}
+.old .msg{outline:2px solid #e0453f;outline-offset:2px}
+</style>
+
+<div class="band" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">RAYDAR · next version · for your choice</span>
+    <h1>Mockups for search, test mode and Clinibase branding</h1>
+    <p class="lede">Nothing here is built yet. Each section shows the options I'd build, with my recommendation marked. Pick one per section (or tell me what to change) and I'll add your choices to the pipeline. The full plan is in <code>raydar-app/PIPELINE.md</code>.</p>
+    <nav class="toc" aria-label="Sections">
+      <a href="#search"><b>1. Medication search</b><span>Suggestions as you type, partial names, no more "doesn't know" for half-typed names</span></a>
+      <a href="#test"><b>2. Test mode</b><span>Move freely through any study, no call checks, clearly marked</span></a>
+      <a href="#brand"><b>3. Clinibase branding</b><span>Three looks, on the real app, light and dark</span></a>
+    </nav>
+  </header>
+
+  <!-- ===================== 1. SEARCH ===================== -->
+  <section id="search" aria-labelledby="h-search">
+    <span class="eyebrow">1 · Prohibited list, Medications search</span>
+    <h2 id="h-search">Suggestions as you type</h2>
+    <p>Today the panel only recognises a full name, so "quetiap" says <i>"isn't a medicine RAYDAR knows"</i>. The fix lists the medicines that start with what's typed, from the third letter, and keeps "doesn't recognise" for names that really aren't there. These use real results from the dictionary and EMBOLD's list.</p>
+
+    <h3>Which layout?</h3>
+    <div class="grid2">
+      <div class="opt">
+        <span class="tag rec">Option S1 · recommended</span>
+        <div class="rp" role="img" aria-label="Mockup: suggestions inside the panel, each with EMBOLD's result">
+          <div class="hd"><span class="hb">Hide</span><span class="ttl">Prohibited list</span><span class="sel">D7260C00015 (EMBOLD)</span></div>
+          <div class="tabs"><span class="on">Medications (39)</span><span>Conditions (20)</span></div>
+          <div class="box">quetiap</div>
+          <div class="sug">
+            <div class="sh"><span>1 medicine starts with "quetiap"</span><span>↑↓ choose · Enter opens</span></div>
+            <div class="row hi"><div><span class="nm">Quetiapine</span> <span class="ty">ingredient</span><div class="gp">Antipsychotic (diazepines, oxazepines, thiazepines and oxepines)</div><div class="why">Matches Phenelzine/Fluoxetine/Quetiapine, if the dose changed in the last 365 days</div></div><span class="pill x">Excluded</span></div>
+          </div>
+          <div class="li"><b>Phenelzine/Fluoxetine/Quetiapine</b> <span class="pill x" style="float:right">Excluded</span><div class="gp">The list's own words are searched below, as now.</div></div>
+        </div>
+        <p class="cap"><b>Inside the panel, with the answer on each row.</b> The recruiter sees Excluded, Doctor check or Not on the list while still typing, without picking first. Enter or a click opens the full card (eSource wording, time window, Add to med log).</p>
+      </div>
+      <div class="opt">
+        <span class="tag">Option S2</span>
+        <div class="rp" role="img" aria-label="Mockup: a drop-down under the search box, like the med log">
+          <div class="hd"><span class="hb">Hide</span><span class="ttl">Prohibited list</span><span class="sel">D7260C00015 (EMBOLD)</span></div>
+          <div class="tabs"><span class="on">Medications (39)</span><span>Conditions (20)</span></div>
+          <div class="box">quetiap</div>
+          <div class="dd">
+            <div class="row hi" style="border-top:0"><div><span class="nm">Quetiapine</span> <span class="gp">Antipsychotic</span></div><span class="ty">ingredient</span></div>
+          </div>
+          <div class="ghost" style="margin-top:34px"><div class="li"><b>Phenelzine/Fluoxetine/Quetiapine</b><div class="gp">Drugs associated with weight gain …</div></div></div>
+        </div>
+        <p class="cap"><b>A drop-down, the same as the med log name box.</b> Familiar, but it covers the list underneath, and the recruiter has to pick a name before seeing whether it's on the list.</p>
+      </div>
+    </div>
+
+    <h3>What S1 shows for each kind of search</h3>
+    <div class="grid3">
+      <div class="opt">
+        <div class="rp" role="img" aria-label="Mockup: typing insulin lists the insulins">
+          <div class="box">insulin</div>
+          <div class="sug">
+            <div class="sh"><span>15 medicines start with "insulin"</span></div>
+            <div class="row hi"><div><span class="nm">Insulin aspart</span><div class="gp">Insulin, fast-acting</div></div><span class="pill">Not on the list</span></div>
+            <div class="row"><div><span class="nm">Insulin icodec</span><div class="gp">Insulin, long-acting</div></div><span class="pill">Not on the list</span></div>
+            <div class="row"><div><span class="nm">Insulin lispro</span><div class="gp">Insulin, fast-acting</div></div><span class="pill">Not on the list</span></div>
+            <div class="row"><div><span class="nm">Insulin detemir</span><div class="gp">Insulin, long-acting</div></div><span class="pill">Not on the list</span></div>
+            <div class="row"><div><span class="nm">Insulin degludec</span><div class="gp">Insulin, long-acting</div></div><span class="pill">Not on the list</span></div>
+            <div class="foot">+10 more (scroll): glargine, glulisine, isophane and others. None are on EMBOLD's list. Not listed doesn't mean allowed: raise an enquiry if unsure.</div>
+          </div>
+        </div>
+        <p class="cap"><b>A partial name with many matches.</b> All 15 insulins are listed, shortest names first; the list scrolls after the first few.</p>
+      </div>
+      <div class="opt">
+        <div class="rp" role="img" aria-label="Mockup: typing metformi suggests metformin">
+          <div class="box">metformi</div>
+          <div class="sug">
+            <div class="sh"><span>1 medicine starts with "metformi"</span></div>
+            <div class="row hi"><div><span class="nm">Metformin</span> <span class="ty">ingredient</span><div class="gp">Biguanides (diabetes)</div></div><span class="pill">Not on the list</span></div>
+          </div>
+        </div>
+        <div class="rp" role="img" aria-label="Mockup: a misspelling shows the closest spellings">
+          <div class="box">atorvastaten</div>
+          <div class="sug">
+            <div class="sh"><span>No medicine starts with that. Closest spellings:</span></div>
+            <div class="row hi"><div><span class="nm">Atorvastatin</span><div class="gp">Statin (HMG CoA reductase inhibitor)</div><div class="why">Matches "Have you ever been on any medication ending in statin?"</div></div><span class="pill d">Doctor check</span></div>
+          </div>
+        </div>
+        <p class="cap"><b>Half-typed or misspelt.</b> Shown as suggestions, never as "doesn't know".</p>
+      </div>
+      <div class="opt">
+        <div class="rp" role="img" aria-label="Mockup: a name with no match says RAYDAR doesn't recognise it">
+          <div class="box">zelvorin</div>
+          <div class="msg"><b>RAYDAR doesn't recognise "zelvorin".</b><div class="m" style="margin-top:3px">No medicine starts with it and nothing is spelt close to it. Check the spelling with the participant, or raise an enquiry. The list's own words are searched below.</div></div>
+        </div>
+        <div class="rp old" role="img" aria-label="Today: insulin shows isn't a medicine RAYDAR knows">
+          <div class="box">insulin</div>
+          <div class="msg"><b>insulin</b> <span class="m">isn't a medicine RAYDAR knows.</span><div style="margin-top:3px">Did you mean <span class="lnk">insulin aspart</span>, <span class="lnk">insulin icodec</span>, <span class="lnk">insulin lispro</span>?</div></div>
+        </div>
+        <p class="cap"><b>Only real unknowns get the message</b> (top). Below, outlined in red: today's wording, which goes away.</p>
+      </div>
+    </div>
+    <p class="note"><b>Keys:</b> ↑ ↓ move through the suggestions, Enter or Tab opens the highlighted one, Esc closes them. Typing the full name keeps the list showing, the same as the med log in 2.9.</p>
+  </section>
+
+  <!-- ===================== 2. TEST MODE ===================== -->
+  <section id="test" aria-labelledby="h-test">
+    <span class="eyebrow">2 · Test mode</span>
+    <h2 id="h-test">Walk through any study without the call's checks</h2>
+    <p>For recruiters getting to know a study and for anyone testing RAYDAR. Checks are switched off, every question can be opened in any order, and everything still works so it can be tested. Pink marks it, because the Clinibase CTMS already uses a pink "You are in UAT" banner for its test system, and the brand guidelines keep pink as a sparing accent.</p>
+
+    <figure>
+      <img src="img/tm-entry-crop.jpg" alt="The Identity card with a new line at the bottom: Just looking around? Explore any study without a participant, and an Explore in test mode button" width="1620" height="580" loading="lazy">
+      <figcaption><b>Way in:</b> a line under the identity check, plus Tools › Test mode. One click, no PID or date of birth.</figcaption>
+    </figure>
+
+    <h3>How visible should it be?</h3>
+    <div class="grid2">
+      <figure class="opt">
+        <span class="tag rec">Option T1 · recommended</span>
+        <a href="img/tm-T2.jpg" target="_blank" rel="noopener"><img src="img/tm-T2.jpg" alt="RAYDAR in test mode: pink banner at the top that stays in view, a pink frame round the page, Test mode no participant in the header, Identity and Quick check marked skipped, and a Show questions hidden by earlier answers switch" width="2880" height="1720" loading="lazy"></a>
+        <figcaption><b>Banner that stays in view, a pink frame and a header label.</b> Still obvious after scrolling or in a screen share, so nobody forgets they're in it.</figcaption>
+      </figure>
+      <figure class="opt">
+        <span class="tag">Option T2</span>
+        <a href="img/tm-T1.jpg" target="_blank" rel="noopener"><img src="img/tm-T1.jpg" alt="RAYDAR in test mode with the pink banner and header label but no frame" width="2880" height="1720" loading="lazy"></a>
+        <figcaption><b>Banner and header label only.</b> Quieter, like the CTMS UAT banner.</figcaption>
+      </figure>
+    </div>
+
+    <div class="grid2">
+      <div class="opt">
+        <h3>Switched off in test mode</h3>
+        <ul class="plain">
+          <li>Identity: PID, date of birth and profile match</li>
+          <li>Quick check (optional, still there to try)</li>
+          <li>Dates and availability, and the study information check: a study opens straight at its questions</li>
+          <li>Order: any section or question opens from the section tabs or list</li>
+        </ul>
+      </div>
+      <div class="opt">
+        <h3>Still works, so it can be tested</h3>
+        <ul class="plain">
+          <li>Answers, outcomes, follow-up questions, notes</li>
+          <li>Med log, prohibited-list matching, Dr enquiry</li>
+          <li>Finish and Save PDF. The PDF is stamped <b>TEST, not a real pre-screen</b> and its name starts <code>TEST-</code></li>
+          <li>"Back to normal mode" starts a clean call; test calls are never offered by "Back to the last call"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. BRANDING ===================== -->
+  <section id="brand" aria-labelledby="h-brand">
+    <span class="eyebrow">3 · Clinibase branding</span>
+    <h2 id="h-brand">Three looks, from the brand guidelines</h2>
+    <p>These are screenshots of the real RAYDAR 2.9 with each look applied, on EMBOLD's first question. Layout, wording and the green, amber and red outcome colours don't change. Only the colours, type and logo do.</p>
+
+    <div class="swatches" aria-label="Clinibase colours used">
+      <span class="sw"><i style="background:#00aff5"></i>Clinibase Blue #00AFF5</span>
+      <span class="sw"><i style="background:#0077b6"></i>Deeper blue #0077B6 (buttons)</span>
+      <span class="sw"><i style="background:#1b2a3f"></i>Navy #1B2A3F</span>
+      <span class="sw"><i style="background:#0d3060"></i>Navy #0D3060</span>
+      <span class="sw"><i style="background:#f2f3f4"></i>Grey #F2F3F4</span>
+      <span class="sw"><i style="background:#dd0881"></i>Pink #DD0881 (test mode only)</span>
+    </div>
+
+    <div class="seg" role="group" aria-label="Show the screenshots in">
+      <button type="button" id="mode-light" aria-pressed="true">Light</button>
+      <button type="button" id="mode-dark" aria-pressed="false">Dark</button>
+    </div>
+
+    <div class="grid2">
+      <figure class="opt">
+        <span class="tag">Today</span>
+        <a href="img/now-light.jpg" target="_blank" rel="noopener" data-shot="now"><img src="img/now-light.jpg" alt="RAYDAR today: warm beige page, generic blue, system font, no logo" width="2880" height="1720" loading="lazy"></a>
+        <figcaption><b>RAYDAR 2.9 as it is.</b> Warm beige, a generic blue, the computer's own font, no logo.</figcaption>
+      </figure>
+      <figure class="opt">
+        <span class="tag rec">Option A · Clean Clinibase · recommended</span>
+        <a href="img/A-light.jpg" target="_blank" rel="noopener" data-shot="A"><img src="img/A-light.jpg" alt="Option A: white header with the Clinibase logo and a thin Clinibase Blue top edge, cool grey page, navy text, Fira Sans" width="2880" height="1720" loading="lazy"></a>
+        <figcaption><b>White header with the logo and a thin blue edge.</b> Cool greys, navy text, Fira Sans, a deeper Clinibase Blue for buttons. The calmest for long calls; dark mode turns navy.</figcaption>
+      </figure>
+      <figure class="opt">
+        <span class="tag">Option B · Navy header</span>
+        <a href="img/B-light.jpg" target="_blank" rel="noopener" data-shot="B"><img src="img/B-light.jpg" alt="Option B: navy header bar with the white Clinibase logo and Clinibase Blue Finish call button" width="2880" height="1720" loading="lazy"></a>
+        <figcaption><b>A navy top bar, like the Clinibase CTMS.</b> The strongest Clinibase feel and the clearest split between the call details and the questions.</figcaption>
+      </figure>
+      <figure class="opt">
+        <span class="tag">Option C · Brand blue</span>
+        <a href="img/C-light.jpg" target="_blank" rel="noopener" data-shot="C"><img src="img/C-light.jpg" alt="Option C: a Clinibase Blue band across the top, Clinibase Blue buttons with navy text, Montserrat headings" width="2880" height="1720" loading="lazy"></a>
+        <figcaption><b>Pure Clinibase Blue buttons with navy text,</b> a blue band across the top, Montserrat for headings (the guidelines' web font). The most colourful.</figcaption>
+      </figure>
+    </div>
+
+    <p class="note"><b>Readability, all options:</b> Clinibase Blue is too light for white text (2.5:1, below the 4.5:1 guideline), so A and B put white text on a deeper shade of it (4.9:1) and C puts navy text on it (5.9:1). Links use a darker blue on white and a lighter one on navy. The Say card keeps Atkinson Hyperlegible, a font made for easy reading aloud, unless you'd rather it used Fira Sans. Fonts and the logo are built into the file, so it still works offline.</p>
+    <p class="small">Click any screenshot to open it full size.</p>
+  </section>
+
+  <section aria-labelledby="h-ask" style="border-bottom:0">
+    <div class="ask">
+      <h2 id="h-ask">What I need from you</h2>
+      <ol>
+        <li><b>Search:</b> S1 (inside the panel, recommended) or S2 (drop-down)?</li>
+        <li><b>Test mode:</b> T1 (banner, frame and label, recommended) or T2 (banner and label)? Should the recruiter file have it, or only the admin and all-in-one files? Should "Show questions hidden by earlier answers" start on or off?</li>
+        <li><b>Branding:</b> A (recommended), B or C, or a mix (for example, A's colours with B's navy header)? Keep Atkinson Hyperlegible for the Say card?</li>
+      </ol>
+      <p class="small">I'll add your picks to the pipeline and build everything together when you say go.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var light = document.getElementById('mode-light'), dark = document.getElementById('mode-dark');
+  function set(mode) {
+    light.setAttribute('aria-pressed', String(mode === 'light'));
+    dark.setAttribute('aria-pressed', String(mode === 'dark'));
+    document.querySelectorAll('[data-shot]').forEach(function (a) {
+      var f = 'img/' + a.getAttribute('data-shot') + '-' + mode + '.jpg';
+      a.href = f; a.querySelector('img').src = f;
+    });
+  }
+  light.addEventListener('click', function () { set('light'); });
+  dark.addEventListener('click', function () { set('dark'); });
+})();
+</script>
