@@ -16,6 +16,12 @@ Plan:
   `suggest()` the med log uses), nearest first, scrolling after the first 6.
 - Each row shows the name, brand or ingredient, its drug group, and its result for the chosen study: Excluded,
   Doctor check or Not on the list (the same `checkMed()` the full card uses).
+- Drug group line: the broad class in plain words, then the exact class, both from the ATC levels already in
+  `RAYDAR medicines.json` ("Antipsychotics · Diazepines, oxazepines, thiazepines and oxepines", "Drugs used in
+  diabetes · Biguanides"). The mockup's "Antipsychotic", "(diabetes)" and "Statin" labels were illustrative;
+  everyday names like "statin" or "SSRI" would need adding by hand to `RAYDAR medicine extras.json`.
+  To confirm: broad + exact class, or broad class only.
+- Third line, only when it's on the list: the list item it falls under and its time window.
 - Click, Enter or Tab opens the full card that shows today when a name is recognised (eSource wording, time
   window, Add to med log). Arrow keys move through the rows. Typing the full name keeps the list (as in 2.9's med log).
 - No name starts with it, but there are close spellings ("atorvastaten"): "No medicine starts with that.
