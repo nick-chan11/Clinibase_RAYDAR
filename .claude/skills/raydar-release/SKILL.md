@@ -27,6 +27,9 @@ npm run study:check-data
 npm run test:studies
 npm run test:pdf
 npm run test:admin
+npm run test:medicines
+npm run test:suggest
+npm run test:testmode
 npm run build:all
 npm run test:offline
 ```
@@ -35,6 +38,9 @@ npm run test:offline
 - `test:studies`: every study is answered start to finish by keyboard, as a woman and as a man.
 - `test:pdf`: a PDF is saved for every Finish outcome and reopened with Import callback.
 - `test:admin`: the study admin end to end (set up a folder, drag in a question, publish, preview).
+- `test:medicines`: names, spellings, groups and prohibited-item matching.
+- `test:suggest`: the med log name and Frequency suggestions, and the prohibited-list search.
+- `test:testmode`: test mode on and off, free movement, the TEST-stamped PDF.
 - `build:all` writes `../RAYDAR_<version>.html`, `_Admin.html` and `_All-in-one.html`.
 - `test:offline`: the built file works with the network off.
 

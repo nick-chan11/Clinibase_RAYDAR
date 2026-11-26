@@ -1,6 +1,43 @@
-# RAYDAR 2.9 (React + Motion)
+# RAYDAR 2.10 (React + Motion)
 
 A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-animation skill.
+
+## New in 2.10
+
+Chosen from the mockups in `mockups/2026-11 search, test mode, branding/` (search S1, test mode T1, branding A).
+
+- **Prohibited-list search suggests as you type** (`MedLookup` in `src/views/Medicines.jsx`). From the third
+  letter it lists the medicines whose name starts with what's typed, each with the chosen study's result
+  (Excluded, Doctor check, Not on the list). The highlighted one shows labelled tags: Drug class; for a brand, its
+  Active ingredient(s) (each with its own class for combinations) and "Same as" (other brands of the same
+  medicine); then the list item, its time window, the eSource wording and Add to med log. Close spellings sit under
+  their own heading. "RAYDAR doesn't recognise …" only shows when nothing starts with the name and nothing is spelt
+  close to it. Arrows move, Enter or Tab picks, Esc clears. Drug classes come from the PBS groups at the level a
+  recruiter knows (`classOf` in `src/medicines/dict.js`), with a short approved list of plain names where the PBS
+  wording is clinical (`CLASS_WORDS`). No "Common brands" yet (it needs the PBS original-brand marker).
+- **Mounjaro on EMBOLD.** "Incretins (GLP-1 or GIP drugs)" now covers tirzepatide (PBS A10BX16) as well as the
+  GLP-1 drugs: the word "GIP" pre-fills it (`groupWords` in `../RAYDAR medicine extras.json`). Before, EMBOLD
+  showed Mounjaro as not on the list. It stays RAYDAR's reading until TST confirms the item in the study admin.
+- **Frequency** in the med log, after Dosage, for medications and supplements: common choices as you type (Tab
+  fills), anything can be typed. On logged items, the PDF, the Dr enquiry text, and back with Import callback.
+- **Enter on a name suggestion only fills the name.** In 2.9 it also added the row at once, before dosage and
+  frequency could be filled in. A key a box has used (Enter or Tab on a suggestion) no longer also reaches the
+  page's own shortcuts (`App.jsx`).
+- **Test mode** (`src/views/TestMode.jsx`), in all three files: "Explore in test mode" on the Identity screen or
+  Tools. Skips the identity, date and study-information checks; any study opens straight at its questions; any
+  section can be opened; "Show questions hidden by earlier answers" (on to start) shows questions earlier answers
+  would hide, marked "Hidden in a real call", and never counts them as unanswered. Answers, the med log, matching,
+  Dr enquiry and Save PDF still work. A pink banner that stays in view, a pink frame and "Test mode · no
+  participant" mark it; PDFs are stamped TEST with names starting `TEST-`, and reopen in test mode; the Dr enquiry
+  text starts "TEST MODE"; test calls are never offered by "Back to the last call". "Back to normal mode" starts a
+  clean call.
+- **Clinibase branding (option A)**: the Clinibase palette (Clinibase Blue for actions and the current step, navy
+  text, cool greys; a navy dark mode), Fira Sans built into the file (`src/fonts.css`, works offline), and the
+  Clinibase logo (`src/views/Logo.jsx`, the CB circle always in Clinibase Blue) beside RAYDAR in the header, the
+  study admin and page 1 of the PDF. Outcome and site colours are unchanged; the Say card keeps Atkinson
+  Hyperlegible. Clinibase pink is kept for test mode only.
+- New tests: `npm run test:testmode`; `npm run test:suggest` now covers the search and Frequency;
+  `npm run test:pdf` checks Frequency comes back; `npm run test:medicines` checks Mounjaro on EMBOLD.
 
 ## New in 2.9: medicine name suggestions
 

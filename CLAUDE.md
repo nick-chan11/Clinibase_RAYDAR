@@ -38,7 +38,7 @@ Use these (in `.claude/skills/`) rather than improvising:
 
 Tools they use, run from `raydar-app/`: `npm run study:report`, `npm run study:diff`, `npm run study:check-data`,
 `npm run test:studies`, `npm run test:pdf`, `npm run test:admin`, `npm run test:offline`, `npm run dict:update`,
-`npm run test:medicines`.
+`npm run test:medicines`, `npm run test:suggest`, `npm run test:testmode`.
 
 ## Rules
 
