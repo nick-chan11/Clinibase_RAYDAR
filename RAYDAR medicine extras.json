@@ -344,6 +344,15 @@
       ]
     },
     {
+      "words": "gip",
+      "groups": [
+        "A10BX16"
+      ],
+      "why": "\"GIP drugs\" (e.g. EMBOLD's \"Incretins (GLP-1 or GIP drugs)\") means tirzepatide (Mounjaro), a GIP and GLP-1 drug the PBS files under A10BX, not with the GLP-1 drugs in A10BJ. Pre-fill only: TST confirms each item in the study admin.",
+      "by": "RAYDAR 2.10, approved by the RAYDAR lead",
+      "date": "2026-11-26"
+    },
+    {
       "words": "sulph?onylureas?|sulphonylureases",
       "groups": [
         "A10BB"

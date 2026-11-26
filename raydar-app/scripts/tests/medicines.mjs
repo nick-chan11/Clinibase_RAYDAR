@@ -43,6 +43,12 @@ const ccb = embold.pro.med.find((p) => /Diltiazem/.test(p.n));
 const pf = prefill(ccb);
 ok(pf.cov.i.includes('diltiazem') && !pf.cov.g.length && pf.sug.length, 'named drugs with a group in brackets: drugs only, group suggested', pf);
 
+// 2.10: "Incretins (GLP-1 or GIP drugs)" covers tirzepatide (Mounjaro, PBS A10BX16) as well as the GLP-1 drugs
+const incr = checkMed({ t: 'med', n: 'Mounjaro' }, embold);
+ok(incr && incr.o === 'x' && /Incretins/.test(incr.n), 'EMBOLD: Mounjaro is excluded under Incretins (GLP-1 or GIP drugs)', incr && incr.n);
+const oz = checkMed({ t: 'med', n: 'Ozempic' }, embold);
+ok(oz && /Incretins/.test(oz.n), 'EMBOLD: Ozempic is excluded under Incretins', oz && oz.n);
+
 /* lists read from questions and from notes without a "prohibited" title */
 const st = (re) => studies.find((s) => re.test(s.file));
 const sb = st(/Melbourne - SB3567/), kt = st(/KT502/), vbe = st(/VBE/), sun = st(/SUN/);
