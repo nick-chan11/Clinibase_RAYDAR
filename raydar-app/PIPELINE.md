@@ -1,7 +1,10 @@
 # RAYDAR pipeline
 
-**RAYDAR 2.10.** Chosen: search S1, test mode T1, branding A. Waiting on the round 2 questions at the end of the
-mockups page (S1 tags, common brands source, Mounjaro fix, test mode in the recruiter file, Say card font).
+**RAYDAR 2.10.** Settled: search S1 with tags Drug class, Common brands (ingredients), Active ingredient(s) and
+Same as (brands), no route tag; test mode T1 in every file (recruiter, admin, all-in-one) with "Show questions
+hidden by earlier answers" on to start; branding A; the Say card keeps Atkinson Hyperlegible; the Mounjaro fix;
+a Frequency field in the med log. Still open: the Frequency mockup, and whether to add the PBS original-brand
+marker for "Common brands" (or leave that tag out for now).
 
 ## Found while mocking up: Mounjaro isn't caught on EMBOLD (fix in 2.10, to confirm)
 
@@ -10,6 +13,16 @@ EMBOLD (D7260C00015) excludes "Incretins (GLP-1 or GIP drugs)" within 90 days. `
 "Other blood glucose lowering drugs", not A10BJ GLP-1 analogues. Fix through the `raydar-medicines` skill: add
 tirzepatide to that item's `proItems` for TST to confirm (or a RAYDAR incretins group covering A10BJ and
 tirzepatide), then check every study with an incretin or GLP-1 item, and add a `test:medicines` check.
+
+## Frequency in the med log (2.10)
+
+- A Frequency box after Dosage for medications and supplements (not history): `FLD` and `EF()` in
+  `src/engine/store.js`, `eParts`/`eText`, the edit actions (`redit`, `medit`), the med log form and logged rows.
+- Suggests Once daily, Twice daily, Three times daily, Four times daily, Every morning, At night, Weekly,
+  Fortnightly, Monthly, As needed (a datalist or the 2.9 suggestion box with Tab); any text allowed.
+- Dosage's example becomes "500 mg" (frequency no longer in it).
+- Saved in the PDF and the Dr enquiry text; Import callback reads it, and older PDFs without it still import.
+- Tests: `test:pdf` round-trips a frequency; `test:suggest` covers Tab on the frequency box.
 
 Improvements queued for the next version. Nothing here is built yet: each waits for a go-ahead, and anything that
 changes how RAYDAR looks or behaves waits for a mockup choice first (see the mockups page linked in the session).
@@ -25,6 +38,7 @@ there are 15 insulins in the dictionary.
 Plan:
 - From 3 letters, list the medicines whose name starts with what's typed (brands and ingredients, the same
   `suggest()` the med log uses), nearest first, scrolling after the first 6.
+- No route tag ("Taken"): the med log already asks for the route.
 - Each row shows the name, brand or ingredient, its drug group, and its result for the chosen study: Excluded,
   Doctor check or Not on the list (the same `checkMed()` the full card uses).
 - Drug group line: the broad class in plain words, then the exact class, both from the ATC levels already in

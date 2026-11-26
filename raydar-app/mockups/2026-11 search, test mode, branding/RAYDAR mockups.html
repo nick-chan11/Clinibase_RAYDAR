@@ -67,9 +67,11 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
 .rp .tabs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--bs);border-radius:8px;overflow:hidden;font-size:12px;text-align:center}
 .rp .tabs span{padding:4px}.rp .tabs .on{background:var(--acc-bg);color:var(--acc)}
 .rp .box{border:1px solid var(--bs);border-radius:4px;padding:6px 8px;background:var(--s1);font-size:13px;color:var(--t)}
+.rp .box.nb::after{display:none}
 .rp .box::after{content:"";display:inline-block;width:1px;height:14px;background:var(--t);margin-left:1px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-@media (prefers-reduced-motion:reduce){.rp .box::after{animation:none}}
+@media (prefers-reduced-motion:reduce){.rp .box.nb::after{display:none}
+.rp .box::after{animation:none}}
 .rp .sug{border:1px solid var(--bs);border-radius:8px;overflow:hidden;background:var(--s1)}
 .rp .sh{font-size:11px;color:var(--tm);padding:6px 10px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between;gap:8px}
 .rp .row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;padding:6px 10px;border-top:1px solid var(--b)}
@@ -129,6 +131,7 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
     <p class="lede">Nothing here is built yet. Each section shows the options I'd build, with my recommendation marked. Pick one per section (or tell me what to change) and I'll add your choices to the pipeline. The full plan is in <code>raydar-app/PIPELINE.md</code>.</p>
     <nav class="toc" aria-label="Sections">
       <a href="#s1"><b>New: S1 in detail</b><span>Brands for ingredients, ingredients for brands, labelled tags</span></a>
+      <a href="#freq"><b>New: Frequency field</b><span>How often, next to the dose, in the med log</span></a>
       <a href="#search"><b>1. Medication search</b><span>Suggestions as you type, partial names, no more "doesn't know" for half-typed names</span></a>
       <a href="#test"><b>2. Test mode</b><span>Move freely through any study, no call checks, clearly marked</span></a>
       <a href="#brand"><b>3. Clinibase branding</b><span>Three looks, on the real app, light and dark</span></a>
@@ -146,13 +149,12 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
       <dt>Drug class</dt><dd>The class from the PBS, at the level a recruiter would recognise: Antipsychotics, Antidepressants, Opioids, GLP-1 analogues.</dd>
       <dt>Common brands</dt><dd>For an ingredient: the best-known brands first, then "+N more" to see them all.</dd>
       <dt>Active ingredient</dt><dd>For a brand: what's in it, with "Same as" for other brands of the same medicine. Combination products list every ingredient with its own class.</dd>
-      <dt>Taken</dt><dd>By mouth, injection, inhaled, on the skin, from the forms in the dictionary.</dd>
       <dt>Study line</dt><dd>Excluded, Doctor check or Not on the list for the study chosen in the panel, the list item it falls under and its time window.</dd>
     </dl>
 
     <div class="grid2">
       <div class="opt">
-        <div class="rp a" role="img" aria-label="Typing quetiap: Quetiapine, an ingredient, with tags for drug class Antipsychotics, common brands Seroquel and Seroquel XR plus 40 more, taken by mouth, and Excluded on EMBOLD">
+        <div class="rp a" role="img" aria-label="Typing quetiap: Quetiapine, an ingredient, with tags for drug class Antipsychotics, common brands Seroquel and Seroquel XR plus 40 more, and Excluded on EMBOLD">
           <div class="hd"><span class="hb">Hide</span><span class="ttl">Prohibited list</span><span class="sel">D7260C00015 (EMBOLD)</span></div>
           <div class="tabs"><span class="on">Medications (39)</span><span>Conditions (20)</span></div>
           <div class="box">quetiap</div>
@@ -164,7 +166,6 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
                 <div class="tags">
                   <span class="tg"><i>Drug class</i>Antipsychotics</span>
                   <span class="tg"><i>Common brands</i>Seroquel, Seroquel XR <span class="more">+40 more</span></span>
-                  <span class="tg"><i>Taken</i>by mouth</span>
                 </div>
                 <div class="hit">Phenelzine/Fluoxetine/Quetiapine <span class="m">· within 365 days</span></div>
               </div>
@@ -185,7 +186,6 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
                 <div class="tags">
                   <span class="tg"><i>Active ingredient</i>quetiapine</span>
                   <span class="tg"><i>Drug class</i>Antipsychotics</span>
-                  <span class="tg"><i>Taken</i>by mouth</span>
                   <span class="tg"><i>Same as</i><span class="more">41 other quetiapine brands</span></span>
                 </div>
                 <div class="hit">Phenelzine/Fluoxetine/Quetiapine <span class="m">· within 365 days</span></div>
@@ -198,7 +198,7 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
       </div>
 
       <div class="opt">
-        <div class="rp a" role="img" aria-label="Typing ozem: Ozempic, a brand of semaglutide, GLP-1 analogue, same as Wegovy and Rybelsus, injection, Excluded on EMBOLD under Incretins within 90 days; then close spellings Ozmep and Ozeprem">
+        <div class="rp a" role="img" aria-label="Typing ozem: Ozempic, a brand of semaglutide, GLP-1 analogue, same as Wegovy and Rybelsus, Excluded on EMBOLD under Incretins within 90 days; then close spellings Ozmep and Ozeprem">
           <div class="box">ozem</div>
           <div class="sug">
             <div class="sh"><span>1 medicine starts with "ozem"</span></div>
@@ -208,7 +208,6 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
                 <div class="tags">
                   <span class="tg"><i>Active ingredient</i>semaglutide</span>
                   <span class="tg"><i>Drug class</i>GLP-1 analogues</span>
-                  <span class="tg"><i>Taken</i>injection</span>
                   <span class="tg"><i>Same as</i>Wegovy, Rybelsus</span>
                 </div>
                 <div class="hit">Incretins (GLP-1 or GIP drugs) <span class="m">· within 90 days</span></div>
@@ -223,7 +222,7 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
       </div>
 
       <div class="opt">
-        <div class="rp a" role="img" aria-label="Typing panadeine forte: a brand with two active ingredients, paracetamol and codeine, each with its class, taken by mouth, not on EMBOLD's list">
+        <div class="rp a" role="img" aria-label="Typing panadeine forte: a brand with two active ingredients, paracetamol and codeine, each with its class, not on EMBOLD's list">
           <div class="box">panadeine forte</div>
           <div class="sug">
             <div class="sh"><span>1 medicine starts with "panadeine forte"</span></div>
@@ -233,7 +232,6 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
                 <div class="tags">
                   <span class="tg"><i>Active ingredients</i>paracetamol + codeine</span>
                   <span class="tg"><i>Drug class</i>paracetamol: pain and fever relief · codeine: Opioids</span>
-                  <span class="tg"><i>Taken</i>by mouth</span>
                 </div>
                 <div class="hit none">Not on EMBOLD's list. Not listed doesn't mean allowed: raise an enquiry if unsure.</div>
               </div>
@@ -244,7 +242,7 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
       </div>
 
       <div class="opt">
-        <div class="rp a lt" role="img" aria-label="Light look: typing sertral shows Sertraline, an ingredient, Antidepressants, common brand Zoloft plus 12 more, by mouth, Excluded on EMBOLD">
+        <div class="rp a lt" role="img" aria-label="Light look: typing sertral shows Sertraline, an ingredient, Antidepressants, common brand Zoloft plus 12 more, Excluded on EMBOLD">
           <div class="hd"><span class="hb">Hide</span><span class="ttl">Prohibited list</span><span class="sel">D7260C00015 (EMBOLD)</span></div>
           <div class="box">sertral</div>
           <div class="sug">
@@ -255,7 +253,6 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
                 <div class="tags">
                   <span class="tg"><i>Drug class</i>Antidepressants</span>
                   <span class="tg"><i>Common brands</i>Zoloft <span class="more">+12 more</span></span>
-                  <span class="tg"><i>Taken</i>by mouth</span>
                 </div>
                 <div class="hit">Sertraline/Haloperidol/Thioridazine <span class="m">· within 365 days</span></div>
               </div>
@@ -275,7 +272,6 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
                 <div class="tags">
                   <span class="tg"><i>Active ingredient</i>tirzepatide</span>
                   <span class="tg"><i>Drug class</i>GIP and GLP-1 drugs</span>
-                  <span class="tg"><i>Taken</i>injection</span>
                 </div>
                 <div class="hit">Incretins (GLP-1 or GIP drugs) <span class="m">· within 90 days</span></div>
               </div>
@@ -295,6 +291,45 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
       (1) <b>which brands are "common"</b>: the dictionary has 42 quetiapine brands with nothing marking Seroquel as the one people know. The PBS marks each medicine's original brand, so the next dictionary update would read that file and list the original brand first. A short hand-kept list can add others, such as pharmacy-shelf brands like Panadol.
       (2) <b>everyday class names</b>: the PBS wording is sometimes clinical ("Diazepines, oxazepines, thiazepines and oxepines", "Anilides"). RAYDAR would pick the level a recruiter recognises (Antipsychotics), with a short list of plain names you approve where the PBS has none ("pain and fever relief" for paracetamol, "GIP and GLP-1 drugs" for tirzepatide above are examples of these).
       Wegovy and Mounjaro are different medicines (semaglutide and tirzepatide), so each shows under its own ingredient.</p>
+  </section>
+
+  <!-- ===================== FREQUENCY ===================== -->
+  <section id="freq" aria-labelledby="h-freq">
+    <span class="eyebrow">Med log · new field</span>
+    <h2 id="h-freq">Frequency, next to Dosage</h2>
+    <p>Medications and supplements get a Frequency box after Dosage. It offers common choices as you type (Once daily, Twice daily, Three times daily, Every morning, At night, Weekly, Fortnightly, Monthly, As needed) and takes anything typed as heard ("every second day"). It shows on the logged item, the clinic PDF, the Dr enquiry, and comes back with Import callback. History items don't get it.</p>
+    <div class="grid2">
+      <div class="opt">
+        <div class="rp a" role="img" aria-label="The med log form in the side panel: Medication name, Indication, then Dosage and Frequency side by side, with Frequency suggesting Twice daily, then Route, Start date and End date">
+          <div class="hd"><span class="hb">Hide</span><span class="ttl">Meds and history</span><span class="sub">1 med · 0 OTC · 0 hx</span></div>
+          <div class="tabs" style="grid-template-columns:1fr 1fr 1fr"><span class="on">Meds</span><span>Supps/OTC</span><span>History</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 8px">
+            <label style="grid-column:span 2"><span class="sub">Medication name <span style="color:#f7a9a9">*</span></span><div class="box" style="margin-top:2px">Metformin</div></label>
+            <label style="grid-column:span 2"><span class="sub">Indication (what for)</span><div class="box nb" style="margin-top:2px">Type 2 diabetes</div></label>
+            <label><span class="sub">Dosage</span><div class="box nb" style="margin-top:2px">500 mg</div></label>
+            <label style="position:relative"><span class="sub" style="color:var(--acc)">Frequency <span class="pill" style="font-size:10px;padding:0 6px;border-color:var(--acc);color:var(--acc)">new</span></span><div class="box" style="margin-top:2px;border-color:var(--acc)">twi</div>
+              <div class="sug" style="margin-top:2px"><div class="row hi" style="border-top:0"><span class="nm">Twice daily</span></div></div></label>
+            <label><span class="sub">Route</span><div class="box nb" style="margin-top:2px">Oral</div></label>
+            <label><span class="sub">Start date</span><div class="box nb" style="margin-top:2px">2021</div></label>
+            <label><span class="sub">End date, if stopped</span><div class="box nb" style="margin-top:2px;color:var(--tm)">&nbsp;</div></label>
+          </div>
+        </div>
+        <p class="cap"><b>Adding a medication.</b> Dosage and Frequency sit side by side. Tab fills the suggestion, the same as the name box in 2.9.</p>
+      </div>
+      <div class="opt">
+        <div class="rp a" role="img" aria-label="A logged medication: Metformin, for type 2 diabetes, 500 mg, twice daily, Oral, started 2021">
+          <div class="hd"><span class="hb">Hide</span><span class="ttl">Meds and history</span><span class="sub">1 med · 0 OTC · 0 hx</span></div>
+          <div style="font-size:12px;font-weight:500;margin-top:2px">Medications</div>
+          <div style="border-top:1px solid var(--b);padding-top:6px">
+            <div style="font-weight:500;font-size:13px">Metformin</div>
+            <div class="sub" style="font-size:12px;color:var(--t2)">for Type 2 diabetes · 500 mg · <b style="color:var(--t)">twice daily</b> · Oral · started 2021</div>
+            <div class="sub">→ metformin · Biguanides</div>
+          </div>
+          <div class="rp-pdf" style="border-top:1px solid var(--b);padding-top:8px;font-size:11px;color:var(--tm)">Frequency also goes on the clinic PDF, the Dr enquiry and callback imports.</div>
+        </div>
+        <p class="cap"><b>Once logged.</b> Frequency sits between the dose and the route, wherever the medication is shown.</p>
+      </div>
+    </div>
   </section>
 
   <!-- ===================== 1. SEARCH ===================== -->
@@ -480,15 +515,12 @@ ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;
   <section aria-labelledby="h-ask" style="border-bottom:0">
     <div class="ask">
       <h2 id="h-ask">What I need from you</h2>
-      <p class="small">Chosen so far: S1, T1 and A, for RAYDAR 2.10.</p>
+      <p class="small">Settled for RAYDAR 2.10: S1 with the tags above (no "Taken"), T1 in every file with hidden questions shown to start, branding A, the Say card keeps its easy-to-read font, the Mounjaro fix, and the Frequency field.</p>
       <ol>
-        <li><b>S1 in detail:</b> are the tags right (Drug class, Common brands or Active ingredient, Taken, Same as)? Anything to add or drop?</li>
-        <li><b>Common brands:</b> read the PBS's original-brand marker at the next dictionary update (that means downloading one more PBS file with the usual monthly ones)? Plus a short hand-kept list for pharmacy brands?</li>
-        <li><b>Mounjaro on EMBOLD:</b> fix it in 2.10 (add tirzepatide to the incretins item for TST to confirm, and check the other studies)?</li>
-        <li><b>Test mode:</b> in the recruiter file, or only the admin and all-in-one files? "Show questions hidden by earlier answers" on or off to start?</li>
-        <li><b>Say card:</b> keep Atkinson Hyperlegible, or use Fira Sans like the rest?</li>
+        <li><b>Frequency:</b> is the mockup right (its own box after Dosage, common choices offered, anything can be typed)?</li>
+        <li><b>Common brands:</b> add the PBS original-brand marker at the next dictionary update, or leave the "Common brands" tag out for now? (See my answer in the chat.)</li>
       </ol>
-      <p class="small">Once these are settled I'll build 2.10: S1, T1 and A together.</p>
+      <p class="small">Then I'll build 2.10.</p>
     </div>
   </section>
 </div>
