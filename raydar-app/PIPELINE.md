@@ -1,5 +1,16 @@
 # RAYDAR pipeline
 
+**RAYDAR 2.10.** Chosen: search S1, test mode T1, branding A. Waiting on the round 2 questions at the end of the
+mockups page (S1 tags, common brands source, Mounjaro fix, test mode in the recruiter file, Say card font).
+
+## Found while mocking up: Mounjaro isn't caught on EMBOLD (fix in 2.10, to confirm)
+
+EMBOLD (D7260C00015) excludes "Incretins (GLP-1 or GIP drugs)" within 90 days. `checkMed` matches semaglutide
+(Ozempic, Wegovy, Rybelsus) but returns nothing for tirzepatide (Mounjaro): the PBS files it under A10BX
+"Other blood glucose lowering drugs", not A10BJ GLP-1 analogues. Fix through the `raydar-medicines` skill: add
+tirzepatide to that item's `proItems` for TST to confirm (or a RAYDAR incretins group covering A10BJ and
+tirzepatide), then check every study with an incretin or GLP-1 item, and add a `test:medicines` check.
+
 Improvements queued for the next version. Nothing here is built yet: each waits for a go-ahead, and anything that
 changes how RAYDAR looks or behaves waits for a mockup choice first (see the mockups page linked in the session).
 
@@ -22,6 +33,12 @@ Plan:
   everyday names like "statin" or "SSRI" would need adding by hand to `RAYDAR medicine extras.json`.
   To confirm: broad + exact class, or broad class only.
 - Third line, only when it's on the list: the list item it falls under and its time window.
+- Round 2 (chosen S1): the highlighted suggestion opens with labelled tags. Ingredient: Drug class, Common
+  brands (+N more), Taken. Brand: Active ingredient(s), Drug class (one per ingredient for combinations), Taken,
+  Same as (other brands of the same medicine). Close spellings sit under their own heading.
+- Common brands need a source: read the PBS original-brand ("innovator") marker in `dict:update` (one more PBS
+  file) and a short hand-kept list in `RAYDAR medicine extras.json`. Everyday class names ("pain and fever
+  relief", "GIP and GLP-1 drugs") come from a short list the team approves, where the PBS wording is clinical.
 - Click, Enter or Tab opens the full card that shows today when a name is recognised (eSource wording, time
   window, Add to med log). Arrow keys move through the rows. Typing the full name keeps the list (as in 2.9's med log).
 - No name starts with it, but there are close spellings ("atorvastaten"): "No medicine starts with that.
