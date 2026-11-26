@@ -85,6 +85,32 @@ lg = await page.evaluate(() => window.raydar.S.log.map((e) => [e.n, e.fr]));
 const txt = await page.evaluate(() => document.body.innerText);
 check(lg.length === 1 && lg[0][1] === 'every 3 days' && txt.includes('every 3 days'), 'Enter adds the row; the logged medicine shows its frequency', lg);
 
+// 10. The prohibited-list search (2.10): suggestions as you type, with the study's result and tags
+await page.evaluate(() => { const R = window.raydar; R.S.proS = R.ranked(true).map((x) => x.s.c).find((c) => /D7260/.test(c)); R.commit(); });
+const sb = page.locator('input[aria-label="Search the list"]');
+const look = async (q) => { await sb.fill(''); await sb.pressSequentially(q, { delay: 8 }); await page.waitForTimeout(150);
+  return page.evaluate(() => { const b = document.querySelector('.lbox'); const m = document.querySelector('.mlook');
+    return { head: b ? b.querySelector('.lbox-h').innerText : '', rows: [...document.querySelectorAll('.lrow')].map((r) => r.innerText), on: (document.querySelector('.lrow.on') || {}).innerText || '', msg: m ? m.innerText : '' }; }); };
+let L = await look('metformi');
+check(/1 medicine starts/.test(L.head) && /^Metformin/.test(L.rows[0]), 'search "metformi": suggests Metformin', L);
+L = await look('quetiap');
+check(/Quetiapine/.test(L.on) && /Excluded/.test(L.on) && /Antipsychotics/.test(L.on) && !/isn.t a medicine/.test(L.msg), 'search "quetiap": Quetiapine, Excluded, drug class shown, no "doesn\'t know"', L.on);
+L = await look('insulin');
+check(L.rows.length === 15 && /15 medicines start/.test(L.head), 'search "insulin": all 15 insulins listed', L.head);
+L = await look('seroquel');
+check(/ACTIVE INGREDIENT\s*quetiapine/i.test(L.on) && /SAME AS/i.test(L.on), 'search "seroquel": active ingredient and other brands tagged', L.on);
+L = await look('mounjaro');
+check(/Excluded/.test(L.on) && /Incretins/.test(L.on), 'search "mounjaro": excluded on EMBOLD under Incretins', L.on);
+L = await look('atorvastaten');
+check(/Closest spellings/.test(L.head) && /Atorvastatin/.test(L.rows[0] || ''), 'search "atorvastaten": closest spellings, no "doesn\'t know"', L);
+L = await look('zelvorin');
+check(/doesn't recognise/.test(L.msg) && !L.rows.length, 'search "zelvorin": the only one that says RAYDAR doesn\'t recognise it', L.msg);
+await look('ozem'); await page.keyboard.press('ArrowDown'); await page.keyboard.press('Enter'); await page.waitForTimeout(150);
+const v = await sb.inputValue();
+check(v && v !== 'ozem' && !/ozempic/i.test(v), 'search: ArrowDown then Enter picks the second suggestion', v);
+await page.keyboard.press('Escape'); await page.waitForTimeout(100);
+check((await sb.inputValue()) === '', 'search: Esc clears the box', await sb.inputValue());
+
 check(!errors.length, 'no page errors', errors);
 await browser.close();
 await srv.close();

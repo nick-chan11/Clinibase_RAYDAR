@@ -299,3 +299,22 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd .msug-t{font-size:11px;white-space:nowrap}
 #rd .msug-n{font-size:11px;padding:4px 8px;border-top:.5px solid var(--border);font-style:italic}
 #rd .mlook{margin-top:8px;background:var(--surface-1);border-radius:var(--radius);padding:8px}
+
+/* 2.10: prohibited-list search suggestions (src/views/Medicines.jsx MedLookup) */
+#rd .lbox{padding:0;overflow:hidden;border:.5px solid var(--border-strong);background:var(--surface-2)}
+#rd .lbox-h{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--text-muted);padding:6px 10px;border-bottom:.5px solid var(--border)}
+#rd .lbox-l{max-height:360px;overflow:auto}
+#rd .lbox-div{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);padding:5px 10px;border-top:.5px solid var(--border);background:var(--surface-1)}
+#rd .lrow{padding:6px 10px;border-top:.5px solid var(--border);cursor:pointer}
+#rd .lbox-l > .lrow:first-child{border-top:0}
+#rd .lrow:hover{background:var(--hover-tint)}
+#rd .lrow.on{background:var(--bg-accent);box-shadow:inset 3px 0 0 var(--border-accent);cursor:default}
+#rd .lrow-h{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;font-size:13px}
+#rd .lrow-s{font-size:11px}
+#rd .lrow-d{display:flex;flex-direction:column;gap:6px;margin-top:5px}
+#rd .ltags{display:flex;flex-wrap:wrap;gap:5px}
+#rd .ltag{display:inline-flex;align-items:baseline;gap:5px;font-size:11.5px;border:.5px solid var(--border-strong);border-radius:6px;padding:2px 7px;background:var(--surface-2);color:var(--text-primary);max-width:100%}
+#rd .ltag i{font-style:normal;color:var(--text-muted);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+#rd .lhit{font-size:12px;border-left:3px solid var(--border-danger);padding:2px 0 2px 8px}
+#rd .lhit.d{border-left-color:var(--border-warning)}
+#rd .lhit.none{border-left-color:var(--border-strong);color:var(--text-secondary);font-size:11px}

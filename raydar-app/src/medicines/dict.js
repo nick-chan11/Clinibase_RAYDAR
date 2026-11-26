@@ -4,14 +4,14 @@
    A studies folder can carry a newer dictionary; useDictionary() swaps it in. */
 import BUILT from '../../../RAYDAR medicines.json';
 
-let D = null, IDX = null;
+let D = null, IDX = null, SAME = null;
 const RES = new Map(); // name lookups, cleared when the dictionary changes
 const listeners = new Set();
 export const onDictionaryChange = (f) => { listeners.add(f); return () => listeners.delete(f); };
 
 export function useDictionary(d) {
   if (!d || !d.names || !d.ing || !d.groups) return false;
-  D = d; IDX = null; RES.clear();
+  D = d; IDX = null; SAME = null; RES.clear();
   listeners.forEach((f) => { try { f(); } catch (e) { console.error(e); } });
   return true;
 }
@@ -130,7 +130,7 @@ function dist(a, b, max) {
 
 function entryOut(k, e) {
   const i = e.i[0];
-  return { name: k, label: e.t === 'b' || e.t === 'a' ? cap(k) : k, type: e.t, ings: e.i.map(ingName), groups: e.i.length === 1 ? mainGroups(i, 1).map(groupName) : [], forms: e.f, routes: e.r };
+  return { name: k, label: e.t === 'b' || e.t === 'a' ? cap(k) : k, type: e.t, ii: e.i, ings: e.i.map(ingName), groups: e.i.length === 1 ? mainGroups(i, 1).map(groupName) : [], forms: e.f, routes: e.r };
 }
 
 /** Names starting with what's been typed, then close spellings. Brands and ingredients, for the med log. */
@@ -154,6 +154,56 @@ export function suggest(q, n = 6) {
   if (s.length >= 4 && res.length < 3) close(s, n - res.length).forEach((x) => { if (!res.some((r) => r.name === x.name)) res.push(x); });
   return res;
 }
+
+
+/* ---- 2.10: the prohibited-list search suggestions ---- */
+
+/* Plain class names where the PBS has none a recruiter would know (approved with the 2.10 mockups). The longest
+   matching code wins. Everything else uses the PBS's own group names (classOf). */
+const CLASS_WORDS = {
+  A10BX16: 'GIP and GLP-1 drugs', // tirzepatide; the PBS files it under "Other blood glucose lowering drugs"
+  N02BE: 'Pain and fever relief', // paracetamol; the PBS group is "Anilides"
+};
+/** A drug class a recruiter would recognise, for one ingredient: "Antipsychotics", "Proton pump inhibitors".
+    The PBS's 4-character group, or the 5-character one when that is vaguer ("excl.", "Other", "plain") or long. */
+export function classOf(i) {
+  const cs = ingCodes(i), x = cs.filter((c) => c.startsWith('x-')), atc = cs.filter((c) => !c.startsWith('x-'));
+  for (const c of atc) {
+    const k = Object.keys(CLASS_WORDS).filter((w) => c.startsWith(w)).sort((a, b) => b.length - a.length)[0];
+    if (k) return CLASS_WORDS[k];
+  }
+  if (x.length) return groupName(x.includes('x-vaccine-live') ? 'x-vaccine-live' : x.includes('x-cannabis-thc') ? 'x-cannabis-thc' : x[0]);
+  const c = atc[0];
+  if (!c) return '';
+  const l3 = D.groups[c.slice(0, 4)], l4 = D.groups[c.slice(0, 5)];
+  const vague = (n) => !n || /\bexcl\.|^other\b|\bplain\b|\bcombinations?\b/i.test(n);
+  if (l3 && !vague(l3) && l3.length <= 60) return l3;
+  if (l4 && !vague(l4)) return l4;
+  return l3 || l4 || D.groups[c.slice(0, 3)] || '';
+}
+
+/** Other brands with exactly the same active ingredients: [names], most of them for a common generic */
+export function sameAs(ii, but) {
+  if (!SAME) {
+    SAME = new Map();
+    Object.entries(D.names).forEach(([k, v]) => { if ((v[3] || 'b') !== 'b') return; const key = v[0].slice().sort((a, b) => a - b).join(','); (SAME.get(key) || SAME.set(key, []).get(key)).push(k); });
+  }
+  const key = ii.slice().sort((a, b) => a - b).join(',');
+  return (SAME.get(key) || []).filter((k) => k !== but);
+}
+
+/** What the search box suggests: names starting with what's typed (pre), then close spellings (close) */
+export function lookupList(q, n = 40) {
+  const s = norm(q);
+  if (s.length < 3) return { pre: [], close: [] };
+  const all = suggest(q, n), pre = all.filter((x) => x.name.startsWith(s));
+  let close = all.filter((x) => !x.name.startsWith(s));
+  if (!pre.length && !close.length) close = closeNames(q, 4);
+  // a full name with more after it ("Lipitor 40mg") still finds the medicine
+  if (!pre.length) { const r = resolve(q); if (r && !close.some((x) => x.name === r.name)) { const e = index().map.get(r.name); if (e) pre.push(entryOut(r.name, e)); } }
+  return { pre, close: close.filter((x) => !pre.some((p) => p.name === x.name)) };
+}
+const closeNames = (q, n) => close(q, n);
 
 /** Close spellings of a typed name: "atorvastaten" → atorvastatin */
 export function close(q, n = 3) {

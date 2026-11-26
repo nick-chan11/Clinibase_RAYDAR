@@ -5,8 +5,7 @@ import { ST } from '../esource/studies.js';
 import { A, Ic, B, Panel } from './ui.jsx';
 import { Row } from '../motion/components.jsx';
 import { LogPanelBody, ProRows } from './MedLog.jsx';
-import { MedLookup } from './Medicines.jsx';
-import { resolve } from '../medicines/dict.js';
+import { MedLookup, lookupKeyDown, lookupFor } from './Medicines.jsx';
 
 /**
  * Pivotable studies. When Quick check answers rule a study out, it moves down the list:
@@ -87,9 +86,9 @@ export function ProPanel() {
             <button style={{ flex: 1 }} className={tab === 'med' ? 'sel' : ''} onClick={() => upd(() => (S.proTab = 'med'))}>Medications ({(P.med || []).length})</button>
             <button style={{ flex: 1 }} className={tab === 'hx' ? 'sel' : ''} onClick={() => upd(() => (S.proTab = 'hx'))}>Conditions ({(P.hx || []).length})</button>
           </div>
-          <input type="search" aria-label="Search the list" placeholder={tab === 'med' ? 'Search a medicine, e.g. Lipitor' : 'Search, e.g. thyroid'} value={S.rq} style={{ height: 30, fontSize: 12, width: '100%', boxSizing: 'border-box' }} onChange={(e) => upd(() => (S.rq = e.target.value))} />
+          <input type="search" aria-label="Search the list" placeholder={tab === 'med' ? 'Search a medicine, e.g. Lipitor' : 'Search, e.g. thyroid'} value={S.rq} style={{ height: 30, fontSize: 12, width: '100%', boxSizing: 'border-box' }} onChange={(e) => upd(() => { S.rq = e.target.value; S.rqHi = 0; })} onKeyDown={tab === 'med' ? lookupKeyDown : undefined} />
           {S.rq.trim() && tab === 'med' ? <MedLookup q={S.rq} study={st} /> : null}
-          {S.rq.trim() ? <ProRows Pl={P} types={[tab]} q={S.rq} limit={0} quiet={tab === 'med' && S.rq.trim().length >= 3 && !!resolve(S.rq)} /> : (
+          {S.rq.trim() ? <ProRows Pl={P} types={[tab]} q={S.rq} limit={0} quiet={tab === 'med' && S.rq.trim().length >= 3 && (lookupFor(S.rq.trim()).pre.length + lookupFor(S.rq.trim()).close.length > 0)} /> : (
             <div style={{ marginTop: 6 }}>
               {(notes[tab] || []).map((n) => (
                 <div key={n.name} style={{ marginBottom: 8 }}>
