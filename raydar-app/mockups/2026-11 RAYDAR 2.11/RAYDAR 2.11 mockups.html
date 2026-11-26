@@ -1,0 +1,339 @@
+<title>RAYDAR 2.11 Mockups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: one reading column in Clinibase's look; each request is a section with screenshots of the real
+   RAYDAR 2.10 (new parts outlined in dashed blue) or drawn panels, and the questions are gathered at the end. */
+:root{
+  --bg:#ffffff; --bg-soft:#f2f3f4; --card:#ffffff; --ink:#1b2a3f; --ink-2:#4a5a70; --line:#d9dee4;
+  --blue:#00aff5; --blue-ink:#00669c; --blue-soft:#e3f5fd; --pink:#b8066f; --pink-soft:#fce7f3;
+  --ok:#3b6d11; --ok-soft:#eaf3de; --warn:#854f0b; --warn-soft:#faeeda;
+  --f-body:"Fira Sans","Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1621; --bg-soft:#152030; --card:#1b2a3f; --ink:#eaf1f8; --ink-2:#b4c1d0; --line:#2a3b53;
+  --blue-ink:#5fd0fb; --blue-soft:#0c3a58; --pink:#ff7cc6; --pink-soft:#3d1230; --ok:#addb7c; --ok-soft:#203512; --warn:#f5c272; --warn-soft:#3d2a0a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1621; --bg-soft:#152030; --card:#1b2a3f; --ink:#eaf1f8; --ink-2:#b4c1d0; --line:#2a3b53;
+  --blue-ink:#5fd0fb; --blue-soft:#0c3a58; --pink:#ff7cc6; --pink-soft:#3d1230; --ok:#addb7c; --ok-soft:#203512; --warn:#f5c272; --warn-soft:#3d2a0a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;margin:0}
+.band{height:6px;background:var(--blue)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{display:flex;flex-direction:column;gap:6px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink);font-weight:600}
+h1{font-size:clamp(28px,4vw,40px);font-weight:500;margin:0;line-height:1.15;text-wrap:balance}
+h2{font-size:26px;font-weight:500;margin:0;text-wrap:balance}
+h3{font-size:18px;font-weight:600;margin:0}
+p{margin:0;max-width:72ch}
+.lede{color:var(--ink-2);font-size:17px}
+section{padding-block:36px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
+.toc a{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);background:var(--card)}
+.toc a:hover{border-color:var(--blue)}
+a:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.toc b{font-weight:600}.toc span{font-size:14px;color:var(--ink-2)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:22px;align-items:start}
+figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+figcaption,.cap{font-size:14px;color:var(--ink-2)}
+figcaption b,.cap b{color:var(--ink);font-weight:600}
+.opt{display:flex;flex-direction:column;gap:10px;min-width:0}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--bg-soft);color:var(--ink-2);align-self:flex-start}
+.tag.rec{background:var(--blue-soft);color:var(--blue-ink)}
+ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;max-width:76ch}
+.note{background:var(--bg-soft);border-radius:10px;padding:14px 16px;font-size:15px;color:var(--ink-2)}
+.note b{color:var(--ink)}
+.warnbox{border:2px solid #e0453f;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.warnbox b{color:var(--ink)}
+.tblw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;background:var(--bg-soft)}
+td.miss{color:var(--warn);font-weight:500}
+.ask{border:2px solid var(--blue);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;background:var(--card)}
+.ask ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:10px}
+.ask li b{font-weight:600}
+.small{font-size:14px;color:var(--ink-2)}
+
+/* ---- pictures of RAYDAR panels (branding A, dark), as in the 2.10 mockups; they stay dark in either page theme ---- */
+.rp{--s0:#0e1621;--s1:#152030;--s2:#1b2a3f;--b:rgba(214,230,247,.13);--bs:rgba(214,230,247,.25);--t:#eaf1f8;--t2:#b4c1d0;--tm:#94a3b6;
+  --acc-bg:#0c3a58;--acc:#5fd0fb;--hi:#22344d;--bad-bg:#481b1b;--bad:#f7a9a9;--bad-b:#c24a49;--warn-bg:#3d2a0a;--warnc:#f5c272;--warn-b:#b9791c;--ok-bg:#203512;--okc:#addb7c;--ok-b:#5d8f2a;
+  background:var(--s2);color:var(--t);border:1px solid var(--bs);border-radius:12px;padding:12px 14px;font-family:"Fira Sans","Segoe UI",Arial,sans-serif;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:9px;min-width:0}
+.rp .hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rp .hb{border:1px solid var(--bs);border-radius:8px;padding:2px 9px;font-size:12px}
+.rp .ttl{font-weight:500;font-size:14px}
+.rp .sel{margin-left:auto;border:1px solid var(--bs);border-radius:6px;padding:2px 8px;font-size:11px;white-space:nowrap}
+.rp .tabs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--bs);border-radius:8px;overflow:hidden;font-size:12px;text-align:center}
+.rp .tabs span{padding:4px}.rp .tabs .on{background:var(--acc-bg);color:var(--acc)}
+.rp .seg2{display:inline-flex;border:1px solid var(--bs);border-radius:8px;overflow:hidden;font-size:12px}
+.rp .seg2 span{padding:3px 10px}.rp .seg2 .on{background:var(--acc-bg);color:var(--acc)}
+.rp .ta{border:1px solid var(--acc);border-radius:6px;background:var(--s1);padding:8px 10px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;line-height:1.6;white-space:pre;color:var(--t)}
+.rp .hint{font-size:11.5px;color:var(--t2)}
+.rp .btn{display:inline-flex;align-items:center;gap:5px;border-radius:8px;padding:5px 12px;font-size:12.5px;border:1px solid var(--bs);color:var(--t);background:var(--s2)}
+.rp .btn.pri{background:#00aff5;border-color:#00aff5;color:#0b1a2b;font-weight:500}
+.rp .pill{font-size:11px;border-radius:999px;padding:1px 8px;white-space:nowrap;border:1px solid var(--bs);color:var(--t2);background:var(--s2)}
+.rp .pill.x{background:var(--bad-bg);color:var(--bad);border-color:var(--bad-b)}
+.rp .pill.d{background:var(--warn-bg);color:var(--warnc);border-color:var(--warn-b)}
+.rp .pill.q{background:var(--acc-bg);color:var(--acc);border-color:var(--acc)}
+.rp .res{border:1px solid var(--bs);border-radius:8px;overflow:hidden;background:var(--s1)}
+.rp .rh{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--tm);padding:6px 10px;border-bottom:1px solid var(--b)}
+.rp .line{padding:7px 10px;border-top:1px solid var(--b);display:flex;flex-direction:column;gap:4px}
+.rp .rh + .line{border-top:0}
+.rp .lt{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.rp .typed{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;color:var(--tm)}
+.rp .nm{font-weight:600}.rp .sub{color:var(--t2);font-size:11.5px}
+.rp .fix{font-size:11px;color:var(--acc)}
+.rp .chips{display:flex;flex-wrap:wrap;gap:5px}
+.rp .chip{border:1px solid var(--bs);border-radius:6px;padding:3px 8px;font-size:12px;background:var(--s2)}
+.rp .chip b{font-weight:600}
+.rp .chip.none{border-style:dashed;color:var(--t2)}
+.rp .why{font-size:11.5px;border-left:3px solid var(--bad-b);padding-left:7px}
+.rp .sum{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 10px;border-top:1px solid var(--b);background:var(--s2)}
+.rp .row2{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--b)}
+.rp .big{font-size:20px;font-weight:600}
+.rp .muted{color:var(--tm);font-size:11.5px}
+
+/* a stand-in for a separate browser window */
+.win{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);box-shadow:0 10px 28px rgba(0,0,0,.18);display:flex;flex-direction:column;min-width:0}
+.win .bar{display:flex;align-items:center;gap:6px;padding:6px 10px;background:var(--bg-soft);border-bottom:1px solid var(--line);font-size:12px;color:var(--ink-2)}
+.win .dots{display:flex;gap:5px}.win .dots i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+.win .url{flex:1;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:ui-monospace,Menlo,monospace;font-size:11px}
+.gmap{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);min-height:260px}
+.gmap .side{padding:12px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:8px;font-size:13px}
+.gmap .modes{display:flex;gap:6px}.gmap .modes span{border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px}
+.gmap .modes .on{background:var(--blue-soft);border-color:var(--blue);color:var(--blue-ink)}
+.gmap .rt{border:1px solid var(--line);border-radius:8px;padding:8px}
+.gmap .rt b{font-size:15px}
+.gmap .map{background:repeating-linear-gradient(45deg,var(--bg-soft) 0 12px,transparent 12px 24px);display:flex;align-items:center;justify-content:center;color:var(--ink-2);font-size:13px;text-align:center;padding:12px}
+@media (max-width:560px){.gmap{grid-template-columns:1fr}.gmap .side{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* the live header demo */
+.demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px}
+.dbox{position:relative;height:340px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-soft)}
+.dscroll{height:100%;overflow:auto;padding:0 10px}
+.dh{background:var(--card);border-bottom:1px solid var(--line);padding:10px 12px;display:flex;flex-direction:column;gap:6px;z-index:2}
+.dh .r1{display:flex;align-items:center;gap:8px;font-weight:600}
+.dh .r1 span{font-size:11px;border:1px solid var(--line);border-radius:6px;padding:2px 7px;font-weight:400;color:var(--ink-2)}
+.dh .r2{display:flex;gap:6px}.dh .r2 i{flex:1;height:8px;border-radius:4px;background:var(--line);display:block}
+.dh .r3{font-size:11px;color:var(--ink-2)}
+.before .dh{position:sticky;top:0}
+.before .slim .r2,.before .slim .r3{display:none}
+.after .dh{position:absolute;left:0;right:12px;top:0;overflow:hidden;max-height:96px;transition:max-height .22s cubic-bezier(.32,.72,0,1),box-shadow .22s}
+.after .dh .r2,.after .dh .r3{transition:opacity .16s}
+.after .dh.slim{max-height:40px;box-shadow:0 6px 12px -6px rgba(0,0,0,.25)}
+.after .dh.slim .r2,.after .dh.slim .r3{opacity:0}
+.after .spacer{height:96px}
+.dq{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px;margin-top:10px;font-size:13px;color:var(--ink-2)}
+.dq b{color:var(--ink)}
+.dstat{position:absolute;right:16px;bottom:8px;font-size:11px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 7px;color:var(--ink-2);z-index:3}
+@media (prefers-reduced-motion:reduce){.after .dh,.after .dh .r2,.after .dh .r3{transition:none}}
+</style>
+
+<div class="band" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">RAYDAR 2.11 · for your choice</span>
+    <h1>Mockups: test mode, travel time, medication lists, smoother scrolling</h1>
+    <p class="lede">Nothing here is built yet. Screenshots are the real RAYDAR 2.10 with the new parts drawn in, outlined in dashed blue. Pick an option where there's a choice; the questions are gathered at the end.</p>
+    <nav class="toc" aria-label="Sections">
+      <a href="#test"><b>1. Test mode</b><span>Dates and study info still there to read</span></a>
+      <a href="#travel"><b>2. Travel time</b><span>Participant details, postcode and the Commute Finder</span></a>
+      <a href="#list"><b>3. Check a list of medicines</b><span>One per line, spelling fixed, choices when unsure</span></a>
+      <a href="#scroll"><b>4. Header and scrolling</b><span>Smooth header, no jump at the bottom</span></a>
+    </nav>
+  </header>
+
+  <!-- 1. TEST MODE -->
+  <section id="test" aria-labelledby="h-test">
+    <span class="eyebrow">1 · Test mode</span>
+    <h2 id="h-test">Dates and study information stay, nothing to tick off</h2>
+    <p>In 2.10 a study opens in test mode straight at the questions, so the visit timeline and study information are skipped. Instead, it opens where a real call does, with both tabs there to read, and "Go to questions" works straight away. From the questions, "Dates and study info" goes back.</p>
+    <div class="grid2">
+      <figure><a href="img/tm-preq.jpg" target="_blank" rel="noopener"><img src="img/tm-preq.jpg" alt="Test mode, EMBOLD's visit timeline and study information tabs, with a pink strip: the dates and study information are here to read, nothing to tick off, and a Go to questions button" width="2160" height="1470" loading="lazy"></a>
+        <figcaption><b>Opening a study in test mode.</b> The timeline and the study information work as normal; nothing has to be confirmed.</figcaption></figure>
+      <figure><a href="img/tm-q.jpg" target="_blank" rel="noopener"><img src="img/tm-q.jpg" alt="Test mode questions screen with a new Dates and study info button beside Call script" width="2160" height="1470" loading="lazy"></a>
+        <figcaption><b>On the questions.</b> "Dates and study info" beside Call script goes back to them at any time.</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 2. TRAVEL -->
+  <section id="travel" aria-labelledby="h-travel">
+    <span class="eyebrow">2 · New: participant details and travel time</span>
+    <h2 id="h-travel">Postcode in, travel time out, from anywhere in the call</h2>
+    <p>The identity check asks for full name, phone, email and an optional postcode. With a postcode, "Travel" shows in the header for the whole call, as a row in Quick check, beside each study in Pivotable studies, and on the question that names the study's location.</p>
+
+    <div class="grid2">
+      <figure><a href="img/id-fields.jpg" target="_blank" rel="noopener"><img src="img/id-fields.jpg" alt="Identity card with Clinibase PID, date of birth, then new boxes: Full name, Phone number, Email and Postcode (optional) with a Check travel button, and a note that name, phone and email are never saved" width="2160" height="1470" loading="lazy"></a>
+        <figcaption><b>Identity.</b> The new boxes sit under PID and date of birth. Name, phone and email stay on screen only: never in the PDF, callback file or Dr enquiry, and cleared when the call ends.</figcaption></figure>
+      <figure><a href="img/qc-travel.jpg" target="_blank" rel="noopener"><img src="img/qc-travel.jpg" alt="Quick check with a Travel chip in the header, a Travel to the study sites row with Check travel and OK or Too far, and Travel links beside studies" width="2160" height="1470" loading="lazy"></a>
+        <figcaption><b>Quick check.</b> "Travel" in the header; an optional row to check travel and note OK or Too far (it never rules a study in or out); a Travel link beside each study.</figcaption></figure>
+      <figure><a href="img/q-travel.jpg" target="_blank" rel="noopener"><img src="img/q-travel.jpg" alt="EMBOLD's first question about travelling to Camberwell, with a Travel from 3150 to 1096 Toorak Rd, Camberwell button in the recruiter-only box" width="2160" height="1470" loading="lazy"></a>
+        <figcaption><b>Pre-screen.</b> On "Is this feasible for you to travel to?", a button for travel from their postcode to the address in the study's eSource.</figcaption></figure>
+    </div>
+
+    <h3>What opens when you press Travel</h3>
+    <p>I read your colleague's Commute Finder. It's a Chrome extension: highlight a postcode on any page and it shows drive or public transport time to a saved site (Emeritus Melbourne, Emeritus Botany, Veritus Melbourne, St Vincent's Sydney), ranks the sites, suggests a departure time, and drafts a route email. It gets its times from Google's paid Maps services, using keys written into the extension. Two ways to bring it into RAYDAR:</p>
+    <div class="grid2">
+      <div class="opt">
+        <span class="tag rec">Option G1 · recommended to start</span>
+        <div class="win" role="img" aria-label="A separate Google Maps window: directions from 3150 Victoria to 1096 Toorak Rd Camberwell, by car and public transport">
+          <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">google.com/maps/dir/?api=1&amp;origin=3150+VIC&amp;destination=1096+Toorak+Rd+Camberwell+VIC+3124&amp;travelmode=transit</span></div>
+          <div class="gmap">
+            <div class="side">
+              <div class="modes"><span>Car</span><span class="on">Public transport</span></div>
+              <div class="small">3150 VIC → 1096 Toorak Rd, Camberwell</div>
+              <div class="rt"><b>Google Maps shows the times here</b><div class="small">for each route, with leave-at and arrive-by</div></div>
+            </div>
+            <div class="map">Google Maps map<br>(its own page, in a window you can move and resize)</div>
+          </div>
+        </div>
+        <p class="cap"><b>Google Maps in its own window.</b> RAYDAR opens Google Maps directions from the postcode to the study's address, by car or public transport. Works for every recruiter with nothing installed, no key and no cost. The times appear in Google Maps rather than inside RAYDAR.</p>
+      </div>
+      <div class="opt">
+        <span class="tag">Option G2 · with the Commute Finder</span>
+        <div class="rp" role="img" aria-label="Example travel card inside RAYDAR from the Commute Finder: postcode 3150 Glen Waverley, times to each study site by car and public transport, ranked">
+          <div class="hd"><span class="ttl">Travel from 3150 Glen Waverley</span><span class="sel">Example figures</span></div>
+          <div class="seg2"><span class="on">Car</span><span>Public transport</span><span>Avoid tolls</span></div>
+          <div class="row2"><div><b>Emeritus Melbourne</b><div class="muted">1096 Toorak Rd, Camberwell · EMBOLD, SB3567</div></div><div style="text-align:right"><span class="big">25 min</span><div class="muted">14 km</div></div></div>
+          <div class="row2"><div><b>Veritus Research</b><div class="muted">address to confirm · CORSERA, EQ, KT502, SUN</div></div><div style="text-align:right"><span class="big">31 min</span><div class="muted">18 km</div></div></div>
+          <div class="row2"><div><b>Map and directions</b><div class="muted">the Commute Finder's map, leave-by time, share route</div></div><span class="btn">Open</span></div>
+        </div>
+        <p class="cap"><b>The Commute Finder's times inside RAYDAR.</b> Times for each study's site, ranked, without leaving RAYDAR. Only for recruiters who have the extension installed, and it needs a small addition to the extension so RAYDAR can ask it (your colleague's code). RAYDAR never holds the Google keys.</p>
+      </div>
+    </div>
+
+    <div class="warnbox">
+      <b>The Commute Finder's Google keys</b>
+      <p>The extension has two Google Maps keys written into its files, so anyone with the extension can read them and run up charges. I won't copy them into RAYDAR, which is shared through Dropbox, or into the repository. Worth asking your colleague to restrict both keys in Google Cloud to the Maps services they use. Option G1 needs no key at all.</p>
+    </div>
+
+    <h3>Which address each study uses</h3>
+    <p>Travel goes to the address in the study's own eSource where there is one (quoted, never retyped). For the rest I need a default address per site, which TST or a team lead can also set per study in the study admin.</p>
+    <div class="tblw"><table>
+      <thead><tr><th>Site</th><th>Studies with an address in their eSource</th><th>Studies without one</th></tr></thead>
+      <tbody>
+        <tr><td>Emeritus Melbourne</td><td>EMBOLD, SB3567: 1096 Toorak Rd, Camberwell VIC 3124</td><td class="miss">FB102-701, OLX, PRA-216-101/201/301, V175-001, VBE</td></tr>
+        <tr><td>Emeritus Sydney</td><td>D7261C00005, GSBR-1290-12, SB3567, SELENE 1: 12 Lord St, Botany NSW 2019 · SELENE 2: 84 Pitt Street, Sydney NSW 2000 · SRSD: 22 Mons Rd, Westmead NSW 2145</td><td class="miss">FB102-701, OLX, PRA-216-101/201/301, V175-001</td></tr>
+        <tr><td>Veritus</td><td>none</td><td class="miss">CORSERA, EQ, KT502, SUN</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 3. MEDICINE LIST -->
+  <section id="list" aria-labelledby="h-list">
+    <span class="eyebrow">3 · New: check a list of medicines</span>
+    <h2 id="h-list">Type what they take, one per line</h2>
+    <p>In the Prohibited list panel, "Check a list" sits beside the search. The recruiter types the names as heard, one per line. RAYDAR fixes spelling, asks when a name could be more than one medicine (with "None of these"), checks each against the chosen study, and adds them all to the med log in one go. Drawn with your example and real results for EMBOLD.</p>
+    <div class="grid2">
+      <div class="opt">
+        <div class="rp" role="img" aria-label="Check a list: a box with metfor,in, Forxiga, jardiance, jardiamet, ozempic 1mg weekly, and the instruction to write names first">
+          <div class="hd"><span class="hb">Hide</span><span class="ttl">Prohibited list</span><span class="sel">D7260C00015 (EMBOLD)</span></div>
+          <div class="tabs"><span class="on">Medications (39)</span><span>Conditions (20)</span></div>
+          <div class="seg2"><span>Search one</span><span class="on">Check a list</span></div>
+          <div class="hint"><b style="color:var(--t)">Write the medicine names first, one per line.</b> Dosage, frequency and route can be added later in the med log. Spelling is checked for you.</div>
+          <div class="ta">metfor,in
+Forxiga
+jardiance
+jardiamet
+ozempic 1mg weekly</div>
+          <div style="display:flex;gap:8px;align-items:center"><span class="btn pri">Check 5 medicines</span><span class="muted">or press Ctrl + Enter</span></div>
+        </div>
+        <p class="cap"><b>Typing the list.</b> Anything after the name ("1mg weekly") is kept and goes into the med log's Dosage and Frequency.</p>
+      </div>
+      <div class="opt">
+        <div class="rp" role="img" aria-label="Results: Metformin with spelling fixed, Forxiga, Jardiance, Jardiamet, all not on EMBOLD's list, and Ozempic excluded under Incretins within 90 days">
+          <div class="res">
+            <div class="rh"><span>5 checked for EMBOLD</span><span>1 excluded · 4 not on the list</span></div>
+            <div class="line"><div class="lt"><span><span class="nm">Metformin</span> <span class="sub">ingredient · Biguanides</span></span><span class="pill">Not on the list</span></div><span class="fix">Spelling fixed from "metfor,in"</span></div>
+            <div class="line"><div class="lt"><span><span class="nm">Forxiga</span> <span class="sub">dapagliflozin · SGLT2 inhibitors</span></span><span class="pill">Not on the list</span></div></div>
+            <div class="line"><div class="lt"><span><span class="nm">Jardiance</span> <span class="sub">empagliflozin · SGLT2 inhibitors</span></span><span class="pill">Not on the list</span></div></div>
+            <div class="line"><div class="lt"><span><span class="nm">Jardiamet</span> <span class="sub">empagliflozin + metformin</span></span><span class="pill">Not on the list</span></div></div>
+            <div class="line"><div class="lt"><span><span class="nm">Ozempic</span> <span class="sub">semaglutide · GLP-1 analogues · 1mg weekly</span></span><span class="pill x">Excluded</span></div><div class="why">Incretins (GLP-1 or GIP drugs) · within 90 days</div></div>
+            <div class="sum"><span class="muted">Not listed doesn't mean allowed: check the questions and raise an enquiry if unsure.</span><span class="btn pri">Add all 5 to the med log</span></div>
+          </div>
+        </div>
+        <p class="cap"><b>The results.</b> Each line shows what RAYDAR read and its result for the chosen study. Excluded and Doctor check come with the list item and time window.</p>
+      </div>
+      <div class="opt">
+        <div class="rp" role="img" aria-label="Choices: panadol could be Panadol, Panadol Extra, Panadol Night or Panadol Sinus, or None of these; sertaline could be Sertraline or Serapine, or None of these; blood pressure tablet not recognised">
+          <div class="res">
+            <div class="rh"><span>3 need a look</span><span>pick one, or "None of these"</span></div>
+            <div class="line"><span class="typed">panadol</span><span class="sub">Which one?</span>
+              <div class="chips"><span class="chip"><b>Panadol</b> paracetamol</span><span class="chip"><b>Panadol Extra</b> + caffeine</span><span class="chip"><b>Panadol Night</b> + diphenhydramine</span><span class="chip"><b>Panadol Sinus</b> + pseudoephedrine</span><span class="chip none">None of these</span></div></div>
+            <div class="line"><span class="typed">sertaline</span><span class="sub">Did you mean?</span>
+              <div class="chips"><span class="chip"><b>Sertraline</b> antidepressant · <span class="pill x">Excluded</span></span><span class="chip"><b>Serapine</b> quetiapine · <span class="pill x">Excluded</span></span><span class="chip none">None of these</span></div></div>
+            <div class="line"><div class="lt"><span class="typed">blood pressure tablet</span><span class="pill q">Not recognised</span></div><span class="sub">Kept as typed. Ask for the name on the box, or raise an enquiry.</span></div>
+          </div>
+        </div>
+        <p class="cap"><b>When RAYDAR isn't sure.</b> It offers its best guesses and waits for the recruiter. "None of these" keeps the name as typed, marked not recognised.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SCROLL -->
+  <section id="scroll" aria-labelledby="h-scroll">
+    <span class="eyebrow">4 · Header and scrolling</span>
+    <h2 id="h-scroll">The header slides instead of jumping, and the bottom stops glitching</h2>
+    <p><b>Why it happens.</b> Once you scroll 80 px, the header switches to its slim version in one step: the step bar and buttons vanish, so the header loses about 106 px at once and everything below jumps. On a page with little to scroll (one question on screen), that same loss makes the page itself 106 px shorter, so the browser snaps you back up. A moment later the side panel grows into the freed space and the page snaps down again: the glitch you see at the bottom. I measured exactly that: a jump of 106 px up, then 106 px down.</p>
+    <p><b>The fix.</b> The header floats above the page instead of taking space in it, so its size never changes the page's length, and it slides between full and slim over a fifth of a second. Nothing below it moves. Try both below: scroll each box down to the bottom and back up.</p>
+    <div class="demo">
+      <div class="opt">
+        <span class="tag">Today</span>
+        <div class="dbox before"><div class="dscroll" id="d-before" tabindex="0" aria-label="Today's header: scroll to try it">
+          <div class="dh" id="h-before"><div class="r1">RAYDAR <span>p123456_0000</span><span>EMBOLD</span></div><div class="r2"><i></i><i></i><i></i><i></i></div><div class="r3">Identity · Quick check · Pre-screen · Finish</div></div>
+          <div class="dq"><b>Question 1</b> · This study will be conducted in Camberwell. Is this feasible for you to travel to?</div>
+          <div class="dq">Yes - Continue · No - Exclude</div>
+          <div class="dq">Notes for this question</div>
+          <div class="dq">Up next: DEXA Travel</div>
+        </div><span class="dstat" id="s-before">header: full</span></div>
+      </div>
+      <div class="opt">
+        <span class="tag rec">Proposed</span>
+        <div class="dbox after"><div class="dscroll" id="d-after" tabindex="0" aria-label="Proposed header: scroll to try it">
+          <div class="spacer"></div>
+          <div class="dq"><b>Question 1</b> · This study will be conducted in Camberwell. Is this feasible for you to travel to?</div>
+          <div class="dq">Yes - Continue · No - Exclude</div>
+          <div class="dq">Notes for this question</div>
+          <div class="dq">Up next: DEXA Travel</div>
+        </div><div class="dh" id="h-after"><div class="r1">RAYDAR <span>p123456_0000</span><span>EMBOLD</span></div><div class="r2"><i></i><i></i><i></i><i></i></div><div class="r3">Identity · Quick check · Pre-screen · Finish</div></div><span class="dstat" id="s-after">header: full</span></div>
+      </div>
+    </div>
+    <p class="note">The demo boxes are simplified, but they behave like RAYDAR: same switch points (slim after 80 px, full again near the top), same amount of scrolling as a one-question page. People who've asked their computer for less motion get the slim header without the slide.</p>
+  </section>
+
+  <section aria-labelledby="h-ask" style="border-bottom:0">
+    <div class="ask">
+      <h2 id="h-ask">What I need from you</h2>
+      <ol>
+        <li><b>Test mode:</b> is opening on the dates and study information, with "Go to questions" and "Dates and study info", right?</li>
+        <li><b>Travel window:</b> G1 (Google Maps window, works for everyone, recommended to start) or G2 (Commute Finder times inside RAYDAR; needs the extension on each computer and a small change from your colleague)? Or G1 now and G2 later?</li>
+        <li><b>Addresses:</b> the default address for Emeritus Melbourne, Emeritus Sydney and Veritus, for studies whose eSource doesn't give one (table above).</li>
+        <li><b>Participant details:</b> should name, phone and email be required before "Confirm identity", or optional? I'd keep them out of every saved file, as the PID check does today. Should the postcode go into the callback PDF so a reopened call keeps it?</li>
+        <li><b>Check a list:</b> is the layout right, and should "Add all to the med log" also add the ones marked "Not recognised"?</li>
+        <li><b>Header:</b> happy with the slide-and-float fix? This one changes no wording or layout, only the movement.</li>
+      </ol>
+      <p class="small">Once these are settled I'll build them together as RAYDAR 2.11.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  function wire(boxId, headId, statId, before) {
+    var box = document.getElementById(boxId), head = document.getElementById(headId), stat = document.getElementById(statId), slim = false;
+    box.addEventListener('scroll', function () {
+      var y = box.scrollTop, next = slim ? y > 8 : y > 80;
+      if (next !== slim) { slim = next; head.classList.toggle('slim', slim); stat.textContent = 'header: ' + (slim ? 'slim' : 'full'); }
+    }, { passive: true });
+  }
+  wire('d-before', 'h-before', 's-before', true);
+  wire('d-after', 'h-after', 's-after', false);
+  // the demo pages scroll about as much as a one-question page in RAYDAR
+  ['d-before', 'd-after'].forEach(function (id) {
+    var b = document.getElementById(id), pad = document.createElement('div');
+    pad.style.height = '1px'; b.appendChild(pad);
+    var room = b.scrollHeight - b.clientHeight; if (room < 120) pad.style.height = (121 - room) + 'px';
+  });
+})();
+</script>

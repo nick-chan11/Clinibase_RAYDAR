@@ -110,3 +110,33 @@ Plan (after a mockup choice: A clean, B navy header or C brand blue):
   guidelines) beside RAYDAR in the header, the PDF and the admin.
 - Pink is kept for test mode only.
 - Run every test and check light and dark at 1280px and 1440px before release.
+
+## RAYDAR 2.11 (mockups: `mockups/2026-11 RAYDAR 2.11/`, https://claude.ai/artifact/DeuBFuAr79LqjeLjViBLJy)
+
+Waiting on the choices at the end of the mockups page.
+
+1. **Test mode keeps dates and study information.** A study opens on its visit timeline and study information (as in
+   a real call), with "Go to questions" always available and "Dates and study info" on the questions toolbar.
+   Nothing has to be confirmed.
+2. **Participant details and travel time.** Identity gets Full name, Phone, Email and Postcode (optional). Name,
+   phone and email stay on screen only (never in the PDF, callback file or Dr enquiry; cleared at the end of the
+   call). With a postcode: "Travel" in the header, an optional Quick check row (OK / Too far, never a rule), a
+   Travel link per study in Pivotable studies, and a button on the question that names the study's location.
+   - Option G1: open Google Maps directions (postcode → the study's address) in a separate window, by car or public
+     transport. No key, no cost, no install.
+   - Option G2: show the colleague's Commute Finder times inside RAYDAR. Needs the extension on each computer
+     (with "Allow access to file URLs") and a small addition to the extension so RAYDAR can ask it.
+   - The Commute Finder (Chrome extension, v1.0.9) holds two Google Maps keys in its files. They must not go into
+     RAYDAR or this repo. Suggest restricting them in Google Cloud.
+   - Addresses: the study's eSource address where given (EMBOLD, SB3567 MEL: 1096 Toorak Rd Camberwell; D7261C00005,
+     GSBR-1290-12, SB3567 SYD, SELENE 1: 12 Lord St Botany; SELENE 2: 84 Pitt St Sydney; SRSD: 22 Mons Rd Westmead).
+     A default per site is needed for the rest (all Veritus studies have none), settable per study in the admin.
+3. **Check a list of medicines** in the Prohibited list panel ("Search one | Check a list"): one name per line,
+   instruction to write names first; spelling fixed (e.g. "metfor,in" → Metformin); choices with "None of these"
+   when unsure (e.g. panadol, sertaline); not-recognised lines kept as typed; each checked against the chosen study;
+   "Add all to the med log" (text after the name goes to Dosage/Frequency).
+4. **Header and scrolling.** Cause measured: going slim removes ~106 px from the header, which sits in the page's
+   flow, so on short pages the page shrinks, the scroll position is clamped (-106 px), then the side panel grows
+   into the space (+106 px): the jump/glitch at the bottom. Fix: the header floats (fixed, with a constant spacer),
+   so its size never changes the page's height, and it slides between full and slim (~200 ms, none with reduced
+   motion); the side panel's height doesn't depend on the header's.
