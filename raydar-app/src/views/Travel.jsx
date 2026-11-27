@@ -68,12 +68,15 @@ function Modes({ p }) {
   );
 }
 
+/** 2.12: the postcode at the top of every Travel list, editable: one postcode for the whole call, so a correction
+    here changes every Travel button, the Identity screen and the callback PDF */
 function PostcodeBox() {
   return (
     <label className="tv-pc">
-      <span>Their postcode</span>
-      <input type="text" inputMode="numeric" data-f="pc" value={S.pc} placeholder="e.g. 3150" autoFocus
+      <span>Travel from</span>
+      <input type="text" inputMode="numeric" data-f="tvpc" aria-label="Their postcode" value={S.pc} placeholder="Postcode" autoFocus={!okPostcode(S.pc)}
         onChange={(e) => upd(() => { S.pc = e.target.value.replace(/\D/g, '').slice(0, 4); })} />
+      <span className="mut">{okPostcode(S.pc) ? 'Change it here if it was wrong: it changes everywhere in this call' : 'Their postcode, to show travel times'}</span>
     </label>
   );
 }
@@ -116,8 +119,8 @@ export function TravelButton({ s, places, label, className, title }) {
       </button>
       {open && root ? createPortal(
         <div className="tv-pop" ref={popRef} role="dialog" aria-label="Travel time" style={pos ? { left: pos.left, top: pos.top, width: pos.width } : { visibility: 'hidden' }}>
-          <div className="tv-h">Travel {okPostcode(S.pc) ? <>from <b>{S.pc}</b></> : null}<span className="mut"> · opens Google Maps</span></div>
-          {okPostcode(S.pc) ? null : <PostcodeBox />}
+          <PostcodeBox />
+          <div className="tv-h mut">By car or public transport opens Google Maps in its own window.</div>
           {L.length ? L.map((p) => (
             <div key={p.address} className="tv-row">
               <div style={{ minWidth: 0 }}>
@@ -135,8 +138,8 @@ export function TravelButton({ s, places, label, className, title }) {
 
 /** In the header: the postcode, once there is one, and Travel for the study on screen */
 export function TravelChip() {
-  if (!okPostcode(S.pc)) return null;
-  return <TravelButton s={S.study} label={S.pc + ' · Travel'} className="pill tv-chip" title="Travel time from their postcode" />;
+  if (!S.idok && !okPostcode(S.pc)) return null;
+  return <TravelButton s={S.study} label={okPostcode(S.pc) ? S.pc + ' · Travel' : 'Travel · add postcode'} className="pill tv-chip" title="Travel time from their postcode (change the postcode here)" />;
 }
 
 /** On a question that names a place (the study's site or a scan location): travel to that place */

@@ -17,6 +17,17 @@ A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-an
   up; test mode skips it (`NeedDetails`, `src/views/Finish.jsx`).
 - **Postcode in the callback PDF**, so a reopened call can check travel again. Name, phone and email still never go
   in.
+- **Change the postcode from any Travel list.** Every Travel list (header, Quick check, study list, questions) has
+  the postcode as an editable box at the top. There is one postcode per call, so a correction anywhere changes every
+  Travel button, the Identity screen and the callback PDF. The header shows "Travel · add postcode" until there is
+  one, and stays in the slim header.
+- **Check a list: add now, details later.** As soon as a list is checked, "Add these 5 to the med log?" (Add all /
+  Not now) sits between the box and the results. The med log then says how many from the list still need details,
+  and "Fill in details, one by one" opens each in turn ("Save and next"; Cancel stops) (`fillNext` in
+  `src/engine/store.js`).
+- **Medications search shows only what was typed.** The list's own words are searched only when RAYDAR doesn't
+  recognise the name, on item names from the start of a word, never the eSource heading above an item (typing "me"
+  used to bring up OLX's Minoxidil items through "Some examples include:").
 
 ## New in 2.11
 

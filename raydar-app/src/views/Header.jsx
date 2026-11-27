@@ -60,7 +60,7 @@ export function Header() {
       ) : (
         <span className="pill mut" style={{ cursor: 'default' }}>Call {S.call} · no participant yet</span>
       )}
-      <span className="slim-hide"><TravelChip /></span>
+      <TravelChip />
       {s && (S.stage === 'ps' || S.stage === 'finish') ? (
         <button className="pill" {...A('tool:switch')} title="Switch study">{s.c} <Ic n="ti-selector" /></button>
       ) : null}

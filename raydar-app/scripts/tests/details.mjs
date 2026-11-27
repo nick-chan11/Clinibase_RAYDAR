@@ -109,6 +109,21 @@ check(note.includes(secs[1]) && /Section 2 of/.test(note), 'moving into the next
 await page.mouse.move(5, 5); await page.waitForTimeout(6000);
 check(await page.locator('.secnote').count() === 0, 'the strip folds away after a few seconds');
 
+// 10. the postcode can be changed from the header, and the change reaches every Travel button
+await page.evaluate(() => { const R = window.raydar; R.act('new'); const S = R.S; S.pid = 'p123456_0000'; S.dob = '1970-06-15'; S.match = true; R.act('confirm'); R.commit(); });
+await page.waitForTimeout(200);
+check(/Travel · add postcode/.test(await page.locator('.tv-chip').innerText()), 'with no postcode, the header offers "Travel · add postcode"');
+await page.click('.tv-chip'); await page.fill('.tv-pop [data-f="tvpc"]', '3150'); await page.waitForTimeout(100);
+await page.keyboard.press('Escape');
+check(/3150 · Travel/.test(await page.locator('.tv-chip').innerText()) && await page.evaluate(() => window.raydar.S.pc) === '3150', 'typing it there sets the postcode for the call');
+await page.click('.tv-chip'); await page.fill('.tv-pop [data-f="tvpc"]', '2019'); await page.waitForTimeout(100);
+url = await popupUrl(() => page.locator('.tv-pop button:has-text("By car")').first().click());
+check(/origin=2019 NSW Australia/.test(url.replace(/\+/g, ' ')), 'changing it in the header changes the trip (2019 NSW)', url);
+await page.keyboard.press('Escape');
+await page.locator('.row', { hasText: 'Travel to the study sites' }).locator('.tv-btn').click(); await page.waitForTimeout(100);
+check(await page.inputValue('.tv-pop [data-f="tvpc"]') === '2019', 'every other Travel list shows the new postcode too');
+await page.keyboard.press('Escape');
+
 check(!errors.length, 'no page errors', errors);
 await browser.close();
 await srv.close();

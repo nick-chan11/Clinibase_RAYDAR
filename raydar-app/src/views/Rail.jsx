@@ -97,7 +97,7 @@ export function ProPanel() {
           {tab === 'med' && S.rmode === 'list' ? <ListCheck study={st} /> : <>
           <input type="search" aria-label="Search the list" placeholder={tab === 'med' ? 'Search a medicine, e.g. Lipitor' : 'Search, e.g. thyroid'} value={S.rq} style={{ height: 30, fontSize: 12, width: '100%', boxSizing: 'border-box' }} onChange={(e) => upd(() => { S.rq = e.target.value; S.rqHi = 0; })} onKeyDown={tab === 'med' ? lookupKeyDown : undefined} />
           {S.rq.trim() && tab === 'med' ? <MedLookup q={S.rq} study={st} /> : null}
-          {S.rq.trim() ? <ProRows Pl={P} types={[tab]} q={S.rq} limit={0} quiet={tab === 'med' && S.rq.trim().length >= 3 && (lookupFor(S.rq.trim()).pre.length + lookupFor(S.rq.trim()).close.length > 0)} /> : (
+          {S.rq.trim() ? (tab === 'med' && (S.rq.trim().length < 3 || lookupFor(S.rq.trim()).pre.length + lookupFor(S.rq.trim()).close.length > 0) ? null : <ProRows Pl={P} types={[tab]} q={S.rq} limit={0} />) : (
             <div style={{ marginTop: 6 }}>
               {(notes[tab] || []).map((n) => (
                 <div key={n.name} style={{ marginBottom: 8 }}>

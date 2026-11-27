@@ -365,7 +365,8 @@ body.tm::after{content:"";position:fixed;inset:0;border:4px solid var(--tm-line)
 #rd .tv-q{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-style:italic}
 #rd .tv-modes{display:flex;flex-direction:column;gap:4px;flex-shrink:0}
 #rd .tv-modes .pill{font-size:11.5px;padding:2px 8px;white-space:nowrap}
-#rd .tv-pc{display:flex;align-items:center;gap:8px;font-size:12px}
+#rd .tv-pc{display:flex;align-items:center;gap:8px;font-size:12px;flex-wrap:wrap}
+#rd .tv-pc .mut{font-size:11.5px;flex:1;min-width:180px}
 #rd .tv-pc input{width:90px;height:28px}
 #rd .tv-q-row{margin-top:8px}
 #rd .tv-q-row .tv-btn{font-size:12px;white-space:normal;text-align:left}
@@ -401,3 +402,8 @@ body.tm::after{content:"";position:fixed;inset:0;border:4px solid var(--tm-line)
 #rd .need-g .need-in{border-color:var(--border-warning)}
 @media (max-width:700px){#rd .need-g{grid-template-columns:1fr}}
 #rd .pill.pri[disabled]{opacity:.45;cursor:not-allowed}
+
+/* 2.12 add a checked list, fill in details later */
+#rd .lc-ask{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--bg-accent);border:1px solid var(--border-accent);border-radius:8px;padding:8px 10px;margin:6px 0;font-size:12.5px;color:var(--text-primary)}
+#rd .lc-ask .mut{font-size:11.5px}
+#rd .lc-filling{font-size:11.5px;color:var(--text-accent);margin:0 0 6px}

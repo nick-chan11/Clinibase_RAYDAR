@@ -122,17 +122,44 @@ check(/^Forxiga.*dapagliflozin/.test(lc[1]) && /^Jardiance.*empagliflozin/.test(
 check(/^Ozempic.*1mg weekly.*Excluded.*Incretins/.test(lc[4]), 'ozempic 1mg weekly: Excluded on EMBOLD, details kept', lc[4]);
 check(/sertaline.*Did you mean\?.*Sertraline.*Serapine.*None of these/.test(lc[5]), 'sertaline: Did you mean Sertraline or Serapine, or None of these', lc[5]);
 check(/Blood pressure tablet.*Not recognised.*Kept as typed/.test(lc[6]), 'blood pressure tablet: not recognised, kept as typed', lc[6]);
-check(/Choose for 1 line first/.test(await page.locator('.lc-sum').innerText()), 'Add all waits until every choice is made');
+check(/Add these 7 to the med log\?/.test(await page.locator('.lc .lc-ask').innerText()) && /Choose for 1 line/.test(await page.locator('.lc .lc-ask').innerText()) && await page.locator('.lc .lc-ask button:has-text("Add all 7")').isDisabled(), 'right after checking: "Add these 7 to the med log?", waiting for the one choice');
 await page.click('.lc-chip:has-text("Sertraline")'); await page.waitForTimeout(100);
 await page.evaluate(() => { window.raydar.S.log = []; window.raydar.commit(); });
 
-await page.click('.lc-sum button:has-text("Add all 7 to the med log")'); await page.waitForTimeout(150);
+await page.click('.lc .lc-ask button:has-text("Add all 7")'); await page.waitForTimeout(150);
 const added = await page.evaluate(() => window.raydar.S.log.filter((e) => e.src === 'Prohibited list check').map((e) => [e.n, e.dose, e.fr]));
 check(added.length === 7 && added.some((x) => x[0] === 'Ozempic' && x[1] === '1mg' && x[2] === 'weekly') && added.some((x) => x[0] === 'Sertraline') && added.some((x) => x[0] === 'Blood pressure tablet'), 'Add all puts all 7 in the med log, with dosage and frequency', added);
-check(/Added 7 to the med log/.test(await page.locator('.lc-sum').innerText()), 'it says they were added', await page.locator('.lc-sum').innerText());
+check(/Added 7 to the med log/.test(await page.locator('.lc .lc-ask').innerText()), 'it says they were added, details to fill in later', await page.locator('.lc .lc-ask').innerText());
 await page.focus('[data-f="rlist"]'); await page.keyboard.press('Control+Enter'); await page.waitForTimeout(150);
-await page.click('.lc-chip:has-text("Sertraline")'); await page.click('.lc-sum button:has-text("Add all")'); await page.waitForTimeout(150);
-check(/Already in the med log/.test(await page.locator('.lc-sum').innerText()) && (await page.evaluate(() => window.raydar.S.log.length)) === 7, 'checking the same list again adds nothing twice');
+await page.click('.lc-chip:has-text("Sertraline")'); await page.click('.lc .lc-ask button:has-text("Add all")'); await page.waitForTimeout(150);
+check(/already in the med log/.test(await page.locator('.lc .lc-ask').innerText()) && (await page.evaluate(() => window.raydar.S.log.length)) === 7, 'checking the same list again adds nothing twice');
+
+// 12. "Not now" puts the prompt away; adding is still possible under the results
+await page.focus('[data-f="rlist"]'); await page.fill('[data-f="rlist"]', 'panadol'); await page.keyboard.press('Control+Enter'); await page.waitForTimeout(150);
+await page.click('.lc .lc-ask button:has-text("Not now")'); await page.waitForTimeout(100);
+check(await page.locator('.lc .lc-ask').count() === 0 && await page.locator('.lc-sum button:has-text("Add all 1 to the med log")').count() === 1, '"Not now" hides the prompt; Add all stays under the results');
+
+// 13. Fill in details, one by one: each medicine from the list without details opens in turn
+let todo = await page.evaluate(() => window.raydar.S.log.filter((e) => e.src === 'Prohibited list check' && !e.dose && !e.fr && !e.route && !e.ind).length);
+check(todo === 6 && /6 from the list still need details/.test(await page.locator('#rail').innerText()), 'the med log says 6 from the list still need details', todo);
+await page.click('#rail button:has-text("Fill in details, one by one")'); await page.waitForTimeout(200);
+const first = await page.inputValue('[data-f="r.0.n"]');
+await page.fill('[data-f="r.0.dose"]', '500 mg'); await page.fill('[data-f="r.0.fr"]', 'Twice daily');
+await page.click('#rail button:has-text("Save and next")'); await page.waitForTimeout(200);
+const second = await page.inputValue('[data-f="r.0.n"]');
+check(first && second && first !== second, 'Save and next opens the next medicine (' + first + ' → ' + second + ')');
+check(await page.evaluate((n) => { const e = window.raydar.S.log.find((x) => x.n === n); return e && e.dose === '500 mg' && e.fr === 'Twice daily'; }, first), 'the details are saved on ' + first);
+await page.click('#rail button:has-text("Cancel")'); await page.waitForTimeout(150);
+check(await page.evaluate(() => !window.raydar.S.filling && window.raydar.S.log.length === 7), 'Cancel stops the round and keeps the medicine', await page.evaluate(() => [window.raydar.S.filling, window.raydar.S.log.length]));
+
+// 14. Medications search shows only the medicine typed and its status (no list rows matched on headings)
+await page.evaluate(() => { const R = window.raydar; R.S.proS = 'OLX MEL'; R.S.rmode = 'one'; R.commit(); }); await page.waitForTimeout(150);
+for (const q of ['m', 'me', 'met', 'metformin']) {
+  await sb.fill(q); await page.waitForTimeout(150);
+  const rows = await page.evaluate(() => [...document.querySelectorAll('#rail .row')].filter((r) => /Minoxidil/.test(r.textContent)).length);
+  check(rows === 0, 'OLX MEL, typing "' + q + '": no Minoxidil rows', rows);
+}
+check(/Metformin/.test(await page.locator('.lbox').innerText()), 'typing "metformin": just Metformin and its status');
 
 check(!errors.length, 'no page errors', errors);
 await browser.close();

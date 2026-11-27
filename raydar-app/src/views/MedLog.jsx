@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { AnimatePresence } from 'motion/react';
-import { S, FLD, TL, isMedT, matchP, eParts, proS, proFor, upd } from '../engine/store.js';
-import { A, Ic, Badge, PanelHead, Resizable } from './ui.jsx';
+import { S, FLD, TL, isMedT, matchP, eParts, proS, proFor, upd, listTodo } from '../engine/store.js';
+import { A, Ic, B, Badge, PanelHead, Resizable } from './ui.jsx';
 import { Err, Expander, Row } from '../motion/components.jsx';
 import { NameField, MedLine, ListField, FREQS } from './Medicines.jsx';
 
@@ -20,7 +20,9 @@ export const RoutesList = () => (
 export function ProRows({ Pl, types, q, limit, quiet }) {
   let L = [];
   types.forEach((t) => (Pl[t] || []).forEach((p) => L.push({ t, ...p })));
-  if (q) { const z = q.toLowerCase(); L = L.filter((p) => (p.n + ' ' + p.w + ' ' + p.k.join(' ')).toLowerCase().includes(z)); }
+  // 2.12: match the item's own name and words, from the start of a word; never the eSource heading above it
+  // ("Some examples include:" made "me" bring up every Minoxidil item)
+  if (q) { const re = new RegExp('(^|[^a-z0-9])' + q.trim().toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')); L = L.filter((p) => re.test((p.n + ' ' + p.k.join(' ')).toLowerCase())); }
   const tot = L.length;
   if (limit && !q) L = L.slice(0, limit);
   if (!L.length) return quiet ? null : <p className="mut" style={{ fontSize: 12, margin: '6px 0 0' }}>Nothing on the list matches. Not listed doesn't mean allowed: raise an enquiry if unsure.</p>;
@@ -200,9 +202,17 @@ export function LogPanelBody() {
     );
   };
   const open = !!(S.logForm || S.ed);
+  const todo = listTodo().filter((e) => !(S.filling && S.fillDone.includes(e.n.toLowerCase()))).length;
   return (
     <>
       {S.log.length ? null : <p className="mut" style={{ fontSize: 12, margin: 0, fontStyle: 'italic' }}>Nothing logged yet. Items follow you through the call.</p>}
+      {/* 2.12: medicines added from "Check a list" with no details yet */}
+      {todo && !open ? (
+        <div className="lc-ask" style={{ marginTop: 6 }}>
+          <span><B>{todo} from the list still need{todo === 1 ? 's' : ''} details.</B> <span className="mut">Dosage, frequency and route.</span></span>
+          <button className="pill pri" {...A('fillstart')}>Fill in details, one by one</button>
+        </div>
+      ) : null}
       {grp('med')}{grp('otc')}{grp('hx')}
       <Expander open={!open}>
         <div style={{ display: 'flex', gap: 6, marginTop: 8 }}>
@@ -217,12 +227,13 @@ export function LogPanelBody() {
               <button key={k} style={{ flex: 1, minWidth: 0, padding: '4px 2px' }} {...A('lt:' + k)} className={t === k ? 'sel' : ''}>{l}</button>
             ))}
           </div>
+          {S.filling ? <p className="lc-filling">Details for a medicine from the list{todo ? <> · {todo} more after this</> : null}. Save goes to the next; Cancel stops.</p> : null}
           <Form pre="r" rows={S.f} t={t} />
           <p style={{ fontSize: 11, margin: '4px 0 0', fontStyle: 'italic' }} className="mut">Only the {t === 'hx' ? 'condition' : 'name'} is required. Blank rows are ignored.</p>
           <Err msg={S.logErr} />
           <div style={{ display: 'flex', gap: 6, marginTop: 6 }}>
             <button className="pill wide" {...A('logform')} style={{ flex: 1 }}>Cancel</button>
-            <button className="pill pri wide" {...A('logadd')} style={{ flex: 2 }}><Ic n="ti-plus" /> {S.ed ? 'Save changes' : 'Add to list'}</button>
+            <button className="pill pri wide" {...A('logadd')} style={{ flex: 2 }}><Ic n="ti-plus" /> {S.filling ? (todo ? 'Save and next' : 'Save') : S.ed ? 'Save changes' : 'Add to list'}</button>
           </div>
         </div>
       </Expander>

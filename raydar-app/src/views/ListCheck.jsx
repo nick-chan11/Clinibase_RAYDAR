@@ -1,7 +1,7 @@
 /* RAYDAR 2.11: "Check a list" in the Prohibited list panel (logic in src/medicines/list.js). One medicine per line,
    names first; spelling fixed; choices with "None of these" when unsure; each checked against the chosen study; all
    added to the med log in one go, with any dosage and frequency typed after the name. */
-import { S, upd, EF } from '../engine/store.js';
+import { S, upd, EF, act } from '../engine/store.js';
 import { readList, chosen, showName, logEntry } from '../medicines/list.js';
 import { classOf, ingName, cap } from '../medicines/dict.js';
 import { checkMed, windowWords } from '../medicines/items.js';
@@ -64,7 +64,7 @@ function Line({ l, i, study }) {
 export function ListCheck({ study }) {
   const R = S.rlRes;
   const n = lines(S.rlist);
-  const run = () => upd(() => { S.rlRes = readList(S.rlist); S.rlPick = {}; S.rlAdded = 0; });
+  const run = () => upd(() => { S.rlRes = readList(S.rlist); S.rlPick = {}; S.rlAdded = 0; S.rlNo = false; });
   const pending = R ? R.filter((l, i) => l.kind === 'choose' && S.rlPick[i] == null).length : 0;
   const counts = { x: 0, d: 0, ok: 0, no: 0 };
   if (R) R.forEach((l, i) => { const e = chosen(l, S.rlPick[i]); if (!e) return; const m = checkMed({ t: 'med', n: logEntry(l, S.rlPick[i]).n }, study); counts[m ? m.o : 'no']++; });
@@ -88,6 +88,25 @@ export function ListCheck({ study }) {
         <span className="mut" style={{ fontSize: 11.5 }}>or press Ctrl + Enter</span>
       </div>
       {R && study ? (
+        // 2.12: offer to add the whole list straight away; details can be filled in later from the med log
+        S.rlAdded > 0 ? (
+          <div className="lc-ask" role="status">
+            <span><B>Added {S.rlAdded} to the med log.</B><br /><span className="mut">Fill in their dosage, frequency and route there when you're ready.</span></span>
+            <button type="button" className="pill" onClick={() => act('fillstart')}>Fill in details now</button>
+          </div>
+        ) : S.rlAdded < 0 ? (
+          <div className="lc-ask"><span className="mut">These are already in the med log.</span></div>
+        ) : !S.rlNo ? (
+          <div className="lc-ask">
+            <span><B>Add {R.length === 1 ? 'this' : 'these ' + R.length} to the med log?</B><br /><span className="mut">{pending ? 'Choose for ' + pending + ' line' + (pending > 1 ? 's' : '') + ' below first. ' : ''}Names now; dosage, frequency and route can be filled in later from the med log.</span></span>
+            <span style={{ display: 'flex', gap: 6 }}>
+              <button type="button" className="pill pri" disabled={!!pending} onClick={addAll}>Add {R.length === 1 ? 'it' : 'all ' + R.length}</button>
+              <button type="button" className="pill" onClick={() => upd(() => { S.rlNo = true; })}>Not now</button>
+            </span>
+          </div>
+        ) : null
+      ) : null}
+      {R && study ? (
         <div className="lc-res">
           <div className="lbox-h">
             <span>{R.length} checked for {study.c}</span>
@@ -96,10 +115,8 @@ export function ListCheck({ study }) {
           {R.map((l, i) => <Line key={i + l.typed} l={l} i={i} study={study} />)}
           <div className="lc-sum">
             <span className="mut" style={{ fontSize: 11.5 }}>Not listed doesn't mean allowed: check the questions and raise an enquiry if unsure.</span>
-            {S.rlAdded > 0 ? <span style={{ fontSize: 12 }}><Ic n="ti-check" /> Added {S.rlAdded} to the med log</span>
-              : S.rlAdded < 0 ? <span className="mut" style={{ fontSize: 12 }}>Already in the med log</span>
-              : pending ? <span className="mut" style={{ fontSize: 12 }}>Choose for {pending} line{pending > 1 ? 's' : ''} first</span>
-              : <button type="button" className="pill pri" onClick={addAll}>Add all {R.length} to the med log</button>}
+            {S.rlNo && !S.rlAdded ? (pending ? <span className="mut" style={{ fontSize: 12 }}>Choose for {pending} line{pending > 1 ? 's' : ''} first</span>
+              : <button type="button" className="pill" onClick={addAll}>Add all {R.length} to the med log</button>) : null}
           </div>
         </div>
       ) : null}
