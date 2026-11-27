@@ -1,6 +1,36 @@
-# RAYDAR 2.10 (React + Motion)
+# RAYDAR 2.11 (React + Motion)
 
 A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-animation skill.
+
+## New in 2.11
+
+Chosen from the mockups in `mockups/2026-11 RAYDAR 2.11/`.
+
+- **Test mode keeps the dates and study information.** A study opens on its visit timeline and study information,
+  as in a real call, with "Go to questions" straight away and nothing to confirm; "Dates and study info" on the
+  questions toolbar goes back (`src/views/PreScreen.jsx`).
+- **Participant details.** Identity asks for full name, phone and email (required: "Still needed" shows until they
+  are filled in) and an optional postcode (`src/views/Intake.jsx`). Name, phone and email stay on screen only:
+  never in the PDF, the callback file or the Dr enquiry; they clear when the call ends. Enter in any of the boxes
+  confirms identity.
+- **Travel time (Google Maps).** With a postcode, Travel opens Google Maps directions in a separate window, by car
+  or public transport, from the postcode to the study's site or another place its eSource names
+  (`src/views/Travel.jsx`). In the header ("3150 · Travel"), a Quick check row (OK / Too far, noted only, never a
+  rule), beside each study in Pivotable studies, and on a question that names an address ("Travel from 3150 to
+  1096 Toorak Rd, Camberwell"). No Google key, no cost, nothing to install; only the postcode leaves RAYDAR.
+  Addresses are in `../RAYDAR study settings.json`: `sites` (Emeritus Melbourne 1096 Toorak Rd Camberwell,
+  Emeritus Sydney Suite 2/12 Lord St Botany, Veritus 885 Mountain Hwy Bayswater) and per study `locations`, the
+  other places its eSource names (scan locations), with the eSource's words.
+- **Check a list** in the Prohibited list panel ("Search one | Check a list", `src/views/ListCheck.jsx`,
+  `src/medicines/list.js`): one medicine per line, names first. Spelling fixed ("metfor,in" → Metformin);
+  "Which one?" / "Did you mean?" with "None of these" when unsure; unknown names kept as typed; each checked
+  against the chosen study; "Add all to the med log" with any dosage and frequency typed after the name.
+- **Header and scrolling.** The header keeps its full space in the page and slides between full and slim
+  (220 ms; instant with reduced motion), so slimming never changes the page's height. Before, the page shrank by
+  ~106 px, the browser pulled the scroll up and the side panel pushed it back down: the jump at the bottom of short
+  pages. Pages with little to scroll keep the full header (`src/App.jsx`).
+- New tests: `npm run test:scroll`, `npm run test:details`; `test:testmode`, `test:suggest` and `test:medicines`
+  cover the rest.
 
 ## New in 2.10
 

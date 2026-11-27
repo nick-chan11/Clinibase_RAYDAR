@@ -30,6 +30,8 @@ npm run test:admin
 npm run test:medicines
 npm run test:suggest
 npm run test:testmode
+npm run test:scroll
+npm run test:details
 npm run build:all
 npm run test:offline
 ```
@@ -41,6 +43,8 @@ npm run test:offline
 - `test:medicines`: names, spellings, groups and prohibited-item matching.
 - `test:suggest`: the med log name and Frequency suggestions, and the prohibited-list search.
 - `test:testmode`: test mode on and off, free movement, the TEST-stamped PDF.
+- `test:scroll`: the header slides without the page jumping.
+- `test:details`: participant details never saved; Travel opens Google Maps to the right place.
 - `build:all` writes `../RAYDAR_<version>.html`, `_Admin.html` and `_All-in-one.html`.
 - `test:offline`: the built file works with the network off.
 

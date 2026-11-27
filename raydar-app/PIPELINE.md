@@ -113,7 +113,14 @@ Plan (after a mockup choice: A clean, B navy header or C brand blue):
 
 ## RAYDAR 2.11 (mockups: `mockups/2026-11 RAYDAR 2.11/`, https://claude.ai/artifact/DeuBFuAr79LqjeLjViBLJy)
 
-Waiting on the choices at the end of the mockups page.
+**Built** (see "New in 2.11" in `README.md`): items 1 to 4 below, with G1 for travel and the three site addresses.
+**Waiting on the round 2 choices** on the mockups page:
+- Section notice when the questions move into a new section: F1 (strip above the question) or F2 (floating).
+- Details before booking: at Finish, a booking can't be saved until name, phone and email are filled in (Exclude
+  and callbacks only remind). Or should "Confirm identity" refuse to continue without them?
+- Postcode in the callback PDF, so a reopened call keeps it? (Name, phone and email never go in.)
+- Commute Finder inside RAYDAR later (G2): H1 (the extension fetches, key stays in the extension) or H2 (a small
+  Clinibase service holds the key). H3 (key in the RAYDAR file) is not recommended.
 
 1. **Test mode keeps dates and study information.** A study opens on its visit timeline and study information (as in
    a real call), with "Go to questions" always available and "Dates and study info" on the questions toolbar.
