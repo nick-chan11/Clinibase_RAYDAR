@@ -111,6 +111,29 @@ check(v && v !== 'ozem' && !/ozempic/i.test(v), 'search: ArrowDown then Enter pi
 await page.keyboard.press('Escape'); await page.waitForTimeout(100);
 check((await sb.inputValue()) === '', 'search: Esc clears the box', await sb.inputValue());
 
+// 11. Check a list (2.11): one per line, spelling fixed, choices, all added to the med log
+await page.click('.lc-mode button:has-text("Check a list")'); await page.waitForTimeout(100);
+await page.fill('[data-f="rlist"]', 'metfor,in\nForxiga\njardiance\njardiamet\nozempic 1mg weekly\nsertaline\nblood pressure tablet');
+check(/Check 7 medicines/.test(await page.locator('.lc-go .pill').innerText()), 'Check a list counts 7 lines');
+await page.focus('[data-f="rlist"]'); await page.keyboard.press('Control+Enter'); await page.waitForTimeout(200);
+let lc = await page.$$eval('.lc-line', (els) => els.map((e) => e.innerText.replace(/\s+/g, ' ')));
+check(/^Metformin/.test(lc[0]) && /Spelling fixed from "metfor,in"/.test(lc[0]), 'metfor,in → Metformin, spelling fixed', lc[0]);
+check(/^Forxiga.*dapagliflozin/.test(lc[1]) && /^Jardiance.*empagliflozin/.test(lc[2]) && /^Jardiamet.*empagliflozin \+ metformin/.test(lc[3]), 'Forxiga, Jardiance and Jardiamet read with their ingredients', lc.slice(1, 4));
+check(/^Ozempic.*1mg weekly.*Excluded.*Incretins/.test(lc[4]), 'ozempic 1mg weekly: Excluded on EMBOLD, details kept', lc[4]);
+check(/sertaline.*Did you mean\?.*Sertraline.*Serapine.*None of these/.test(lc[5]), 'sertaline: Did you mean Sertraline or Serapine, or None of these', lc[5]);
+check(/Blood pressure tablet.*Not recognised.*Kept as typed/.test(lc[6]), 'blood pressure tablet: not recognised, kept as typed', lc[6]);
+check(/Choose for 1 line first/.test(await page.locator('.lc-sum').innerText()), 'Add all waits until every choice is made');
+await page.click('.lc-chip:has-text("Sertraline")'); await page.waitForTimeout(100);
+await page.evaluate(() => { window.raydar.S.log = []; window.raydar.commit(); });
+
+await page.click('.lc-sum button:has-text("Add all 7 to the med log")'); await page.waitForTimeout(150);
+const added = await page.evaluate(() => window.raydar.S.log.filter((e) => e.src === 'Prohibited list check').map((e) => [e.n, e.dose, e.fr]));
+check(added.length === 7 && added.some((x) => x[0] === 'Ozempic' && x[1] === '1mg' && x[2] === 'weekly') && added.some((x) => x[0] === 'Sertraline') && added.some((x) => x[0] === 'Blood pressure tablet'), 'Add all puts all 7 in the med log, with dosage and frequency', added);
+check(/Added 7 to the med log/.test(await page.locator('.lc-sum').innerText()), 'it says they were added', await page.locator('.lc-sum').innerText());
+await page.focus('[data-f="rlist"]'); await page.keyboard.press('Control+Enter'); await page.waitForTimeout(150);
+await page.click('.lc-chip:has-text("Sertraline")'); await page.click('.lc-sum button:has-text("Add all")'); await page.waitForTimeout(150);
+check(/Already in the med log/.test(await page.locator('.lc-sum').innerText()) && (await page.evaluate(() => window.raydar.S.log.length)) === 7, 'checking the same list again adds nothing twice');
+
 check(!errors.length, 'no page errors', errors);
 await browser.close();
 await srv.close();

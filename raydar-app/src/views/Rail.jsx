@@ -6,6 +6,7 @@ import { A, Ic, B, Panel } from './ui.jsx';
 import { Row } from '../motion/components.jsx';
 import { LogPanelBody, ProRows } from './MedLog.jsx';
 import { MedLookup, lookupKeyDown, lookupFor } from './Medicines.jsx';
+import { ListCheck } from './ListCheck.jsx';
 import { TravelButton } from './Travel.jsx';
 
 /**
@@ -87,6 +88,13 @@ export function ProPanel() {
             <button style={{ flex: 1 }} className={tab === 'med' ? 'sel' : ''} onClick={() => upd(() => (S.proTab = 'med'))}>Medications ({(P.med || []).length})</button>
             <button style={{ flex: 1 }} className={tab === 'hx' ? 'sel' : ''} onClick={() => upd(() => (S.proTab = 'hx'))}>Conditions ({(P.hx || []).length})</button>
           </div>
+          {tab === 'med' ? (
+            <div className="seg lc-mode" style={{ display: 'inline-flex', marginBottom: 6 }}>
+              <button className={S.rmode !== 'list' ? 'sel' : ''} aria-pressed={S.rmode !== 'list'} onClick={() => upd(() => (S.rmode = 'one'))}>Search one</button>
+              <button className={S.rmode === 'list' ? 'sel' : ''} aria-pressed={S.rmode === 'list'} onClick={() => upd(() => (S.rmode = 'list'))}>Check a list</button>
+            </div>
+          ) : null}
+          {tab === 'med' && S.rmode === 'list' ? <ListCheck study={st} /> : <>
           <input type="search" aria-label="Search the list" placeholder={tab === 'med' ? 'Search a medicine, e.g. Lipitor' : 'Search, e.g. thyroid'} value={S.rq} style={{ height: 30, fontSize: 12, width: '100%', boxSizing: 'border-box' }} onChange={(e) => upd(() => { S.rq = e.target.value; S.rqHi = 0; })} onKeyDown={tab === 'med' ? lookupKeyDown : undefined} />
           {S.rq.trim() && tab === 'med' ? <MedLookup q={S.rq} study={st} /> : null}
           {S.rq.trim() ? <ProRows Pl={P} types={[tab]} q={S.rq} limit={0} quiet={tab === 'med' && S.rq.trim().length >= 3 && (lookupFor(S.rq.trim()).pre.length + lookupFor(S.rq.trim()).close.length > 0)} /> : (
@@ -111,6 +119,7 @@ export function ProPanel() {
               {!(notes[tab] || []).length && !(P[tab] || []).length ? <p className="mut" style={{ fontSize: 12, fontStyle: 'italic' }}>No {tab === 'med' ? 'medication' : 'condition'} list found in this eSource.</p> : null}
             </div>
           )}
+          </>}
           <p className="mut" style={{ fontSize: 11, margin: '4px 0 0' }}>{tab === 'med' ? 'Brand names, ingredients and drug groups are recognised (Australian Medicines Terminology and PBS). A match is a prompt to check, not an answer.' : 'Logged conditions that share words with this list show as a possible match, to check with the participant.'}</p>
         </>
       )}

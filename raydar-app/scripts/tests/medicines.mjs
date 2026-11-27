@@ -4,6 +4,7 @@ import { convert } from '../../src/esource/convert.js';
 import { resolve, suggest, close, describe, ingName, dictVersion } from '../../src/medicines/dict.js';
 import { prefill, checkMed, checkHx, readWindow, readDate, readMg, itemKey } from '../../src/medicines/items.js';
 import { readJson, esourceFiles, ESOURCE_DIR } from '../tools/lib/common.mjs';
+import { splitLine, matchName } from '../../src/medicines/list.js';
 
 let fails = 0, n = 0;
 const ok = (cond, msg, got) => { n++; if (!cond) { fails++; console.log('FAIL ' + msg + (got !== undefined ? '  (got ' + JSON.stringify(got) + ')' : '')); } };
@@ -99,5 +100,12 @@ m = checkHx({ t: 'hx', n: 'Hypothyroidism' }, hx);
 ok(m && m.pm && m.o === 'd', 'hypothyroidism → possible match, check', m);
 ok(checkHx({ t: 'hx', n: 'Asthma' }, hx) === null, 'asthma is not thyroid disease');
 
+/* 2.11: Check a list, one line at a time */
+const sl = splitLine('1. Lipitor 40mg once daily');
+ok(sl.name === 'Lipitor' && sl.dose === '40mg' && sl.fr === 'once daily', 'list line: name, dosage and frequency split', sl);
+ok(matchName('metfor,in').kind === 'ok' && matchName('metfor,in').fixed && matchName('metfor,in').pick.name === 'metformin', 'list: metfor,in → metformin, spelling fixed');
+ok(matchName('sertaline').kind === 'choose' && matchName('sertaline').opts.length >= 2, 'list: sertaline asks which one', matchName('sertaline').opts.map((x) => x.name));
+ok(matchName('jardiamet').kind === 'ok', 'list: jardiamet is one medicine (strengths are the same medicine)');
+ok(matchName('blood pressure tablet').kind === 'unknown', 'list: an unknown name is kept as typed');
 console.log((fails ? fails + ' of ' : 'All ') + n + ' checks ' + (fails ? 'failed' : 'passed'));
 process.exit(fails ? 1 : 0);
