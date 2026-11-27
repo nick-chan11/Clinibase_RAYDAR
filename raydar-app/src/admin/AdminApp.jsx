@@ -28,7 +28,7 @@ async function sha(text) {
 export default function AdminApp({ embedded, onExit }) {
   useWS();
   useSyncExternalStore(subscribe, getVersion);
-  useEffect(() => { if (!embedded) document.title = 'RAYDAR 2.11 Study admin'; (async () => { if (FOLDER.status === 'built-in') await autoConnect(); await loadDrafts(); })(); }, []);
+  useEffect(() => { if (!embedded) document.title = 'RAYDAR 2.12 Study admin'; (async () => { if (FOLDER.status === 'built-in') await autoConnect(); await loadDrafts(); })(); }, []);
   // keyboard: Ctrl/Cmd+Z and Shift+Ctrl/Cmd+Z undo and redo in the builder
   useEffect(() => {
     const k = (e) => {
@@ -51,7 +51,7 @@ function Shell({ embedded, onExit }) {
     <div className="ad">
       <header className="ad-top">
         <span className="cblogo"><ClinibaseLogo /></span>
-        <span className="ad-brand">RAYDAR <span>2.11</span></span>
+        <span className="ad-brand">RAYDAR <span>2.12</span></span>
         <span className="ad-badge">STUDY ADMIN</span>
         <span className="ad-sub">Changes reach recruiters only when you publish</span>
         <span style={{ flex: 1 }} />

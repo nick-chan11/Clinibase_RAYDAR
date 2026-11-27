@@ -358,8 +358,7 @@ body.tm::after{content:"";position:fixed;inset:0;border:4px solid var(--tm-line)
 #rd .tv-btn{color:var(--text-accent);border-color:var(--border-accent);background:var(--bg-accent);white-space:nowrap}
 #rd .tv-chip{color:var(--text-accent);border-color:var(--border-accent);background:var(--bg-accent);white-space:nowrap}
 #rd .tv-link{font-size:11px;color:var(--text-accent);border:.5px solid var(--border-strong);border-radius:6px;padding:0 7px;margin-left:6px;background:var(--surface-2);cursor:pointer;font-family:inherit;vertical-align:1px}
-#rd .tv-pop{position:absolute;top:calc(100% + 6px);left:0;z-index:40;width:min(440px,86vw);background:var(--surface-2);border:.5px solid var(--border-strong);border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.18);padding:10px 12px;display:flex;flex-direction:column;gap:8px;font-size:12.5px;font-family:var(--font-sans);font-weight:400;color:var(--text-primary);text-align:left;white-space:normal}
-#rd .rail .tv-pop{left:auto;right:0}
+#rd .tv-pop{position:fixed;z-index:60;max-height:min(70vh,520px);overflow:auto;background:var(--surface-2);border:.5px solid var(--border-strong);border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.18);padding:10px 12px;display:flex;flex-direction:column;gap:8px;font-size:12.5px;font-family:var(--font-sans);font-weight:400;color:var(--text-primary);text-align:left;white-space:normal}
 #rd .tv-h{font-size:12px}
 #rd .tv-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;border-top:.5px solid var(--border);padding-top:7px}
 #rd .tv-row .mut{font-size:11.5px}
@@ -387,3 +386,18 @@ body.tm::after{content:"";position:fixed;inset:0;border:4px solid var(--tm-line)
 #rd .lc-chip:hover{border-color:var(--border-accent);background:var(--bg-accent)}
 #rd .lc-chip.none{border-style:dashed;color:var(--text-secondary)}
 #rd .lc-sum{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 10px;border-top:.5px solid var(--border);background:var(--surface-1)}
+
+/* 2.11 section note (F1) */
+#rd .secnote{display:flex;align-items:center;gap:10px;background:var(--bg-accent);color:var(--text-accent);border:1px solid var(--border-accent);border-radius:8px;padding:8px 12px;font-size:13px;margin:8px 0 2px}
+#rd .secnote b{color:var(--text-primary)}
+#rd .secnote-n{margin-left:auto;font-size:11.5px;color:var(--text-secondary);white-space:nowrap}
+
+/* 2.11 details before booking */
+#rd .need{background:var(--bg-warning);border:1px solid var(--border-warning);border-radius:10px;padding:12px 14px;margin:10px 0}
+#rd .need .ti-alert-triangle{color:var(--text-warning)}
+#rd .need-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+#rd .need-g label{display:block}
+#rd .need-g input{width:100%;box-sizing:border-box;height:30px}
+#rd .need-g .need-in{border-color:var(--border-warning)}
+@media (max-width:700px){#rd .need-g{grid-template-columns:1fr}}
+#rd .pill.pri[disabled]{opacity:.45;cursor:not-allowed}

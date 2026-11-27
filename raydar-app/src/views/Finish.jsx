@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
-import { S, sug, reason, qset, matchP, selC, fmtR, needsReview, upd, act } from '../engine/store.js';
+import { S, sug, reason, qset, matchP, selC, fmtR, needsReview, upd, act, detailsLeft } from '../engine/store.js';
 import { summary, savePdf, CALLBACK_REASONS } from '../pdf/report.js';
 import { A, Ic, B } from './ui.jsx';
 import { keyName } from '../engine/keys.js';
@@ -56,13 +56,36 @@ function Saved({ k }) {
   );
 }
 
+/** 2.11: before a booking, the participant's details that are still empty (they stay on screen only) */
+function NeedDetails({ need }) {
+  const F = [['nm', 'Full name', 'full name', 'text'], ['ph', 'Phone number', 'phone number', 'tel'], ['em', 'Email', 'email', 'email']];
+  return (
+    <Piece className="need">
+      <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}><Ic n="ti-alert-triangle" /><B>Before you book: ask for their {need.join(' and ')}</B></div>
+      <div className="mut" style={{ fontSize: 12, marginTop: 2 }}>These weren't filled in at the start of the call. They stay on screen only and aren't saved to the PDF.</div>
+      <div className="need-g">
+        {F.map(([f, label, word, type]) => (
+          <label key={f}>
+            <span className="lab">{label} <span className="req">*</span></span>
+            <input type={type} data-f={'fin-' + f} value={S[f]} placeholder={need.includes(word) ? 'Still needed' : ''} className={need.includes(word) ? 'need-in' : ''}
+              onChange={(e) => upd(() => { S[f] = f === 'em' ? e.target.value.trim() : e.target.value; })} />
+          </label>
+        ))}
+      </div>
+    </Piece>
+  );
+}
+
 export function Finish() {
   const sg = sug(), k = S.fin || sg;
   if (S.saved) return <Saved k={k} />;
   const O = [['c', 'Clear to book', 'ok', 'No issues found'], ['d', 'Doctor enquiry', 'warn', 'Raise the flagged items with the doctors'], ['x', 'Exclude', 'bad', reason() || 'Do not book'], ['cb', 'Save for callback', '', 'Resume later from the PDF']];
   const [err, setErr] = useState('');
   const opt = { dr: S.drMode, cbr: S.cbr }, sm = summary(k, opt);
+  // 2.11: a booking needs the participant's name, phone and email first (asked at the identity check; on screen only)
+  const booking = !S.tm && (k === 'c' || (k === 'd' && S.drMode === 'book')), need = booking ? detailsLeft() : [];
   const save = () => {
+    if (need.length) return;
     try { const r = savePdf(k, opt); setErr(''); upd(() => { S.savedName = r.fileName; }); act('save'); }
     catch (e) { setErr('The PDF couldn\'t be made: ' + (e && e.message ? e.message : e) + '. Nothing was lost: try again, or tell your team lead.'); }
   };
@@ -111,6 +134,7 @@ export function Finish() {
       ) : null}
       {k === 'd' || k === 'cb' ? <button className="pill warn wide" {...A('dre:open')} style={{ marginTop: 8, width: '100%' }}><Ic n="ti-stethoscope" /> Create Dr enquiry text</button> : null}
       <FinWarn L={L} />
+      {need.length ? <NeedDetails need={need} /> : null}
       <Piece>
         <p className="lab" style={{ marginTop: 12 }}>On the PDF</p>
         <div className="soft" style={{ fontSize: 12 }}>
@@ -144,7 +168,8 @@ export function Finish() {
       </Piece>
       {err ? <p role="alert" style={{ color: 'var(--text-danger)', fontSize: 12, margin: '8px 0 0' }}>{err}</p> : null}
       <Piece style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginTop: 12 }}>
-        <button className="pill pri" onClick={save}><Ic n="ti-download" /> Save PDF</button>
+        {need.length ? <span className="mut" style={{ fontSize: 12, marginRight: 10 }}>Fill in {need.join(' and ')} to save a booking</span> : null}
+        <button className="pill pri" onClick={save} disabled={!!need.length} aria-disabled={!!need.length}><Ic n="ti-download" /> Save PDF</button>
       </Piece>
     </div>
   );

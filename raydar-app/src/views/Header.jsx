@@ -42,7 +42,7 @@ export function Header() {
     <div className="bar">
       <span className="cblogo"><ClinibaseLogo /></span>
       <span className="brand" title={RAYDAR_VERSION}>
-        RAYDAR <span style={{ color: 'var(--text-accent)' }}>2.11</span>
+        RAYDAR <span style={{ color: 'var(--text-accent)' }}>2.12</span>
       </span>
       {S.tm ? (
         <span className="pill tmpill" style={{ cursor: 'default' }}>

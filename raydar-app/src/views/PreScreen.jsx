@@ -464,10 +464,39 @@ function TextAns({ q, small, focus }) {
   );
 }
 
+/** 2.11: a strip above the question when the questions move into a new section (option F1). Shows for a few
+    seconds, then folds away; stays while the mouse is over it. Not at the start, and not on switching study. */
+function SectionNote({ L, q }) {
+  const last = useRef({ sec: q.sec, study: S.study && S.study.c });
+  const [note, setNote] = useState(null), [open, setOpen] = useState(false);
+  const timer = useRef(null), hover = useRef(false);
+  const later = (ms) => { clearTimeout(timer.current); timer.current = setTimeout(() => { if (!hover.current) setOpen(false); }, ms); };
+  useEffect(() => {
+    const study = S.study && S.study.c, was = last.current;
+    if (q.sec && was.study === study && was.sec !== q.sec) {
+      const secs = [...new Set(L.map((z) => z.sec))];
+      setNote({ sec: q.sec, k: secs.indexOf(q.sec) + 1, of: secs.length, n: L.filter((z) => z.sec === q.sec).length });
+      setOpen(true); later(5000);
+    }
+    last.current = { sec: q.sec, study };
+  }, [q.sec, S.study && S.study.c]);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  return (
+    <Expander open={open && !!note}>
+      {note ? (
+        <div className="secnote" role="status" onMouseEnter={() => { hover.current = true; clearTimeout(timer.current); }} onMouseLeave={() => { hover.current = false; later(2000); }}>
+          <Ic n="ti-layout-list" /><span>New section: <B>{note.sec}</B></span>
+          <span className="secnote-n">Section {note.k} of {note.of} · {note.n} question{note.n === 1 ? '' : 's'}</span>
+        </div>
+      ) : null}
+    </Expander>
+  );
+}
+
 /** One-at-a-time view: the answered question slides out as the next slides in. */
 function OneSlide({ L, i, q }) {
   const dir = useDirection(i);
-  return <QSlide k={q.id} dir={dir}><OneMode L={L} i={i} q={q} /></QSlide>;
+  return <><SectionNote L={L} q={q} /><QSlide k={q.id} dir={dir}><OneMode L={L} i={i} q={q} /></QSlide></>;
 }
 
 /** The questions in one section. Subscribes to the store so a leaving section still shows its last answer. */

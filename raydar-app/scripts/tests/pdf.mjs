@@ -13,6 +13,7 @@ const { page, errors } = await openPage(browser, srv.url);
 const setup = (code, wt, ht) => page.evaluate(([code, wt, ht]) => {
   const R = window.raydar; R.act('new'); const S = R.S;
   S.pid = 'p123456_0000'; S.dob = '1985-03-02'; S.match = true; R.act('confirm');
+  S.nm = 'Test Person'; S.ph = '0400 000 000'; S.em = 'test@example.com'; S.pc = '3150'; // 2.11: bookings need these; the postcode comes back
   S.sex = 'f'; S.wt = wt; S.ht = ht; S.preg = 'n'; R.act('norest'); S.meds = 'n'; S.smoke = 'n';
   S.log.push({ t: 'med', n: 'Metformin', ind: 'Type 2 diabetes', dose: '500 mg', fr: 'Twice daily', route: 'Oral', st: '2021', en: '', src: 'Test', auto: null, f: false }); // 2.10: frequency comes back
   R.act('start:' + code);
@@ -39,9 +40,9 @@ let failed = 0;
 for (const [label, r, re] of cases) {
   await page.evaluate(() => window.raydar.act('new')); await page.waitForTimeout(100);
   await page.setInputFiles('input[type=file]', path.join(OUT, r.name)); await page.waitForTimeout(700);
-  const back = await page.evaluate(() => { const S = window.raydar.S; return { pid: S.pid, n: Object.keys(S.out).length, notes: S.finalNotes, ok: S.impMsg && S.impMsg.ok, fr: (S.log.find((e) => e.n === 'Metformin') || {}).fr }; });
+  const back = await page.evaluate(() => { const S = window.raydar.S; return { pid: S.pid, n: Object.keys(S.out).length, notes: S.finalNotes, ok: S.impMsg && S.impMsg.ok, fr: (S.log.find((e) => e.n === 'Metformin') || {}).fr, pc: S.pc, nm: S.nm }; });
   // the age question is asked again after reopening (the date of birth is never stored in the file)
-  const ok = re.test(r.name) && back.ok && back.pid === 'p123456_0000' && back.n >= r.n - 1 && back.notes === 'Test note' && back.fr === 'Twice daily';
+  const ok = re.test(r.name) && back.ok && back.pid === 'p123456_0000' && back.n >= r.n - 1 && back.notes === 'Test note' && back.fr === 'Twice daily' && back.pc === '3150' && !back.nm;
   if (!ok) failed++;
   console.log((ok ? 'ok   ' : 'FAIL ') + label.padEnd(22) + r.name + ' · ' + back.n + '/' + r.n + ' answers back' + (back.fr === 'Twice daily' ? ', frequency back' : ', FREQUENCY MISSING'));
 }

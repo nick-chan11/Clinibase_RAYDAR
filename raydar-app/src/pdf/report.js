@@ -20,7 +20,7 @@ export const CALLBACK_REASONS = [
   ['Not eligible now', 'Not eligible now (may be eligible later)'],
   ['', 'Other / no specific reason'],
 ];
-export const BUILD = 'RAYDAR 2.11';
+export const BUILD = 'RAYDAR 2.12';
 const FORMAT = 'RAYDAR-CALLBACK-CSV', FORMAT_VERSION = '1', PDF_DATA_NAME = 'raydar_prescreen_data.csv', MARK = 'record,study,key,value';
 const CSV_MAX_BYTES = 4e6, CSV_MAX_ROWS = 50000, CSV_MAX_CELL = 400000;
 
@@ -547,7 +547,8 @@ export function buildCsv(sum) {
   put('meta', 'reason', sum.callbackReason || '', ''); put('meta', 'revision', sum.rev, ''); if (sum.prevFile) put('meta', 'replaces', sum.prevFile, '');
   put('meta', 'stage', S.stage, ''); put('meta', 'study', code, ''); put('meta', 'study_file', s ? s.file : '', ''); put('meta', 'site', s ? s.site : '', '');
   // Quick Check, without the date of birth: it is asked again when the callback is reopened
-  ['sex', 'wt', 'ht', 'preg', 'meds', 'smoke', 'alc', 'scr'].forEach((k) => { if (S[k] != null && S[k] !== '') put('quick', k, S[k], ''); });
+  // 2.11: the postcode goes in too, so a reopened callback can check travel again (never name, phone or email)
+  ['sex', 'wt', 'ht', 'preg', 'meds', 'smoke', 'alc', 'scr', 'pc'].forEach((k) => { if (S[k] != null && S[k] !== '') put('quick', k, S[k], ''); });
   Object.entries(S.cond).forEach(([k, v]) => { if (v) put('quick', 'cond.' + k, v, ''); });
   if (S.away.length) put('quick', 'away', S.away, '');
   S.log.forEach((e, i) => put('log', String(i), { t: e.t, n: e.n, ind: e.ind, dose: e.dose, fr: e.fr || '', route: e.route, st: e.st, en: e.en, src: e.src, auto: e.auto, f: !!e.f, nm: e.nm || [] }, ''));
@@ -698,6 +699,7 @@ export async function importCallback(file) {
       if (key === 'away') { if (Array.isArray(v)) N.away = v.filter((a) => Array.isArray(a) && a.length === 2).map((a) => [String(a[0]), String(a[1])]); }
       else if (key.startsWith('cond.')) { if (v === 'y' || v === 'n') N.cond[key.slice(5)] = v; }
       else if (['sex', 'wt', 'ht', 'preg', 'meds', 'smoke', 'alc', 'scr'].includes(key)) N[key] = String(v);
+      else if (key === 'pc' && /^\d{4}$/.test(String(v))) N.pc = String(v);
     } else if (rec === 'log' && v && typeof v === 'object' && v.n) {
       N.log.push({ t: ['med', 'otc', 'hx'].includes(v.t) ? v.t : 'med', n: String(v.n), ind: String(v.ind || ''), dose: String(v.dose || ''), fr: String(v.fr || ''), route: String(v.route || ''), st: String(v.st || ''), en: String(v.en || ''), src: String(v.src || 'Callback'), auto: v.auto || null, f: !!v.f, nm: Array.isArray(v.nm) ? v.nm.map(String) : [] });
     } else if (rec === 'callnotes') N.finalNotes = String(v || '');

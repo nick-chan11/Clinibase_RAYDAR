@@ -3,9 +3,10 @@
    No Google key, no cost, nothing to install. Only the postcode leaves RAYDAR; never a name, phone or email.
    Addresses: RAYDAR study settings.json → sites (each site's address) and studies[file].locations (other places,
    with the eSource's own words). */
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { S, upd } from '../engine/store.js';
-import { SETTINGS } from '../esource/studies.js';
+import { SETTINGS, BUILT_SETTINGS } from '../esource/studies.js';
 import { Ic } from './ui.jsx';
 
 const STATE = { 0: 'NT', 2: 'NSW', 3: 'VIC', 4: 'QLD', 5: 'SA', 6: 'WA', 7: 'TAS' };
@@ -23,17 +24,21 @@ export function openTravel(address, mode) {
   window.open(mapsUrl(S.pc, address, mode), 'raydar-travel', 'popup,width=' + w + ',height=' + h + ',left=' + Math.max(0, screen.availWidth - w - 40) + ',top=40');
 }
 
+/* The settings in use can come from a studies folder published before 2.11, with no addresses in it: then the
+   addresses this file was built with are used (the folder's win when it has them). */
+const sites = () => ({ ...((BUILT_SETTINGS && BUILT_SETTINGS.sites) || {}), ...(SETTINGS.sites || {}) });
+const locationsOf = (file) => ((SETTINGS.studies || {})[file] || {}).locations || (((BUILT_SETTINGS && BUILT_SETTINGS.studies) || {})[file] || {}).locations || [];
 /** Where a study takes place: its site, then any other place its eSource names */
 export function placesFor(s) {
   if (!s) return [];
-  const site = (SETTINGS.sites || {})[s.site];
+  const site = sites()[s.site];
   const out = site ? [{ what: 'Study site', name: site.name, address: site.address }] : [];
-  ((SETTINGS.studies || {})[s.file] || {}).locations?.forEach((l) => out.push({ what: l.what, address: l.address, quote: l.quote }));
+  locationsOf(s.file).forEach((l) => out.push({ what: l.what, address: l.address, quote: l.quote }));
   return out;
 }
 /** Each site once, for travel before a study is chosen */
 export function allSites() {
-  return Object.values(SETTINGS.sites || {}).map((x) => ({ what: x.name, address: x.address }));
+  return Object.values(sites()).map((x) => ({ what: x.name, address: x.address }));
 }
 
 /* "1096 Toorak Rd", "Suite 2/12 Lord St", "35-45 Spring Street" → a key to spot the same place in a question */
@@ -76,22 +81,41 @@ function PostcodeBox() {
 /** A Travel button with a small list of places and By car / Public transport for each */
 export function TravelButton({ s, places, label, className, title }) {
   const [open, setOpen] = useState(false);
-  const ref = useRef(null);
+  const [pos, setPos] = useState(null);
+  const ref = useRef(null), popRef = useRef(null);
   useEffect(() => {
     if (!open) return;
-    const off = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    const off = (e) => { if (ref.current && !ref.current.contains(e.target) && !(popRef.current && popRef.current.contains(e.target))) setOpen(false); };
     const esc = (e) => { if (e.key === 'Escape') setOpen(false); };
     document.addEventListener('mousedown', off); document.addEventListener('keydown', esc);
     return () => { document.removeEventListener('mousedown', off); document.removeEventListener('keydown', esc); };
   }, [open]);
+  // 2.11 fix: the list floats above the whole page (it was drawn inside the card, under the boxes below it), below
+  // the button, or above it when there isn't room; it follows the button as the page scrolls
+  useLayoutEffect(() => {
+    if (!open) return;
+    const place = () => {
+      const b = ref.current && ref.current.getBoundingClientRect(), p = popRef.current;
+      if (!b) return;
+      const w = Math.min(440, window.innerWidth - 24), h = p ? p.offsetHeight : 240;
+      const left = Math.max(12, Math.min(b.left, window.innerWidth - w - 12));
+      const below = b.bottom + 6 + h <= window.innerHeight - 8 || b.top - 6 - h < 8;
+      setPos({ left, top: below ? b.bottom + 6 : b.top - 6 - h, width: w });
+    };
+    place();
+    const raf = requestAnimationFrame(place);
+    window.addEventListener('scroll', place, true); window.addEventListener('resize', place);
+    return () => { cancelAnimationFrame(raf); window.removeEventListener('scroll', place, true); window.removeEventListener('resize', place); };
+  }, [open, S.pc]);
   const L = places || (s ? placesFor(s) : allSites());
+  const root = typeof document !== 'undefined' ? document.getElementById('rd') : null;
   return (
     <span className="tv-wrap" ref={ref}>
       <button type="button" className={className || 'pill tv-btn'} aria-expanded={open} title={title || 'Travel time in Google Maps'} onClick={() => setOpen((v) => !v)}>
         <Ic n="ti-route" /> {label || 'Travel'}
       </button>
-      {open ? (
-        <div className="tv-pop" role="dialog" aria-label="Travel time">
+      {open && root ? createPortal(
+        <div className="tv-pop" ref={popRef} role="dialog" aria-label="Travel time" style={pos ? { left: pos.left, top: pos.top, width: pos.width } : { visibility: 'hidden' }}>
           <div className="tv-h">Travel {okPostcode(S.pc) ? <>from <b>{S.pc}</b></> : null}<span className="mut"> · opens Google Maps</span></div>
           {okPostcode(S.pc) ? null : <PostcodeBox />}
           {L.length ? L.map((p) => (
@@ -103,7 +127,7 @@ export function TravelButton({ s, places, label, className, title }) {
               {okPostcode(S.pc) ? <Modes p={p} /> : null}
             </div>
           )) : <div className="mut">No address for this study yet. Add the site's address in RAYDAR study settings.json.</div>}
-        </div>
+        </div>, root
       ) : null}
     </span>
   );

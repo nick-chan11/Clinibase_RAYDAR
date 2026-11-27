@@ -1,6 +1,22 @@
-# RAYDAR 2.11 (React + Motion)
+# RAYDAR 2.12 (React + Motion)
 
 A component-based port of `RAYDAR_2.2.html`, built to use the full charles-ux-animation skill.
+
+## New in 2.12
+
+- **Travel fixed.** In 2.11 the Travel list opened empty in the built file: next to a studies folder published
+  before 2.11 (here `_system/`), RAYDAR used that folder's study settings, which have no site addresses. It now
+  falls back to the addresses it was built with (`BUILT_SETTINGS`, `src/views/Travel.jsx`). The list also opened
+  inside its card, under the boxes below it; it now floats above the page. `npm run test:offline` checks Travel in
+  the built file.
+- **Section notice (F1).** When the questions move into a new section, a strip above the question says "New
+  section: <name> · Section 2 of 5 · 18 questions" for 5 seconds, then folds away (stays while the mouse is over it).
+  Not on the first question or on switching study (`SectionNote`, `src/views/PreScreen.jsx`).
+- **Details before booking.** For a booking (Clear to book, or Doctor enquiry with Book now), Finish asks for any of
+  name, phone and email still empty, and Save PDF waits until they're filled in. Exclude and callbacks aren't held
+  up; test mode skips it (`NeedDetails`, `src/views/Finish.jsx`).
+- **Postcode in the callback PDF**, so a reopened call can check travel again. Name, phone and email still never go
+  in.
 
 ## New in 2.11
 

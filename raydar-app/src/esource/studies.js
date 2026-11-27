@@ -30,6 +30,9 @@ export const ST = [];
 export const ALL = [];
 export const SOURCE = { builtAt: typeof __BUILD_DATE__ !== 'undefined' ? __BUILD_DATE__ : '', loaded: [], folder: null, preview: null };
 export let SETTINGS = clone(SETTINGS_JSON);
+/** 2.11: the study settings this file was built with. A studies folder published before 2.11 has no site addresses,
+    so travel falls back to these (src/views/Travel.jsx). */
+export const BUILT_SETTINGS = BUILT.settings;
 
 /** file name → { json, origin: 'built-in' | 'folder' | 'loaded' | 'preview' } */
 const SRC = new Map();

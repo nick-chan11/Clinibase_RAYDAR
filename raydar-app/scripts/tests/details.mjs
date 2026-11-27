@@ -85,6 +85,30 @@ check(await page.locator('.tv-pop .tv-pc input').count() === 1 && await page.loc
 await page.fill('.tv-pop .tv-pc input', '2019'); await page.waitForTimeout(100);
 check(await page.locator('.tv-pop button:has-text("By car")').count() === 3, 'typing a postcode there shows the places');
 
+// 8. before a booking, missing name, phone or email are asked for; other outcomes aren't held up
+await page.evaluate(() => { const R = window.raydar; R.act('new'); const S = R.S; S.pid = 'p123456_0000'; S.dob = '1970-06-15'; S.match = true; R.act('confirm'); R.act('go:finish'); R.act('fin:c'); R.commit(); });
+await page.waitForTimeout(250);
+let save = page.locator('button:has-text("Save PDF")');
+check(await page.locator('.need').count() === 1 && await save.isDisabled(), 'Clear to book with no details: asks for them, Save PDF waits', await page.locator('.need').count());
+await page.evaluate(() => { window.raydar.act('fin:cb'); window.raydar.commit(); }); await page.waitForTimeout(150);
+check(await page.locator('.need').count() === 0 && !(await save.isDisabled()), 'Save for callback: not held up');
+await page.evaluate(() => { window.raydar.act('fin:c'); window.raydar.commit(); }); await page.waitForTimeout(150);
+await page.fill('[data-f="fin-nm"]', 'Test Person'); await page.fill('[data-f="fin-ph"]', '0400 000 000'); await page.fill('[data-f="fin-em"]', 'test@example.com');
+await page.waitForTimeout(100);
+check(await page.locator('.need').count() === 0 && !(await save.isDisabled()), 'once filled in at Finish, the booking can be saved');
+
+// 9. a strip above the question when the questions move into a new section (F1), folding away after a few seconds
+await page.evaluate(() => { const R = window.raydar; R.act('new'); const S = R.S; S.pid = 'p123456_0000'; S.dob = '1970-06-15'; S.match = true; R.act('confirm'); S.sex = 'f'; S.wt = '75'; S.ht = '172'; S.preg = 'n'; R.act('norest'); S.meds = 'n'; S.smoke = 'n';
+  R.act('start:' + R.ranked(true).map((x) => x.s.c).find((c) => /D7260/.test(c))); const s = R.S.study; if (s.cohorts) { const c = s.cohorts.find((c) => R.cStat(c) === 'open'); if (c) R.act('avail:' + s.c + ':' + c.id); R.act('dok'); } R.act('read'); R.act('startq'); R.commit(); });
+await page.waitForTimeout(300);
+check(await page.locator('.secnote').count() === 0, 'no section strip on the first question');
+const secs = await page.evaluate(() => { const L = window.raydar.qset(); return [...new Set(L.map((q) => q.sec))]; });
+await page.evaluate((sec) => { window.raydar.act('sec:' + encodeURIComponent(sec)); window.raydar.commit(); }, secs[1]); await page.waitForTimeout(500);
+const note = await page.locator('.secnote').count() ? await page.locator('.secnote').innerText() : '';
+check(note.includes(secs[1]) && /Section 2 of/.test(note), 'moving into the next section shows "New section: ' + secs[1] + '"', note);
+await page.mouse.move(5, 5); await page.waitForTimeout(6000);
+check(await page.locator('.secnote').count() === 0, 'the strip folds away after a few seconds');
+
 check(!errors.length, 'no page errors', errors);
 await browser.close();
 await srv.close();
