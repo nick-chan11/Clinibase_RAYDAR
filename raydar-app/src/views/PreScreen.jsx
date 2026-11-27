@@ -9,6 +9,7 @@ import { keyName } from '../engine/keys.js';
 import { NextStep } from './NextStep.jsx';
 import { A, Ic, B, Emph, Hl, FuHint, PanelHead, Resizable, HtmlBlocks } from './ui.jsx';
 import { MedLog } from './MedLog.jsx';
+import { QuestionTravel } from './Travel.jsx';
 import { Err, Expander, Piece, QSlide, useDirection } from '../motion/components.jsx';
 import { DUR, tr } from '../motion/tokens.js';
 
@@ -365,6 +366,7 @@ function OneMode({ L, i, q }) {
             {q.r ? <div style={{ whiteSpace: 'pre-line', fontSize: 13, lineHeight: 1.55, marginBottom: 6 }}><Emph t={q.r} /></div> : null}
             {q.before ? <HtmlBlocks blocks={q.before} /> : null}
             {q.after ? <HtmlBlocks blocks={q.after} style={{ marginTop: q.before ? 6 : 0 }} /> : null}
+            <QuestionTravel q={q} s={s} />
           </aside>
         ) : null}
       </div>

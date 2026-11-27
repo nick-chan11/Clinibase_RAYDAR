@@ -1,10 +1,94 @@
 {
-  "_about": "Per-study settings the study admin keeps (RAYDAR 2.8). studies: keyed by eSource file name. paused: hidden from recruiters. protocol: the protocol number for PDF file names when the eSource title doesn't start with it. proSkip: eSource notes that are not prohibited lists. proKeys: words a prohibited-list item matches in the medication log. news: notes shown once to recruiters after a publish. blocks: saved question blocks for the builder. adminPin: SHA-256 of the all-in-one file's admin PIN (a soft lock only).",
+  "_about": "Per-study settings the study admin keeps (RAYDAR 2.8). studies: keyed by eSource file name. paused: hidden from recruiters. protocol: the protocol number for PDF file names when the eSource title doesn't start with it. proSkip: eSource notes that are not prohibited lists. proKeys: words a prohibited-list item matches in the medication log. news: notes shown once to recruiters after a publish. blocks: saved question blocks for the builder. adminPin: SHA-256 of the all-in-one file's admin PIN (a soft lock only). sites (2.11): each site's address, for travel time (given by the RAYDAR lead, 27 Nov 2026). locations (2.11, per study): other places the study's eSource names (scans and the like), with the eSource's own words (quote) and where it says so (from).",
+  "sites": {
+    "Emeritus Melbourne": {
+      "name": "Emeritus Research Melbourne",
+      "address": "1096 Toorak Rd, Camberwell VIC 3124"
+    },
+    "Emeritus Sydney": {
+      "name": "Emeritus Research Sydney",
+      "address": "Suite 2/12 Lord St, Botany NSW 2019"
+    },
+    "Veritus": {
+      "name": "Veritus Research",
+      "address": "885 Mountain Hwy, Bayswater VIC 3153"
+    }
+  },
   "studies": {
     "Veritus - CORSERA - pre-screening.json": {
       "protocol": "COR-PAG-26-101"
     },
-    "Emeritus Melbourne - D7260C00015 (EMBOLD) - pre-screening.json": {}
+    "Emeritus Melbourne - D7260C00015 (EMBOLD) - pre-screening.json": {},
+    "Emeritus Melbourne - SB3567 - pre-screening.json": {
+      "locations": [
+        {
+          "what": "Eye scans",
+          "address": "569 Warrigal Rd, Ashwood VIC 3147",
+          "from": "question24",
+          "quote": "You will have 2 eye scans at a separate location in Ashwood? Would it be feasible for you to travel there for visits? (569 Warrigal Rd, Ashwood VIC 3147)"
+        }
+      ]
+    },
+    "Emeritus Sydney - SB3567 - pre-screening.json": {
+      "locations": [
+        {
+          "what": "Eye scans",
+          "address": "2/35 Spring St, Bondi Junction NSW 2022",
+          "from": "question",
+          "quote": "You will have some eye scans at a separate location in Bondi Junction? Would it be feasible for you to travel there for visits? (2/35 Spring St, Bondi Junction NSW 2022)"
+        }
+      ]
+    },
+    "Emeritus Sydney - D7261C00005 - pre-screening.json": {
+      "locations": [
+        {
+          "what": "Fundoscopy (eye) scans",
+          "address": "Suite 2, Level 2, 35-45 Spring Street, Bondi Junction NSW 2022",
+          "from": "question",
+          "quote": "Eye & Laser Surgeons Pty Ltd (ABN: 19 113 986 744) of Suite 2, Level 2, 35-45 Spring Street, Bondi Junction 2022 NSW Australia"
+        }
+      ]
+    },
+    "Emeritus Sydney - GSBR-1290-12 - pre-screening.json": {
+      "locations": [
+        {
+          "what": "DEXA scans (MeasureUp)",
+          "address": "Suite 902, Level 9, 84 Pitt Street, Sydney NSW 2000",
+          "from": "question",
+          "quote": "You may have some extra DEXA scans. These will be in the CBD. Is this feasible for you to get to? (MeasureUp, Suite 902, Level 9, 84 Pitt Street, Sydney NSW 2000.)"
+        }
+      ]
+    },
+    "Emeritus Sydney - SELENE 1 (D8750C00014) - pre-screening.json": {
+      "locations": [
+        {
+          "what": "DEXA scans (MeasureUp)",
+          "address": "84 Pitt Street, Sydney NSW 2000",
+          "from": "question",
+          "quote": "You may have some DEXA scans too. If you do, these would be at a separate location in the CBD. Is this feasible for you to get to? (MeasureUp - 84 Pitt Street, Sydney NSW 2000)"
+        }
+      ]
+    },
+    "Emeritus Sydney - SELENE 2 (D8750C00012) - pre-screening.json": {
+      "locations": [
+        {
+          "what": "DEXA scans (MeasureUp)",
+          "address": "84 Pitt Street, Sydney NSW 2000",
+          "from": "study notes",
+          "quote": "If applicable, these DEXA scans will be conducted at MeasureUp - 84 Pitt Street, Sydney NSW 2000"
+        }
+      ]
+    },
+    "Emeritus Sydney - SRSD - pre-screening.json": {
+      "locations": [
+        {
+          "what": "MRI scans (Castlereagh Imaging)",
+          "address": "20-22 Mons Rd, Westmead NSW 2145",
+          "from": "question",
+          "quote": "There will also be up to 2 MRI scans conducted at Castlereagh Imaging Westmead. Can you travel there? (20-22 Mons Rd, Westmead NSW 2145)"
+        }
+      ]
+    }
   },
   "news": [],
   "blocks": {},

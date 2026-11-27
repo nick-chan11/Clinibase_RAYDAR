@@ -6,6 +6,7 @@ import { A, Ic, B, Panel } from './ui.jsx';
 import { Row } from '../motion/components.jsx';
 import { LogPanelBody, ProRows } from './MedLog.jsx';
 import { MedLookup, lookupKeyDown, lookupFor } from './Medicines.jsx';
+import { TravelButton } from './Travel.jsx';
 
 /**
  * Pivotable studies. When Quick check answers rule a study out, it moves down the list:
@@ -32,7 +33,7 @@ export function Studies() {
             return (
               <Row key={x.s.c} i={i} className="row" style={{ padding: '5px 0', background: 'var(--surface-2)' }} title={x.s.d + ' · ' + x.s.site}>
                 <div style={{ minWidth: 0 }}>
-                  <div className="mono" style={{ fontWeight: 500 }}><span className="dot" style={{ background: COL[x.r[0]] }} />{x.s.c} <span className={'sitetag site-' + x.s.city + (x.s.site === 'Veritus' ? '-v' : '')}>{x.s.siteLabel}</span>{x.off ? <span className="mut" style={{ fontSize: 11 }}> · outside the site filter</span> : null}</div>
+                  <div className="mono" style={{ fontWeight: 500 }}><span className="dot" style={{ background: COL[x.r[0]] }} />{x.s.c} <span className={'sitetag site-' + x.s.city + (x.s.site === 'Veritus' ? '-v' : '')}>{x.s.siteLabel}</span>{x.off ? <span className="mut" style={{ fontSize: 11 }}> · outside the site filter</span> : null}<TravelButton s={x.s} label="Travel" className="tv-link" /></div>
                   <div style={{ fontSize: 11, color: TXT[x.r[0]], whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{x.r[1]}</div>
                   {no ? <div className="mut" style={{ fontSize: 11 }}>{x.s.sched ? 'Earliest Day 1' : no.in === no.out ? 'Next Day 1' : 'Next stay'} <button className="lnk" style={{ fontSize: 11 }} {...A('jump:' + x.s.c + ':' + no.id)}>{fmt(no.in)}</button></div> : null}
                 </div>

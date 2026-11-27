@@ -50,7 +50,7 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 /* 2.11: #h keeps the full header's space (--hhf) so the page never changes height; #hin is the header as drawn.
    The part of #h under a slim header is see-through and clickable. */
 #rd #h{position:sticky;top:0;z-index:6;min-height:var(--hhf,0px);pointer-events:none}
-#rd #hin{pointer-events:auto;background:var(--surface-0);padding-top:4px;box-sizing:border-box;overflow:hidden;transition:box-shadow .22s}
+#rd #hin{pointer-events:auto;background:var(--surface-0);padding-top:4px;box-sizing:border-box;transition:box-shadow .22s}
 #rd.slim #hin{box-shadow:0 8px 14px -10px rgba(0,0,0,.22)}
 @keyframes hfade{from{opacity:0}to{opacity:1}}
 #rd:not(.slim) .stepsrow,#rd:not(.slim) .bar .slim-hide{animation:hfade .22s ease-out}
@@ -351,3 +351,22 @@ body.tm::after{content:"";position:fixed;inset:0;border:4px solid var(--tm-line)
 #rd.slim .cblogo svg{height:17px}
 #rd .tmstrip{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--tm-bg);color:var(--tm-ink);border:1px solid var(--tm-line);border-radius:8px;padding:8px 12px;font-size:12.5px;margin-bottom:10px}
 #rd .tmstrip > span{flex:1;min-width:240px}
+#rd .req{color:var(--text-danger)}
+
+/* 2.11 travel time (src/views/Travel.jsx) */
+#rd .tv-wrap{position:relative;display:inline-flex}
+#rd .tv-btn{color:var(--text-accent);border-color:var(--border-accent);background:var(--bg-accent);white-space:nowrap}
+#rd .tv-chip{color:var(--text-accent);border-color:var(--border-accent);background:var(--bg-accent);white-space:nowrap}
+#rd .tv-link{font-size:11px;color:var(--text-accent);border:.5px solid var(--border-strong);border-radius:6px;padding:0 7px;margin-left:6px;background:var(--surface-2);cursor:pointer;font-family:inherit;vertical-align:1px}
+#rd .tv-pop{position:absolute;top:calc(100% + 6px);left:0;z-index:40;width:min(440px,86vw);background:var(--surface-2);border:.5px solid var(--border-strong);border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.18);padding:10px 12px;display:flex;flex-direction:column;gap:8px;font-size:12.5px;font-family:var(--font-sans);font-weight:400;color:var(--text-primary);text-align:left;white-space:normal}
+#rd .rail .tv-pop{left:auto;right:0}
+#rd .tv-h{font-size:12px}
+#rd .tv-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;border-top:.5px solid var(--border);padding-top:7px}
+#rd .tv-row .mut{font-size:11.5px}
+#rd .tv-q{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-style:italic}
+#rd .tv-modes{display:flex;flex-direction:column;gap:4px;flex-shrink:0}
+#rd .tv-modes .pill{font-size:11.5px;padding:2px 8px;white-space:nowrap}
+#rd .tv-pc{display:flex;align-items:center;gap:8px;font-size:12px}
+#rd .tv-pc input{width:90px;height:28px}
+#rd .tv-q-row{margin-top:8px}
+#rd .tv-q-row .tv-btn{font-size:12px;white-space:normal;text-align:left}

@@ -6,6 +6,7 @@ import { A, Ic, B } from './ui.jsx';
 import { Expander, IconSwap } from '../motion/components.jsx';
 import { DUR, tr } from '../motion/tokens.js';
 import { ClinibaseLogo } from './Logo.jsx';
+import { TravelChip } from './Travel.jsx';
 
 export function Legend() {
   const L = [['--fill-success', 'Eligible'], ['--fill-warning', 'Dr check'], ['--fill-danger', 'Exclude'], ['--fill-accent', 'Opens a follow-up']];
@@ -59,6 +60,7 @@ export function Header() {
       ) : (
         <span className="pill mut" style={{ cursor: 'default' }}>Call {S.call} · no participant yet</span>
       )}
+      <span className="slim-hide"><TravelChip /></span>
       {s && (S.stage === 'ps' || S.stage === 'finish') ? (
         <button className="pill" {...A('tool:switch')} title="Switch study">{s.c} <Ic n="ti-selector" /></button>
       ) : null}

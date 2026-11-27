@@ -1,10 +1,11 @@
-import { S, bmi, upd, idReady, qcLeft, askConds, qcUse, siteOk, prevCall } from '../engine/store.js';
+import { S, bmi, upd, idReady, qcLeft, askConds, qcUse, siteOk, prevCall, detailsLeft } from '../engine/store.js';
 import { NextStep } from './NextStep.jsx';
 import { keyName } from '../engine/keys.js';
 import { A, Ic, Seg } from './ui.jsx';
 import { Err, Piece } from '../motion/components.jsx';
 import { ImportButton, ImportNote } from './Import.jsx';
 import { TestEntry, TestIdentity } from './TestMode.jsx';
+import { TravelButton } from './Travel.jsx';
 
 export function Identity() {
   const e = S.err;
@@ -40,11 +41,37 @@ export function Identity() {
           <Err msg={e.dob} />
         </div>
       </Piece>
+      {/* 2.11: participant details, to check against the CTMS profile. On screen only: never saved to any file. */}
+      <Piece style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginTop: 10 }}>
+        <div>
+          <label className="lab" htmlFor="f-nm" style={{ display: 'block' }}>Full name <span className="req">*</span></label>
+          <input id="f-nm" type="text" data-f="nm" autoComplete="off" value={S.nm} onChange={(ev) => upd(() => { S.nm = ev.target.value; })} />
+        </div>
+        <div>
+          <label className="lab" htmlFor="f-ph" style={{ display: 'block' }}>Phone number <span className="req">*</span></label>
+          <input id="f-ph" type="tel" data-f="ph" autoComplete="off" value={S.ph} onChange={(ev) => upd(() => { S.ph = ev.target.value; })} />
+        </div>
+        <div>
+          <label className="lab" htmlFor="f-em" style={{ display: 'block' }}>Email <span className="req">*</span></label>
+          <input id="f-em" type="email" data-f="em" autoComplete="off" value={S.em} onChange={(ev) => upd(() => { S.em = ev.target.value.trim(); })} />
+        </div>
+        <div>
+          <label className="lab" htmlFor="f-pc" style={{ display: 'block' }}>Postcode <span className="mut" style={{ fontWeight: 400 }}>(optional, for travel time)</span></label>
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+            <input id="f-pc" type="text" inputMode="numeric" data-f="pc" autoComplete="off" value={S.pc} style={{ maxWidth: 110 }} onChange={(ev) => upd(() => { S.pc = ev.target.value.replace(/\D/g, '').slice(0, 4); })} />
+            {/^\d{4}$/.test(S.pc) ? <TravelButton label="Check travel" /> : null}
+          </span>
+        </div>
+      </Piece>
+      <Piece as="p" className="mut" style={{ fontSize: 11.5, margin: '8px 0 0', display: 'flex', gap: 6 }}>
+        <Ic n="ti-lock" /><span>Name, phone and email stay on this screen to check against the CTMS profile. They are never saved to the PDF, the callback file or the Dr enquiry, and clear when the call ends. Only the postcode is sent to Google Maps, when you check travel.</span>
+      </Piece>
       <Piece>
         <label data-shake="match" style={{ display: 'inline-flex', gap: 8, alignItems: 'center', marginTop: 10, fontSize: 12 }}>
           <input type="checkbox" data-f="match" checked={S.match} onChange={(ev) => upd(() => { S.match = ev.target.checked; delete S.err.match; })} />{' '}
           Name, phone and email match the profile
         </label>
+        {detailsLeft().length ? <span className="mut" style={{ fontSize: 12, marginLeft: 10 }}>Still needed: {detailsLeft().join(', ')}. You can carry on, but fill these in before booking.</span> : null}
         <Err msg={e.match} />
         <Err msg={e.id} />
       </Piece>
@@ -102,6 +129,13 @@ export function QuickCheck() {
           <input type="number" inputMode="decimal" aria-label="Weight in kg" placeholder="kg" value={S.wt} style={{ width: 60 }} onChange={(e) => upd(() => (S.wt = e.target.value))} />
           <input type="number" inputMode="decimal" aria-label="Height in cm" placeholder="cm" value={S.ht} style={{ width: 60 }} onChange={(e) => upd(() => (S.ht = e.target.value))} />
           <span className="mut" style={{ fontSize: 12, minWidth: 52, fontVariantNumeric: 'tabular-nums' }}>{b != null ? 'BMI ' + b : ''}</span>
+        </span>
+      </Row>
+      {/* 2.11: travel, optional; never rules a study in or out */}
+      <Row label={<>Travel to the study sites <span className="mut" style={{ fontWeight: 400, fontSize: 12 }}>· optional{/^\d{4}$/.test(S.pc) ? ' · from ' + S.pc : ''}</span><div className="mut" style={{ fontWeight: 400, fontSize: 11.5 }}>Opens travel times in Google Maps. Doesn't rule any study in or out.</div></>}>
+        <span style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+          <TravelButton s={S.study} label="Check travel" />
+          <Seg k="tvOk" opts={[['ok', 'OK'], ['far', 'Too far', 'warn']]} cur={S.tvOk} />
         </span>
       </Row>
       {S.sex !== 'm' ? <Row label="Pregnant or breastfeeding?"><Seg k="preg" opts={[['n', 'No'], ['y', 'Yes', 'bad']]} cur={S.preg} /></Row> : null}

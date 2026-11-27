@@ -90,7 +90,7 @@ function onKey(e) {
   if (f === 'qs' && e.key === 'Escape') { upd(() => { S.qs = ''; S.mapOpen = false; }); return; }
   const tg = e.target.tagName || '';
   // Enter submits the identity form from its own fields, never from a focused button elsewhere
-  if (S.stage === 'id' && e.key === 'Enter' && (e.target === document.body || f === 'pid' || f === 'dob' || f === 'match')) { e.preventDefault(); act('confirm'); return; }
+  if (S.stage === 'id' && e.key === 'Enter' && (e.target === document.body || ['pid', 'dob', 'match', 'nm', 'ph', 'em', 'pc'].includes(f))) { e.preventDefault(); act('confirm'); return; }
   // Enter in a number field (weight, height, drinks) can still continue to the next step
   const numField = tg === 'INPUT' && (e.target.type === 'number' || e.target.type === 'date');
   const typing = tg === 'TEXTAREA' || (tg === 'INPUT' && e.target.type !== 'checkbox' && !(numField && e.key === 'Enter')) || tg === 'SELECT';
@@ -201,9 +201,9 @@ export default function App() {
     if (!h) return;
     const from = lastH.current, to = h.offsetHeight;
     if (!from || from === to || prefersReduced() || !h.animate) { lastH.current = to; return; }
-    h.dataset.anim = '1';
+    h.dataset.anim = '1'; h.style.overflow = 'hidden'; // clip only while sliding, so drop-downs from the header show
     const a = h.animate([{ height: from + 'px' }, { height: to + 'px' }], { duration: 220, easing: 'cubic-bezier(.32,.72,0,1)' });
-    const done = () => { delete h.dataset.anim; lastH.current = h.offsetHeight; const R = rootRef.current; if (R && !R.classList.contains('slim')) R.style.setProperty('--hhf', h.offsetHeight + 'px'); };
+    const done = () => { delete h.dataset.anim; h.style.overflow = ''; lastH.current = h.offsetHeight; const R = rootRef.current; if (R && !R.classList.contains('slim')) R.style.setProperty('--hhf', h.offsetHeight + 'px'); };
     a.onfinish = done; a.oncancel = done;
   }, [slim]);
 
