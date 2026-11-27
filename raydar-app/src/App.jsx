@@ -147,13 +147,17 @@ function focusWhenReady(id, tries = 12) {
 
 export default function App() {
   useSyncExternalStore(subscribe, getVersion);
-  const rootRef = useRef(null), headRef = useRef(null), gridRef = useRef(null);
+  const rootRef = useRef(null), headRef = useRef(null), innerRef = useRef(null), gridRef = useRef(null), lastH = useRef(0);
   const rail = S.rail && !S.focusMode;
   // 2.6: the header shrinks to one line once you scroll down, and returns at the top (a gap between the two
   // thresholds stops it flickering as the page height changes)
   const [slim, setSlim] = useState(false);
   useEffect(() => {
-    const on = () => setSlim((v) => (v ? window.scrollY > 8 : window.scrollY > 80));
+    // 2.11: a page with little to scroll keeps the full header (slimming it would only leave a gap under it)
+    const on = () => setSlim((v) => {
+      const room = document.documentElement.scrollHeight - window.innerHeight;
+      return v ? window.scrollY > 8 : window.scrollY > 80 && room > 260;
+    });
     window.addEventListener('scroll', on, { passive: true });
     return () => window.removeEventListener('scroll', on);
   }, []);
@@ -172,15 +176,36 @@ export default function App() {
   // 2.8 fix: the study admin replaces the call screens, so coming back from it makes a new header. Measure the new
   // one; measuring only the first left --hh stuck at an old height (a gap above the side panel once the header shrank).
   const inAdmin = !!(AdminApp && ADMIN_MODE === 'combined' && S.admin);
+  // 2.11: the header keeps the same space in the page whether it's full or slim (--hhf, the full height), so slimming
+  // never changes the page's height. Before, the page shrank by ~106 px, the browser pulled the scroll position up,
+  // then the side panel grew into the space and it jumped back down: the glitch at the bottom of short pages.
+  // --hh is the header as drawn now; things that sit under it (side panel, question toolbar) follow it.
   useEffect(() => {
-    const h = headRef.current;
+    const h = innerRef.current;
     if (!h || typeof ResizeObserver === 'undefined') return;
-    const set = () => rootRef.current?.style.setProperty('--hh', h.offsetHeight + 'px');
+    const set = () => {
+      const R = rootRef.current, px = h.offsetHeight;
+      if (!R) return;
+      R.style.setProperty('--hh', px + 'px');
+      // the full height is only taken from a settled full header, never from the slide in between
+      if (!h.dataset.anim) { lastH.current = px; if (!R.classList.contains('slim')) R.style.setProperty('--hhf', px + 'px'); }
+    };
     set();
     const ro = new ResizeObserver(set);
     ro.observe(h);
     return () => ro.disconnect();
   }, [inAdmin]);
+  // 2.11: slide between full and slim instead of jumping
+  useLayoutEffect(() => {
+    const h = innerRef.current;
+    if (!h) return;
+    const from = lastH.current, to = h.offsetHeight;
+    if (!from || from === to || prefersReduced() || !h.animate) { lastH.current = to; return; }
+    h.dataset.anim = '1';
+    const a = h.animate([{ height: from + 'px' }, { height: to + 'px' }], { duration: 220, easing: 'cubic-bezier(.32,.72,0,1)' });
+    const done = () => { delete h.dataset.anim; lastH.current = h.offsetHeight; const R = rootRef.current; if (R && !R.classList.contains('slim')) R.style.setProperty('--hhf', h.offsetHeight + 'px'); };
+    a.onfinish = done; a.oncancel = done;
+  }, [slim]);
 
   // Work the engine asks for after a change: scroll, focus, shake
   useLayoutEffect(() => {
@@ -219,9 +244,11 @@ export default function App() {
     <div id="rd" ref={rootRef} className={(S.dark ? 'dk' : '') + (slim ? ' slim' : '')} style={{ fontSize: S.fs }}>
       {SOURCE.preview ? <PreviewBar /> : null}
       <div id="h" ref={headRef}>
-        <TestBanner />
-        <Header />
-        <Steps />
+        <div id="hin" ref={innerRef}>
+          <TestBanner />
+          <Header />
+          <Steps />
+        </div>
       </div>
       <Guide />
       <FolderBanner />

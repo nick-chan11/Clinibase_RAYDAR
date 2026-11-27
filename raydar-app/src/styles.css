@@ -47,8 +47,15 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd .hgrp{display:inline-flex;gap:1px;padding:1px;border:.5px solid var(--border-strong);border-radius:var(--radius)}
 #rd .hgrp .pill{border-color:transparent}
 #rd .hgrp .pill.on{background:var(--bg-accent);color:var(--text-accent)}
-#rd #h{position:sticky;top:0;z-index:6;background:var(--surface-0);padding-top:4px}
-#rd .rail{position:sticky;top:calc(var(--hh,60px) + 8px);max-height:calc(100vh - var(--hh,60px) - 16px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:2px}
+/* 2.11: #h keeps the full header's space (--hhf) so the page never changes height; #hin is the header as drawn.
+   The part of #h under a slim header is see-through and clickable. */
+#rd #h{position:sticky;top:0;z-index:6;min-height:var(--hhf,0px);pointer-events:none}
+#rd #hin{pointer-events:auto;background:var(--surface-0);padding-top:4px;box-sizing:border-box;overflow:hidden;transition:box-shadow .22s}
+#rd.slim #hin{box-shadow:0 8px 14px -10px rgba(0,0,0,.22)}
+@keyframes hfade{from{opacity:0}to{opacity:1}}
+#rd:not(.slim) .stepsrow,#rd:not(.slim) .bar .slim-hide{animation:hfade .22s ease-out}
+@media (prefers-reduced-motion:reduce){#rd:not(.slim) .stepsrow,#rd:not(.slim) .bar .slim-hide{animation:none}}
+#rd .rail{position:sticky;top:calc(var(--hh,60px) + 8px);max-height:calc(100vh - var(--hhf,var(--hh,60px)) - 16px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:2px}
 #rd .sn{display:inline-flex;width:18px;height:18px;border-radius:50%;align-items:center;justify-content:center;font-size:11px;border:1px solid var(--border-strong);margin-right:6px;vertical-align:-3px}
 #rd .sn.cur{background:var(--fill-accent);color:var(--on-accent);border-color:transparent}
 #rd .sn.done{background:var(--bg-success);color:var(--text-success);border-color:var(--border-success)}
@@ -215,7 +222,7 @@ body.dk .trial-banner{background:#3d2a0a;color:#f5c272;border-color:#b9791c}
 #rd .script .esrc{font-family:var(--font-say);font-size:15px;line-height:1.6}
 /* Question layout 1B: question and answers on the left, recruiter information beside them */
 #rd .q2{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start}
-#rd .q2 .qinfo{position:sticky;top:calc(var(--hh,60px) + 12px);max-height:calc(100vh - var(--hh,60px) - 40px);overflow-y:auto;border:.5px solid var(--border-warning);background:var(--bg-warning);border-radius:10px;padding:10px 12px}
+#rd .q2 .qinfo{position:sticky;top:calc(var(--hh,60px) + 12px);max-height:calc(100vh - var(--hhf,var(--hh,60px)) - 40px);overflow-y:auto;border:.5px solid var(--border-warning);background:var(--bg-warning);border-radius:10px;padding:10px 12px}
 #rd.dk .q2 .qinfo{background:#2e2410}
 #rd .qinfo-h{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text-warning);text-transform:uppercase;margin-bottom:6px}
 @media (max-width:900px){#rd .q2{grid-template-columns:minmax(0,1fr)}#rd .q2 .qinfo{position:static;max-height:none}}

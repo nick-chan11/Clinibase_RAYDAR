@@ -22,7 +22,8 @@
     "dict:update": "node scripts/tools/medicines-build.mjs",
     "test:medicines": "node --import ./scripts/tools/lib/register.mjs scripts/tests/medicines.mjs",
     "test:suggest": "node scripts/tests/suggest.mjs",
-    "test:testmode": "node scripts/tests/testmode.mjs"
+    "test:testmode": "node scripts/tests/testmode.mjs",
+    "test:scroll": "node scripts/tests/scroll.mjs"
   },
   "dependencies": {
     "@fontsource/fira-sans": "^5.3.0",
