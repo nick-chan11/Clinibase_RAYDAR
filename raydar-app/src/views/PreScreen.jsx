@@ -111,6 +111,12 @@ function PreQ({ s }) {
   );
   return (
     <div className="card">
+      {S.tm ? (
+        <Piece className="tmstrip">
+          <span><b>Test mode:</b> the dates and study information are here to read. Nothing to tick off: go to the questions whenever you like, and come back here from the questions.</span>
+          <button className="pill pri" {...A('startq')}>Go to questions <Ic n="ti-arrow-right" /></button>
+        </Piece>
+      ) : null}
       <Piece as="p" className="lab">{s.c} · {s.d} · do these in either order</Piece>
       <Piece style={{ display: 'flex', gap: 4 }} role="tablist">{tab('dates', s.sched ? 'Visit timeline' : 'Cohorts and dates', dOk)}{tab('info', 'Study information', iOk)}</Piece>
       <Piece>
@@ -678,6 +684,7 @@ export function PreScreen() {
       </Piece>
       <Piece>
         <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', margin: '8px 0 6px' }}>
+          {S.tm ? <button className="pill tmbtn" {...A('qoff')} style={{ fontSize: 11 }}><Ic n="ti-calendar" /> Dates and study info</button> : null}
           <button className={'pill ' + (S.script === 'tab' ? 'tag' : '')} aria-pressed={S.script === 'tab'} {...A('script:tab')} style={{ cursor: 'pointer', fontSize: 11 }}><Ic n="ti-script" /> Call script</button>
           <button className="pill ib" {...A('script:side')} aria-pressed={S.script === 'side'} title={'Call script beside the question (' + keyName('script') + ')'} aria-label="Call script beside the question" style={{ fontSize: 13 }}><Ic n="ti-layout-sidebar-right" /></button>
           {secs.map((sn) => {

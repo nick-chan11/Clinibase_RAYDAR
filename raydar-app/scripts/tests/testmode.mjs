@@ -30,7 +30,14 @@ check(s.body && s.banner && /Test mode/.test(s.head), 'test mode is marked: bann
 await page.evaluate(() => { const R = window.raydar; R.act('start:' + R.ranked(true).map((x) => x.s.c).find((c) => /D7260/.test(c))); R.commit(); });
 await page.waitForTimeout(250);
 let q = await page.evaluate(() => { const R = window.raydar, L = R.qset(); return { qon: R.S.qon, stage: R.S.stage, n: L.length, hid: L.filter((z) => R.isHiddenQ(z.id)).length, secs: [...new Set(L.map((z) => z.sec))] }; });
-check(q.stage === 'ps' && q.qon, 'a study opens straight at its questions (no dates or study info first)', q);
+check(q.stage === 'ps' && !q.qon && (await page.locator('.tmstrip').count()) === 1, 'a study opens on its dates and study information, with "Go to questions"', q);
+await page.click('.tmstrip button:has-text("Go to questions")'); await page.waitForTimeout(200);
+q = await page.evaluate(() => { const R = window.raydar, L = R.qset(); return { qon: R.S.qon, dates: !!R.S.datesOk[R.S.study.c], read: !!R.S.read[R.S.study.c], n: L.length, hid: L.filter((z) => R.isHiddenQ(z.id)).length, secs: [...new Set(L.map((z) => z.sec))] }; });
+check(q.qon && !q.dates && !q.read, '"Go to questions" works without confirming dates or reading the study information', q);
+await page.click('button:has-text("Dates and study info")'); await page.waitForTimeout(200);
+let back = await page.evaluate(() => window.raydar.S.qon);
+check(back === false, '"Dates and study info" goes back from the questions', back);
+await page.click('.tmstrip button:has-text("Go to questions")'); await page.waitForTimeout(200);
 check(q.hid > 0, 'questions earlier answers would hide are shown (' + q.hid + ' of ' + q.n + ')', q);
 const lastSec = q.secs[q.secs.length - 1];
 await page.click('button:has-text("' + lastSec.slice(0, 18).replace(/"/g, '\\"') + '")'); await page.waitForTimeout(200);

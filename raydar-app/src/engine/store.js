@@ -171,8 +171,8 @@ function carryFrom(s){for(const [code,k] of Object.entries(S.kept)){const src=SC
 /** Test mode skips the identity check: no PID, date of birth or profile match */
 function tmReady(){S.idok=true;S.stage='qc';S.err={}}
 function start(c){if(!S.idok&&!S.tm){S.stage='id';S.err={id:'Confirm identity before starting a pre-screen'};return}stash();S.study=SC(c);S.proS=null;S.stage='ps';S.qon=false;S.sub='dates';S.qid=null;S.out={};S.ans={};S.val={};S.pick={};S.txt={};S.why={};S.note={};S.park={};S.hist={};S.tool=null;S.err={};S.fin=null;S.all=false;S.last=null;S.mOpen=false;S.mq='';S.infoOpen=false;S.carried=null;
-const k=S.kept[c];if(k){KEEP.forEach(f=>{S[f]=k[f]});S.qon=k.qon;S.qid=k.qid;S.sub=k.sub;S.carried={back:true,n:Object.keys(k.out).length};if(S.tm)S.qon=true;return}
-const cf=carryFrom(S.study);if(cf)S.carried=cf;if(S.tm){S.qon=true}}
+const k=S.kept[c];if(k){KEEP.forEach(f=>{S[f]=k[f]});S.qon=k.qon;S.qid=k.qid;S.sub=k.sub;S.carried={back:true,n:Object.keys(k.out).length};return}
+const cf=carryFrom(S.study);if(cf)S.carried=cf}
 function advance(){const {L,i}=curQ();S.mOpen=false;S.mq='';S.mErr='';S.hOpen=false;S.hq='';S.hErr='';S.peek=null;let j=i+1;while(j<L.length&&(S.out[L[j].id]||S.park[L[j].id]))j++;if(j<L.length)S.qid=L[j].id;else{const u=frontier(L);if(u)S.qid=u.id}}
 function doJump(code,cid){const s=SC(code),c=s&&s.cohorts.find(z=>z.id===cid);if(!c)return;S.plan=true;S.tool=null;if(!pShown(s)){if(!S.pShow){const m={};planStudies().forEach(z=>m[z.c]=pShown(z));S.pShow=m}S.pShow[code]=true}if(S.hideClosed&&cStat(c)!=='open')S.hideClosed=false;S.psel=[code,cid];S.jumpSmooth=true;S.jumpTo=cKey(c)==='ok'||cStat(c)!=='open'?c.in:conflictDate(c)}
 function pushLog(F,t,ed){const e=Object.assign(EF(),{t},Object.fromEntries(Object.entries(F).map(([k,v])=>[k,String(v).trim()])),{t,src:(ed&&ed.src)||srcLabel(),auto:(ed&&ed.auto)||null,f:!!(ed&&ed.f)});S.log.push(e)}
@@ -196,13 +196,13 @@ function ansSlot(q,j){return ansOrder(q).indexOf(j)}
 function idReady(){return /^P\d{3,}/i.test(S.pid)&&age()!=null&&S.match}
 function qcLeft(){const L=[];if(!S.sex)L.push('sex');if(bmi()==null)L.push('weight and height');if(S.sex!=='m'&&!S.preg)L.push('pregnancy');if(askConds().some(c=>S.cond[c[0]]==null))L.push('conditions');if(!S.meds)L.push('medications');if(!S.smoke)L.push('smoking');return L}
 function qcDone(){return !qcLeft().length}
-function preqDone(){const s=S.study;return !!s&&(!s.cohorts||!!S.datesOk[s.c])&&!!S.read[s.c]}
+function preqDone(){const s=S.study;if(s&&S.tm)return true;return !!s&&(!s.cohorts||!!S.datesOk[s.c])&&!!S.read[s.c]}
 function psDone(){const L=qset().filter(q=>!HID.has(q.id));return !!L.length&&L.every(q=>S.out[q.id])}
 /** The step a recruiter would take next, once the current one is complete. null while there's still work here. */
 function nextStep(){
 if(S.stage==='id')return idReady()?{a:'confirm',done:'Identity details entered',to:'Quick check',btn:'Confirm and continue'}:null;
 if(S.stage==='qc'){if(!qcDone())return null;return {a:'go:ps',done:'Quick check complete',to:'Pre-screen',sub:S.study?S.study.c:'choose a study',btn:S.study?'Continue to pre-screen':'Choose a study'}}
-if(S.stage==='ps'&&S.study&&!S.qon)return preqDone()?{a:'startq',done:'Dates and study information done',to:'Questions',sub:S.study.c,btn:'Start questions'}:null;
+if(S.stage==='ps'&&S.study&&!S.qon)return S.tm?{a:'startq',done:'Test mode: nothing to confirm',to:'Questions',sub:S.study.c,btn:'Go to questions'}:preqDone()?{a:'startq',done:'Dates and study information done',to:'Questions',sub:S.study.c,btn:'Start questions'}:null;
 if(S.stage==='ps'&&S.study&&S.qon){if(!psDone())return null;const L=qset(),x=L.filter(q=>S.out[q.id]==='x').length,d=L.filter(q=>S.out[q.id]==='d').length;return {a:'go:finish',done:'All '+L.length+' questions answered',to:'Finish',sub:x?x+' exclusion'+(x>1?'s':''):d?d+' for the doctor':'Nothing flagged',tone:x?'bad':d?'warn':'ok',btn:'Continue to finish'}}
 if(S.stage==='finish'&&S.saved)return {a:'new',done:'Saved',to:'Next call',btn:'Start next call'};
 return null}
@@ -231,7 +231,7 @@ else if(k==='pstart'){start(x);S.nav=[];S.peek=null;if(S.study){avl(x)[y]=true;S
 else if(k==='sub')S.sub=x;
 else if(k==='read'){S.read[S.study.c]=true;S.err={};if(S.study.cohorts&&!S.datesOk[S.study.c])S.sub='dates'}
 else if(k==='dok'){if(S.study&&S.study.sched){avl(S.study.c).tl=true}if(!selC().length){S.err={d:'Select at least one cohort first'};S.shake='d'}else{S.datesOk[S.study.c]=true;S.err={};if(!S.read[S.study.c])S.sub='info'}}
-else if(k==='startq'){const s=S.study,dOk=!s.cohorts||S.datesOk[s.c];if(!dOk||!S.read[s.c])S.err={s:(!dOk?'Confirm the dates':'')+(!dOk&&!S.read[s.c]?' and ':'')+(!S.read[s.c]?(dOk?'Read':'read')+' the study information':'')+' first'},S.shake='s';else{S.qon=true;S.err={};S.qid=null}}
+else if(k==='startq'){if(S.tm){S.qon=true;S.err={};S.qid=null}else{const s=S.study,dOk=!s.cohorts||S.datesOk[s.c];if(!dOk||!S.read[s.c])S.err={s:(!dOk?'Confirm the dates':'')+(!dOk&&!S.read[s.c]?' and ':'')+(!S.read[s.c]?(dOk?'Read':'read')+' the study information':'')+' first'},S.shake='s';else{S.qon=true;S.err={};S.qid=null}}}
 else if(k==='avail'){const o=avl(x);o[y]=!o[y];if(S.study&&S.study.c===x&&!selC().length)S.datesOk[x]=false}
 else if(k==='info')S.infoOpen=!S.infoOpen;
 else if(k==='sec'){const sn=decodeURIComponent(x),L=qset().filter(q=>q.sec===sn);const u=L.find(q=>!S.out[q.id])||L[0];if(u)goQ(u.id);S.last=null}
@@ -297,6 +297,7 @@ else if(k==='new'){if(!S.tm)PREV=S;const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw
 else if(k==='tmon'){if(!S.tm){if(S.pid||S.study||S.log.length){PREV=S}const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(fresh(S.call+1),keep,{tm:true,tmAll:true});tmReady()}}
 else if(k==='tmoff'){const keep={fs:S.fs,sz:S.sz,col:S.col,lw:S.lw,rail:S.rail,dark:S.dark,tips:S.tips,focusMode:S.focusMode};S=Object.assign(fresh(S.call+1),keep,{tm:false})}
 else if(k==='tmall'){S.tmAll=!S.tmAll}
+else if(k==='qoff'){if(S.study){S.qon=false;S.sub=S.sub||'dates'}}
 else if(k==='all')S.all=!S.all;
 else if(k==='proall')S.proAll=!S.proAll;
 else if(k==='fs')S.fs=Math.max(11,Math.min(17,S.fs+(+x)));
