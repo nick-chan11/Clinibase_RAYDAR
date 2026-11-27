@@ -1,0 +1,174 @@
+<title>RAYDAR 2.12 Updates</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: one reading column in Clinibase's look; each request is a section with screenshots of the real
+   RAYDAR 2.10 (new parts outlined in dashed blue) or drawn panels, and the questions are gathered at the end. */
+:root{
+  --bg:#ffffff; --bg-soft:#f2f3f4; --card:#ffffff; --ink:#1b2a3f; --ink-2:#4a5a70; --line:#d9dee4;
+  --blue:#00aff5; --blue-ink:#00669c; --blue-soft:#e3f5fd; --pink:#b8066f; --pink-soft:#fce7f3;
+  --ok:#3b6d11; --ok-soft:#eaf3de; --warn:#854f0b; --warn-soft:#faeeda;
+  --f-body:"Fira Sans","Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1621; --bg-soft:#152030; --card:#1b2a3f; --ink:#eaf1f8; --ink-2:#b4c1d0; --line:#2a3b53;
+  --blue-ink:#5fd0fb; --blue-soft:#0c3a58; --pink:#ff7cc6; --pink-soft:#3d1230; --ok:#addb7c; --ok-soft:#203512; --warn:#f5c272; --warn-soft:#3d2a0a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1621; --bg-soft:#152030; --card:#1b2a3f; --ink:#eaf1f8; --ink-2:#b4c1d0; --line:#2a3b53;
+  --blue-ink:#5fd0fb; --blue-soft:#0c3a58; --pink:#ff7cc6; --pink-soft:#3d1230; --ok:#addb7c; --ok-soft:#203512; --warn:#f5c272; --warn-soft:#3d2a0a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;margin:0}
+.band{height:6px;background:var(--blue)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{display:flex;flex-direction:column;gap:6px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink);font-weight:600}
+h1{font-size:clamp(28px,4vw,40px);font-weight:500;margin:0;line-height:1.15;text-wrap:balance}
+h2{font-size:26px;font-weight:500;margin:0;text-wrap:balance}
+h3{font-size:18px;font-weight:600;margin:0}
+p{margin:0;max-width:72ch}
+.lede{color:var(--ink-2);font-size:17px}
+section{padding-block:36px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
+.toc a{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);background:var(--card)}
+.toc a:hover{border-color:var(--blue)}
+a:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.toc b{font-weight:600}.toc span{font-size:14px;color:var(--ink-2)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:22px;align-items:start}
+figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+figcaption,.cap{font-size:14px;color:var(--ink-2)}
+figcaption b,.cap b{color:var(--ink);font-weight:600}
+.opt{display:flex;flex-direction:column;gap:10px;min-width:0}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--bg-soft);color:var(--ink-2);align-self:flex-start}
+.tag.rec{background:var(--blue-soft);color:var(--blue-ink)}
+ul.plain{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;max-width:76ch}
+.note{background:var(--bg-soft);border-radius:10px;padding:14px 16px;font-size:15px;color:var(--ink-2)}
+.note b{color:var(--ink)}
+.warnbox{border:2px solid #e0453f;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.warnbox b{color:var(--ink)}
+.tblw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;background:var(--bg-soft)}
+td.miss{color:var(--warn);font-weight:500}
+.ask{border:2px solid var(--blue);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;background:var(--card)}
+.ask ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:10px}
+.ask li b{font-weight:600}
+.small{font-size:14px;color:var(--ink-2)}
+
+/* ---- pictures of RAYDAR panels (branding A, dark), as in the 2.10 mockups; they stay dark in either page theme ---- */
+.rp{--s0:#0e1621;--s1:#152030;--s2:#1b2a3f;--b:rgba(214,230,247,.13);--bs:rgba(214,230,247,.25);--t:#eaf1f8;--t2:#b4c1d0;--tm:#94a3b6;
+  --acc-bg:#0c3a58;--acc:#5fd0fb;--hi:#22344d;--bad-bg:#481b1b;--bad:#f7a9a9;--bad-b:#c24a49;--warn-bg:#3d2a0a;--warnc:#f5c272;--warn-b:#b9791c;--ok-bg:#203512;--okc:#addb7c;--ok-b:#5d8f2a;
+  background:var(--s2);color:var(--t);border:1px solid var(--bs);border-radius:12px;padding:12px 14px;font-family:"Fira Sans","Segoe UI",Arial,sans-serif;font-size:13px;line-height:1.45;display:flex;flex-direction:column;gap:9px;min-width:0}
+.rp .hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rp .hb{border:1px solid var(--bs);border-radius:8px;padding:2px 9px;font-size:12px}
+.rp .ttl{font-weight:500;font-size:14px}
+.rp .sel{margin-left:auto;border:1px solid var(--bs);border-radius:6px;padding:2px 8px;font-size:11px;white-space:nowrap}
+.rp .tabs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--bs);border-radius:8px;overflow:hidden;font-size:12px;text-align:center}
+.rp .tabs span{padding:4px}.rp .tabs .on{background:var(--acc-bg);color:var(--acc)}
+.rp .seg2{display:inline-flex;border:1px solid var(--bs);border-radius:8px;overflow:hidden;font-size:12px}
+.rp .seg2 span{padding:3px 10px}.rp .seg2 .on{background:var(--acc-bg);color:var(--acc)}
+.rp .ta{border:1px solid var(--acc);border-radius:6px;background:var(--s1);padding:8px 10px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;line-height:1.6;white-space:pre;color:var(--t)}
+.rp .hint{font-size:11.5px;color:var(--t2)}
+.rp .btn{display:inline-flex;align-items:center;gap:5px;border-radius:8px;padding:5px 12px;font-size:12.5px;border:1px solid var(--bs);color:var(--t);background:var(--s2)}
+.rp .btn.pri{background:#00aff5;border-color:#00aff5;color:#0b1a2b;font-weight:500}
+.rp .pill{font-size:11px;border-radius:999px;padding:1px 8px;white-space:nowrap;border:1px solid var(--bs);color:var(--t2);background:var(--s2)}
+.rp .pill.x{background:var(--bad-bg);color:var(--bad);border-color:var(--bad-b)}
+.rp .pill.d{background:var(--warn-bg);color:var(--warnc);border-color:var(--warn-b)}
+.rp .pill.q{background:var(--acc-bg);color:var(--acc);border-color:var(--acc)}
+.rp .res{border:1px solid var(--bs);border-radius:8px;overflow:hidden;background:var(--s1)}
+.rp .rh{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--tm);padding:6px 10px;border-bottom:1px solid var(--b)}
+.rp .line{padding:7px 10px;border-top:1px solid var(--b);display:flex;flex-direction:column;gap:4px}
+.rp .rh + .line{border-top:0}
+.rp .lt{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.rp .typed{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;color:var(--tm)}
+.rp .nm{font-weight:600}.rp .sub{color:var(--t2);font-size:11.5px}
+.rp .fix{font-size:11px;color:var(--acc)}
+.rp .chips{display:flex;flex-wrap:wrap;gap:5px}
+.rp .chip{border:1px solid var(--bs);border-radius:6px;padding:3px 8px;font-size:12px;background:var(--s2)}
+.rp .chip b{font-weight:600}
+.rp .chip.none{border-style:dashed;color:var(--t2)}
+.rp .why{font-size:11.5px;border-left:3px solid var(--bad-b);padding-left:7px}
+.rp .sum{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 10px;border-top:1px solid var(--b);background:var(--s2)}
+.rp .row2{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--b)}
+.rp .big{font-size:20px;font-weight:600}
+.rp .muted{color:var(--tm);font-size:11.5px}
+
+/* a stand-in for a separate browser window */
+.win{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);box-shadow:0 10px 28px rgba(0,0,0,.18);display:flex;flex-direction:column;min-width:0}
+.win .bar{display:flex;align-items:center;gap:6px;padding:6px 10px;background:var(--bg-soft);border-bottom:1px solid var(--line);font-size:12px;color:var(--ink-2)}
+.win .dots{display:flex;gap:5px}.win .dots i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+.win .url{flex:1;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:ui-monospace,Menlo,monospace;font-size:11px}
+.gmap{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);min-height:260px}
+.gmap .side{padding:12px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:8px;font-size:13px}
+.gmap .modes{display:flex;gap:6px}.gmap .modes span{border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px}
+.gmap .modes .on{background:var(--blue-soft);border-color:var(--blue);color:var(--blue-ink)}
+.gmap .rt{border:1px solid var(--line);border-radius:8px;padding:8px}
+.gmap .rt b{font-size:15px}
+.gmap .map{background:repeating-linear-gradient(45deg,var(--bg-soft) 0 12px,transparent 12px 24px);display:flex;align-items:center;justify-content:center;color:var(--ink-2);font-size:13px;text-align:center;padding:12px}
+@media (max-width:560px){.gmap{grid-template-columns:1fr}.gmap .side{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* the live header demo */
+.demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px}
+.dbox{position:relative;height:340px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-soft)}
+.dscroll{height:100%;overflow:auto;padding:0 10px}
+.dh{background:var(--card);border-bottom:1px solid var(--line);padding:10px 12px;display:flex;flex-direction:column;gap:6px;z-index:2}
+.dh .r1{display:flex;align-items:center;gap:8px;font-weight:600}
+.dh .r1 span{font-size:11px;border:1px solid var(--line);border-radius:6px;padding:2px 7px;font-weight:400;color:var(--ink-2)}
+.dh .r2{display:flex;gap:6px}.dh .r2 i{flex:1;height:8px;border-radius:4px;background:var(--line);display:block}
+.dh .r3{font-size:11px;color:var(--ink-2)}
+.before .dh{position:sticky;top:0}
+.before .slim .r2,.before .slim .r3{display:none}
+.after .dh{position:absolute;left:0;right:12px;top:0;overflow:hidden;max-height:96px;transition:max-height .22s cubic-bezier(.32,.72,0,1),box-shadow .22s}
+.after .dh .r2,.after .dh .r3{transition:opacity .16s}
+.after .dh.slim{max-height:40px;box-shadow:0 6px 12px -6px rgba(0,0,0,.25)}
+.after .dh.slim .r2,.after .dh.slim .r3{opacity:0}
+.after .spacer{height:96px}
+.dq{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px;margin-top:10px;font-size:13px;color:var(--ink-2)}
+.dq b{color:var(--ink)}
+.dstat{position:absolute;right:16px;bottom:8px;font-size:11px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 7px;color:var(--ink-2);z-index:3}
+@media (prefers-reduced-motion:reduce){.after .dh,.after .dh .r2,.after .dh .r3{transition:none}}
+</style>
+<div class="band" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">RAYDAR 2.12 · two updates · for your choice</span>
+    <h1>Changing the postcode, and adding a checked list to the med log</h1>
+    <p class="lede">Screenshots of the real RAYDAR 2.12 with the new parts outlined in dashed blue. Nothing is built yet.</p>
+  </header>
+
+  <section aria-labelledby="h-pc">
+    <span class="eyebrow">1 · Travel</span>
+    <h2 id="h-pc">Change the postcode from the header, and it changes everywhere</h2>
+    <p>RAYDAR keeps one postcode for the call, so every Travel button (header, Quick check, study list, questions) already uses the same one. The header's Travel list gets the postcode as an editable box at the top: correct it there and every Travel button uses the new one straight away, as does the Identity screen. Before a postcode is entered, the header still shows Travel, asking for one.</p>
+    <div class="grid2">
+      <figure><a href="img/pc-edit.jpg" target="_blank" rel="noopener"><img src="img/pc-edit.jpg" alt="The header Travel list opened, with Travel from and an editable postcode box 3150 at the top, and a note that changing it here changes it everywhere in this call, above the study site and eye scans with By car and Public transport" width="1350" height="630" loading="lazy"></a>
+        <figcaption><b>With a postcode.</b> The postcode at the top of the list can be changed in place.</figcaption></figure>
+      <figure><a href="img/pc-none.jpg" target="_blank" rel="noopener"><img src="img/pc-none.jpg" alt="The header with a Travel, add postcode button beside the PID" width="1950" height="240" loading="lazy"></a>
+        <figcaption><b>No postcode yet.</b> "Travel · add postcode" opens the same list with the postcode box empty.</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-list">
+    <span class="eyebrow">2 · Check a list</span>
+    <h2 id="h-list">Offer to add the list as soon as it's checked</h2>
+    <p>Today "Add all to the med log" sits at the bottom of the results. Instead, as soon as the list is checked, a prompt right under the box asks "Add these 5 to the med log?" with <b>Add all 5</b> and <b>Not now</b>. The results still show below. Names go in now; the med log then says how many still need details, with a button that opens each one in turn to fill in dosage, frequency and route.</p>
+    <div class="grid2">
+      <figure><a href="img/list-prompt.jpg" target="_blank" rel="noopener"><img src="img/list-prompt.jpg" alt="Check a list after checking 5 medicines: a prompt Add these 5 to the med log? Names now; dosage, frequency and route can be filled in later from the med log, with Add all 5 and Not now, above the results" width="777" height="1218" loading="lazy"></a>
+        <figcaption><b>Straight after checking.</b> The prompt sits between the box and the results. If some lines still need a choice ("Did you mean?"), the prompt says so and adds them once chosen.</figcaption></figure>
+      <figure><a href="img/list-after.jpg" target="_blank" rel="noopener"><img src="img/list-after.jpg" alt="Meds and history after adding: 5 added from the list, 4 still need their details, Fill in details one by one; each medicine without details shows Add details" width="804" height="900" loading="lazy"></a>
+        <figcaption><b>In the med log afterwards.</b> "Fill in details, one by one" opens the first medicine without details; saving it moves to the next. Each one still shows "Add details" as today.</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-ask" style="border-bottom:0">
+    <div class="ask">
+      <h2 id="h-ask">What I need from you</h2>
+      <ol>
+        <li><b>Postcode:</b> is the editable box at the top of the header's Travel list right, with "Travel · add postcode" before one is entered?</li>
+        <li><b>Check a list:</b> the prompt under the box with Add all / Not now, and "Fill in details, one by one" in the med log: right?</li>
+        <li><b>Version:</b> you said 2.12. As you may already have 2.12 files, I'd call this 2.13 so the two can't be mixed up. OK?</li>
+      </ol>
+    </div>
+  </section>
+</div>
